@@ -1,0 +1,109 @@
+#!/usr/bin/env php
+<?PHP
+
+if (count($argv)==5 && getenv('ZENDTOPREFS')) {
+  array_splice($argv, 1, 0, getenv('ZENDTOPREFS'));
+}
+
+if ( count($argv) != 6 ) {
+  $prefs=getenv('ZENDTOPREFS');
+  if ($prefs=='') {
+    printf("
+  usage:
+  
+   %s <ZendTo preferences.php file> '<username>' '<email>' '<realname>' '<organization>'
+  
+   The ZendTo preferences.php file path should be canonical, not relative.
+   (It must start with a \"/\")
+   Alternatively, do
+     export ZENDTOPREFS=<full file path of preferences.php>
+     %s '<username>' '<email>' '<realname>' '<organization>'
+
+",$argv[0],$argv[0]);
+  } else {
+    printf("
+  usage:
+  
+   %s '<username>' '<email>' '<realname>' '<organization>'
+  
+   The ZendTo preferences.php file path is pointed to by the environment
+   variable ZENDTOPREFS, which is currently set to
+   %s
+
+",$argv[0],$prefs);
+  }
+  return 0;
+}
+
+if ( ! preg_match('/^\/.+/',$argv[1]) ) {
+  echo "ERROR:  You must provide a canonical path to the preference file.\n";
+  return 1;
+}
+
+include $argv[1];
+require_once(NSSDROPBOX_LIB_DIR."Smartyconf.php");
+include_once(NSSDROPBOX_LIB_DIR."NSSDropoff.php");
+
+if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS, TRUE) ) {
+  
+  $username = strtolower($argv[2]);
+  $email    = $argv[3];
+  $realname = $argv[4];
+  $org      = $argv[5];
+  //$quota    = $argv[6];
+
+  $password = readPassword('Enter password for new user: ');
+  $confirm  = readPassword('And again to confirm: ');
+  if ($password !== $confirm) {
+    echo "\nERROR: Entered passwords did not match.\n";
+    return 1;
+  }
+
+  if (!strpos($email, '@')) {
+    echo "\nWARNING: You supplied an email address that did not contain an '@'.\n";
+    echo "WARNING: Note the new syntax where the password is not on the command-line.\n";
+  }
+
+  $result = $theDropbox->database->DBAddLocalUser($username, $password,
+                                     $email, $realname, $org);
+
+  // To save newbies trouble, if they are using SQLite (any version)
+  // then force the ownership of the SQLite database back to that of
+  // the web server if it has become owned by root.
+  // This happens when people create a new local user, before they
+  // forced the web server to create the database file by displaying
+  // the app's home page in a browser.
+  if (preg_match('/^SQLite/', SqlBackend)) {
+    $sqlite = $NSSDROPBOX_PREFS['SQLiteDatabase'];
+    $oldowner = fileowner($sqlite);
+    $oldgroup = filegroup($sqlite);
+    if ($oldowner == 0 || $oldgroup == 0) {
+      $newowner = fileowner($NSSDROPBOX_PREFS['dropboxDirectory']);
+      $newgroup = filegroup($NSSDROPBOX_PREFS['dropboxDirectory']);
+      chown($sqlite, $newowner);
+      chgrp($sqlite, $newgroup);
+    }
+  }
+
+  if ($result == '') {
+    $passprint = 'secret';
+    if ($password == '') {
+      $passprint = 'WARNING: No password!';
+    }
+    printf("Created user:\n");
+    printf("Username:     $username\n");
+    printf("Password:     ($passprint)\n");
+    printf("Email:        $email\n");
+    printf("Real name:    $realname\n");
+    printf("Organization: $org\n");
+    //if (preg_match('/^[yYtT1]/', MYZENDTO)) {
+    //  printf("Quota:        $quota\n");
+    //}
+    return 0;
+  } else {
+    printf("Failed: $result\n");
+    return 1;
+  }
+}
+
+?>

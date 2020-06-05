@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+
+#
+# ZendTo
+# Copyright (C) 2020 Julian Field, Jules at ZendTo dot com
+#
+# Based on the original PERL dropbox written by Doke Scott.
+# Developed by Julian Field.
+# 
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#
+
+Usage() {
+  badarg="$1"
+  if [ "x$badarg" != "x" ]; then
+    echo "Error: bad argument $badarg" 1>&2
+    echo 1>&2
+  fi
+
+  cat <<USAGE
+Automatically list information about all stored drop-offs.
+
+$(basename "$0")
+               --username       | -u USERNAME
+               --password       | -p PASSWORD
+               [ --insecure     | -i ]
+               [ --debug        | -d ]
+               <zendto-server-root-url>
+
+--username USERNAME
+                         USERNAME is one of the login usernames defined
+                         as 'automationUsers' in preferences.php
+
+--insecure or -i         passes the "--insecure" flag to curl(1) so it
+                         allows self-signed SSL certificates
+
+--debug or -d            makes me echo the full curl(1) instead of executing it
+
+<zendto-server-root-url> is the root URL of your ZendTo server
+
+USAGE
+}
+
+# Default values
+debug='' # This one isn't used in call to curl
+insecure=0
+
+while getopts ":u:p:id-:" opt; do
+  case ${opt} in
+    - ) case "$OPTARG" in
+          username | password )
+            declare "${OPTARG}=${!OPTIND}";
+            ((OPTIND++))
+            ;;
+          username=* | password=* )
+            val="${OPTARG#*=}"
+            opt="$( echo "$OPTARG" | cut -d= -f1 )"
+            declare "${opt}=${val}"
+            ;;
+          insecure )
+            insecure=1
+            ;;
+          debug )
+            debug='y'
+            ;;
+          * ) Usage "$OPTARG" ; exit 1 ;;
+        esac ;;
+    u ) username="$OPTARG" ;;
+    p ) password="$OPTARG" ;;
+    i ) insecure=1 ;;
+    d ) debug='y' ;;
+    h ) Usage ; exit 0 ;;
+    : ) Usage ; exit 1 ;;
+    \? ) Usage "$OPTARG" ; exit 1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# This should be all that's left behind
+ServerRoot="$1"
+
+#
+# Parameter error checking STARTS
+#
+
+errors_occurred=''
+# Check mandatory parameters are present
+if [[ -z $username || -z $password || -z $ServerRoot ]]; then
+  echo "Error: mandatory parameters omitted" 1>&2
+  errors_occurred=yes
+fi
+# ServerRoot should have been the only non-option, check it looks right
+if [[ ! $ServerRoot =~ ^http ]]; then
+  echo "Error: server root URL $ServerRoot must start with http:// or https://" 1>&2
+  errors_occurred=yes
+fi
+
+#
+# Parameter error checking ENDS
+# (errors_occurred==yes action is done later)
+#
+
+#
+# Start building the list of options
+#
+declare -a params
+# All our calls to curl need this
+params+=(--dump-header - --output /dev/null --silent)
+# We are creating a request
+#params+=(--data Action=send)
+# Mandatory simple ones first
+params+=(--data-urlencode uname="$username")
+params+=(--data-urlencode password="$password")
+(( insecure )) && params+=(--insecure)
+
+# If any errors have been detected, bail out
+if [[ -n $errors_occurred ]]; then
+  echo 1>&2
+  Usage
+  exit 1
+fi
+
+# Tack 'pickup_list_all.php' on the end of the URL,
+# and cope with missing / on the end
+URL="${ServerRoot%/}/pickup_list_all.php"
+
+# This is the name of the HTTP header where ZendTo sends its response
+ZTheader='X-ZendTo-Response'
+
+# Debug only?
+if [[ "$debug" == "y" ]]; then
+  echo
+  echo curl \\
+  for i in "${params[@]}"; do
+    echo "$i" \\
+  done
+  echo "$URL" \\
+  cat <<EOCURL
+| grep "^$ZTheader:" \\
+| sed -e "s/^$ZTheader: *//"'
+
+The grep and sed extract the JSON result.
+EOCURL
+else
+  # Do it...
+  #set -x # TEMP DEBUG CODE
+  curl "${params[@]}" "$URL" \
+  | grep "^${ZTheader}:" \
+  | sed -e "s/^${ZTheader}: *//"
+  # Exit with the return code of the curl.
+  exit "${PIPESTATUS[0]}"
+fi
+

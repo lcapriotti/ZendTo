@@ -1,0 +1,1651 @@
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.15\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2019-08-16 13:29+0200\n"
+"Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
+"Language-Team: Czech <dizzy.easy49@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Klikněte prosím znovu na odkaz, který vám byl zaslán pro vyzvednutí vašich souborů."
+
+msgid "Authentication Failure"
+msgstr "Chyba ověřování"
+
+msgid "Your session has expired. Please start again."
+msgstr "Platnost relace vypršela. Prosím, začněte znovu."
+
+msgid "Session Expired"
+msgstr "Platnost relace vypršela."
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "Adresa počítače se změnila. Klikněte znovu na odkaz, který jste odeslali k vyzvednutí vašich souborů."
+
+msgid "Session Error"
+msgstr "Chyba relace"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Tato funkce je k dispozici pouze pro uživatele, kteří se přihlásili."
+
+msgid "Access Denied"
+msgstr "Přístup nepovolen"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "Čtení souboru protokolu se nezdařilo. Zkontrolujte, zda webový server může číst."
+
+msgid "File Permissions Error"
+msgstr "Chyba oprávnění k souboru"
+
+msgid "This is available to administrators only."
+msgstr "Tato oprávnění jsou k dispozici pouze správcům."
+
+msgid "Administrators only"
+msgstr "pouze pro správce"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Klikněte prosím znovu na odkaz, který vám byl zaslán pro vyzvednutí vašich souborů."
+
+msgid "I do not think you are a real person."
+msgstr "Nemyslím si, že jste skutečný člověk."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "Pokusili jste se znovu odeslat formulář. Prosím, začněte znovu."
+
+msgid "Are you a real person?"
+msgstr "Jste skutečný člověk?"
+
+msgid "Database failure writing authentication key."
+msgstr "Při zápisu ověřovacího klíče selhala databáze."
+
+msgid "Database Error"
+msgstr "Chyba databáze"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "Selhal test abychom zjistili, zda jste osoba a ne počítač. Opakujte akci."
+
+msgid "Test failed"
+msgstr "Test selhal"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "Váš Kód požadavku nebyl nalezen nebo již byl použit."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "Můžete stále posílat soubory přímo z hlavní nabídky nebo požádat o nový kód žádosti."
+
+msgid "Request Code Used"
+msgstr "Kód požadavku byl již použitý"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "Platnost kódu požadavku vypršela. Prosím, začněte znovu."
+
+msgid "Request Code Expired"
+msgstr "Platnost Kódu požadavku vypršela."
+
+msgid "Request Error"
+msgstr "Chyba požadavku"
+
+msgid "Sending the request email failed."
+msgstr "Odeslání e-mailu s Kódem požadavku se nezdařilo."
+
+msgid "Email Error"
+msgstr "Chyba e-mailu"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "Nepodařilo se znovu odeslat zásilku %s."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Nelze znovu odeslat zásilku"
+
+msgid "Unlocked %s."
+msgstr "Odemčeno %s."
+
+msgid "Unknown user"
+msgstr "Neznámý uživatel"
+
+msgid "Request Code Error"
+msgstr "Chyba Kódu požadavku"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Zkontrolujte, zda jste Kód požadavku zadali správně nebo požádejte o nový Kód požadavku."
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Buď vyplňte tento formulář, nebo stiskněte tlačítko zpět v prohlížeči a znovu zadejte svůj Kód požadavku."
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "Pokusili jste se znovu odeslat formulář. Vraťte se do hlavní nabídky a začněte znovu."
+
+msgid "Verify Error"
+msgstr "Chyba ověření"
+
+msgid "Sending the verification email failed."
+msgstr "Odeslání ověřovacího e-mailu se nezdařilo."
+
+msgid "Could not open MySQL database on %s"
+msgstr "Nemohu otevřít databázi MySQL na %s"
+
+msgid "Failed to add login record"
+msgstr "Přidání záznamu přihlášení se nezdařilo."
+
+msgid "Failed to delete login records"
+msgstr "Odstranění přihlašovacích záznamů se nezdařilo."
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "Nepodařilo se zahájit blok transakce při aktualizaci regexps"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "Nepodařilo se vrátit zpět po přerušení odstranění starých regexps"
+
+msgid "Failed to delete old regexps"
+msgstr "Odstranění starých regexps se nezdařilo"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "Selhalo vrácení po přerušení přidání regexp"
+
+msgid "Failed to add regexp"
+msgstr "Nepodařilo se přidat regexp"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "Proběhlo přerušení přidávání uživatele %s, protože tento uživatel již existuje."
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "Nepodařilo se zahájit blok transakce při přidávání uživatele %s"
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "Selhalo vrácení po přerušení přidávání uživatele %s."
+
+msgid "Failed to add user %s"
+msgstr "Přidání uživatele %s se nezdařilo."
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "Zrušení odstranění uživatele %s, protože tento uživatel neexistuje"
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "Zrušení aktualizace uživatele %s, protože tento uživatel neexistuje"
+
+msgid "Failed to update password for user %s"
+msgstr "Nepodařilo se aktualizovat heslo uživatele %s"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Zkontrolovat uživatele: Nelze se připojit k žádnému ověřovacímu serveru; nelze ověřit uživatele."
+
+msgid "LDAP Error"
+msgstr "Chyba protokolu LDAP"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "Litujeme, nejste oprávněni používat tuto službu."
+
+msgid "Authorization Failed"
+msgstr "Autorizace selhala"
+
+msgid "Check User: No AD servers configured."
+msgstr "Kontrola uživatele: Nebyly nakonfigurovány žádné servery AD."
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "Pomocí tlačítka zpět v prohlížeči se vraťte zpět a opravte chybu před dalším pokusem."
+
+msgid "Please notify the system administrator."
+msgstr "Oznamte to prosím správci systému."
+
+msgid "%d bytes"
+msgstr "%d bytes"
+
+msgid "%.1f KB"
+msgstr "%.1f KB"
+
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+msgid "%.1f GB"
+msgstr "%.1f GB"
+
+msgid "%.1f TB"
+msgstr "%.1f TB"
+
+msgid "The preferences are not configured properly!"
+msgstr "Předvolby nejsou správně nakonfigurovány!"
+
+msgid "Invalid Configuration"
+msgstr "Neplatná konfigurace"
+
+msgid "Could not create ZendTo database handle"
+msgstr "Nelze vytvořit popisovač databáze ZendTo"
+
+msgid "Please note"
+msgstr "Vezměte prosím na vědomí"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "ZendTo preferences. php nemá vybranou metodu autentizace."
+
+msgid "Authentication Error"
+msgstr "Chyba ověřování"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "Předvolby nejsou správně nakonfigurovány (jsou prázdné)!"
+
+msgid "Mail Error"
+msgstr "Chyba pošty"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "Nelze zapisovat do souboru protokolu %s. Ujistěte se, že uživatel webového serveru může zapisovat do souboru protokolu, jak je nastaveno v preferences. php"
+
+msgid "Configuration Error"
+msgstr "Chyba konfigurace"
+
+msgid "The username or password was incorrect."
+msgstr "Uživatelské jméno nebo heslo nebylo správné."
+
+msgid "Could not read local domain list file %s"
+msgstr "Nemohu přečíst soubor seznamu místních domén %s"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "Je nutné zadat hodnotu pro následující klíč předvolby: %s"
+
+msgid "Undefined Preference Key"
+msgstr "Nedefinovaný klíč předvoleb"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "Dešifrování a stažení souboru se nezdařilo. Pravděpodobně jste heslo zadali nesprávně. Opakujte prosím akci."
+
+msgid "Decryption failed"
+msgstr "Dešifrování selhalo"
+
+msgid "one of the recipients"
+msgstr "jeden z příjemců"
+
+msgid "Not calculated"
+msgstr "Nebyl vypočten"
+
+msgid "%s has picked up your drop-off!"
+msgstr "%s si vyzvedl(a) vaši zásilku!"
+
+msgid "%s has dropped off a file for you"
+msgstr "%s pro Vás uložil(a) zásilku"
+
+msgid "%s has dropped off files for you"
+msgstr "%s pro Vás uložil(a) zásilku"
+
+msgid "%d days"
+msgstr "%d dnů"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "ID zásilky nebo Ověřovací kód byly zadány nesprávně a nebo zásilka expirovala. Zkontrolujte zadané údaje. Pamatujte, že zásilky musí být vyzvednuty před expirací, pak jsou automaticky definitivně smazány."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "Neplatné ID zásilky nebo Ověřovací kód"
+
+msgid "Upload Error"
+msgstr "Chyba při nahrávání"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "Zdá se, že existuje více než jedna zásilka s tímto ID."
+
+msgid "Invalid Claim ID"
+msgstr "Neplatné ID zásilky"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "Adresář, který obsahuje soubory této zásilky zmizel."
+
+msgid "Drop-off Directory Not Found"
+msgstr "Nepodařilo se nalézt adresář zásilky"
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Nepodařilo se přečíst ověřovací informace. Vaše zásilka pravděpodobně překročila lhůtu platnosti. Začněte prosím znovu."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Admin: Install the PHP module/rpm \"mbstring\"."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "E-mailová adresa příjemce '%s' je neplatná."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "Musíte být přihlášeni jako uživatel %1$s za účelem uložení zásilky pro uživatele mimo síť %1$s."
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Vraťte se do hlavního menu %s pro přihlášení a zkuste to znovu."
+
+#, fuzzy
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "Musíte být přihlášeni jako uživatel %1$s za účelem uložení zásilky pro uživatele mimo síť %1$s."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "Ve formuláři musíte zadat všechny e-mailové adresy příjemců."
+
+msgid "There was an error while uploading '%s'."
+msgstr "Během nahrávání '% s' došlo k chybě."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "Velikost souboru příjemce překročila limit velikosti stanovený na serveru."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "Velikost souboru příjemce překročila limit velikosti (maximum je %s)."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Soubor pro příjemce byl odeslán pouze částečně. Vaše připojení k síti mohlo být přerušeno během pokusu o nahrání."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Nebyl nahrán žádný soubor pro příjemce."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "Server nebyl nakonfigurován s dočasnou složkou pro nahrávání."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "Dočasná složka serveru je chybně nakonfigurována."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Soubor nelze přečíst."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "Musíte zvolit alespoň jeden soubor, který chcete nahrát."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "Velikost souboru překročila limit velikosti stanovený na serveru."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "Soubor '% s' byl příliš velký. Každá zásilka může být nejvýše %s."
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Soubor pro příjemce byl odeslán pouze částečně. Vaše připojení k síti mohlo být přerušeno během pokusu o nahrání."
+
+msgid "No file was actually dropped-off."
+msgstr "Žádný soubor nebyl uložen."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "Celková velikost souborů překračuje maximální hodnotu pro jedno zásilku. Velikost zásilky může být nejvýše %s."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "Jeden nebo více souborů, které jste ukládaly, byl infikován virem. Uložení bylo ukončeno. Vyčistěte si soubory a zkuste to znovu."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "Pokus o virovou kontrolu zásilky selhal."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "Zásilka byla příliš velká, aby se dala šifrovat, takže byla uložena nezašifrovaná. Pokud si to nepřejete okamžitě odstraňte zásilku ze složky Odeslané."
+
+msgid "Drop-off not encrypted"
+msgstr "Zásilka není zašifrována"
+
+msgid "You must specify your own email address in the form."
+msgstr "Ve formuláři musíte zadat vlastní e-mailovou adresu."
+
+msgid "The sender email address you entered was invalid."
+msgstr "Zadaná emailová adresa odesílatele je neplatná."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Jedinečný adresář, který obsahuje vaše soubory nelze vytvořit."
+
+msgid "Encryption failed."
+msgstr "Šifrování selhalo"
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Vypadá to, že kvůli nedostatku volného místa na serveru zásilka nebyla uložena. Volné místo: %s."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "Problémy při pokusu o uložení '% s' do adresáře."
+
+msgid "Could not add recipients to the database."
+msgstr "Nelze přidat příjemce do databáze."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "Problémy při pokusu o uložení informací pro '% s'."
+
+msgid "Library"
+msgstr "Knihovna"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr "Nelze odeslat email příjemci %s. Vaše zásilka však byla uložena pod ID zásilky %s."
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Nelze přidat zásilku do databáze."
+
+msgid "Unable to begin database transaction."
+msgstr "Nelze spustit databázovou transakci."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Nelze se připojit k žádnému ověřovacímu serveru, nelze ověřit uživatele."
+
+msgid "0 bytes"
+msgstr "0 bytes"
+
+msgid "1 byte"
+msgstr "1 byte"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Formulář nelze volat takto, vraťte se do hlavního menu."
+
+msgid "Internal Error"
+msgstr "Interní chyba"
+
+msgid "You must specify your name in the form."
+msgstr "Musíte zadat své jméno ve formuláři."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "Musíte zadat e-mailovou adresu příjemce ve formuláři."
+
+msgid "Your email address you entered was invalid."
+msgstr "Zadaná e-mailová adresa byla neplatná."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "Zadaná e-mailová adresa příjemce je neplatná."
+
+msgid "Database failure writing request information."
+msgstr "Selhání databáze během zápisu."
+
+msgid "Could not create the new database."
+msgstr "Nelze vytvořit novou databázi."
+
+msgid "Could not create the tables in the new database."
+msgstr "Nelze vytvořit tabulky v nové databázi."
+
+msgid "Could not open the database."
+msgstr "Nelze otevřít databázi."
+
+msgid "Database Error creating %s table"
+msgstr "Chyba databáze při vytváření tabulky %s"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Nepodařilo se přečíst cokoli z login logu"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d dny(ů) and %2$d hodin(y)"
+
+msgid "%d hours"
+msgstr "%d hodin(y)"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d hodin(y) and %2$d minut(y)"
+
+msgid "%d minutes"
+msgstr "%d minut(y)"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d minut(y) and %2$d sekund(y)"
+
+msgid "%d second"
+msgstr "%d sekunda"
+
+msgid "%d seconds"
+msgstr "%d sekund(y)"
+
+msgid "The email address you entered was invalid."
+msgstr "Zadaná e-mailová adresa je neplatná."
+
+msgid "You are trying to drop off some files"
+msgstr "Pokoušíte se uložit soubory"
+
+msgid "About the %1 Service..."
+msgstr "O službě %1 ..."
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "Zasílání velkých příloh v emailových zprávách přetěžuje emailové servery i klientské aplikace (jako je např. Outlook nebo klient v mobilním telefonu), které nejsou pro zpracování velkých objemů dat v jedné zprávě navrženy. Stahovaní takových emailových zpráv může při pomalejším připojení trvat velmi dlouho a zároveň blokovat provoz e-mailových serverů ostatním uživatelům. V některých případech může dojít k omezení služeb serveru, výpadkům jeho provozu nebo neočekávanému chování emailového klienta, operačního systému mobilního zařízení nebo zálohovacího systému. Velikost emailových zpráv je z těchto důvodů limitována řadou technických omezení na serverech, v klientských programech i komunikačních protokolech používaných k přenosu elektronické pošty internetem. Pro sdílení souboru a příloh od velikosti několika MB používejte proto raději %1, kde jsou soubory dočasně uloženy a zpřístupněny požadovaným příjemcům bezpečnou a technicky výhodnější cestou."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "Existují dvě skupiny uživatelů."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "Privilegovaní uživatelé mohou do systému ukládat zásilky pro libovolné příjemce, ať už vlastní kolegy, kteří jsou také privilegovaní nebo pro vnější uživatele. Vnější uživatelé smějí ukládat zásilky určené pouze pro privilegované uživatele, tedy pouze pro adresáty spojené s organizací. Co je to zásilka? "
+
+msgid "drop-off"
+msgstr "zásilka"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "jeden nebo více souborů nahraných do služby %1 jako jedna položka pro doručení jednomu nebo více příjemcům"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Existuje více způsobů, jak mohou uživatelé uložit více souborů do jediné zásilky: "
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Přetáhnout více souborů najednou do stránky pro nahrání."
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "Kliknutím na tlačítko\"Přidat soubory\" na stránce pro uložení zásilky a vyberte jeden nebo více souborů najednou pomocí kombinace Shift+klik  Ctrl+klik (Cmd+klik na Mac)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Spojit či zkomprimovat více souborů do jediného balíčku připojeného k zásilce. "
+
+msgid "There are many ways to archive and compress files:"
+msgstr "To lze provést více způsoby:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "v počítačích Apple mohou uživatelé vybrat soubory v aplikaci Finder a zvolit Compress (viz menu File)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "uživatelé Windows mohou vytvořit komprimovanou složku nebo využít komprimační aplikaci jako je 7-Zip"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "uživatelé Linux/Unix systémů mohou použít \"PeaZip\" or \"File Roller\""
+
+msgid "Creating a Drop-off"
+msgstr "Vytvoření zásilky"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Pokud chtějí uživatelé systému vytvořit zásilku, vloží údaje k identifikaci sebe jako odesílatele (jméno, organizaci, a svou emailovou adresu); identifikační údaje adresáta (jméno a emailovou adresu); a vybere soubory, které mají být v zásilce odeslány. Pokud jsou soubory úspěšně nahrané do systému, je příjemci (nebo příjemcům) automaticky odeslán email s upozorněním na zásilku, který zároveň obsahuje odkaz pro její vyzvednutí. Současně se ukládají další informace, jako IP adresa a název počítače z kterého byla zásilka vytvořena, které pomáhají příjemci ověřit autenticitu zásilky."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "Vyzvednutí zásilky od příjemce může být provedeno pouze s ID zásilky a Ověřovacím kódem."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "V průběhu ukládání zásilky si můžete vybrat, zda se zpráva příjemci odešle automaticky či nikoliv."
+
+msgid "Making a Pick-up"
+msgstr "Vyzvednutí zásilky"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Existují dva způsoby, jak vyzvednout soubory uložené v zásilce: "
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Všichni uživatelé, kteří vytvořili nebo obdrželi nějakou zásilku mohou přistoupit k zásilce kliknutím na odkaz v notifikační emailové zprávě."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Privilegovaní uživatelé mohou po přihlášení k systému zobrazit svoji úložnu, obsahující seznam zásilek , které byly v systému pro ně zanechány. Přihlášení uživatelé tak mohou přistupovat ke svým zásilkám i bez použití notifikační zprávy."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "Při procházení zásilek, můžete zobrazit: "
+
+msgid "The list of files that were uploaded"
+msgstr "Seznam uložených souborů"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "Informace o odesílateli i o zamýšlených příjemcích"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "Identifikační údaje počítače, ve kterém byla zásilka vytvořena"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "V některých případech i záznamy o vyzvednutí uložené zásilky"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "Na vyzvednutí uložené zásilky mají uživatelé %1dní. Zásilky starší %1 dní jsou ze systému každou noc automaticky odstraněny."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Všechny nahrávané soubory jsou automaticky skenovány proti škodlivému kódu a virům. Přesto musí příjemci k obsahu zásilek přistupovat s opatrností! Vždy otevírejte pouze zásilky, které očekáváte, od odesílatelů které znáte! V případě pochybností kontaktujte před otevřením zásilky - tedy před stažením a otevřením souborů - autora zásilky! "
+
+msgid "Resumable Downloading of Files"
+msgstr "Navázání na přerušené stahování souboru"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "Většina prohlížečů podporuje navázání na přerušené stahování. "
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "Služba %1 podporuje na straně serveru navázání stahování dle standardu HTTP 1.1."
+
+msgid "Size Limitations on Uploads"
+msgstr "Limity úschovny"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "Možnost nahrávat soubory větší než 2 GB závisí na použitém prohlížeči."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Pokud je to možné, použijte moderní 64bitový prohlížeč na 64bitovém operačním systému."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "Služba %1 má nastaveny limity na celkovou velikost zásilky, které nesouvisí s použitým prohlížečem. V žádné zásilce nesmí být překročena velikost 20.0 GB pro jediný soubor a zároveň 20.0 GB pro jednu celou zásilku."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "V případě že narazíte při použití na tyto potíže: "
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Prohlížeč hlásí ztrátu připojení po stažení podstatné části velkého souboru"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Je zobrazena chybová stránka s chybovou zprávou Stránku nelze zobrazit"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "Může to být tím, že používáte příliš pomalou internetovou linku, a soubor nestihnete stáhnout. Ze strany serveru dojde k přerušení stahování po přibližně 2 hodinách."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "Na základě originálu Perl UD Dropbox software Dokea Scotta."
+
+msgid "Version %1 has been developed by %2."
+msgstr "Verzi %1 vyvinul %2."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Zadejte prosím ID zásilky a Ověřovací kód, které vám byly zaslány."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Zadejte prosím ID zásilky a Ověřovací kód."
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Pokud vám odesílatel předal Ověřovací kód zadejte jej."
+
+msgid "Claim ID"
+msgstr "ID zásilky"
+
+msgid "Claim Passcode"
+msgstr "Ověřovací kód"
+
+msgid "Pick-up Files"
+msgstr "Vyzvednout zásilku"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "Zásilka ID %1 byla úspěšně odebrána."
+
+msgid "Unable to remove the drop-off"
+msgstr "Nepodařilo se odebrat zásilku"
+
+msgid "You may have already deleted it."
+msgstr "Možná jste ji již smazali."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Toto je automatická zpráva, která vám byla odeslána službou %1."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Toto je upozornění, že jste si nevyzvedli zásilku."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "Platnost zásilky vyprší za %1. Po uplynutí této doby bude automaticky odstraněna."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1 &lt;%2&gt; pro vás uložil(a) zásilku."
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1 &lt;%2&gt; pro vás uložil(a) zásilku %3."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "POKUD ODESÍLATELI DŮVĚŘUJETE a očekáváte od něho zaslání souborů, můžete si zásilku vyzvednout kliknutím na následující odkaz (případně zkopírováním odkazu do prolížeče):"
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong>Tato zásilka je zašifrována.</strong> Pro stažení zásilky musíte znát heslo."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "Na vyzvednutí zásilky máte %1. Po uplynutí této lhůty platnost odkazu vyprší."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Pokud si přejete kontaktovat odesílatele zásilky, jednoduše odpovězte na tuto zprávu."
+
+msgid "The sender has left you a note:"
+msgstr "Poznámka:"
+
+msgid "Full information about the drop-off:"
+msgstr "Úplné informace o zásilce:"
+
+msgid "Sent separately"
+msgstr "Odesláno samostatně"
+
+msgid "Date of Drop-off"
+msgstr "Datum uložení zásilky"
+
+msgid "Sender"
+msgstr "Odesílatel"
+
+msgid "Name"
+msgstr "Jméno"
+
+msgid "Organization"
+msgstr "Organizace"
+
+msgid "Email Address"
+msgstr "E-mailová adresa"
+
+msgid "IP Address"
+msgstr "IP adresa"
+
+msgid "File"
+msgstr "Soubor"
+
+msgid "Files"
+msgstr "Soubory"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Size"
+msgstr "Velikost"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 Checksum"
+
+msgid "Content Type"
+msgstr "Typ obsahu"
+
+msgid "a file"
+msgstr "soubor"
+
+msgid "%1 files"
+msgstr "%1 soubory(ů)"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> pro vás uložil(a) zásilku."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "POKUD ODESÍLATELI DŮVĚŘUJETE a očekáváte od něho zaslání souborů, můžete si zásilku vyzvednout kliknutím na následující odkaz (případně zkopírováním odkazu do prolížeče):"
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** Tato zásilka je zašifrována. **\n"
+"Pro stažení zásilky musíte znát heslo."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "Na vyzvednutí zásilky máte %1. Po uplynutí této lhůty platnost odkazu vyprší. Pokud si přejete kontaktovat odesílatele zásilky, jednoduše odpovězte na tuto zprávu."
+
+msgid "Claim ID:          %1"
+msgstr "ID zásilky:          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Ověřovací kód:    %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Datum uložení zásilky:  %1"
+
+msgid "Name:            %1"
+msgstr "Jméno:            %1"
+
+msgid "Organization:    %1"
+msgstr "Organizace:    %1"
+
+msgid "Email Address:   %1"
+msgstr "E-mailová adresa:   %1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP adresa:      %1  %2"
+
+msgid "Name:             %1"
+msgstr "Jméno:             %1"
+
+msgid "Description:      %1"
+msgstr "Popis:      %1"
+
+msgid "Size:             %1"
+msgstr "Velikost:             %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 Checksum: %1"
+
+msgid "Content Type:     %1"
+msgstr "Typ obsahu:     %1"
+
+msgid "Picked up"
+msgstr "Vyzvednuto"
+
+msgid "All"
+msgstr "Vše"
+
+msgid "Search:"
+msgstr "Najít:"
+
+msgid "Show _MENU_ entries"
+msgstr "Zobrazit _MENU_ položek"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Zobrazeno _START_ až _END_ z _TOTAL_ položek"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Zobrazeno 0 až 0 z 0 položek"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(vybráno z _MAX_ záznamů)"
+
+msgid "No matching records found"
+msgstr "Nebyly nalezeny odpovídající záznamy"
+
+msgid "No data available in table"
+msgstr "V tabulce nejsou k dispozici žádná data"
+
+msgid "First"
+msgstr "První"
+
+msgid "Previous"
+msgstr "Předchozí"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "Last"
+msgstr "Poslední"
+
+msgid "Recipient"
+msgstr "Příjemce"
+
+msgid "Created"
+msgstr "Vytvořeno"
+
+msgid "Encrypted"
+msgstr "Šifrováno"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr "\"%1\" ve sloupci \"%2\" <em>nezaručuje</em>, že všechny soubory zásilky byly úspěšně a kompletně staženy."
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr "Ale \"%1\" znamená, že <em>nebyly</em> staženy."
+
+msgid "%1 = Encrypted by %2"
+msgstr "%1 = Zásilka je šifrována službou %2"
+
+msgid "%1 = Not encrypted by %2"
+msgstr "%1 = Zásilka není šifrována službou %2"
+
+msgid "Yes"
+msgstr "Ano"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "Outbox"
+msgstr "Odeslané"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Kliknutím na zásilku zobrazíte informace a soubory, které obsahuje."
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "V tuto chvíli nemáte žádné zásilky."
+
+msgid "Copyright &copy; %1"
+msgstr "Copyright &copy; %1"
+
+msgid "About %1"
+msgstr "O službě %1"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+
+msgid "Version %1"
+msgstr "Verze %1"
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "Aktuálně jste přihlášen jako <em>%1</em>"
+
+msgid "Return to the %1 main menu"
+msgstr "Zpět k hlavní nabídce %1"
+
+msgid "Logout"
+msgstr "Odhlásit"
+
+msgid "%1 Username"
+msgstr "%1 Uživatelské jméno"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Login"
+msgstr "Přihlášení"
+
+msgid "Privacy Consent"
+msgstr "Privacy Consent"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Tato služba používá soubory cookie a také vaše jméno a e-mailovou adresu."
+
+msgid "I agree"
+msgstr "Souhlasím"
+
+msgid "I do not agree"
+msgstr "Nesouhlasím"
+
+msgid "Home"
+msgstr "Domů"
+
+msgid "Inbox"
+msgstr "Příchozí"
+
+msgid "Please login above."
+msgstr "Přihlaste se, prosím výše."
+
+msgid "Authentication"
+msgstr "Autentizace"
+
+msgid "You have been logged out."
+msgstr "Byl jste odhlášen."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "Pro vyšší bezpečnost zavřete toto okno prohlížeče, případně vypněte prohlížeč."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Za okamžik budete přesměrován k <a href=\"%1\">hlavní nabídce</a>."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "Posledních %1 řádků %2 logu, nejaktuálnější jako první"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "Používáte zastaralou nepodporovanou verzi aplikace prohlížeče Internet Explorer"
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Tento web nebude pracovat správně s vaším webovým prohlížečem."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Používejte prosím nejnovější verzi webového prohlížeče."
+
+msgid "Drop-off"
+msgstr "Poslat"
+
+msgid "Pick-up"
+msgstr "Vyzvednout"
+
+msgid "Request a Drop-off"
+msgstr "Vyžádání zásilky"
+
+msgid "Show All Drop-offs"
+msgstr "Zobrazit všechny zásilky"
+
+msgid "Unlock Users"
+msgstr "Odblokovat uživatele"
+
+msgid "System Statistics"
+msgstr "Statistiky systému"
+
+msgid "System Log"
+msgstr "Systémový log"
+
+msgid "You may perform the following activities:"
+msgstr "Nyní můžete využít jedné z těchto služeb:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Poslat soubor(y)."
+
+msgid "Ask another person to send you some files."
+msgstr "Požádat někoho o nahrání souborů."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Vyzvednout soubor(y)."
+
+msgid "View all drop-offs in the database"
+msgstr "Zobrazí všechny zásilky v databázi"
+
+msgid "Unlock locked-out users"
+msgstr "Odblokuje zablokované uživatele"
+
+msgid "View daily statistics for the service"
+msgstr "Zobrazí statistiky systému"
+
+msgid "View log file"
+msgstr "Zobrazí log"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "Pokud jste uživatelem sítě %1, přihlašte se prosím."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "Pokud jste uživatelem sítě %1, přihlašte se zde:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr "<strong>Uživatelé %1 by se měli nejprve přihlásit.</strong>"
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "Přihlášením získáte plným přístup k funkcím služby. <br/>Při ukládání zásilek již <strong>nebude vyžadováno ověření e-mailu.</strong>"
+
+msgid "Anyone may perform the following activities:"
+msgstr "Pokud nepatříte mezi interní uživatele, zvolte prosím jednu z následujících možností:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "Poslat zásilku (<em>upload</em>) pro uživatele %1 (<strong>vyžaduje ověření e-mailu</strong>)."
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Vyvednout zásilku (<em>download</em>)."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "Uživatelé sítě %1: můžete se přihlásit pomocí uživatelského jména a hesla a posílat soubory komukoli uvnitř organizace nebo mimo organizaci"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "Uživatelé mimo síť %1: nemůžete se přihlásit, ale můžete posílat soubory uživatelům %1 pokud znáte jejich e-mailovou adresu. Začněte kliknutím na tlačítko \"%3 \"."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "Uživatelé sítě %1, kteří chtějí, aby jim osoba mimo síť %1 poslala soubory, mohou po přihlášení využít možnost \"Vyžádání zásilky\"."
+
+msgid "The request created will be valid for %1."
+msgstr "Požadavek je platný %1."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "%1 je služba určená pro bezpečnou výměnu velkých datových souborů až %2."
+
+msgid "How secure is %1?"
+msgstr "Jak bezpečná je služba %1?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "Soubory jsou automaticky odstraněny z %1 %2 dnů po jejich nahrání."
+
+msgid "Scanning for viruses..."
+msgstr "Antivirová kontrola..."
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "__CHARS__ too long"
+msgstr "__CHARS__ too long"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ left"
+
+msgid "Too short!"
+msgstr "Příliš krátké!"
+
+msgid "Entries do not match"
+msgstr "Hesla se neshodují"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Klikněte zde pro Přidání souborů nebo je Přetáhněte do tohoto okna."
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Pokud opustíte tuto stránku, bude nahrávání zásilky přerušeno."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr ""
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "Doba trvání výpočtu pro vaši zásilku by byla příliš dlouhá."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "Pouze u zásilek velikých maximálně __MAXSIZE__ může být vypočítán kontrolní součet."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr "Všechny soubory budou automaticky zašifrovány. Zašifrování souborů si vyžádal %1."
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "Doba šifrování vaší zásilky by byla příliš dlouhá."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Pouze zásilky veliké maximálně __MAXSIZE__ mou být šifrovány."
+
+msgid "MB"
+msgstr "MB"
+
+msgid "KB"
+msgstr "KB"
+
+msgid "Remove file"
+msgstr "Odstranit soubor"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Doba šifrování vaší zásilky by byla příliš dlouhá, takže šifrování nebude použito. Jestliže si přejete šifrovat vaši zásilku, snižte velikost zásilky pod __MAXSIZE__ a vyberte \"Zašifrovat soubor(y)\" znovu."
+
+msgid "Please enter a valid email address."
+msgstr "Zadejte prosím platnou e-mailovou adresu"
+
+msgid "Remove selected recipient"
+msgstr "Odstranit vybraného příjemce"
+
+msgid "Please add at least one file first!"
+msgstr "Nejprve přidejte alespoň jeden soubor!"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "Velikost vašich souborů přesahuje maximální možnou velikost pro jednu zásilku (__MAXTOTALSIZE__)."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "Soubor __NUMBER__ je větší než maximální možná velikost souboru v zásilce (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr ""
+
+msgid "Scanning"
+msgstr "Skenování"
+
+msgid "Checksumming"
+msgstr "Kontrolní součet"
+
+msgid "Encrypting"
+msgstr "Šifrování"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Omlouvám se, ale nepodařilo se uložit soubory!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Pamatujte, že nelze uložit adresáře, pouze soubory."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Nahráno: __PERCENT__%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr ""
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr ""
+
+msgid "PLEASE NOTE"
+msgstr "UPOZORNĚNÍ"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "Soubory nahrávané na %1 jsou skenovány na přítomnost škodlivého kódu a virů."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "Pokud nahráváte citlivé informace, doporučujeme Vám <strong>Zašifrovat soubor(y)</strong>."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Tato webová stránka vám umožní uložit jeden nebo více souborů pro každého uživatele %1 nebo externího uživatele. Příjemce obdrží automatický e-mail obsahující informace, které zadáte níže, a pokyny pro stažení souboru."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Tato webová stránka vám umožní nahrát jeden nebo více souborů pro uživatele %1. Příjemce obdrží automatický e-mail obsahující informace, které jste zadali níže a pokyny pro stahování souboru. Vaše IP adresa bude také zaznamenána a odeslána příjemci pro účely potvrzení totožnosti."
+
+msgid "From"
+msgstr "Od"
+
+msgid "To"
+msgstr "Komu"
+
+msgid "Add Recipients"
+msgstr "Přidat příjemce"
+
+msgid "Add One"
+msgstr "Jeden příjemce"
+
+msgid "Add Many"
+msgstr "Více příjemců"
+
+msgid "Adds to your address book"
+msgstr "Přidat do vašeho adresáře"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Add & Close"
+msgstr "Přidat a Zavřít"
+
+msgid "Bulk add recipients"
+msgstr "Hromadné přidání příjemců"
+
+msgid "One recipient per line, for example:"
+msgstr "Jeden příjemce na jeden řádek, například:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Jméno příjemce email@example.com"
+
+msgid "Verify"
+msgstr "Ověřit"
+
+msgid "Encryption Passphrase"
+msgstr "Heslo pro šifrování"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "Toto heslo nebude příjemci(ům) odesláno.<br/>Musíte ho odeslat samostatně."
+
+msgid "Passphrase"
+msgstr "Heslo"
+
+msgid "And again"
+msgstr "Heslo znovu"
+
+msgid "Hide characters"
+msgstr "Skrýt znaky"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Short note to the Recipients"
+msgstr "Poznámka pro příjemce"
+
+msgid "Encrypt every file"
+msgstr "Zašifrovat soubor(y)"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Vypočítat SHA-256 kontrolní součet pro každý soubor"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Zaslat e-mail jakmile si příjemce vyzvedne soubory"
+
+msgid "Send email message to recipients"
+msgstr "Odeslat e-mailovou zprávu příjemcům"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "která obsahuje ID Zásilky a Ověřovací kód"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
+
+msgid "Add Files"
+msgstr "Přidat soubory"
+
+msgid "and/or select a file..."
+msgstr "a/nebo vyberte soubor ..."
+
+msgid "Filename"
+msgstr "Jméno souboru"
+
+msgid "Uploading..."
+msgstr "Nahrávání ..."
+
+msgid "Drop-off Files"
+msgstr "Nahrát do zásilky"
+
+msgid "Drop to<br/>Add Files"
+msgstr "Nahrávání souboru(ů)<br>do zásilky"
+
+msgid "(It will copy, not move)"
+msgstr "(soubory budou zkopírovány)"
+
+msgid "No file was chosen for download."
+msgstr "Ke stažení nebyl vybrán žádný soubor."
+
+msgid "Please prove you are a person"
+msgstr "Omlouváme se, ale je nutné ověřit, že si zásilku vyzvedává adresát a nejedná se o automatizovaný útok."
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "Abychom ověřili, že jste <em>autorizovaný příjemce</em>, vyplňte prosím výzvu Captcha a poté klikněte na \"Vyzvednout zásilku\":"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "Zásilka, kterou jste uložili (ID: %1) byla vyzvednuta."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "Soubor \"<span class=\"mono\">%1</span>\" byl vyzvednut."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1 si vyzvedl(a) zásilku z %2."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "Soubor \"<span class=\"mono\">%1</span>\" si vyzvedl(a) %2."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Nebudete upozorněni na žádné další vyzvednutí souborů v této zásilce příjemcem."
+
+msgid "Note"
+msgstr "Poznámka"
+
+msgid "The file %1 was picked up."
+msgstr "Soubor %1 byl vyzvednut."
+
+msgid "The file %1 was picked up by %2."
+msgstr "Soubor %1 si vyzvedl(a) %2."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Nebudete upozorněni na žádné další vyzvednutí souborů v této zásilce příjemcem."
+
+msgid "Global Drop-off List"
+msgstr "Seznam všech zásilek"
+
+msgid "There are no drop-offs available at this time."
+msgstr "V současné době nejsou k dispozici žádné zásilky."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "V současné době nejsou k dispozici žádné zásilky."
+
+msgid "This is a request from %1 of %2."
+msgstr "Toto je požadavek od uživatele %1, %2."
+
+msgid "This is a request from %1."
+msgstr "Toto je požadavek od uživatele %1."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Prosím, klikněte na níže uvedený odkaz a nahrajte požadovaný soubor nebo soubory."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "Odkaz je platný pouze %1 od doby odeslání tohoto e-mailu."
+
+msgid "All files you upload will be automatically encrypted."
+msgstr "Všechny posílané soubory budou automaticky zašifrovány."
+
+msgid "More information is in the note below."
+msgstr "Další informace naleznete v poznámce níže."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "Pokud si přejete kontaktovat uživatele %1 jednoduše odpovězte na tuto zprávu."
+
+msgid "Click to copy link to clipboard"
+msgstr "Zkopírovat odkaz do schránky"
+
+msgid "Copied"
+msgstr "Zkopírováno"
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "Požadavek na uložení zásilky byl odeslán uživateli %1, %2."
+
+msgid "It is valid for %1."
+msgstr "Platnost %1."
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr "Všechny soubory, které vám budou zaslány, budou zašifrovány právě zadaným heslem. Nezapomeňte zadané heslo, jinak nebudete mít přístup k těmto souborům."
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Pokud chce příjemce odeslat soubory předtím než dorazí požadavek, může"
+
+msgid "Go to %1"
+msgstr "Jít na %1"
+
+msgid "Select \"Drop-off Files\""
+msgstr "Zvolit \"Poslat\""
+
+msgid "Enter the request code \"%1\""
+msgstr "Vložit Kód požadavku \"%1\""
+
+msgid "Click on the \"Next\" button"
+msgstr "Kliknout na tlačítko \"Další\""
+
+msgid "You may close this window."
+msgstr "Toto okno můžete zavřít."
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "Požadavek na uložení zásilky byl odeslán uživateli %1, %2."
+
+msgid "The link to give them is %1"
+msgstr "Odkaz pro předání je %1"
+
+msgid "Send the Request"
+msgstr "Odeslat požadavek"
+
+msgid "Show the Link"
+msgstr "Zobrazit odkaz"
+
+msgid "Please enter the recipient's name first!"
+msgstr "Nejprve zadejte jméno příjemce!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Nejprve zadejte e-mailovou adresu příjemce!"
+
+msgid "Please enter the email subject first!"
+msgstr "Nejprve zadejte předmět emailu!"
+
+msgid "Your note is too long!"
+msgstr "Vaše poznámka je příliš dlouhá!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr "Volitelné: Pokud vyberete tuto možnost a nastavíte přístupové heslo, bude zásilka šifrována. Osoba odesílající soubory nebude znát přístupové heslo."
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr "Tato volba bývá obvykle vybrána. Pokud ji zrušíte, odkaz a pokyny nebudou zaslány e-mailem. Místo toho se vám zobrazí pouze odkaz, který potřebuje příjemce zásilky a můžete jej odeslat jiným způsobem."
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Tato webová stránka vám umožní odeslat požadavek osobám, po kterých požadujete nahrání souboru(ů). Příjemce obdrží automatický e-mail obsahující informace, které zadáte níže a instrukce pro nahrání souboru(ů)."
+
+msgid "Email(s)"
+msgstr "E-mail(y)"
+
+msgid "Subject"
+msgstr "Předmět"
+
+msgid "Send email"
+msgstr "Odeslat email"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Níže uvedený text bude odeslán emailem příjemci, kterého žádáte o nahrání souborů. Odkaz a instrukce pro nahrání budou do emailu doplněny automaticky."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr "Nezapomeňte toto přístupové heslo!"
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "Zásilka byla úspěšně znovu odeslána příjemci(ům)."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Nemohu znovu odeslat zásilku."
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Všechny soubory jsou přenášeny přes síť bezpečně šifrované"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Pokud odesíláte osobní nebo důvěrná data, zaškrtněte políčko \"Zašifrovat soubor(y)\" při vytváření nové zásilky. Heslo, které zadáte, pak musí být použito při vyzvednutí zásilky. Heslo není uloženo a nelze ho při ztrátě obnovit. Bez hesla nelze přistupovat k obsahu zásilky"
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "Všechny soubory nahrané a dočasně uložené v %1 jsou uchovávány na zařízeních vlastněných a provozovaných ve vlastním datovém centru"
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Všechna data podléhají předpisům a zákonům o ochraně dat"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 není v žádném případě služba typu \"cloud\". Vše je uloženo na zařízení přímo vlastněným %2 a řízeným vlastním IT personálem"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Přístup k datům je velmi přísně a striktně řízen. Všechny přístupy k datům na %1 jsou zaznamenány a lze je snadno zkontrolovat"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Nahrávaná data se navíc uchovávají pouze na %1 po dobu maximálně %2 dní. Po uplynutí této doby se automaticky odstraní. Není k dispozici žádná možnost jejich obnovení jakmile je zásilka smazána"
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Opravdu chcete smazat tuto zásilku?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr "Upozornění: Soubory zip této velikosti se pravděpodobně nebudou v počítači Mac otevírat poklepáním."
+
+msgid "Include Passcode?"
+msgstr "Včetně Ověřovacího kódu?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Měl by být v e-mailu uveden i Ověřovací kód?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Pokud si nejste jisti, klikněte na '%1'."
+
+msgid "Decryption Passphrase"
+msgstr "Heslo pro dešifrování"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "Požádejte odesílatele zásilky<br/>o heslo pro dešifrování."
+
+msgid "Delete Dropoff"
+msgstr "Smazat"
+
+msgid "Resend Dropoff"
+msgstr "Odeslat znovu"
+
+msgid "Drop-Off Summary"
+msgstr "Shrnutí"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr ""
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr "Vaše soubory byly zašifrovány a úspěšně odeslány."
+
+msgid "They will expire in %1."
+msgstr ""
+
+msgid "Your files have been sent successfully."
+msgstr "Vaše soubory byly úspěšně odeslány."
+
+msgid "This drop-off is encrypted."
+msgstr "Tato zásilka je zašifrována."
+
+msgid "Click on a filename to download that file."
+msgstr "Klikněte na název souboru pro stažení."
+
+#, fuzzy
+msgid "This drop-off will expire in %1."
+msgstr "Tato zásilka je zašifrována."
+
+msgid "%1 file"
+msgstr "%1 soubor"
+
+msgid "Download All Files"
+msgstr "Stáhnout všechny soubory"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Stáhnout všechny soubory<br/>jako nezašifrovaný archiv zip"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Stáhnout všechny soubory<br/>jako archiv zip"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Zásilka neobsahuje žádné soubory... něco není v pořádku!"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span>z %2 na %3</span>"
+
+msgid "Comments"
+msgstr "Komentáře"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Chcete-li soubory odeslat někomu jinému, pošlete jim tento odkaz %1 nebo ID zásilky a Ověřovací kód:"
+
+msgid "Picked-up on date..."
+msgstr "Vyzvednuto dne..."
+
+msgid "...from remote address..."
+msgstr "...z adresy..."
+
+msgid "...by recipient."
+msgstr "...příjemcem."
+
+msgid "%1 pickups"
+msgstr "%1 vyzvednutí"
+
+msgid "1 pickup"
+msgstr "1 vyzvednutí"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Žádný ze souborů nebyl dosud vyzvednut."
+
+msgid "View stats for the"
+msgstr "Zobrazit statistiky za"
+
+msgid "past week"
+msgstr "poslední týden"
+
+msgid "past month"
+msgstr "poslední měsíc"
+
+msgid "past 90 days"
+msgstr "posledních 90 dní"
+
+msgid "past year"
+msgstr "poslední rok"
+
+msgid "past 10 years"
+msgstr "posledních 10 let"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "Množství uložených zásilek (každodenní kontrola)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Velikost uložených dat (každodenní kontrola)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Množství uložených souborů (každodenní kontrola)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Počet souborů v zásilce (každodenní kontrola)"
+
+msgid "Unlock"
+msgstr "Odblokovat"
+
+msgid "Select all"
+msgstr "Vybrat vše"
+
+msgid "Unlock selected users"
+msgstr "Odblokovat vybrané uživatele"
+
+msgid "There are no locked users."
+msgstr "Žádní uživatelé nejsou zablokováni."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "Zpráva Vám byla zaslána na Váš požadavek o uložení souborů."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "POKUD JSTE SI ZPRÁVU NEVYŽÁDAL A NEOČEKÁVÁTE JI, MŮŽETE JI IGNOROVAT."
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Pokračujte v procesu kliknutím na následující odkaz (případně zkopírováním odkazu do prohlížeče):"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Nyní počkejte, až přijde e-mailová zpráva ze služby %1 a klikněte na odkaz v ní uvedený."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Za okamžik budete přesměrováni k <a href=\"%1\">hlavní nabídce</a>."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Před odesláním zadejte prosím Kód požadavku."
+
+msgid "Please enter your name before submitting."
+msgstr "Před odesláním zadejte své jméno"
+
+msgid "Please enter your email address before submitting."
+msgstr "Před odesláním zadejte prosím svou e-mailovou adresu."
+
+msgid "Your Request Code"
+msgstr "Váš Kód požadavku"
+
+msgid "Request Code"
+msgstr "Kód požadavku"
+
+msgid "Information about the Sender"
+msgstr "Informace o odesílateli"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Nevyplnil jste formulář nebo selhal test \"Jsem skutečný člověk?\"."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Obdrželi jste \"<strong>Kód požadavku</strong>\"?"
+
+msgid "Your name"
+msgstr "Vaše jméno"
+
+msgid "(required)"
+msgstr "(povinné)"
+
+msgid "Your organization"
+msgstr "Vaše organizace"
+
+msgid "Your email address"
+msgstr "Vaše e-mailová adresa"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "Abychom ověřili, že jste <em>skutečná</em> osoba, vyplňte prosím výzvu Captcha:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Po stisknutí tlačítka níže Vám na zadanou emailovou adresu zašleme ověřovací zprávu."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Jakmile ji obdržíte, klikněte prosím na odkaz ve zprávě. Doručení by nemělo trvat déle než několik minut."
+
+msgid "Send confirmation"
+msgstr "Odeslat ověření"
+
+#~ msgid "1 hour"
+#~ msgstr "1 hodina"
+
+#~ msgid "1 day"
+#~ msgstr "1 den"
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the person who requested the drop-off."
+#~ msgstr "Tato zásilka je zašifrována heslem, které je známé pouze odesílateli."
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the sender."
+#~ msgstr "Tato zásilka je zašifrována heslem, které je známé pouze odesílateli."
+
+#~ msgid "You must specify the recipient's name in the form."
+#~ msgstr "Musíte zadat jméno příjemce ve formuláři."
+
+#~ msgid "Please add at least one recipient first!"
+#~ msgstr "Nejprve přidejte nejméně jednoho příjemce!"
+
+#~ msgid "Copy link to clipboard"
+#~ msgstr "Zkopírovat odkaz do schránky"
+
+#~ msgid "Sender address verification subsystem failure."
+#~ msgstr "Selhání podsystému ověření adresy odesílatele."
+
+#~ msgid "This version has been developed by %2."
+#~ msgstr "Tuto verzi vyvinul %2."

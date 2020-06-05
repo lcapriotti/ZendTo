@@ -1,0 +1,142 @@
+#!/usr/bin/env php
+<?PHP
+
+if (getenv('ZENDTOPREFS')) {
+  array_splice($argv, 1, 0, getenv('ZENDTOPREFS'));
+}
+
+if ( count($argv) < 2 ) {
+  printf("
+  usage:
+  
+   %s <ZendTo preferences.php file> <ClaimID>
+  
+   The ZendTo preferences.php file path should be canonical, not relative.
+   Alternatively, do
+     export ZENDTOPREFS=<full file path of preferences.php>
+     %s <ClaimID>
+
+",$argv[0],$argv[0]);
+  return 0;
+}
+
+if ( ! preg_match('/^\/.+/',$argv[1]) ) {
+  echo "ERROR:  You must provide a canonical path to the preference file.\n";
+  return 1;
+}
+
+$reporting = error_reporting();
+error_reporting($reporting & ~E_WARNING & ~E_NOTICE & ~E_USER_WARNING);
+
+include $argv[1];
+include_once(NSSDROPBOX_LIB_DIR."Smartyconf.php");
+include_once(NSSDROPBOX_LIB_DIR."NSSDropoff.php");
+
+$theDropbox = new NSSDropbox($NSSDROPBOX_PREFS);
+if (!$theDropbox || !($theDropbox->database) ) {
+  print("Failed to start up!\n");
+  return 1;
+}
+
+// Get the drop-off for this ClaimID
+$ClaimID = preg_replace('/[^a-zA-Z0-9]/', '', $argv[2]); // Protect it!
+$qResult = $theDropbox->database->DBDropoffsForClaimID($ClaimID);
+if ( $qResult && ($iMax = count($qResult)) ) {
+  //  Set the fields:
+  if ( $iMax == 1 ) {
+    $d = $qResult[0];
+  } else {
+    printf("There appears to be more than 1 drop-off with that claim ID!\n");
+    return 1;
+  }
+} else {
+  printf("ClaimID %s not found\n", $ClaimID);
+  return 1;
+}
+$dropoff = new NSSDropoff($theDropbox, $d);
+if (! $dropoff) {
+  printf("Drop-off for ClaimID %s not found\n", $ClaimID);
+  return 1;
+}
+
+// Get the list of all the files in this drop-off
+// Be warned, this array contains numbered files and other values
+$fileList = $dropoff->files();
+
+if ($dropoff->isEncrypted()) {
+  // Ask for passphrase
+  $passphrase = readPassword("Enter passphrase: ");
+
+  // Download each file decrypted
+  foreach ($fileList as $file) {
+    // Skip elements of $fileList which aren't actually files
+    if (! is_array($file)) continue;
+
+    // Find the encrypted file and work out the IV data
+    $in_filename = $dropoff->claimDir()."/".$file['tmpname'];
+    $out_filename = $file['basename'];
+    $iv = '';
+    $metadata = $dropoff->senderIP(); // '|'-separated list of tokens
+    $words = explode('|', $metadata);
+    $skip = strlen('ENCRYPT:');
+    foreach ($words as $word) {
+      if (!strncasecmp($word, 'ENCRYPT:', $skip)) {
+        $iv = sodium_hex2bin(substr($word, $skip));
+        break;
+      }
+    }
+    if ($iv === '') {
+      printf("Failed to find encryption initialisation vector!\n");
+      return 1;
+    }
+
+    // Open the output file, or bail out
+    $tmpname = tempnam('.', 'ZendTo-');
+    $fd_out = fopen($tmpname, 'wb');
+    if (! $fd_out) {
+      $last_error = error_get_last();
+      printf("Could not create temporary file %s: %s\n",
+             $tmpname, $last_error['message']);
+      return 1;
+    }
+    // Drum-roll... decrypt the file and write it to the temp filename
+    if (decryptAndSendFile($in_filename, $fd_out, $passphrase, $iv)) {
+      // decrypt code closes $fd_out for us: fclose($fd_out);
+      if (rename($tmpname, $out_filename) ) {
+        printf("Extracted: %s\n", $out_filename);
+      } else {
+        $last_error = error_get_last();
+        printf("Could not write output file %s: %s",
+               $out_filename, $last_error);
+        unlink($tmpname);
+      }
+    } else {
+      // Decrypt failed.
+      printf("Could not decrypt and extract %s\n", $out_filename);
+      unlink($tmpname);
+    }
+  }
+
+} else {
+
+  // Download each file plain-text
+  foreach ($fileList as $file) {
+    // Skip elements of $fileList which aren't actually files
+    if (! is_array($file)) continue;
+    $out_filename = $file['basename'];
+
+    if (copy($dropoff->claimDir()."/".$file['tmpname'],
+             $out_filename)) {
+      printf("Extracted: %s\n", $out_filename);
+    } else {
+      $last_error = error_get_last();
+      printf("Could not extract %s: %s\n",
+             $out_filename, $last_error['message']);
+    }
+  }
+
+}
+
+return 0;
+
+?>

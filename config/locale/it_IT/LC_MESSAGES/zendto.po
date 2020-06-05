@@ -1,0 +1,1676 @@
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2020-06-01 11:27+0200\n"
+"Last-Translator: Massimo Forni <massimo.forni@turboden.it>\n"
+"Language-Team: Italian <stefano.fiori@bac.sm>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3.1\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Cliccka nuovamente sul collegamento che ti è stato spedito per prelevare i tuoi files."
+
+msgid "Authentication Failure"
+msgstr "Autenticazione non riuscita"
+
+msgid "Your session has expired. Please start again."
+msgstr "La tua sessione è scaduta, si prega di riprovare."
+
+msgid "Session Expired"
+msgstr "Sessione scaduta"
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "L'indirizzo ip del tuo computer sembra essere cambiato. Cliccka ancora sul collegamento che ti è stato spedito per prelevare i tuoi files."
+
+msgid "Session Error"
+msgstr "Errore di sessione"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Questa funzionalità è disponibile solamente per gli utenti che si sono autenticati."
+
+msgid "Access Denied"
+msgstr "Accesso negato"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "Impossibile leggere il file di registro. Controlla che il server web possa leggerlo."
+
+msgid "File Permissions Error"
+msgstr "Errore di permessi sul file"
+
+msgid "This is available to administrators only."
+msgstr "Questa funzione è disponibile soltanto agli amministratori."
+
+msgid "Administrators only"
+msgstr "Questa funzione è disponibile soltanto agli amministratori"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Cliccka nuovamente sul collegamento che ti è stato spedito per prelevare i tuoi files."
+
+msgid "I do not think you are a real person."
+msgstr "Non penso tu sia una persona reale."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "Hai provato a reinserire questo modulo. Prova a rifarlo nuovaemente."
+
+msgid "Are you a real person?"
+msgstr "Sei una persona reale ?"
+
+msgid "Database failure writing authentication key."
+msgstr "Errore nella scrittura della chiave di autenticazione (Authentication Key) sul database."
+
+msgid "Database Error"
+msgstr "Errore del database"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "Non è stato possibile stabilire se tu sia una persona reale o un computer. Riprova per favore."
+
+msgid "Test failed"
+msgstr "Test fallito"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "Il tuo codice di richiesta (Request Code) non è stato trovato oppure è già stato utilizzato."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "Si può sempre inviare files dal menù principale o fare richesta per un nuovo codice di richiesta (Request Code)"
+
+msgid "Request Code Used"
+msgstr "Codice di richiesta (Request Code) già utilizzato"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "Il tuo codice di richiesta (Request Code) è scaduto. Per favore ricomincia da capo."
+
+msgid "Request Code Expired"
+msgstr "Il tuo codice di richiesta (Request Code) è scaduto"
+
+msgid "Request Error"
+msgstr "Errore di sessione"
+
+msgid "Sending the request email failed."
+msgstr "Invio della email di richiesta fallita."
+
+msgid "Email Error"
+msgstr "Errore di posta elettronica"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "Impossibile rispedire i files da scaricare %s."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Impossibile rispedire i files da scaricare"
+
+msgid "Unlocked %s."
+msgstr "Sbloccato %s."
+
+msgid "Unknown user"
+msgstr "Utente sconosciuto"
+
+msgid "Request Code Error"
+msgstr "Errore nel Codice di Richiesta (Request Code)"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Per favore controlla se è stato difgitato correttamente, oppure richiedi un nuovo Codice di Richiesta (Request Code)"
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Si può competare questo modulo, oppure premere il tasto indietro del browser e reinserire il tuo Codice di richiesta (Request Code)"
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "Hai provato a reinserire questo modulo. Ritorna al menù principale e ricomincia da capo."
+
+msgid "Verify Error"
+msgstr "Errore di Verifica"
+
+msgid "Sending the verification email failed."
+msgstr "Invio della email di verifica fallita."
+
+msgid "Could not open MySQL database on %s"
+msgstr "Impossibile apireMYSQL database su %s"
+
+msgid "Failed to add login record"
+msgstr "Impossibile aggiungere il record di accesso"
+
+msgid "Failed to delete login records"
+msgstr "Impossibile cancellare il record di accesso"
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "Impossibilie iniziare un blocco di transazioni mentre si aggiornano le espressioni di registro (regexps)"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "Impossibile ROLLBACK dopo aver annullato l'eliminazione delle vecchie espressioni regolari"
+
+msgid "Failed to delete old regexps"
+msgstr "Impossibile eliminare le espressioni regolari vecchie"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "Impossibile ROLLBACK dopo aver annullato l'aggiunta di regexp"
+
+msgid "Failed to add regexp"
+msgstr "Inpossibile aggiungere una espressione regolare (regexp)"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "Impossibile aggiungere %s dell'utente in quanto tale utente esiste già"
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "Impossibile BEGIN il blocco della transazione durante l'aggiunta dell'utente %s"
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "Impossibile ROLLBACK dopo aver annullato l'aggiunta di %s dell'utente"
+
+msgid "Failed to add user %s"
+msgstr "Impossibile aggiungere un utente %s"
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "Sto annullando a cancellazione dell'utente %s in quanto quell'utente non esiste"
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "Sto annullando l'aggiornamento dell'utente %s in quanto quell'utente non esiste"
+
+msgid "Failed to update password for user %s"
+msgstr "Impossibile aggiornare la password per l'utente %s"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Verifica l'utente: Impossibile conettersi ad alcuno dei sistemi di autenticazione; l'utente non può essere autenticato."
+
+msgid "LDAP Error"
+msgstr "Errore LDAP"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "Siamo spiacenti, non sei autorizzato ad utilizzare questo servizio."
+
+msgid "Authorization Failed"
+msgstr "Autorizazione fallita"
+
+msgid "Check User: No AD servers configured."
+msgstr "Controllo Utente: nessun server AD configurator."
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "Utilizza il pulsante Indietro nel browser per tornare indietro e correggere questo errore prima di riprovare."
+
+msgid "Please notify the system administrator."
+msgstr "Per favore informa l'amministratore di sistema."
+
+msgid "%d bytes"
+msgstr "%d bytes"
+
+msgid "%.1f KB"
+msgstr "%.1f KB"
+
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+msgid "%.1f GB"
+msgstr "%.1f GB"
+
+msgid "%.1f TB"
+msgstr "%.1f TB"
+
+msgid "The preferences are not configured properly!"
+msgstr "Le prefernze non fono configurate correttamente!"
+
+msgid "Invalid Configuration"
+msgstr "Configurazione invalida"
+
+msgid "Could not create ZendTo database handle"
+msgstr "No0n posso creare l'handle del database di ZendTo"
+
+msgid "Please note"
+msgstr "Notare che"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "Il file preferences.php di ZendTo non ha alcun metodo di autenticazione selezionato."
+
+msgid "Authentication Error"
+msgstr "Autenticazione non riuscita"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "Le prefernze non sono configurate correttamente (sono vuote)!"
+
+msgid "Mail Error"
+msgstr "Errore di posta elettronica"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "Impossibile scrivere sul file di registro %s, assicurarsi che l'utente del server Web possa scrivere nel file di registro come impostato in preferences.php"
+
+msgid "Configuration Error"
+msgstr "Configurazione invalida"
+
+msgid "The username or password was incorrect."
+msgstr "L'utente o la password non sono corretti."
+
+msgid "Could not read local domain list file %s"
+msgstr "Non posso leggere il file della lista dei domini locali %s"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "Bisonga inserire un valore per la seguente chiave di preferenza'%s'"
+
+msgid "Undefined Preference Key"
+msgstr "Chiave di preferenze non definita"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "La decrittazione e lo scarico del file non è andato a buon fine. Probabilmente è stata inserita una errata passphrase. Per favore riprova."
+
+msgid "Decryption failed"
+msgstr "Decrittazione non riuscita"
+
+msgid "one of the recipients"
+msgstr "uno dei destinatari"
+
+msgid "Not calculated"
+msgstr "Non calcolato"
+
+msgid "%s has picked up your drop-off!"
+msgstr "%s ha prelevato i file che avevi messo in consegna!"
+
+msgid "%s has dropped off a file for you"
+msgstr "%s ha messo in consegna un file per te"
+
+msgid "%s has dropped off files for you"
+msgstr "%s ha messo in consegna dei files per te"
+
+msgid "%d days"
+msgstr "%d giorni"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "L' ID di Richiesta ( Claim ID) oppure il  Passcode non è valido,oppure il tempo per il prelevamento del file è scaduto.Verifica e prendi nota che lo scarico del file deve essere effettuao  prima della sua scadenza altrimenti i files da prelevare verranno automaticamente cancellati."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "ID di Richiesta (Claim ID) oppure Passcode non validi"
+
+msgid "Upload Error"
+msgstr "Errore di caricamento (Upload)"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "Sembra esserci più di 1 consegna di files con quell'ID di richesta (Claim ID)"
+
+msgid "Invalid Claim ID"
+msgstr "ID di Richiesta (Claim ID) non valido"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "La directory contenente i file di questa consegna è scomparsa."
+
+msgid "Drop-off Directory Not Found"
+msgstr "Directory per la consegna dei files non trovata"
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Impossibile leggere le informazioni di verifica. La tua sessione di consegna files è probabilmente scaduta. Per favore ricomincia."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Amministratore: Installa il PHP module/rpm \"mbstring\"."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "L'indirizzo email di destinazione '%s' npn è valido."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "Devi essere collegato come utente %1$s per consegnare un file per un utente non %1$s."
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Ritorna al menu principale di %s per accedere e poi riprovare."
+
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "Puoi inviare soltanto ad altri utenti %1. Non puoi inviare file ad utenti non %1."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "Devi specificare gli indirizzi email di tutti i destinatari nel modulo."
+
+msgid "There was an error while uploading '%s'."
+msgstr "Riscontrato errore durante il caricamento %s."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "La dimensione del file dei destinatari supera il limite imposto da PHP sul server."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "La dimensione del file dei destinatari supera il limite di dimensione (il massimo è %s)."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Il file dei destinatari è stato caricato solo parzialmente. La connessione di rete potrebbe essere scaduta durante il tentativo di caricamento."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Nessun file di destinatario è stato effettivamente caricato."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "Il server non è stato configurato con una cartella temporanea per i caricamenti."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "La cartella temporanea del server non è configurata correttamente."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Impossibile leggere il file dei destinatari caricato."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "Devi scegliere  al meno un file da far scaricare."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "Le dimensioni del file superano il limite imposto da PHP sul server."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "Il file '%s' era troppo grande. Ogni file scaricato può essere al massimo %s."
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Il file è stato solo parzialmente caricato. La connessione di rete potrebbe essere scaduta durante il tentativo di caricamento."
+
+msgid "No file was actually dropped-off."
+msgstr "Nessun file è stato effettivamente messo in consegna."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "La dimensione totale dei file supera il valore massimo per una singola consegna. Complessivamente, una singola consegna può essere al massimo %s."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "Uno o più file che hai messo in consegna sono stati infettati da un virus. La consegna è stato abbandonata. Si prega di pulire i file e riprovare."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "Il tentativo di scansione antivirus della tua consegna di files non è riuscito."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "La consegna era troppo grande per essere crittografata per cui è stata salvata non crittografata. Se questo non è ciò che desideri, elimina immediatamente la consegna dalla sezione “In Uscita”."
+
+msgid "Drop-off not encrypted"
+msgstr "Files da scaricare non crittografati"
+
+msgid "You must specify your own email address in the form."
+msgstr "Devi specificare il tuo indirizzo email nel modulo."
+
+msgid "The sender email address you entered was invalid."
+msgstr "L'indirizzo email del mittente inserito non è valido."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Non è stato possibile creare una directory univoca per contenere i file messi in consegna."
+
+msgid "Encryption failed."
+msgstr "Crittografia non riuscita."
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Sembra che la tua consegna di files non sia riuscita a causa della mancanza di spazio libero sul server. È rimasto solo %s."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "Problema durante il tentativo di eliminare '%s' nella sua directory di rilascio."
+
+msgid "Could not add recipients to the database."
+msgstr "Impossibile aggiungere destinatari al database."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "Errore durante il tentativo di salvare le informazioni per '%s'."
+
+msgid "Library"
+msgstr "Libreria"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr "Errore nell’invio email a %s. Comunque la tua consegna e’ stata salvata con il claimID %s"
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Impossibile aggiungere il record della consegna nel database."
+
+msgid "Unable to begin database transaction."
+msgstr "Impossibile iniziare la transazione del database."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Impossibile connettersi a nessuno dei server di autenticazione; impossibile autenticare l'utente."
+
+msgid "0 bytes"
+msgstr "0 bytes"
+
+msgid "1 byte"
+msgstr "1 byte"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Questo modulo non può essere chiamato in questo modo, si prega di tornare al menu principale."
+
+msgid "Internal Error"
+msgstr "Errore interno"
+
+msgid "You must specify your name in the form."
+msgstr "Devi specificare il tuo nome nel modulo."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "Devi specificare l'indirizzo email del destinatario nel modulo."
+
+msgid "Your email address you entered was invalid."
+msgstr "Il tuo indirizzo email inserito non è valido."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "L'indirizzo email del destinatario inserito non è valido."
+
+msgid "Database failure writing request information."
+msgstr "Informazioni sulla richiesta di scrittura di errori del database."
+
+msgid "Could not create the new database."
+msgstr "Could not create the new database."
+
+msgid "Could not create the tables in the new database."
+msgstr "Impossibile creare le tabelle nel nuovo database."
+
+msgid "Could not open the database."
+msgstr "Impossibile aprire il database."
+
+msgid "Database Error creating %s table"
+msgstr "Errore di database creando la tabella %s"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Non è stato possibile leggere i dati dal registro"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d giorni e %2$d ore"
+
+msgid "%d hours"
+msgstr "%d ore"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d ore e %2$d minuti"
+
+msgid "%d minutes"
+msgstr "%d minuti"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d minuti and %2$d secondi"
+
+msgid "%d second"
+msgstr "%d secondo"
+
+msgid "%d seconds"
+msgstr "%d secondi"
+
+msgid "The email address you entered was invalid."
+msgstr "L'indirizzo email inserito non è valido."
+
+msgid "You are trying to drop off some files"
+msgstr "Tu stai provando ad effettuare una consegna di alcuni files"
+
+msgid "About the %1 Service..."
+msgstr "Per quanto riguarda il servizio %1..."
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "I messaggi e-mail con allegati di grandi dimensioni possono essere un problema per i server di posta elettronica ed i computer degli utenti finali. Il download di tali messaggi può richiedere ore con una connessione Internet lenta e bloccare qualsiasi invio o ricezione di messaggi durante tale attività. In alcuni casi il download fallirà ripetutamente, interrompendo la capacità del destinatario di ricevere posta. Inoltre, i client di posta elettronica su aumentano considerevolmente la dimensione del file inviato. Ad esempio, il salvataggio di un messaggio di Outlook con un allegato aggiunge fino al 40% alla dimensione del file. Per condividere file di dimensioni superiori a 1 MB, utilizzare %1 per rendere temporaneamente disponibile un file (o più files) da un altro utente su Internet, in modo sicuro ed efficiente."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "Esistono due tipi distinti di utenti che accedono al sistema %1: <em> utenti interni </ em> , associati alla società che esegue il servizio e <em> utenti esterni </em>  che comprendono il resto di Internet."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "Un utente <em> interno </ em> può inviare una consegna di files a chiunque, sia che si tratti di un <em> interno </ em> o <em> esterno </em>. Un utente <em> esterno </em> può solo inviare una consegna di file a un utente <em> interno </em>. Ciò fa sorgere la domanda: che cos'è una consegna di un file?"
+
+msgid "drop-off"
+msgstr "consegna di un file"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "uno o più file caricati su %1 come singolo elemento da consegnare a una persona o persone"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Esistono diversi modi in cui un utente può conegnare più file contemporaneamente:"
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Trascina e rilascia più file contemporaneamente nella pagina di consegna files"
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "Fare clic sul pulsante \"Aggiungi file\" nella pagina di donsegna dei files e selezionare 1 o più file contemporaneamente utilizzando le combinazioni di clic, Maiusc + clic e Ctrl + clic (Cmd + clic su un Mac)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Archiviare e comprimere i file in un unico pacchetto e allegare il file di archivio risultante nella pagina di messa in consegna dei files."
+
+msgid "There are many ways to archive and compress files:"
+msgstr "Esistono molti modi per archiviare e comprimere i file:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "Gli utenti Mac possono selezionare i file nel Finder e \"Comprimi\" (vedi il menu <em> File </em>)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "Gli utenti Windows possono creare una \"cartella compressa\" o usare %1"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "Gli utenti Linux / Unix possono provare \"PeaZip\" o \"File Roller\""
+
+msgid "Creating a Drop-off"
+msgstr "Creare una consegna di un file"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Quando un utente crea una consegna di un file, inserisce alcune informazioni identificative su se stesso (nome, organizzazione e indirizzo e-mail), identificazione delle informazioni sul/sui destinatario/ i (nome e indirizzo e-mail); e scegle quali file devono essere caricati per effettuare la consegna. Se i files vengono caricati correttamente, viene inviata una e-mail ai destinatari che spiegano che è stato effettuata una consegna di files. Questa e-mail fornisce anche un link per accedere allo scarico dei files. Altre informazioni (l'indirizzo Internet e/o il nome del computer da cui è stato creata la consegna di files, ad esempio) vengono mantenute, per aiutare il/i destinatario/i a verificare l'identità del mittente."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "Il recupero di una consegna di files da parte di un destinatario può essere effettuato solo con l'ID di Richiesta (Claim ID) e il passcode della consegna dei files."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "Quando si mettono in consegna i file, è possibile scegliere <em> di non </em> inviare automaticamente uno o entrambi di questi files al destinatario: sarà quindi necessario inviare tali informazioni manualmente."
+
+msgid "Making a Pick-up"
+msgstr "Scaricare un file"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Esistono due modi per scaricare i file che sono stati messi in consegna:"
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Tutti gli utenti possono fare clic sul link fornito nell'email di notifica che sono stati inviati."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Un utente interno, una volta effettuato l'accesso al sistema, può visualizzare la sua \"In arrivo\" che è un elenco di tutti i files in consegna che li stanno aspettando. Una volta effettuato l'accesso, un utente interno può accedere ai files in consegna inviati a o da loro, senza bisogno del messaggio e-mail."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "Quando visualizzi un file in consegna l'utente vedrà alcune cose:"
+
+msgid "The list of files that were uploaded"
+msgstr "L'elenco dei files è stato aggiornato"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "Le informazioni sul mittente e sul destinatario che il mittente ha inserito al momento della creazione della consegna dei files"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "Il nome e / o l'indirizzo del computer da cui è stato creata la richiesta di consegna files"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "Opzionalmente una lista di pick-up che sono stati fatti"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "Il destinatario ha %1 giorni per ritirare i file. Ogni notte, i files messi in consegna più vecchi di %1 giorni vengono rimossi dal sistema."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Si prega di notare che i file caricati sono sottoposti a scansione antivirus, ma il destinatario dovrebbe comunque esercitare la stessa cautela nel download e nell'aprirli come appropriato. Questo può essere facile come verificare con il mittente indicato nell'e-mail di notifica che lui o lei ha effettivamente effettuato il drop-off. Si può anche controllare il nome / indirizzo del computer che è stato registrato al momento della creazione del drop-off, per assicurarsi che sia appropriato al dominio Internet del mittente. Tuttavia, gli indirizzi IP <em> possono </em> essere falsificati, quindi la precedente verifica dell'identità è davvero la più affidabile."
+
+msgid "Resumable Downloading of Files"
+msgstr "Scarico ripristinabile dei files"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "La maggior parte dei browser Web supporta <em> download ripristinabili </em>. Immagina questo scenario: sei seduto nella tua caffetteria locale, scarica un PDF da 100 MByte che uno studente ha caricato su %1 per te. All'improvviso, qualcuno a pochi tavoli di distanza inizia a guardare l'ultimo trailer del film (beh, tentando di farlo comunque) e la tua connessione wireless si interrompe: eri 95MB nel download e ora devi ricominciare da capo! Non è così, se il tuo browser supporta <em> download ripristinabili </em>; in tal caso, il browser richiede solo i restanti 5 MB del file."
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "%1 include il supporto per i componenti lato server della tecnologia <em> download riprogrammabile </em> sotto lo standard HTTP 1.1."
+
+msgid "Size Limitations on Uploads"
+msgstr "Limiti di dimensione in caricamento"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "La possibilità di caricare files maggiori di 2GB dipende dal browser utilizzato."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Se possibile, utilizzare un moderno browser a 64 bit su un sistema operativo a 64 bit. Se si dispone solo di un sistema a 32 bit (la causa più comune è Windows 7), quindi utilizzare una versione moderna di Google Chrome o Firefox. Le versioni precedenti di Microsoft Internet Explorer sono particolarmente negative."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "Il software %1 stesso ha limiti configurabili sulla quantità di dati che possono essere caricati in una singola messa in consegna di files. Anche per i browser che supportano caricamenti superiori a 2 GB, ila consegna di files  non può superare %2 per file o %3 totale per l'intera consegna."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "Se si verificano i seguenti problemi quando si mette in consegna o si scarica un file di grandi dimensioni:"
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Il browser segnala una connessione errata o interrotta dopo aver scaricato una parte significativa del file"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Viene visualizzata una pagina di errore che indica che non è stata messo in consegna alcun file"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "quindi molto probabilmente sei connesso a Internet tramite una connessione troppo lenta per spostare la quantità di dati in modo tempestivo. Normalmente il tuo computer ha al massimo 2 ore per inviare o ricevere completamente una consegna di un file."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "Basato sul software originale Perl UD Dropbox scritto da Doke Scott."
+
+msgid "Version %1 has been developed by %2."
+msgstr "La versione %1 è stata sviluppata da %2."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Inserisci l'ID di richeista (Claim ID)  e inserisci il passcode che ti è stato inviato."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Inserisci l'ID di richeista (Claim ID)  e inserisci il passcode."
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Se il mittente ti ha fornito un passcode per la richiesta, inseriscilo."
+
+msgid "Claim ID"
+msgstr "ID di Richiesta (Claim ID)"
+
+msgid "Claim Passcode"
+msgstr "Codice di Richiesta (Claim Passcode)"
+
+msgid "Pick-up Files"
+msgstr "Files da prelevare"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "La consegna di files con l'ID di richiesta (CVlaim ID) %1 è stato rimosso con successo."
+
+msgid "Unable to remove the drop-off"
+msgstr "Impossibile rimuovere i files da scaricare"
+
+msgid "You may have already deleted it."
+msgstr "Potresti averlo già cancellato."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Questo è un messaggio automatico inviato dal servizio %1."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Questo è un promemoria su un file in consegna inviato a te, che nessuno ha scaricato."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "Il file in consegna scadrà in %1, dopodiché verrà eliminato automaticamente."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1&lt;%2&gt; hamesso in consegna un file per te."
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1&lt;%2&gt; hamesso in consegna %3 file per te."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong>SE CONOSCI IL MITTENTE</strong> e aspetti di ricevere un file da lui, puoi scegliere di recuperare la consegna del file facendo clic sul seguente link (o copiandolo e incollandolo nel tuo browser web):"
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong>Questa consegna è crittografata.</strong> Per scaricare qualsiasi file è necessario avere la password corretta."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "Hai %1 per recuperare la consegna del file; dopodiché il link sopra scadrà."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Se desideri contattare il mittente, rispondi a questa email."
+
+msgid "The sender has left you a note:"
+msgstr "Il mittente ti ha lasciato una nota:"
+
+msgid "Full information about the drop-off:"
+msgstr "Informazione completa circa la consegna dei file:"
+
+msgid "Sent separately"
+msgstr "Inviati separatamente"
+
+msgid "Date of Drop-off"
+msgstr "Data di consegna files"
+
+msgid "Sender"
+msgstr "Mittente"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Organization"
+msgstr "Organizzazione"
+
+msgid "Email Address"
+msgstr "Indirizzo Email"
+
+msgid "IP Address"
+msgstr "IP Address"
+
+msgid "File"
+msgstr "File"
+
+msgid "Files"
+msgstr "Files"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Size"
+msgstr "Dimensione"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 Checksum"
+
+msgid "Content Type"
+msgstr "Tipo di contenuto"
+
+msgid "a file"
+msgstr "un file"
+
+msgid "%1 files"
+msgstr "%1 files"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> messo in consegna %3 per te."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "SE CONOSCI IL MITTENTE e aspetti di ricevere un file da lui, puoi scegliere di recuperare la consegna del file facendo clic sul seguente link (o copiandolo e incollandolo nel tuo browser web):"
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** Questa consegna è crittografata. **\n"
+"Per scaricare qualsiasi file è necessario avere la password corretta."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "Tu hai %1 per recuperare i files in consegna; dopo questo il collegamento scadrà. Se vuoi contatatre il mittente è sufficiente rispondere alla email."
+
+msgid "Claim ID:          %1"
+msgstr "ID di Richiesta (Claim ID):          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Codice di Richiesta (Claim Passcode):    %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Data di consegna files:  %1"
+
+msgid "Name:            %1"
+msgstr "Nome:            %1"
+
+msgid "Organization:    %1"
+msgstr "Organizazione:    %1"
+
+msgid "Email Address:   %1"
+msgstr "Indirizzo Email:   %1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP Address:      %1  %2"
+
+msgid "Name:             %1"
+msgstr "Nome:             %1"
+
+msgid "Description:      %1"
+msgstr "Descrizione:      %1"
+
+msgid "Size:             %1"
+msgstr "Dimensione:             %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 Checksum: %1"
+
+msgid "Content Type:     %1"
+msgstr "Tipo di contenuto:     %1"
+
+msgid "Picked up"
+msgstr "Prelievo di files"
+
+msgid "All"
+msgstr "Tutto"
+
+msgid "Search:"
+msgstr "Ricerca:"
+
+msgid "Show _MENU_ entries"
+msgstr "Mostra _MENU_ opzioni"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Mostra _START_ a _END_ dei _TOTAL_ opzioni"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Mostra 0 a 0 di 0 opzioni"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrato da _MAX_ opzioni totali)"
+
+msgid "No matching records found"
+msgstr "Nessu record soddisfa la ricerca"
+
+msgid "No data available in table"
+msgstr "Nessun dato disponibile in tabella"
+
+msgid "First"
+msgstr "Primo"
+
+msgid "Previous"
+msgstr "Precedente"
+
+msgid "Next"
+msgstr "Prossimo"
+
+msgid "Last"
+msgstr "Ultimo"
+
+msgid "Recipient"
+msgstr "Destinatario"
+
+msgid "Created"
+msgstr "Creato"
+
+msgid "Encrypted"
+msgstr "Crittografato"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr "Un \"%1\" nella colonna \"%2\" non puo’ <em>garantire</em> che qualunque file sia stato scaricato con successo."
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr "Ma un “%s” non significa che <em>non</em? e’ stato scaricato con successo."
+
+msgid "%1 = Encrypted by %2"
+msgstr "%1 = Codificato da %2"
+
+msgid "%1 = Not encrypted by %2"
+msgstr "%1 = Non codificato da %2"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "Outbox"
+msgstr "In Uscita"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Cliccka sul file in consegna per vedere le informazioni relative alla consegna stessa."
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "Non ci sono files da consegnare effettuati da te in questo momento."
+
+msgid "Copyright &copy; %1"
+msgstr "Copyright &copy; %1"
+
+msgid "About %1"
+msgstr "About %1"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr "Questo servizio è potenziato da una copia di  <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+
+msgid "Version %1"
+msgstr "Versione %1"
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "Sei attualmente connesso come <em>%1</em>"
+
+msgid "Return to the %1 main menu"
+msgstr "Ritorna al %1 menù principale"
+
+msgid "Logout"
+msgstr "Esci"
+
+msgid "%1 Username"
+msgstr "%1 Utente"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Login"
+msgstr "Accedi"
+
+msgid "Privacy Consent"
+msgstr "Consenso alla Privacy"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Il sito utilizza cookies e necessita di utilizzare il tuo nome ed il tuo indirizzo email per funzionare."
+
+msgid "I agree"
+msgstr "Sono d'accordo"
+
+msgid "I do not agree"
+msgstr "Non sono d'accordo"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Inbox"
+msgstr "In Entrata"
+
+msgid "Please login above."
+msgstr "Per favore autenticati sopra."
+
+msgid "Authentication"
+msgstr "Autenticazione"
+
+msgid "You have been logged out."
+msgstr "Ti sei disconnesso."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "Per una maggiore sicurezza, dovresti chiudere il browser, o almeno chiudere la finestra del browser."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Verrai reindirizzato al <a href=\"%1\"> menu principale </a> in un momento."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "Ultime %1 righe del file di registro %2, la più recente prima"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "Stai utilizzando una versione non supportata di Internet Explorer."
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Questo sito non funziona correttamente con questo browser."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Utilizzare un browser Web migliore, come Google Chrome o Firefox o almeno Internet Explorer 11."
+
+msgid "Drop-off"
+msgstr "Consegna di Files"
+
+msgid "Pick-up"
+msgstr "Prelievo di files"
+
+msgid "Request a Drop-off"
+msgstr "Richiedi una consegna di files"
+
+msgid "Show All Drop-offs"
+msgstr "Mostra tutte le consegne di files"
+
+msgid "Unlock Users"
+msgstr "Sblocca utente"
+
+msgid "System Statistics"
+msgstr "Statistiche di sistema"
+
+msgid "System Log"
+msgstr "Registro di sistema"
+
+msgid "You may perform the following activities:"
+msgstr "È possibile eseguire le seguenti attività:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Metti in consegna  (<em>upload</em>) un file per qualcun altro."
+
+msgid "Ask another person to send you some files."
+msgstr "Chiedi a qualcun'altro di inviarti dei files."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Scarica (<em>download</em>) un file messo in consegna per te."
+
+msgid "View all drop-offs in the database"
+msgstr "Visualizza tutti i files messi in consegna nel database"
+
+msgid "Unlock locked-out users"
+msgstr "Sblocca gli utenti bloccati"
+
+msgid "View daily statistics for the service"
+msgstr "Visualizza le statistiche epr il servizio"
+
+msgid "View log file"
+msgstr "Visualizza il registro degli eventi"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "<strong> Evita di dover verificare il tuo indirizzo email </strong>, <br/> e metti in consegna i file a utenti non di %1."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "Se sei un utente %1, puoi effettuare il login qui:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr ""
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "<strong> Evita di dover verificare il tuo indirizzo email </strong>, <br/> e metti in consegna i file a utenti non di %1."
+
+msgid "Anyone may perform the following activities:"
+msgstr "Chiunque può effettuare le seguenti attività:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "Metti in consegna (<em> upload </em>) di un file per un utente %1 (<strong> verifica email richiesta </strong>)."
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Scarica (<em> download </em>) un file messo in consegna per te."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "Utente di %1 : puoi accedere con il tuo nome utente e password e inviare file a chiunque, dentro o fuori dalla %2"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "Utenti non di %1: non puoi accedere ma puoi comunque inviare file ad utenti di %1 se conosci il loro indirizzo email. Inizia facendo clic sul pulsante \"%3\"."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "Utenti di %1 che desiderano che qualcuno al di fuori della %2 invii loro dei files possono utilizzare una procedura più semplice accedendo e facendo clic su \"%3\". Ciò esonera  l'altra persona dal dimostrare chi in realtà è."
+
+msgid "The request created will be valid for %1."
+msgstr "La richiesta creata sarà valida per %1."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "%1 è un servizio che ti consente di spostare facilmente file, inclusi file di grandi dimensioni fino a %2, all'interno e all'esterno della %3."
+
+msgid "How secure is %1?"
+msgstr "Quanto sicuro è %1?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "I files saranno cancellati automaticamente da %1 %2 giorni dopo la data di caricamento."
+
+msgid "Scanning for viruses..."
+msgstr "Scansione alla ricerca di visus..."
+
+msgid "Delete"
+msgstr "Cancella"
+
+msgid "__CHARS__ too long"
+msgstr "__CHARS__ too long"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ left"
+
+msgid "Too short!"
+msgstr "Troppo corto !"
+
+msgid "Entries do not match"
+msgstr "I dati non coincidono"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Cliccka per aggiungere di files oppure trascinali qui"
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Se lasci questa pagina abbandonerai la consegna del file."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr "Questo numero può contenere la virgola, non serva sia un numero intero."
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "Ci vorrà troppo tempo per calcolare il checksum di verifica della tua consegna dei files."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "È possibile eseguire il checksum di verifica solo fino a un massimo di __MAXSIZE__."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr "Tutti i file verrano crittografati. Questo e’ imposto da %1, non devi intraprendere alcuna azione."
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "Ci vorrà troppo tempo per crittografare la tua consegna dei files."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Solo le consegne di files fino a un massimo di __MAXSIZE__ possono essere crittografati."
+
+msgid "MB"
+msgstr "MB"
+
+msgid "KB"
+msgstr "KB"
+
+msgid "Remove file"
+msgstr "Rimuovi file"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Ora impiegherà troppo tempo per crittografare la consegna dei files, quindi la crittografia è stata disabilitata. Se desideri crittografare la tua consegna dei files, riduci il drop-off sotto __MAXSIZE__ e seleziona nuovamente \"Encrypt\"."
+
+msgid "Please enter a valid email address."
+msgstr "Per favore inserisci un indirizzo email valido."
+
+msgid "Remove selected recipient"
+msgstr "Rimuovi il destinatario selezionato"
+
+msgid "Please add at least one file first!"
+msgstr "Per favore aggiungi almeno un file prima !"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "I tuoi file sono più grandi della dimensione totale massima che puoi inviare in una consegna di files (__MAXTOTALSIZE__)."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "Il file __NUMBER__ è più grande della dimensione massima del file che è possibile inviare inuna consegna di file (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr "La data di scadenza del Drop-off deve essere espressa in giorni, al massimo %1."
+
+msgid "Scanning"
+msgstr "Scansione"
+
+msgid "Checksumming"
+msgstr "Calcolo del Checksum di validità"
+
+msgid "Encrypting"
+msgstr "Cifratura"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Scusa, non sono riuscito a effettuare la consegna de i tuoi file!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Si noti che non è possibile mettere in consegna  directory, solo file."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Caricato: __PERCENT__%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr "Mi dispiace, ho provato %d volte ad inviare una sezione di uno dei file, ma il trasferimento non ha mai avuto successo."
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr "Mi dispiace, non ho potuto inviare i file. La risposta del server e’ stata %s."
+
+msgid "PLEASE NOTE"
+msgstr "NOTARE CHE"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "I file caricati su %1 vengono sottoposti a scansione antivirus. Ma esercita ancora lo stesso grado di cautela che faresti con qualsiasi altro file scaricato."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "Gli utenti sono anche <strong> fortemente incoraggiati </ strong> a crittografare tutti i file se contengono informazioni sensibili (ad esempio informazioni private)"
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file per chiunque (sia un %1 utente o altri). Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per scaricare il file. Anche il tuo indirizzo IP verrà registrato e inviato al destinatario per scopi di conferma dell'identità."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file per un utente %1. Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per scaricare il file. Anche il tuo indirizzo IP verrà registrato e inviato al destinatario per scopi di conferma dell'identità."
+
+msgid "From"
+msgstr "Da"
+
+msgid "To"
+msgstr "A"
+
+msgid "Add Recipients"
+msgstr "Aggiungi destinatari"
+
+msgid "Add One"
+msgstr "Aggiungi uno"
+
+msgid "Add Many"
+msgstr "Aggiungi molti"
+
+msgid "Adds to your address book"
+msgstr "Aggiunge alla tua rubrica indirizzi"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Add"
+msgstr "Aggiungi"
+
+msgid "Add & Close"
+msgstr "Aggiungi e Chiudi"
+
+msgid "Bulk add recipients"
+msgstr "Aggiunta massiva di destinatari"
+
+msgid "One recipient per line, for example:"
+msgstr "Un destinatario per linea, per esempio:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Nome del Destinatario email@example.com"
+
+msgid "Verify"
+msgstr "Verifica"
+
+msgid "Encryption Passphrase"
+msgstr "Passphrase di crittografia"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "Questa passphrase non verrà inviata ai destinatari.<br/>Devi farlo da solo."
+
+msgid "Passphrase"
+msgstr "Passphrase"
+
+msgid "And again"
+msgstr "Digita ancora"
+
+msgid "Hide characters"
+msgstr "Nascondi caratteri"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Short note to the Recipients"
+msgstr "Breve nota ai destinatari"
+
+msgid "Encrypt every file"
+msgstr "Crittografa ogni file"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Calcola il SHA-256 checksum di ogni file"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Inviami un'e-mail quando ciascun destinatario preleva il / i file / files"
+
+msgid "Send email message to recipients"
+msgstr "Invia l’email ai destinatari"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "che include Passcode ed ID di Richiesta (Claim ID)"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "I destinatari devono accettare i termini e le condizioni"
+
+msgid "days until drop-off expires"
+msgstr "giorni alla scadenza del drop-off"
+
+msgid "Add Files"
+msgstr "Aggiungi Files"
+
+msgid "and/or select a file..."
+msgstr "e/o seleziona un file..."
+
+msgid "Filename"
+msgstr "Nome del file"
+
+msgid "Uploading..."
+msgstr "Caricamento..."
+
+msgid "Drop-off Files"
+msgstr "Metti i files in consegna"
+
+msgid "Drop to<br/>Add Files"
+msgstr "Metti in consegna  <br/>Aggiungi Files"
+
+msgid "(It will copy, not move)"
+msgstr "(Copierà, non sposterà)"
+
+msgid "No file was chosen for download."
+msgstr "Nessun file è stato selezionato per lo scarico."
+
+msgid "Please prove you are a person"
+msgstr "Per favore dimostra di essere una persona"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "Per confermare di essere una persona <em> reale </em> (e non un computer), completa la richiesta rapida di seguito, quindi fai clic su \"Scarica file\":"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "La consegna di files effettuato (IDdi Richiesta:%1) è stato scaricato."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "Il file \"<span class =\" mono \"> %1 </span>\" è stato scaricato."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1 ha effettuato il prelievo da transfer.bac.sm."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "Il file \"<span class =\" mono \"> %1 </span>\" è stato prelevato da %2."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Questo destinatario non riceverà alcuna notifica su ulteriori scaricamenti di file in questa consegna di files."
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "The file %1 was picked up."
+msgstr "Il file %1 è stato prelevato."
+
+msgid "The file %1 was picked up by %2."
+msgstr "Il file %1 è stato scaricato da %2."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Questo destinatario non riceverà alcuna notifica su ulteriori scaricamenti di file in questa consegna di files."
+
+msgid "Global Drop-off List"
+msgstr "Elenco  globale dei files in consegna"
+
+msgid "There are no drop-offs available at this time."
+msgstr "Non ci sono files da scaricare disponibili in questo momento."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "Non ci sono files da scaricare disponibili per te in questo momento."
+
+msgid "This is a request from %1 of %2."
+msgstr "Questa è una richiesta da %1 di %2."
+
+msgid "This is a request from %1."
+msgstr "Questa è una richiesta da %1."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Clicca sul link qui sotto e rilascia il file oi file che ho richiesto."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "Il link è valido solo per %1 dal momento dell'email."
+
+msgid "All files you upload will be automatically encrypted."
+msgstr "Tutti i file che andrai a caricare verranno automaticamente crittografati."
+
+msgid "More information is in the note below."
+msgstr "Maggiori informazioni sono nella nota sottostante."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "Se desideri contattare %1, rispondi a questa email."
+
+msgid "Click to copy link to clipboard"
+msgstr "Fai click per copiare il collegamento negli appunti"
+
+msgid "Copied"
+msgstr "Copiato"
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "La richiesta di una consegna di files è stata inviata a %1 a %2."
+
+msgid "It is valid for %1."
+msgstr "È valido per %1."
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr "I file che ti verranno inviati verranno codificati con la password che hai appena inserito. Non perderla altrimenti non avrai modo di accedere ai file!"
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Se il destinatario vuole inviare i file prima che la loro richiesta arrivi, dovrebbero"
+
+msgid "Go to %1"
+msgstr "Vai a %1"
+
+msgid "Select \"Drop-off Files\""
+msgstr "Seleziona \"File da consegnare\""
+
+msgid "Enter the request code \"%1\""
+msgstr "Enter the request code \"%1\""
+
+msgid "Click on the \"Next\" button"
+msgstr "Fare clic sul pulsante \"Avanti\""
+
+msgid "You may close this window."
+msgstr "Puoi chiudere questa finestra."
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "La richiesta di una consegna per %1 a %2 e’ stata creata."
+
+msgid "The link to give them is %1"
+msgstr "Il link da consegnare e’ %1"
+
+msgid "Send the Request"
+msgstr "Invia la richiesta"
+
+msgid "Show the Link"
+msgstr "Mostra il link"
+
+msgid "Please enter the recipient's name first!"
+msgstr "Per favore inserisci prima il nome del destinatario!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Si prega di inserire prima l'indirizzo e-mail del destinatario!"
+
+msgid "Please enter the email subject first!"
+msgstr "Per favore inserisci prima l’oggetto!"
+
+msgid "Your note is too long!"
+msgstr "La tua nota è troppo lunga!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr "Opzionale: se selezioni questo ed imposti una password, il drop-off verra’ crittografato. Il mittente che inviera’ i file non conoscera’ mail la password."
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr "Questo normalmente e’ selezionato. Se lo deselezioni, il link e le istruzioni non verranno inviati via email. Invece dovrai inviare con altri mezzi il link mostrato."
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Questa pagina web ti consentirà di inviare una richiesta a una o più altre persone che richiedono di inviare (caricare) uno o più file per te. Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per il caricamento dei file."
+
+msgid "Email(s)"
+msgstr "Email(s)"
+
+msgid "Subject"
+msgstr "Oggetto"
+
+msgid "Send email"
+msgstr "Invia email"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Questo sarà inviato al destinatario. Sarà anche incluso nel consegna del file che ti è stato inviato."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr "Non perdere o dimenticare questa password!"
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "La consegna dei files è stato reinviata con successo ai suoi destinatari."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Impossibile inviare nuovamente la consegna dei files."
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Tutti i file vengono trasferiti attraverso la rete e crittografati in modo sicuro"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Se stai inviando dati personali o confidenziali, seleziona \"Crittografa ogni file\" quando crei una nuova consgena di files. Successivamente la passphrase che associ alla consegna deve essere utilizzata quando si scaricano i files. La passphrase non è memorizzata su %1 e non può essere ripristinata in caso di smarrimento. Nessuno può accedere ai file senza di essa"
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "Tutti i file caricati e temporaneamente archiviati su %1 sono conservati su dispositivi di proprietà e gestiti dal proprio Data Center interno alla %2"
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Tutti i dati sono soggetti alle normative sulla protezione dei dati e alle leggi della %1 e del Paese"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 non è in alcun modo un servizio \"cloud\". Tutto è archiviato (anche temporaneamente) su apparecchiature direttamente di proprietà della %2 e gestite dal proprio personale IT"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Tutto l'accesso ai dati è strettamente controllato  dalla %2. Tutti gli accessi ai dati su %1 sono registrati e possono essere facilmente controllati se dovessi essere mai preoccupato che una terza parte possa aver avuto accesso ai tuoi dati"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Inoltre, i dati caricati vengono conservati solo su %1 per un massimo di %2 giorni, dopodiché vengono automaticamente eliminati. Non esiste alcuna funzione \"undelete\" disponibile. Non vengono effettuati i backup dei dati caricati (è solo un punto di sosta temporaneo), quindi nessun dato caricato si sposta mai su %1 stesso su altri dispositivi o supporti come i nastri di backup. Dopo che un file caricato è stato cancellato, non c'è modo di recuperarlo"
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Vuoi veramente cancellare questconsegna di files ?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr "Attenzione: file Zip di questa dimensione probabilmente non potranno essere aperti su un Mac facendo doppio click sopra. Dovrai utilizzare un’applicazione diversa oppure I comandi “unzip” o “ditto” dalla finestra del Terminale."
+
+msgid "Include Passcode?"
+msgstr "Includere il Passcode ?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Il Passcode deve essere incluso nelle e-mail e nell'ID di Richiesta (Claim ID) ?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Click '%1' se non sei sicuro."
+
+msgid "Decryption Passphrase"
+msgstr "Passphrase di decifratura"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "Puoi chiedere al mittente<br/>la passphrase di decrittografia."
+
+msgid "Delete Dropoff"
+msgstr "Cancella consegna di files"
+
+msgid "Resend Dropoff"
+msgstr "Rispedisci una consegna di files"
+
+msgid "Drop-Off Summary"
+msgstr "Sommario delle consegne dei files"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+"Questi sono I termini e le condizioni che i destinatari devono accettare.\n"
+"    <br/>Per abiliatro/disattivarlo, vedere le impostazioni <tt>showRecipientsWaiverCheckbox</tt> e <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>Può essere lungo e può contenere tag HTML.\n"
+"    <br/>Per cambiare questo testo:\n"
+"    <ol>\n"
+"      <li> cerca questo testo nei file <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt></li>.\n"
+"      <li>metti il tuo testo in <tt>msgstr&nbsp;\"...\"</tt> linea(e) immediatamente successiva(e)</li>.\n"
+"      <li>esegui <tt>/opt/zendto/zendto/bin/makelanguages</tt> come root</li>.\n"
+"      <li>riavvia Apache (per assicurarsi che recepisca realmente il nuovo testo).</li>\n"
+"    </ol>\n"
+"    <p>Questo e’ sattamente come si cambia il testo per qualsiasi cosa nell'interfaccia ZendTo. Per maggiori informazioni, leggere <a href=\"https://zend.to/translators.php\">la pagina delle traduzioni nella documentazione</a>.</p>"
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr "Ho letto, compreso ed accettato i termini e le condizioni precedent."
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr "I tuoi files sono stati ccodificati ed inviati con successo."
+
+msgid "They will expire in %1."
+msgstr "Scadranno in %1."
+
+msgid "Your files have been sent successfully."
+msgstr "I tuoi files sono stati consegnati con successo."
+
+msgid "This drop-off is encrypted."
+msgstr "Questo drop-off e’ codificato."
+
+msgid "Click on a filename to download that file."
+msgstr "Clicca su un nome file per scaricare quel file."
+
+msgid "This drop-off will expire in %1."
+msgstr "Questo drop-off scadra’ in %1 giorni."
+
+msgid "%1 file"
+msgstr "%1 file"
+
+msgid "Download All Files"
+msgstr "Scarica tutti i file"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Scarica tutti i file<br/>come Zip non Criptato"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Scarica tutti i file<br/>come Zip"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Nessun file nella consegna dei files... qualcosa manca !"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span>utilizzando transfer.bac.sm in data %3</span>"
+
+msgid "Comments"
+msgstr "Commenti"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Per inviare i files a qualcun altro, invia questo collegamento  %1; in alternativa comunica l'ID di Richiesta (Claim ID) ed il Passcode:"
+
+msgid "Picked-up on date..."
+msgstr "Scaricato in data..."
+
+msgid "...from remote address..."
+msgstr ".. dall'indirizzo remoto..."
+
+msgid "...by recipient."
+msgstr ".. per destinatario."
+
+msgid "%1 pickups"
+msgstr "%1 scarico di files"
+
+msgid "1 pickup"
+msgstr "1 scarico file"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Nessuno dei file è stato prelevato ancora."
+
+msgid "View stats for the"
+msgstr "Visualizza le statistiche per"
+
+msgid "past week"
+msgstr "settimana scorsa"
+
+msgid "past month"
+msgstr "mese scorso"
+
+msgid "past 90 days"
+msgstr "ultimi 90 giorni"
+
+msgid "past year"
+msgstr "anno scorso"
+
+msgid "past 10 years"
+msgstr "ultimi 10 anni"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "Numero di files messi in consegna (controllato quotidianamente)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Ammontare totale di dati consegnati (controllato quotidianamente)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Numero totale di files messi in consegna (Controllato quotidianamente)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Conteggio dei file per consgena  (Controllato quotidianamente)"
+
+msgid "Unlock"
+msgstr "Sblocca"
+
+msgid "Select all"
+msgstr "Seleziona tutto"
+
+msgid "Unlock selected users"
+msgstr "Sblocca gli utenti selezionati"
+
+msgid "There are no locked users."
+msgstr "Non ci sono utenti bloccati."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "Hai richiesto di di inviarti questo messaggio in modo che tu possa mettere in consegna uno o più files per qualcuno."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "IGNORA QUESTO MESSAGGIO SE NON STAVI ASPETTANDO ALCUNA COMUNICAZIONE !"
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Altrimenti, continua l'attività clicckando il link seguente (o copiando ed incollandolo in tuo web browser):"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Attendi l'email proveniente dal %1 servizio e clickka sul collegamento contenuto in esso."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Sareai rediretto al <a href=\"%1\">Menù principale </a> in un attimo."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Per favore inserisci il tuo cdice di richiesta (Request Code) prima di proseguire."
+
+msgid "Please enter your name before submitting."
+msgstr "Ptre favore inserisi il tuo nome prima di procedere."
+
+msgid "Please enter your email address before submitting."
+msgstr "Per favore inserisci il tuo indirizzo email prima di procedere."
+
+msgid "Your Request Code"
+msgstr "Il tuo codice di richesta (Request Code)"
+
+msgid "Request Code"
+msgstr "Codice di Richiesta (Request Code)"
+
+msgid "Information about the Sender"
+msgstr "Informazioni in merto a chi sta inviando la richiesta"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Non hai completato il modulo, oppure non hai parrato il test per la verifica se sei una persona reale."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Ti è stato fornito un \"<strong> Codice di richiesta (Request Code) </strong>\"?"
+
+msgid "Your name"
+msgstr "Il tuo nome"
+
+msgid "(required)"
+msgstr "(obbligatorio)"
+
+msgid "Your organization"
+msgstr "La tua organizzazione"
+
+msgid "Your email address"
+msgstr "Il tuo indirizzo di posta elettronica"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "Per confermare che tu sia una <em>Persona</em> reale (e non un computer), per favore esegui la richiesta di cui sotto:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Ora necessito di inviarti una email di conferma."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Dovrebbe arrivarti in un minuto o due, dopodichè cliccka sul collegamento all'interno dell'email."
+
+msgid "Send confirmation"
+msgstr "Invia conferma"
+
+#~ msgid "1 hour"
+#~ msgstr "1 ora"
+
+#~ msgid "1 day"
+#~ msgstr "1 giorno"
+
+#, fuzzy
+#~ msgid "This drop-off is encrypted with a passphrase known only to the person who requested the drop-off."
+#~ msgstr "Questa consegna di file è crittografata con una passphrase nota solo al mittente."
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the sender."
+#~ msgstr "Questa consegna di file è crittografata con una passphrase nota solo al mittente."
+
+#~ msgid "You must specify the recipient's name in the form."
+#~ msgstr "You must specify the recipient's name in the form."
+
+#~ msgid "Please add at least one recipient first!"
+#~ msgstr "Per favore aggiungi almeno un destinatario prima !"
+
+#~ msgid "Copy link to clipboard"
+#~ msgstr "Copia il collegamento negli appunti"
+
+#~ msgid "Sender address verification subsystem failure."
+#~ msgstr "Sistema di verifica dell'indirizzo del mittente fallito."
+
+#~ msgid "Failed to update quota for user %s"
+#~ msgstr "Impossibile aggiornare la dimensione massima dei files  per l'utente %s"
+
+#~ msgid "You do not have enough remaining storage quota for this drop-off. You need at least another %s."
+#~ msgstr "Non hai abbastanza spazio di archiviazione rimanente per questa consegna di file. Hai bisogno di almeno un'altra %s."
+
+#~ msgid "Add Recipient"
+#~ msgstr "Aggiungi destinatario"
+
+#~ msgid "Test User test@domain.com"
+#~ msgstr "Test Utente test@domain.com"
+
+#~ msgid "Unable to remove drop-off %s using passcode %s"
+#~ msgstr "Impossibile rimuovere i files consegnati %s utilizzando il passcode %s"
+
+#~ msgid "Unable to remove the drop-off %1."
+#~ msgstr "Impossibile rimuovere la messa fin consegna %1."

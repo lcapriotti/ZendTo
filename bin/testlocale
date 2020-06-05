@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?PHP
+
+//
+// Test your gettext() locales setup to see if ZendTo will work.
+// Takes the language code (e.g. fr_FR) on the command-line.
+// To do a thorough test, make use of the file
+// /opt/zendto/config/locale/supplied/fr_FR.EmojiCheck.po
+// Read the comments at the top of that file to see what to do.
+//
+
+//
+// Setup i18n config for gettext()
+//
+$locale = $argv[1]; // Pretend this came from the Accept-Language header
+$locale_dir = '/opt/zendto/config/locale'; // your .po and .mo files should be at $locale_dir/$locale/LC_MESSAGES/messages.{po,mo}
+putenv("LANG=$locale");
+putenv("LANGUAGE=$locale");
+putenv("LC_MESSAGES=$locale");
+// putenv("LC_ALL=$locale");
+
+$result = setlocale(LC_MESSAGES, $locale."UTF-8", $locale."utf-8", $locale."UTF8", $locale."utf8", $locale);
+echo "Result of setlocale is $result\n";
+
+$result = bindtextdomain('zendto', $locale_dir);
+echo "Result of bindtextdomain is $result\n";
+
+$result = textdomain('zendto');
+echo "Result of textdomain is $result\n";
+
+$result = gettext('Logout');
+echo "Translation of 'Logout' is '$result'\n";
+$result = gettext('Organization');
+echo "Translation of 'Organization' is '$result'\n";
+
+?>

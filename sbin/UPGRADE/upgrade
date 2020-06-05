@@ -1,0 +1,393 @@
+#!/usr/bin/env bash
+
+#
+# JKF 2019-01-31
+#
+# This upgrades your preferences.php and zendto.conf files
+# automatically, saving the previous versions and the new
+# supplied templates.
+#
+# It should work on
+# 1. any rpm-based system
+# 2. any apt/deb-based system
+# 3. tarball installations (such as FreeBSD) where the new versions
+#    are unpacked into /opt/ZendTo-<version-number> and the production
+#    version is symlinked to /opt/zendto. Or setups close to that.
+#
+
+# Get the version number of a preferences.php file
+getversion() {
+    if [ -f "$1" ]; then
+      php -r "require '$1'; if (defined('ZTVERSION')) echo ZTVERSION;"
+    fi
+}
+
+# Tell the user what is happening, in bold
+shout() {
+  printf '\033[1m'"$*"'\033[0m\n'
+}
+
+# Wait a bit. Optional arg is number of seconds. Default=10
+pause() {
+  DOTS='.............................................................'
+  GAPS='                                                             '
+  SECS="$1"
+  if [ "x$SECS" = "x" ]; then
+    SECS=10
+  fi
+  SPACES=0
+  while [ $SECS -gt 0 ];
+  do
+    printf '\033[1mPausing%.'$SECS's %.'$SPACES's\015Pausing%.'$SECS's\033[0m' "$DOTS" "$GAPS" "$DOTS"
+    sleep 1
+    printf '\015\033[2K'
+    SECS=$((SECS-1))
+    SPACES=$((SPACES+1))
+  done
+}
+
+if [[ "$1" =~ ^--*h ]]; then
+  echo Upgrade usage:
+  echo "$0 [ -h | --help | -d | -n | --dry-run ]"
+  echo "-h --help       : Print this usage message."
+  echo "-d -n --dry-run : Don't change anything, just show commands."
+  echo
+  echo "I strongly advise a --dry-run before you run it for the first time."
+  exit 1
+fi
+
+DRYRUN=false
+if [[ "$1" =~ ^--*d ]]; then
+  shout "Doing a dry-run, nothing will be actually touched."
+  echo
+  DRYRUN=true
+  # set -x
+fi
+
+# Wherever this happens to be, this is where it will end up
+OLDSTORE="/opt/zendto/config/old"
+
+# Use $ZENDTOPREFS if it's set and exists as a file or symlink to a file
+if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
+  NewConfigDir="$( dirname "$ZENDTOPREFS" )"
+  NewZendToDir="$( dirname "$NewConfigDir" )"
+
+  $DRYRUN && shout "$ZENDTOPREFS exists"
+
+  # NewZendToDir (/opt/zendto) might be a symlink, especially if
+  # on FreeBSD or using tarball distribution.
+  if [ -L "$NewZendToDir" ]; then
+    $DRYRUN && shout "NewZendToDir is a symlink"
+
+    # Assuming the user has done something sensible, listing the parent of
+    # this for every dir starting with "zendto" (case insensitive) should
+    # give us a list of version numbers.
+    SlashOpt="$( dirname "$NewZendToDir" )"
+    LinkName="$( basename "$NewZendToDir" )"
+    Latest="$( find "$SlashOpt" -mindepth 1 -maxdepth 1 \! -name "$LinkName" -print | grep -i '^.*/ZendTo' | sort -V --ignore-case | tail -1 )"
+    Previous="$( find "$SlashOpt" -mindepth 1 -maxdepth 1 \! -name "$LinkName" -print | grep -i '^.*/ZendTo' | sort -V --ignore-case | tail -2 | head -1 )"
+    $DRYRUN && shout "Latest = $Latest and Previous = $Previous"
+    # Did we actually find old and new version numbers?
+    if [ "x$Latest" != "x" -a "x$Previous" != "x" ]; then
+      if [ "$Latest" = "$Previous" ]; then
+        # There is only 1 version-numbered dir. Assume that's the new one
+	$DRYRUN && shout "Only 1 version-numbered directory"
+        OldZTConf="$NewConfigDir/zendto.conf"
+        OldConfigDir="$NewConfigDir"
+        NewZendToDir="$Latest"
+        NewBin="$NewZendToDir/bin"
+        NewConfigDir="$NewZendToDir/config"
+        Prefs="$Latest/config/preferences.php"
+        TemplatePrefs="$Prefs"
+        OldPrefs="$ZENDTOPREFS"
+        ZTConf="$Latest/config/zendto.conf"
+        TemplateZTConf="$ZTConf"
+      else
+        # The Latest and Previous versions are different
+	$DRYRUN && shout "Found 2 different version numbers"
+        NewZendToDir="$Latest"
+        NewBin="$NewZendToDir/bin"
+        NewConfigDir="$NewZendToDir/config"
+	OldConfigDir="$Previous/config"
+        Prefs="$Latest/config/preferences.php"
+        TemplatePrefs="$Prefs"
+        OldPrefs="$Previous/config/preferences.php"
+        ZTConf="$Latest/config/zendto.conf"
+        TemplateZTConf="$ZTConf"
+        OldZTConf="$Previous/config/zendto.conf"
+      fi
+      # If the -supplied versions don't exist, create them
+      [ \! -f "$TemplatePrefs" ] && cp "$Prefs" "$TemplatePrefs"
+      [ \! -f "$TemplateZTConf" ] && cp "$ZTConf" "$TemplateZTConf"
+    else
+      # No version numbers at all. So probably /opt/zendto is a symlink
+      # by coincidence, and we're running on a packaged system.
+      # We will try to work out the Template filenames later.
+      $DRYRUN && shout "No version numbered dirs found, assuming symlink is a fluke"
+      # NewZendToDir and NewConfigDir already set
+      NewBin="$NewZendToDir/bin"
+      OldConfigDir="$NewConfigDir"
+      Prefs="$ZENDTOPREFS"
+      TemplatePrefs=''
+      OldPrefs="$Prefs"
+      ZTConf="$NewConfigDir/zendto.conf"
+      TemplateZTConf=''
+      OldZTConf="$ZTConf"
+    fi
+  else
+    # No symlinks found
+    $DRYRUN && shout "$NewZendToDir is not a symlink"
+    NewBin="$NewZendToDir/bin"
+    OldConfigDir="$NewConfigDir"
+    Prefs="$ZENDTOPREFS"
+    TemplatePrefs=''
+    OldPrefs="$Prefs"
+    ZTConf="$NewConfigDir/zendto.conf"
+    TemplateZTConf=''
+    OldZTConf="$ZTConf"
+  fi
+else
+  $DRYRUN && shout "Could not find old config $ZENDTOPREFS at all"
+  NewZendToDir=/opt/zendto
+  NewConfigDir="$NewZendToDir/config"
+  OldConfigDir="$NewConfigDir"
+  Prefs="$NewConfigDir/preferences.php"
+  TemplatePrefs=''
+  OldPrefs="$Prefs"
+  ZTConf="$NewConfigDir/zendto.conf"
+  TemplateZTConf=''
+  OldZTConf="$ZTConf"
+fi
+
+if $DRYRUN; then
+  shout "Files are:"
+  shout "NewZendToDir = $NewZendToDir"
+  shout "NewBin = $NewBin"
+  shout "OldConfigDir = $OldConfigDir"
+  shout "NewConfigDir = $NewConfigDir"
+  shout "OldPrefs = $OldPrefs"
+  shout "TemplatePrefs = $TemplatePrefs"
+  shout "Prefs = $Prefs"
+  shout "OldZTConf = $OldZTConf"
+  shout "TemplateZTConf = $TemplateZTConf"
+  shout "ZTConf = $ZTConf"
+  echo
+fi
+
+# Bail out if old prefs don't exist
+if [ ! -f "$OldPrefs" -o ! -f "$OldZTConf" ]; then
+  echo "Could not find your previous"
+  echo "$OldPrefs and"
+  echo "$OldZTConf files"
+  echo "so cannot continue."
+  echo
+  echo "You will need to run upgrade_preferences_php and upgrade_zendto_conf"
+  echo "manually."
+  exit 1
+fi
+
+
+
+# If we don't know the Template file yet, we're almost certainly using
+# a package management system of some sort. So go looking for the template.
+if [ "x$TemplatePrefs" = "x" ]; then
+  # Are we using apt or apt-get?
+  if [ -x /usr/bin/apt -o -x /usr/bin/apt-get ]; then
+    # 2 possible scenarios, as dpkg offers the user a choice.
+    # 1. preferences.php and preferences.php.dpkg-dist
+    # 2. preferences.php.pkgd-old and preferences.php
+    # I prefer option 1, so check for option 2 and just rename things
+    # so the option 1 code will still work.
+    if [[ ( -f "$OldPrefs.dpkg-old" && -f "$OldPrefs.dpkg-dist" ) ||
+          ( -f "$OldZTConf.dpkg-old" && -f "$OldZTConf.dpkg-dist" ) ]]; then
+      # Eeek, there's both! :-(
+      shout "Sorry, there are both .dpkg-old and .dpkg-dist files present,"
+      shout "so I do not know how you answered the apt upgrade question."
+      shout "Please remove whichever one is irrelevant and run me again."
+      exit 1
+    fi
+    if [ -f "$OldPrefs" -a -f "$OldPrefs.dpkg-old" ]; then
+      Prefs="$OldPrefs"
+      OldPrefs="$OldPrefs.dpkg-old"
+      TemplatePrefs="$Prefs"
+      $DRYRUN && shout "Found preferences.php.dpkg-old"
+    fi
+    if [ -f "$OldPrefs" -a -f "$OldPrefs.dpkg-dist" ]; then
+      Prefs="$OldPrefs"
+      OldPrefs="$OldPrefs"
+      TemplatePrefs="$OldPrefs.dpkg-dist"
+      $DRYRUN && shout "Found preferences.php.dpkg-dist"
+    fi
+    if [[ -f "$OldZTConf" && -f "$OldZTConf.dpkg-old" ]]; then
+      ZTConf="$OldZTConf"
+      OldZTConf="$OldZTConf.dpkg-old"
+      TemplateZTConf="$ZTConf"
+      $DRYRUN && shout "Found zendto.conf.dpkg-old"
+    fi
+    if [ -f "$OldZTConf" -a -f "$OldZTConf.dpkg-dist" ]; then
+      ZTConf="$OldZTConf"
+      OldZTConf="$OldZTConf"
+      TemplateZTConf="$OldZTConf.dpkg-dist"
+      $DRYRUN && shout "Found zendto.conf.dpkg-dist"
+    fi
+  # Or are we using rpm / yum / zypper?
+  elif [ -x /bin/rpm -o -x /usr/bin/rpm ]; then
+    if [[ ( -f "$OldPrefs.rpmsave" && -f "$OldPrefs.rpmnew" ) ||
+          ( -f "$OldZTConf.rpmsave" && -f "$OldZTConf.rpmnew" ) ]]; then
+      # Eeek, there's both! :-(
+      shout "Sorry, there are both .rpmsave and .rpmnew files present,"
+      shout "so I do not know which to use."
+      shout "Please remove whichever one is irrelevant and run me again."
+      exit 1
+    fi
+    if [ -f "$OldPrefs" -a -f "$OldPrefs.rpmsave" ]; then
+      Prefs="$OldPrefs"
+      OldPrefs="$OldPrefs.rpmsave"
+      TemplatePrefs="$OldPrefs"
+      $DRYRUN && shout "Found preferences.php.rpmsave"
+    fi
+    if [ -f "$OldPrefs" -a -f "$OldPrefs.rpmnew" ]; then
+      Prefs="$OldPrefs"
+      OldPrefs="$OldPrefs"
+      TemplatePrefs="$OldPrefs.rpmnew"
+      $DRYRUN && shout "Found preferences.php.rpmnew"
+    fi
+    if [ -f "$OldZTConf" -a -f "$OldZTConf.rpmsave" ]; then
+      ZTConf="$OldZTConf"
+      OldZTConf="$OldZTConf.rpmsave"
+      TemplateZTConf="$OldZTConf"
+      $DRYRUN && shout "Found zendto.conf.rpmsave"
+    fi
+    if [ -f "$OldZTConf" -a -f "$OldZTConf.rpmnew" ]; then
+      ZTConf="$OldZTConf"
+      OldZTConf="$OldZTConf"
+      TemplateZTConf="$OldZTConf.rpmnew"
+      $DRYRUN && shout "Found zendto.conf.rpmnew"
+    fi
+  else
+    # Give up.
+    shout "Sorry, I cannot find the supplied template preferences.php"
+    shout "or zendto.conf files on which to base your new configuration"
+    shout "files."
+    shout "You are going to have to run upgrade_preferences_php and"
+    shout "upgrade_zendto_conf by hand."
+    exit 1
+  fi
+fi
+
+# Get the version number from their original prefs
+OldVerNum="$( getversion "$OldPrefs" )"
+if [ "x$OldVerNum" = "x" ]; then
+  OldVerNum='old'
+fi
+NewVerNum='new'
+$DRYRUN && shout "OldVerNum = $OldVerNum"
+
+# Make the new preferences.php file
+if [ "x$TemplatePrefs" != "x" ]; then
+  # OldPrefs and Prefs might well be the same file.
+  TempPrefs="$( mktemp )"
+  NewVerNum="$( getversion "$TemplatePrefs" )"
+  $DRYRUN && shout "NewVerNum = $NewVerNum"
+  echo
+  shout "Building your $Prefs"
+  shout "to contain new settings from the supplied template"
+  shout "$TemplatePrefs"
+  shout "combined with your old settings from"
+  shout "$OldPrefs"
+  echo
+  if $DRYRUN; then
+    shout "Would do this:"
+    shout "$NewBin/upgrade_preferences_php $OldPrefs $TemplatePrefs > $TempPrefs"
+    [ \! -d "$OLDSTORE" ] && shout "mkdir -p $OLDSTORE"
+    shout "cp -f --preserve $OldPrefs $OLDSTORE/preferences.php.$OldVerNum"
+    shout "mv -f $TemplatePrefs $OLDSTORE/preferences.php.supplied.$NewVerNum"
+    shout "cat $TempPrefs > $Prefs"
+    shout "rm -f $TempPrefs"
+  else
+    pause
+    "$NewBin"/upgrade_preferences_php "$OldPrefs" "$TemplatePrefs" > "$TempPrefs"
+    [ \! -d "$OLDSTORE" ] && mkdir -p "$OLDSTORE"
+    cp -f --preserve "$OldPrefs" "$OLDSTORE/preferences.php.$OldVerNum"
+    mv -f "$TemplatePrefs" "$OLDSTORE/preferences.php.supplied.$NewVerNum"
+    # Not using mv ensures permissions of original Prefs are preserved
+    cat "$TempPrefs" > "$Prefs"
+    rm -f "$TempPrefs"
+  fi
+  # If the old and new are in the same directory, but aren't the same file,
+  # then delete the old one. We have already saved a copy of it to OLDSTORE
+  if [[ ( "$( readlink -f "$OldConfigDir" )" = "$( readlink -f "$NewConfigDir" )" ) &&
+        ( "$( readlink -f "$Prefs" )" != "$(readlink -f "$OldPrefs" )" ) ]]; then
+    if $DRYRUN; then
+      shout "Delete $OldPrefs"
+    else
+      rm -f "$OldPrefs"
+    fi
+  fi
+else
+  echo
+  shout "Could not find a template preferences.php file to use, so"
+  shout "you probably don't need to do anything to your preferences.php file."
+  echo
+fi
+
+# Make the new zendto.conf file
+if [ "x$TemplateZTConf" != "x" ]; then
+  # OldZTConf and ZTConf might well be the same file.
+  TempZTConf="$( mktemp )"
+  echo
+  shout "Building your $ZTConf"
+  shout "to contain new settings from the supplied template"
+  shout "$TemplateZTConf"
+  shout "combined with your old settings from"
+  shout "$OldZTConf"
+  echo
+  if $DRYRUN; then
+    shout "Would do this:"
+    shout "$NewBin/upgrade_zendto_conf $OldZTConf $TemplateZTConf > $TempZTConf"
+    [ \! -d "$OLDSTORE" ] && shout "mkdir -p $OLDSTORE"
+    shout "cp -f --preserve $OldZTConf $OLDSTORE/zendto.conf.$OldVerNum"
+    shout "mv -f $TemplateZTConf $OLDSTORE/zendto.conf.supplied.$NewVerNum"
+    shout "cat $TempZTConf > $ZTConf"
+    shout "rm -f $TempZTConf"
+  else
+    pause
+    "$NewBin"/upgrade_zendto_conf "$OldZTConf" "$TemplateZTConf" > "$TempZTConf"
+    [ \! -d "$OLDSTORE" ] && mkdir -p "$OLDSTORE"
+    cp -f --preserve "$OldZTConf" "$OLDSTORE/zendto.conf.$OldVerNum"
+    mv -f "$TemplateZTConf" "$OLDSTORE/zendto.conf.supplied.$NewVerNum"
+    # Not using mv ensures permissions of original ZTConf are preserved
+    cat "$TempZTConf" > "$ZTConf"
+    rm -f "$TempZTConf"
+  fi
+  # If the old and new are in the same directory, but aren't the same file,
+  # then delete the old one. We have already saved a copy of it to OLDSTORE
+  if [[ ( "$( readlink -f "$OldConfigDir" )" = "$( readlink -f "$NewConfigDir" )" ) &&
+        ( "$( readlink -f "$ZTConf" )" != "$(readlink -f "$OldZTConf" )" ) ]]; then
+    if $DRYRUN; then
+      shout "Delete $OldZTConf"
+    else
+      rm -f "$OldZTConf"
+    fi
+  fi
+else
+  echo
+  shout "Could not find a template zendto.conf file to use, so"
+  shout "you probably don't need to do anything to your zendto.conf file."
+  echo
+fi
+
+
+# Put all the SELinux attributes back, if it's being used
+if sestatus >/dev/null 2>&1; then
+  restorecon -F -R /opt/zendto >/dev/null 2>&1
+fi
+
+if [ -d "$OLDSTORE" ]; then
+  echo
+  shout "Please look in $OLDSTORE to find the old versions of"
+  shout "the preferences.php and/or zendto.conf files."
+  echo
+fi
+
+exit 0

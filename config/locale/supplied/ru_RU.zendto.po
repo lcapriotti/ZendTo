@@ -1,0 +1,1635 @@
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage"fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2020-01-02 11:43+0100\n"
+"Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
+"Language-Team: Русский язык <dizzy.easy49@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 2.2.4\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Нажмите, пожалуйста, еще раз на ссылку, которую вам отправили для получения ваших файлов."
+
+msgid "Authentication Failure"
+msgstr "Ошибка аутентификации"
+
+msgid "Your session has expired. Please start again."
+msgstr "Ваш сеанс истек. Пожалуйста, начните еще раз."
+
+msgid "Session Expired"
+msgstr "Сеанс истек"
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "Адрес вашего компьютера был изменен. Нажмите еще раз на ссылку, которую вам отправили для получения ваших файлов."
+
+msgid "Session Error"
+msgstr "Ошибка сеанса"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Эта функция доступна только для пользователей, которые вошли в систему."
+
+msgid "Access Denied"
+msgstr "Доступ запрещен"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "Считывание файлов не получилось. Проверьте, может ли веб-сервис считывать."
+
+msgid "File Permissions Error"
+msgstr "Ошибка полномочий доступа к файлу"
+
+msgid "This is available to administrators only."
+msgstr "Доступно только для администраторов."
+
+msgid "Administrators only"
+msgstr "Только администраторы"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Нажмите, пожалуйста, еще раз на ссылку, которую вам отправили для получения ваших файлов."
+
+msgid "I do not think you are a real person."
+msgstr "Я не думаю, что ты настоящий человек."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "Вы пытались повторно отправить эту форму. Пожалуйста, начните снова."
+
+msgid "Are you a real person?"
+msgstr "Вы настоящий человек?"
+
+msgid "Database failure writing authentication key."
+msgstr "Ключ аутентификации не был внесен в базу данных."
+
+msgid "Database Error"
+msgstr "Ошибка базы данных"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "Тест на определение того, робот вы или человек, не удался. Попробуйте пройти еще раз."
+
+msgid "Test failed"
+msgstr "Сбой проверки"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "Ваш код запроса не найден или уже был использован."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "Вы все еще можете отправлять файлы прямо из главного меню или запрашивать новый код запроса."
+
+msgid "Request Code Used"
+msgstr "Код запроса использован"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "Ваш срок действия кода запроса истек. Пожалуйста, начните снова."
+
+msgid "Request Code Expired"
+msgstr "Ваш срок действия кода запроса истек"
+
+msgid "Request Error"
+msgstr "Ошибка запроса"
+
+msgid "Sending the request email failed."
+msgstr "Не удалось отправить запрос по электронной почте."
+
+msgid "Email Error"
+msgstr "Проблема с отправкой электронной почты"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "Не удается повторно отправить Отправку %s."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Не удается повторно отправить Отправку"
+
+msgid "Unlocked %s."
+msgstr "Разблокировано %s."
+
+msgid "Unknown user"
+msgstr "Неизвестный пользователь"
+
+msgid "Request Code Error"
+msgstr "Ошибка кода запроса"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Пожалуйста, проверьте правильность ввода или запросите новый код запроса."
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Либо заполните эту форму, либо нажмите кнопку\"Назад\" в браузере и повторно введите код запроса."
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "Вы пытались повторно отправить эту форму.  Пожалуйста, вернитесь на главное меню и начните снова."
+
+msgid "Verify Error"
+msgstr "Проверьте ошибку"
+
+msgid "Sending the verification email failed."
+msgstr "Не удалось отправить письмо с подтверждением."
+
+msgid "Could not open MySQL database on %s"
+msgstr "Не смог открыть MySQL базу данных на %s"
+
+msgid "Failed to add login record"
+msgstr "Не удалось добавить запись входа"
+
+msgid "Failed to delete login records"
+msgstr "Не удалось удалить записи входа"
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "Не удалось запустить блок транзакций при обновлении regexp"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "Не удалось выполнить откат после прерывания удаления старых regexp"
+
+msgid "Failed to delete old regexps"
+msgstr "Не удалось удалить старые regexp"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "Не удалось выполнить откат после прерывания добавления regexp"
+
+msgid "Failed to add regexp"
+msgstr "Не удалось добавить regexp"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "Прерывание добавления пользователя %s, так как этот пользователь уже существует"
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "Не удалось запустить блок транзакций при добавлении пользователя %s"
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "Не удалось выполнить откат после прерывания добавления пользователя %s"
+
+msgid "Failed to add user %s"
+msgstr "Не удалось добавить пользователя %s"
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "Прерывание удаления пользователя %s, поскольку этот пользователь не существует"
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "Прерывание обновления пользователя %s, поскольку этот пользователь не существует"
+
+msgid "Failed to update password for user %s"
+msgstr "Не удалось обновить пароль для пользователя %s"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Проверка пользователя: не удалось подключиться ни к одному из серверов проверки подлинности; не удалось выполнить проверку подлинности пользователя."
+
+msgid "LDAP Error"
+msgstr "LDAP ошибка"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "К сожалению, у вас нет полномочий на использование этого сервиса."
+
+msgid "Authorization Failed"
+msgstr "Ошибка авторизации"
+
+msgid "Check User: No AD servers configured."
+msgstr "Проверка пользователя: AD серверы не настроены."
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "Используйте кнопку Назад в вашем браузере, чтобы вернуться и исправить эту ошибку, прежде чем повторить попытку снова."
+
+msgid "Please notify the system administrator."
+msgstr "Пожалуйста, сообщите системному администратору."
+
+msgid "%d bytes"
+msgstr "%d байт"
+
+msgid "%.1f KB"
+msgstr "%.1f Кб"
+
+msgid "%.1f MB"
+msgstr "%.1f Мб"
+
+msgid "%.1f GB"
+msgstr "%.1f Гб"
+
+msgid "%.1f TB"
+msgstr "%.1f Тб"
+
+msgid "The preferences are not configured properly!"
+msgstr "Настройки не настроены должным образом!"
+
+msgid "Invalid Configuration"
+msgstr "Неверная Конфигурация"
+
+msgid "Could not create ZendTo database handle"
+msgstr "Не удалось создать дескриптор базы данных ZendTo"
+
+msgid "Please note"
+msgstr "Обратите внимание"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "ZendTo preferences.php не имеет выбранного метода аутентификации."
+
+msgid "Authentication Error"
+msgstr "Ошибка аутентификации"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "Настройки не настроены должным образом (они пусты)!"
+
+msgid "Mail Error"
+msgstr "Проблема с отправкой электронной почты"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "Не удалось выполнить запись в файл журнала %s, убедитесь, что пользователь веб-сервера может выполнить запись в файл журнале, как указано в preferences.php"
+
+msgid "Configuration Error"
+msgstr "Ошибка конфигурации"
+
+msgid "The username or password was incorrect."
+msgstr "Неверное имя пользователя или пароль."
+
+msgid "Could not read local domain list file %s"
+msgstr "Не удалось прочитать файл списка локальных доменов %s"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "Необходимо указать значение для следующего ключа предпочтения: '%s'"
+
+msgid "Undefined Preference Key"
+msgstr "Неопределенный ключ предпочтения"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "Не удалось расшифровать и загрузить файл. Возможно, вы неправильно ввели пароль. Пожалуйста, попробуйте еще раз."
+
+msgid "Decryption failed"
+msgstr "Ошибка расшифровки"
+
+msgid "one of the recipients"
+msgstr "один из получателей"
+
+msgid "Not calculated"
+msgstr "Не рассчитано"
+
+msgid "%s has picked up your drop-off!"
+msgstr "%s получил(а) вашу Отправку!"
+
+msgid "%s has dropped off a file for you"
+msgstr "\"%s сохранил пересылку для вас"
+
+msgid "%s has dropped off files for you"
+msgstr "%s оставил для вас файлы"
+
+msgid "%d days"
+msgstr "%d дней"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "Неверный Идентификатор или Код доступа, возможно, истек срок действия возврата. Пожалуйста, проверьте еще раз и обратите внимание, что Отправки должны быть собраны до истечения срока их действия, иначе они будут автоматически удалены."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "Неверный Идентификатор или Код доступа"
+
+msgid "Upload Error"
+msgstr "Ошибка загрузки"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "С этим Идентификатором возможен больше, чем 1 Отправка."
+
+msgid "Invalid Claim ID"
+msgstr "Неверный Идентификатор"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "Каталог, содержащий файлы для этой Отправки, исчез."
+
+msgid "Drop-off Directory Not Found"
+msgstr "Каталог Drop-off не найден"
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Не удалось прочитать информацию о проверке. Ваш сеанс, вероятно, истек. Пожалуйста, начните снова."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Админ: установите PHP модуль / rpm \" mbstring\"."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "Адрес '%s'  электронной почты получателя недействителен."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "Вы должны быть зарегистрированы как пользователь %1$s, чтобы сохранить отправку для пользователя, незарегистрированного в %1$s."
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Вернитесь в Главное меню %s для входа в систему и повторите попытку."
+
+#, fuzzy
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "Вы должны быть зарегистрированы как пользователь %1$s, чтобы сохранить отправку для пользователя, незарегистрированного в %1$s."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "Вам необходимо указать адреса электронной почты всех получателей в форме."
+
+msgid "There was an error while uploading '%s'."
+msgstr "Произошла ошибка при загрузке'%s'."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "Размер файла получателя превышает ограничение, установленное PHP на сервере."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "Размер файла получателей превышает установленный лимит (максимальный - %s)."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Файл получателей был загружен только частично. Возможно, время ожидания сетевого подключения истекло при попытке загрузки."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Файл получателя фактически не был загружен."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "Сервер не был настроен с временной папкой для загрузки."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "Временная папка сервера настроена неправильно."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Не удалось прочитать загруженный файл получателей."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "Вы должны выбрать хотя бы один файл для отправки."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "Размер файла превышает лимит, установленный PHP на сервере."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "Файл\"%s\" был слишком большим. Каждый отброшенный файл может содержать не более %s."
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Файл был загружен только частично. Возможно, время ожидания сетевого подключения истекло при попытке загрузки."
+
+msgid "No file was actually dropped-off."
+msgstr "Никакой файл не сохранился."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "Общий размер передаваемых файлов превышает максимальный размер для одного передаваемого файла. В целом, одно падение может быть не более %s."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "Один или несколько файлов, которые вы передали, были заражены вирусом. Передача была оставлена. Очистите файлы и повторите попытку."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "Попытка сканирования на вирусы не удалась."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "Передаваемый список был слишком большим для шифрования, поэтому он был сохранен незашифрованным. Если это не то, что вы хотите, пожалуйста, немедленно удалите передаваемый список из папки\"Исходящие\"."
+
+msgid "Drop-off not encrypted"
+msgstr "Отправка не зашифрована"
+
+msgid "You must specify your own email address in the form."
+msgstr "Вы должны указать ваш адрес электронной почты в форме."
+
+msgid "The sender email address you entered was invalid."
+msgstr "Введенный адрес электронной почты отправителя был неверным."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Не удалось создать каталог, содержащий удаленные файлы."
+
+msgid "Encryption failed."
+msgstr "Сбой шифрования."
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Похоже, что ваш сброс не удался из-за отсутствия свободного места на сервере. Осталось только %s."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "Проблемы при попытке сохранить '% s' в папку."
+
+msgid "Could not add recipients to the database."
+msgstr "Не удалось добавить получателей в базу данных."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "Проблема при попытке сохранить информацию для '%s'."
+
+msgid "Library"
+msgstr "Библиотека"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr "Не удалось отправить электронное письмо получателю %s. но ваше сообщение было сохранено с Идентификатором %s"
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Не удается добавить в базу данных удаленную запись."
+
+msgid "Unable to begin database transaction."
+msgstr "Не удается запустить транзакцию базы данных."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Не удалось подключиться ни к одному из серверов проверки подлинности; не удалось выполнить проверку подлинности пользователя."
+
+msgid "0 bytes"
+msgstr "0 байт"
+
+msgid "1 byte"
+msgstr "1 байт"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Эта форма не может быть названа таким образом, пожалуйста, вернитесь в Главное меню."
+
+msgid "Internal Error"
+msgstr "Внутрянняя ошибка"
+
+msgid "You must specify your name in the form."
+msgstr "Вы должны уточнитьваше имя в форме."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "В форме необходимо указать адрес электронной почты получателя."
+
+msgid "Your email address you entered was invalid."
+msgstr "Введенный вами адрес электронной почты недействителен."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "Адрес электронной почты получателя, введенный вами, недействителен."
+
+msgid "Database failure writing request information."
+msgstr "Сбой базы данных запись информации запроса."
+
+msgid "Could not create the new database."
+msgstr "Не удалось создать новую базу данных."
+
+msgid "Could not create the tables in the new database."
+msgstr "Не удалось создать таблицы в новой базе данных."
+
+msgid "Could not open the database."
+msgstr "Не удалось открыть базу данных."
+
+msgid "Database Error creating %s table"
+msgstr "Ошибка создания базы данных %s table"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Не удалось ничего прочитать из loginlog"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d дней и %2$d часов"
+
+msgid "%d hours"
+msgstr "%d  часов"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d дней и %2$d минут"
+
+msgid "%d minutes"
+msgstr "%d минут"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d дней и %2$d секунд"
+
+msgid "%d second"
+msgstr "%d секунда"
+
+msgid "%d seconds"
+msgstr "%d секунда"
+
+msgid "The email address you entered was invalid."
+msgstr "Введенный адрес электронной почты недействителен."
+
+msgid "You are trying to drop off some files"
+msgstr "Вы пытаетесь сбросить некоторые файлы"
+
+msgid "About the %1 Service..."
+msgstr "О %1 Сервисе…"
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "Сообщения электронной почты с большими вложениями могут нанести ущерб почтовым серверам и компьютерам конечных пользователей. Загрузка таких сообщений электронной почты может занять несколько часов при медленном подключении к Интернету и блокировать любую отправку или получение сообщений в течение этого времени. В некоторых случаях загрузка будет прерываться многократно, нарушая способность получателя получать почту вообще. Кроме того, почтовые клиенты интернета значительно увеличивают размер отправляемого файла. Например, сохранение сообщения Outlook с вложением увеличивает размер файла до 40%. Чтобы предоставить общий доступ к файлам размером более 1 МБ, используйте %1, чтобы временно сделать файл (или файлы) доступным другому пользователю через Интернет безопасным и эффективным способом."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "Существует два различных типа пользователей, которые будут обращаться к системе %1: <em>внутренние</em> пользователи, связанные с %2, выполняющим службу, и <em>внешние</em> пользователи, охватывающие остальную часть Интернета."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "С тегом <em>внутрь</ем> пользователь может отправить передачи кому угодно, будь они <их>внутри</ем> или <em>за пределами</ем> пользователей. В <em>за пределами</ем> пользователь имеет право отправить высадки в <em>внутри</ем> пользователей. Это наводит на вопрос: Что такое Отправка?"
+
+msgid "drop-off"
+msgstr "отправка"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "один или несколько файлов, загруженных в %1 как один элемент для доставки человеку или людям"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Существует несколько способов, с помощью которых пользователь может отправить сразу несколько файлов:"
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Перетащите несколько файлов одновременно на страницу Отправки"
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "Нажмите на кнопку \"Добавить файлы\" на раскрывающейся странице и выберите 1 или несколько файлов сразу, используя комбинации click, Shift+click или Ctrl+click (Cmd+click на Mac)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Архивируйте и сжимайте файлы в один пакет и прикрепите полученный архивный файл на странице Отправки."
+
+msgid "There are many ways to archive and compress files:"
+msgstr "Существует множество способов архивирования и сжатия файлов:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "Пользователи Mac могут выбрать файлы в Finder и \"сжать\" (см. меню <em>File</em>)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "Пользователи Windows могут создать \"сжатую папку\" или использовать %1"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "Пользователи Linux / Unix могут попробовать \"PeaZip\" или \"File Roller\""
+
+msgid "Creating a Drop-off"
+msgstr "Создание Отправки"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Когда пользователь создает Отправку, он вводит некоторую идентифицирующую информацию о себе (имя, организация и адрес электронной почты); идентифицирующую информацию о получателе(получателях) (имя и адрес электронной почты); и выбирает, какие файлы должны быть загружены в Отправке. Если файлы успешно сохранены, получателю (получателям) отправляется электронное письмо с объяснением того, что передача была произведена. Это письмо также содержит ссылку для доступа к Отправке. Другая информация(например, адрес в интернете и/или имя компьютера, с которого было создано отправление) сохраняется, чтобы помочь получателю (получателям) проверить личность отправителя."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "Получение Отправки получателем может быть выполнено только с использованием Идентификатора и Код доступа."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "При отправке файлов вы можете выбрать, будет ли сообщение отправлено получателю автоматически."
+
+msgid "Making a Pick-up"
+msgstr "Получить Отправку"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Есть два способа забрать файлы:"
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Все пользователи могут перейти по ссылке, указанной в уведомлении, которое они получили."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Внутренний пользователь, после входа в систему, может отображать свой каталог. После входа в систему внутренний пользователь может получить доступ на все предметы."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "При просмотре Отправок пользователь может видеть:"
+
+msgid "The list of files that were uploaded"
+msgstr "Список файлов, которые были сохранены"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "Сведения об отправителе и получателе, введенные отправителем при создании Отправки"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "Идентификационные данные компьютера, в котором была создана Отправка"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "В некоторых случаях записи о получении Отправки"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "У получателя есть %1 дней, чтобы забрать файлы. Каждую ночь из системы удаляются отсылки, возраст которых превышает %1 дней."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Обратите внимание, что загруженные файлы проверяются на наличие вирусов, но получатель должен проявлять максимальную осторожность при их загрузке и открытии. Это может быть так же просто, как проверить с отправителем, упомянутым в уведомлении по электронной почте, что он или она действительно сделал Отправки. Можно также проверить имя компьютера / адрес, когда было создано падение, чтобы быть уверенным, что это соответствует интернет-домену отправителя. Однако IP-адреса могут быть подделаны, поэтому первая проверка подлинности действительно является наиболее надежной."
+
+msgid "Resumable Downloading of Files"
+msgstr "Возобновляемая загрузка файлов"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "Большинство веб-браузеров поддерживают возобновляемые загрузки."
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "%1 поддерживает серверные компоненты технологии <em>возобновляемой загрузки</em> в соответствии со стандартом HTTP 1.1."
+
+msgid "Size Limitations on Uploads"
+msgstr "Ограничения по размеру на Загрузку"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "Возможность загрузки файлов размером более 2 ГБ зависит от используемого браузера."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Если это возможно, используйте современный 64-bit браузер на 64-bit операционной системе. Если у вас есть только 32-bit система (наиболее распространенной причиной является Windows 7), то используйте современную версию Google Chrome или Firefox. Старые версии Microsoft Internet Explorer особенно плохи в этом."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "Само программное обеспечение %1 имеет настраиваемые ограничения на объем данных, которые могут быть загружены в одной Отправке. Даже для браузеров, поддерживающих загрузку размером более 2 ГБ, размер Отправки не может превышать %2 для каждого файла или %3 для всего выпадающего списка."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "Если при удалении или подборе большого файла у вас возникают следующие проблемы:"
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Ваш браузер сообщает о плохом или нарушенном соединении после загрузки значительной части файла"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Отобразится ошибочная станица, указывающая, что вы не передали файлы"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "тогда вы, скорее всего, подключены к Интернету через слишком медленное, для того чтобы переместить объем данных своевременно. Ваш компьютер обычно имеет не более 2 часов, чтобы полностью отправить или получить передачу."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "На основе оригинального программного обеспечения Perl UD Dropbox, написанного Доком Скоттом."
+
+msgid "Version %1 has been developed by %2."
+msgstr "Версия %1 была разработана %2."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Пожалуйста, введите Идентификатор и Код доступа утверждения, которые были отправлены вам."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Пожалуйста, введите Идентификатор или Код доступа."
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Если отправитель дал вам Код доступа, пожалуйста, введите его."
+
+msgid "Claim ID"
+msgstr "Идентификатор"
+
+msgid "Claim Passcode"
+msgstr "Код доступа"
+
+msgid "Pick-up Files"
+msgstr "Получить файл(ы)"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "Отправка с Идентификатором %1 была успешно удалена."
+
+msgid "Unable to remove the drop-off"
+msgstr "Не удается удалить Отправку"
+
+msgid "You may have already deleted it."
+msgstr "Возможно, вы уже удалили это."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Это автоматическое сообщение, отправленное вам %1 сервисом."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Это напоминание о Отправке, которую никто не принял."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "Срок действия Отправки истекает через %1, после чего она будет автоматически удалена."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1 &lt;%2&gt; пересылку для вас"
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1 &lt;%2&gt; сохранил %3 для вас."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong>ЕСЛИ ВЫ ДОВЕРЯЕТЕ ОТПРАВИТЕЛЮ</strong> и ожидаете получить от него файлы, вы можете выбрать, получение Отправки, нажав на следующую ссылку (или скопировать и вставить его в свой веб-браузер):"
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong>Эта Отправка зашифрована.</strong> Чтобы загрузить какие-либо файлы, вы должны иметь правильный пароль."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "У вас есть %1 для получения Отправки; после этого ваша ссылка истечет."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Если вы хотите связаться с отправителем, просто ответьте на это письмо."
+
+msgid "The sender has left you a note:"
+msgstr "Отправитель оставил вам записку:"
+
+msgid "Full information about the drop-off:"
+msgstr "Полная информация о Отправке:"
+
+msgid "Sent separately"
+msgstr "Отправлять по отдельности"
+
+msgid "Date of Drop-off"
+msgstr "Дата Отправки"
+
+msgid "Sender"
+msgstr "Отправитель"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Organization"
+msgstr "Организация"
+
+msgid "Email Address"
+msgstr "Электронная почта"
+
+msgid "IP Address"
+msgstr "IP адрес"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Files"
+msgstr "Файлы"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 контрольная сумма"
+
+msgid "Content Type"
+msgstr "Тип контента"
+
+msgid "a file"
+msgstr "файл"
+
+msgid "%1 files"
+msgstr "%1 файлы"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> сохранил %3 для вас."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "ЕСЛИ ВЫ ДОВЕРЯЕТЕ ОТПРАВИТЕЛЮ и ожидаете получить от него файлы, вы можете выбрать, получение Отправки, нажав на следующую ссылку (или скопировать и вставить его в свой веб-браузер):"
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** Эта Отправка зашифрована. **\n"
+"Чтобы загрузить какие-либо файлы, вы должны иметь правильный пароль."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "У вас есть %1 для получения Отправки; после этого ваша ссылка истечет. Если вы хотите связаться с отправителем, просто ответьте на это письмо."
+
+msgid "Claim ID:          %1"
+msgstr "Идентификатор:          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Код доступа:    %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Дата Отправки:  %1"
+
+msgid "Name:            %1"
+msgstr "Имя:            %1"
+
+msgid "Organization:    %1"
+msgstr "Организация:    %1"
+
+msgid "Email Address:   %1"
+msgstr "Электронная почта:   %1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP адрес:      %1  %2"
+
+msgid "Name:             %1"
+msgstr "Имя:             %1"
+
+msgid "Description:      %1"
+msgstr "Описание:      %1"
+
+msgid "Size:             %1"
+msgstr "Размер:             %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 Контрольная сумма: %1"
+
+msgid "Content Type:     %1"
+msgstr "Тип контента:     %1"
+
+msgid "Picked up"
+msgstr "Взятый"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Search:"
+msgstr "Поиск:"
+
+msgid "Show _MENU_ entries"
+msgstr "Показать _MENU_ записи"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Показаны с _START_ до_END_ из _TOTAL_ записей"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Показаны 0 до 0 из 0 записей"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(отфильтровано из  _MAX_ total записей)"
+
+msgid "No matching records found"
+msgstr "Совпадающих записей не найдено"
+
+msgid "No data available in table"
+msgstr "Отстутсвие дат в таблице"
+
+msgid "First"
+msgstr "Первый"
+
+msgid "Previous"
+msgstr "Предыдущий"
+
+msgid "Next"
+msgstr "Следующий"
+
+msgid "Last"
+msgstr "Последний"
+
+msgid "Recipient"
+msgstr "Получатель"
+
+msgid "Created"
+msgstr "Созданный"
+
+msgid "Encrypted"
+msgstr "Зашифрованный"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr "\"%1\" в столбце\"%2\" не может <em>гарантировать<em>, что какой-либо файл был полностью успешно загружен."
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr "Но \"%1\" значит это <em>не</em> было успешно загружено."
+
+msgid "%1 = Encrypted by %2"
+msgstr "%1 = Зашифровано %2"
+
+msgid "%1 = Not encrypted by %2"
+msgstr "%1 = Не зашифровано %2"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Outbox"
+msgstr "Исходящие"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Нажмите на Отправку, чтобы просмотреть информацию и файлы для Отправки."
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "В данный момент у вас нет никаких Отправок."
+
+msgid "Copyright &copy; %1"
+msgstr "Авторское право &copy; %1"
+
+msgid "About %1"
+msgstr "О %1"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr ""
+
+msgid "Version %1"
+msgstr ""
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "Вы вошли в систему как <em>%1</em>"
+
+msgid "Return to the %1 main menu"
+msgstr "Вернитесь в %1 главное меню"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "%1 Username"
+msgstr "%1 Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Privacy Consent"
+msgstr "Согласие на конфеденциальность"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Этот сайт использует файлы cookie & должен использовать ваше имя & адрес электронной почты для работы."
+
+msgid "I agree"
+msgstr "Я согласен"
+
+msgid "I do not agree"
+msgstr "Я не согласен"
+
+msgid "Home"
+msgstr "Дом"
+
+msgid "Inbox"
+msgstr "Входящие"
+
+msgid "Please login above."
+msgstr "Пожалуйста, войдите в систему выше."
+
+msgid "Authentication"
+msgstr "Аутентификация"
+
+msgid "You have been logged out."
+msgstr "Вы вышли из системы."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "Для большей безопасности вы также должны выйти из этого браузера или, по крайней мере, закрыть окно браузера."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Вы будете перенаправлены в <a href=\"%1\"> главное меню</a> через мгновение."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "Последних %1 рядов %2 журнала, самый актуальный как первый"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "Вы используете старую неподдерживаемую версию Internet Explorer."
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Этот сайт не будет правильно работать с этим веб-браузером."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Пожалуйста, используйте лучший веб-браузер, такой как Google Chrome или Firefox, или, по крайней мере, Internet Explorer 11."
+
+msgid "Drop-off"
+msgstr "Сохранить"
+
+msgid "Pick-up"
+msgstr "Получить"
+
+msgid "Request a Drop-off"
+msgstr "Запрос на Отправку"
+
+msgid "Show All Drop-offs"
+msgstr "Показать все Отправки"
+
+msgid "Unlock Users"
+msgstr "Разблокировать пользователей"
+
+msgid "System Statistics"
+msgstr "Системная статистика"
+
+msgid "System Log"
+msgstr "Системный лог"
+
+msgid "You may perform the following activities:"
+msgstr "Вы можете выполнить соедующие действия:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Передайте (<em>upload</em>) файл кому-то другому."
+
+msgid "Ask another person to send you some files."
+msgstr "Попросите другого человека отправить вам файлы."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Получить (<em>download</em>) файл(ы)."
+
+msgid "View all drop-offs in the database"
+msgstr "Просмотр все Отправки в базе данных"
+
+msgid "Unlock locked-out users"
+msgstr "Разблокировка заблокированных пользователей"
+
+msgid "View daily statistics for the service"
+msgstr "Просмотр ежедневной статистики для сервиса"
+
+msgid "View log file"
+msgstr "Просмотр файла журнала"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "Если вы являетесь пользователем %1, пожалуйста, войдите в систему выше."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "Если вы являетесь пользователем %1, вы можете войти в систему здесь:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr "<strong>Пользователи %1 должны войти в систему в первую очередь.</strong>"
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "Избегайте необходимости проверять свой адрес электронной почты.<br/>Можете передавать файлы пользователям вне организации."
+
+msgid "Anyone may perform the following activities:"
+msgstr "Любой желающий может выполнить следующие действия:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "Схранение (<em >upload</em>) файла для пользователю %1 (необходимо подтверждение адреса электронной почты)."
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Получить (<em>download</em>) Отправку."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "%1 пользователи: вы можете войти в систему с вашим именем пользователя и паролем и отправлять файлы кто-либо в организации или вне организации"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "Не - %1 пользователи: вы не можете войти в систему, но можете отправлять файлы пользователям %1, если знаете их адрес электронной почты. Начните с нажатия \"%3\" кнопки."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "%1 пользователи, которые хотят, чтобы кто-то за пределами %2 отправлял им файлы, могут упросить процесс, войдя в систему и нажав кнопку \"%3\". Это избавляет другого человека от необходимости доказывать, кто он такой."
+
+msgid "The request created will be valid for %1."
+msgstr "Созданный запрос будет действителен для %1."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "%1 - это сервис, позволяющий легко перемещать файлы, включая большие файлы размером до %2."
+
+msgid "How secure is %1?"
+msgstr "Насколько безопасен %1?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "Файлы автоматически удаляются из %1 %2 дней после их сохранения."
+
+msgid "Scanning for viruses..."
+msgstr "Сканирование на наличие вирусов…"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "__CHARS__ too long"
+msgstr "\"__CHARS__ слишком длинный"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ left"
+
+msgid "Too short!"
+msgstr "Слишком короткий!"
+
+msgid "Entries do not match"
+msgstr "Записи не совпадают"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Кликнете, чтобы добавить файлы или перетащить их сюда"
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Если вы покинете эту страницу, вы откажетесь от этого сбрасывания."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr ""
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "Вычисление контрольной суммы вашего сбрасывания займет слишком много времени."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "Контрольная сумма может быть получена только у Отправки до  __MAXSIZE__."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr "Каждый файл будет зашифрован. Это было применено %1, вам не нужно ничего делать."
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "Зашифровка вашей передачи займет слишком много времени."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Шифровка возможна только у Отправки до __MAXSIZE__."
+
+msgid "MB"
+msgstr "Мб"
+
+msgid "KB"
+msgstr "Кб"
+
+msgid "Remove file"
+msgstr "Удалить файл"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Теперь потребуется слишком много времени для шифрования вашего передаваемого списка, поэтому шифрование было отключено. Если вы хотите зашифровать ваши передачи, уменьшите передачу под  __MAXSIZE__  и выберите \"Encrypt\" снова."
+
+msgid "Please enter a valid email address."
+msgstr "Пожалуйста, введите действительный адрес электронной почты."
+
+msgid "Remove selected recipient"
+msgstr "Удалить выбранного получателя"
+
+msgid "Please add at least one file first!"
+msgstr "Пожалуйста, сначала добавьте хотя бы один файл!"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "Ваши файлы больше, чем максимальный общий размер, который вы можете отправить в одной передаче (__MAXTOTALSIZE__)."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "Файл __NUMBER__ больше максимального размера файла, который можно отправить в передаче (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr ""
+
+msgid "Scanning"
+msgstr "Сканирование"
+
+msgid "Checksumming"
+msgstr "Контрольное суммирование"
+
+msgid "Encrypting"
+msgstr "Кодирование"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Извините, я не смог передать ваши файлы!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Обратете внимание, чтовы не можете удалить справочники, только файлы."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Загружено: __PERCENT__%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr ""
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr ""
+
+msgid "PLEASE NOTE"
+msgstr "Пожалуйста, обратите внимание"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "Файлы, загруженные в %1, проверяются на наличие вирусов. Пользователям также настоятельно рекомендуется шифровать файлы, если содержит конфиденциальную информацию."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "Пользователям также настоятельно рекомендуется шифровать каждый файл, если он содержит конфиденциальную информацию (например, личную информацию)!"
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Эта веб-страница позволит вам отправить один или несколько файлов для любого пользователя (пользователя %1 или других пользователей). Получатель получит автоматическое электронное письмо, содержащее информацию, указанную ниже, и инструкции по загрузке файла. Ваш IP-адрес также будет зарегистрирован и отправлен получателю для подтверждения личности."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "На этой веб-странице можно отправить один или несколько файлов для пользователя %1. Получатель получит автоматическое электронное письмо, содержащее информацию, указанную ниже, и инструкции по загрузке файла. Ваш IP-адрес также будет зарегистрирован и отправлен получателю для подтверждения личности."
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "Для"
+
+msgid "Add Recipients"
+msgstr "Добавить получателей"
+
+msgid "Add One"
+msgstr "Добавить одного"
+
+msgid "Add Many"
+msgstr "Добавить много"
+
+msgid "Adds to your address book"
+msgstr "Добавить в адресную книгу"
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Add & Close"
+msgstr "Добавить & Закрыть"
+
+msgid "Bulk add recipients"
+msgstr "Добавление получателей"
+
+msgid "One recipient per line, for example:"
+msgstr "Один получатель на строку, напрмер:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Имя получателя email@example.com"
+
+msgid "Verify"
+msgstr "Проверьте"
+
+msgid "Encryption Passphrase"
+msgstr "Кодовая фраза шифрования"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "Эта кодовая фраза не будет отправлена получателям.<br/> Вы должны сделать это сами."
+
+msgid "Passphrase"
+msgstr "Фраза доступа"
+
+msgid "And again"
+msgstr "И снова"
+
+msgid "Hide characters"
+msgstr "Скрыть символы"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Short note to the Recipients"
+msgstr "Короткое сообщение"
+
+msgid "Encrypt every file"
+msgstr "Шифровка каждого файла"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Посчитайте SHA-256 checksum каждого файла"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Отправьте мне письмо, когда файлы будут приняты получателем"
+
+msgid "Send email message to recipients"
+msgstr "Отправить электоронное сообщение получателям"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "который включает Код доступа, а также Идентификатор"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
+
+msgid "Add Files"
+msgstr "Добавить файлы"
+
+msgid "and/or select a file..."
+msgstr "и/или выберите файл..."
+
+msgid "Filename"
+msgstr "Название файла"
+
+msgid "Uploading..."
+msgstr "Загрузка…"
+
+msgid "Drop-off Files"
+msgstr "Загрузить до Отправки"
+
+msgid "Drop to<br/>Add Files"
+msgstr "Передать<br/>Добавить файлы"
+
+msgid "(It will copy, not move)"
+msgstr "(Будет копировать, а не перемещать)"
+
+msgid "No file was chosen for download."
+msgstr "Не был выбран файл для загрузки."
+
+msgid "Please prove you are a person"
+msgstr "Пожалуйста, докажите, что вы человек"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "Чтобы подтвердить, что вы являетесь реальным человеком (а не компьютером), пожалуйста, выполните быструю задачу ниже, а затем нажмите кнопку \"Получить файл(ы)\":"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "Отправка (Идентификатор: %1) была получена."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "Файл \"<span class=\"mono\">%1</span>\" был получен."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1 полчил файл от %2."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "Файл \"<span class=\"mono\">%1</span>\" был получен %2."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Вы не будете уведомлены о каких-либо дальнейших передаваемых файлах в этой Отправке этим получателем."
+
+msgid "Note"
+msgstr "Сообщение"
+
+msgid "The file %1 was picked up."
+msgstr "Файл %1 был получен."
+
+msgid "The file %1 was picked up by %2."
+msgstr "Файл %1 был получен %2."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Вы не будете уведомлены о каких-либо дальнейших передаваемых файлах в этой Отправке этим получателем."
+
+msgid "Global Drop-off List"
+msgstr "Глобальный список"
+
+msgid "There are no drop-offs available at this time."
+msgstr "В данный момент у вас нет никаких Отправок."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "В данный момент у вас нет никаких Отправок."
+
+msgid "This is a request from %1 of %2."
+msgstr "Это зпрос от %1 на %2."
+
+msgid "This is a request from %1."
+msgstr "Это запрос от %1."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Пожалуйста, нажмите на ссылку ниже и передайте файл или файлы, которые были запрошены."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "Ссылка действительна только для %1 с момента отправки этого письма."
+
+msgid "All files you upload will be automatically encrypted."
+msgstr "Все файлы, которые вы загружаете, будут автоматически зашифрованы."
+
+msgid "More information is in the note below."
+msgstr "Дополнительную информацию вы найдете в примечании ниже."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "Если вы хотите связаться с %1,просто ответьте на это письмо."
+
+msgid "Click to copy link to clipboard"
+msgstr "Нажмите, чтобы скопировать ссылку в буфер обмена"
+
+msgid "Copied"
+msgstr "Скопировано"
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "Запрос на Отправку был отправлен %1, %2."
+
+msgid "It is valid for %1."
+msgstr "Действителен для %1."
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr "Файлы, которые будут отправлены вам, будут зашифрованы с помощью пароля, который вы только что ввели. Не теряйте его, иначе вы не сможете получить доступ к файлам!"
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Если получатели запроса хотят отправить вам файлы, они могут"
+
+msgid "Go to %1"
+msgstr "Перейти к %1"
+
+msgid "Select \"Drop-off Files\""
+msgstr "Выбрать \"Сохранить\""
+
+msgid "Enter the request code \"%1\""
+msgstr "Введить код запроса \"%1\""
+
+msgid "Click on the \"Next\" button"
+msgstr "Нажмить на \"Следующий\" кнопку\""
+
+msgid "You may close this window."
+msgstr "Вы можете закрыть это окно."
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "Запрос на удаление для %1 в %2 был создан."
+
+msgid "The link to give them is %1"
+msgstr "Ссылка, чтобы дать им %1"
+
+msgid "Send the Request"
+msgstr "Отправить запрос"
+
+msgid "Show the Link"
+msgstr "Показать ссылку"
+
+msgid "Please enter the recipient's name first!"
+msgstr "Пожалуйста, введите сначала имя получателя!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Пожалуйста, введите сначала адрес электронной почты получателя!"
+
+msgid "Please enter the email subject first!"
+msgstr "Пожалуйста, укажите сначала тему письма!"
+
+msgid "Your note is too long!"
+msgstr "Ваше сообщение слишком длинное!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr "Необязательно: если вы выберете этот параметр и зададите парольную фразу, раскрывающийся список будет зашифрован. Человек, отправляющий файлы, никогда не узнает пароль."
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr "Это обычно выбирается. Если вы снимите этот флажок, ссылка и инструкции не будут отправлены по электронной почте. Вместо этого вам просто будет показана ссылка, которая им нужна, чтобы вы могли отправить ее другим способом."
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Эта веб-страница позволит вам отправить запрос одному или нескольких других людей с просьбой отправить (загрузить) один или несколько файлов для вас. Получатель получит автоматическое электронное письмо, содержащее информацию, которую вы вводите ниже, и инструкции по загрузке файла(ов)."
+
+msgid "Email(s)"
+msgstr "Письмо(а)"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "Send email"
+msgstr "Отправить письмо"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Это будет отправлено получателю."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr "Не теряйте и не забывайте этот пароль!"
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "Передача была успешно повторно отправлена получателям."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Не удалось повторно отправить передачу."
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Все файлы, передаваемые в сети, надежно закодированы"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Если вы отправляете личные или конфиденциальные данные, отметьте \"Шифровать каждый файл\" при создании новой Отправки. Затем введенная вами парольная фраза должна использоваться при загрузке этой передачи. Парольная фраза не хранится в %1 и не может быть восстановлена в случае потери. Никто не может получить доступ к файлам без нее"
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "Все файлы, загруженные и временно сохраненные на %1, хранятся на оборудовании, принадлежащем и эксплуатируемом в собственном центре обработки данных %2"
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Все данные регулируются правилами и законами о защите данных"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 не является \"cloud\" сервисом. Все хранится на оборудовании, непосредственно принадлежащем %2, и управляется IT персоналом"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Весь доступ к данным очень строго контролируется %2. Все обращения к данным на %1 регистрируются и могут быть легко проверены, если вы когда-либо были обеспокоены тем, что третья сторона могла получить доступ к вашим данным"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Более того, загруженные данные хранятся на %1 не более %2 дней, после чего они автоматически удаляются. Нет возможности \"undelete\". Резервные копии загруженных данных не создаются, загруженные данные никогда не перемещаются с %1 на другое оборудование или носитель, например на ленты резервного копирования. После того, как загруженный файл был удален, нет никакого способа восстановить файл"
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Вы действительно хотите удалить эту передачу?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr "Предупреждение: Zip-файлы такого размера, вероятно, не откроются на Mac, дважды щелкнув на них. Вам придется использовать другое приложение, или же команды 'unzip' или 'ditto' в Terminal window."
+
+msgid "Include Passcode?"
+msgstr "Включить пароль?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Нужно ли включать Код доступа и Идентификатор в вашу электронную почту?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Нажмите '%1', если вы не уверены."
+
+msgid "Decryption Passphrase"
+msgstr "Расшифровка парольной фразы"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "Вы можете запросить у отправителя <br/> кодовую фразу для расшифровки."
+
+msgid "Delete Dropoff"
+msgstr "Удалить передачу"
+
+msgid "Resend Dropoff"
+msgstr "Повторно отправить передачу"
+
+msgid "Drop-Off Summary"
+msgstr "Резюме Отправки"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr ""
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr "Ваши файлы были зашифрованы и успешн отправлены."
+
+msgid "They will expire in %1."
+msgstr ""
+
+msgid "Your files have been sent successfully."
+msgstr "Ваши файлы были успешно отправлены."
+
+msgid "This drop-off is encrypted."
+msgstr "Эта передача зашифрована."
+
+msgid "Click on a filename to download that file."
+msgstr "Нажмите на название файла, чтобы загрузить этот файл."
+
+#, fuzzy
+msgid "This drop-off will expire in %1."
+msgstr "Эта передача зашифрована."
+
+msgid "%1 file"
+msgstr "%1 файл"
+
+msgid "Download All Files"
+msgstr "Загрузить все файлы"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Загрузите все файлы <br/> в виде незашифрованного Zip"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Загрузите все файлы<br/>в виде Zip"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Нет файлов в передаче…что-то не так!"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span>из %2 на %3</span>"
+
+msgid "Comments"
+msgstr "Комментарии"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Чтобы отправить файлы кому-то другому, отправьте им эту ссылку %1 или Идентификатор & Код доступа:"
+
+msgid "Picked-up on date..."
+msgstr "Принято в дату..."
+
+msgid "...from remote address..."
+msgstr "…с удаленного адреса…"
+
+msgid "...by recipient."
+msgstr "…получателя."
+
+msgid "%1 pickups"
+msgstr "%1 наводок"
+
+msgid "1 pickup"
+msgstr "1 наводка"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Ни один файл еще не был принят."
+
+msgid "View stats for the"
+msgstr "Просмотр статистики для"
+
+msgid "past week"
+msgstr "прошлая неделя"
+
+msgid "past month"
+msgstr "прошлый месяц"
+
+msgid "past 90 days"
+msgstr "за последние 90 дней"
+
+msgid "past year"
+msgstr "последний год"
+
+msgid "past 10 years"
+msgstr "за последние 10 лет"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "Количество сделанных передач (проверяется ежедневно)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Общий объем передаваемых данных (проверяется ежедневно)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Общий объем передаваемых данных (проверяется ежедневно)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Количество файлов в передаваемом списке (проверяется ежедневно)"
+
+msgid "Unlock"
+msgstr "Разблокировать"
+
+msgid "Select all"
+msgstr "Выбрать все"
+
+msgid "Unlock selected users"
+msgstr "Разблокировать выбранных пользователей"
+
+msgid "There are no locked users."
+msgstr "Нет заблокированных пользователей."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "Вы попросили отправить вам это соообщение, чтобы вы могли передать кому-то файлы."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "ИГНОРИРУЙТЕ ЭТО СООБЩЕНИЕ, ЕСЛИ ВЫ НЕ ОЖИДАЛИ ЕГО СРАЗУ!"
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "В противном случае продолжите процесс, перейдя по следующей ссылке (или скопировав и вставив ее в веб-браузер):"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Теперь дождитесь сообщения от %1 сервиса, затем кликните на сслыку в нем."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Вы будете перенаправлены в <a href=\"%1\">главное меню </a> через несколько секунд."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Пожалуйста, введите ваш код запроса перед отправкой."
+
+msgid "Please enter your name before submitting."
+msgstr "Пожалуйста,введите свое имя перед отправкой."
+
+msgid "Please enter your email address before submitting."
+msgstr "Пожалуйста, введите свой адрес электронной почты перед отправкой."
+
+msgid "Your Request Code"
+msgstr "Ваш код запроса"
+
+msgid "Request Code"
+msgstr "Код запроса"
+
+msgid "Information about the Sender"
+msgstr "Информация об отправителе"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Вы не выполнили форму или вы не смогли пройте \"Am I A Real Person?\" тест."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Вам дали \"<strong>Request Code</strong>\"?"
+
+msgid "Your name"
+msgstr "Ваше имя"
+
+msgid "(required)"
+msgstr "(необходимый)"
+
+msgid "Your organization"
+msgstr "Ваша организация"
+
+msgid "Your email address"
+msgstr "Ваш адрес электоронной почты"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "Чтобы подтвердить, что вы являетесь реальным человеком (а не компьютером), пожалуйста, выполните быструю задачу ниже:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Теперь я должен отправить вам письмо с подтверждением."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Когда вы получите его через минуту или две, кликнете на ссылку в нем."
+
+msgid "Send confirmation"
+msgstr "Отправьте подтверждение"
+
+#~ msgid "1 hour"
+#~ msgstr "1 час"
+
+#~ msgid "1 day"
+#~ msgstr "1 день"
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the person who requested the drop-off."
+#~ msgstr "Эта передача зашифрована парольной фразой, изевстной только тому, кто запросил передачу."
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the sender."
+#~ msgstr "Эта передача зашифрована с помощью пароля, известного только отправителю."

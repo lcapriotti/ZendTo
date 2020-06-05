@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+# Find ZendTo top directory.
+# It's either set in $ZENDTOPREFS, or else it's /opt/zendto, or else
+# we can't find it so bail out.
+if [ "x$ZENDTOPREFS" != "x" ]; then
+  ZENDTO=$( echo "$ZENDTOPREFS" | sed -e 's/\/[^\/]*$//; s/\/[^/]*$//;' )
+else
+  ZENDTO=/opt/zendto
+fi
+if [ "x$ZENDTO" = "/" ] || [ "x$ZENDTO" = "/opt" ] || [ ! -d "$ZENDTO" ]; then
+  echo "I cannot find the ZendTo directory!"
+  exit 1
+fi
+
+BIN="$ZENDTO/bin"
+CONFIG="$ZENDTO/config"
+LOCALE="$ZENDTO/config/locale"
+SUPPLIED="$ZENDTO/config/locale/supplied"
+TEMPLATES="$ZENDTO/templates"
+SMARTYPOT="$LOCALE/smarty.pot"
+PHPPOT="$LOCALE/php-code.pot"
+ZENDTOPOT="$LOCALE/zendto.pot"
+DATE="$(date +'%Y-%m-%d %H:%M%z')"
+YEAR="$(date +'%Y')"
+
+umask 022
+install -d "$LOCALE"
+
+echo Generating translation strings for UI templates
+php $BIN/tsmarty2c -o $SMARTYPOT $TEMPLATES/*.tpl
+
+echo Generating translation strings for PHP code
+xgettext -L PHP --no-location --keyword=gettext --keyword=_ --output=- $ZENDTO/{www,lib}/*.php | sed -e '/^#, php-format$/d' > $PHPPOT
+
+echo Filling in header fields of translation file
+sed -i -e \
+  's/^# SOME DESCRIPTIVE TITLE.*$/# ZendTo translation strings/;
+   s/^# \(.*\) YEAR THE PACKAGE.S COPYRIGHT HOLDER.*$/# \1 2018 Jules Field <Jules@Zend.To>/;
+   s/^# \(.* same license as the\) PACKAGE package.*$/# \1 ZendTo package./;
+   s/^# *FIRST *AUTHOR.*YEAR.*$/# Jules Field <Jules@Zend.To> '"$YEAR"'./;
+   s/^\("Project-Id-Version:\).*$/\1 ZendTo 5.00\\n"/;
+   s/^\("PO-Revision-Date:\).*$/\1 '"$DATE"'\\n"/;
+   s/^\("Language-Team:\).*$/\1 US English <Jules@Zend.To>\\n"/;
+   s/^\("Content-Type: *text\/plain; *charset=\).*$/\1UTF-8\\n"/;' \
+   $PHPPOT
+
+echo Replacing UI and PHP translation strings with merged version
+msgcat --no-wrap --no-location -o $ZENDTOPOT.tmp $PHPPOT $SMARTYPOT || ( echo "Something is wrong with the $PHPPOT or $SMARTYPOT files, I cannot combine them."; exit 1 )
+cat - $ZENDTOPOT.tmp <<EOC > $ZENDTOPOT
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+EOC
+rm -f $PHPPOT $SMARTYPOT $ZENDTOPOT.tmp
+
+cd $LOCALE
+for L in *_*
+do
+  if [ -d $L ]; then
+    LCM=$LOCALE/$L/LC_MESSAGES
+    install -d $LCM
+    if [ -f $LCM/zendto.po ]; then
+      echo Merging supplied translations of any new phrases into language $L,
+      echo and backing up old zendto.po file
+      if [ -f "$SUPPLIED/$L.zendto.po" ]; then
+        ADDNEW="--compendium=$SUPPLIED/$L.zendto.po"
+      else
+        ADDNEW=""
+      fi
+      msgmerge --no-wrap --backup=numbered --no-location --update $ADDNEW $LCM/zendto.po $ZENDTOPOT
+    else
+      echo Adding translation strings source for new language $L
+      cp $ZENDTOPOT $LCM/zendto.po
+    fi
+    echo Compiling translations for language $L
+    if msgfmt --use-fuzzy -o $LCM/zendto.mo.tmp $LCM/zendto.po; then
+      mv -f $LCM/zendto.mo.tmp $LCM/zendto.mo
+    else
+      echo Compiling language strings for $L failed'!'
+      echo Old translation file has not been touched.
+      rm -f $LCM/zendto.mo.tmp
+      echo
+    fi
+  fi
+done
+
+# Delete the smarty cache, as it won't spot changes if only the
+# language files have changed
+if [ "x$ZENDTOPREFS" = "x" ]; then
+  # Default if we don't know it
+  ZENDTOPREFS='/opt/zendto/config/preferences.php'
+fi
+# Find the templates_c dir if we can
+if [ -r "$ZENDTOPREFS" ]; then
+  VARZENDTO="$( php -r 'include "'"$ZENDTOPREFS"'"; print NSSDROPBOX_DATA_DIR;' )"
+else
+  VARZENDTO='/var/zendto/'
+fi
+# Remove any trailing /
+VARZENDTO="${VARZENDTO%/}"
+# Quietly delete the cached compiled templates if we found them
+if [ -d "${VARZENDTO}/templates_c" ]; then
+  rm -f "${VARZENDTO}/templates_c"/*.php >/dev/null 2>&1
+fi
+
+# In case they are using SELinux, quietly reset all the security attributes
+restorecon -FR /opt/zendto >/dev/null 2>&1
+
+exit 0

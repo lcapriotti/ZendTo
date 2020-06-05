@@ -1,0 +1,449 @@
+#!/usr/bin/env bash
+
+#
+# ZendTo
+# Copyright (C) 2006 Jeffrey Frey, frey at udel dot edu
+# Copyright (C) 2019 Julian Field, Jules at ZendTo dot com
+#
+# Based on the original PERL dropbox written by Doke Scott.
+# Developed by Julian Field.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#
+
+Usage() {
+  badarg="$1"
+  if [ "x$badarg" != "x" ]; then
+    echo "Error: bad argument $badarg" 1>&2
+    echo 1>&2
+  fi
+
+  cat <<USAGE
+Automatically pick-up (download) one or all files from a drop-off with no user interaction.
+
+$(basename "$0")
+               --username       | -u USERNAME
+               --password       | -p PASSWORD
+               --claimid        | -C CLAIMID
+               --passcode       | -P PASSCODE
+               [ --pickedupby   | -e EMAILADDRESS ]
+               [ --checksum     | -x ]
+               [ --decrypt      | -D PASSPHRASE ]
+               [ --output       | -o OUTPUTPATH ]
+               [ --list         | -l ]
+               [ --file         | -f FILENUMBER ]
+               [ --nofiles      | -n ]
+               
+               [ --insecure     | -i ]
+               [ --debug        | -d ]
+               <zendto-server-root-url>
+
+--username USERNAME
+--password PASSWORD
+                         USERNAME is one of the login usernames defined
+                         as 'automationUsers' in preferences.php.
+
+--claimid CLAIMID
+--passcode PASSCODE
+                         The ClaimID and Passcode of the drop-off,
+                         which are both case-sensitive.
+
+--pickedupby EMAILADDRESS
+                         Optional. The email address recorded in the pick-up
+                         log for this drop-off.
+                         If not specified it will be left blank.
+
+--checksum               Optional. Verify the file checksums if available,
+                         after downloading the files.
+
+--decrypt PASSPHRASE     Optional. Decrypt the drop-off if necessary.
+
+--output OUTPUTPATH      Optional.
+                         If downloading all files, OUTPUTPATH is an existing
+                         directory to store all the files with their
+                         original filenames.
+                         If downloading 1 file, OUTPUTPATH is the filename
+                         of the resulting downloaded file.
+                         If not specified, the original filename(s) will be
+                         used and the file(s) saved in the current directory.
+                         
+--list                   Optional. Output JSON data about the drop-off.
+
+--file FILEID            Optional. Download only the supplied numeric FILEID,
+                         instead of the default which is to download all
+                         files in the drop-off.
+                         The output of --list includes the FILEID of
+                         each file in the drop-off.
+
+--nofiles                Optional. Don't download any files at all. Useful
+                         with --list to just fetch drop-off information.
+
+--insecure or -i         Pass the "--insecure" flag to curl(1) so it
+                         allows self-signed SSL certificates.
+
+--debug or -d            Echo the full curl(1) instead of executing it
+
+<zendto-server-root-url> is the root URL of your ZendTo server
+
+USAGE
+}
+
+# URL-encode a string. Needed as a few parameters to download.php must be
+# sent as GET parameters, but most others best done as POST.
+urlencode() {
+    # urlencode <string>
+    old_lc_collate=$LC_COLLATE
+    LC_COLLATE=C
+    
+    local length="${#1}"
+    for (( i = 0; i < length; i++ )); do
+        local c="${1:i:1}"
+        case $c in
+            [a-zA-Z0-9.~_-]) printf '%s' "$c" ;;
+            *) printf '%%%02X' "'$c" ;;
+        esac
+    done
+    
+    LC_COLLATE=$old_lc_collate
+}
+
+
+# Default values
+debug=0 # This one isn't used in call to curl
+insecure=0
+# These are all 0 (i.e. false) by default
+checkchecksum=0
+listfiles=0
+nofiles=0
+file='all' # They haven't given us one, so fetch all
+# No decryption is passphrase is empty
+decrypt=''
+# No output dir/filename by default
+output=''
+
+# Any temp files I create, add them to this array like this:
+# cleanme+=( "filename with spaces etc" )
+# so they are automatically deleted on exit
+declare -a cleanme
+trap 'rm -f "${cleanme[@]}"' EXIT
+
+while getopts ":u:p:C:P:e:D:o:f:xlnihd-:" opt; do
+  case ${opt} in
+    - ) case "$OPTARG" in
+          username | password | claimid | passcode | pickedupby | decrypt | output | file )
+            declare "${OPTARG}=${!OPTIND}";
+            ((OPTIND++))
+            ;;
+          username=* | password=* | claimid=* | passcode=* | pickedupby=* | decrypt=* | output=* | file=* )
+            val="${OPTARG#*=}"
+            # This doesn't work if $val contains newlines or other nasties
+            opt="$( echo "$OPTARG" | cut -d= -f1 )"
+            declare "${opt}=${val}"
+            ;;
+          checksum )
+            checkchecksum=1
+            ;;
+          list )
+            listfiles=1
+            ;;
+          nofiles )
+            nofiles=1
+            ;;
+          insecure )
+            insecure=1
+            ;;
+          debug )
+            debug=1
+            ;;
+          * ) Usage "$OPTARG" ; exit 1 ;;
+        esac ;;
+    u ) username="$OPTARG" ;;
+    p ) password="$OPTARG" ;;
+    C ) claimid="$OPTARG" ;;
+    P ) passcode="$OPTARG" ;;
+    e ) pickedupby="$OPTARG" ;;
+    D ) decrypt="$OPTARG" ;;
+    o ) output="$OPTARG" ;;
+    f ) file="$OPTARG" ;;
+    x ) checkchecksum=1 ;;
+    l ) listfiles=1 ;;
+    n ) nofiles=1 ;;
+    i ) insecure=1 ;;
+    d ) debug=1 ;;
+    h ) Usage ; exit 0 ;;
+    : ) Usage ; exit 1 ;;
+    \? ) Usage "$OPTARG" ; exit 1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# This should be all that's left behind
+ServerRoot="$1"
+
+#
+# Parameter error checking STARTS
+#
+errors_occurred=''
+# Check for basic mandatory parameters
+if [[ -z $username || -z $password ||
+      -z $claimid || -z $passcode ]]; then
+  echo "Error: mandatory parameters omitted" 1>&2
+  Usage
+  exit 1
+fi
+# If they want 1 file, they must provide a number not a name
+if [[ $file != 'all' && ! $file =~ ^[0-9]+$ ]]; then
+  echo "Error: to download 1 file, you must supply the file ID from the --list output, not the filename." 1>&2
+  Usage
+  exit 1
+fi
+# If they want all files, output must be an existing directory
+if [[ $file = 'all' && -n $output && ! -d $output ]]; then
+  echo "Error: when getting all files and specifying the output directory, it must already exist." 1>&2
+  exit 1
+fi
+# If they want 1 file, output must not be an existing directory or device
+if [[ $file != 'all' && -n $output && -e $output  && ! -f $output ]]; then
+  echo "Error: when getting 1 file and specifying the output filename, that name must not be an existing directory name." 1>&2
+  exit 1
+fi
+# ServerRoot should have been the only non-option, check it looks right
+if [[ -n "$ServerRoot" && ! $ServerRoot =~ ^http ]]; then
+  echo "Error: server root URL $ServerRoot must start with http:// or https://" 1>&2
+  exit 1
+fi
+#
+# Parameter error checking ENDS
+#
+
+# We are going to need 'jq' very shortly
+if ! hash jq 2>/dev/null; then
+  echo 'Error: I require the utility "jq" is installed to parse the JSON.' 1>&2
+  echo 'Error: It is a tiny package and has no dependencies.' 1>&2
+  echo 'Error: Please install it with one of' 1>&2
+  echo 'Error: yum install jq' 1>&2
+  echo 'Error: apt install jq' 1>&2
+  echo 'Error: pkg install jq' 1>&2
+  exit 1
+fi
+
+#
+# Now we need to do a curl to fetch all the drop-off's metadata
+#
+
+# Build the list of options to the 1st curl that gets the drop-off info
+declare -a params
+params+=(--dump-header - --output /dev/null --silent)
+(( insecure )) && params+=(--insecure)
+params+=(--form-string uname="$username")
+params+=(--form-string password="$password")
+params+=(--form-string claimID="$claimid")
+params+=(--form-string claimPasscode="$passcode")
+
+URL="${ServerRoot%/}/pickup.php"
+
+# This is the name of the HTTP header where ZendTo sends its response
+ZTheader='X-ZendTo-Response'
+
+# Make a self-cleaning temp file to store the JSON
+JSONstore="$( mktemp )"
+cleanme+=( "$JSONstore" )
+
+# Debug only?
+if (( debug )); then
+  echo
+  echo curl \\
+  for i in "${params[@]}"; do
+    echo "$i" \\
+  done
+  echo "$URL" \\
+  cat <<EOCURL
+| grep "^$ZTheader:" \\
+| sed -e "s/^$ZTheader: *//"
+
+The grep and sed extract the JSON result.
+
+EOCURL
+fi
+# We actually have to do this curl even if they are just
+# in debug mode, if we want to be able to show how to download
+# 1 or all of the files in a drop-off.
+if (( ! debug || ( debug && ! nofiles ) )); then
+  # Do it...
+  curl "${params[@]}" "$URL" \
+  | grep "^${ZTheader}:" \
+  | sed -e "s/^${ZTheader}: *//" \
+  > "$JSONstore"
+  retval="${PIPESTATUS[0]}"
+  [ "$retval" != '0' ] && exit "$retval"
+fi
+
+(( debug || listfiles )) && jq . "$JSONstore"
+(( nofiles )) && exit 0
+
+# Did the JSON fetch work?
+status="$( jq --raw-output '.status' "$JSONstore" )"
+if [[ "$status" != 'OK' ]]; then
+  error="$( jq --raw-output '.error' "$JSONstore" )"
+  echo "Error: \"$error\" when fetching information about the drop-off" 1>&2
+  exit 1
+fi
+
+# If the drop-off is encrypted, must have a passphrase
+crypted="$( jq --raw-output '.encrypted' "$JSONstore" )"
+if [[ "$crypted" != "false" && -z "$decrypt" ]]; then
+  echo "Error: drop-off is encrypted but no passphrase supplied" 1>&2
+  exit 1
+fi
+
+# Work through each file, fetching what is needed.
+# The unusual command redirection syntax below is needed.
+# tl;dr - you can't | into readarray.
+# It does the equivalent of a | pipe, but if you use | then
+# the whole pipe gets executed in a sub-shell, so the readarray
+# happens in a sub-shell which is instantly closed, so your
+# new array disappears along with it!
+declare -a ids
+declare -a names
+declare -a sizes
+declare -a checksums
+readarray -O 1 -t ids   < <( jq --raw-output '.files | .[] | .id' "$JSONstore" )
+readarray -O 1 -t names < <( jq --raw-output '.files | .[] | .name' "$JSONstore" )
+readarray -O 1 -t sizes < <( jq --raw-output '.files | .[] | .size' "$JSONstore" )
+readarray -O 1 -t checksums < <( jq --raw-output '.files | .[] | .checksum' "$JSONstore" )
+
+# If they want a single file, is it in this drop-off?
+if [[ $file != "all" && ! " ${ids[@]} " == *" ${file} "* ]]; then
+  echo "Error: file ID number $file is not in this drop-off" 1>&2
+  exit 1
+fi
+
+# Build the parameters to curl. Most are common across every call.
+params=(--silent)
+(( insecure )) && params+=(--insecure)
+params+=(--form-string uname="$username")
+params+=(--form-string password="$password")
+# Need to catch the HTTP headers so we can check the ZendTo response
+headers="$( mktemp )"
+cleanme+=( "$headers" ) # auto-cleaning
+params+=(--dump-header "$headers")
+[[ "$crypted" != "false" ]] && params+=(--form-string n="$decrypt")
+# The claimID, claimPasscode and emailAddr parameters *must* be GET not POST
+URL="${ServerRoot%/}/download.php?claimID=$( urlencode "$claimid" )&claimPasscode=$( urlencode "$passcode" )"
+if [[ -n "$pickedupby" ]]; then
+  URL="${URL}&emailAddr=$( urlencode "pickedupby" )"
+fi
+
+# If they want all files and have said where, ensure it ends with /
+# (makes user output neater later)
+if [[ "$file" == "all" && -n "$output" ]]; then
+  # Remove any trailing / and then add our own, to be sure
+  output="${output%/}/"
+fi
+  
+# If they are on BSD, the stat command to get filesize is different from Linux
+if [[ "$( uname -s | tr '[:lower:]' '[:upper:]' )" =~ BSD ]]; then
+  statcommand=(stat -f '%z')
+  sha256command=(sha256 -q)
+else
+  statcommand=(stat --printf='%s')
+  sha256command=(sha256sum -b)
+fi
+
+# Loop through the files. Doing 1..n and not 0..(n-1)
+# The "readarray"s above made 1-based arrays not 0-based ones.
+for i in $( seq 1 ${#ids[@]} ); do
+  fid="${ids[$i]}"
+  # Skip if it's not the file we want
+  if [[ "$file" != "all" && "$file" != "$fid" ]]; then
+    continue
+  fi
+  name="$( basename "${names[$i]}" )" # Safety in case of nasty names!
+  size="${sizes[$i]}"
+  checksum="$( echo "${checksums[$i]}" | tr '[:upper:]' '[:lower:]' )" # lowercase
+  # And where to save it
+  if [[ "$file" == "all" ]]; then
+    destination="$output$name"
+  elif [[ -n "$output" ]]; then
+    destination="$output"
+  else
+    destination="$name"
+  fi
+
+  # Debug only?
+  if (( debug )); then
+  echo
+  echo curl \\
+  for i in "${params[@]}"; do
+    echo "$i" \\
+  done
+  echo "--form-string fid=$fid" \\
+  echo "--output $destination" \\
+  echo "$URL"
+  echo
+  continue
+  fi
+
+  #set -x
+  curl "${params[@]}" \
+       --form-string fid="$fid" \
+       --output "$destination" \
+       "$URL"
+  #set +x
+
+  # Start by checking the ZendTo Response header
+  response="$( grep "^${ZTheader}:" "$headers" | sed -e "s/^${ZTheader}: *//" )"
+  # Must at least have a response
+  if [ -z "$response" ]; then
+    echo "Error: attempt to download $destination failed. Got no result from ZendTo" 2>&1
+    exit 1
+  fi
+  status="$( echo "$response" | jq --raw-output '.status' )"
+  if [[ "$status" != 'OK' ]]; then
+    error="$( echo "$response" | jq --raw-output '.error' )"
+    echo "Error: \"$error\" when downloading file $destination" 1>&2
+    exit 1
+  fi
+
+  actualsize="$( "${statcommand[@]}" "$destination" )"
+  if (( actualsize != size )); then
+    echo "Error: file $destination did not download correctly. Fetched $actualsize bytes instead of expected $size"
+    rm -f "$destination"
+    errors_occurred=yes
+  else
+    echo "Success: $destination is the correct size"
+  fi
+
+  # And verify the checksum
+  if (( checkchecksum )); then
+    if [[ -z "$checksum" ]]; then
+      echo "Warning: No checksum available"
+    else
+      # Checksum it, pull out only the checksum and lower-case it
+      actualchecksum="$( "${sha256command[@]}" "$destination" | cut -d\  -f1 | tr '[:upper:]' '[:lower:]' )"
+      if [[ "$actualchecksum" != "$checksum" ]]; then
+        echo "Error: file $destination checksum mismatch"
+        rm -f "$destination"
+        errors_occurred=yes
+      else
+        echo "Success: file $destination checksums correctly"
+      fi
+    fi
+  fi
+done
+
+[[ -n $errors_occurred ]] && exit 1
+exit 0
+

@@ -1,0 +1,41 @@
+tsmarty2c(1)       Smarty Gettext Translation String Ripper       tsmarty2c(1)
+
+
+
+NNAAMMEE
+       tsmarty2c - Rip translation strings from smarty template files and con-
+       vert them to gettext calls in C.
+
+SSYYNNOOPPSSIISS
+       ttssmmaarrttyy22cc <templ-file1-or-dir1> \
+                 [<templ-file2-or-dir2>] \
+                 [... <templ-fileN-or-dirN>]
+
+
+DDEESSCCRRIIPPTTIIOONN
+       ttssmmaarrttyy22cc rips the translation strings from smarty template files, and
+       converts them to gettext calls in C.
+
+       The C output may later be used with the standard gettext tools (see
+       xgettext).
+
+       If one of the parameters is a directory, the template files within will
+       be parsed, recursively.
+
+       The output also contains comments that point to the location of the
+       file that the string has been ripped from.
+
+       You can use the ’--add-comments’ parameter of xgettext to make it
+       include these comments inside the PO file (suggested by Mike van
+       Lammeren).
+
+SSEEEE AALLSSOO
+       xgettext(1)
+
+AAUUTTHHOORR
+       This manual has been written for the Debian project (and may be used by
+       others) by Mike Gabriel <mike.gabriel@das-netzwerkteam.de>.
+
+
+
+Version 1.0                        July 2012                      tsmarty2c(1)

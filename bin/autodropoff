@@ -1,0 +1,376 @@
+#!/usr/bin/env bash
+
+#
+# ZendTo
+# Copyright (C) 2006 Jeffrey Frey, frey at udel dot edu
+# Copyright (C) 2020 Julian Field, Jules at ZendTo dot com
+#
+# Based on the original PERL dropbox written by Doke Scott.
+# Developed by Julian Field.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#
+
+Usage() {
+  badarg="$1"
+  if [ "x$badarg" != "x" ]; then
+    echo "Error: bad argument $badarg" 1>&2
+    echo 1>&2
+  fi
+
+  cat <<USAGE
+Automatically create and send a drop-off with no user interaction.
+
+$(basename "$0")
+               --username       | -u USERNAME
+               --password       | -p PASSWORD
+               --sendername     | -n <name-of-sender>
+               --senderemail    | -e <address-of-sender>
+               --senderorg      | -o <organization-of-sender>
+               --subject        | -s SUBJECT
+               --note           | -t NOTE
+               --recipientname  | -N RECIPIENT-NAME
+               --recipientemail | -E RECIPIENT-EMAIL
+               [ --recipientcsv   | -c RECIPIENTS-FILE ]
+               --filename       | -f FILENAME
+               --libraryfilename| -F LIBRARY-FILENAME
+               --filedesc       | -D FILE-DESCRIPTION
+               [ --notifyonpickup | -P ]
+               [ --emailrecipients| -R ]
+               [ --sendpasscode   | -C ]
+               [ --withchecksum   | -x ]
+               [ --encrypt        | -E PASSPHRASE ]
+               [ --language     | -l <language-code> ]
+               [ --insecure     | -i ]
+               [ --debug        | -d ]
+               <zendto-server-root-url>
+
+--username USERNAME
+                         USERNAME is one of the login usernames defined
+                         as 'automationUsers' in preferences.php
+
+--recipientname RECIPIENT-NAME
+--recipientemail RECIPIENT-EMAIL
+                         may appear multiple times OR use --recipient-csv
+
+--recipientcsv CSV-FILENAME
+                         CSV file containing email addresses of recipients.
+                         Only 1 field per line may be an email address.
+                         All other fields and blank lines are ignored.
+                         If you want to set names, use --recipientname
+                         and --recipientemail instead.
+
+--filename FILENAME
+--filedesc FILE-DESCRIPTION
+                         may appear multiple times
+
+--note NOTE 
+                         will have all occurrences of '\n' replaced with
+                         a newline character
+
+--insecure or -i         passes the "--insecure" flag to curl(1) so it
+                         allows self-signed SSL certificates
+
+--debug or -d            makes me echo the full curl(1) instead of executing it
+
+<zendto-server-root-url> is the root URL of your ZendTo server
+
+USAGE
+}
+
+# Default values
+debug='' # This one isn't used in call to curl
+insecure=0
+language=''
+# These are all 0 (i.e. false) by default
+notifyonpickup=0
+emailrecipients=0
+sendpasscode=0
+withchecksum=0
+# No encryption is passphrase is empty
+encrypt=''
+# Recipients
+num_recipients=0
+# Every supplied recipient has a name and an email address
+# Note: For lots of recipients without names, use --recipientcsv
+declare -a names
+declare -a emails
+# Files
+num_files=0 # total number of filenames + libraryfilenames
+# For every index, EITHER ${filenames[i]} OR ${libraries[i]} is set
+declare -a filenames
+declare -a libraries
+declare -a descriptions
+
+
+
+while getopts ":u:p:n:e:o:s:t:N:E:c:f:F:D:E:l:PRCxihd-:" opt; do
+  case ${opt} in
+    - ) case "$OPTARG" in
+          username | password | sendername | senderemail | senderorg | subject | note | recipientcsv | encrypt | language )
+            declare "${OPTARG}=${!OPTIND}";
+            ((OPTIND++))
+            ;;
+          username=* | password=* | sendername=* | senderemail=* | senderorg=* | subject=* | note=* | recipientcsv=* | encrypt=* | language=* )
+            val="${OPTARG#*=}"
+            # This doesn't work if $val contains newlines or other nasties
+            opt="$( echo "$OPTARG" | cut -d= -f1 )"
+            declare "${opt}=${val}"
+            ;;
+          recipientname )
+            names+=("${!OPTIND}")
+            ((OPTIND++))
+            ;;
+          recipientemail )
+            ((num_recipients++))
+            emails+=("${!OPTIND}")
+            ((OPTIND++))
+            ;;
+          filename )
+            ((num_files++))
+            filenames[$num_files]="${!OPTIND}"
+            ((OPTIND++))
+            ;;
+          libraryfilename )
+            ((num_files++))
+            libraries[$num_files]="${!OPTIND}"
+            ((OPTIND++))
+            ;;
+          filedesc )
+            descriptions[$num_files]="${!OPTIND}"
+            ((OPTIND++))
+            ;;
+          recipientname=* )
+            val="${OPTARG#*=}"
+            names+=("$val")
+            ;;
+          recipientemail=* )
+            val="${OPTARG#*=}"
+            ((num_recipients++))
+            emails+=("$val")
+            ;;
+          filename=* )
+            val="${OPTARG#*=}"
+            ((num_files++))
+            filenames[$num_files]="$val"
+            ;;
+          libraryfilename=* )
+            val="${OPTARG#*=}"
+            ((num_files++))
+            libraries[$num_files]="$val"
+            ;;
+          filedesc=* )
+            val="${OPTARG#*=}"
+            descriptions[$num_files]="$val"
+            ;;
+          notifyonpickup )
+            notifyonpickup=1
+            ;;
+          emailrecipients )
+            emailrecipients=1
+            ;;
+          sendpasscode )
+            sendpasscode=1
+            ;;
+          withchecksum )
+            withchecksum=1
+            ;;
+          insecure )
+            insecure=1
+            ;;
+          debug )
+            debug='y'
+            ;;
+          * ) Usage "$OPTARG" ; exit 1 ;;
+        esac ;;
+    u ) username="$OPTARG" ;;
+    p ) password="$OPTARG" ;;
+    n ) sendername="$OPTARG" ;;
+    e ) senderemail="$OPTARG" ;;
+    o ) senderorg="$OPTARG" ;;
+    s ) subject="$OPTARG" ;;
+    t ) note="$OPTARG" ;;
+    N ) names+=("$OPTARG") ;; # Add to end of array
+    E ) ((num_recipients++)) ; emails+=("$OPTARG") ;; # Add to end of array
+    c ) recipientcsv="$OPTARG" ;;
+    # Warning: This implies filename or libraryname comes before description!!
+    f ) ((num_files++)) ; filenames[$num_files]="$OPTARG" ;;
+    F ) ((num_files++)) ; libraries[$num_files]="$OPTARG" ;;
+    D ) descriptions[$num_files]="$OPTARG" ;;
+    E ) encrypt="$OPTARG" ;;
+    l ) language="$OPTARG" ;;
+    P ) notifyonpickup=1 ;;
+    R ) emailrecipients=1 ;;
+    C ) sendpasscode=1 ;;
+    x ) withchecksum=1 ;;
+    i ) insecure=1 ;;
+    d ) debug='y' ;;
+    h ) Usage ; exit 0 ;;
+    : ) Usage ; exit 1 ;;
+    \? ) Usage "$OPTARG" ; exit 1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# This should be all that's left behind
+ServerRoot="$1"
+
+#
+# Parameter error checking STARTS
+#
+
+errors_occurred=''
+# Check for basic mandatory parameters
+if [[ -z $username || -z $password ||
+      -z $sendername || -z $senderemail || -z $senderorg ||
+      -z $subject || -z $ServerRoot ]]; then
+  echo "Error: mandatory parameters omitted" 1>&2
+  errors_occurred=yes
+fi
+# Need some recipients
+if [[ $num_recipients -eq 0 &&
+      ( ! -r $recipientcsv || ! -s $recipientcsv ) ]]; then
+  echo "Error: no recipients supplied" 1>&2
+  errors_occurred=yes
+fi
+# Need some files
+if (( num_files == 0 )); then
+  echo "Error: no files supplied" 1>&2
+  errors_occurred=yes
+fi
+# ServerRoot should have been the only non-option, check it looks right
+if [[ ! $ServerRoot =~ ^http ]]; then
+  echo "Error: server root URL $ServerRoot must start with http:// or https://" 1>&2
+  errors_occurred=yes
+fi
+# Recipient email addresses must have "@" in them
+for i in "${emails[@]}"; do
+  if [[ ! $i =~ @ ]]; then
+    echo "Error: email address '$i' has no '@'" 1>&2
+    errors_occurred=yes
+  fi
+done
+# Filenames must exist and be readable
+for i in "${filenames[@]}"; do
+  if [[ -n $i && ( ! -r $i ) ]]; then
+    echo "Error: missing or unreadable file '$i'" 1>&2
+    errors_occurred=yes
+  fi
+done
+
+#
+# Parameter error checking ENDS
+# (errors_occurred==yes action is done later)
+#
+
+#
+# Start building the list of options
+#
+
+declare -a params
+# All our calls to curl need this
+params+=(--dump-header - --output /dev/null --silent)
+# We are creating a drop-off
+params+=(--form-string Action=dropoff)
+# Mandatory simple ones first
+params+=(--form-string uname="$username")
+params+=(--form-string password="$password")
+params+=(--form-string senderName="$sendername")
+params+=(--form-string senderEmail="$senderemail")
+params+=(--form-string senderOrganization="$senderorg")
+params+=(--form-string subject="$subject")
+# Pre-process their note text. '\n' ==> newline
+note="$( echo -n "$note" | sed 's/\\n/\n/g' )"
+params+=(--form-string note="$note")
+# Boolean options. True if present, false if not.
+params+=(--form-string confirmDelivery=$notifyonpickup)
+params+=(--form-string informRecipients=$emailrecipients)
+params+=(--form-string informPasscode=$sendpasscode)
+params+=(--form-string checksumFiles=$withchecksum)
+(( insecure )) && params+=(--insecure)
+# Are we encrypting?
+if [[ -n $encrypt ]]; then
+  params+=(--form-string encryptFiles=1)
+else
+  params+=(--form-string encryptFiles=0)
+fi
+params+=(--form-string encryptPassword="$encrypt")
+# A cookie for good measure
+[[ -n $language ]] && params+=(--cookie ZendTo-locale="$language")
+# Add each recipient
+if (( num_recipients > 0 )); then
+  for r in $(seq 1 $num_recipients); do
+    params+=(--form-string recipient_$r=1)
+    # arrays names and emails are indexed from 0 and not 1
+    params+=(--form-string recipName_$r="${names[(($r-1))]}")
+    params+=(--form-string recipEmail_$r="${emails[(($r-1))]}")
+  done
+elif [[ -n $recipientcsv ]]; then
+    # Upload the recipientcsv file
+    params+=(--form recipient_csv=@"$recipientcsv")
+fi
+# Add each file or library file
+for f in $(seq 1 $num_files); do
+  if [[ -n ${filenames[$f]} ]]; then
+    # It's a filename, so upload the file
+    params+=(--form file_$f=@"${filenames[$f]}")
+  elif [[ -n ${libraries[$f]} ]]; then
+    # It's a library filename, relative to the library root
+    params+=(--form-string file_select_$f="${libraries[$f]}")
+  else
+    # Eeek! Neither!!!
+    echo "Error: file supplied in not a filename or the name of a library file" 2>&1
+    errors_occurred=yes
+  fi
+  params+=(--form-string desc_$f="${descriptions[$f]}")
+done
+
+# If any errors have been detected, bail out
+if [[ -n $errors_occurred ]]; then
+  echo 1>&2
+  Usage
+  exit 1
+fi
+
+# Tack 'dropoff' on the end of the URL, and cope with missing / on the end
+URL="${ServerRoot%/}/dropoff.php"
+
+# This is the name of the HTTP header where ZendTo sends its response
+ZTheader='X-ZendTo-Response'
+
+# Debug only?
+if [[ $debug == "y" ]]; then
+  echo
+  echo curl \\
+  for i in "${params[@]}"; do
+    echo "$i" \\
+  done
+  echo "$URL" \\
+  cat <<EOCURL
+| grep "^$ZTheader:" \\
+| sed -e "s/^$ZTheader: *//"'
+
+The grep and sed extract the JSON result.
+EOCURL
+else
+  # Do it...
+  #set -x # TEMP DEBUG CODE
+  curl "${params[@]}" "$URL" \
+  | grep "^${ZTheader}:" \
+  | sed -e "s/^${ZTheader}: *//"
+  # Exit with the return code of the curl.
+  exit "${PIPESTATUS[0]}"
+fi
+

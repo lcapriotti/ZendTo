@@ -1,0 +1,28 @@
+/*
+   This is where you should put all your customisations to the swish.css
+   file. Please do not edit swish.css, but instead put all your over-rides
+   here.
+*/
+
+/* If your language version of the "Home", "Inbox", "Outbox" & "Logout"
+ * tabs are too wide for the buttons, you can increase the width of the
+ * buttons. Just uncomment this section, changing the "130" for whatever
+ * you want, but make sure the "131" is exactly 1 greater than the "130".
+#topMenu li a {
+  width:130px;
+}
+#topMenu li {
+  width: 131px;
+}
+#topMenu li.selected {
+  width: 131px;
+}
+*/
+
+/* Uncomment this to make the web site narrower left-to-right */
+/* .content {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+} */

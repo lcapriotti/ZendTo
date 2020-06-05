@@ -1,0 +1,1676 @@
+# ZendTo Language Translations File.
+# Add a new lanaguage by running a command like
+# /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+# /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+# /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2018.
+# marcel <Werken@bijdebaas.nl>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2018-08-15 13:36+0200\n"
+"Last-Translator: marcel <Werken@bijdebaas.nl>\n"
+"Language-Team: team nietsnut\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Klik nogmaals op de link die u hebt ontvangen om uw bestanden op te halen (pick-up)."
+
+msgid "Authentication Failure"
+msgstr "Authenticatiefout"
+
+msgid "Your session has expired. Please start again."
+msgstr "All data is subject to the Data ProtecUw sessie is verlopen. Log a.u.b. opnieuw in."
+
+msgid "Session Expired"
+msgstr "Sessie is verlopen"
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "Het adres van uw computer lijkt te zijn gewijzigd. Klik nogmaals op de link die u hebt ontvangen om uw bestanden op te halen (pick-up)."
+
+msgid "Session Error"
+msgstr "Sessie fout"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Deze functie is alleen beschikbaar voor gebruikers die zich hebben aangemeld."
+
+msgid "Access Denied"
+msgstr "Toegang geweigerd"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "Kan logfile niet lezen. Check of Web Server kan lezen."
+
+msgid "File Permissions Error"
+msgstr "Fout in bestandsmachtigingen"
+
+msgid "This is available to administrators only."
+msgstr "Dit is alleen beschikbaar voor de beheerder."
+
+msgid "Administrators only"
+msgstr "Alleen beheerders"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Klik nogmaals op de link die u hebt ontvangen om uw bestanden op te halen."
+
+msgid "I do not think you are a real person."
+msgstr "Ik denk niet dat je een echt persoon bent."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "U probeerde dit formulier opnieuw in te dienen. Begin opnieuw."
+
+msgid "Are you a real person?"
+msgstr "Bent u een echt persoon?"
+
+msgid "Database failure writing authentication key."
+msgstr "Databasefout bij het schrijven van de authenticatiesleutel."
+
+msgid "Database Error"
+msgstr "Database fout"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "Je hebt de test, om te zien of je een echt persoon bent en geen computer, niet doorstaan. Probeer het opnieuw."
+
+msgid "Test failed"
+msgstr "Test gefaald"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "Uw aanvraagcode kan niet worden gevonden of is al gebruikt."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "U kunt nog steeds rechtstreeks vanuit het hoofdmenu bestanden verzenden of een nieuwe aanvraagcode aanvragen."
+
+msgid "Request Code Used"
+msgstr "Aanvraagcode gebruikt"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "Uw aanvraagcode is verlopen. Begin opnieuw."
+
+msgid "Request Code Expired"
+msgstr "Aanvraagcode is verlopen"
+
+msgid "Request Error"
+msgstr "Verzoek Fout"
+
+msgid "Sending the request email failed."
+msgstr "Het verzenden van de e-mail met het verzoek is mislukt."
+
+msgid "Email Error"
+msgstr "Email fout"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "Het is niet mogelijk de drop-off %s opnieuw te verzenden."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Het is niet mogelijk de drop-off opnieuw te verzenden"
+
+msgid "Unlocked %s."
+msgstr "Ontgrendeld %s."
+
+msgid "Unknown user"
+msgstr "Onbekende gebruiker"
+
+msgid "Request Code Error"
+msgstr "Verzoek code Fout"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Controlleer a.u.b of de verzoek code correct is ingevoerd of vraag een nieuwe verzoek code aan."
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Vul dit formulier in of druk op de knop terug van uw browser en voer uw aanvraagcode opnieuw in."
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "U probeerde dit formulier opnieuw in te dienen. Ga terug naar het hoofdmenu en begin opnieuw."
+
+msgid "Verify Error"
+msgstr "fout bij verificatie"
+
+msgid "Sending the verification email failed."
+msgstr "Het verzenden van de e-mail met het verificatie is mislukt."
+
+msgid "Could not open MySQL database on %s"
+msgstr "Kan de MySQL database niet openen op %s"
+
+msgid "Failed to add login record"
+msgstr "Aanmeldingsrecord kan niet worden toegevoegd"
+
+msgid "Failed to delete login records"
+msgstr "Aanmeldingsrecord kan niet worden verwijderd"
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "BEGIN transactieblok niet gelukt tijdens het bijwerken van regexps"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "ROLLBACK is mislukt na het afbreken van oude regexps"
+
+msgid "Failed to delete old regexps"
+msgstr "Oud reexps kan niet worden verwijderd"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "ROLLBACK is mislukt na afbreken toevoegen van regexps"
+
+msgid "Failed to add regexp"
+msgstr "Kan regexp niet toevoegen"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "Toevoegen van gebruiker %s stopgezet omdat gebruiker al bestaat"
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "BEGIN transactieblok niet gelukt tijdens het toevoegen van gebruiker %s"
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "ROLLBACK is mislukt na afbreken toevoegen van gebruiker %s"
+
+msgid "Failed to add user %s"
+msgstr "Kan gebruiker %s niet toevoegen"
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "Verwijderen van gebruiker %s stopgezet omdat gebruiker niet bestaat"
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "Bijwerken van gebruiker %s stopgezet omdat gebruiker niet bestaat"
+
+msgid "Failed to update password for user %s"
+msgstr "Het is niet gelukt om het wachtwoord voor de gebruiker %s bij te werken"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Gebruiker controleren: kan geen verbinding maken met een van de authenticatieservers; kon de gebruiker niet authenticeren."
+
+msgid "LDAP Error"
+msgstr "LDAP fout"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "Excuses, je mag deze service niet gebruiken."
+
+msgid "Authorization Failed"
+msgstr "Autorisatie mislukt"
+
+msgid "Check User: No AD servers configured."
+msgstr ""
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "Gebruik de knop Terug in uw browser om terug te gaan en deze fout te herstellen voordat u het opnieuw probeert."
+
+msgid "Please notify the system administrator."
+msgstr "Breng de systeembeheerder op de hoogte."
+
+msgid "%d bytes"
+msgstr "%d bytes"
+
+msgid "%.1f KB"
+msgstr "%.1f KB"
+
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+msgid "%.1f GB"
+msgstr "%.1f GB"
+
+msgid "%.1f TB"
+msgstr "%.1f TB"
+
+msgid "The preferences are not configured properly!"
+msgstr "De voorkeuren zijn niet correct geconfigureerd!"
+
+msgid "Invalid Configuration"
+msgstr "Ongeldige configuratie"
+
+msgid "Could not create ZendTo database handle"
+msgstr "Kon de ZendTo database-handle niet maken"
+
+msgid "Please note"
+msgstr "Let op dat"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "De ZendTo preferences.php heeft geen authenticatiemethode geselecteerd."
+
+msgid "Authentication Error"
+msgstr "Authenticatiefout"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "De voorkeuren zijn niet correct geconfigureerd (ze zijn leeg)!"
+
+msgid "Mail Error"
+msgstr "Email fout"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "Kon niet naar logbestand %s schrijven, zorgen dat de webservergebruiker naar het logbestand kan schrijven zoals ingesteld in preferences.php"
+
+msgid "Configuration Error"
+msgstr "Configuratie fout"
+
+msgid "The username or password was incorrect."
+msgstr "De gebruikersnaam of het wachtwoord was onjuist."
+
+msgid "Could not read local domain list file %s"
+msgstr "Kon lokaal domeinlijstbestand %s niet lezen"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "U moet een waarde opgeven voor de volgende voorkeursleutel: '%s'"
+
+msgid "Undefined Preference Key"
+msgstr "Ongedefinieerde voorkeuzetoets"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "Het decoderen en downloaden van het bestand is mislukt. U hebt waarschijnlijk de wachtwoordzin verkeerd ingevoerd. Probeer het opnieuw."
+
+msgid "Decryption failed"
+msgstr "Onsleuteling is mislukt"
+
+msgid "one of the recipients"
+msgstr "een van de ontvangers"
+
+msgid "Not calculated"
+msgstr "Niet berekend"
+
+msgid "%s has picked up your drop-off!"
+msgstr "%s heeft uw aflevering opgehaald!"
+
+msgid "%s has dropped off a file for you"
+msgstr "%s heeft een bestand voor je gedropt"
+
+msgid "%s has dropped off files for you"
+msgstr "%s heeft bestanden voor je gedropt"
+
+msgid "%d days"
+msgstr "%d dagen"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "De claim-ID of toegangscode was onjuist of de aflevering is verlopen. Controleer nogmaals of de afleveringen moeten worden opgehaald voordat ze verlopen, anders worden ze automatisch verwijderd."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "Ongeldig claim-ID of wachtwoord"
+
+msgid "Upload Error"
+msgstr "Upload fout"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "Er lijkt meer dan 1 drop-off met die claim-ID te zijn."
+
+msgid "Invalid Claim ID"
+msgstr "Ongeldig Claim-ID"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "De map met de bestanden van deze drop-off is verdwenen."
+
+msgid "Drop-off Directory Not Found"
+msgstr "Drop-off Directory niet gevonden"
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Uw verificatiegegevens kunnen niet worden gelezen. Je drop-off-sessie is waarschijnlijk verlopen. Begin opnieuw."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Beheerder: installeer de PHP-module/rpm \"mbstring\"."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "Het e-mailadres van de ontvanger '%s' is ongeldig."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "U moet zijn aangemeld als %1$s-gebruiker om een bestand voor een niet-gebruiker van %1$s in te leveren."
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Keer terug naar het hoofdmenu van %s om u aan te melden en probeer het opnieuw."
+
+#, fuzzy
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "U moet zijn aangemeld als %1$s-gebruiker om een bestand voor een niet-gebruiker van %1$s in te leveren."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "U moet alle e-mailadressen van ontvangers in het formulier opgeven."
+
+msgid "There was an error while uploading '%s'."
+msgstr "Er is een fout opgetreden bij het uploaden van '%s'."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "De bestandsgrootte van de ontvangers overschrijdt de limiet die is opgelegd door PHP op de server."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "De bestandsgrootte van de ontvangers overschrijdt de maximale grootte (het maximum is %s)."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Het bestand met ontvangers is slechts gedeeltelijk geüpload. Uw netwerkverbinding is mogelijk verouderd tijdens het uploaden."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Er is geen ontvanger-bestand geüpload."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "De server was niet geconfigureerd met een tijdelijke map voor uploads."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "De tijdelijke map van de server is verkeerd geconfigureerd."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Kon het geüploade bestand van ontvangers niet lezen."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "U moet ten minste één bestand kiezen om af te leveren."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "De bestandsgrootte overschrijdt de limiet die is opgelegd door PHP op de server."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "Het bestand '%s' was te groot. Elk te verzenden bestand mag maximaal %s zijn."
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Het bestand met ontvangers is slechts gedeeltelijk geüpload. Uw netwerkverbinding is mogelijk verbroken tijdens het uploaden."
+
+msgid "No file was actually dropped-off."
+msgstr "Er is eigenlijk geen bestand afgeleverd."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "De totale grootte van de afgezette bestanden overschrijdt het maximum voor een enkele aflevering. In totaal kan een enkele drop-off maximaal %s zijn."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "Een of meer van de bestanden die u hebt ingeleverd, zijn met een virus geïnfecteerd. De drop-off is gestopt. Scan uw bestanden met een antivirusprogramma en probeer het opnieuw."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "De poging om uw aflevering met virussen te scannen, is mislukt."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "De drop-off was te groot om te coderen, dus is deze niet-versleuteld opgeslagen. Als dit niet is wat je wilt, verwijder dan onmiddellijk de drop-off uit je Outbox."
+
+msgid "Drop-off not encrypted"
+msgstr "Drop-off niet versleuteld"
+
+msgid "You must specify your own email address in the form."
+msgstr "U moet uw email adres opgeven in het formulier."
+
+msgid "The sender email address you entered was invalid."
+msgstr "Het e-mailadres van de afzender dat je hebt ingevoerd, is niet geldig."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Een unieke map om uw afgezette bestanden te bevatten, kon niet worden gemaakt."
+
+msgid "Encryption failed."
+msgstr "Versleuteling is mislukt"
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Het lijkt erop dat je drop-off mislukt is vanwege een gebrek aan vrije ruimte op de server. Het heeft nog maar %s over."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "Problemen tijdens het verwijderen van '%s' in de drop-off-map."
+
+msgid "Could not add recipients to the database."
+msgstr "Kon geen ontvangers toevoegen aan de database."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "Problemen tijdens het opslaan van de informatie voor '%s'."
+
+msgid "Library"
+msgstr "Bibliotheek"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr ""
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Kan geen afleverrecord toevoegen aan de database."
+
+msgid "Unable to begin database transaction."
+msgstr "Kan databasetransactie niet starten."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Kon geen verbinding maken met een van de authenticatieservers; kon de gebruiker niet authenticeren."
+
+msgid "0 bytes"
+msgstr "0 bytes"
+
+msgid "1 byte"
+msgstr "1 byte"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Dit formulier kan niet zo worden genoemd, ga terug naar het hoofdmenu."
+
+msgid "Internal Error"
+msgstr "Interne fout"
+
+msgid "You must specify your name in the form."
+msgstr "U moet uw naam opgeven in het formulier."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "U moet het e-mailadres van ontvanger in het formulier opgeven."
+
+msgid "Your email address you entered was invalid."
+msgstr "Het e-mailadres dat je hebt ingevoerd, is niet geldig."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "Het e-mailadres van de ontvanger dat je hebt ingevoerd, is niet geldig."
+
+msgid "Database failure writing request information."
+msgstr "Databasestoringen bij het schrijven van informatie."
+
+msgid "Could not create the new database."
+msgstr "Kon de nieuwe database niet maken."
+
+msgid "Could not create the tables in the new database."
+msgstr "Kon de tabellen in de nieuwe database niet maken."
+
+msgid "Could not open the database."
+msgstr "Kon de nieuwe database niet openen."
+
+msgid "Database Error creating %s table"
+msgstr "Database fout bij het creëren van tabel %s"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Kan het Login-log niet lezen"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d dagen en %2$d uren"
+
+msgid "%d hours"
+msgstr "%d uren"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d uren en %2$d minuten"
+
+msgid "%d minutes"
+msgstr "%d minuten"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d minuten en %2$d seconden"
+
+msgid "%d second"
+msgstr "%d seconden"
+
+msgid "%d seconds"
+msgstr "%d seconden"
+
+msgid "The email address you entered was invalid."
+msgstr "Het e-mailadres dat je hebt ingevoerd, is niet geldig."
+
+msgid "You are trying to drop off some files"
+msgstr "U probeert een aantal bestanden in te leveren"
+
+msgid "About the %1 Service..."
+msgstr "Over de %1-service ..."
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "E-mailberichten met grote bijlagen kunnen grote schade aanrichten op e-mailservers en computers van eindgebruikers. Het downloaden van dergelijke e-mailberichten kan uren duren op een trage internetverbinding en het verzenden of ontvangen van berichten gedurende die tijd blokkeren. In sommige gevallen zal de download herhaaldelijk mislukken, waardoor het vermogen van de ontvanger om e-mail te ontvangen erdoor wordt onderbroken. Internet-e-mailclients voegen ook aanzienlijk toe aan de grootte van het bestand dat wordt verzonden. Als u bijvoorbeeld een Outlook-bericht opslaat met een bijlage, wordt 40% toegevoegd aan de grootte van het bestand. Gebruik %1 om bestanden groter dan 1 MB te delen om een bestand (of bestanden) op een veilige en efficiënte manier tijdelijk beschikbaar te maken voor een andere gebruiker op internet."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "Er zijn twee verschillende soorten gebruikers die toegang zullen krijgen tot het %1-systeem: <em>binnen</em> gebruikers, die zijn gekoppeld aan %2 die de service uitvoert, en <em>buiten</em> gebruikers, de rest van het internet."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "Een <em>binnen</em>-gebruiker mag iedereen een drop-off sturen, ongeacht of deze een <em>binnen</em>- of <em>buiten</em>-gebruiker is. Een <em>buiten</em>-gebruiker mag alleen een aflevering verzenden naar een <em>binnen</em> -gebruiker. Dat roept de vraag op: wat is een drop-off?"
+
+msgid "drop-off"
+msgstr "drop-off"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "een of meer bestanden die naar %1 zijn geüpload als een enkel item voor bezorging aan een persoon of mensen"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Er zijn verschillende manieren waarop een gebruiker meerdere bestanden tegelijkertijd kan afleveren:"
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Versleep meerdere bestanden tegelijk naar de drop-off-pagina"
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "Klik op de knop \"Bestanden toevoegen\" op de afleverpagina en selecteer 1 of meerdere bestanden tegelijk met combinaties van klikken, Shift + klik en Ctrl + klik (Cmd + klik op een Mac)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Archiveer en comprimeer de bestanden tot een enkel pakket en voeg het resulterende archiefbestand toe aan de afleveringspagina."
+
+msgid "There are many ways to archive and compress files:"
+msgstr "Er zijn veel manieren om bestanden te archiveren en te comprimeren:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "Mac-gebruikers kunnen de bestanden selecteren in de Finder en \"Comprimeren\" (zie het menu <em>Bestand</em>)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "Windows-gebruikers kunnen een \"gecomprimeerde map\" maken of %1 gebruiken"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "Linux / Unix-gebruikers kunnen \"PeaZip\" of \"File Roller\" proberen"
+
+msgid "Creating a Drop-off"
+msgstr "Aflevering creëren"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Wanneer een gebruiker een drop-off maakt, voert deze identificerende informatie over zichzelf in (naam, organisatie en e-mailadres); het identificeren van informatie over de ontvanger(s) (naam en e-mailadres); en kies welke bestanden moeten worden geüpload om de drop-off te maken. Als de bestanden met succes zijn geüpload, wordt een e-mail verzonden naar de ontvanger(s) waarin wordt uitgelegd dat er een aflevering is uitgevoerd. Deze e-mail bevat ook een link om toegang te krijgen tot de drop-off. Andere informatie (het internetadres en / of de computernaam waaruit de aflevering is gemaakt, bijvoorbeeld) wordt bewaard om de ontvanger(s) te helpen de identiteit van de afzender te controleren."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "Ophalen van een drop-off door een ontvanger kan alleen worden gedaan met zowel de drop-off's Claim ID en toegangscode."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "Wanneer u bestanden ter verzendig aanbied, kunt u <em>niet</em> kiezen om deze beide automatisch naar de ontvanger te sturen: u moet Claim ID dan zelf handmatig verzenden of telefonisch mededelen."
+
+msgid "Making a Pick-up"
+msgstr "Een pick-up maken"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Er zijn twee manieren om bestanden op te halen (pick-up) die zijn gedropt:"
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Alle gebruikers kunnen klikken op de link in het e-mailbericht dat hen is toegezonden."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Een interne gebruiker, eenmaal op het systeem is ingelogd, kan zijn \"Inbox\" weergeven, een lijst met alle drop-offs die erop wachten. Eenmaal ingelogd, heeft een interne gebruiker toegang tot drop-offs die naar of door hem worden verzonden, zonder dat hij het e-mailbericht nodig heeft."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "Bij het bekijken van een drop-off ziet de gebruiker een aantal dingen:"
+
+msgid "The list of files that were uploaded"
+msgstr "De lijst met bestanden die zijn geüpload"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "De afzender en ontvangerinformatie die de afzender heeft ingevoerd toen de drop-off werd aangemaakt\t"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "De computernaam en / of het adres van waaruit de drop-off is gemaakt"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "Optioneel een lijst met ophaalacties (pick-ups) die zijn gemaakt"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "De ontvanger heeft %1 dagen om de bestanden op te halen (pick-up). Elke nacht worden drop-offs die ouder zijn dan %1 dagen uit het systeem verwijderd."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Houd er rekening mee dat de geüploade bestanden worden gescand op virussen, maar dat de ontvanger nog steeds even voorzichtig moet zijn met het downloaden en openen als dat nodig is. Dit kan net zo eenvoudig zijn als het verifiëren met de afzender vermeld in de e-mail met de melding dat hij inderdaad de drop-off heeft gedaan. Men kan ook de computernaam/het adres controleren dat werd gelogd toen de drop-off werd aangemaakt, om er zeker van te zijn dat het geschikt is voor het internetdomein van de afzender. IP-adressen <em>kunnen echter</em> worden vervalst, dus de eerdere identiteitsverificatie is echt de meest betrouwbare."
+
+msgid "Resumable Downloading of Files"
+msgstr "Hervatten van downloaden van bestanden"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "De meeste webbrowsers ondersteunen <em>downloads die kunnen worden hervat</em>. Stel u dit scenario eens voor: u zit in uw plaatselijke koffiewinkel en downloadt een 100 MByte PDF die een student naar %1 voor u heeft geüpload. Plots begint iemand een paar tafels verder te kijken naar de nieuwste filmtrailer (nou ja, probeert hij, hoe dan ook) en je draadloze verbinding daalt - je was 95 MB bij de download en nu moet je opnieuw beginnen! Toch niet, als uw browser <em>downloads, die kunnen worden hervat, ondersteunt</em>; in dat geval vraagt de browser download alleen de resterende 5 MB van het bestand."
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "%1 biedt ondersteuning voor de serveronderdelen van de <em>download hervatten</em> technologie onder de HTTP 1.1-standaard."
+
+msgid "Size Limitations on Uploads"
+msgstr "Grootte beperkingen op Uploads"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "Het uploaden van bestanden die groter zijn dan 2 GB is afhankelijk van de browser die wordt gebruikt."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Gebruik zo mogelijk een moderne 64-bits browser op een 64-bits besturingssysteem. Als u alleen een 32-bits systeem hebt (de meest voorkomende oorzaak is Windows 7), gebruikt u een moderne versie van Google Chrome of Firefox. Oudere versies van Microsoft Internet Explorer werken bijzonder slecht."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "De %1-software zelf heeft configureerbare limieten voor de hoeveelheid gegevens die in één keer kan worden geüpload. Zelfs voor browsers die uploads groter dan 2 GB ondersteunen, mag de drop-off niet groter zijn dan %2 per bestand, of %3 totaal voor de hele drop-off."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "Als u de volgende problemen ondervindt bij de drop-off of pick-up van een groot bestand:"
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Uw browser meldt een slechte of kapotte verbinding na het downloaden van een aanzienlijk deel van het bestand"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Er wordt een foutpagina weergegeven die aangeeft dat u geen bestanden heeft afgegeven (drop-off)"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "dan bent u waarschijnlijk verbonden met internet via een verbinding die te traag is om de hoeveelheid gegevens tijdig te verplaatsen. Uw computer heeft normaal maximaal 2 uur om een drop-off volledig te verzenden of ontvangen."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "Gebaseerd op de originele Perl UD Dropbox-software geschreven door Doke Scott."
+
+msgid "Version %1 has been developed by %2."
+msgstr "Versie %1 is ontwikkeld door %2."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Voer de claim-id in en claim de toegangscode die naar u is verzonden."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Please enter the claim id and claim passcode."
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Als de afzender u een toegangscode voor de claim heeft gegeven, voert u deze in."
+
+msgid "Claim ID"
+msgstr "Claim ID"
+
+msgid "Claim Passcode"
+msgstr "Claim toegangscode"
+
+msgid "Pick-up Files"
+msgstr "Pick-up bestanden"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "De drop-off met claim-ID %1 is met succes verwijderd."
+
+msgid "Unable to remove the drop-off"
+msgstr "Kan de dropoff niet verwijderen."
+
+msgid "You may have already deleted it."
+msgstr "Je hebt het mogelijk al verwijderd."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Dit is een automatisch bericht dat door de %1-service naar u is verzonden."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Dit is een herinnering aan een drop-off die naar u is verzonden en die nog niet is opgehaald."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "De drop-off vervalt in %1, waarna deze automatisch wordt verwijderd."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1 &lt;%2&gt; heeft een bestand voor je afgezet."
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1 &lt;%2&gt; heeft een bestand voor je dropped-off(afgezet)."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong>ALS JE DE AFZENDER VERTROUWT</strong> en verwacht een bestand van hen te ontvangen, kun je ervoor kiezen om de drop-off op te halen door op de volgende link te klikken (of door deze in je webbrowser te kopiëren en plakken):"
+
+#, fuzzy
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong>Deze drop-off is gecodeerd.</strong> Om bestanden te downloaden, moet u de juiste wachtwoordzin hebben, die u alleen van de afzender kunt krijgen."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "U hebt %1 om de drop-off op te halen; daarna vervalt de bovenstaande link."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Als u contact wilt opnemen met de afzender, hoeft u alleen deze e-mail te beantwoorden."
+
+msgid "The sender has left you a note:"
+msgstr "De afzender heeft een opmerking achtergelaten:"
+
+msgid "Full information about the drop-off:"
+msgstr "Volledige informatie over de drop-off:"
+
+msgid "Sent separately"
+msgstr "Afzonderlijk verzonden"
+
+msgid "Date of Drop-off"
+msgstr "Datum van drop-off"
+
+msgid "Sender"
+msgstr "Afzender"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Organization"
+msgstr "Organizatie"
+
+msgid "Email Address"
+msgstr "E-mailadres"
+
+msgid "IP Address"
+msgstr "IP adres"
+
+msgid "File"
+msgstr "Bestand"
+
+msgid "Files"
+msgstr "Bestanden"
+
+msgid "Description"
+msgstr "Beschrijving"
+
+msgid "Size"
+msgstr "Grootte"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 Checksum"
+
+msgid "Content Type"
+msgstr "Inhoudstype"
+
+msgid "a file"
+msgstr "een bestand"
+
+msgid "%1 files"
+msgstr "%1 bestanden"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> heeft %3 voor u gedropt."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong>ALS JE DE AFZENDER VERTROUWT</strong> en verwacht een bestand van hen te ontvangen, kun je ervoor kiezen om de drop-off op te halen door op de volgende link te klikken (of door deze in je webbrowser te kopiëren en plakken):"
+
+#, fuzzy
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** Deze drop-off is gecodeerd. **\n"
+"Om bestanden te downloaden, moet u de juiste wachtwoordzin hebben, die u alleen van de afzender kunt krijgen."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "U hebt %1 om de drop-off op te halen; daarna vervalt de bovenstaande link. Als u contact wilt opnemen met de afzender, hoeft u alleen deze e-mail te beantwoorden."
+
+msgid "Claim ID:          %1"
+msgstr "Claim ID:          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Claim Wachtwoordzin:    %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Datum van drop-off:  %1"
+
+msgid "Name:            %1"
+msgstr "Naam:\t\t %1"
+
+msgid "Organization:    %1"
+msgstr "Organisatie:    %1"
+
+msgid "Email Address:   %1"
+msgstr "Email-adres:\t%1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP adres:\t%1  %2"
+
+msgid "Name:             %1"
+msgstr "Naam:\t\t  %1"
+
+msgid "Description:      %1"
+msgstr "Beschrijving:\t  %1"
+
+msgid "Size:             %1"
+msgstr "Grootte:\t  %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 Checksum: %1"
+
+msgid "Content Type:     %1"
+msgstr "Inhoudstype:     %1"
+
+#, fuzzy
+msgid "Picked up"
+msgstr "Pick-up"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Search:"
+msgstr "Zoeken:"
+
+msgid "Show _MENU_ entries"
+msgstr "_MENU_ -vermeldingen weergeven"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_START_ tot _END_ van _TOTAL_ vermeldingen"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 tot 0 van 0 vermeldingen weergegeven"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(gefilterd uit _MAX_ totaal aantal items)"
+
+msgid "No matching records found"
+msgstr "Geen overeenkomende records gevonden"
+
+msgid "No data available in table"
+msgstr "Geen data beschikbaar in de tabel"
+
+msgid "First"
+msgstr "Eerste"
+
+msgid "Previous"
+msgstr "Voorgaande"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "Last"
+msgstr "Laatste"
+
+msgid "Recipient"
+msgstr "Ontvanger"
+
+msgid "Created"
+msgstr "Aangemaakt"
+
+msgid "Encrypted"
+msgstr "Versleutelde"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr ""
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr ""
+
+msgid "%1 = Encrypted by %2"
+msgstr ""
+
+msgid "%1 = Not encrypted by %2"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
+
+msgid "Outbox"
+msgstr "Outbox"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Klik op een drop-off om de informatie en bestanden voor die drop-off te bekijken."
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "Er zijn op dit moment geen drop-off´s beschikbaar voor u."
+
+msgid "Copyright &copy; %1"
+msgstr "Copyright &copy; %1"
+
+msgid "About %1"
+msgstr "Over %1"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr "Deze service wordt mogelijk gemaakt door een kopie van <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+
+msgid "Version %1"
+msgstr "Versie %1"
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "U bent momenteel aangemeld als <em>%1</em>"
+
+msgid "Return to the %1 main menu"
+msgstr "Keer terug naar het %1 hoofdmenu"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "%1 Username"
+msgstr "%1 gebruikersnaam"
+
+msgid "Password"
+msgstr "Wachtwoord"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Privacy Consent"
+msgstr "Privacy toestemming"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Deze website gebruikt een cookie en moet uw naam en e-mailadres gebruiken om te functioneren."
+
+msgid "I agree"
+msgstr "Ik ga accoord"
+
+msgid "I do not agree"
+msgstr "Ik ga niet accoord"
+
+msgid "Home"
+msgstr "Thuis"
+
+msgid "Inbox"
+msgstr "Inbox"
+
+msgid "Please login above."
+msgstr "Log hierboven in."
+
+msgid "Authentication"
+msgstr "authenticatie"
+
+msgid "You have been logged out."
+msgstr "Je bent uitgelogd."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "Voor een betere beveiliging zou u deze browser ook moeten afsluiten, of op zijn minst dit browservenster sluiten."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "U wordt zo meteen doorgestuurd naar het <a href=\"%1\">hoofdmenu</a>."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "Laatste %1 regels van %2 log, meest recente eerst"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "U gebruikt een oude niet-ondersteunde versie van Internet Explorer."
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Deze site zal niet correct werken met deze webbrowser."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Gebruik alstublieft een betere webbrowser, zoals Google Chrome of Firefox, of in ieder geval Internet Explorer 11."
+
+msgid "Drop-off"
+msgstr "Drop-off"
+
+msgid "Pick-up"
+msgstr "Pick-up"
+
+msgid "Request a Drop-off"
+msgstr "Een drop-off aanvragen"
+
+msgid "Show All Drop-offs"
+msgstr "Laat alle drop-offs zien"
+
+msgid "Unlock Users"
+msgstr "Gebruiker(s) vrijgeven"
+
+msgid "System Statistics"
+msgstr "Systeem statistieken"
+
+msgid "System Log"
+msgstr "Systeem Log"
+
+msgid "You may perform the following activities:"
+msgstr "Iedereen mag de volgende activiteiten uitvoeren:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Drop-off (<em>upload</em>) een bestand voor iemand anders."
+
+msgid "Ask another person to send you some files."
+msgstr "Vraag een andere persoon om u enkele bestanden te sturen."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Ophalen (<em>pick-up of downloaden</em>) er is/zijn een bestand(en) voor u klaargezet."
+
+msgid "View all drop-offs in the database"
+msgstr "Bekijk alle drop-offs in de database"
+
+msgid "Unlock locked-out users"
+msgstr "Ontgrendel geblokkeerde gebruikers"
+
+msgid "View daily statistics for the service"
+msgstr "Bekijk dagelijkse statistieken voor de service"
+
+msgid "View log file"
+msgstr "Bekijk het log bestand"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "Als u een %1 gebruiker bent, moet u hierboven inloggen om te voorkomen dat u uw e-mailadres moet verifiëren, <br/> en bestanden naar niet-%1-gebruikers kunt sturen."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "Als u een %1 gebruiker bent, kunt u zich hier aanmelden:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr "<strong>%1-gebruikers moeten eerst inloggen.</strong>"
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "<strong>Vermijd het verifiëren van uw e-mailadres</strong>, <br/> voor de drop-off van bestanden voor niet-%1-gebruikers."
+
+msgid "Anyone may perform the following activities:"
+msgstr "Iedereen mag de volgende activiteiten uitvoeren:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "Drop-off van (<em>upload</em>) een bestand voor een %1 gebruiker (<strong>vereist e-mailverificatie</strong>)."
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Ophalen (<em>pick-up of download</em>) er is/zijn een bestand(en) voor u klaargezet."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "%1 gebruikers: u kunt inloggen met uw gebruikersnaam en wachtwoord en bestanden naar iedereen verzenden, binnen of buiten %2 %1"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "Niet-%1-gebruikers: u kunt niet inloggen, maar kunt nog steeds bestanden naar %1-gebruikers verzenden als u hun e-mailadres kent. Begin door op de knop \"%3\" te klikken."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "%1-gebruikers die iemand buiten %2 %1 om bestanden willen ontvangen, kunnen het voor de verzender een stuk gemakkelijker maken door in te loggen en te klikken op \"%3\". Dat bespaart de andere personen zich te bewijzen wie ze zijn."
+
+msgid "The request created will be valid for %1."
+msgstr "Het gemaakte verzoek is geldig voor %1."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "%1 is een service waarmee u eenvoudig bestanden kunt overzetten, waaronder grote bestanden tot %2, in %3 en daarbuiten."
+
+msgid "How secure is %1?"
+msgstr "Hoe veilig is %1?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "Bestanden worden automatisch verwijderd uit %1 %2 dagen nadat u ze hebt geüpload."
+
+msgid "Scanning for viruses..."
+msgstr "Scannen op virussen..."
+
+#, fuzzy
+msgid "Delete"
+msgstr "Verwijder drop-off"
+
+msgid "__CHARS__ too long"
+msgstr "__CHARS__ te lang"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ over"
+
+msgid "Too short!"
+msgstr "Te kort!"
+
+msgid "Entries do not match"
+msgstr "Invoer komt niet overeen"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Klik om bestanden toe te voegen of sleep ze hierheen"
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Als u deze pagina verlaat, verlaat u deze drop-off."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr ""
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "Het duurt te lang om de checksum van uw drop-off te berekenen."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "Alleen checksums van drop-off's tot een maximum van __MAXSIZE__ kunnen worden gemaakt."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr ""
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "Het kost te veel tijd om uw drop-off te versleutelen."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Alleen versleuteling van drop-off's tot een maximum van __MAXSIZE__ kunnen worden gemaakt."
+
+msgid "MB"
+msgstr "MB"
+
+msgid "KB"
+msgstr "KB"
+
+msgid "Remove file"
+msgstr "Verwijder bestand"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Het zal nu te lang duren om uw drop-off te versleutelen, dus de versleuteling is uitgeschakeld. Als je je drop-off wilt versleutelen, verlaag je je drop-off onder __MAXSIZE__ en selecteer je opnieuw \"Versleutel\"."
+
+msgid "Please enter a valid email address."
+msgstr "Gelieve een geldig e-mailadres in te geven."
+
+msgid "Remove selected recipient"
+msgstr "Verwijder geselecteerde ontvanger"
+
+msgid "Please add at least one file first!"
+msgstr "Voeg alsjeblieft ten minste één bestand toe!"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "Uw bestanden zijn groter dan de maximale totale grootte die u in één drop-off kunt verzenden (__MAXTOTALSIZE__)."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "Bestand __NUMBER__ is groter dan de maximale bestandsgrootte die u in een drop-off kunt verzenden (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr ""
+
+msgid "Scanning"
+msgstr "Scanning"
+
+msgid "Checksumming"
+msgstr "Controleberekeningen maken"
+
+msgid "Encrypting"
+msgstr "Versleutelen"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Sorry, ik heb je bestanden niet verzonden!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Opmerking, u kunt geen mappen, alleen bestanden achterlaten."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Geüpload: __PERCENT __%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr ""
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr ""
+
+msgid "PLEASE NOTE"
+msgstr "HOUD REKENING MEE DAT"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "Bestanden die zijn geüpload naar %1, worden gescand op virussen. Maar oefen nog steeds dezelfde mate van voorzichtigheid uit als bij elk ander bestand dat u downloadt."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "Gebruikers worden ook <strong>sterk aangemoedigd</strong> om elk bestand te versleutelen als ze gevoelige informatie bevatten (bijvoorbeeld persoonlijke private informatie)!"
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Op deze webpagina kunt u een of meer bestanden voor iedereen (een %1-gebruiker of anderen) achterlaten (drop-off/uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het downloaden van het bestand. Uw IP-adres wordt ook geregistreerd en verzonden naar de ontvanger ter bevestiging van de identiteit."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Op deze webpagina kunt u een of meer bestanden voor een %1-gebruiker achterlaten (drop-off/uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het downloaden van het bestand. Uw IP-adres wordt ook geregistreerd en verzonden naar de ontvanger ter bevestiging van de identiteit."
+
+msgid "From"
+msgstr "Van"
+
+msgid "To"
+msgstr "Aan"
+
+msgid "Add Recipients"
+msgstr "Voeg ontvangers toe"
+
+msgid "Add One"
+msgstr "Voeg één toe"
+
+msgid "Add Many"
+msgstr "Voeg meerdere toe"
+
+msgid "Adds to your address book"
+msgstr "Voegt toe aan je adreslijst"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Add"
+msgstr "Voeg"
+
+msgid "Add & Close"
+msgstr "Voeg en Sluiten"
+
+msgid "Bulk add recipients"
+msgstr "Voeg meerdere ontvangers toe"
+
+msgid "One recipient per line, for example:"
+msgstr "Één ontvanger per regel, bijvoorbeeld:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Naam Ontvanger email@example.com"
+
+msgid "Verify"
+msgstr "Verifiëren"
+
+msgid "Encryption Passphrase"
+msgstr "De wachtwoordzin voor versleuteling"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "Deze wachtwoordzin wordt niet naar de ontvangers<br/>verzonden. Je moet dit zelf doen."
+
+msgid "Passphrase"
+msgstr "Wachtwoordzin"
+
+msgid "And again"
+msgstr "En opnieuw"
+
+msgid "Hide characters"
+msgstr "Maak karakters"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuleer\t"
+
+msgid "Short note to the Recipients"
+msgstr "Korte opmerking/notitie voor de ontvangers"
+
+msgid "Encrypt every file"
+msgstr "Versleutel ieder bestand (max 300Mb)"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Bereken de SHA-256 checksum van ieder bestand"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Stuur een e-mail naar mij wanneer elke ontvanger het/de bestand(en) ophaalt"
+
+#, fuzzy
+msgid "Send email message to recipients"
+msgstr "Stuur een e-mailbericht naar ontvangers"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "die zowel een toegangscode als een claim-ID bevat"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
+
+msgid "Add Files"
+msgstr "Bestanden toevoegen"
+
+msgid "and/or select a file..."
+msgstr "en/of selecteer een bestand..."
+
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+msgid "Uploading..."
+msgstr "Uploaden..."
+
+msgid "Drop-off Files"
+msgstr "Drop-off bestanden"
+
+msgid "Drop to<br/>Add Files"
+msgstr "Hier laten vallen<br/>om bestanden toe te voegen"
+
+msgid "(It will copy, not move)"
+msgstr "(Kopiëren, niet verplaatsen)"
+
+msgid "No file was chosen for download."
+msgstr "Er is geen bestand gekozen om te downloaden."
+
+msgid "Please prove you are a person"
+msgstr "Bewijs dat u een persoon bent"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "Om te bevestigen dat u een <em>echt</em> persoon bent (en geen computer), vult u de onderstaande uitdaging aan en klikt u vervolgens op 'Pick-up bestanden':"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "De drop-off die je hebt gemaakt (claim-ID: %1) is opgehaald."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "Het bestand \"<span class=\"mono\">%1</span>\" is opgehaald (picked-up)."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1 heeft %2 opgehaald (picked-up)."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "Het bestand \"<span class=\"mono\">%1</span>\" is opgehaald (picked-up) door %2."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Opmerking: u ontvangt geen melding over verdere pick-ups van bestanden in deze drop-off door deze ontvanger."
+
+msgid "Note"
+msgstr "Opmerking"
+
+msgid "The file %1 was picked up."
+msgstr "Het bestand %1 is opgehaald (picked-up)."
+
+msgid "The file %1 was picked up by %2."
+msgstr "Het bestand %1 is opgehaald (picked-up) door %2."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "U ontvangt geen melding over verdere pick-ups van bestanden in deze drop-off door deze ontvanger."
+
+msgid "Global Drop-off List"
+msgstr "Globale drop-off lijst"
+
+msgid "There are no drop-offs available at this time."
+msgstr "Er zijn op dit moment geen drop-offs beschikbaar voor u."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "Er zijn op dit moment geen drop-offs beschikbaar voor u."
+
+msgid "This is a request from %1 of %2."
+msgstr "Dit is een verzoek van %1 van %2."
+
+msgid "This is a request from %1."
+msgstr "Dit is een verzoek van %1."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Klik op de onderstaande link en drop-off het bestand of de bestanden die ik heb aangevraagd."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "De link is alleen geldig voor %1 vanaf het moment van deze e-mail."
+
+#, fuzzy
+msgid "All files you upload will be automatically encrypted."
+msgstr "Deze drop-off is gecodeerd met een wachtwoordzin die alleen bekend is bij de afzender."
+
+msgid "More information is in the note below."
+msgstr "Meer informatie staat in de opmerking hieronder."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "Als u contact wilt opnemen met %1, beantwoordt u deze e-mail."
+
+#, fuzzy
+msgid "Click to copy link to clipboard"
+msgstr "Copier link naar klembord"
+
+msgid "Copied"
+msgstr ""
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "De aanvraag voor een Drop-off is verzonden naar %1 op %2."
+
+msgid "It is valid for %1."
+msgstr "Het is geldig voor %1"
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr ""
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Als de ontvanger bestanden naar u wil verzenden voordat hun verzoek arriveert, moeten ze dat doen"
+
+msgid "Go to %1"
+msgstr "Ga naar %1"
+
+msgid "Select \"Drop-off Files\""
+msgstr "Selecteer de ¨Drop-off bestanden¨"
+
+msgid "Enter the request code \"%1\""
+msgstr "Voer de aanvraagcode ¨%1¨ in"
+
+msgid "Click on the \"Next\" button"
+msgstr "Klik op de knop \"Volgende\""
+
+msgid "You may close this window."
+msgstr "Dit vensteg mag afgesloten worden."
+
+#, fuzzy
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "De aanvraag voor een Drop-off is verzonden naar %1 op %2."
+
+msgid "The link to give them is %1"
+msgstr ""
+
+msgid "Send the Request"
+msgstr "Stuur een verzoek"
+
+msgid "Show the Link"
+msgstr ""
+
+msgid "Please enter the recipient's name first!"
+msgstr "Voer eerst de naam van de ontvanger in!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Voer eerst het e-mailadres van de ontvanger in!"
+
+#, fuzzy
+msgid "Please enter the email subject first!"
+msgstr "Voer eerst de naam van de ontvanger in!"
+
+msgid "Your note is too long!"
+msgstr "Je notitie is te lang!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr ""
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr ""
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Op deze webpagina kunt u een verzoek sturen naar een of meer andere mensen en die verzoeken om een of meer bestanden aan u te verzenden (uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het uploaden van het bestand(en)."
+
+msgid "Email(s)"
+msgstr "Email(s)"
+
+msgid "Subject"
+msgstr "Onderwerp"
+
+#, fuzzy
+msgid "Send email"
+msgstr "Afzender"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Dit wordt naar de ontvanger verzonden. Het zal ook worden opgenomen in de resulterende drop-off die naar u wordt verzonden."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr ""
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "De drop-off is met succes opnieuw verzonden naar de ontvangers."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Niet mogelijk de drop-off opnieuw te verzenden"
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Alle bestanden worden veilig versleuteld over het netwerk overgedragen"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Als u persoonlijke of vertrouwelijke gegevens verzendt, vinkt u 'Versleutel elk bestand' aan wanneer u een nieuwe drop-off maakt. Momenteel mogen bestanden hiervoor niet groter zijn dan 300Mb. Vervolgens moet de wachtwoordzin die u invoert, worden gebruikt bij het downloaden van de drop-off. De wachtwoordzin wordt niet opgeslagen op %1 en kan niet worden hersteld als deze verloren is gegaan. Niemand kan zonder de wachtwoordzin toegang krijgen tot de bestanden"
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "Alle bestanden die zijn geüpload en tijdelijk zijn opgeslagen op %1, worden bewaard op apparatuur die eigendom is van en wordt geëxploiteerd in het eigen datacenter van %2"
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Alle gegevens zijn onderworpen aan de gegevensbeschermingsvoorschriften en wetten van %1 en het land"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 is op geen enkele manier een \"cloud\" -service. Alles wordt (tijdelijk) opgeslagen op apparatuur die direct eigendom is van %2 en wordt beheerd door eigen IT-personeel"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Alle toegang tot gegevens wordt zeer strak en strikt gecontroleerd door %2. Alle toegangen tot gegevens op %1 worden vastgelegd en kunnen gemakkelijk worden gecontroleerd als u zich ooit zorgen maakt dat een derde partij mogelijk toegang heeft gekregen tot uw gegevens"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Bovendien worden geüploade gegevens alleen gedurende maximaal %2 dagen bewaard op %1, waarna deze automatisch worden verwijderd. Er is helemaal geen \"verwijder¨ -faciliteit beschikbaar. Er worden geen back-ups gemaakt van de geüploade gegevens (het is slechts een tijdelijk transitie opslag), dus %1 zal zelf geen geüploade gegevens verplaatsen naar andere apparatuur of media zoals back-uptapes. Nadat een geüploade bestand is verwijderd, is er geen mogelijkheid om het bestand te herstellen"
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Wilt u deze drop-off echt verwijderen?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr ""
+
+msgid "Include Passcode?"
+msgstr "Inclusief toegangscode?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Moet de toegangscode worden opgenomen in de e-mails en de claim-ID?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Klik op '%1' als u het niet zeker weet."
+
+msgid "Decryption Passphrase"
+msgstr "De wachtwoordzin voor versleuteling"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "U kunt de afzender vragen<br/>om de decryptie-wachtwoordzin."
+
+msgid "Delete Dropoff"
+msgstr "Verwijder drop-off"
+
+msgid "Resend Dropoff"
+msgstr "Verzend drop-off opnieuw"
+
+msgid "Drop-Off Summary"
+msgstr "Drop-off samenvatting"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr ""
+
+#, fuzzy
+msgid "Your files have been encrypted and sent successfully."
+msgstr "Jouw bestanden zijn succesvol verstuurd."
+
+msgid "They will expire in %1."
+msgstr ""
+
+msgid "Your files have been sent successfully."
+msgstr "Jouw bestanden zijn succesvol verstuurd."
+
+#, fuzzy
+msgid "This drop-off is encrypted."
+msgstr "Drop-off niet versleuteld"
+
+msgid "Click on a filename to download that file."
+msgstr "Klik op een bestandsnaam om dat bestand te downloaden."
+
+#, fuzzy
+msgid "This drop-off will expire in %1."
+msgstr "Drop-off niet versleuteld"
+
+msgid "%1 file"
+msgstr "%1 bestand"
+
+msgid "Download All Files"
+msgstr "Download alle bestanden"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Download alle bestanden<br/>als een niet-versleutelde Zip"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Download alle bestanden<br/>als een Zip"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Geen bestanden in de drop-off ... er is iets mis!"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span>van %2 op %3</ span>"
+
+msgid "Comments"
+msgstr "Opmerkingen"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Als u het bestand naar iemand anders wilt verzenden, stuurt u deze link %1 of anders deze claim-ID en toegangscode:"
+
+msgid "Picked-up on date..."
+msgstr "Picked-up op datum ..."
+
+msgid "...from remote address..."
+msgstr "... van extern adres ..."
+
+msgid "...by recipient."
+msgstr "...door ontvanger."
+
+msgid "%1 pickups"
+msgstr "%1 pick-ups"
+
+msgid "1 pickup"
+msgstr "1 pick-up"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Geen van de bestanden is al opgehaald."
+
+msgid "View stats for the"
+msgstr "Bekijk statistieken voor de"
+
+msgid "past week"
+msgstr "afgelopen week"
+
+msgid "past month"
+msgstr "afgelopen maand"
+
+msgid "past 90 days"
+msgstr "afgelopen 90 dagen"
+
+msgid "past year"
+msgstr "afgelopen jaar"
+
+msgid "past 10 years"
+msgstr "afgelopen 10 dagen"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "Aantal gemaakte drop-offs (dagelijks gecontroleerd)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Totale hoeveelheid ´dropped_off´ gegevens (dagelijks gecontroleerd)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Totaal aantal ´dropped-off´ bestanden (dagelijks gecontroleerd)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Aantal bestanden per drop-off (dagelijks gecontroleerd)"
+
+msgid "Unlock"
+msgstr "Unlock"
+
+msgid "Select all"
+msgstr "Alles selecteren"
+
+msgid "Unlock selected users"
+msgstr "Unlock geselecteerde gebruikers"
+
+msgid "There are no locked users."
+msgstr "Er zijn geen afgesloten (locked) gebruikers."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "U hebt ons gevraagd om u dit bericht te sturen, zodat u enkele bestanden voor iemand kunt achterlaten (drop-off)."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "NEGEER DIT BERICHT ALS U HET NIET ONMIDDELLIJK VERWACHT!"
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Anders gaat u verder met het proces door op de volgende koppeling te klikken (of te kopiëren en in uw webbrowser te plakken):"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Wacht nu tot het e-mailbericht van de %1-service aankomt en klik op de link daarin."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "U wordt zo meteen doorgestuurd naar het <a href=\"%1\">hoofdmenu</a>."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Voer uw aanvraagcode in voordat u deze verzendt."
+
+msgid "Please enter your name before submitting."
+msgstr "Voer uw naam in voordat u deze verzendt."
+
+msgid "Please enter your email address before submitting."
+msgstr "Voer alstublieft uw e-mailadres in voordat u het verzendt."
+
+msgid "Your Request Code"
+msgstr "Uw aanvraagcode"
+
+msgid "Request Code"
+msgstr "Aanvraagcode"
+
+msgid "Information about the Sender"
+msgstr "Informatie over de afzender"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Je hebt het formulier niet compleet ingevuld, of je hebt de \"Ben ik een echt persoon?\" test niet gehaald."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Heeft u een <strong>aanvraagcode</strong> gekregen?"
+
+msgid "Your name"
+msgstr "Jouw naam"
+
+msgid "(required)"
+msgstr "(verplicht)"
+
+msgid "Your organization"
+msgstr "Youw organisatie"
+
+msgid "Your email address"
+msgstr "Jouw email adres"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "Om te bevestigen dat u een <em>echt</em> persoon bent (en geen computer), klik de onderstaande uitdaging hieronder:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Ik moet u nu een bevestigingsmail sturen."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Als u het over een aantal minuten hebt ontvangen, klik je op de link in de mail."
+
+msgid "Send confirmation"
+msgstr "Verstuur bevestiging"
+
+#~ msgid "1 hour"
+#~ msgstr "1 uur"
+
+#~ msgid "1 day"
+#~ msgstr "1 dag"
+
+#, fuzzy
+#~ msgid "This drop-off is encrypted with a passphrase known only to the person who requested the drop-off."
+#~ msgstr "Deze drop-off is gecodeerd met een wachtwoordzin die alleen bekend is bij de afzender."
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the sender."
+#~ msgstr "Deze drop-off is gecodeerd met een wachtwoordzin die alleen bekend is bij de afzender."
+
+#~ msgid "You must specify the recipient's name in the form."
+#~ msgstr "U moet de naam van ontvanger in het formulier opgeven."
+
+#~ msgid "Please add at least one recipient first!"
+#~ msgstr "Voeg alsjeblieft ten minste één ontvanger toe!"
+
+#~ msgid "Copy link to clipboard"
+#~ msgstr "Copier link naar klembord"
+
+#~ msgid "Sender address verification subsystem failure."
+#~ msgstr "De verificatie van het afzenderadres is mislukt."
+
+#~ msgid "Failed to update quota for user %s"
+#~ msgstr "Kan quota voor gebruiker %s niet bijwerken"
+
+#~ msgid "You do not have enough remaining storage quota for this drop-off. You need at least another %s."
+#~ msgstr "Je hebt niet genoeg resterende opslaglimieten voor deze drop-off. U hebt minstens nog een %s nodig."
+
+#~ msgid "Add Recipient"
+#~ msgstr "Voeg ontvanger toe"
+
+#~ msgid "Test User test@domain.com"
+#~ msgstr "Test gebruiker test@domain.com"
+
+#~ msgid "Unable to remove drop-off %s using passcode %s"
+#~ msgstr "Kan drop-off %s niet verwijderen met behulp van code %s"
+
+#~ msgid "Unable to remove the drop-off %1."
+#~ msgstr "Kan de drop-off %1 niet verwijderen."

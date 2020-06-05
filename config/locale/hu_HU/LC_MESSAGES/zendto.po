@@ -1,0 +1,1647 @@
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2019-08-22 11:52+0200\n"
+"Last-Translator:  Toldi Miklos <toldim76@gmail.com>\n"
+"Language-Team: US English <Jules@Zend.To>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: Hungarian\n"
+"#-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#\n"
+"#-#-#-#-#  smarty.pot  #-#-#-#-#\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Kattintson újra a linkre, amely el lett küldve Önnek az állományok átvételéhez."
+
+msgid "Authentication Failure"
+msgstr "Azonosítási hiba"
+
+msgid "Your session has expired. Please start again."
+msgstr "Az Ön munkamenete véget ért. Kérem, jelentkezzen be ismét."
+
+msgid "Session Expired"
+msgstr "A munkamenet lejárt."
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "Úgy tűnik, hogy számítógépe címe megváltozott. Kattintson ismét arra a linkre, amely el lett Önnek küldve."
+
+msgid "Session Error"
+msgstr "Munkamenet hiba"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Ez a szolgáltatás csak a bejelentkezett felhasználók számára érhető el."
+
+msgid "Access Denied"
+msgstr "Hozzáférés megtagadva"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "A naplófájl olvasása nem sikerült. Ellenőrizze, hogy a webszerver képes-e olvasni."
+
+msgid "File Permissions Error"
+msgstr "Fájl jogosultság hiba"
+
+msgid "This is available to administrators only."
+msgstr "Ez csak rendszergazdák részére érhető el."
+
+msgid "Administrators only"
+msgstr "Csak rendszergazdák részére"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Kattintson újra a linkre, amely el lett küldve Önnek az állományok átvételéhez."
+
+msgid "I do not think you are a real person."
+msgstr "Ön vélhetően nem létező személy."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "Ön megpróbálta újra benyújtani ezt az űrlapot. Kérem, hogy kezdje újra az egészet az elejéről."
+
+msgid "Are you a real person?"
+msgstr "Ön létező személy?"
+
+msgid "Database failure writing authentication key."
+msgstr "Adatbázis hiba hitelesítési kulcs írásakor."
+
+msgid "Database Error"
+msgstr "Adatbázis hiba"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "Sikertelen a teszt, ami eldönti, hogy Ön létező személy, nem pedig egy robot. Kérem, hogy próbálja meg újra."
+
+msgid "Test failed"
+msgstr "Sikertelen teszt"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "Nem található a kérelem kódja, vagy már használva lett."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "Fájlokat küldhet közvetlenül a főmenüből, vagy kérhet új kódot."
+
+msgid "Request Code Used"
+msgstr "A kérelem kód már használva lett"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "Az Ön kérelem kódja lejárt. Kérem, hogy kezdje újra az egészet."
+
+msgid "Request Code Expired"
+msgstr "A kérelem kód lejárt"
+
+msgid "Request Error"
+msgstr "Hiba a kérésben"
+
+msgid "Sending the request email failed."
+msgstr "A kérésről szóló e-mail küldése sikertelen."
+
+msgid "Email Error"
+msgstr "Email hiba"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "Nem sikerült az ismételt elküldése %s küldeménynek."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Sikertelen ismételt küldemény elküldés"
+
+msgid "Unlocked %s."
+msgstr "Zárolás feloldva %s -nek."
+
+msgid "Unknown user"
+msgstr "Ismeretlen felhasználó"
+
+msgid "Request Code Error"
+msgstr "Kérelem kód hiba"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Ellenőrizze, hogy helyesen írta-e be a várt kódot, vagy kérjen új kódot."
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Vagy töltse ki az űrlapot, vagy lépjen vissza a böngészőben, és írja be újra a kérelem kódját."
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "Ön megpróbálta újra benyújtani ezt az űrlapot. Kérem, hogy térjen vissza a főmenübe, és kezdje előröl."
+
+msgid "Verify Error"
+msgstr "Hiba történt"
+
+msgid "Sending the verification email failed."
+msgstr "Az ellenőrző e-mail küldése sikertelen."
+
+msgid "Could not open MySQL database on %s"
+msgstr "Nem sikerült kapcsolódni a MySQL adatbázishoz a(z) %s kiszolgálón"
+
+msgid "Failed to add login record"
+msgstr "Nem sikerült hozzáadni a bejelentkezési rekordot"
+
+msgid "Failed to delete login records"
+msgstr "Nem sikerült törölni a bejelentkezési rekordokat"
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "Sikertelen a BEGIN művelet a reguláris kifejezések frissítése közben"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "Sikertelen ROLLBACK művelet a korábbi reguláris kifejezések törlésének megszakítása után"
+
+msgid "Failed to delete old regexps"
+msgstr "Nem sikerült a korábbi reguláris kifejezések törlése"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "Sikertelen ROLLBACK művelet a reguláris kifejezés felvételének megszakítása után"
+
+msgid "Failed to add regexp"
+msgstr "Nem sikerült a reguláris kifejezés felvétele"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "A(z) %s felhasználó felvétele megszakítva, mert ilyen névvel felhasználó már létezik"
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "Sikertelen a BEGIN művelet a(z) %s felhasználó hozzáadásakor "
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "Sikertelen ROLLBACK művelet a(z) %s felhasználó felvételének megszakítása után"
+
+msgid "Failed to add user %s"
+msgstr "A(z) %s felhasználó hozzáadása sikertelen"
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "A felhasználó törlésének folyamata megszakadt, mert a(z) %s felhasználó nem létezik "
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "A felhasználó módosításának folyamata megszakadt, mert a(z) %s felhasználó nem létezik"
+
+msgid "Failed to update password for user %s"
+msgstr "Nem sikerül a(z) %s felhasználó jelszavának cseréje"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Felhasználó beléptetése: nem lehet csatlakozni semelyik hitelesítő szerverhez, így nem sikerült hitelesíteni a felhasználót."
+
+msgid "LDAP Error"
+msgstr "LDAP hiba"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "Sajnálom, Ön hitelesítés nélkül nem használhatja ezt a szolgáltatást."
+
+msgid "Authorization Failed"
+msgstr "Sikertelen hitelesítés"
+
+msgid "Check User: No AD servers configured."
+msgstr "Felhasználó beléptetése: nincs elérhető AD szerver beállítva."
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "A böngészőjében lépjen vissza és javítsa ki ezt a hibát, mielőtt újra megpróbálja."
+
+msgid "Please notify the system administrator."
+msgstr "Kérem, hogy értesítse a rendszergazdát."
+
+msgid "%d bytes"
+msgstr "%d bájt"
+
+msgid "%.1f KB"
+msgstr "%.1f Kb"
+
+msgid "%.1f MB"
+msgstr "%.1f Mb"
+
+msgid "%.1f GB"
+msgstr "%.1f Gb"
+
+msgid "%.1f TB"
+msgstr "%.1f Tb"
+
+msgid "The preferences are not configured properly!"
+msgstr "Nem megfelelőek a beállítások!"
+
+msgid "Invalid Configuration"
+msgstr "Helytelen konfiguráció"
+
+msgid "Could not create ZendTo database handle"
+msgstr "Nem sikerült a ZendTo adatbázishoz kapcsolódni"
+
+msgid "Please note"
+msgstr "Figyelem"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "A ZendTo beállításaiban nem lett hitelesítési metódus kiválasztva."
+
+msgid "Authentication Error"
+msgstr "Azonosítási hiba"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "Nem megfelelőek a beállítások (vélhetően semmi sincs megadva) !"
+
+msgid "Mail Error"
+msgstr "E-mail hiba"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "A naplófájl kiírása nem sikerült. Ellenőrizze, hogy a webszerver képes-e írni a preferences.php fájlban megadott állományt."
+
+msgid "Configuration Error"
+msgstr "Hiba a beállításokban"
+
+msgid "The username or password was incorrect."
+msgstr "A felhasználónév vagy a jelszó helytelen."
+
+msgid "Could not read local domain list file %s"
+msgstr "Nem található a lokális domain nevek listája a következő állományban: %s"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "Meg kell adni az értékét a következő beállításnak: %s "
+
+msgid "Undefined Preference Key"
+msgstr "Ismeretlen beállítás"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "A fájl visszafejtése és letöltése nem sikerült. Valószínűleg hibásan írta be a jelszót. Kérem, próbálja meg újra."
+
+msgid "Decryption failed"
+msgstr "Visszafejtés sikertelen"
+
+msgid "one of the recipients"
+msgstr "az egyik címzett"
+
+msgid "Not calculated"
+msgstr "Nem számítva"
+
+msgid "%s has picked up your drop-off!"
+msgstr "%s átvette az Ön küldeményét"
+
+msgid "%s has dropped off a file for you"
+msgstr "%s feltöltött egy fájlt az Ön számára"
+
+msgid "%s has dropped off files for you"
+msgstr "%s több fájlt töltött fel az Ön számára"
+
+msgid "%d days"
+msgstr "%d nap"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "A küldemény azonosítója vagy a hozzá tartozó jelszó nem megfelelő, esetleg már lejárt a küldemény elérhetősége. Kérem, ellenőrizze újra a megadott adatokat, és vegye figyelembe, hogy a küldeményeket lejártuk előtt le kell tölteni, különben automatikusan törlődnek."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "Helytelen küldemény azonosító vagy jelszó"
+
+msgid "Upload Error"
+msgstr "Feltöltési hiba"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "Valószínűleg egynél több küldeménynek ez a küldemény azonosítója."
+
+msgid "Invalid Claim ID"
+msgstr "Helytelen küldemény azonosító"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "Hiányzik a küldeményeket tartalmazó könyvtár."
+
+msgid "Drop-off Directory Not Found"
+msgstr "A küldeményeket tartalmazó könyvtár nem található."
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Nem lehet beolvasni az ellenőrző információkat. Az Ön munkamenete valószínűleg lejárt. Kérem, hogy kezdje újra."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Adminisztrátor: telepítse a következő PHP modult vagy csomagot: \"mbstring\"."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "A címzett e-mail címe (%s) helytelen."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "Önnek %1$s felhasználójaként kell bejelentkeznie ahhoz, hogy küldeményt tudjon küldeni egy külső címzettnek-"
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Jelentkezzen be ismételten, és próbálja meg újra."
+
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "Ön csak %1 -s felhasználónak küldhet állományokat. Állományok átküldése nem lehetséges nem %1 -s felhasználóknak."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "Az összes címzett e-mail címét meg kell adnia az űrlapon."
+
+msgid "There was an error while uploading '%s'."
+msgstr "Hiba történt a(z) %s fájl feltöltése során."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "A címlista mérete meghaladja a kiszolgálón futó PHP által kezelhető fájl méretet."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "A címlista mérete meghaladja a mérethatárt, a maximum méret: %s."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "A címlista csak részlegesen lett feltöltve. A feltöltés időtúllépési hiba miatt megszakadt, vélhetően a hálózati kapcsolat lassúsága miatt."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Jelenleg nincs címlista feltöltve."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "A kiszolgálón nincs beállítva a feltöltéshez használt ideiglenes könyvtár."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "A kiszolgáló ideiglenes könyvtára helytelenül van beállítva."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Nem olvasható a feltöltött címlista állomány."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "Legalább egy állományt ki kell jelölnie küldésre."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "A feltöltendő fájl mérete meghaladja a kiszolgálón futó PHP által kezelhető fájl méretet."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "A feltöltendő fájl (%s) túl nagy. Minden feltöltött állomány mérete maximum %s lehet"
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "A feltöltendő fájl csak részlegesen lett feltöltve. A feltöltés időtúllépési hiba miatt megszakadt, vélhetően a hálózati kapcsolat lassúsága miatt."
+
+msgid "No file was actually dropped-off."
+msgstr "Jelenleg nincs fájl feltöltve."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "A küldésre szánt állományok teljes mérete meghaladja az egyszerre továbbítható állományok maximum méretét, ami %s."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "A küldésre szánt állományok közül egy vagy több fertőzött. A küldés megszakadt. Kérem, hogy végezzen vírusmentesítést az állományokon, majd próbálja meg újra a küldést."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "Hiba történt víruskeresés közben."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "A küldésre szánt állomány túl nagy a titkosításhoz, így titkosítás nélkül kerül tárolásra. Ha ez Ön számára problémát okoz, kérem, hogy azonnal törölje a fájl a kimenő küldemények mappájából."
+
+msgid "Drop-off not encrypted"
+msgstr "A küldemény nincs titkosítva"
+
+msgid "You must specify your own email address in the form."
+msgstr "Meg kell adnia a saját e-mail címét az űrlapon."
+
+msgid "The sender email address you entered was invalid."
+msgstr "Az Ön által feladóként megadott e-mail cím helytelen."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Nem sikerült létrehozni egyedi könyvtárat a küldendő fájlok tárolásához."
+
+msgid "Encryption failed."
+msgstr "Sikertelen titkosítás."
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Úgy tűnik, a kiszolgálón kevés a hely, így a fájl kiküldése sikertelen. Jelenleg csak %s szabad hely maradt."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "Hiba történt a(z) %s állomány feldolgozásakor."
+
+msgid "Could not add recipients to the database."
+msgstr "Nem lehetséges a címzettek rögzítése az adatbázisban."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "Hiba lépett fel az %s adatainak mentésekor."
+
+msgid "Library"
+msgstr "Könyvtár"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr "Nem sikerült az e-mail elküldése %s címzettnek. Ellenben az állomány le lett tárolva a következő küldemény azonosítóval: %s"
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Nem lehetséges a küldendő állományok rögzítése az adatbázisban."
+
+msgid "Unable to begin database transaction."
+msgstr "Nem lehetséges az adatbázis-tranzakció megkezdése."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Nem sikerült kapcsolódni egyetlen hitelesítő szerverhez sem, így a felhasználó hitelesítése sikertelen."
+
+msgid "0 bytes"
+msgstr "0 bájt"
+
+msgid "1 byte"
+msgstr "1 bájt"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Ez az űrlap nem elérhető erről a helyről, kérem, hogy lépjen vissza a főmenübe."
+
+msgid "Internal Error"
+msgstr "Belső hiba"
+
+msgid "You must specify your name in the form."
+msgstr "Meg kell adnia a saját e-mail címét az űrlapon."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "Meg kell adnia a címzett e-mail címét az űrlapon"
+
+msgid "Your email address you entered was invalid."
+msgstr "Az Ön e-mail címe helytelenül van megadva."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "A címzett e-mail címe - amit Ön adott meg - helytelen."
+
+msgid "Database failure writing request information."
+msgstr "Adatbázis hiba lépett fel az információk kiírásakor."
+
+msgid "Could not create the new database."
+msgstr "Nem lehetséges új adatbázis létrehozása."
+
+msgid "Could not create the tables in the new database."
+msgstr "Nem lehetséges a táblák létrehozása az új adatbázisban."
+
+msgid "Could not open the database."
+msgstr "Nem lehetséges az adatbázis megnyitása."
+
+msgid "Database Error creating %s table"
+msgstr "Adatbázis hiba %s tábla létrehozása közben"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Nem lehetséges a loginlog adatbázis tábla olvasása"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d nap és %2$d óra"
+
+msgid "%d hours"
+msgstr "%d óra"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d óra és %2$d perc"
+
+msgid "%d minutes"
+msgstr "%d perc"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d perc és %2$d másodperc"
+
+msgid "%d second"
+msgstr "%d másodperc"
+
+msgid "%d seconds"
+msgstr "%d másodperc"
+
+msgid "The email address you entered was invalid."
+msgstr "Az e-mail cím - amit Ön adott meg - helytelen."
+
+msgid "You are trying to drop off some files"
+msgstr "Ön néhány állományt el akar küldeni"
+
+msgid "About the %1 Service..."
+msgstr "A(z) %1 szolgáltatásról ..."
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "A nagyméretű e-mail csatolmányok komoly problémákat okozhatnak az levelező kiszolgálóknak és a végfelhasználóknak. Az ilyen e-mailek letöltése lassú internet kapcsolaton keresztül órákig tarthat, és közben nem lehetséges más e-mailek küldése vagy fogadása. Egyes esetekben akár az is megtörténhet, hogy a címzett egyáltalán nem lesz képes a levelezését használni. Emellett a levelező programok jelentősen megnövelik a küldött fájl méretét. Például egy Outlook üzenet mellékletekkel történő mentése mintegy 40% -al növeli az állomány méretét. Az 1 MB -nál nagyobb állományok megosztására használja a %1 szolgáltatást, amely biztonságos és hatékony módon teszi lehetővé az állományok ideiglenes megosztását."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "Két különféle típusú felhasználó fér hozzá az% 1 rendszerhez: <em> belső </em> felhasználók, akik a(z) %2 szervezet tagja, és <em> külső </em> felhasználók, akik az Interneten lévő többi személy."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "Belső felhasználó bárkinek küldhet csomagot, külső felhasználó viszont csak belső felhasználó részére."
+
+msgid "drop-off"
+msgstr "küldemény"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "egy vagy több feltöltött állomány, amelyet a %1 szolgáltatásból egyetlen elemként lehet elküldeni egy vagy több személynek"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Számos módja van annak, hogy a felhasználó több állományt küldjön el:"
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Több fájl egyszerre át lehet tenni (drag-and-drop) a küldemény részhez"
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "A küldemény lapon a \"Fájl hozzáadása\" gomb megnyomásával, és kattintás, a Shift + kattintás és a Ctrl + kattintás kombinációjával választhat ki egy vagy több fájlt (Mac esetén Cmd + kattintás a helyes kombináció)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Készítsen az állományokból tömörített fájlt, és csatolja azt a küldemény lapon."
+
+msgid "There are many ways to archive and compress files:"
+msgstr "Szintén több lehetőség van tömörített fájl készítésére:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "Mac felhasználók kiválaszthatják az állományokat a Finderben és a \"Compress\" menüben (lásd a <em> Fájl </em> menüt)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "Windows felhasználók létrehozhatnak \"tömörített mappát\" vagy használhatják a 7-Zip programot"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "Linux/Unix felhasználók kipróbálhatják a \"PeaZip\" vagy a \"File Roller\" programokat"
+
+msgid "Creating a Drop-off"
+msgstr "Küldemény készítése"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Amikor a felhasználó létrehoz egy küldeményt, meg kell adnia néhány azonosító információt magáról (név, szervezet neve és a küldő e-mail címe); a címzett(ek)et azonosító információkat (név és e-mail cím); majd kiválassza, hogy melyik fájlokat kell feltöltenie a küldeményhez. Ha a fájlok sikeresen feltöltődnek, e-mailt lesz küldve a címzetteknek, amely értesítési őket, hogy a küldemény érkezett. Ez az e-mail egy linket is tartalmaz a küldemény letöltéséhez. Egyéb információk (például az internetes cím és / vagy a számítógép neve, ahol a küldemény létrejött) szintén elküldésre kerülnek, hogy segítsen a címzetteknek a feladó személyazonosságában ellenőrizni."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "A küldemény letöltése csak a küldemény azonosítójával és a hozzá tartozó jelszó megadásával lehetséges."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "A küldemény indításakor a felhasználó eldöntheti, hogy a küldemény azonosítót vagy a jelszót nem küldi el automatikusan a címzettnek, ilyenkor a felhasználónak magának kell elküldenie ezeket az adatokat."
+
+msgid "Making a Pick-up"
+msgstr "Érkezett küldemény átvétele"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Kétféle módon vehető át az érkezett küldemény:"
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Minden felhasználó használhatja az értesítő e-mailben küldött linket."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Belső felhasználó, miután belépett a rendszerbe, láthatja a \"Beérkezett Üzenetek\" mappát, az az összes részére postázott küldemény listáját tartalmazza. A belső felhasználó ezáltal bejelentkezés után elérheti a részére vagy általa küldött küldeményeket az értesítő e-mail nélkül is."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "A küldemények megtekintésekor a felhasználó sok információt láthat"
+
+msgid "The list of files that were uploaded"
+msgstr "A feltöltött állományok listája"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "A feladó és a címzett adatai, amit a feladó vitt be a küldemény létrehozásakor"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "A számítógép neve és/vagy címe, ahol a küldemény létrejött"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "Opcionálisan a megtörtént átvételek listája"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "A címzetteknek %1 nap áll rendelkezésre, hogy letöltsék a küldeményt. Minden este a(z) %1 napnál régebbi küldemények törlődnek."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Felhívom a figyelmet arra, hogy a feltöltött állományok víruskeresővel ellenőrizve lettek, ám a címzetteknek a legnagyobb körültekintéssel kell letölteni és megnyitni a küldött fájlokat. Fontos megvizsgálni, hogy valóban a feladó részéről érkezett a küldemény, aki az értesítésben szerepel. Ezen felül érdemes a küldemény készítésekor használt számítógép nevét és címét ellenőrizni, hogy az megfelel-e a küldő által használt címnek. Ne feledje azonban, hogy az IP címek hamisíthatóak, ezért érdemes a feladóval külön egyeztetni."
+
+msgid "Resumable Downloading of Files"
+msgstr "Állományok folytatható letöltése"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "Legtöbb böngésző támogatja a <em>folytatható letöltéseket</em>. Képzelje el a következő szituációt: a helyi netkávézóban ül, és éppen letölt egy 100 MB-os PDF fájlt, amelyet egy hallgató töltött fel a %1-ba. Hirtelen, néhány asztallal arrébb, valaki elkezdi a legújabb filmelőzetest megnézni (nos, legalábbis megpróbálja), ekkor a vezeték nélküli kapcsolat lelassul - 95 MB már le volt töltve, és most újra kell kezdenie az egész letöltést! Azonban - ha böngészője támogatja a <em>folytatólagos letöltéseket</em> - ebben az esetben a böngésző csak a fájl fennmaradó 5 MB -ot tölti le."
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "%1 A ZendTo támogatja a <em>folytatható letöltés</em> technikát szerveroldali összetevőit a HTTP 1.1 szabvány alapján."
+
+msgid "Size Limitations on Uploads"
+msgstr "Méretkorlátozások feltöltés esetén"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "A 2 GB-nál nagyobb fájlok feltöltése a használt böngészőtől függ."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Ha lehetséges, használjon egy modern 64 bites böngészőt egy 64 bites operációs rendszeren. Ha csak 32 bites rendszere van (leggyakoribb a Windows 7), akkor használja a Google Chrome vagy a Firefox legújabb verzióját. Különösen rossz választás a Microsoft Internet Explorer régebbi verziójának használata."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "A %1 szoftver rendelkezik állítható korlátozásokkal a küldeményhez feltölthető adatok mennyiségére. Még a 2 GB-nál nagyobb feltöltést támogató böngészők esetében is a küldemény nem haladhatja meg a %2 -ot fájlonként, vagy a teljes méret %3 -ot."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "Ha nagyméretű fájlok fel- vagy letöltésekor az alábbi problémák jelentkeznek:"
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Böngészője a fájl nagy részének letöltése után hibát vagy a netkapcsolat megszakadását jelzi"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Hibaoldal jelenik meg, hogy nincs letölthető küldemény"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "akkor valószínűleg túl lassú az internet kapcsolata, hogy időben végezzen a kívánt művelettel. Általában legfeljebb 2 órája van arra, hogy teljesen fel- vagy letöltse a küldeményt."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "Az eredeti Perl UD Dropbox szoftver alapján készítve, amelyet Doke Scott írt."
+
+msgid "Version %1 has been developed by %2."
+msgstr "A(z) %1 verziót %2 fejlesztette."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Kérem, hogy adja meg a küldemény azonosítóját és a hozzá tartozó jelszót, ami el lett Önnek küldve."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Kérem, hogy adja meg a küldemény azonosítóját és a hozzá tartozó jelszót"
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Ha a feladó átadta Önnek a jelszót a küldeményhez, kérem, írja be azt."
+
+msgid "Claim ID"
+msgstr "Küldemény azonosító"
+
+msgid "Claim Passcode"
+msgstr "Küldemény jelszó"
+
+msgid "Pick-up Files"
+msgstr "Fájlok átvétele"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "A küldemény (azonosító: %1) sikeresen el lett távolítva."
+
+msgid "Unable to remove the drop-off"
+msgstr "Nem lehetséges a küldemény eltávolítása"
+
+msgid "You may have already deleted it."
+msgstr "Lehet, hogy már törölve lett."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Ez egy automatikus üzenet, amit a %1 szolgáltatás küldött."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Ez egy emlékeztető az Ön számára elküldött küldeményről, amely még nem lett letöltve."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "A küldemény le fog járni %1 múlva, majd automatikusan törlődik."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1 &lt;%2&gt; küldött Önnek egy fájlt"
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1 &lt;%2&gt; küldött Önnek %3 fájlt."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong> HA MEGBÍZIK A FELADÓBAN </strong>, és várható küldemény tőle, akkor a következő linkre kattintva (vagy kimásolja a linket és beilleszti egy böngészőbe) letöltheti a küldeményt:"
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong>A küldemény titkosított.</strong> A fájl(ok) letöltéséhez a helyes jelszót kell megadnia."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "Önnek %1 időtartam áll a rendelkezésére, hogy a küldeményt átvegye; utána a hivatkozás érvénytelen lesz."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Ha kapcsolatba szeretne lépni a feladóval, csak válaszoljon erre az e-mailre."
+
+msgid "The sender has left you a note:"
+msgstr "A feladó az alábbi megjegyzést küldi Önnek:"
+
+msgid "Full information about the drop-off:"
+msgstr "Összes információ a küldeményről"
+
+msgid "Sent separately"
+msgstr "Külön küldendő"
+
+msgid "Date of Drop-off"
+msgstr "Küldemény létrejöttének dátuma"
+
+msgid "Sender"
+msgstr "Küldő"
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Organization"
+msgstr "Szervezet"
+
+msgid "Email Address"
+msgstr "E-mail cím"
+
+msgid "IP Address"
+msgstr "IP cím"
+
+msgid "File"
+msgstr "Állomány"
+
+msgid "Files"
+msgstr "Állományok"
+
+msgid "Description"
+msgstr "Leírás"
+
+msgid "Size"
+msgstr "Méret"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 ellenőrző összeg"
+
+msgid "Content Type"
+msgstr "Tartalom típus"
+
+msgid "a file"
+msgstr "egy fájl"
+
+msgid "%1 files"
+msgstr "%1 fájlok"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> küldött Önnek %3 fájlt."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "HA MEGBÍZIK A FELADÓBAN, és várható küldemény tőle, akkor a következő linkre kattintva (vagy kimásolja a linket és beilleszti egy böngészőbe) letöltheti a küldeményt:"
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** A küldemény titkosított. **\n"
+" A fájl(ok) letöltéséhez a helyes jelszót kell megadnia."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "Önnek %1 időtartam áll a rendelkezésére, hogy a küldeményt átvegye; utána a hivatkozás érvénytelen lesz. Ha kapcsolatba szeretne lépni a feladóval, csak válaszoljon erre az e-mailre."
+
+msgid "Claim ID:          %1"
+msgstr "Küldemény azonosító:          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Küldemény jelszó:          %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Küldemény létrejöttének dátuma:  %1"
+
+msgid "Name:            %1"
+msgstr "Név:            %1"
+
+msgid "Organization:    %1"
+msgstr "Szervezet:      %1"
+
+msgid "Email Address:   %1"
+msgstr "E-mail cím:     %1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP cím:000      %1  %2"
+
+msgid "Name:             %1"
+msgstr "Név:            %1"
+
+msgid "Description:      %1"
+msgstr "Leírás:            %1"
+
+msgid "Size:             %1"
+msgstr "Méret:            %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 ellenőrző összeg: %1"
+
+msgid "Content Type:     %1"
+msgstr "Tartalom típus: %1"
+
+msgid "Picked up"
+msgstr "Átvétel"
+
+msgid "All"
+msgstr "Összes"
+
+msgid "Search:"
+msgstr "Keresés:"
+
+msgid "Show _MENU_ entries"
+msgstr "_MENU_ bejegyzés mutatása"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_START_ -tól _END_ -ig / _TOTAL_ bejegyzés mutatása"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 - 0 / 0 bejegyzés"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(szűrve _MAX_ számú összes bejegyzésből)"
+
+msgid "No matching records found"
+msgstr "Nincs találat"
+
+msgid "No data available in table"
+msgstr "Nincs adat"
+
+msgid "First"
+msgstr "Első"
+
+msgid "Previous"
+msgstr "Előző"
+
+msgid "Next"
+msgstr "Következő"
+
+msgid "Last"
+msgstr "Utolsó"
+
+msgid "Recipient"
+msgstr "Címzett"
+
+msgid "Created"
+msgstr "Elkészítve"
+
+msgid "Encrypted"
+msgstr "Titkosítva"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr "A \"%1\" a(z) \"%2\" oszlopban nem tudja <em> garantálni </em>, hogy bármely fájl letöltése sikeres volt."
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr "Ellenben egy \"%1\", azt jelenti, hogy a fájl letöltése <em> nem </em> volt sikeres."
+
+msgid "%1 = Encrypted by %2"
+msgstr "%1 = Titkosítva %2 által"
+
+msgid "%1 = Not encrypted by %2"
+msgstr "%1 = Nem lett titkosítva %2 által"
+
+msgid "Yes"
+msgstr "Igen"
+
+msgid "No"
+msgstr "Nem"
+
+msgid "Outbox"
+msgstr "Kimenő"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Kattintson a küldeményre, hogy megtekinthesse a hozzá tartozó információkat."
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "Jelenleg nincs Ön által készített küldemény."
+
+msgid "Copyright &copy; %1"
+msgstr "Szerző &copy; %1"
+
+msgid "About %1"
+msgstr "%1 -ről"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr "Ezt a szolgáltatás <a href=\"http://zend.to/\" target=\"_blank\">%1</a> szoftverrel működik"
+
+msgid "Version %1"
+msgstr "%1 Verzió"
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "Ön jelenleg <em>%1</em> néven lépett be"
+
+msgid "Return to the %1 main menu"
+msgstr "Visszalépés a(z) %1 főmenübe"
+
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+msgid "%1 Username"
+msgstr "%1 Felhasználónév"
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Login"
+msgstr "Bejelentkezés"
+
+msgid "Privacy Consent"
+msgstr "Adatvédelmi hozzájárulás"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Ez a weboldal sütiket használ, és a működéséhez az Ön neve és e-mail címe is szükséges."
+
+msgid "I agree"
+msgstr "Elfogadom"
+
+msgid "I do not agree"
+msgstr "Visszautasítom"
+
+msgid "Home"
+msgstr "Kezdőlap"
+
+msgid "Inbox"
+msgstr "Beérkező"
+
+msgid "Please login above."
+msgstr "Kérem, hogy jelentkezzen be fent."
+
+msgid "Authentication"
+msgstr "Azonosítás"
+
+msgid "You have been logged out."
+msgstr "Ön kijelentkezett."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "A nagyobb biztonság érdekében lépjen ki a böngészőből, vagy legalább zárja be ezt a böngészőablakot."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Ön pillanatokon belül a <a href=\"%1\">főmenübe</a> fog jutni."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "A(z) %2 napló utolsó %1 bejegyzése, ahol a legutóbbi van elöl"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "Ön az Internet Explorer nem támogatott verzióját használja."
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Ez a webhely nem fog megfelelően működni az Ön böngészőjével."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Kérem, hogy használjon jobb böngészőt, például a Google Chrome vagy Firefox, vagy legalább az Internet Explorer 11-es változatát."
+
+msgid "Drop-off"
+msgstr "Küldemény feladás"
+
+msgid "Pick-up"
+msgstr "Küldemény átvétel"
+
+msgid "Request a Drop-off"
+msgstr "Küldemény kérelem"
+
+msgid "Show All Drop-offs"
+msgstr "Mutassa az összes küldeményt"
+
+msgid "Unlock Users"
+msgstr "Zárolt felhasználók feloldása"
+
+msgid "System Statistics"
+msgstr "Rendszer statisztikák"
+
+msgid "System Log"
+msgstr "Rendszer napló"
+
+msgid "You may perform the following activities:"
+msgstr "Ön a következő tevékenységeket végezheti itt:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Küldemény küldése (<em>feltöltés</em>) tetszőleges személynek."
+
+msgid "Ask another person to send you some files."
+msgstr "Kérelem küldése egy tetszőleges személynek, hogy Önnek fájlokat küldjön át."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Önnek címzett küldemény átvétele (<em>letöltés</em>)."
+
+msgid "View all drop-offs in the database"
+msgstr "Az összes küldemény megtekintése"
+
+msgid "Unlock locked-out users"
+msgstr "Zárolt felhasználó újbóli engedélyezése"
+
+msgid "View daily statistics for the service"
+msgstr "A szolgáltatás napi statisztikáinak megtekintése"
+
+msgid "View log file"
+msgstr "A naplófájl megtekintése"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "Ha Ön a(z) %1 felhasználója, akkor jelentkezzen be fentebb, hogy ne legyen szükséges az e-mailben történő hitelesítésre, <br/> és hogy fájlokat küldhessen el a külső felhasználóknak."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "Ha Ön a(z) %1 felhasználója, itt bejelentkezhet:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr "<strong>A %1 felhasználóknak először be kell jelentkezniük.</strong>"
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "<strong>E-mailben történő hitelesítés nélkül</strong> küldhet állományokat külsős felhasználóknak."
+
+msgid "Anyone may perform the following activities:"
+msgstr "Bárki használhatja a következő funkciókat:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "Küldemény feladás (<em>feltöltés</em>) %1 felhasználóinak (<strong>E-mailben történő hitelesítés szükséges</strong>)"
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Küldemény átvétele (<em>letöltés</em>), az Ön számára küldött állomány letöltése."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "%1 munkavállalója bejelentkezhet felhasználónevével és jelszavával, és fájlokat küldhet bárkinek, bárhova"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "Külső felhasználó nem tud bejelentkezni, de fájlokat küldhet a(z) %1 felhasználóinak, ha ismeri a címzett e-mail címét. Kezdje a \"%3 \" gombra kattintással."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "%1 felhasználó, aki azt akarja, hogy számára egy külső személy küldjön át állományokat, megkönnyítheti a dolgot számára, ha bejelentkezik és rákattint a \"%3 \" gombra. Ezzel egyszerűbbé teszi a küldemény átvételét."
+
+msgid "The request created will be valid for %1."
+msgstr "A létrehozott kérés %1 lesz érvényes."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "A %1 egy olyan szolgáltatás, amely megkönnyíti a fájlok átküldését (akár %2-ig terjedő nagy fájlokat is lehet kezelni), \"házon belül\" és a külső partnerek felé."
+
+msgid "How secure is %1?"
+msgstr "Mennyire biztonságos a %1?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "A fájlok automatikusan törlődnek a %1 kiszolgálóról %2 nappal a feltöltés után."
+
+msgid "Scanning for viruses..."
+msgstr "Víruskeresés ..."
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "__CHARS__ too long"
+msgstr "Túl hosszú (__CHARS__ karakterrel több, mint kellene)"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ maradt még"
+
+msgid "Too short!"
+msgstr "Túl rövid!"
+
+msgid "Entries do not match"
+msgstr "A megadott jelszavak nem egyeznek"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Kattintson a Fájl hozzáadásra vagy helyezze ide az állományokat"
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Ha távozik erről a lapról, a küldemény elkészítése megszakad."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr ""
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "A küldemény ellenőrző összegének kiszámítása túl sokáig tartana."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "Ellenőrző összeg maximum __MAXSIZE__ méretű küldeményhez készíthető."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr "Minden fájl titkosítva lesz. Ezt automatikusan történik, Önnek nem kell semmit se tennie."
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "A küldemény titkosítása túl sokáig tartana."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Titkosítás maximum __MAXSIZE__ méretű küldeménynél használható."
+
+msgid "MB"
+msgstr "Mb"
+
+msgid "KB"
+msgstr "Kb"
+
+msgid "Remove file"
+msgstr "Állományok eltávolítása"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Mivel a küldemény titkosítása túl sok idő lenne, így a titkosítás most nem használható. Amennyiben mégis titkosítani kívánja a küldeményt, annak méretét csökkentse __MAXSIZE__ alá, és válassza ki újra a \"Titkosítás\" -t."
+
+msgid "Please enter a valid email address."
+msgstr "Kérem, hogy adjon meg egy helyes e-mail címet."
+
+msgid "Remove selected recipient"
+msgstr "A kiválasztott címzettek eltávolítása"
+
+msgid "Please add at least one file first!"
+msgstr "Kérem, hogy előbb adjon hozzá legalább egy fájlt!"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "A fájlok meghaladják a maximális teljes méretet, amelyet egyszerre (__MAXTOTALSIZE__) küldhet."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "A(z) __NUMBER__ állomány nagyobb, mint a maximális állományméret, amelyet el lehet küldeni (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr ""
+
+msgid "Scanning"
+msgstr "Tesztelés"
+
+msgid "Checksumming"
+msgstr "Ellenőrző összeg generálása"
+
+msgid "Encrypting"
+msgstr "Titkosítás"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Sajnálom, sikertelen az állományok feltöltése!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Kérem, vegye figyelembe, hogy könyvtárak feltöltése nem lehetséges, csak állományokat lehet."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Feltöltve:  __PERCENT__%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr ""
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr ""
+
+msgid "PLEASE NOTE"
+msgstr "FIGYELEM"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "A felöltött állományokat a %1 víruskeresővel átvizsgálta. Ettől függetlenül ugyanolyan óvatosan járjon el, mint bármely más letöltött állomány esetén."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "A felhasználóknak <strong>kifejezetten javasolt</strong>, hogy titkosítsanak minden állományt, különösen akkor, ha azok érzékeny információkat (pl. személyes adatokat) tartalmaznak!"
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Ez a weboldal lehetővé teszi, hogy bárkinek (akár %1 felhasználóinak, akár másoknak) egy vagy több fájlt küldhessen. A címzett automatikus e-mailt fog kapni, amely tartalmazza az alább megadott információkat és a fájl letöltésére vonatkozó utasításokat. Az Ön IP-címét szintén naplózza és elküldi a címzettnek személyazonosság-megerősítés céljából."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Ez a weboldal lehetővé teszi, hogy %1 felhasználóinak egy vagy több fájlt küldhessen. A címzett automatikus e-mailt fog kapni, amely tartalmazza az alább megadott információkat és a fájl letöltésére vonatkozó utasításokat. Az Ön IP-címét szintén naplózza és elküldi a címzettnek személyazonosság-megerősítés céljából."
+
+msgid "From"
+msgstr "Feladó"
+
+msgid "To"
+msgstr "Címzett"
+
+msgid "Add Recipients"
+msgstr "Címzettek hozzáadása"
+
+msgid "Add One"
+msgstr "Egy hozzáadása"
+
+msgid "Add Many"
+msgstr "Több hozzáadása"
+
+msgid "Adds to your address book"
+msgstr "Hozzáadja a címjegyzékhez"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Add"
+msgstr "Hozzáadás"
+
+msgid "Add & Close"
+msgstr "Hozzáadás és bezárás"
+
+msgid "Bulk add recipients"
+msgstr "Címzettek tömeges hozzáadása"
+
+msgid "One recipient per line, for example:"
+msgstr "Egy címzett soronként, például:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Címzett neve email@valahol.hu"
+
+msgid "Verify"
+msgstr "Ellenőrzés"
+
+msgid "Encryption Passphrase"
+msgstr "Jelszó a titkosításhoz"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "A jelszó nem lesz elküldve a címzettnek.<br/>Ezt Önnek külön kell megtennie."
+
+msgid "Passphrase"
+msgstr "Jelszó"
+
+msgid "And again"
+msgstr "Ismételt jelszó"
+
+msgid "Hide characters"
+msgstr "karakterek elrejtése"
+
+msgid "OK"
+msgstr "Ok"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Short note to the Recipients"
+msgstr "Rövid megjegyzés a címzetteknek"
+
+msgid "Encrypt every file"
+msgstr "Minden állomány titkosítása"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Az SHA-256 ellenőrző kód kiszámítása az egyes állományokhoz"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Küldjön egy e-mailt, ha mindegyik címzett letöltötte a küldött állományokat"
+
+msgid "Send email message to recipients"
+msgstr "Küldjön e-mail üzenetet a címzetteknek,"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "amely tartalmazza küldemény azonosítóját és a hozzá tartozó jelszót"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "A címzetteknek el kell fogadniuk a felhasználási feltételeket"
+
+msgid "days until drop-off expires"
+msgstr ""
+
+msgid "Add Files"
+msgstr "Állományok hozzáadása"
+
+msgid "and/or select a file..."
+msgstr "és/vagy válasszon ki egy állományt"
+
+msgid "Filename"
+msgstr "Fájlnév"
+
+msgid "Uploading..."
+msgstr "Feltöltés..."
+
+msgid "Drop-off Files"
+msgstr "Állományok feltöltése küldeményhez"
+
+msgid "Drop to<br/>Add Files"
+msgstr "Húzza ide<br/>Állományok hozzáadása"
+
+msgid "(It will copy, not move)"
+msgstr "(Csak másolás történik, nem mozgatás)"
+
+msgid "No file was chosen for download."
+msgstr "Nem választott ki állományt letöltésre."
+
+msgid "Please prove you are a person"
+msgstr "Kérem, hogy igazolja, hogy Ön létező személy"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "Annak megerősítéséhez, hogy Ön <em>létező</em> személy (nem pedig robot), kérem, hogy töltse ki az alábbi rövid tesztet, majd kattintson a \"Fájlok átvétele\" gombra:"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "Az Ön által feladott küldeményt (küldemény azonosító: %1) átvették."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "A(z) \"<span class=\"mono\">%1</span>\" állományt letöltötték."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1 címzett átvette a küldeményt (IP címe vagy kiszolgáló neve: %2)."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "A(z) \"<span class=\"mono\">%1</span>\" állományt letöltötte %2."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Megjegyzés: Ön nem fog értesítést kapni a küldemény többi részének letöltéséről."
+
+msgid "Note"
+msgstr "Megjegyzés"
+
+msgid "The file %1 was picked up."
+msgstr "A(z) %1 állományt letöltötték."
+
+msgid "The file %1 was picked up by %2."
+msgstr "A(z) %1 állományt letöltötte %2 címzett."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Ön nem fog értesítést kapni a küldemény többi részének letöltéséről."
+
+msgid "Global Drop-off List"
+msgstr "Globális küldemény lista"
+
+msgid "There are no drop-offs available at this time."
+msgstr "Jelenleg nincsenek küldemények."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "Jelenleg Önnek nincs küldeménye"
+
+msgid "This is a request from %1 of %2."
+msgstr "Ez egy kérelem, amelyet %1 küldött a(z) %2 -től."
+
+msgid "This is a request from %1."
+msgstr "ez egy kérelem, amely %1 küldött."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Kattintson az alábbi hivatkozásra, és adja hozzá a kért állományt vagy állományokat."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "A hivatkozás csak %1 -ig érvényes az e-mail küldésének dátumától számítva."
+
+msgid "All files you upload will be automatically encrypted."
+msgstr "Az összes állomány automatikusan titkosítva lesz."
+
+msgid "More information is in the note below."
+msgstr "További információ az alábbi megjegyzésben található."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "Ha kapcsolatba kíván lépni %1 küldővel, csak küldjön választ erre a levélre."
+
+msgid "Click to copy link to clipboard"
+msgstr "Kattintson ide a hivatkozás vágólapra másolásához"
+
+msgid "Copied"
+msgstr "Kimásolva"
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "A kérelem el lett küldve %1 címzettnek %2 címre."
+
+msgid "It is valid for %1."
+msgstr "A kérelem %1 -ig érvényes."
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr "Az Ön által elküldött állományok a megadott jelszóval titkosítva lesznek. A jelszót mindenképpen őrizze meg, mert anélkül nem lehet elérni az állományokat! "
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Ha a címzett állományokat akar küldeni, mielőtt a kérelem megérkezik, akkor"
+
+msgid "Go to %1"
+msgstr "Ugrás %1 címre"
+
+msgid "Select \"Drop-off Files\""
+msgstr "Válassza ki a \"Állományok feltöltése küldeményhez\" opciót"
+
+msgid "Enter the request code \"%1\""
+msgstr "Adja meg a küldemény kérelem kódját \"%1\" -hez"
+
+msgid "Click on the \"Next\" button"
+msgstr "Kattintson a \"Tovább\" gombra"
+
+msgid "You may close this window."
+msgstr "Bezárhatja ezt az ablakot."
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "A kérelem elkészült %1 -nek %2 címmel."
+
+msgid "The link to give them is %1"
+msgstr "A szükséges hivatkozás a következő: %1"
+
+msgid "Send the Request"
+msgstr "Kérelem elküldése"
+
+msgid "Show the Link"
+msgstr "Hivatkozás megmutatása"
+
+msgid "Please enter the recipient's name first!"
+msgstr "Először adja meg a címzett nevét!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Először adja meg a címzett e-mail címét!"
+
+msgid "Please enter the email subject first!"
+msgstr "Először adja meg az e-mail tárgyát! "
+
+msgid "Your note is too long!"
+msgstr "A megjegyzés túl hosszú!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr "Opcionális: ha ezt kiválasztja és jelszót állít be, akkor a küldemény titkosítva lesz. Az állományokat küldő személy soha nem fogja tudni a jelszót."
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr "Ez általában ki van választva. Ha kikapcsolja, akkor az elérést biztosító hivatkozás és az utasítások nem lesznek e-mailben elküldve. Ehelyett csak képernyőn lesz látható a hivatkozás, amelyet más módon is elküldhet."
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Ez a weboldal lehetővé teszi, hogy egy másik személynek kérést küldjön, amelyben arra kéri, hogy küldjön (töltsön fel) egy vagy több fájlt az Ön számára. A címzett egy automatikus e-mailt fog kapni, amely tartalmazza az alább megadott információkat és utasításokat arra, hogyan töltse fel az állományt vagy állományokat."
+
+msgid "Email(s)"
+msgstr "Email címe(ek)"
+
+msgid "Subject"
+msgstr "Tárgy"
+
+msgid "Send email"
+msgstr "E-mail küldése"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Ez elküldésre kerül a címzettnek, illetve bele kerül az Ön számára elküldött küldeménybe is."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr "Ne felejtse el ezt a jelszót!"
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "A küldemény sikeresen újra lett küldve a címzetteknek."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Sikertelen a küldemény újraküldése."
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Az összes állomány biztonságosan (titkosítva) kerül továbbításra a hálózaton keresztül"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Ha Ön személyes vagy üzleti adatokat akar elküldeni, jelölje be a \"Minden állomány titkosítása\" opciót új küldemény létrehozzásakor. Ezután a megadott jelszót kell használni a küldemény letöltéséhez. A jelszót a %1 nem tárolja, így az abból nem nyerhető vissza. Jelszó nélkül pedig senki sem fér hozzá az állományokhoz."
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "Az összes állományt, amelyet feltöltöttek és ideiglenesen tároltak az %1 szolgáltatásban, az a(z) %2 saját adatközpontjában lévő eszközön lett tárolva. "
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Minden adatkezelésre a(z) %1 adatvédelmi szabályzata és az adott ország törvényei vonatkoznak"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 semmiképpen sem \"felhő\" szolgáltatás. Minden adat (még az ideiglenesen tárolt adatok) az %2 tulajdonában lévő eszközön tárolódik, amelyet a saját IT munkatársai kezelnek"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Az adatokhoz történő minden hozzáférés szigorúan ellenőrzött a(z) %2 által. Az adatokhoz minden hozzáférés a %1 -ben naplózva történik, és könnyen ellenőrizhető, ha valaki attól tart, hogy egy harmadik fél hozzáférést kapott az adatokhoz"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Ezenkívül a feltöltött állományokat legfeljebb %2 napig tárolja a %1, ezután automatikusan törlésre kerülnek. A törölt állományok visszaállítása nem lehetséges, nincs visszavonási lehetőség. A feltöltött állományokról nem készül biztonsági mentés, tehát egyetlen állomány sem kerül át más kiszolgálóra vagy adathordozóra, pl. LTO szalagra. Ismétlem: a feltöltött állományok törlése végleges."
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Valóban törölni akarja a küldeményt?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr "Figyelem! Az ilyen méretű zip állományok valószínűleg nem nyílnak meg Mac számítógépeken dupla kattintásra. Külön alkalmazás használatával, vagy pedig parancssorból kiadott 'unzip' (esetleg 'ditto') utasítással lehet kicsomagolni az állományt."
+
+msgid "Include Passcode?"
+msgstr "Mellékeli a jelszót?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Elküldi a jelszót ugyanabban az e-mailben, amelyben a csomag azonosítót?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Ha nem biztos a válaszban, akkor válassza az alábbit: %1. "
+
+msgid "Decryption Passphrase"
+msgstr "Jelszó a dekódoláshoz"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "A feladótól megkaphatja<br/>a visszafejtéshez használandó jelszót."
+
+msgid "Delete Dropoff"
+msgstr "Küldemény törlése"
+
+msgid "Resend Dropoff"
+msgstr "Küldemény újraküldése"
+
+msgid "Drop-Off Summary"
+msgstr "Küldemény tartalmának összefoglalója"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr "Elolvastam, megértettem és elfogadom a fenti felhasználási feltételeket."
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr "Az állományok titkosítva lettek és sikerült az elküldésük."
+
+msgid "They will expire in %1."
+msgstr ""
+
+msgid "Your files have been sent successfully."
+msgstr "Az állományok elküldése sikerült."
+
+msgid "This drop-off is encrypted."
+msgstr "A küldemény titkosítva van."
+
+msgid "Click on a filename to download that file."
+msgstr "Kattintson az állomány nevére, hogy letöltse azt."
+
+#, fuzzy
+msgid "This drop-off will expire in %1."
+msgstr "A küldemény titkosítva van."
+
+msgid "%1 file"
+msgstr "%1 állomány"
+
+msgid "Download All Files"
+msgstr "Az összes állomány letöltése"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Az összes állomány letöltése<br/>titkosítás nélküli tömörített állományban"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Az összes állomány letöltése<br/>tömörített állományban"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Nincs állomány a küldeményben ... hiba történt!"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span> %2  %3</span>"
+
+msgid "Comments"
+msgstr "Megjegyzések"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Az állományok másoknak történő elküldéséhez vagy küldje el a következő linket: %1 , vagy pedig a küldemény azonosítót és a hozzá tartozó jelszót:"
+
+msgid "Picked-up on date..."
+msgstr "Átvétel időpontja ..."
+
+msgid "...from remote address..."
+msgstr "... IP cím ..."
+
+msgid "...by recipient."
+msgstr " ... címzett"
+
+msgid "%1 pickups"
+msgstr "címzettek"
+
+msgid "1 pickup"
+msgstr "címzett"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Még senki sem vette át a küldeményt."
+
+msgid "View stats for the"
+msgstr "Statisztika megtekintése"
+
+msgid "past week"
+msgstr "múlt hét"
+
+msgid "past month"
+msgstr "múlt hónap"
+
+msgid "past 90 days"
+msgstr "az elmúlt 90 nap"
+
+msgid "past year"
+msgstr "múlt év"
+
+msgid "past 10 years"
+msgstr "az elmúlt 10 év"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "A küldemények száma (naponta ellenőrizve)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Az összes adatmennyiség (naponta ellenőrizve)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Az összes állomány száma (naponta ellenőrizve)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Az állományok száma küldeményenként (naponta ellenőrizve)"
+
+msgid "Unlock"
+msgstr "Feloldás"
+
+msgid "Select all"
+msgstr "Az összes kijelölése"
+
+msgid "Unlock selected users"
+msgstr "A kijelölt felhasználók feloldása"
+
+msgid "There are no locked users."
+msgstr "Nincsenek zárolt felhasználók."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "Ezt az üzenetet az Ön kérésére küldjük,hogy feltölthessen állományokat valamely felhasználónknak."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "Ha nem kért ilyen szolgáltatást, akkor azonnal törölje ezt a levelet!"
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Ha használni kívánja ezt a szolgáltatást, akkor kattintson az alábbi linkre (vagy másolja be ezt a linket egy web böngészőbe):"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Most várja meg, amíg megérkezik a %1 szolgáltatástól az e-mail üzenet, és kattintson a benne található linkre."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Egy pillanat alatt a <a href=\"%1\">főmenübe</a> kerül."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Kérem, hogy adja meg a kérelem kódját küldés előtt."
+
+msgid "Please enter your name before submitting."
+msgstr "Kérem, hogy adja meg a nevét küldés előtt."
+
+msgid "Please enter your email address before submitting."
+msgstr "Kérem, hogy adja meg az e-mail címét küldés előtt."
+
+msgid "Your Request Code"
+msgstr "Az Ön kérelem kódja"
+
+msgid "Request Code"
+msgstr "Kérelem kód"
+
+msgid "Information about the Sender"
+msgstr "Információk a feladóról"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Ön vagy nem töltötte ki teljesen az űrlapot, vagy nem sikerült bizonyítania a tesztben, hogy Ön létező személy."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Megkapta a \"<strong>kérelem kódot</strong>\"?"
+
+msgid "Your name"
+msgstr "Az Ön neve"
+
+msgid "(required)"
+msgstr "(kötelező)"
+
+msgid "Your organization"
+msgstr "Szervezet"
+
+msgid "Your email address"
+msgstr "Az Ön e-mail címe"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "Annak megerősítéséhez, hogy Ön <em>létező</em> személy (nem pedig robot), kérem, hogy töltse ki az alábbi rövid tesztet:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Most a rendszer elküld egy e-mailt, amely arra szolgál, hogy megerősítse, hogy Ön a fentebb megadott e-mail cím tulajdonosa."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Amikor megérkezik, kattintson rá az elküldött hivatkozásra."
+
+msgid "Send confirmation"
+msgstr "Megerősítés küldése"
+
+#~ msgid "1 hour"
+#~ msgstr "1 óra"
+
+#~ msgid "1 day"
+#~ msgstr "1 nap"
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the person who requested the drop-off."
+#~ msgstr "A küldemény titkosítva van azzal a jelszóval, amelyet csak a küldemény igénylője ismer."
+
+#~ msgid "This drop-off is encrypted with a passphrase known only to the sender."
+#~ msgstr "A küldemény titkosítva van azzal a jelszóval, amelyet csak a feladó ismer."
+
+#~ msgid "One of the recipients"
+#~ msgstr "Az egyik címzett"
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "You must specify the recipient's name in the form."
+#~ msgstr "Meg kell adnia a címzett nevét az űrlapon."
+
+#~ msgid "Download All Files<br/>as a Zip<br/>tömörített állományban"
+#~ msgstr "Az összes állomány letöltése"

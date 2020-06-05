@@ -1,0 +1,227 @@
+#!/usr/bin/env bash
+
+#
+# ZendTo
+# Copyright (C) 2020 Julian Field, Jules at ZendTo dot com
+#
+# Based on the original PERL dropbox written by Doke Scott.
+# Developed by Julian Field.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#
+
+Usage() {
+  badarg="$1"
+  if [ "x$badarg" != "x" ]; then
+    echo "Error: bad argument $badarg" 1>&2
+    echo 1>&2
+  fi
+
+  cat <<USAGE
+Automatically send a request for a drop-off with no user interaction.
+
+$(basename "$0")
+               --username       | -u USERNAME
+               --password       | -p PASSWORD
+               --sendername     | -n <name-of-request-sender>
+               --senderemail    | -e <address-of-request-sender>
+               --senderorg      | -o <request-senders-organization>
+               --subject        | -s SUBJECT
+               --note           | -t NOTE
+               --recipientname  | -N RECIPIENT-NAME
+               --recipientemail | -E RECIPIENT-EMAIL
+               --passphrase     | -P PASSPHRASE
+               --expirydatetime | -x EXPIRY-DATE-TIME
+               [ --language     | -l <language-code> ]
+               [ --insecure     | -i ]
+               [ --debug        | -d ]
+               <zendto-server-root-url>
+
+--username USERNAME
+                         USERNAME is one of the login usernames defined
+                         as 'automationUsers' in preferences.php
+
+--recipientname RECIPIENT-NAME
+--recipientemail RECIPIENT-EMAIL
+                         can be a single address or a list of addresses
+                         separated by any of comma, semi-colon or space.
+                         Only 1 RECIPIENT-NAME may be specified.
+
+--note NOTE
+                         will have all occurrences of '\n' replaced with
+                         a newline character
+
+--passphrase PASSPHRASE
+                         will force any resulting drop-off to be encrypted
+                         with this passphrase, without passing it to the
+                         sender of the drop-off
+
+--expirydatetime EXPIRY-DATE-TIME
+                         will set the expiry date and time of the request
+                         to the specified timestamp of the form
+                         "YYYY-MM-DD hh:mm:ss"
+
+--insecure or -i         passes the "--insecure" flag to curl(1) so it
+                         allows self-signed SSL certificates
+
+--debug or -d            makes me echo the full curl(1) instead of executing it
+
+<zendto-server-root-url> is the root URL of your ZendTo server
+
+USAGE
+}
+
+# Default values
+debug='' # This one isn't used in call to curl
+insecure=0
+language=''
+passphrase=''
+
+while getopts ":u:p:n:e:o:s:t:N:E:P:x:l:ihd-:" opt; do
+  case ${opt} in
+    - ) case "$OPTARG" in
+          username | password | sendername | senderemail | senderorg | subject | note | recipientname | recipientemail | passphrase | expirydatetime | language )
+            declare "${OPTARG}=${!OPTIND}";
+            ((OPTIND++))
+            ;;
+          username=* | password=* | sendername=* | senderemail=* | senderorg=* | subject=* | note=* | recipientname=* | recipientemail=* | passphrase=* | expirydatetime=* | language=* )
+            val="${OPTARG#*=}"
+            opt="$( echo "$OPTARG" | cut -d= -f1 )"
+            declare "${opt}=${val}"
+            ;;
+          insecure )
+            insecure=1
+            ;;
+          debug )
+            debug='y'
+            ;;
+          * ) Usage "$OPTARG" ; exit 1 ;;
+        esac ;;
+    u ) username="$OPTARG" ;;
+    p ) password="$OPTARG" ;;
+    n ) sendername="$OPTARG" ;;
+    e ) senderemail="$OPTARG" ;;
+    o ) senderorg="$OPTARG" ;;
+    s ) subject="$OPTARG" ;;
+    t ) note="$OPTARG" ;;
+    N ) recipientname="$OPTARG" ;;
+    E ) recipientemail="$OPTARG" ;;
+    P ) passphrase="$OPTARG" ;;
+    x ) expirydatetime="$OPTARG" ;;
+    l ) language="$OPTARG" ;;
+    i ) insecure=1 ;;
+    d ) debug='y' ;;
+    h ) Usage ; exit 0 ;;
+    : ) Usage ; exit 1 ;;
+    \? ) Usage "$OPTARG" ; exit 1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# This should be all that's left behind
+ServerRoot="$1"
+
+#
+# Parameter error checking STARTS
+#
+
+errors_occurred=''
+# Check mandatory parameters are present
+if [[ -z $username || -z $password || -z $sendername ||
+      -z $senderemail || -z $senderorg || -z $subject ||
+      -z $recipientname || -z $recipientemail || -z $ServerRoot ]]; then
+  echo "Error: mandatory parameters omitted" 1>&2
+  errors_occurred=yes
+fi
+# ServerRoot should have been the only non-option, check it looks right
+if [[ ! $ServerRoot =~ ^http ]]; then
+  echo "Error: server root URL $ServerRoot must start with http:// or https://" 1>&2
+  errors_occurred=yes
+fi
+
+#
+# Parameter error checking ENDS
+# (errors_occurred==yes action is done later)
+#
+
+#
+# Start building the list of options
+#
+declare -a params
+# All our calls to curl need this
+params+=(--dump-header - --output /dev/null --silent)
+# We are creating a request
+params+=(--data Action=send)
+# Mandatory simple ones first
+params+=(--data-urlencode uname="$username")
+params+=(--data-urlencode password="$password")
+params+=(--data-urlencode senderName="$sendername")
+params+=(--data-urlencode senderEmail="$senderemail")
+params+=(--data-urlencode senderOrg="$senderorg")
+params+=(--data-urlencode subject="$subject")
+params+=(--data-urlencode recipName="$recipientname")
+params+=(--data-urlencode recipEmail="$recipientemail")
+# Next 2 are optional
+if [[ -n $passphrase ]]; then
+  params+=(--data-urlencode encryptPassword="$passphrase")
+  params+=(--data-urlencode encryptFiles="1")
+fi
+if [[ -n $expirydatetime ]]; then
+  params+=(--data-urlencode expiryDateTime="$expirydatetime")
+fi
+# Pre-process their note text. '\n' ==> newline
+note="$( echo -n "$note" | sed 's/\\n/\n/g' )"
+params+=(--data-urlencode note="$note")
+(( insecure )) && params+=(--insecure)
+# A cookie for good measure
+[[ -n $language ]] && params+=(--cookie ZendTo-locale="$language")
+
+# If any errors have been detected, bail out
+if [[ -n $errors_occurred ]]; then
+  echo 1>&2
+  Usage
+  exit 1
+fi
+
+# Tack 'req.php' on the end of the URL, and cope with missing / on the end
+URL="${ServerRoot%/}/req.php"
+
+# This is the name of the HTTP header where ZendTo sends its response
+ZTheader='X-ZendTo-Response'
+
+# Debug only?
+if [[ "$debug" == "y" ]]; then
+  echo
+  echo curl \\
+  for i in "${params[@]}"; do
+    echo "$i" \\
+  done
+  echo "$URL" \\
+  cat <<EOCURL
+| grep "^$ZTheader:" \\
+| sed -e "s/^$ZTheader: *//"'
+
+The grep and sed extract the JSON result.
+EOCURL
+else
+  # Do it...
+  #set -x # TEMP DEBUG CODE
+  curl "${params[@]}" "$URL" \
+  | grep "^${ZTheader}:" \
+  | sed -e "s/^${ZTheader}: *//"
+  # Exit with the return code of the curl.
+  exit "${PIPESTATUS[0]}"
+fi
+

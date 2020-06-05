@@ -1,0 +1,8 @@
+Package: zendto-saml
+Version: $version
+Architecture: all
+Maintainer: Jules Field <jules@zend.to>
+Section: misc
+Priority: extra
+Depends: zendto (>= 5.24-2), memcached, php-memcached
+Description: SAML authentication setup for ZendTo. For configuration instructions, read and carefully follow https://zend.to/saml.php.

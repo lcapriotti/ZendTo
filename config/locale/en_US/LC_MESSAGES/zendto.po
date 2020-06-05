@@ -1,0 +1,1620 @@
+# ZendTo Language Translations File.
+#
+# Add a new lanaguage by running a command like
+#   /opt/zendto/bin/addlanguage "fr_FR"
+# and this will create the directories and files necessary.
+# Then edit the copy of this file in
+#   /opt/zendto/config/locale/fr_FR/LC_MESSAGES/zendto.po
+# and put in your translations. You don't need to fill in all of them,
+# only those you want to change.
+# Then run
+#   /opt/zendto/bin/makelanguages
+# and it will compile it all for you.
+# Then set your 'language' in /opt/zendto/config/preferences.php.
+#
+#
+# #-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#
+# ZendTo translation strings
+# Copyright (C) 2018 Jules Field <Jules@Zend.To>
+# This file is distributed under the same license as the ZendTo package.
+# Jules Field <Jules@Zend.To> 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendTo 5.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"PO-Revision-Date: 2018-01-05 16:39+0000\n"
+"Last-Translator: Jules Field <Jules@Zend.To>\n"
+"Language-Team: US English <Jules@Zend.To>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"#-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#\n"
+"#-#-#-#-#  smarty.pot  #-#-#-#-#\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr ""
+
+msgid "Authentication Failure"
+msgstr ""
+
+msgid "Your session has expired. Please start again."
+msgstr ""
+
+msgid "Session Expired"
+msgstr ""
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr ""
+
+msgid "Session Error"
+msgstr ""
+
+msgid "This feature is only available to users who have logged in."
+msgstr ""
+
+msgid "Access Denied"
+msgstr ""
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr ""
+
+msgid "File Permissions Error"
+msgstr ""
+
+msgid "This is available to administrators only."
+msgstr ""
+
+msgid "Administrators only"
+msgstr ""
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr ""
+
+msgid "I do not think you are a real person."
+msgstr ""
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr ""
+
+msgid "Are you a real person?"
+msgstr ""
+
+msgid "Database failure writing authentication key."
+msgstr ""
+
+msgid "Database Error"
+msgstr ""
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr ""
+
+msgid "Test failed"
+msgstr ""
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr ""
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr ""
+
+msgid "Request Code Used"
+msgstr ""
+
+msgid "Your Request Code has expired. Please start again."
+msgstr ""
+
+msgid "Request Code Expired"
+msgstr ""
+
+msgid "Request Error"
+msgstr ""
+
+msgid "Sending the request email failed."
+msgstr ""
+
+msgid "Email Error"
+msgstr ""
+
+msgid "Unable to re-send the drop-off %s."
+msgstr ""
+
+msgid "Unable to Re-send Drop-off"
+msgstr ""
+
+msgid "Unlocked %s."
+msgstr ""
+
+msgid "Unknown user"
+msgstr ""
+
+msgid "Request Code Error"
+msgstr ""
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr ""
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr ""
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr ""
+
+msgid "Verify Error"
+msgstr ""
+
+msgid "Sending the verification email failed."
+msgstr ""
+
+msgid "Could not open MySQL database on %s"
+msgstr ""
+
+msgid "Failed to add login record"
+msgstr ""
+
+msgid "Failed to delete login records"
+msgstr ""
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr ""
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr ""
+
+msgid "Failed to delete old regexps"
+msgstr ""
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr ""
+
+msgid "Failed to add regexp"
+msgstr ""
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr ""
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr ""
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr ""
+
+msgid "Failed to add user %s"
+msgstr ""
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr ""
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr ""
+
+msgid "Failed to update password for user %s"
+msgstr ""
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr ""
+
+msgid "LDAP Error"
+msgstr ""
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr ""
+
+msgid "Authorization Failed"
+msgstr ""
+
+msgid "Check User: No AD servers configured."
+msgstr ""
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr ""
+
+msgid "Please notify the system administrator."
+msgstr ""
+
+msgid "%d bytes"
+msgstr ""
+
+msgid "%.1f KB"
+msgstr ""
+
+msgid "%.1f MB"
+msgstr ""
+
+msgid "%.1f GB"
+msgstr ""
+
+msgid "%.1f TB"
+msgstr ""
+
+msgid "The preferences are not configured properly!"
+msgstr ""
+
+msgid "Invalid Configuration"
+msgstr ""
+
+msgid "Could not create ZendTo database handle"
+msgstr ""
+
+msgid "Please note"
+msgstr ""
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr ""
+
+msgid "Authentication Error"
+msgstr ""
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr ""
+
+msgid "Mail Error"
+msgstr ""
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr ""
+
+msgid "Configuration Error"
+msgstr ""
+
+msgid "The username or password was incorrect."
+msgstr ""
+
+msgid "Could not read local domain list file %s"
+msgstr ""
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr ""
+
+msgid "Undefined Preference Key"
+msgstr ""
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr ""
+
+msgid "Decryption failed"
+msgstr ""
+
+msgid "one of the recipients"
+msgstr ""
+
+msgid "Not calculated"
+msgstr ""
+
+msgid "%s has picked up your drop-off!"
+msgstr ""
+
+msgid "%s has dropped off a file for you"
+msgstr ""
+
+msgid "%s has dropped off files for you"
+msgstr ""
+
+msgid "%d days"
+msgstr ""
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr ""
+
+msgid "Invalid Claim ID or Passcode"
+msgstr ""
+
+msgid "Upload Error"
+msgstr ""
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr ""
+
+msgid "Invalid Claim ID"
+msgstr ""
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr ""
+
+msgid "Drop-off Directory Not Found"
+msgstr ""
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr ""
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr ""
+
+msgid "The recipient email address '%s' is invalid."
+msgstr ""
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr ""
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr ""
+
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr ""
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr ""
+
+msgid "There was an error while uploading '%s'."
+msgstr ""
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr ""
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr ""
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr ""
+
+msgid "No recipient file was actually uploaded."
+msgstr ""
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr ""
+
+msgid "The server's temporary folder is misconfigured."
+msgstr ""
+
+msgid "Could not read the uploaded recipients file."
+msgstr ""
+
+msgid "You must choose at least one file to drop-off."
+msgstr ""
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr ""
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr ""
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr ""
+
+msgid "No file was actually dropped-off."
+msgstr ""
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr ""
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr ""
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr ""
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr ""
+
+msgid "Drop-off not encrypted"
+msgstr ""
+
+msgid "You must specify your own email address in the form."
+msgstr ""
+
+msgid "The sender email address you entered was invalid."
+msgstr ""
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr ""
+
+msgid "Encryption failed."
+msgstr ""
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr ""
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr ""
+
+msgid "Could not add recipients to the database."
+msgstr ""
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr ""
+
+msgid "Library"
+msgstr ""
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr ""
+
+msgid "Unable to add a drop-off record to the database."
+msgstr ""
+
+msgid "Unable to begin database transaction."
+msgstr ""
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr ""
+
+msgid "0 bytes"
+msgstr ""
+
+msgid "1 byte"
+msgstr ""
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr ""
+
+msgid "Internal Error"
+msgstr ""
+
+msgid "You must specify your name in the form."
+msgstr ""
+
+msgid "You must specify the recipient's email address in the form."
+msgstr ""
+
+msgid "Your email address you entered was invalid."
+msgstr ""
+
+msgid "The recipient's email address you entered was invalid."
+msgstr ""
+
+msgid "Database failure writing request information."
+msgstr ""
+
+msgid "Could not create the new database."
+msgstr ""
+
+msgid "Could not create the tables in the new database."
+msgstr ""
+
+msgid "Could not open the database."
+msgstr ""
+
+msgid "Database Error creating %s table"
+msgstr ""
+
+msgid "Failed to read anything from loginlog"
+msgstr ""
+
+msgid "%1$d days and %2$d hours"
+msgstr ""
+
+msgid "%d hours"
+msgstr ""
+
+msgid "%1$d hours and %2$d minutes"
+msgstr ""
+
+msgid "%d minutes"
+msgstr ""
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr ""
+
+msgid "%d second"
+msgstr ""
+
+msgid "%d seconds"
+msgstr ""
+
+msgid "The email address you entered was invalid."
+msgstr ""
+
+msgid "You are trying to drop off some files"
+msgstr ""
+
+msgid "About the %1 Service..."
+msgstr ""
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr ""
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr ""
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr ""
+
+msgid "drop-off"
+msgstr ""
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr ""
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr ""
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr ""
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr ""
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr ""
+
+msgid "There are many ways to archive and compress files:"
+msgstr ""
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr ""
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr ""
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr ""
+
+msgid "Creating a Drop-off"
+msgstr ""
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr ""
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr ""
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr ""
+
+msgid "Making a Pick-up"
+msgstr ""
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr ""
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr ""
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr ""
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr ""
+
+msgid "The list of files that were uploaded"
+msgstr ""
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr ""
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr ""
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr ""
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr ""
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr ""
+
+msgid "Resumable Downloading of Files"
+msgstr ""
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr ""
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr ""
+
+msgid "Size Limitations on Uploads"
+msgstr ""
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr ""
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr ""
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr ""
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr ""
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr ""
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr ""
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr ""
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr ""
+
+msgid "Version %1 has been developed by %2."
+msgstr ""
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr ""
+
+msgid "Please enter the claim id and claim passcode."
+msgstr ""
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr ""
+
+msgid "Claim ID"
+msgstr ""
+
+msgid "Claim Passcode"
+msgstr ""
+
+msgid "Pick-up Files"
+msgstr ""
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr ""
+
+msgid "Unable to remove the drop-off"
+msgstr ""
+
+msgid "You may have already deleted it."
+msgstr ""
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr ""
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr ""
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr ""
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr ""
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr ""
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr ""
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr ""
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr ""
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr ""
+
+msgid "The sender has left you a note:"
+msgstr ""
+
+msgid "Full information about the drop-off:"
+msgstr ""
+
+msgid "Sent separately"
+msgstr ""
+
+msgid "Date of Drop-off"
+msgstr ""
+
+msgid "Sender"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Organization"
+msgstr ""
+
+msgid "Email Address"
+msgstr ""
+
+msgid "IP Address"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "SHA-256 Checksum"
+msgstr ""
+
+msgid "Content Type"
+msgstr ""
+
+msgid "a file"
+msgstr ""
+
+msgid "%1 files"
+msgstr ""
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr ""
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr ""
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr ""
+
+msgid "Claim ID:          %1"
+msgstr ""
+
+msgid "Claim Passcode:    %1"
+msgstr ""
+
+msgid "Date of Drop-Off:  %1"
+msgstr ""
+
+msgid "Name:            %1"
+msgstr ""
+
+msgid "Organization:    %1"
+msgstr ""
+
+msgid "Email Address:   %1"
+msgstr ""
+
+msgid "IP Address:      %1  %2"
+msgstr ""
+
+msgid "Name:             %1"
+msgstr ""
+
+msgid "Description:      %1"
+msgstr ""
+
+msgid "Size:             %1"
+msgstr ""
+
+msgid "SHA-256 Checksum: %1"
+msgstr ""
+
+msgid "Content Type:     %1"
+msgstr ""
+
+msgid "Picked up"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Search:"
+msgstr ""
+
+msgid "Show _MENU_ entries"
+msgstr ""
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr ""
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr ""
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr ""
+
+msgid "No matching records found"
+msgstr ""
+
+msgid "No data available in table"
+msgstr ""
+
+msgid "First"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Last"
+msgstr ""
+
+msgid "Recipient"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Encrypted"
+msgstr ""
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr ""
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr ""
+
+msgid "%1 = Encrypted by %2"
+msgstr ""
+
+msgid "%1 = Not encrypted by %2"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Outbox"
+msgstr ""
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr ""
+
+msgid "There are no drop-offs made by you at this time."
+msgstr ""
+
+msgid "Copyright &copy; %1"
+msgstr ""
+
+msgid "About %1"
+msgstr ""
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr ""
+
+msgid "Version %1"
+msgstr ""
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr ""
+
+msgid "Return to the %1 main menu"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "%1 Username"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "Privacy Consent"
+msgstr ""
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr ""
+
+msgid "I agree"
+msgstr ""
+
+msgid "I do not agree"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Inbox"
+msgstr ""
+
+msgid "Please login above."
+msgstr ""
+
+msgid "Authentication"
+msgstr ""
+
+msgid "You have been logged out."
+msgstr ""
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr ""
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr ""
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr ""
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr ""
+
+msgid "This site will not work correctly with this web browser."
+msgstr ""
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr ""
+
+msgid "Drop-off"
+msgstr ""
+
+msgid "Pick-up"
+msgstr ""
+
+msgid "Request a Drop-off"
+msgstr ""
+
+msgid "Show All Drop-offs"
+msgstr ""
+
+msgid "Unlock Users"
+msgstr ""
+
+msgid "System Statistics"
+msgstr ""
+
+msgid "System Log"
+msgstr ""
+
+msgid "You may perform the following activities:"
+msgstr ""
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr ""
+
+msgid "Ask another person to send you some files."
+msgstr ""
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr ""
+
+msgid "View all drop-offs in the database"
+msgstr ""
+
+msgid "Unlock locked-out users"
+msgstr ""
+
+msgid "View daily statistics for the service"
+msgstr ""
+
+msgid "View log file"
+msgstr ""
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr ""
+
+msgid "If you are a %1 user, you may login here:"
+msgstr ""
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr ""
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr ""
+
+msgid "Anyone may perform the following activities:"
+msgstr ""
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr ""
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr ""
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr ""
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr ""
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr ""
+
+msgid "The request created will be valid for %1."
+msgstr ""
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr ""
+
+msgid "How secure is %1?"
+msgstr ""
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr ""
+
+msgid "Scanning for viruses..."
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "__CHARS__ too long"
+msgstr ""
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr ""
+
+msgid "Too short!"
+msgstr ""
+
+msgid "Entries do not match"
+msgstr ""
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr ""
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr ""
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr ""
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr ""
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr ""
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr ""
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr ""
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr ""
+
+msgid "MB"
+msgstr ""
+
+msgid "KB"
+msgstr ""
+
+msgid "Remove file"
+msgstr ""
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr ""
+
+msgid "Please enter a valid email address."
+msgstr ""
+
+msgid "Remove selected recipient"
+msgstr ""
+
+msgid "Please add at least one file first!"
+msgstr ""
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr ""
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr ""
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr ""
+
+msgid "Scanning"
+msgstr ""
+
+msgid "Checksumming"
+msgstr ""
+
+msgid "Encrypting"
+msgstr ""
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr ""
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr ""
+
+msgid "Uploaded: __PERCENT__%"
+msgstr ""
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr ""
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr ""
+
+msgid "PLEASE NOTE"
+msgstr ""
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr ""
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr ""
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr ""
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "Add Recipients"
+msgstr ""
+
+msgid "Add One"
+msgstr ""
+
+msgid "Add Many"
+msgstr ""
+
+msgid "Adds to your address book"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add & Close"
+msgstr ""
+
+msgid "Bulk add recipients"
+msgstr ""
+
+msgid "One recipient per line, for example:"
+msgstr ""
+
+msgid "Recipient's Name email@example.com"
+msgstr ""
+
+msgid "Verify"
+msgstr ""
+
+msgid "Encryption Passphrase"
+msgstr ""
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr ""
+
+msgid "Passphrase"
+msgstr ""
+
+msgid "And again"
+msgstr ""
+
+msgid "Hide characters"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Short note to the Recipients"
+msgstr ""
+
+msgid "Encrypt every file"
+msgstr ""
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr ""
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr ""
+
+msgid "Send email message to recipients"
+msgstr ""
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr ""
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
+
+msgid "Add Files"
+msgstr ""
+
+msgid "and/or select a file..."
+msgstr ""
+
+msgid "Filename"
+msgstr ""
+
+msgid "Uploading..."
+msgstr ""
+
+msgid "Drop-off Files"
+msgstr ""
+
+msgid "Drop to<br/>Add Files"
+msgstr ""
+
+msgid "(It will copy, not move)"
+msgstr ""
+
+msgid "No file was chosen for download."
+msgstr ""
+
+msgid "Please prove you are a person"
+msgstr ""
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr ""
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr ""
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr ""
+
+msgid "%1 made the pick-up from %2."
+msgstr ""
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr ""
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "The file %1 was picked up."
+msgstr ""
+
+msgid "The file %1 was picked up by %2."
+msgstr ""
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr ""
+
+msgid "Global Drop-off List"
+msgstr ""
+
+msgid "There are no drop-offs available at this time."
+msgstr ""
+
+msgid "There are no drop-offs available for you at this time."
+msgstr ""
+
+msgid "This is a request from %1 of %2."
+msgstr ""
+
+msgid "This is a request from %1."
+msgstr ""
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr ""
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr ""
+
+msgid "All files you upload will be automatically encrypted."
+msgstr ""
+
+msgid "More information is in the note below."
+msgstr ""
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr ""
+
+msgid "Click to copy link to clipboard"
+msgstr ""
+
+msgid "Copied"
+msgstr ""
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr ""
+
+msgid "It is valid for %1."
+msgstr ""
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr ""
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr ""
+
+msgid "Go to %1"
+msgstr ""
+
+msgid "Select \"Drop-off Files\""
+msgstr ""
+
+msgid "Enter the request code \"%1\""
+msgstr ""
+
+msgid "Click on the \"Next\" button"
+msgstr ""
+
+msgid "You may close this window."
+msgstr ""
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr ""
+
+msgid "The link to give them is %1"
+msgstr ""
+
+msgid "Send the Request"
+msgstr ""
+
+msgid "Show the Link"
+msgstr ""
+
+msgid "Please enter the recipient's name first!"
+msgstr ""
+
+msgid "Please enter the recipient's email address first!"
+msgstr ""
+
+msgid "Please enter the email subject first!"
+msgstr ""
+
+msgid "Your note is too long!"
+msgstr ""
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr ""
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr ""
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr ""
+
+msgid "Email(s)"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Send email"
+msgstr ""
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr ""
+
+msgid "Do not lose or forget this passphrase!"
+msgstr ""
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr ""
+
+msgid "Unable to re-send the drop-off."
+msgstr ""
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr ""
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr ""
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr ""
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr ""
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr ""
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr ""
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr ""
+
+msgid "Do you really want to delete this dropoff?"
+msgstr ""
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr ""
+
+msgid "Include Passcode?"
+msgstr ""
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr ""
+
+msgid "Click '%1' if you are not sure."
+msgstr ""
+
+msgid "Decryption Passphrase"
+msgstr ""
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr ""
+
+msgid "Delete Dropoff"
+msgstr ""
+
+msgid "Resend Dropoff"
+msgstr ""
+
+msgid "Drop-Off Summary"
+msgstr ""
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr ""
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr ""
+
+msgid "They will expire in %1."
+msgstr ""
+
+msgid "Your files have been sent successfully."
+msgstr ""
+
+msgid "This drop-off is encrypted."
+msgstr ""
+
+msgid "Click on a filename to download that file."
+msgstr ""
+
+msgid "This drop-off will expire in %1."
+msgstr ""
+
+msgid "%1 file"
+msgstr ""
+
+msgid "Download All Files"
+msgstr ""
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr ""
+
+msgid "Download All Files<br/>as a Zip"
+msgstr ""
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr ""
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr ""
+
+msgid "Picked-up on date..."
+msgstr ""
+
+msgid "...from remote address..."
+msgstr ""
+
+msgid "...by recipient."
+msgstr ""
+
+msgid "%1 pickups"
+msgstr ""
+
+msgid "1 pickup"
+msgstr ""
+
+msgid "None of the files has been picked-up yet."
+msgstr ""
+
+msgid "View stats for the"
+msgstr ""
+
+msgid "past week"
+msgstr ""
+
+msgid "past month"
+msgstr ""
+
+msgid "past 90 days"
+msgstr ""
+
+msgid "past year"
+msgstr ""
+
+msgid "past 10 years"
+msgstr ""
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr ""
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr ""
+
+msgid "Total files dropped off (checked daily)"
+msgstr ""
+
+msgid "File count per drop-off (checked daily)"
+msgstr ""
+
+msgid "Unlock"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Unlock selected users"
+msgstr ""
+
+msgid "There are no locked users."
+msgstr ""
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr ""
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr ""
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr ""
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr ""
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr ""
+
+msgid "Please enter your Request Code before submitting."
+msgstr ""
+
+msgid "Please enter your name before submitting."
+msgstr ""
+
+msgid "Please enter your email address before submitting."
+msgstr ""
+
+msgid "Your Request Code"
+msgstr ""
+
+msgid "Request Code"
+msgstr ""
+
+msgid "Information about the Sender"
+msgstr ""
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr ""
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr ""
+
+msgid "Your name"
+msgstr ""
+
+msgid "(required)"
+msgstr ""
+
+msgid "Your organization"
+msgstr ""
+
+msgid "Your email address"
+msgstr ""
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr ""
+
+msgid "I now need to send you a confirmation email."
+msgstr ""
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr ""
+
+msgid "Send confirmation"
+msgstr ""

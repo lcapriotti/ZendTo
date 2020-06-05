@@ -1,0 +1,254 @@
+#!/usr/bin/env perl
+
+#
+# This script will output the contents of a new zendto.conf file based
+# on an old zendto.conf file and a default copy of the new file.
+#
+
+use FileHandle;
+use strict;
+
+sub Usage {
+  print STDERR "Usage:\n";
+  print STDERR "$0 old-zendto.conf supplied-new-zendto.conf > new-zendto.conf\n";
+  print STDERR "\n";
+}
+
+sub Afterwards {
+  print STDERR <<"EOAFTER";
+
+I have written your new file. Any settings that were in your old
+file but are not used in the new one have been put right near the
+top in a labelled "Obsolete" section. This is so I do not delete
+any settings you may have created yourself.
+EOAFTER
+}
+
+my $oldfname = shift;
+my $newfname = shift;
+
+unless ($oldfname &&    $newfname &&
+     -f $oldfname && -f $newfname &&
+     -s $oldfname && -s $newfname) {
+  Usage();
+  if ($newfname) {
+    # We are really trying to do the upgrade, we have a complete command-line
+    unless (-f $newfname && -s $newfname) {
+      # Either the .rpmnew doesn't exist, or it's empty
+      print STDERR "No new supplied file, so just copying your existing file.\n";
+      system("cat $oldfname"); # Copy the original .conf to the stdout redirect
+    }
+  }
+  exit 1;
+}
+
+
+my(@oldprefsorder, %oldprefs);
+my(@newprefsorder, %newprefs);
+# $trailingcomments{key} = Rest of file after last prefs line
+# $finalcomments = The block of text at the end of the file
+my(%oldprefscomments, %oldprefsep, %oldprefstrailingcomments, $oldtrailingcomments, $oldprefsheader, $oldfinalcomments);
+my(%newprefscomments, %newprefsep, %newprefstrailingcomments, $newtrailingcomments, $newprefsheader, $newfinalcomments);
+
+#
+# Yes, I know, this should be OO instead of passing a
+# zillion refs to arrays.
+# But it isn't, so there.
+#
+
+# Read in the old zendto.conf file
+$oldtrailingcomments = &ReadPrefsFile($oldfname, \@oldprefsorder, \%oldprefs, \%oldprefsep, \%oldprefscomments, \%oldprefstrailingcomments, \$oldprefsheader, \$oldfinalcomments);
+# Read in the new zendto.conf file
+$newtrailingcomments = &ReadPrefsFile($newfname, \@newprefsorder, \%newprefs, \%newprefsep, \%newprefscomments, \%newprefstrailingcomments, \$newprefsheader, \$newfinalcomments);
+
+# Tell them if their OrganizationShortType setting is only 1 word.
+# It should include "the" on the front now too.
+my $oldtype = $oldprefs{"OrganizationShortType"};
+if ($oldtype !~ / /) {
+  print STDERR <<'EOTYPE';
+
+Warning: Your "OrganizationShortType" setting is only 1 word.
+         Due to changes in the templates, if your setting is something
+         like "University"  or "Company", you should add the word
+         "the" at the start.
+         Alternatively, you can now set it to a short name for your
+         organization instead.
+
+EOTYPE
+}
+
+#
+# Now write out the new file to stdout...
+#
+
+# Put all the prefs out in the *new* order.
+# Any they defined that are left over will be printed out,
+# but all together and commented out with a note.
+# We want to put the dead ones at the top so they see them, so we just
+# save what we want to output here, and print it *after* the dead ones.
+my $outputprefs = "";
+foreach my $key (@newprefsorder) {
+  if (defined($oldprefs{$key}) && changed($key)) {
+    # They had set it in their old file,
+    # and they had changed it from the supplied value.
+    $outputprefs .= $oldprefscomments{$key}.
+                    $key.$oldprefsep{$key}.$oldprefs{$key}.
+                    $oldprefstrailingcomments{$key}."\n";
+  } else {
+    # It is either new, or they hadn't changed the supplied value.
+    $outputprefs .= $newprefscomments{$key}.
+                    $key.$newprefsep{$key}.$newprefs{$key}.
+                    $newprefstrailingcomments{$key}."\n"
+      unless !defined($newprefs{$key});
+  }
+  # Tell the admin we have added a setting they should check.
+  if (!defined($oldprefs{$key})) {
+    print STDERR "Warning: Added new setting $key - check its value!\n";
+  }
+  delete $oldprefs{$key};
+  delete $newprefs{$key};
+}
+# Any remaining oldprefs are ones that don't exist any more,
+# or are ones they have created themselves.
+# Comment them out.
+if (keys %oldprefs) {
+  print "#\n" .
+        "# ** Obsolete settings start here **\n" .
+        "# These are only used if you modified the templates\n" .
+        "# yourself and created these yourself.\n" .
+        "#\n";
+  foreach my $key (@oldprefsorder) {
+    next unless $oldprefs{$key};
+    # Make sure all blank lines within comments start "  //"
+    my $comment = $oldprefscomments{$key};
+    $comment =~ s/^ *$/#/mg if $comment;
+    print $comment;
+    print "# Obsolete: ".$key.$oldprefsep{$key}.$oldprefs{$key}.
+          $oldprefstrailingcomments{$key}."\n";
+    print STDERR "Note:    Commented out obsolete setting $key\n";
+  }
+  print "#\n" .
+        "# ** Obsolete settings end here **\n" .
+        "#\n\n";
+}
+# Followed by all the active prefs
+print $outputprefs;
+
+# Followed by any random crap at the end of the file
+print $newfinalcomments;
+
+Afterwards();
+
+exit(0);
+
+# Have they changed the value?
+# This is *almost* the not-equal operator, but not quite.
+sub changed {
+  my($testkey) = @_;
+
+  my($old, $new) = ($oldprefs{$testkey}, $newprefs{$testkey});
+
+  # If the testkey is the CSS theme to use, force it to swish2.
+  if ($testkey eq "CSSTheme") {
+    $newprefs{$testkey} = '"swish2"';
+    print STDERR "Note: Due to major template changes, I have updated your CSSTheme setting\n      to point to the new user interface\n";
+    return undef;
+  }
+
+  # Is it a number?
+  return ($new != $old) if $new =~ /^\d+$/;
+
+  # Is it a word, such as true or false?
+  return (lc($new) ne lc($old)) if $new =~ /^[a-zA-Z0-9]+$/;
+
+  # Otherwise it's just a string not-equal.
+  return ($new ne $old);
+}
+
+# Read a ZendTo zendto.conf file and split it into lots of bits.
+sub ReadPrefsFile {
+  my($filename, $prefsorder, $prefs, $prefsseps, $prefscomments, $prefstrailcomments, $prefsheadercomments, $finalcomments) = @_;
+
+  my($key, $value, $line, $origline, $trailcomment, $sep, $comments);
+  my($ndefines, $nprefs);
+
+  # Find the current year so we can update the ZendTo copyright date
+  my ($d, $year);
+  ($d,$d,$d,$d,$d,$year,$d,$d,$d) = localtime;
+  $year += 1900;
+
+  my $fh = new FileHandle;
+  $fh->open($filename) or die "Cannot read file $filename, $!";
+
+  $comments = "";
+  while(<$fh>) {
+    chomp;
+    # Force the year in the copyright line that looks vaguely like this
+    # // Copyright (C) 2016 Julian Field, Jules at Zend dot To
+    s/(Copyright\D*)(\d+)(\D*Field.*Zend)/$1$year$3/i;
+    $origline = $_;
+    s/^\s+//;
+    s/\s+$//;
+    $line = $_;
+    $trailcomment = "";
+  
+    # It might be a pref, that is totally commented out
+    if ($line =~ /^#/) {
+      $comments .= "$origline\n";
+      next;
+    }
+
+    # Is it a non-commented pref line (key = value)?
+    if ($line =~ /^[^#]+=/) {
+      undef $key;
+      undef $value;
+      $line =~ /^(.*?)(\s*=\s*)(.*?)$/;
+      ($key, $sep, $value) = ($1, $2, $3);
+      # value is 1 of 3 things:
+      # 1. A sequence of characters ending with \s*, (e.g. TRUE)
+      # 2. A string starting with ' and ending with '\s*, (e.g. 'word word')
+      # 3. A string starting with " and ending with "\s*, (e.g. "word word")
+      if ($value =~ /^\"/) {
+        # It is a double-quoted string.
+        $value =~ s/^(\".*?\"),(.*$)/$1/;
+        $trailcomment = $2;
+      } elsif ($value =~ /^\'/) {
+        # It is a single-quoted string.
+        $value =~ s/^(\'.*?\'),(.*$)/$1/;
+        $trailcomment = $2;
+      } else {
+        # It's just a non-quoted value
+        $value =~ s/^([^,]+?),(.*$)/$1/;
+        $trailcomment = $2;
+      }
+      #print STDERR "$filename: Set .$key. to .$value. then .$trailcomment.\n";
+      # Are there duplicates?
+      if (defined($prefs->{$key})) {
+        print STDERR "\nFound duplicate setting for '$key' in $filename.\n";
+        print STDERR "I will keep the longer one.\n";
+        #print STDERR "Previous one was ".length($prefs->{$key})." and new one is ".length($value)."\n";
+        next if length($value) < length($prefs->{$key});
+        @$prefsorder = grep { $_ ne $key } @$prefsorder;
+        $nprefs--;
+      }
+      push @$prefsorder, $key;
+      $prefs->{$key} = $value;
+      $prefscomments->{$key} = $comments;
+      $prefstrailcomments->{$key} = $trailcomment;
+      $prefsseps->{$key} = $sep;
+      $nprefs++;
+      $comments = "";
+      next;
+    }
+  
+    # It's not a setting, so it must just be comments and stuff
+    $comments .= "$origline\n";
+  }
+  $fh->close();
+
+  #print STDERR "$filename has $nprefs settings\n";
+
+  # There will be trailing comments at the end of the file
+  $$finalcomments = $comments;
+}
+

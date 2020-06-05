@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Clean the caches in case Smarty has been upgraded
+rm -rf /var/zendto/templates_c/*php >/dev/null 2>&1
+rm -rf /var/zendto/cache/*php >/dev/null 2>&1
+
+# Work out the user and group Apache runs as.
+# Attempts are:
+# 1. Apache's envvars file
+# 2. httpd.conf
+# 3. "www-data"
+[ -f /etc/apache2/envvars ] && source /etc/apache2/envvars
+WWWUSER="$( grep -ri --no-filename '^\s*User\s\s*' /etc/httpd /etc/apache2 2>/dev/null | head -1 | sed -e 's/#.*$//' | awk '{ print $2 }' )"
+WWWGROUP="$( grep -ri --no-filename '^\s*Group\s\s*' /etc/httpd /etc/apache2 2>/dev/null | head -1 | sed -e 's/#.*$//' | awk '{ print $2 }' )"
+# If they were references to shell varialbes from envvars, interpret them
+WWWUSER="$( eval echo "$WWWUSER" )"
+WWWGROUP="$( eval echo "$WWWGROUP" )"
+# Fallbacks
+if [ "x$WWWUSER" = "x" ]; then
+  WWWUSER='www-data'
+fi
+if [ "x$WWWGROUP" = "x" ]; then
+  WWWGROUP='www-data'
+fi
+
+# Construct /var/zendto and others.
+# Cannot pre-determine the ownership as we can only read this from
+# httpd.conf, when we are on the target system and installing ourselves.
+mkdir -p /var/zendto/saml-metadata/azure /opt/zendto/simplesamlphp/cert
+chown -R root:"$WWWGROUP" /var/zendto/saml-metadata
+chgrp -R "$WWWGROUP" /var/zendto/saml-metadata
+chmod -R 0770 /var/zendto/saml-metadata
+
+# Enable and start memcached in case it's not already
+systemctl enable memcached >/dev/null 2>&1
+systemctl start  memcached >/dev/null 2>&1
+
+exit 0

@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# Copy the graphs notfound.png into place
+cp /opt/zendto/www/images/notfound.png /var/zendto/rrd/notfound.png
+chmod a+rX /var/zendto/rrd /var/zendto/rrd/notfound.png
+
+# Clean the caches in case Smarty has been upgraded
+rm -rf /var/zendto/templates_c/*php >/dev/null 2>&1
+rm -rf /var/zendto/cache/*php >/dev/null 2>&1
+
+# Get rid of the obsolete caches if still present
+rm -rf /opt/zendto/templates_c >/dev/null 2>&1
+rm -rf /opt/zendto/myzendto.templates_c >/dev/null 2>&1
+rm -rf /var/zendto/myzendto.templates_c >/dev/null 2>&1
+rm -rf /opt/zendto/cache >/dev/null 2>&1
+
+# Throw away any relics of MyZendTo
+rm -rf /opt/zendto/myzendto.www >/dev/null 2>&1
+rm -rf /opt/zendto/myzendto.templates >/dev/null 2>&1
+
+# Work out the user and group Apache runs as.
+# Attempts are:
+# 1. Apache's envvars file
+# 2. httpd.conf
+# 3. "www-data"
+[ -f /etc/apache2/envvars ] && source /etc/apache2/envvars
+WWWUSER="$( grep -ri --no-filename '^\s*User\s\s*' /etc/httpd /etc/apache2 2>/dev/null | head -1 | sed -e 's/#.*$//' | awk '{ print $2 }' )"
+WWWGROUP="$( grep -ri --no-filename '^\s*Group\s\s*' /etc/httpd /etc/apache2 2>/dev/null | head -1 | sed -e 's/#.*$//' | awk '{ print $2 }' )"
+# If they were references to shell varialbes from envvars, interpret them
+WWWUSER="$( eval echo "$WWWUSER" )"
+WWWGROUP="$( eval echo "$WWWGROUP" )"
+# Fallbacks
+if [ "x$WWWUSER" = "x" ]; then
+  WWWUSER='www-data'
+fi
+if [ "x$WWWGROUP" = "x" ]; then
+  WWWGROUP='www-data'
+fi
+
+# Construct /var/zendto and others.
+# Cannot pre-determine the ownership as we can only read this from
+# httpd.conf, when we are on the target system and installing ourselves.
+mkdir -p /var/zendto /var/log/zendto
+touch /var/log/zendto/zendto.log
+chown root:"$WWWGROUP" /var/zendto /var/log/zendto /var/log/zendto/zendto.log
+chgrp "$WWWGROUP" /var/zendto /var/log/zendto /var/log/zendto/zendto.log
+chmod 0775 /var/zendto /var/log/zendto
+chmod 0664 /var/log/zendto/zendto.log
+for F in incoming dropoffs rrd library cache templates_c
+do
+  if [ ! -d /var/zendto/$F/ ]; then
+    mkdir -p /var/zendto/$F
+    chown "$WWWUSER":"$WWWGROUP" /var/zendto/$F
+    chmod 0755 /var/zendto/$F
+  fi
+done
+
+# Apply schema fixes
+/usr/bin/php /opt/zendto/sbin/cleanup.php /opt/zendto/config/preferences.php --no-purge >/dev/null
+# And ensure permissions are correct!
+chgrp "$WWWGROUP" /var/log/zendto/zendto.log
+chmod g+w /var/log/zendto/zendto.log
+
+# Little oddities
+if [ -f /var/zendto/zendto.sqlite ]; then
+  chown "$WWWUSER"  /var/zendto/zendto.sqlite
+  chgrp "$WWWGROUP" /var/zendto/zendto.sqlite
+  chmod ug+w        /var/zendto/zendto.sqlite
+fi
+
+# If ZENDTOPREFS is not set in /etc/environment, add it
+if ! grep -q '^ZENDTOPREFS=' /etc/environment; then
+  echo 'ZENDTOPREFS="/opt/zendto/config/preferences.php"' >> /etc/environment
+fi
+
+# Make sure the necessary locales all exist for the languages we ship
+for L in $( grep -l '^msgid' /opt/zendto/config/locale/supplied/*_*.zendto.po )
+do
+  # We just want the initial bit of the filename up to the 1st dot
+  M="$( basename "$L" | sed -e 's/\..*$//' )"
+  /opt/zendto/bin/addlanguage "$M" NOMAKELANGUAGES
+done
+/opt/zendto/bin/makelanguages 2>/dev/null
+
+echo
+echo 'If you are upgrading from a previous version, please make sure your'
+echo 'config files in /opt/zendto/config/* are all up to date.'
+echo
+echo 'To help you, there is a tool for upgrading the preferences.php and'
+echo 'zendto.conf files.'
+echo 'Simply run'
+echo '    sudo /opt/zendto/bin/upgrade'
+echo
+echo 'To edit any text in the web interface, or add/edit a language,'
+echo 'see'
+echo '    http://zend.to/translators.php'
+echo
+
+exit 0

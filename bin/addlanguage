@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+# Find ZendTo top directory.
+# It's either set in $ZENDTOPREFS, or else it's /opt/zendto, or else
+# we can't find it so bail out.
+if [ "x$ZENDTOPREFS" != "x" ]; then
+  ZENDTO=$( echo "$ZENDTOPREFS" | sed -e 's/\/[^\/]*$//; s/\/[^/]*$//;' )
+else
+  ZENDTO=/opt/zendto
+fi
+if [ "x$ZENDTO" = "/" ] || [ "x$ZENDTO" = "/opt" ] || [ ! -d "$ZENDTO" ]; then
+  echo "I cannot find the ZendTo directory!"
+  exit 1
+fi
+
+BIN="$ZENDTO/bin"
+CONFIG="$ZENDTO/config"
+LOCALE="$ZENDTO/config/locale"
+
+###################################################
+# Work out the OS name ($OS) and version ($OSVER).
+# Taken from my ZendTo installer
+###################################################
+OS=unknown
+OSRELEASE=/etc/redhat-release
+if [ -f $OSRELEASE ]; then
+  if grep -q 'Red *Hat' $OSRELEASE; then
+    OS=redhat
+  elif grep -q 'CentOS' $OSRELEASE; then
+    OS=centos
+  fi
+  if [ -x /bin/yum -o -x /usr/bin/yum ]; then
+    rpm -q --quiet perl || {
+      shout Just going to install Perl...
+      yum -y install perl
+    }
+  fi
+  OSVERFULL="$( perl -pe 's/^[^\d]+([\d.]+).*?$/$1/' < $OSRELEASE )"
+  OSVER="$( echo "$OSVERFULL" | cut -d. -f1 )"
+fi
+if [ "$OS" = "unknown" ]; then
+  OSRELEASE=/etc/debian_version
+  if [ -f $OSRELEASE -a -x /usr/bin/lsb_release ]; then
+    # Should give me the string "ubuntu" or "debian"
+    OS="$( lsb_release --id | sed -e 's/^.*:\s*//' | tr '[:upper:]' '[:lower:]' )"
+    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\)\..*$/\1/' )"
+  fi
+fi
+if [ "$OS" = "unknown" ]; then
+  if [ -x /usr/bin/lsb_release ]; then
+    # Should give me the string "suse" or similar
+    OS="$( lsb_release --id | sed -e 's/^.*:\s*//' | tr '[:upper:]' '[:lower:]' )"
+    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\)\..*$/\1/' )"
+    # But we need to tell between suse (i.e. sles) and opensuse
+    if [ "x$OS" = "xsuse" ]; then
+      OS='sles'
+    fi
+  elif [ -f /etc/os-release ]; then
+    # I can just source that file, but that's dangerous
+    OSID="$( grep '^ID=' /etc/os-release | head -1 | sed -e 's/#.*$//; s/ *$//; s/^ID="*\([^"]*\)"*/\1/;' )"
+    if [[ $OSID =~ sles ]]; then
+      OS='sles'
+    elif [[ $OSID =~ opensuse ]]; then
+      OS='opensuse'
+    elif [[ $OSID =~ debian ]]; then
+      OS='debian'
+    fi
+    OSVER="$( grep '^VERSION_ID=' /etc/os-release | head -1 | sed -e 's/#.*$//; s/ *$//; s/^VERSION_ID="*\([^"]*\)"*/\1/; s/\..*$//;' )"
+  fi
+fi
+
+OS="$(echo "$OS" | tr '[:upper:]' '[:lower:]')" # Lower-case it
+
+###################################################
+
+L="$1"
+BAILOUT="$2"
+
+if [ "x$L" = "x" ]; then
+  echo
+  echo You need to supply a valid language code on the command-line,
+  echo such as en_US or fr_FR or similar.
+  echo "Do not put anything like '.utf-8' on the end,"
+  echo as everything is done in utf-8 anyway.
+  echo
+  if [ "x$OS" = "xredhat" ] || [ "x$OS" = "xcentos" ]; then
+    echo To see the codes valid on your system, run the command
+    echo '   locale -a'
+    echo
+  fi
+  exit 1
+fi
+
+if echo "$L" | fgrep -q .; then
+  echo 'Do you *really* need the "." and whatever is after it?'
+  echo "I'm going to wait for 10 seconds so you can press Ctrl-C"
+  echo "and try again without it."
+  sleep 10
+  echo
+fi
+
+echo
+if locale -a | grep -q '^'"$L"'$'; then
+  echo Adding $L as a valid language code.
+elif [ "x$OS" = "xubuntu" ] || [ "x$OS" = "xdebian" ]; then
+  echo Adding the locale for you.
+  if [ "x$OS" = "xdebian" -a "$OSVER" -ge "9" ]; then
+    # On Debian 9 we have to __manually edit__ /etc/locale.gen,
+    # then run locale-gen with no command-line parameters!!!
+    # WTF ???
+    if grep -q '^'$L' ' /etc/locale.gen; then
+      # It's already there, no need to tweak locale-gen
+      :
+    else
+      # Uncomment the line in locale.gen that is the code we want
+      # Create lots of backups!
+      sed -i.bak."$L" -e 's/^# *\('"$L"' .*\)$/\1/' /etc/locale.gen
+    fi
+    locale-gen
+  else
+    locale-gen "$L"
+  fi
+else
+  echo Sorry, that is not a valid language code on your system.
+  echo To see the codes valid on your system, run the command
+  echo '   locale -a'
+  echo On some operating systems, you may need to install additional
+  echo software packages to add extra languages.
+  echo
+  exit 1
+fi
+
+if [ ! -f "$LOCALE/$L/LC_MESSAGES/zendto.po" ]; then
+  mkdir -p "$LOCALE/$L"
+  echo And now about to copy the translation source into
+  echo "$LOCALE/$L/LC_MESSAGES/zendto.po"
+  echo so you can start adding your own translations.
+  echo
+  echo Pausing for 10 secs...
+  sleep 10
+fi
+
+# Only do the makelanguages if they have *not* put a 2nd arg on the command.
+# The deb postinst file calls this with NO en the end to save duplicating
+# this code.
+[ "x$BAILOUT" = "x" ] && "$BIN"/makelanguages
+
+exit 0

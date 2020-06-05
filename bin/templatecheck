@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?PHP
+
+require "../config/preferences.php";
+system("rm -f ".NSSDROPBOX_DATA_DIR."/templates_c/*.php");
+require_once(NSSDROPBOX_LIB_DIR."Smartyconf.php");
+
+array_shift($argv);
+foreach ($argv as $template) {
+        $result = $smarty->fetch($template);
+        if ($result !== '')
+          echo "$template syntax check looks good.\n";
+        else
+          echo "$template syntax check failed.\n";
+}
+system("rm -f ".NSSDROPBOX_DATA_DIR."/templates_c/*.php");
+?>

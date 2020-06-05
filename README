@@ -1,0 +1,44 @@
+Welcome to ZendTo (C) Julian Field 2020 Jules@Zend.To
+
+Please start at the web site http://Zend.To/ as it contains all the
+documentation you need to get started. However, other documentation is
+included in the package you downloaded.
+
+There is now an installer available from the ZendTo website which
+will automate the entire process of installing ZendTo onto an otherwise
+basically blank/minimal server running any of
+	CentOS 6, 7 or 8
+	RedHat Enterprise 6, 7 or 8
+	Ubuntu 14, 16, 18 or 19
+	Debian Server 8, 9 or 10
+	SUSE Enterprise 12sp3 or 15
+	openSUSE Leap 15
+	FreeBSD 11.2 or 12
+It will install and configure everything it needs.
+I strongly advise you to use that where possible.
+Otherwise there are rpm, deb and tgz packages available too.
+
+The configuration files are in /opt/zendto/config.
+
+If you are upgrading from a previous version, run
+	/opt/zendto/bin/upgrade
+as it automatea the process of upgrading your configuration.
+To see what it is going to do first, run it as
+	/opt/zendto/bin/upgrade --dry-run
+
+If you need to use MySQL instead of SQLite, then you will need to setup
+the database first, so look in the /opt/zendto/sql/ directory for help.
+I strongly advise you use SQLite, it is self-configuring.
+
+*** NOTE ***
+/var/zendto and its subdirectories must be writeable by the user and
+group that your web server is running as!
+The rpm and deb packages, and the ZendTo Installer, will set it for you.
+*** NOTE ***
+
+Please see http://Zend.To for all the other documentation, as well as
+all the documentation you will find in this package.
+
+-- 
+Jules
+Jules@Zend.To

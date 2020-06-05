@@ -1,0 +1,1858 @@
+Version 6.00-2 Production
+- Updated Italian translation. Thanks Massimo!
+- Improved php.ini error checking and reporting.
+- Improved Installer to update php.ini for fpm as well as apache2 on
+  Ubuntu/Debian based systems.
+- Fixed quoting issues with French translation.
+- Fixed bug where "days until drop-off expires" box was still visible
+  despite setting preferences.php so it should not show.
+- Fixed template bug where login hint text on main menu was being
+  over-escaped.
+
+Version 6.00-1 Production
+- Production release of new major version 6.
+- New major features since version 5 are:
+  * Login via OAuth, Yubikeys etc with SAML-based authentication.
+  * Uploaded files are now sent in small chunks ('maxChunkSize'), and
+    are automatically retried on failure, to attempt to avoid problems
+	with network security appliances and the Great Firewall of China.
+  * Recipients can be made to read and acknowledge some legal text
+    (or instructions) before being able to download files.
+  * Users can set the lifetime of a drop-off (within limits) allowing
+    much shorter-lived drop-offs for sensitive data.
+  * Now ships in 13 languages.
+  * Improved automation ability with new "autolist" command that
+    dumps all drop-off metadata as JSON.
+  * Admin logins can be restricted to local IP addresses.
+  * internaldomains.conf can now list individual email addresses as
+    well as entire domains, so you can give usage permission to someone
+	with a @gmail.com address, for example.
+  * For the full list of changes and fixes, read below for all the 5.24
+    beta releases.
+- Removed code from AD authenticator that attempted to sanitise the
+  username in some situations. This caused login problems for sites
+  where the sAMAccountName has '@' in it.
+- Fixed bug in AD authenticator where "ldaps://" could be pre-pended
+  to the server name when it was already there.
+
+Version 5.24-11 Beta
+- New 'autolist' command in /opt/zendto/bin. This will list all the data
+  about all the current drop-offs. Output is in JSON format.
+- Written some documentation for the automation features that allow you
+  to drive ZendTo from scripts and other code, with no human interaction.
+
+Version 5.24-10 Beta
+- Typos fixed in German translation.
+
+Version 5.24-9 Beta
+- German translation update, thanks to Garry Glendown.
+- Italian translation update, thanks to Massimo Forni.
+- French translation update, thanks to George Kandalaft.
+- Added auto-creation of SQLite database in RPM post-installation
+  script.
+
+Version 5.24-8 Beta
+- Fixed crash bug in MySQL support.
+- Fixed bug in Installer where it couldn't find the EPEL repo. This broke
+  the installation of a recent version of PHP, on CentOS & RedHat-based
+  systems.
+- Update to post-installation scripts in zendto-saml package.
+
+Version 5.24-7 Beta
+- The upload of each chunk of a file will be retried up to 5 times if it
+  fails. After 5 attempts on a chunk, it will abandon the whole upload.
+  But the retry counter restarts for every chunk. So if you have users
+  who still cannot upload large files successfully, reduce the value of
+  'uploadChunkSize'.
+- Fixed bug where file uploading in chunks failed if the first file on
+  the new drop-off form (or all the files on the form) are selections
+  from the library, not files needing to be uploaded.
+
+Version 5.24-6 Beta
+- Fixed bug in cron job causing failure of uploading a new drop-off over
+  a slow network, when uploading 1 file took over 4 hours.
+- Added "--expirydatetime" option to the "autorequest" script so you can
+  exactly specify when you want the request to expire. Very useful if
+  you are requesting bids for contracts, answers to exams or anything with
+  an exact closure point. Note this is specified in the timezone of the
+  ZendTo server, not necessarily the same timezone as the computer running
+  the "autorequest" command. Thanks to Luigi Capriotti for the idea and his
+  code for this.
+
+Version 5.24-5 Beta
+- Fixed bug in "upgrade" command. It generated an unreadable new
+  'samlAttributesMap' setting in preferences.php. You will find all your
+  old versions of the file in /opt/zendto/config/old.
+
+Version 5.24-4 Beta
+- Considering the major features introduced in these betas, it's time for
+  a new major version number.
+- Users can now change the number of days before a new drop-off expires,
+  on a per-dropoff basis. It has to be within 0.1 and the value of
+  'numberOfDaysToRetain' set in preferences.php. You can specify the default
+  value with 'defaultNumberOfDaysToRetain'. If it is set to 0, the feature
+  is disabled and the "new drop-off" form setting does not appear.
+- Admin logins are now restricted to come only from any IP included in the
+  'localIPSubnets' setting in preferences.php. If you need to allow admin
+  logins from outside your network, set the new 'adminLoginsMustBeLocal'
+  setting to FALSE. It is TRUE by default.
+
+Version 5.24-3 Beta
+- Added support for uploading files in small "chunks". Many network security
+  appliances and some DoS protection services (e.g. Cloudflare) impose a
+  maximum size limit on HTTP requests. Previously, this has limited the
+  size of files you could send with ZendTo, as all the files were sent in
+  1 big HTTP request. There is a new preferences.php setting
+  'uploadChunkSize'. If this is 0 then it behaves as it always has before.
+  But if greater than zero, it limits the maximum quantity of data that is
+  sent in 1 request. Try setting it to 99000000 (99MB) and see if large
+  drop-offs now upload successfully. Reduce it as necessary, testing each
+  time. The end users should not notice any change in behaviour at all.
+
+Version 5.24-2 Beta
+- Added support for SAML authentication using SimpleSAMLphp.
+  Read the beta page at zend.to/beta.php for info on how to get started
+  with this. This is *NOT* ready for production use! You have been warned!
+
+Version 5.24-1 Beta
+- If you *really* need to, you can now automatically generate a nightly
+  email summary of all the previous 24 hours' new drop-offs. This can
+  be email to a list of administrative email addresses set by the new
+  'nightlySummaryEmailAddresses' setting in preferences.php.
+  To restrict it to just those generated by your internal or external
+  users, there is also a new setting 'nightlySummaryContains' which can
+  be set to 1 of these 3 values: 'internal', 'external' or 'both'.
+  If you must use this monitoring facility, beware of laws about data
+  privacy, and laws about employee privacy and monitoring of their work!
+
+Version 5.23-4 Production
+- No longer attempt to delete/cleanup old drop-offs at the end of the rpm/deb
+  upgrade process. Thanks to Arnaud Chevalier for pointing out this bug.
+
+Version 5.23-3 Production
+- Bug-fixes for calls to getClientIP().
+- Improved Debian 10 Installer so it switches off "PrivateTmp" in Apache's
+  systemd service definition.
+
+Version 5.23-2 Production
+- Bug-fix where requesting a drop-off was failing. Thanks to Orion Poplawski
+  for reporting this.
+
+Version 5.23-1 Production
+- Added new Hungarian translation. Thanks to Miklós Toldi fir this.
+
+Version 5.22-4 Beta
+- Added new preferences.php setting 'allowExternalRecipients'. It is normally
+  set to TRUE, and defaults to TRUE. If you set if to FALSE, then all
+  drop-off recipients must be listed in internaldomains.conf, even when it is
+  a logged-in user sending a drop-off. It effectively stops files being able
+  to leak outside your organisation, as users cannot address external users.
+
+Version 5.22-3 Beta
+- Added a new "terms and conditions waiver" feature. If used, this forces
+  recipients to read some text (could be legal stuff, could be instructions)
+  and tick a check box to say they have read and agreed to it. Until they
+  have ticked the box, they cannot see any of the download links.
+  It is controlled by 2 settings in preferences.php:
+  'showRecipientsWaiverCheckbox' and 'defaultRecipientsWaiver'.
+  Using these (as explained in the comments in preferences.php), an admin
+  can choose to not use this option at all, or to mandate its use, as well
+  as leaving the decision to the users. The default "terms and conditions"
+  text supplied just contains instructions on how to change that text, and
+  how to disable the feature completely if the site doesn't want it.
+- Added support to internaldomains.conf to list individual email addresses,
+  and lines like "*@example.com" so you can think in email addresses instead
+  of domain names. Note that "*@example.com" differs from "example.com" in that
+  the "@" version does *not* include sub-domains of example.com.
+
+Version 5.22-2 Beta
+- Added new Russian translation. Thanks to Dizzy Easy for this.
+- Added new Polish translation. Thanks to Marcel Richter for this.
+- Added config option (default=FALSE) to set whether we might be behind a
+  load balancer. If your ZendTo log says all use is coming from the same
+  IP address, then set 'behindLoadBalancer' to TRUE in preferences.php.
+  It is FALSE by default as, without a load balancer, the HTTP headers
+  used can be easily faked. Thanks to Jack Cable for this suggestion.
+- Added config option 'requestSenderOrgIsEditable' (default=TRUE) to set
+  whether, in the "request a drop-off" form, the organization name should
+  be editable or not. In small or simple orgs you probably want this to be
+  FALSE so users cannot change it, but TRUE in large/complex organizations
+  your users may well have valid reasons for changing it to reflect the
+  name of their part of the organization (think government-level
+  installations here). Thanks to Ken Etter for this suggestion.
+- Added config option 'indexAddressbookByEmail' (default=FALSE) to help
+  a few sites using hardware authentication tokens (e.g. Yubikeys) to login
+  with a random username generated on the fly by the token. In this
+  particular case, the users's address books cannot be indexed by username
+  but have to be indexed by email address instead. Set this to TRUE to
+  achieve this. Be warned that if a user changes their email address in
+  your directory (e.g. AD or LDAP) they will effectively wipe their
+  address book if this is TRUE. So leave it at FALSE unless you really
+  have to change it. Thanks to Zach Musselman for the feature request.
+- Added config option 'allowExternalPickups' (default=TRUE). If you set this
+  to FALSE, the "Pick-up files' button will be removed from the main menu
+  *if* you are not logged in. It works similarly to 'allowExternalUploads'.
+- Removed vulnerabilities from admin "unlock users" page. Thanks to Jack
+  Cable for this.
+- Improved security of session cookie. Installing this update will logout
+  any current ZendTo users, so do this at a quiet time or a scheduled
+  maintenance window. Thanks to Jack Cable for this.
+- Fixed typos in fr, it and nl translations. Thanks to Matthieu Froment
+  for pointing these out.
+- Updated French translation from Matthieu Froment.
+- Updated supplied copies of all external Javascript libraries.
+- Changed method of calling Google ReCaptcha to improve reliability.
+- Installer: updated SSL settings for CentOS/RedHat apache config.
+
+Version 5.22-1 Beta
+- Added support for CentOS 8, Ubuntu 19 and Debian 10 (Buster) to the
+  Installer.
+- Fixed self-signed certs generated by the Installer so they work in MacOS
+  10.15 Catalina. Apple have added a bunch of constraints, see
+  https://support.apple.com/en-us/HT210176.
+- Followed Google's advice to fetch reCAPTCHA from www.recaptcha.net instead
+  of www.google.com, to improve the chances of it working from China.
+  Note: this requires a change to the Content-Security-Policy header if
+  you are setting that.
+- If you edit new_dropoff.tpl to make the "encrypt all files" box checked
+  by default, it will now correctly prompt for the passphrase when the user
+  tries to complete the drop-off process.
+- Fixed bug where dropoffs that were the result of requests would have the
+  wrong sender's organisation displayed.
+- Removed 'CopyrightYear' setting from zendto.conf. It is now just set to
+  the current year, saving you having to update it each year.
+- 'One of the recipients' changed to 'one of the recipients' to fix a
+  capitalisation issue.
+- Fixed escaping bug in log entries. Thanks to Ana-Maria Popescu @amiutza
+  ana.popescu@codegrazer.com for this and the mime type sanitising.
+- Added extra layer of sanitising to mime type metadata.
+- Fixed bugs in Ubuntu/Debian installer and .deb package relating to
+  log file permissions.
+
+Version 5.21-2 Production
+- Fixed bug where 'authLDAPUsernameAttribute[123]' setting would have
+  no effect when authenticating with AD.
+- Fixed bug where deleting recipients in the new drop-off form, other
+  than the last ones in the list, could cause other recipients to be
+  missed.
+- Improved intelligence of "new request" and "new drop-off" forms:
+  if you enter an email address into the name box, it will be moved
+  automatically to the email box (if that was empty).
+- In "new drop-off" form, instead of displaying an alert if there are
+  no recipients, it now just shows the "Add Recipient" box.
+- "New request" form now works even if no recipient name specified.
+  Any resulting emails are re-worded appropriately.
+- Clicking the "copy link to clipboard" button now makes it obvious that
+  something did happen.
+- Improved Installer to configure zendto.conf file as well.
+
+Version 5.21-1 Production
+- Drag-and-drop area on the new drop-off form now covers the entire
+  browser window.
+- Fixed bug where reminder emails didn't include the Passcode when
+  they should.
+
+Version 5.20-9 Beta
+- Fixed problem where downloading zip of large un-encrypted drop-off
+  would probably run out of memory.
+
+Version 5.20-8 Beta
+- Added delete buttons to autocomplete lists in the "request" form, and
+  re-factored the code that does all of that.
+- Fixed bug where errors in the contents of the "request" form were
+  being notified to the user twice when they tried to submit the form.
+
+Version 5.20-7 Beta
+- Bug-fixes from previous beta, and user interface text improvements.
+  Thanks to Tom Gardner for these suggestions!
+
+Version 5.20-6 Beta
+- Bug-fixes from previous beta.
+
+Version 5.20-5 Beta
+- Fixed bug where expired drop-offs would leave behind links to library
+  files, if those library files had been deleted before the drop-off
+  expired.
+- A "request for a drop-off" can now enforce encryption on the resulting
+  drop-off. The passphrase is set by the person sending the request, and
+  is never known to the user who creates the actual drop-off in reply.
+  There is a new preferences.php setting 'defaultEncryptRequests' which
+  sets whether the "Encrypt all files" checkbox on the **request** form
+  (not the "new drop-off" form) is ticked by default.
+- In the "Request for a drop-off" form you can now also stop it sending
+  the email automatically, but instead just show you the link. Useful if
+  you want to send the link some other way, possibly more securely.
+  It shows you the link and you just click on it to copy it to your
+  clipboard.
+
+Version 5.20-3 Beta
+- Changed zip logic so that zips less than 4GB with fewer than 64k files
+  are created without the Zip64 extensions, as those break some OSes and
+  zip apps, such as the Archive Utility on macOS.
+- If you attempt to download a Zip64 zip on a Mac, it will warn you that
+  you probably won't be able to just double-click on it to open it.
+- Added new preferences.php setting 'deleteRequestsAfterUse' as a few
+  sites want to let external people repeatedly send them drop-offs
+  without having to re-confirm their email address for each one, nor have
+  an internal user send tham a fresh "request for drop-off" each time.
+  It is TRUE by default, think long and hard before setting it to FALSE.
+- System-wide announcement message can now contain a title as well as the
+  HTML content of the message. See preferences.php for the details.
+
+Version 5.20-2 Beta
+- Improved error detection when sending emails.
+- System-wide announcement message now correctly styled with CSS.
+
+Version 5.20-1 Beta
+- Added new setting for AD authentication 'AuthLDAPUsernameAttribute' so
+  that you don't have to use sAMAccountName to get the username. It means
+  users can login with things like their email address if that suits your
+  environment better. It defaults to 'sAMAccountName', which was the
+  value that was hard-coded in previous versions.
+- Added new "Download All Files as a Zip" button to the drop-off download
+  page. Works on normal and encrypted drop-offs. Note that in the case of
+  encrypted drop-offs, the resulting zip is *NOT* encrypted. It's purely
+  designed as an easy way of downloading a drop-off if you have multiple
+  ones to download and want to be able to dump everything in the same
+  folder.
+- Improved makelanguages so it wipes the Smarty template cache, to make
+  changes to language translations update properly.
+- Greatly improved MySQL error logging.
+- Improved logging of overnight cleanup house-keeping.
+- Added new preferences.php setting 'systemAnnouncementFilePath' which you
+  can set to the location of a file containing a system-wide announcement
+  you want all your users to see on the login / main-menu page.
+  If you don't want it to show anything (i.e. normally), set it to '' or
+  point it at a file that doesn't exist or point it at a file that is empty.
+  Useful for warning your users about upcoming maintenance down-time.
+- Behaviour of clicking on a drop-off in your Inbox or Outbox, which recently
+  I changed to always open it in a new tab, I have reverted to the previous
+  behaviour. Now only the Global drop-off list (visible to admins only)
+  opens drop-offs in new tabs. It was confusing users.
+
+Version 5.19-1 Production
+- Added missing 'jq' dependency installation to deb+rpm based Installer.
+- Installer works on Ubuntu 19.04.
+
+Version 5.18-5 Beta
+- Fixed bug that may cause old requests for drop-offs to be expired too
+  early.
+- Advice about encryption on "new dropoff" form is now not shown when
+  encryption is mandatory.
+- Fixed bug where changing displayed text in zendto.po for your own
+  language on Ubuntu might not take effect.
+- Improved upgrade command so languageList is automatically replaced if
+  there are more languages available than your previous version.
+
+Version 5.18-4 Beta
+- Picking up a drop-off can now be both scripted and automated too!
+  Run /opt/zendto/bin/autopickup and it will show you how to use it.
+  --debug to see what it will do. --list to see the JSON of the drop-off.
+  --nofiles to not actually download any files at all.
+- Improved the CentOS/RedHat installer, so that it spots that the IUS repo
+  package of PHP 7.3 doesn't include the sodium crypto extension for some
+  random reason. In this case, it backs off to the previous version 7.2
+  as that works.
+
+Version 5.18-3 Beta
+- Creating a new drop-off, and creating a new request for one, can now
+  both be scripted and automated!!
+  Yes, finally. Run the /opt/zendto/bin/autodropoff and autorequest
+  scripts and they will show you basically how to use them.
+  I will document them better, but wanted to get the code out there first.
+  Use the "--debug" or "-d" flags to stop it actually doing anything but
+  instead show you the monster curl command it will do.
+  They both return a data structure in JSON.
+
+Version 5.18-2 Beta
+- Outbox no longer shows the sender. It's always you anyway. Helps with
+  the formatting of the rest of the table for particularly long-worded
+  languages.
+- Autocomplete list of address book matches now has a tooltip above the
+  column of buttons so you know what they do (in case the Trash icon
+  wasn't obvious enough).
+- Fixed bugs in autocomplete handling after entries had been deleted.
+- Improvements to tooltips and layout, thanks to Marcel Richter for this!
+
+Version 5.18-1 Beta
+- Autocomplete list of address book matches when entering recipients now
+  has an "X" button at the end of each line which deletes that entry.
+- Lists of drop-offs now show if the drop-off has been picked up, and if
+  it was encrypted.
+- Selecting a drop-off from any list of drop-offs now shows it in a new tab.
+- New command /opt/zendto/bin/autorequest will generate a request for a
+  drop-off from a script. Run it with no parameters to see the usage.
+  If you want to use this, you will need to create a user specifically
+  for the automation to use, and set it in the new 'automationUsers'
+  setting in preferences.php.
+  The autorequest gives you a return code back and a bit of JSON to say
+  what happened.
+- "upgrade_preferences_php", and hence also "upgrade", have been improved
+  to fix problems for people using LDAP but not AD, as they highlighted
+  a lacking in the intelligence of the tool.
+- Lists of drop-offs show a tooltip explaining the "Picked up" column.
+- Log clean virus scans of new drop-offs as well as viruses and errors.
+- Logo image should display better now if it's a bit too tall.
+- Security fix highlighted by Michael Radford. All users should upgrade.
+- Fixed string formatting bug when a user tries to send a drop-off request
+  with a Subject: line that is too long. Thanks for Tobias Tafart for this fix!
+- Installer for RHEL8 is now working, except for ClamAV which needs to come
+  from EPEL but there isn't an EPEL archive for RHEL8/CentOS8 yet. Don't want
+  to use the 7 archive as I'm hoping the clamd problems will get fixed.
+
+Version 5.17-6 Production Release
+- Logging bugs fixed when removing drop-offs.
+- Fixed bugs in sbin scripts so they now locate the ZENDTOPREFS
+  environment variable correctly. The default cron job definitions always
+  supplied the path of the preferences.php file anyway, so this bug had no
+  effect.
+
+Version 5.17-5 Beta
+- Added FreeBSD 11.2 and 12 support to the Installer.
+- Greatly improved new "upgrade" tool so it works with tgz-based
+  ZendTo installations (e.g. FreeBSD) as well as rpm and deb systems.
+
+Version 5.17-4 Production Release
+- Minor logging bug fixed.
+
+Version 5.17-3 Production Release
+- Bug in drop-off download page fixed.
+
+Version 5.17-2 Production Release
+- Improved "upgrade" tool to handle either of the vaguely sensible answers
+  to the apt or dpkg "which config file do you want to use?" prompt.
+- Improved "upgrade" to tell you more about what it's doing.
+- Improved deb and rpm installations so nothing under /etc will get touched
+  if you have modified the default supplied files.
+- Fixed bug where files of exact multiples of 65536 bytes would refuse to
+  download if encrypted.
+
+Version 5.17-1 Production Release
+- New features since 5.15 are:
+- Simplified upgrading the zendto.conf and preferences.php files.
+  There is now a simple "upgrade" utility in /opt/zendto/bin that
+  automatically does the whole job for you.
+  When upgrading the package on Ubuntu or Debian, just accept the
+  defaults if apt asks you what it should do about the config files.
+- Added new utility "extractdropoff" which will extract the files from
+  a drop-off to the current directory, given a ClaimID. It will prompt
+  for the passphrase if the drop-off is encrypted.
+- Added cs_CZ and Galego (aka Galician) translations,
+  thanks to Dizzy Easy and Manty!
+- LDAP and AD servers can now be specified as hostname:port in case you
+  need to use port 3268, which helps if you get partial results from AD.
+- Documented that if you set 'languageList' to array() then the language
+  picker does not appear at all.
+- Fixed Installer for latest changes in CentOS 7. If you hit problems with
+  virus-scanning failing on existing installations on CentOS or RedHat 7,
+  run this command as root: "groupmems --group virusgroup --add apache"
+  and then "systemctl restart httpd".
+- Fixed all known bugs. Details in the beta changes below.
+
+Version 5.16-8 Beta
+- Fixed rounding bug in disk free space measurement.
+- Improved "upgrade" utility to more reliably find your config files.
+
+Version 5.16-7 Beta
+- Hopefully AD login bug is now resolved.
+- Nightly cleanup job should no longer risk deleting drop-offs that
+  are being created precisely when it runs.
+- New Galego (aka Galician) translation. Thanks Manty!
+
+Version 5.16-6 Beta
+- Simplified upgrading the zendto.conf and preferences.php files.
+  There is now a simple "upgrade" utility in /opt/zendto/bin that
+  automatically does the whole job for you.
+  When upgrading the package on Ubuntu or Debian, just accept the
+  defaults if apt asks you what it should do about the config files.
+- Fixed bug with changing locale when ZendTo does not have its own
+  VirtualHost.
+- Improved error handling at end of new drop-off to try to avoid the
+  dreaded your-upload-file-but-dont-know-why error. Key in this situation
+  is to check your Apache error log, that will tell you why.
+- Authentication flow changed to stop your authentication servers getting
+  repeated auth attempts even after ZendTo has locked out the user.
+- LDAP and AD servers can now be specified as hostname:port in case you
+  need to use port 3268, which helps if you get partial results.
+- Entering the decryption passphrase by pasting with a mouse is now
+  detected correctly.
+- Changed styling of your logo image so that it's clipped horizontally
+  only. If too tall it will overlap the content below it.
+- Documented that if you set languageList to array() then the language
+  picker does not appear at all.
+- Improved error detection at end of upload process so email template
+  errors are handled much better, and logged.
+- Improvements to encrypt/decrypt passphrase dialogs.
+- Added an id to a div in main.js for Gray McCord.
+- Fixed bug where pick-up CAPTCHA could be bypassed.
+- Fixed security vulnerability in graphs page. Thanks to Eric Eckman.
+- Added cs_CZ translation, thanks to Dizzy Easy!
+
+Version 5.16-5 Beta
+- Fixed logic governing when to show re-send details when looking at a
+  drop-off.
+
+Version 5.16-4 Beta
+- Various bug fixes highlighted by Marcel Richter.
+- Reduced memory limit given to code that generates encryption key from
+  user's passphrase. It did need over 368MB each time, which could easily
+  cause a busy ZendTo server to exceed available RAM. Reduced to 67MB.
+- Improved error reporting by extractdropoff utility.
+
+Version 5.16-1 Beta
+- Fixed font size of textareas, particularly on Firefox.
+- Description of each file not shown in new-dropoff email message if the
+  sender has not supplied a description.
+- Fixed bug where multiple (near-)simultaneous uploads of large encrypted
+  drop-offs could cause failures to process the new drop-offs.
+- XSS vulnerability fixed (thanks Lorenzo Nicolodi <lo@microlab.red>!).
+- New-dropoff email message now tells the user if the drop-off is encrypted,
+  and that they need to get the passphrase from the sender.
+- Fixed Installer for latest changes in CentOS 7. If you hit problems with
+  virus-scanning failing on existing installations on CentOS or RedHat 7,
+  run this command as root: "groupmems --group virusgroup --add apache"
+  and then "systemctl restart httpd".
+- Improved makelanguages so new phrases will automatically pick up my
+  supplied translations if there isn't already one you've supplied/modified.
+- Main menu template slightly changed to allow for HTML tags to be inserted
+  in translations/localisations.
+- Renamed commands in /opt/zendto/bin so they don't have ".php" on the end.
+- Wrote utility "extractdropoff" which will extract the files from a drop-
+  off to the current directory, given a ClaimID. It will prompt for the
+  passphrase if the drop-off is encrypted.
+- Fixed template layout bugs when text in buttons gets split over 2 lines
+  due to long translations necessary for some languages.
+
+Version 5.15-1 Production Release
+- New features since 5.13 are:
+- Removed feature allowing the recipient to delete the drop-off if ZendTo
+  thinks there is only 1 recipient, as ZendTo may well be wrong!
+- Removed MyZendTo functionality completely. No one has used it for years.
+  Note this affects the command-line syntax of bin/adduser.php.
+- Changed "Add Recipient" dialog so it has "Add" and "Add & Close" buttons
+  to make it more obvious for mouse-based users as to how to close the box.
+  The buttons will scale vertically to be the same height regardless of the
+  length of the translated text in them.
+- Added 5 new preferences.php settings purely to control whether users
+  can see the 5 checkboxes in the new drop-off form.
+- Added new preferences.php setting 'defaultConfirmDelivery' to set default
+  value of whether to send an email when anyone picks up your drop-off.
+- Added new preferences.php setting 'defaultEmailRecipients' to set default
+  value of whether any emails are sent to recipients of a new drop-off.
+- Added support for 3rd Active Directory forest.
+- Stripped pointless comments from zendto.po language files to make them
+  easier to "diff". "makelanguages" will remove them for you.
+
+Version 5.14-5 Beta
+- Got fr_FR de_DE es_ES pt_BR translation updates.
+- Done Google Translate translations for the 3 new phrases in it_IT and
+  nl_NL for now.
+- Fixed RPM so it should quietly remove any remains of MyZendTo.
+
+Version 5.14-2 Beta
+- Removed MyZendTo completely. No one has used it in a long time.
+- Added 5 new preferences.php settings purely to control whether users
+  can see the 5 checkboxes in the new drop-off form.
+- Added support for 3rd AD forest.
+- Added new preferences.php setting 'defaultConfirmDelivery' to set default
+  value of whether to send an email when anyone picks up your drop-off.
+- Added new preferences.php setting 'defaultEmailRecipients' to set default
+  value of whether any emails are sent to recipients of a new drop-off.
+- Changed "Add Recipient" dialog so it has "Add" and "Add & Close" buttons
+  to make it more obvious for mouse-based users as to how to close the box.
+  The buttons will scale vertically to be the same height regardless of the
+  length of the translated text in them.
+- makelanguages will now restore SELinux file attributes on /opt/zendto
+  if you are using SELinux.
+- Uncommented the LDAP authenticator settings in preferences.php, so if
+  you are using LDAP (not AD) you won't get your LDAP settings commented
+  out every time you use upgrade_preferences_php.
+
+Version 5.13-2 Production Release
+- Removed feature where lone recipient could delete the drop-off.
+- Minor updates to Dutch translation.
+- Installer fix for php7.2-mbstring in Ubuntu 18.04.1.
+
+Version 5.13-1 Production Release
+- This is a summary of new features & updates since 5.11.
+  See the individual beta release notes below for more detailed information.
+- Users can change language themselves on-the-fly while using ZendTo.
+- Process for internal users creating a new drop-off has been streamlined,
+  making it a lot faster to use in simple cases.
+- After creating a new drop-off, the sender can easily copy the direct
+  pick-up link to their clipboard, in case they would rather send their
+  own email to the recipients than have ZendTo send an automated one.
+- Improved page layout of new-dropoff and results pages to reduce scrolling.
+- Improved page layout of new-dropoff form in many other minor ways.
+- Can now hide all traces of ".php" extensions in the web interface
+  and all emails+links generated by ZendTo, so your users don't see
+  that it is written in PHP. Note this requires modification to your
+  Apache config, see the preferences.php setting 'hidePHP' for details.
+  All existing published links will continue to work as before.
+- Active Directory authentication now supports TLS as well as SSL.
+- Improved logging of new drop-offs so you can measure feature usage.
+- zendto.log file now auto-rolled by logrotate, and default location
+  moved to /var/log/zendto instead of /var/zendto.
+- Default Apache log file location moved slightly to separate out ZendTo
+  web logs from other virtualhosts.
+- 'X-Frame-Options' header added (configurable), and 'SameSite' cookie
+  attribute added to improve security of ZendTo against CSRF attacks.
+- Increased default timeouts for 'cookieTTL' and PHP settings on new
+  installations to 8-12 hours instead of 2 hours.
+- Installer fixed for Ubuntu 18.04.1 due to significant Apache and PHP
+  changes by Ubuntu, compared to 18.04.
+- Improved upgrade_preferences_php so it correctly handles arrays split
+  over several lines.
+- Fixed all known bugs.
+
+Version 5.12-8 Beta
+- Updated translations, and new Italian translation.
+- Improved styling of ZendTo logo so it won't destroy the page formatting
+  if it's too wide.
+- The Active Directory authenticator now supports TLS as well as old SSL.
+  There are a couple of new preferences.php options to enable it.
+
+Version 5.12-7 Beta
+- After creating a new drop-off, the box showing the Claim ID and Passcode
+  now also gives a direct download link for extra recipients. Also
+  improved the display and layout of this box.
+- There is now also a "copy to clipboard" button to grab the link easily.
+- Fixed checkboxes on new drop-off form so text lines up correctly when it
+  has to wrap onto another line.
+- Long filenames on new drop-off form are now better displayed, truncated
+  with an ellipsis.
+
+Version 5.12-6 Beta
+- Set default for 'skipSenderInfo' to TRUE as it speeds up creating a new
+  drop-off.
+- "New drop-off" form now automatically asks for the 1st recipient, saving
+  the user a click (and having to think what they need to do).
+- Layout of "New drop-off" and "Show drop-off" pages improved so they are
+  shorter, so require less scrolling on small displays.
+
+Version 5.12-4 Beta
+- "New drop-off" form now automatically asks for at least 1 recipient,
+  saving the user 1 click.
+- Installer fixed for Ubuntu 18.04.1 as Apache behaviour had changed and
+  core modules in PHP 7.2 had changed.
+
+Version 5.12-3 Beta
+- Added new 'hidePHP' option in preferences.php to allow you to hide the
+  fact that ZendTo is written in PHP. It removes all ".php" extensions
+  from URLs and emails. To use it, read the comments above it in
+  preferences.php as you will need to add a section to your Apache config.
+- Added new 'skipSenderInfo' option in preferences.php. Setting this to
+  TRUE will simplify the "new drop-off" process for logged-in users by
+  skipping the entire form that confirms "Information about the Sender".
+- Added a language picker to the top "tab" buttons. It remembers your
+  choice in a browser cookie. Set the contents and order of the list with
+  the 'languageList' setting in preferences.php
+- Moved default location of zendto.log from /var/zendto to /var/log/zendto.
+- Configured logrotate to roll the zendto.log monthly unless it gets huge.
+  This applies to both /var/zendto and /var/log/zendto directories.
+- Improved logging of new drop-offs so you can see if they were encrypted,
+  and if they came from external or internal users.
+- Fixed bug where "new drop-off" form would not work correctly when using
+  Dutch translation.
+- Fixed bug where 'X-Frame-Options' preference wasn't checked when sending
+  HTTP headers when downloading individual files from a drop-off.
+- Fixed bug in nightly cleanup script where it would fail if preference
+  'warnDaysBeforeDeletion' was not zero, and it needed to warn any drop-off
+  recipients that the drop-off(s) for them were about to expire.
+- Fixed bug where SQLite3 could fail to do database queries with multiple
+  concurrent users on a few systems.
+- Fixed bug so admin and stats users are looked up case-insensitive.
+- Improved Installer to set the 'cookieSecret' in preferences.php.
+- Fixed Installer bug where it was putting in the wrong "Header" line into
+  the Apache site definition config files. The line right near the top of
+  your 2 conf files should say
+      Header edit Set-Cookie ^(.*)$ $1;SameSite=Lax
+  where you may well be missing the "$1".
+- Changed Installer to put ZendTo Apache logs in their own files in the
+  normal Apache log location, not just mix them into ssl_error_log and
+  ssl_access_log.
+- Changed Installer to set max_execution_time and max_input_time PHP
+  settings to be 8 hours instead of 2. These 2 settings limit the max
+  time an upload can take.
+- Improved upgrade_preferences_php so it correctly handles arrays whose
+  contents are split over several lines.
+- Changed default preferences.php value for 'cookieTTL' from 2 hours to 12.
+  This limits the maximum length of a ZendTo login session, and 2 hours
+  is way too short.
+- Added a tiny check to avoid a harmless PHP warning.
+
+Version 5.11-6 Production Release
+- Added Dutch (nl_NL) translation, with many thanks to Marcel de Leeuw.
+
+Version 5.11-5 Production Release
+- Added new setting "advertisedServerRoot". This will only be of interest
+  to very few sites, who embed ZendTo within an iframe of their corporate
+  website. It allows for different URLs to be sent in emails to customers,
+  from the usual 'serverRoot' setting that is used internally.
+  Sites not needing this feature can just leave it set to its default ''.
+- Changed www/favicon.ico so it won't get over-written on upgrades if you
+  have changed it for your own logo. Thanks to Marcel Richter for letting
+  me know about this.
+- Removed a couple of print statements from rrdIinit.php so the nightly
+  cron job won't send you email every time it runs. Thanks to Steve Mokris
+  for telling me about this one.
+
+Version 5.11-4 Production Release
+- Rolled back to previous cookieconsent library as the tiny tab doesn't work.
+- Full HTTP security headers applied to graphs and downloads.
+- Added new setting "ConfirmExternalEmails" (default is TRUE), for sites
+  that don't want to bother checking external senders own the email address
+  they are sending from. External senders still have to pass a CAPTCHA.
+- Re-ordered the preferences.php file a bit to hopefully group related
+  options together. /opt/zendto/bin/upgrade_preferences_php will re-order
+  your current preferences.php file for you.
+
+Version 5.11-3 Production Release
+- Fixed bugs with 'X-Frame-Options' setting, and allow it to be disabled.
+- Fixed bug where localIPSubnets setting did not handle complete IP addresses
+  correctly.
+- Updated to latest cookieconsent library.
+- Added "Header" rules to Apache configuration to add the "SameSite: strict"
+  attribute. This will help modern browsers defend against CSRF attacks.
+  This is only applied by the Installer on new installations. This will have
+  no effect at all on existing installations.
+  WARNING: This will cause problems if you embed the ZendTo website in an
+  iframe. Don't worry, very few sites do and you will definitely know it if
+  you do this.
+- Removed long-dead 'useRealProgressBar' setting from preferences.php.
+
+Version 5.11-2 Production Release
+- Added note to drop-off summary at the end of uploading files, to tell the
+  user their files have been sent successfully.
+- Added 'X-Frame-Options' setting in preferences.php for those who need to
+  embed ZendTo in a frame or iframe on their website.
+- The apt/yum repositories are now signed as are the new deb/rpm files
+  in them. You will need to fetch the new zendto-repo.deb or zendto-repo.rpm
+  files and install them first. See the downloads.php page for how to
+  install the key if you are using Ubuntu/Debian.
+  (Yum systems do it on their own)
+- Added GPG support to the Installer (except for SuSE).
+- Added GPG support to the Installer (including SuSE).
+- Added SLES 15 support to the Installer.
+
+Version 5.11-1 Production Release
+- New preferences.php setting 'SMTPsetFromToSender' to control whether email
+  messages sent by Zendto always come from the address in zendto.conf (false)
+  or whether, where possible, the sender address should be set to the
+  address of the person to whom replies would go (true).
+  Before 5.10 this was always false, 5.10 changed the behaviour to true.
+  The default is now false again, but you can set it yourselves as needed.
+  Those using Exchange or Office365 as their SMTP server should leave this
+  set to false, as Exchange doesn't let you send mail as anyone except
+  addresses belonging to the username you logged in as (ie SMTPusername).
+- New preferences.php setting 'allowExternalLogins' (true by default). It
+  can be used to stop people outside local IPs being able to login at all.
+  Apparently a few sites need this.
+- Changed "OrganizationShortType" in zendto.conf so it includes "the" as
+  well as the word "University" or "Company" or whatever you chose.
+  YOU WILL NEED TO CHANGE YOUR zendto.conf FILE TO ADD "the".
+  upgrade_zendto_conf will warn you about this.
+- For the LDAP authenticator, there is a new setting 'authLDAPEmailAttr'
+  to be used if email addresses are not stored in the 'mail' attribute.
+- Added cron job every 4 hours to delete incoming files older than 4 hours.
+  This should help to keep /var/zendto/incoming clean.
+- Installer now fully supports encryption/decryption on SUSE and openSUSE.
+- Added notes in preferences.php on how to disable the checksum and/or
+  encryption features.
+- Added notes in preferences.php about when and how to use SMTPdebug
+  correctly.
+- Removed big blue "Login" button from main menu "column of buttons" if
+  the mini login box is also showing.
+- Improved wording under mini login box.
+- Updated copy of moment.js, used when sorting drop-offs by date.
+- Double-checked to ensure cookies are always https-only when using an
+  https site (cookie_secure flag).
+
+Version 5.10-2
+- Fixed bug in rpm post-install script where it would try to create the
+  database when it shouldn't.
+- Improvement to Installer to correctly detect if zendto-repo package is
+  already installed.
+
+Version 5.10-1
+- "Production" release of the latest version.
+- SUSE users - please note I have not yet tested the installer to see if
+  it gets the right version of PHP by default. You either need PHP 7.2,
+  or 7.0/7.1 if you then do "pecl install sodium".
+
+Version 5.09-13
+- Added secure encryption and decryption of drop-offs.
+  Note: this requires PHP 7.2 if at all possible, else at least PHP 7.0.
+  It also requires the PHP "sodium" extension to be installed, along with
+  its dependency package "libsodium".
+  Please run the beta installer on your system, as that will apply the
+  necessary upgrades correctly for you.
+- Encryption can be enforced, so the user cannot turn it off.
+- Minimum encryption passphrase length can be set.
+- You can optionally make the user agree to cookies and use of personal data.
+  They can ignore it, they cannot dismiss it.
+- Blocked features on "new drop-off" form are now not shown at all.
+- Tiny files now show in the "new drop-off" form as being "<0.1 KB"
+  instead of "0.0 KB".
+- I have dropped support for Ubuntu 12, but added support for Ubuntu 18.
+- So far the beta installer is tested on new installations and *upgrading*
+  existing installations on Ubuntu 14/16/18, CentOS 6/7, RedHat 6/7, Debian 8/9.
+- Email sending behaviour slightly changed. If the domain of the "From"
+  address is the same as the "EmailSenderAddress" set in zendto.conf,
+  it will send the message entirely "from" the person who sent it,
+  i.e. not the EmailSenderAddress. This means that the From: header and
+  Reply-To: header will match, which should alleviate problems with Gmail
+  spam detection.
+  However, if the domain doesn't match, then it works exactly as before,
+  so that you don't hit SPF, DKIM "d=" and DMARC problems when the recipient
+  gets the message.
+  The net result is that emails telling "external" users about new drop-offs
+  from "internal" users are more likely to get through to them.
+- Added a sentence to the "security" page mentioning the encryption feature.
+- Updated Spanish and Brazilian Portuguese translations.
+
+Version 5.04-7
+- Added "Download All Files" button to ease fetching drop-offs.
+  Note this does not work or appear on Internet Explorer.
+- Added installer support for SUSE Enterprise 12 and openSUSE Leap 15.
+- Files in a drop-off are now listed in they order they were added,
+  not ordered by filename.
+- Security: Local users' passwords are now encrypted much more securely.
+  This change will be automatically applied to existing users' passwords
+  when they first login after updating to at least this version.
+- Security: Improved security of the session cookies.
+- Security: ClaimID and Passcode now more secure (PHP7 only).
+- Security: Disabled directory browsing.
+- Removed the compiled language files (*.mo) from the package. The
+  rpm and deb packages' built-in post-installation scripts will build
+  them for you.
+
+Version 5.03-1
+- Fixed minor translation bug in show_dropoff page (wasn't translating "files".
+- Tiny change to Facebox setup code to work better with load balancers /
+  reverse proxies. Thanks to John Thurston for this.
+- "Request for a drop-off" email now has Subject: line tag.
+  Thanks to Stanislav Telipský for this.
+- On the "Unlock Users" page, both "Unlocked ..." and "Unknown user" are
+  now translated.
+- The lifetime of a request code is now shown in the user interface and
+  included in emails. The length of time displayed is a slight approximation
+  of the exact request code lifetime, to make it easier to read.
+- Fixed security bug to do with insufficient checking of MIME type strings.
+- Reinstated and improved text on About page explaining how to drop-off
+  many files at once.
+
+Version 5.02-5
+- Some sites may not want to show internal IP addresses or hostnames to
+  anyone external in emails. I have added a new preferences.php setting
+  'emailSenderIP' which you can set to FALSE to stop the sender's hostname
+  or IP address appearing in any emails about drop-offs or pick-ups.
+- Installer: Set "AllowSupplementaryGroups yes" in /etc/freshclam.conf,
+  so freshclam can correctly notify clamd about database updates.
+- Bug fixed where drop-offs could be re-sent to recipients, despite the
+  'allowEmailRecipients' setting being FALSE.
+  Web page footer now shows user's username and email address as a tool-tip.
+- Added more HTTP security-related headers:
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: no-referrer
+  See https://www.owasp.org/index.php/OWASP_Secure_Headers_Project for
+  more info.
+- Removed clamd from RPM dependencies, as it's an optional feature.
+- Changed last few remaining "(email-address)" to "<email-address>" in
+  templates.
+- Fixed bug where the note was missing from the emails of re-sent drop-offs.
+- Added client IP address to zendto.log entries.
+- Fixed bug where old MySQL-based setups might have mimeType too short.
+  If this is the case, it will be automatically fixed overnight.
+- Fixed bug where email sent notifying a drop-off sender of a pick-up would
+  still mention an IP address when they shouldn't.
+
+Version 5.01-5
+- Added checksums to drop-offs. Due to the computation time required, there
+  is a max size set 'maxBytesForChecksum' in preferences.php, over which
+  ZendTo will refuse to do checksumming. It currently does an SHA-256
+  checksum of each file, but this can be changed in preferences.php with
+  the 'checksum' setting.
+- Email delivered to sender when a recipient first picks up a drop-off now
+  contains all the information about the drop-off as well, so that the
+  sender receives an emailed copy of all the checksums (if calculated).
+  This saves the sender having to "screenshot" (or similar) the drop-off
+  summary page shown when it is created, just to have a record of what
+  was in it.
+- Added header to prevent ZendTo being wrapped in an iframe. Thanks to
+  Ryan Stepalavich for reporting this problem!
+- Accented characters in the name of the sender of a Request should now
+  be displayed correctly in the summary page of the resulting drop-off.
+- Emails are no longer incorrectly downgraded to 7bit us-ascii,
+  which was destroying accented characters in some emails. Thanks Francis!
+- Bug fixed where nightly cron job did not automatically fix DB schema error
+  in MySQL table "dropoff" column "note". Does not affect SQLite at all.
+- Installer setup of ClamAV on RedHat 7 improved to make clamdscan much
+  more likely to work first time.
+- "makelanguages" no longer word-wraps the translated strings, so running
+  "diff" on the .po files should be much easier in future.
+- "new drop-off" form template changed to get the name of your favourite
+  encrypting zip tool from zendto.conf.
+  NOTE translators: this means the "msgid" string referring to 7-Zip now
+  refers to %2 instead.
+- Improved formatting of senders and recipients in lists of drop-offs.
+  Thanks Stéphane!
+  Minor reformat of web page footer.
+
+Version 5.00-2
+- The word "Sender" in the HTML version of the "new dropoff" email message
+  was not being translated.
+- The word "To" in the "new dropoff" form was not being translated.
+- Fixed " to ' which caused problems generating error message for some
+  failed drop-offs (external users trying to send to other external users).
+  Note: this has added 1 phrase to the translations, which will need an
+  update from all my wonderful translators. Look for "You must be logged"
+  and you'll find it.
+- Added Brazilian Portuguese (pt_BR) translation. Many thanks to Everton
+  Bernardi for this!
+- Installer: No longer rebuilds PHP except on Ubuntu 14 and earlier, and
+  CentOS / RedHat 5 (which is now dead anyway).
+- Installer: No longer prompts for timezone unless it really has to, works
+  it out automatically on almost all systems.
+
+Version 5.00-1
+- Major new release, including the following highlights:
+* More modern user interface graphics, borrowed heavily from the great work
+  done by Mitchell St. Amant <mstamant@nnet.ca>.
+* Drag-and-drop support for adding multiple files at once to a new drop-off.
+* Multiple file selection supported for adding multiple files at once to a
+  new drop-off.
+* Internationalisation (i18n) support via gettext.
+  Translations from US English to British English, French, German and
+  Spanish are provided so far. More translation volunteers wanted!
+  Please see http://zend.to/translators.php for more information.
+* All libraries updated to latest versions.
+  (jQuery, jQuery-ui, Facebox, DataTables, PHPMailer)
+* Internet Explorer 8 is no longer supported. If you absolutely must have
+  support for IE 8, please use ZendTo version 4.
+* "Request Codes" are now 3 3-digit numbers by default, but can be switched
+  back to the old 3 3- or 4-letter words.
+* New preferences added to totally disable emailing recipients about new
+  drop-offs, and to disable ability to put Passcode in those emails.
+* New tick-box when creating a new drop-off, so you can choose not to send
+  the Passcode to the recipients, only the Claim ID. When they click the
+  link they receive, they are prompted to enter the Passcode necessary.
+- Many other minor enhancements and fixes for all reported/known bugs.
+
+Version 4.99-10 Beta
+- Hopefully the quoting might work now. Many thanks to Stephane for finding
+  these bugs for me!
+
+Version 4.99-9 Beta
+- Drop-offs now show pretty icons for different filetypes. Many thanks to
+  Karl Bundy for suggesting the idea, and Adam Thorn for finding some
+  good looking icons!
+- Bug fix for international characters missing from organisation name.
+- Various other over- and under- quoting/escaping bugs fixed.
+- Text boxes widened as requested.
+- Pickup check box now displays button centred.
+
+Version 4.99-6 Beta
+- Typos ("downlads"->"downloads") fixed in about.tpl.
+- Updated French translation.
+- Added Spanish translation.
+- Fixed email language encodings problem with latest versions of PHPMailer.
+
+Version 4.99-5 Beta
+- File size in new-dropoff form won't word-wrap now.
+- Added back what German translation I have so far.
+- Deleted stray blank line from end of rrdUpdate.php.
+- Tweaked upgrade_zendto_conf so it fixes the "CSSTheme" value to "swish2".
+- Fixed security vulnerability in New Drop-off form (thanks for Guido Steiner
+  for pen-testing ZendTo!).
+- .deb file should handle config/locale files correctly now.
+
+Version 4.99-4 Beta
+- Newly updated "flatter" user interface graphics, borrowed heavily from
+  the great work done by Mitchell St. Amant <mstamant@nnet.ca>.
+- Drag-and-drop support for adding multiple files at once to a new drop-off.
+- Multiple file selection supported for adding multiple files at once to a
+  new drop-off.
+- Internationalisation (i18n) support via gettext.
+  Please see http://zend.to/translators.php for more information.
+- All libraries (jQuery, jQuery-ui, Facebox, DataTables) updated to latest
+  versions.
+- Internet Explorer 8 is no longer supported. If you absolutely must have
+  support for IE 8, please use ZendTo version 4.
+- "Request Codes" are now 3 3-digit numbers by default, but can be switched
+  back to the old 3 3- or 4-letter words.
+- New preferences added to totally disable emailing recipients about new
+  drop-offs, and to disable ability to put Passcode in those emails.
+- New tick-box when creating a new drop-off, so you can choose not to send
+  the Passcode to the recipients, only the Claim ID. When they click the
+  link they receive, they are prompted to enter the Passcode necessary.
+- Bug fix: 'warnDaysBeforeDeletion' used to warn about drop-offs that had
+  been picked up in some cases.
+- All traces of the old "AreYouAHuman" captcha removed.
+- Bug fix: When picking up a drop-off, the email address passed in the link
+  was not being verified, so opened up a means of attack.
+- Bug fix: If you knew a valid Claim ID, you could attempt to guess the
+  corresponding Passcode by brute force.
+- Many other enhancements and bug-fixes.
+
+Version 4.28-2
+- Fixed bug where reminder emails are missing the server URL.
+
+Version 4.28-1
+- Production release.
+
+Version 4.27-7
+- Pickups from IPv6 addresses should work correctly now.
+
+Version 4.27-6
+- Email messages now render correctly in all the email clients I can test.
+
+Version 4.27-5
+- Outlook-friendly HTML email messages, that should render correctly.
+  Note that the email-logo.png has moved into /opt/zendto/www/images/email.
+
+Version 4.27-4
+- Removed the large empty yellow space at the right end of the login box.
+  This is a CSS change to swish.css (look for "width:" within "loginForm"),
+  the value has changed from 550px to 500px.
+- Fixed bug where errors during creation of a new drop-off were not shown
+  in the resulting "New Dropoff" page.
+- Added new preferences.php setting 'bccExternalSender'. If 'bccSender'
+  is set to TRUE, then that Bcc will only be sent to *external* users if
+  this new setting is also set to TRUE. By default it is set to FALSE so
+  as not to confuse external senders.
+- The parser for internaldomains.conf will now ignore any leading '*.'
+  at the start of any line, to make it more tolerant of user errors.
+- Re-enabled LDAPS support and added proper SSL and StartTLS support for
+  LDAP authentication services.
+
+Version 4.27-2
+- Added new 'Multi' authenticator. This does no authentication directly
+  itself. Instead you give it a list of authenticator names to try in
+  sequence, each of which is configured as normal. See the new setting
+  'authMultiAuthenticators' in preferences.php for more information.
+- Fixed bug (again) where setting 'warnDaysBeforeDeletion' to 0 did not
+  disable warning emails.
+
+Version 4.27-1
+- Improved "New Dropoff" form so it's much clearer for users.
+  Note: addition to CSS style file swish.css.
+- Switched over "Request a Drop-off" and "Pickup..." buttons in main
+  menu for logged-in users.
+- Added 'upgrade_zendto_conf' to help you upgrade your zendto.conf file.
+- Changed default for 'showRecipsOnPickup' from TRUE to FALSE, and added
+  a short description of what it does.
+- Instead of pausing at 100% while virus-scanning uploads, the progress
+  bar now displays a 'scanning for viruses...' message. This is just a
+  change to new_dropoff.tpl template file.
+- Installer now also creates a complete SSL https version of the website,
+  using a self-signed certificate. It will even offer to redirect all
+  http connections to the https site automatically. All you need to do
+  for production use is get yourself a proper SSL certificate and drop
+  the files in the right places.
+- CentOS 5 and RedHat 5 can no longer be built as the packages have all
+  been removed as they are end of life.
+- CentOS have mucked up their SRPM repository for CentOS 6, so only
+  sources for version 6.8 currently exist, despite 6.9 being the current
+  version. I've improved the installer so it looks from the current version
+  all the way down to 6.1 then 6, trying to find a working source repo.
+  It then uses the latest version it can find.
+- Logging to /var/zendto/zendto.log is now much more readable.
+- Inbox now looks and behaves like Outbox, with sort and search.
+- upgrade_preferences_php and upgrade_zendto_conf now tell you about
+  newly added and removed settings, so you know what to check.
+- Moved a few words used in the UI out of the code and into zendto.conf
+  so you can translate them more easily. Thanks to Thomas Texier.
+- Installer now sets up your internaldomains.conf file, based on the
+  domain name (excluding sub-domains) of your server. Thanks to the DMARC
+  folks for the elegant code to calculate this.
+- Fixed RPM spec file error. The error was actually harmless, but looked bad.
+- Reminder warnings can be disabled by setting 'warnDaysBeforeDeletion' to 0.
+
+Version 4.25-3
+- This version includes several new settings in preferences.php.
+  I strongly recommend the use of
+  /opt/zendto/sbin/upgrade_preferences_php
+  to automatically upgrade your existing file.
+  Run it without any arguments and it shows you how to use it.
+- There are changes to zendto.conf for the HTML email templates, and a
+  new error message. Be sure to check your file includes all the extra
+  new settings.
+- Added PHPMailer to enable HTML email, TLS encryption and SMTP auth.
+  NOTE: its use is entirely optional, and disabled by default
+  (so the old email code will be used instead).
+  Note: the HTML email templates (/opt/zendto/templates/*_email_html.tpl)
+  are optional. If they don't exist, it will continue to send only plain-
+  text emails.
+  Read the docs in preferences.php just above the 'SMTPserver' setting
+  for more information and tips.
+- Wrote HTML versions of all the email templates for you to start from.
+  For simplest deployment, copy www/images/email-logo.png and replace it
+  with your organization's logo of the same height. For more details,
+  see the templates. They all have "email" and "html" in their name.
+- Progress bar now works better on 64-bit browsers. Does not require
+  APC or APCu modules. Works fine on Ubuntu 16 and PHP 7.
+  Many thanks to Milan Babel for showing me how to do this!
+- New setting 'allowExternalUploads' allows you to stop external users
+  (who cannot login) being able to send files to people inside your
+  organisation unless they had been explicitly sent a request for the file(s).
+  Note this adds a new error message to zendto.conf as well.
+- Installer updated to not build APC/APCu module.
+- Installer updated to configure PHPMailer instead of sendmail/postfix.
+- Upgraded to very latest version of Smarty template engine 3.1.
+- Fixed bug in cron job that sent out reminders containing broken links.
+  NOTE: There is a new setting in preferences.php called 'serverRoot'.
+  This is the root URL of your ZendTo website, and must end with a '/'.
+- Reminder emails for about-to-expire drop-offs are now noticeably
+  different. (There is a slight template change to dropoff_email.tpl)
+- Broken links on "security" page fixed.
+- Bug fixed where logout didn't, on combination of Ubuntu 16 and Chrome.
+- Bug fixed where pickup notification email could refer to invalid
+  email address in very rare circumstances.
+- Installer now copes with EPEL repo pre-installed but disabled.
+- adduser.php now corrects SQLite database file ownership back to that
+  of the web server, in case you ran it before rendering the home page
+  to get the web server to create it with the right permissions.
+- Bug where empty email messages were sent (when 'SMTPserver' was
+  undefined) should now be fixed.
+
+Version 4.20-7
+- ClamAV output now logged whenever virus check fails.
+- Changed preferences.conf clamdscan command to enable logging.
+
+Version 4.20-6
+- Fixed bug where number of days to retrieve the drop-off was missing
+  from the email sent out to recipients of a new drop-off.
+
+Version 4.20-5
+- Fixed information leak where the ClaimID and Passcode were shown to
+  external users when they have made a new drop-off.
+- Minor code change to make it work on PHP 5.2 and upwards, instead of 5.3.
+- Corrected styling bug that made add multiple recipients box too large
+  on Chrome.
+
+Version 4.20-3
+- Fixed 1 more error that stopped cleanup.php working.
+- Fixed 2 typos that stopped cleanup.php working.
+- Changed IMAP authenticator to use imap_check() instead of imap_status
+  as that works much better with Exchange and Office365.
+
+Version 4.20-2
+- Fixed bug in upgrade_preferences_php which failed to update version no.
+- Numerous minor installer issues fixed.
+- Installer will now fetch the rpm/deb from the yum/apt repositories
+  if it can. This may cause a slight hitch with people testing the
+  Release Candidate, but should work fine once I update the production
+  repositories.
+- Fixed missing api.js if using visible Google reCAPTCHA.
+- Added mbstring to PHP modules installed on Ubuntu.
+- Fixed installer errors found by 'shellcheck' util.
+- Fixed Ubuntu 16 installer bug reported by Abhilash.
+- Fixed 2 more bugs reported by Mario Bischof.
+- Added tool to auto-upgrade preferences.php file,
+  in /opt/zendto/bin/upgrade_preferences_php.
+- Added support for Google's new beta Invisialbe reCAPTCHA.
+  There are instructions in preferences.php: Search for "google".
+- Moved all dirs that ZendTo ever writes to, to /var/zendto.
+  /opt/zendto can now be entirely read-only for the web server.
+- Added new "How secure is ZendTo" page, linked from the main menu.
+  You will need to adapt the text in templates/security.tpl for your own site.
+- Added new setting 'warnDaysBeforeDeletion'. If this is non-zero,
+  recipients will be nagged daily for this number of days before the
+  drop-off is auto-deleted, to remind them to download it.
+- Removed old templates-v3 dir. Irrelevant now.
+- Fixed all known vulnerabilities.
+- Drastically cut the changes made by the Ubuntu deb package. Almost all
+  of it has been moved to the new installer. Upgrading just the deb file
+  won't upset anything/anyone any more.
+- Wrote new installer. Currently RedHat+CentOS 5+6+7 &
+  Ubuntu 14+16 compatible. This replaces the VM images.
+
+Version 4.13-1
+- Updated cron jobs to never run during witching hour, and output much less.
+  Thanks to Greg Clarke for that.
+- If you need to run ZendTo over a Remote Desktop (RDP) connection a lot,
+  you may hit a display problem caused by the slow fades used in the UI.
+  If so, replace /opt/zendto/www/js/facebox/facebox.js with the "NoFades"
+  version of the file in the same directory. This disables all "fade" effects.
+
+Version 4.12-6
+- Moved jquery-ui files for "autocomplete" feature to local store.
+
+Version 4.12-5
+- Added auto-completion of previously used names and addresses of recipients.
+  Many thanks to Eythor Thorsteinsson for providing the UI part to get this
+  going.
+- Replaced support for old Google CAPTCHA with much nicer new reCAPTCHA.
+  This is now the default, give it a try! You'll need a pair of free keys
+  from https://www.google.com/recaptcha/admin.
+- You can now remove a file from the list when creating a new dropoff, just
+  click on the X to the right of the file description.
+- Resending a dropoff resets the 'created' time so the dropoff will not be
+  deleted early. Thanks to Greg Clarke for spotting this one.
+- Fixed a bug stopping you removing recipients in the middle of the list.
+- Fixed a bug reporting Invalid_email_address incorrectly when doing an
+  anonymous pickup.
+- Fixed a couple of minor bugs.
+- Fixed call-time pass-by-reference bug.
+- Fixed bug in SQLite and SQLite3 addressbook (thanks to Rini van Zetten!).
+- Fixed bug in file removing user interface so you cannot delete the only file.
+  Thanks to Bat Jamtssuren for finding the bug, and Eythor for fixing it!
+- Thanks to Eythor again, he found the perfect "X" icon. Congratulations!
+- And now it's centred correctly, too.
+- Fixed bugs caused when you delete files from the middle of the list.
+
+Version 4.11-14
+- More thorough version of fixing CVE-2013-6808.
+
+Version 4.11-13
+- Fixed posting bug in HTTP proxy code if you are using Google's RECAPTCHA.
+- Added array checks in LDAP authenticator (not AD!) for Kris Lou.
+- Fixed bug found by Richard Rogerson CVE-2013-6808.
+
+Version 4.11-12
+- Fixed bug in code to resend a Drop-off where the email address was not
+  correctly replaced. Thanks to Sebastian Tyler for this fix!
+- Fixed problem in email validation regexp in preferences.php to allow "&"
+  characters in email addresses.
+
+Version 4.11-11
+- Fixed errors in dropoff_email.tpl (template for email message sent out to
+  recipients of new dropoffs) to help with text flowing.
+- Fixed flags in call to create new SQLite3 database file. (Thanks Paolo!)
+
+Version 4.11-10
+- local.css should no longer be overwritten in RPM upgrade.
+
+Version 4.11-9
+- Fixed typo in NSSDropoff.php which stopped you disabling virus-scanning
+  of dropoffs.
+
+Version 4.11-8
+- Fixed bug in SQLite.php causing logging error in Apache log.
+- Fixed Debian installer so it won't overwrite Apache server config in
+  000-zendto.
+- Fixed bug in New Dropoff form so library files work correctly when used
+  past the first 2 file slots.
+- Fixed bug where virus scanner would always fail if all you dropped off
+  was 1 library file.
+- Removed 1 warning in AD authenticator.
+
+Version 4.11-7
+- Fixed bug in SQLite3.php causing logging error in Apache log.
+- Made SQLite3 code work nicely with PHP 5.4.
+- Moved comments around in preferences.php to make one-forest AD setup more
+  clear.
+- Fixed bug in 1-forest AD code where it would give multiple error messages
+  if the user mistyped their password and there was only 1 AD forest.
+
+Version 4.11-5
+- Added comment to preferences.php about setting AreYouAHuman "Game Style".
+- Changed IMAP authenticator so that entire input string is used as username
+  and not just bit before first ".". Thanks to Davide Bazzi for catching that.
+
+Version 4.11-4
+- Fixed bug setting up database for SQLite3.
+- Fixed bug causing warnings from NSSADAuthenticator.php on new PHP versions.
+- Fixed bug causing PHP errors from pickup.php on new PHP versions.
+- Fixed bug causing librarydesc warning in SQLite3.php.
+- Much better improvements to SQLite3 support from Artyom Aleksandrov.
+- Extended Debian installer to automatically select SQLite3 if it detects
+  that it is used on this system.
+- Fixed PHP pass-by-reference bug in download.php. Thanks Brendon!
+- Another bugfix in SQLite 3 code.
+- Implemented support for AreYouAHuman.com CAPTCHA as a good alternative to
+  the Google reCAPTCHA which many users find very difficult. See
+  preferences.php for more information and its settings.
+
+Version 4.11-3
+- Fixed bug stopping ZendTo working correctly in a sub-directory of a
+  VirtualHost. Previously it had to be at the root of its own VirtualHost.
+
+Version 4.11-2
+- Fixed bug where auto-cleanup would fail to remove some drop-offs from
+  the database, producing warnings in the web interface when all drop-offs
+  are listed by an administrator.
+- Now removes duplicate email addresses from the list of recipients.
+
+Version 4.11-1
+- Widened permissions needed for clamd to see the temporary uploaded files
+  for virus scanning.
+- Added apc.rfc1867_ttl settting to apc.ini in web site.
+- Added support for SQLite3 as present in Ubuntu 12 and higher.
+- Fixed bug where only the first recipient was shown in a list of drop-offs.
+- Changed behaviour so that the sender of a drop-off is notified when every
+  recipient picks up a file from a drop-off for the first time. Old
+  behaviour was to only notify the first time *any* recipient picked up a
+  file, giving a max on 1 email notification per drop-off, whereas now you'll
+  get a max of 1 email notification per recipient.
+- Fixed some minor "strict PHP" warnings.
+
+Version 4.10-5 29th May 2012
+- Fixed bug where Admins cannot see stats graphs, only stats viewers can see
+  stats graphs.
+
+Version 4.10-4 24th May 2012
+- Added protection against malicious attacks causing massive httpd error log
+  files caused by attempts to download non-existent files.
+- Added note to outgoing emails saying how long the recipient has to pick up
+  the drop-off before it expires.
+- Fixed bug where administrators didn't get a "Delete Dropoff" button for
+  drop-offs with more than 1 recipient.
+- Added new preferences setting 'bccSender' (switched off by default) which
+  makes the sender receive a Bcc copy of the email message sent to the 1st
+  recipient of each new drop-off.
+- Fixed various bugs where it was failing to remember library file
+  descriptions set in previous drop-offs.
+- Fixed issue with Safari 5.2 betas not restoring input focus correctly.
+- Added patch from Francois Conil to handle situation with pickups when
+  they use the form to enter drop-off details (no clicked-on link) and
+  are not using CAPTCHAs.
+- Added new preferences.php setting 'authStats'. Users listed in this group
+  can do normal user functions and also see the usage statistics graphs.
+  They cannot do any other admin functions.
+- Fixed problems with repeated CAPTCHAs being displayed when enforcing
+  human-only downloads, particularly when recipient is not logged in, and
+  enters claimid and passcode manually (i.e. not using an email link).
+- Removed disabling autocommit in MySQL, as I do want automatic COMMIT
+  except when I explicitly disable it.
+- Fixed problem with some PHP installations incorrectly reporting uploaded
+  file sizes.
+- Fixed problem with some PHP systems giving errors on ob_flush() when
+  downloading dropoffs.
+
+Version 4.09-1 26th January 2012
+- IMAP authentication now works with multi-domain sites where users login
+  with their full email address instead of just their username. Simply
+  set the "authIMAPDomain" to "" in preferences.php and it will behave as
+  you want it to.
+- Fixed bug whereby uploaded filenames containing a '%' character would
+  cause the generation of blank emails to recipients.
+- Fixed various (totally harmless) PHP notices about undefined indices,
+  courtesy of Igor Zivkovic. Also fixed bug causing maxSubjectLength setting
+  to be ignored.
+- Added FreeBSD installation guide, courtesy of Jared Davenport.
+- Added missing icons for Datatables support in "list all drop-offs".
+- Applied minor syntax patches from Igor Zivkovic. Thanks!
+- Added ability to disable virus scanning by setting command to "DISABLED".
+- Fixed bug causing fatal error in use of "Files Library" when using MySQL.
+- Fixed display bug in recent Chromes causing "Add Recipient" dialog to
+  display slightly incorrectly.
+- Fixed bug where downloads would not display properly if humanDownloads
+  is TRUE but the captchas are disabled.
+- Added new feature: the libraryDirectory can contain sub-directories.
+  If there is a subdir named the same as a username, that user will see
+  the list of files from their subdir instead of the "default" top-level
+  subdir's files. At any point, if a user ends up with no files to choose
+  from, the drop-down list is not shown in the user interface.
+  So if you make the libraryDirectory not contain any files, but just a
+  subdir for 1 user, only that user will see any sign of the "library"
+  interface at all.
+-2 If humanDownloads was TRUE, it would not correctly log the email address
+  of the user picking up the dropoff. Now fixed.
+
+Version 4.08-4 10th December 2011
+- Added new feature: each file in a drop-off can either be uploaded, or else
+  it can be taken from a library directory containing reference files which
+  you often need to send to recipients/customers. To use this feature, you
+  must enable it by setting "'usingLibrary' => FALSE," in preferences.php
+  and put the library files into the directory set by the preferences.php
+  setting 'libraryDirectory' (set to /var/zendto/library by default).
+  This must just be a single directory of files, and not contain any
+  subdirectories. You may choose to make the library directory accessible
+  by WebDAV so that administrators using either Windows or Mac systems
+  can map a network drive pointing to it. To set this up, Google for
+  either "ubuntu apache webdav" or "centos apache webdav". It's a fairly
+  simple operation provided you just want 1 fixed username and password
+  to have write access to it. Alternatively you can just sftp files into
+  it (or psftp on Windows if using "PuTTY").
+- Fixed size of download file so that the download will always download
+  the full size of the file as the file is now, not as it was when the
+  drop-off was created. If it's a library file, you might choose to replace
+  the file with another version between when the drop-off is created and when
+  recipients actually download it.
+- Fixed various bugs in new "library of files" feature, and made it only
+  appear to users who are logged in.
+- Fixed layout of filesizes in New Drop-off form, which shows up in browsers
+  capable of this (such as Chrome).
+- If you upgrade to this release and use MySQL, you will need to read
+  /opt/zendto/sql/README.MySQL and run the 2nd mysql command in there again.
+  It will not overwrite anything, but will extend the database structure to
+  support the new "file library" feature.
+
+Version 4.07-1 24th November 2011
+- Fixed background colour of upload progress dialog part so greys all match.
+- Added a new feature, to make unauthenticated users pass a CAPTCHA test
+  before they can pick-up any file. This helps protect against automated
+  Denial-of-Service attacks. It is enabled by setting "humanDownloads" to
+  true in preferences.php.
+- Improved progress bar so it never reports < 0%.
+- Requests can now be sent to multiple email addresses at once. Separate
+  the list of addresses with any combination of ";" and "," and " ".
+- International characters used in email addresses, subjects, notes and
+  domains should work properly now. Thanks to Phil (UxBoD) for this!
+- Fixed bugs in regular expressions in email function.
+- Corrected grammar mistake in show_dropoff.tpl.
+- List of all drop-offs now uses JQuery "DataTable" code to present a nice
+  list spread over multiple pages, with search and so on facilities.
+- Nice sortable lists of drop-offs ported to MyZendTo.
+
+Version 4.06-2 27th September 2011
+- Fixed 2 security problems in HTML handling.
+- Stats graphs y-axis will now always start at 0.
+- Added total size at the bottom of lists of drop-offs.
+- Fixed bug in AD authenticator where logins attempted with email addresses
+  instead of usernames were incorrectly handled. Now correctly ignores @ and
+  everything after it in the supplied username.
+- AD authenticator now handles "domain\username" logins as well as "username"
+  and "username@domain.com" type login attempts.
+- Make illegal username attempts show the user an error, previously just
+  quietly re-presented the login page.
+- Made bars wider on graphs for >= 90 days to provide some data smoothing.
+- Fixed timestamp errors from rrdInit.php which was stopping it from working.
+- Fixed more rrdInit.php database problems. Now produces sensible figures.
+- IE and Firefox will now warn you if you try to leave the page while
+  uploading a Drop-off, which would abandon the drop-off. Safari and Chrome
+  should support this feature in the future. Thanks UxBoD ! (Safari and Chrome
+  support for this feature will be added very soon.)
+-2 Fixed EOL sequence problem in deliverEmail() so all systems (Unix and
+   Windows) will send email correctly formatted.
+
+Version 4.05-2 16th August 2011
+- Changed sender address of all email messages sent by ZendTo. They are now
+  sent with the "From" address set to the value of "EmailSenderAddr" in
+  zendto.conf, and a "Reply-To" address set to the person who caused the
+  email to be sent. This should solve all your mail relaying and SPF problems.
+- Added some help text to the main menu page, so users know what to do.
+  Note that this uses a new zendto.conf setting "OrganizationType".
+- If you are using Active Directory authentication, you can search for the
+  user in more than 1 OU if you need to, in either or both forests/domains.
+  To do this, set the 'authLDAPBaseDN1' and/or 'authLDAPBaseDN2' settings
+  to be an array of OUs instead of a single OU, expressed like this:
+    'authLDAPBaseDN1' => array('OU=Staff,DC=mycompany,DC=com',
+                               'OU=Interns,DC=mycompany,DC=com'),
+  There is no need to make them arrays if you are only searching a single OU
+  in each forest/domain.
+- Been through the "request a drop-off" key word list by hand, line by line,
+  and removed 726 words that were dubious, confusing, not in common usage, or
+  awkward to spell or pronouce.
+- Added a default quota for MyZendTo users so you don't have to add a record
+  to your local MySQL/SQLite user list for everyone that can authenticate.
+- Implemented "Resend Dropoff" button in page showing a drop-off. Useful
+  when recipients fail to receive (or delete or lose) the notification email.
+- Done some clearups of MyZendTo so it doesn't show you the Claim ID or
+  Passcode of your drop-offs, as that confuses users and doesn't help.
+- Added a commented-out section to www/css/local.css showing how to make
+  the website narrower left to right.
+- Improved logging of requests sent and dropoffs deleted.
+- Added administrator-only "System Log" button to show recent log entries.
+- Upgraded to latest release of Smarty to fix error showing dropoff sizes.
+- Fixed problem with libphp5.so in CentOS x64 VM build.
+
+Version 4.03-3 29th July 2011
+- Forced usernames to all lower case when creating users, so case can be
+  safely ignored when users use ZendTo.
+- Fixed security issue with ClaimID and Passcode being given away to users.
+- Fixed bug causing "0" email address when there is no "mail" attribute in
+  the user's AD object.
+- Improved references to encryption tools in New Dropoff form.
+- Improved fixDropoffTable.php in upgrading guide to support both databases.
+- Updated URL for recaptcha admin site, where you get the keys.
+- Added checking for maxBytesForFile and maxBytesForDropoff in "new dropoff"
+  form. Only works on some browsers (eg. Chrome) as most can't do it yet.
+- Started implementation of "Resend Dropoff" button.
+- Fixed db handle bugs in fixDropoffTable.php.
+- Fixed bug in dropoff.php causing errors in some browsers. Thanks NA Jared!
+- Fixed "division by zero" errors in user database management scripts.
+- Added support for quotas to MyZendTo. Read sql/README.MySQL for upgrade guide
+- Now displays file and drop-off sizes where possible.
+- Can now sort drop-offs by contents and date in MyZendTo.
+- Made AD authenticator accept email addresses as well as usernames, for users
+  who do not understand the difference. Simply ignores @.... in the username.
+- Added RedHat 6 instructions for rebuilding PHP libraries to handle >2GB files.
+- Removed unnecessary log debug output (specifically "Comparing" line).
+-3 Fixed bug in requests where it would not allow any uploads on new browsers.
+
+Version 4.02 26th May 2011
+- Added image to "Statistics" page when no stats have been stored.
+- Added preferences.php setting 'authIMAPOrganization'.
+- Added preferences.php setting 'authLDAPOrganization'.
+- "phpfix.php" web page updated to cope with Ubuntu 11.
+- Fixed bug in template so when showRecipsOnPickup is FALSE, the Drop-Off
+  Summary page will not list the recipients (unless you're an admin).
+- Changed default supplied value of showRecipsOnPickup to TRUE.
+- Changed database table setups to 255 characters for IP address for IPv6.
+- Fixed SQL injection vulnerabilities.
+- Added new "favicon" to ZendTo websites.
+- Fixed security vulnerabilities pointed out by Patrick Gaikowski.
+- Added www/css/local.css and discourage editing of swish.css.
+- Improved image on "Statistics" page when no stats have been stored, to
+  explain why it has not drawn any graphs.
+- Implemented new user interface on MyZendTo.
+
+Version 4.01 22nd April 2011
+- Added support for non-standard http and https port numbers.
+- Fixed warning from some PHP systems about passing by reference.
+- Added support for all 8-bit characters in email messages sent out.
+- Fixed another warning about passing lvalues only.
+- Fixed problems with virus scanning failing in CentOS VMs and documentation for CentOS.
+- Added IE6 detection with warning link to Microsoft's upgrade page.
+
+Version 4.00 16th April 2011
+- Edited template so that page shown when a Request For a Drop-Off has been
+  sent now shows the name and email address the request was sent to.
+-3 Removed a load of mentions of ECS from zendto.conf.
+
+Version 3.94 6th April 2011
+- All major IE display problems fixed, with many thanks to Craig Chambers
+  for his hard work!
+
+Version 3.93 3rd April 2011
+- Fixed problem with missing email notifications to recipients.
+
+Version 3.92 3rd April 2011
+- Removed graduated blue backgrounds in buttons in IE9 as the nice corners
+  look better and we can't clip the graduated background to the corners
+  properly due to browser bugs. Prior to 9, IE cannot do rounded corners
+  anyway, so we might as well keep the graduated backgrounds.
+- Fixed script errors in IE.
+- Dropoffs now work in IE.
+- I really hate IE, it's rubbish. Give me Safari or Firefox 4 any day.
+- Rearranged "Show Dropoff" page to make it clearer.
+- Fixed bad English grammar in various templates.
+
+Version 3.91 1st April 2011 (not a joke)
+- Updated various templates.
+- Improved handling of IE7 hugely.
+- Fixed login page for local IPs.
+- Fixed problem of not sending email.
+
+Version 3.90 30th March 2011
+- Installed all files relating to new user interface.
+- Fixed bug in request page so name and email of recipient are labelled right.
+- Fixed various template problems.
+
+Version 3.75 26th March 2011
+- Added tickbox to "New Dropoff" page to allow you to not inform the
+  recipients that there is a drop-off waiting for them. If they are a
+  member of your organisation (i.e. they can log in) then they can find
+  the drop-off by listing all the "drop-offs for me" from the main menu.
+- Improved list of available characters for random ClaimID and ClaimPasscode
+  generation so they are less confusing.
+- Added checks for whitespace on the ClaimID and Passcode in the Pick-up
+  dialog, to cope with claimids that are pasted from emails with a newline
+  on the end which you can't see.
+- Changed sort order of dropoffs for and from the user to show newest first
+  instead of last.
+
+Version 3.74 19th March 2011
+- Added web page describing database structure, logging details and so on.
+- Improved help text for user management commands in /opt/zendto/bin so
+  they don't tell you about ZENDTOPREFS if it's already set.
+- Force entered usernames in login box to lower case.
+
+Version 3.73 16th March 2011
+- Improved authenticator so things still work if a user doesn't have an AD
+  or LDAP 'mail' attribute or 'cn' attribute set.
+- Improved user management scripts so adding the prefs path when it isn't
+  needed (because ZENDTOPREFS is already set) won't cause any harm.
+
+Version 3.72 11th March 2011
+- Slight rearrangement of main menu for users who are not logged in.
+- Added template variable {$islocalIP} to change the main menu depending
+- on whether your user is a local one (and so should login first) or not.
+  New preferences.php variable for this: 
+  'localIPSubnets' => array('139.166.','152.78'),
+- When you have createad a "Request a Drop-off" request, you are given the
+  request code which may be entered at the "Drop-off Files" menu to short-
+  circuit all the identification if the user cannot wait for the email to
+  arrive containing the link they need to submit their files.
+- Codes for "Request a Drop-off" requests are now a list of 3 words, making
+  them easy to dictate over the phone to a customer.
+- Moved more error messages from the code to zendto.conf.
+- Upgraded Smarty to latest release and improved packages to clean Smarty
+  cache directories when upgrading DEB, or RPM packages.
+- Removed per-authentication mechanism 'Admins' setting, replaced with 1
+  common 'authAdmins' setting which covers all authenticators.
+- Added loads more documentation.
+- Made www/css directory into config files for RPM and DEB builds.
+- Subject lines can now contain international characters. Thanks to Barry
+  Kwok for his valuable input on this.
+- Fixed problem with non-authenticated users trying to send files to bad
+  domains.
+- Improved Debian/Ubuntu installer so it does not overwrite any existing
+  ZendTo website definition, and removes rogue comment from one of the PHP
+  configuration files that generates a warning every time Apache is restarted.
+
+Version 3.71 23rd February 2011
+- Fixed problems with responses to requests not working if the customer is
+  not logged into ZendTo.
+- Added over-ride for recipient email address for files dropped off in
+  response to a ZendTo request for files.
+-2 Fixed tiny regexp typo in emailDomainRegexp testing.
+
+Version 3.70-2 22nd February 2011
+
+- Fixed problem with missing upload progress bar in MyZendTo.
+- Added a new "Request a Drop-off" feature, to support customer service
+  operations needing to send requests to users for files, ensuring that
+  their files end up in the correct ticket work log.
+- Created a Debian build.
+- Fixed bug in dropoffs page when not using real progress bars.
+
+Version 3.65 12th February 2011
+
+- Fixed problems with upload progress bar in Internet Explorer.
+- Made regexp checks in preferences.php case-insensitive.
+
+Version 3.64 4th February 2011
+
+- Added LDAP/AD authorization in addition to authentication, so users must be
+  members of a particular group/role in order to access ZendTo.
+- Moved bad login credentials error message into zendto.conf.
+- Improved error reporting when locked-out users attempt to log in.
+- Ensure we don't offer more file uploads than PHP will permit in php.ini.
+- Recaptcha service can now be reached via a proxy server if required.
+- Fixed detection of $ZENDTOPREFS shell variable in commands in bin directory.
+- Implemented various bug-fixes and new progress bars.
+- Stopped progress bar appearing until it reads <100%.
+- To install all the needed bits to get the progress bars working, read this:
+  http://www.zend.to/progressbar.php
+- Added progress bars to MyZendTo as well. Untested.
+
+Version 3.63 3rd October 2010
+
+- Minor template changes to new_dropoff.tpl to use ServiceTitle instead
+  of calling it "ZendTo". Also changed "Add Address" to "Add Extra Recipient".
+- Fixed bug in new_dropoff.tpl causing it to display "1" page.
+
+Version 3.62 6th September 2010
+
+- Fixed a few minor bugs. Added "expiryDate" to the available variables
+  when showing a dropoff, customise the template show_dropoff.tpl if you
+  want to show it.
+- Added 'maxBytesForFile', 'maxBytesForDropoff', 'retainDays' to the list
+  of available template variables in every template file.
+- Cosmetic template changes.
+- Fixes for LDAP authenticator.
+- Fixed "delivery confirmation" problem with MySQL.
+- Added authentication Dn and Password to LDAP authenticator. Note new
+  settings are 'authLDAPBindDn' and 'authLDAPBindPass'.
+- Moved website from www.zendto.com to www.zend.to.
+- Added full instructions on setting up an https SSL website for ZendTo.
+- Fixed problem with only the 1st pickup being listed in a dropoff. You
+  need to do a "mysql --user=zendto --password='your-password-here' zendto"
+  and then doing "drop table pickup;". You then need to reimport the database
+  schema by reading the instructions in /opt/zendto/sql. This only affects
+  MySQL setups (RedHat/Fedora/CentOS), it does not affect SQLite setups
+  (Ubuntu) at all.
+- Changed all HTTP_HOST to be SERVER_NAME instead.
+
+Version 3.61 7th August 2010
+
+- Emails are now definitely being sent correctly, and all database
+  functionality is present.
+- Note that when upgrading, if you are using SQLite you need to run
+  pretty much *all* of the "add*.php" scripts in the /opt/zend/sbin/...
+  UPGRADE directory. Running them when you don't need to won't do any harm.
+
+Version 3.60 7th August 2010
+
+- Added "LDAPUseSSL" setting to preferences.php for secure LDAP
+  authentication.
+- Added sample "LDAP" section to preferences.php.
+- Improved LDAP authenticator.
+- Added Admin-only "Unlock Users" button which will take you to a page
+  where you can selectively unlock any users who are locked out.
+  Works in ZendTo and MyZendTo.
+- Added "authLDAPFullName" setting to those required to use the LDAP
+  authenticator. This contains a space-separated list of the names of the
+  properties which together build the user's full name. So if their first
+  name is in the "givenName" property and their surname is in the "sn"
+  property, then you set
+    authLDAPFullName => "givenName sn",
+  in preferences.php. Obviously on a Chinese site you might use "sn givenName".
+- Changed many mentions of "dropbox preference" file in supporting scripts to
+  say "ZendTo preferences.php" file.
+- Added support for shell environment variable "ZENDTOPREFS" which, if set,
+  tells all the scripts where to look for the preferences.php file so you
+  can omit it from the command-line and they will find it on their own.
+- Fixed bug in LDAP and AD authenticators that caused problems when
+  attributes had an array of 2 or more values.
+-2 Fixed bug where email announcing dropoff not sent to recipients.
+-3 Omitted DBLoginlogAll() from distribution. Doh! :-(
+
+Version 3.59 2nd August 2010
+
+- Added 2 new preferences.php settings "loginFailMax" and "loginFailTime"
+  to protect against brute-force attacks on your authentication system.
+  If there are "loginFailMax" failed attempts in a row within any
+  "loginFailTime" seconds then the user being attacked is locked out until
+  the "loginFailTime" expires.
+  By default the Max=6 attempts and Time=1 day. So 6 failed attempts in a
+  row in 1 day will lock out that account. It will be automatically
+  unlocked again after 1 day.
+  If you are upgrading to this version (or one beyond it) you need to add
+  the new table to the database:
+  Either (if you are using SQLite) run the script
+    /opt/zendto/sbin/UPGRADE/addLoginlogTable.php,
+  Or     (if you are using MySQL) read the file
+    /opt/zendto/sql/README.MySQL and run the long "mysql" command in there.
+  To unlock a user "jkf" manually, use the command
+    /opt/zendto/bin/unlockuser.php /opt/zendto/config/preferences.php jkf
+  To unlock *all* users immediately, use the command
+    /opt/zendto/bin/unlockuser.php /opt/zendto/config/preferences.php -a
+- MyZendTo now has the ability to delete dropoffs straight from the
+  "My Dropoffs" list. Saves a click or two per item. Not decided whether
+  I will add this to the main ZendTo application yet or not.
+- Cosmetic tidy-up of MyZendTo.
+-2 Added "MYZENDTO" setting into preferences.php.
+
+Version 3.58 25th July 2010
+
+- Added entire new application called "MyZendTo". Simply edit preferences.php
+  and set "MYZENDTO" to "TRUE" at the top.
+  MyZendTo is an application only available to logged-in users, and it gives
+  them their own filestore of dropoffs. When they create a new dropoff, they
+  don't have to send it to anyone else at all, and they can list their
+  own dropoffs and download any one of them, and delete them.
+- Improvements in comments in preferences.php.
+- The file pointed to by "emailDomainRegexp" now support "//"-style comments
+  as well as "#" comments.
+-2 Change requests from Brian Duncan for MyZendTo. Cosmetic mostly.
+-2 Removed the only reference to the Active Directory "cn" attribute and
+   replaced it with "displayName" which is used everywhere else.
+
+Version 3.57 22nd July 2010
+
+- Added notes to the documentation to fix the timezone correctly first.
+  This will stop problems with IE7 not accepting logged-in users correctly.
+- Added note to preferences.php about the virus scanner, and how to use
+  clamscan if you really cannot get clamdscan to work at all.
+- Added note to the RPM docs describing how to set up ClamAV and clamd.
+- Preferences.php setting "emailDomainRegexp" can now be a filename instead
+  of a regular expression. If so, it should provide a file containing a
+  list of domain names (and all their sub-domains) that un-authenticated
+  users can send dropoffs to. There must be exactly 1 domain per line.
+  Blank lines and comment lines starting with '#' are ignored. The file
+  is automatically re-read if it is modified.
+- Improved error reporting and comments in AD authenticator. It will now
+  try to tell you exactly what went wrong, but still check a list of
+  AD servers to find one that works.
+-2 Re-implemented "emailDomainRegexp" cache from scratch. Cache is now useful.
+   NOTE: If you are upgrading to this release, then before using this
+         you must add the regexps table to the database using:
+         SQLite - run the script /opt/zendto/sbin/UPGRADE/addRegexpsTable.php
+         MySQL  - read /opt/zendto/sql/README.MySQL
+
+Version 3.56-2 20th July 2010
+
+- Fixed broken "main menu" link in template verify_sent.tpl.
+- Email addresses read from AD are trimmed of whitespace.
+- Regexp defining any valid email address is now set in preferences.php.
+  NOTE: You need to update your preferences.php file when upgrading to this!
+- Added a new authenticator "Local". This uses an SQL database table (stored
+  in the ZendTo database) to contain a list of users and their details.
+  In /opt/zendto/bin you will find a little set of scripts for maintaining
+  the list of users. Their names are self-explanatory.
+  For usage help, just run them without any command-line parameters.
+  NOTE: If you are upgrading to this release, then before using this
+        you must add the user table to the database using:
+        SQLite - run the script /opt/zendto/sbin/UPGRADE/addUserTable.php
+        MySQL  - read /opt/zendto/sql/README.MySQL
+-2 Allowed capital letters in email addresses.
+-2 Fixed bug introduced stopping Local authenticator from always working.
+
+Version 3.55 10th July 2010
+
+- New website.
+- Improved www buttons so they are clickable over the whole button and
+  not just the text.
+- Fixed bug in IMAP authenticator.
+- Improved main menu template to get "ZendTo" names from zendto.conf.
+- Added 1-line comment to show how to get cookieSecret setting.
+- Fixed bug causing rrdInit.php to fail on MySQL systems.
+
+Version 3.54 6th July 2010
+
+- Changed supplied usernameRegexp to allow "@" signs in usernames.
+- Changed all PHP scripts so they start with /usr/bin/php.
+- Changed default upload limits so they will always work on 32-bit platforms.
+- Slight improvement to "upload in progress" indicator formatting.
+- Fixed $hostname bug in pickup_email.tpl.
+
+Version 3.53 4th July 2010
+
+- Added "upload in progress" indicator to new_dropoff page.
+- Added sensible "From:" and "Reply-To:" headers to all email messages.
+- Removed some more unused old preferences.php settings.
+- Sender email authentication message now has proper "From" address.
+- IMAP authenticator ensures all used user properties are filled.
+- Unused code removed from NSSUtils.php.
+- Error reporting improved greatly when log file cannot be written to.
+- 2 HTML typos fixed causing IE to fail on the sender verification page.
+- Removed 'dropboxDomain' and replaced it with 'authIMAPDomain' as that
+  reflects what it actually does.
+- Fixed default log path to be /var/zendto/zendto.log.
+- Fixed HTML bug in template causing Safari error console to report error
+  on pages when not logged in.
+- Tidied up NSSIMAPAuthenticator.php so it's readable.
+
+Version 3.52 30th June 2010
+
+- Fixed bug in dropoff.php which generated an error.
+- Fixed bug where pickup notification emails had no subject.
+- 2 Fixed IMAP authentication.
+
+Version 3.51 29th June 2010
+
+- Improved documentation.
+- Fixed everything so it will run over http and not insist on https.
+- Improved VMWare distributions so the web server works out of the box,
+  and installed Postfix to handle mail generated by ZendTo.
+- Separated all user interface code from program code, makes it much
+  easier to customise for your site and brand, while still being able to
+  upgrade.
+- Fixed various bugs introduced in v3.50.
+
+Version 3.20 22nd June 2010
+
+- Repackaged all VMWare distributions.
+
+Version 3.13 21st June 2010
+
+- Fixed another bug in emailDomainRegexp handling.
+
+Version 3.12 21st June 2010
+
+- Fixed bugs in emailDomainRegexp handling.
+
+Version 3.11 20th June 2010
+
+- Added "function checkRecipientDomain()" in each of the authenticators.
+  This enables you to write a function that decides if a recipient address
+  is acceptable for an un-authenticated user (ie. a user who has not logged
+  in). Most people won't need this, but they can write it if they need to.
+- Added "-" to the list of characters acceptable in a username supplied in
+  the "Login" box. This is set near the bottom of www/preferences.php.
+- Greatly improved the handling of "emailDomainRegexp" so it works more
+  sensibly, doesn't matter if you put "/" characters around it or not.
+
+Version 3.10 20th June 2010
+
+- If you are not logged in, you must verify your email address if you
+  are sending files to someone.
+- You can write a short note to send to the recipients along with the files.
+- Users can be verified using up to 2 Active Directory forests.
+- The "verify your email address" process for unauthenticated users is now
+  protected by a "Captcha" to prove you are a real person.
+- The Claim ID and Claim Passcode is only revealed to the sender if
+  they have logged in, so external users cannot use it to share files
+  with the assistance of some unwitting or non-existent internal user.
+- A few minor bugs and typos fixed.
+- All database code re-engineered into its own class, to make supporting
+  other database types easier in future.
+- Added support for MySQL database back-end as well as SQLite.
+  See the "sql" directory for more details.

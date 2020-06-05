@@ -1,0 +1,8 @@
+Package: zendto
+Version: $version
+Architecture: all
+Maintainer: Jules Field <jules@zend.to>
+Section: misc
+Priority: extra
+Depends: clamav-daemon, clamav-freshclam, apache2, rrdtool, gettext, jq
+Description: Web-based system for replacing ftp sites, allowing easy method for people inside your organisation to send files to anyone, and people outside your organisation to send files to people on the inside. People outside need no secret usernames or passwords, just the email address of the recipient(s).

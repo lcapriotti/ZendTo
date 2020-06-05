@@ -1,0 +1,508 @@
+#!/usr/bin/env perl
+
+#
+# This script will output the contents of a new preferences.php file based
+# on an old preferences.php file and a default copy of the new file.
+#
+
+use FileHandle;
+use strict;
+
+sub Usage {
+  print STDERR "Usage:\n";
+  print STDERR "$0 old-preferences.php supplied-new-preferences.php > new-preferences.php\n";
+  print STDERR "\n";
+}
+
+sub Afterwards {
+  print STDERR <<"EOAFTER";
+
+I have written your new file. Any preferences that were in your old
+file but are not used in the new one have been put right near the
+top in a labelled "Obsolete" section.
+EOAFTER
+}
+
+my $oldfname = shift;
+my $newfname = shift;
+
+unless ($oldfname &&    $newfname &&
+     -f $oldfname && -f $newfname &&
+     -s $oldfname && -s $newfname) {
+  Usage();
+  if ($newfname) {
+    # We are really trying to do the upgrade, we have a complete command-line
+    unless (-f $newfname && -s $newfname) {
+      # Either the .rpmnew doesn't exist, or it's empty
+      print STDERR "No new supplied file, so just copying your existing file.\n";
+      system("cat $oldfname"); # Copy the original .conf to the stdout redirect
+    }
+  }
+  exit 1;
+}
+
+
+# $definesorder[n] = key's name, to maintain correct order within file
+# $defines{key}   = key's value
+# Likewise for prefs.
+my(@olddefinesorder, %olddefines, @oldprefsorder, %oldprefs);
+my(@newdefinesorder, %newdefines, @newprefsorder, %newprefs);
+# $definescomments{key} = lines of comments before key's definition
+# $definestrailingcomments{key} = Rest of line after definition of key
+# $trailingcomments{key} = Rest of file after last define/prefs line
+# $definesep{key} = Everything between the key and the value (to preserve layout)
+# $header = The block of text between the 1st set of defines and the 1st pref
+# $finalcomments = The block of text at the end of the file
+my(%olddefinescomments, %oldprefscomments, %olddefinesep, %oldprefsep, %olddefinestrailingcomments, %oldprefstrailingcomments, $oldtrailingcomments, $oldprefsheader, $oldfinalcomments);
+my(%newdefinescomments, %newprefscomments, %newdefinesep, %newprefsep, %newdefinestrailingcomments, %newprefstrailingcomments, $newtrailingcomments, $newprefsheader, $newfinalcomments);
+
+#
+# Yes, I know, this should be OO instead of passing a
+# zillion refs to arrays.
+# But it isn't, so there.
+#
+
+# Read in the old preferences.php file
+$oldtrailingcomments = &ReadPrefsFile($oldfname, \@olddefinesorder, \%olddefines, \@oldprefsorder, \%oldprefs, \%olddefinesep, \%oldprefsep, \%olddefinescomments, \%oldprefscomments, \%olddefinestrailingcomments, \%oldprefstrailingcomments, \$oldprefsheader, \$oldfinalcomments);
+# Read in the new preferences.php file
+$newtrailingcomments = &ReadPrefsFile($newfname, \@newdefinesorder, \%newdefines, \@newprefsorder, \%newprefs, \%newdefinesep, \%newprefsep, \%newdefinescomments, \%newprefscomments, \%newdefinestrailingcomments, \%newprefstrailingcomments, \$newprefsheader, \$newfinalcomments);
+
+# Force the version number to the new value
+$olddefines{"'ZTVERSION'"} = $newdefines{"'ZTVERSION'"}
+  if defined $olddefines{"'ZTVERSION'"};
+
+#
+# Output hints for the user to help them make their life easier.
+#
+
+# Tell them if their clamdscan setting has been changed,
+# but does not include --fdpass,
+# as adding that option speeds it up a lot.
+my $oldclam = $oldprefs{"'clamdscan'"};
+if ($oldclam && changed($oldclam, $newprefs{"'clamdscan'"})) {
+  if ($oldclam !~ /--fdpass/) {
+    $oldprefscomments{"'clamdscan'"} .= "  //\n" .
+    "  // Note: I *strongly* advise you add '--fdpass' for extra speed.\n";
+    print STDERR <<'EOCLAM';
+
+Warning: Your 'clamdscan' setting does not include the command-line option
+             --fdpass
+         I strongly advise you include this, as it greatly speeds up virus
+         scanning of large uploaded files.
+         I have not added it automatically, but advise you edit it yourself.
+         The setting is very near the end of the preferences.php file.
+
+EOCLAM
+  }
+}
+
+# Tell them if their 'emailDomainRegexp' setting is still a regexp.
+# It's a lot easier for them if they just list their domains in
+# localdomains.conf instead.
+my $olddom = $oldprefs{"'emailDomainRegexp'"};
+if ($olddom =~ m#^'/.*/i?'$#) {
+  print STDERR <<'EODOM';
+
+Note:    Your 'emailDomainRegexp' is currently a nasty big regular expression.
+         That is really hard to manage and guarantee it is correct.
+         Instead, set it to
+         '/opt/zendto/config/internaldomains.conf'
+         and then in that file, simply list the email domain names used by your
+         organisation. There are comments at the top of that file to help you.
+
+EODOM
+}
+
+# Tell them if their 'showRecipsOnPickup' setting is true.
+# This is a potential privacy leak, and should be set to false.
+my $oldshow = $oldprefs{"'showRecipsOnPickup'"};
+if ($oldshow =~ /true/i) {
+  print STDERR <<'EOSHOW';
+
+Warning: Your 'showRecipsOnPickup' is currently set to TRUE.
+         That will cause an information leak to external recipients.
+         You should strongly consider changing this to FALSE.
+         Logged-in users and admins will still see the pickup log.
+         It just stops external users seeing details of other pickups
+         of a drop-off sent to them.
+
+EOSHOW
+}
+
+# Tell them if their SMTPcharset if it is lower-case. That won't work! Oops.
+my $oldcharset = $oldprefs{"'SMTPcharset'"};
+if ($oldcharset !~ /[A-Z]/) {
+  print STDERR <<'EOCHARSET';
+
+Warning: Your 'SMTPcharset' value is currently in lower-case.
+         It appears this does not work, and it needs to be all in
+         upper-case. Please set it to the value 'UTF-8'.
+         If you don't fix this, you will find all international
+         characters will be wrong/missing in email messages.
+
+EOCHARSET
+}
+  
+# If they didn't have hidePHP set at all before, manually disable it and
+# tell them about it. Enabling involves changing Apache conf too.
+if (!defined($oldprefs{"'hidePHP'"}) &&
+     defined($newprefs{"'hidePHP'"})) {
+  $newprefs{"'hidePHP'"} = 'FALSE';
+  print STDERR <<'EOHIDEPHP';
+
+Note: The new setting 'hidePHP' (on by default) will require you
+      to edit your Apache configuration. So I have disabled it
+      for you. Please see the comments above this setting in
+      preferences.php for the exact changes you need to make.
+
+EOHIDEPHP
+}
+
+# Their 'cookieSecret' must be at least big enough to use as a key
+# for libsodium.
+my $oldsecret = $oldprefs{"'cookieSecret'"};
+$oldsecret =~ tr/0-9a-fA-F//dc; # Remove all non-hex characters
+if (length($oldsecret) < 64) {
+  print STDERR <<'EOSHORTSECRET';
+
+Error: Your setting for 'cookieSecret' is too short.
+       This is vital for encryption.
+       Use /opt/zendto/sbin/genCookieSecret.php to create a valid one,
+       and use it to correct your current setting.
+
+EOSHORTSECRET
+}
+
+# Now for an interesting one.
+# If they have changed "authenticator" from "Local" to anything else,
+# we need to put that setting out in the position from the old file,
+# not the new one.
+# This is because they will have uncommented a later version of the
+# authenticator setting and commented out the "Local" one. Which is
+# the opposite of what they do in all other cases.
+# And don't forget to fix up all the comments at the same time.
+if ($oldprefs{"'authenticator'"} !~ /local/i) {
+  # Find its position in the old prefs
+  my ($oldindex) = grep { $oldprefsorder[$_] eq "'authenticator'" }
+                        (0..@oldprefsorder-1);
+  # And what came after it, as it's got to go just before that
+  my ($oldnextkey) = $oldprefsorder[$oldindex+1];
+
+  # Find its position in the new prefs
+  my ($newindex) = grep { $newprefsorder[$_] eq "'authenticator'" }
+                        (0..@newprefsorder-1);
+  # And what came after it, as it's got to go just before that
+  my ($newnextkey) = $newprefsorder[$newindex+1];
+
+  # Safety check that we found them both
+  if ($oldindex>0 && $newindex>0) {
+    # Remove it from the position in the new prefs
+    splice(@newprefsorder, $newindex, 1);
+
+    # Now we need to put it back into the new prefs immediately before
+    # the key that followed it in the old prefs.
+    my ($newindex) = grep { $newprefsorder[$_] eq $oldnextkey }
+                          (0..@newprefsorder-1);
+    # Didn't find it? Then bung it on the end
+    $newindex = @newprefsorder unless $newindex;
+
+    # And drop it into the right place
+    splice(@newprefsorder, $newindex, 0, "'authenticator'");
+
+    # Overwrite the .rpmnew comment for what followed with the
+    # old one, as the old one will include any commented-out
+    # setting of 'authenticator'
+    $newprefscomments{$newnextkey} = $oldprefscomments{$newnextkey};
+  }
+}
+
+# languageList length checker. Override theirs if the new one has more
+# languages in it.
+my $oldlist = $oldprefs{"'languageList'"};
+my $newlist = $newprefs{"'languageList'"};
+my $oldcount = () = $oldlist =~ /,/g;
+my $newcount = () = $newlist =~ /,/g;
+if ($newcount > $oldcount) {
+  $oldprefs{"'languageList'"} = $newlist;
+  # The counters will be off by 1 as they counted separators
+  $oldcount++;
+  $newcount++;
+  print STDERR <<EONEWLANGS;
+
+Warning: Your previous 'languageList' setting has been overwritten
+         as there are now more languages available ($newcount) than in your
+         old version ($oldcount).
+
+EONEWLANGS
+}
+
+#
+# Now write out the new file to stdout...
+#
+
+# The only "define"s below the prefs are the "AYAH" ones.
+# So let's go through old defines until we hit an AYAH.
+# Kill off the new defines as we go.
+# Then output all their remaining non-AYAH defines.
+# Then output all my remaining non-AYAH defines.
+# Then remember where we got to in both defines lists.
+
+# Put out their non-AYAH defines in their order
+my $olddefineN = 0;
+
+while ($olddefineN < @olddefinesorder &&
+         $olddefinesorder[$olddefineN] !~ /AYAH/) {
+  my $key = $olddefinesorder[$olddefineN];
+  # If they have changed its value, use their comments
+  if ($olddefines{$key} ne $newdefines{$key}) {
+    print $olddefinescomments{$key};
+    print "define(".$key.$olddefinesep{$key}.$olddefines{$key}.");".
+          $olddefinestrailingcomments{$key}."\n";
+  } else {
+    # They have not changed the value, so use new comments
+    print $newdefinescomments{$key};
+    print "define(".$key.$newdefinesep{$key}.$newdefines{$key}.");".
+          $newdefinestrailingcomments{$key}."\n";
+  }
+  delete $newdefines{$key};
+  delete $olddefines{$key};
+  $olddefineN++;
+}
+
+# Put out new remaining non-AYAH defines (in the right order)
+my $newdefineN = 0;
+while($newdefineN<@newdefinesorder &&
+      $newdefinesorder[$newdefineN] !~ /AYAH/) {
+  my $key = $newdefinesorder[$newdefineN];
+  if ($newdefines{$key}) {
+    # new define that old file didn't have
+    print $newdefinescomments{$key};
+    print "define(".$key.$newdefinesep{$key}.$newdefines{$key}.");".
+          $newdefinestrailingcomments{$key}."\n";
+    delete $newdefines{$key};
+  }
+  $newdefineN++;
+}
+
+# $olddefineN and $newdefineN now contain the index number of the 1st AYAH define
+
+# Next output the prefs header
+print $newprefsheader;
+
+# Put all the prefs out in the *new* order.
+# Any they defined that are left over will be printed out,
+# but all together and commented out with a note.
+# We want to put the dead ones at the top so they see them, so we just
+# save what we want to output here, and print it *after* the dead ones.
+my $outputprefs = "";
+foreach my $key (@newprefsorder) {
+  if (defined($oldprefs{$key}) &&
+      changed($oldprefs{$key}, $newprefs{$key})) {
+    # They had set it in their old file,
+    # and they had changed it from the supplied value.
+    $outputprefs .= $oldprefscomments{$key}.
+                    "  ".$key.$oldprefsep{$key}.$oldprefs{$key}.",".
+                    $oldprefstrailingcomments{$key}."\n";
+  } else {
+    # It is either new, or they hadn't changed the supplied value.
+    $outputprefs .= $newprefscomments{$key}.
+                    "  ".$key.$newprefsep{$key}.$newprefs{$key}.",".
+                    $newprefstrailingcomments{$key}."\n";
+  }
+  # Tell the admin we have added a setting they should check.
+  if (!defined($oldprefs{$key})) {
+    print STDERR "Warning: Added new setting $key - check its value!\n";
+  }
+  delete $oldprefs{$key};
+  delete $newprefs{$key};
+}
+# Any remaining oldprefs are ones that don't exist any more,
+# or are ones they have added themselves.
+# Comment them out.
+if (keys %oldprefs) {
+  print "  //\n" .
+        "  // ** Obsolete settings start here **\n" .
+        "  // You can delete all of this section.\n" .
+        "  //\n";
+  foreach my $key (@oldprefsorder) {
+    next unless $oldprefs{$key};
+    # Make sure all blank lines within comments start "  //"
+    my $comment = $oldprefscomments{$key};
+    $comment =~ s/^ *$/  \/\//mg if $comment;
+    print $comment;
+    print "  // Obsolete: ".$key.$oldprefsep{$key}.$oldprefs{$key}.",".
+          $oldprefstrailingcomments{$key}."\n";
+    print STDERR "Note:    Commented out obsolete setting $key\n";
+  }
+  print "  //\n" .
+        "  // ** Obsolete settings end here **\n" .
+        "  //\n\n";
+}
+# Followed by all the active prefs
+print $outputprefs;
+
+# The only things left now should be the AYAH defines,
+# as they are told not to touch anything down here.
+# Let's wipe the AYAH defines now the code has gone.
+foreach my $key (@newdefinesorder[$newdefineN..$#newdefinesorder]) {
+  next if $key =~ /ayah/i; # Skip all the AYAH defines, now obsolete.
+  print $newdefinescomments{$key};
+  print "define(".$key.$newdefinesep{$key}.$newdefines{$key}.");".
+        $newdefinestrailingcomments{$key}."\n";
+  delete $newdefines{$key};
+}
+
+# Followed by any random crap at the end of the file
+print $newfinalcomments;
+
+Afterwards();
+
+exit(0);
+
+# Have they changed the value?
+# This is *almost* the not-equal operator, but not quite.
+sub changed {
+  my($old, $new) = @_;
+
+  # Is it a number?
+  return ($new != $old) if $new =~ /^\d+$/;
+
+  # Is it a word, such as true or false?
+  return (lc($new) ne lc($old)) if $new =~ /^[a-zA-Z0-9]+$/;
+
+  # Is it the clamdscan command?
+  if ($old =~ /clamdscan/ && $new =~ /clamdscan/) {
+    # If the only difference is the presence/absence of '--fdpass'
+    # then consider it not to have been changed.
+    $old =~ s/\s*--fdpass//; # Remove any --fdpass option
+    $new =~ s/\s*--fdpass//;
+    $old =~ s/^\s*(.*?)\s*$/$1/; # Trim leading+trailing whitespace
+    $new =~ s/^\s*(.*?)\s*$/$1/;
+    return ($new ne $old);
+  }
+
+  # Otherwise it's just a string not-equal.
+  return ($new ne $old);
+}
+
+# Read a ZendTo preferences.php file and split it into lots of bits.
+sub ReadPrefsFile {
+  my($filename, $defineorder, $defines, $prefsorder, $prefs, $definesseps, $prefsseps, $definescomments, $prefscomments, $definestrailcomments, $prefstrailcomments, $prefsheadercomments, $finalcomments) = @_;
+
+  my($key, $value, $line, $origline, $trailcomment, $sep, $comments);
+  my($ndefines, $nprefs);
+
+  # Find the current year so we can update the ZendTo copyright date
+  my ($d, $year);
+  ($d,$d,$d,$d,$d,$year,$d,$d,$d) = localtime;
+  $year += 1900;
+
+  my $fh = new FileHandle;
+  $fh->open($filename) or die "Cannot read file $filename, $!";
+
+  $comments = "";
+  while(<$fh>) {
+    chomp;
+    # Force the year in the copyright line that looks vaguely like this
+    # // Copyright (C) 2016 Julian Field, Jules at Zend dot To
+    s/(Copyright\D*)(\d+)(\D*Field.*Zend)/$1$year$3/i;
+    $origline = $_;
+    s/^\s+//;
+    s/\s+$//;
+    $line = $_;
+    $trailcomment = "";
+  
+    # It might be a define or a pref, that is totally commented out
+    if ($line =~ /^\/\//) {
+      $comments .= "$origline\n";
+      next;
+    }
+
+    # Is it a define(k,v) line? If so, we are outside the PREFS array
+    if ($line =~ /^define/) {
+      # define('AYAH_PUBLISHER_KEY', 'OBSOLETE'); // $NSSDROPBOX_PREFS['ayah_publisher_key']);
+      $line =~ /^define\(\s*(\'[^']+?\')(\s*,\s*)(.*?)\)\;(.*$)/;
+      ($key, $sep, $value, $trailcomment) = ($1, $2, $3, $4);
+      #print STDERR "Define .$key. to .$value. then .$trailcomment.\n";
+      push @$defineorder, $key;
+      $defines->{$key} = $value;
+      $definescomments->{$key} = $comments;
+      $definestrailcomments->{$key} = $trailcomment;
+      $definesseps->{$key} = $sep;
+      $ndefines++;
+      $comments = "";
+      next;
+    }
+  
+    # Is this the start of the prefs?
+    # Must be a non-commented "$NSSDROPBOX_PREFS =" line.
+    if ($line =~ /^[^\/]*\$NSSDROPBOX_PREFS\s*=/) {
+      $$prefsheadercomments = $comments . "$origline\n";
+      $comments = "";
+      next;
+    }
+
+    # Is it a non-commented pref line (key => value)?
+    if ($line =~ /^[^\/]+=\>/) {
+      undef $key;
+      undef $key;
+      undef $value;
+      $line =~ /^(.*?)(\s*=\>\s*)(.*?)$/;
+      ($key, $sep, $value) = ($1, $2, $3);
+      # value is 1 of 3 things:
+      # 1. A sequence of characters ending with \s*, (e.g. TRUE)
+      # 2. A string starting with ' and ending with '\s*, (e.g. 'word word')
+      # 3. A string starting with " and ending with "\s*, (e.g. "word word")
+      # 4. An array, starting with array\s*(\s* and ending with
+      #    \s*)\s*, (e.g. array('a', 'b'))
+      if ($value =~ /^array\s*\(/) {
+        # It is an array. Keep all till the end of the array.
+        # It might be an array split over multiple lines.
+        # If so, it won't end in '),' as there aren't any multi-
+        # dimensional arrays. Join multi-line arrays onto the same line.
+        while ($value !~ /\)\s*,/) {
+          # It's not the end of the array
+          $value =~ s/([^:])\/\/.*$/$1/; # Remove any trailing comment
+          $value =~ s/\s*$/ /;   # Replace any trailing space with 1 space
+          my $nextline = <$fh>;  # Get the next line
+          chomp $nextline;
+          $nextline =~ s/^\s*//; # Remove leading whitespace
+          $value .= $nextline;   # Add it onto the end of the array
+        }
+        $value =~ s/^array\s*\((.*?)\s*\)\s*,(.*$)/array($1)/;
+        $trailcomment = $2;
+      } elsif ($value =~ /^\"/) {
+        # It is a double-quoted string.
+        $value =~ s/^(\".*?\"),(.*$)/$1/;
+        $trailcomment = $2;
+      } elsif ($value =~ /^\'/) {
+        # It is a single-quoted string.
+        $value =~ s/^(\'.*?\'),(.*$)/$1/;
+        $trailcomment = $2;
+      } else {
+        # It's just a non-quoted value
+        $value =~ s/^([^,]+?),(.*$)/$1/;
+        $trailcomment = $2;
+      }
+      #print STDERR "Set .$key. to .$value. then .$trailcomment.\n";
+      push @$prefsorder, $key;
+      $prefs->{$key} = $value;
+      $prefscomments->{$key} = $comments;
+      $prefstrailcomments->{$key} = $trailcomment;
+      $prefsseps->{$key} = $sep;
+      $nprefs++;
+      $comments = "";
+      next;
+    }
+  
+    # It's not a setting, so it must just be comments and stuff
+    $comments .= "$origline\n";
+  }
+  $fh->close();
+
+  #print STDERR "$filename has $ndefines defines and $nprefs preferences\n";
+
+  # There will be trailing comments at the end of the file
+  $$finalcomments = $comments;
+}
+
