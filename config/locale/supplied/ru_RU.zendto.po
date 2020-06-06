@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2020-01-02 11:43+0100\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Русский язык <dizzy.easy49@gmail.com>\n"
@@ -1271,8 +1271,17 @@ msgstr "Файл %1 был получен %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Вы не будете уведомлены о каких-либо дальнейших передаваемых файлах в этой Отправке этим получателем."
 
+msgid "Recipients"
+msgstr "Получатели"
+
+msgid "Expires"
+msgstr "Истекает"
+
 msgid "Global Drop-off List"
 msgstr "Глобальный список"
+
+msgid "Show or hide:"
+msgstr "Показать или скрыть:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "В данный момент у вас нет никаких Отправок."

@@ -117,9 +117,11 @@ fi
 #
 declare -a params
 # All our calls to curl need this
-params+=(--dump-header - --output /dev/null --silent)
-# We are creating a request
-#params+=(--data Action=send)
+# autolist is a bit different in that, due to the large amount
+# it can output, it can't be in a header, so use a temp file
+# to capture the output
+JSON="$( mktemp )"
+params+=(--dump-header - --output "$JSON" --silent)
 # Mandatory simple ones first
 params+=(--data-urlencode uname="$username")
 params+=(--data-urlencode password="$password")
@@ -127,6 +129,7 @@ params+=(--data-urlencode password="$password")
 
 # If any errors have been detected, bail out
 if [[ -n $errors_occurred ]]; then
+  rm -f "$JSON"
   echo 1>&2
   Usage
   exit 1
@@ -151,15 +154,24 @@ if [[ "$debug" == "y" ]]; then
 | grep "^$ZTheader:" \\
 | sed -e "s/^$ZTheader: *//"'
 
-The grep and sed extract the JSON result.
+The grep and sed extract the JSON status code.
+The JSON output will be in "$JSON".
 EOCURL
+  rm -f "$JSON"
 else
   # Do it...
   #set -x # TEMP DEBUG CODE
-  curl "${params[@]}" "$URL" \
-  | grep "^${ZTheader}:" \
-  | sed -e "s/^${ZTheader}: *//"
-  # Exit with the return code of the curl.
-  exit "${PIPESTATUS[0]}"
+  # In autolist, the custom header just gives the success/failure status.
+  # All the data is in the text output of the body.
+  response="$( curl "${params[@]}" "$URL" | grep "^${ZTheader}:" )"
+  if echo "$response" | grep -q "OK"; then
+    cat "$JSON"
+    rm -f "$JSON"
+    exit 0
+  else
+    echo "$response" | sed -e "s/^${ZTheader}: *//"
+    rm -f "$JSON"
+    exit 1
+  fi
 fi
 

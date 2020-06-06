@@ -946,6 +946,10 @@ thead {
   cursor: pointer;
 }
 
+.toggle-vis:hover {
+	cursor: pointer;
+}
+
 .notetoolong {
   font-weight: bold;
   color: red;

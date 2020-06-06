@@ -72,15 +72,16 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
 
         // Display different dates and sizes if automated
         $created = timeForDate($dropoff->created());
+        $expires = $created + $dropoff->lifeseconds();
         if ($theDropbox->isAutomated()) {
           $outputDropoffs[$i]['created'] = $created;
           $outputDropoffs[$i]['formattedCreated'] = strftime('%F %T %Z', $created);
-          $expires = $created + $dropoff->lifeseconds();
           $outputDropoffs[$i]['expires'] = $expires;
           $outputDropoffs[$i]['formattedExpires'] = strftime('%F %T %Z', $expires);
           $outputDropoffs[$i]['bytes'] = $b;
         } else {
           $outputDropoffs[$i]['createdDate'] = $created;
+          $outputDropoffs[$i]['expiresDate'] = $expires;
           $outputDropoffs[$i]['Bytes'] = $b;
         }
 
@@ -110,6 +111,18 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
             }
           }
           $outputDropoffs[$i]['files'] = $filelist;
+        } else {
+          // HTML output wants to include recipients
+          $recilist = array();
+          foreach ($dropoff->recipients() as $r) {
+            if (empty($r[0])) {
+              $ea = '<' . $r[1] . '>';
+            } else {
+              $ea = $r[0] . ' <' . $r[1] . '>';
+            }
+            $recilist[] = htmlentities($ea, ENT_NOQUOTES, 'UTF-8');
+          }
+          $outputDropoffs[$i]['recipients'] = implode('<br/>', $recilist);
         }
         //$totalsize += $theDropbox->database()->DBBytesOfDropoff($dropoff->dropoffID());
         $i++;
@@ -130,8 +143,12 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
 
   if ($theDropbox->isAutomated()) {
     // Automated, so just output JSON and headers
-    header("X-ZendTo-Response: " .
-           json_encode(array("status" => "OK", "dropoffs" => $outputDropoffs)));
+    // Can't output all the JSON as a header due to size limits in curl
+    //header("X-ZendTo-Response: " .
+    //       json_encode(array("status" => "OK", "dropoffs" => $outputDropoffs)));
+    header("X-ZendTo-Response: " . json_encode(array("status" => "OK")));
+    print(json_encode(array("status" => "OK", "dropoffs" => $outputDropoffs)));
+    print("\n");
   } else {
     // Not automated, so show the web page
     $smarty->display('pickup_list_all.tpl');

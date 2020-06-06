@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2019-08-22 11:52+0200\n"
 "Last-Translator:  Toldi Miklos <toldim76@gmail.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -1271,8 +1271,17 @@ msgstr "A(z) %1 állományt letöltötte %2 címzett."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Ön nem fog értesítést kapni a küldemény többi részének letöltéséről."
 
+msgid "Recipients"
+msgstr "Címzettek"
+
+msgid "Expires"
+msgstr "Lejár"
+
 msgid "Global Drop-off List"
 msgstr "Globális küldemény lista"
+
+msgid "Show or hide:"
+msgstr "Megjelenítés vagy elrejtés:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Jelenleg nincsenek küldemények."

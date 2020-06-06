@@ -1,4 +1,9 @@
-Version 6.00-2 Production
+Version 6.01-1 Production
+- Bug fixed in "autolist" command to handle very large dumps of metadata.
+- Added column visibility toggles to Global Drop-off List page. If you
+  like them, I can easily add them to the Inbox and Outbox view too.
+
+Version 6.0-2 Production
 - Updated Italian translation. Thanks Massimo!
 - Improved php.ini error checking and reporting.
 - Improved Installer to update php.ini for fpm as well as apache2 on
@@ -9,7 +14,7 @@ Version 6.00-2 Production
 - Fixed template bug where login hint text on main menu was being
   over-escaped.
 
-Version 6.00-1 Production
+Version 6.0-1 Production
 - Production release of new major version 6.
 - New major features since version 5 are:
   * Login via OAuth, Yubikeys etc with SAML-based authentication.

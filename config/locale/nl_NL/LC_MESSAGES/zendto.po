@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2018-08-15 13:36+0200\n"
 "Last-Translator: marcel <Werken@bijdebaas.nl>\n"
 "Language-Team: team nietsnut\n"
@@ -1274,8 +1274,17 @@ msgstr "Het bestand %1 is opgehaald (picked-up) door %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "U ontvangt geen melding over verdere pick-ups van bestanden in deze drop-off door deze ontvanger."
 
+msgid "Recipients"
+msgstr "Ontvangers"
+
+msgid "Expires"
+msgstr "Verloopt"
+
 msgid "Global Drop-off List"
 msgstr "Globale drop-off lijst"
+
+msgid "Show or hide:"
+msgstr "Weergeven of verbergen:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Er zijn op dit moment geen drop-offs beschikbaar voor u."

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2020-05-26 12:56+0200\n"
 "Last-Translator: Jimmi Crottaz <jimmi.crottaz@outlook.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -1271,8 +1271,17 @@ msgstr "Le fichier %1 a été téléchargé par %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Vous ne serez plus notifié des téléchargements de fichier(s) de ce dépôt pour ce destinataire."
 
+msgid "Recipients"
+msgstr "Destinataires"
+
+msgid "Expires"
+msgstr "Expire"
+
 msgid "Global Drop-off List"
 msgstr "Liste globale des dépôts"
+
+msgid "Show or hide:"
+msgstr "Afficher ou masquer:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Il n'y a aucun dépôt."

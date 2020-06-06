@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2019-08-16 13:29+0200\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Czech <dizzy.easy49@gmail.com>\n"
@@ -1272,8 +1272,17 @@ msgstr "Soubor %1 si vyzvedl(a) %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Nebudete upozorněni na žádné další vyzvednutí souborů v této zásilce příjemcem."
 
+msgid "Recipients"
+msgstr "Příjemci"
+
+msgid "Expires"
+msgstr "Vypršet"
+
 msgid "Global Drop-off List"
 msgstr "Seznam všech zásilek"
+
+msgid "Show or hide:"
+msgstr "Zobrazit nebo skrýt:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "V současné době nejsou k dispozici žádné zásilky."

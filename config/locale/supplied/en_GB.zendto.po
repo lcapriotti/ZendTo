@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 12:06+0100\n"
+"POT-Creation-Date: 2020-06-05 15:40+0100\n"
 "PO-Revision-Date: 2018-01-01 13:21+0000\n"
 "Last-Translator: Jules Field <Jules@Zend.To>\n"
 "Language-Team: GB English <Jules@Zend.To>\n"
@@ -1269,7 +1269,16 @@ msgstr ""
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr ""
 
+msgid "Recipients"
+msgstr ""
+
+msgid "Expires"
+msgstr ""
+
 msgid "Global Drop-off List"
+msgstr ""
+
+msgid "Show or hide:"
 msgstr ""
 
 msgid "There are no drop-offs available at this time."
