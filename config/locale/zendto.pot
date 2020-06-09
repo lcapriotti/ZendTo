@@ -25,8 +25,8 @@ msgstr ""
 "#-#-#-#-#  php-code.pot (ZendTo 5.00)  #-#-#-#-#\n"
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 15:40+0100\n"
-"PO-Revision-Date: 2020-06-05 15:40+0100\n"
+"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"PO-Revision-Date: 2020-06-09 10:19+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
 "MIME-Version: 1.0\n"
@@ -321,6 +321,9 @@ msgid "Failed to read your verification information. Your drop-off session has p
 msgstr ""
 
 msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr ""
+
+msgid "Responding to a request for an encrypted drop-off, but failed to read the passphrase."
 msgstr ""
 
 msgid "The recipient email address '%s' is invalid."

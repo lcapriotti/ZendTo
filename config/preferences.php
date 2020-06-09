@@ -39,7 +39,7 @@ define('NSSDROPBOX_LIB_DIR', '/opt/zendto/lib/');
 define('NSSDROPBOX_DATA_DIR','/var/zendto/');
 
 // This defines the version number, please do not change
-define('ZTVERSION','6.01-1');
+define('ZTVERSION','6.01-2');
 
 // This is for gathering nightly stats, see docs about RRD and root's crontab
 define('RRD_DATA_DIR',NSSDROPBOX_DATA_DIR.'rrd/');

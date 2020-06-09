@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-05 15:40+0100\n"
+"POT-Creation-Date: 2020-06-09 10:19+0100\n"
 "PO-Revision-Date: 2019-08-16 13:29+0200\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Czech <dizzy.easy49@gmail.com>\n"
@@ -321,6 +321,9 @@ msgstr "Nepodařilo se přečíst ověřovací informace. Vaše zásilka pravdě
 
 msgid "Admin: Install the PHP module/rpm \"mbstring\"."
 msgstr "Admin: Install the PHP module/rpm \"mbstring\"."
+
+msgid "Responding to a request for an encrypted drop-off, but failed to read the passphrase."
+msgstr ""
 
 msgid "The recipient email address '%s' is invalid."
 msgstr "E-mailová adresa příjemce '%s' je neplatná."

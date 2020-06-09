@@ -1734,7 +1734,7 @@ class NSSDropoff {
   {
     $who = $this->_dropbox->authorizedUser();
     if (! $who)
-      $who = "nightly-clear-up";
+      $who = "auto-expiry";
 
     if ( is_dir($this->_claimDir) ) {
       //  Remove the contents of the directory:
@@ -2384,7 +2384,7 @@ class NSSDropoff {
     // or logged in.
     $reqSubject = '';
     $req = '';
-    if (@$_POST['req'] != '') {
+    if (isset($_POST['req']) && !empty($_POST['req'])) {
       $dummy = '';
       $recipName = '';  // Never actually use this
       $recipEmail = ''; // Never actually use this
@@ -2407,7 +2407,7 @@ class NSSDropoff {
         // If the req had a passphrase, use it to overwrite anything
         // that the new drop-off form might have sent us.
         // And enforce encryption of this drop-off.
-        if (isset($reqpassphrase) && $reqpassphrase !== '') {
+        if (!empty($reqpassphrase)) {
           // It is stored obfuscated then in hex.
           // So convert it back to binary, then de-obfuscate it.
           $encryptPassword = decryptForDB($reqpassphrase, $this->_dropbox->secretForCookies());
@@ -2529,7 +2529,10 @@ class NSSDropoff {
       } else {
         // Want to encrypt, but can't as I've got no passphrase!!
         $this->_dropbox->writeToLog("Error: Should be encrypting files but failed to read the passphrase, so not encrypting. If this drop-off came from a request, the encoded passphrase in the request got corrupted!");
-        $wantToEncrypt = FALSE;
+        // Make this a blocking situation. Otherwise we would store the
+        // drop-off without encrypting it, which is A Bad Thing(tm).
+        //$wantToEncrypt = FALSE;
+        return gettext("Responding to a request for an encrypted drop-off, but failed to read the passphrase.").' '.$SYSADMIN;
       }
     }
     
@@ -3182,11 +3185,12 @@ class NSSDropoff {
         // This Drop-off request has been fulfilled, so kill the keys
         // to stop playback attacks.
         if ($this->_dropbox->deleteRequestsAfterUse()) {
-          $this->_dropbox->writeToLog("Info: Deleting request code $req as it has been used");
           if (isset($req)) {
+            $this->_dropbox->writeToLog("Info: Deleting request code $req as it has been used");
             $this->_dropbox->DeleteReqData($req);
           }
           if (isset($auth)) {
+            // $this->_dropbox->writeToLog("Info: Deleting auth code $auth as it has been used");
             $this->_dropbox->DeleteAuthData($auth);
           }
         }

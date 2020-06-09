@@ -1,3 +1,10 @@
+Version 6.01-2 Production
+- If a request for an encrypted drop-off was sent, but the resulting
+  drop-off failed to read the passphrase from the database due to a DB
+  problem, it now raises an error and rejects the drop-off attempt.
+- Changed logging of expired drop-offs to be done by "auto-expiry" instead
+  of "nightly-clear-up", as it's now done hourly.
+
 Version 6.01-1 Production
 - Bug fixed in "autolist" command to handle very large dumps of metadata.
 - Added column visibility toggles to Global Drop-off List page. If you
