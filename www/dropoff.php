@@ -139,7 +139,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     $smarty->assign('senderOrg', htmlentities($authOrganization, ENT_NOQUOTES, 'UTF-8'));
     $smarty->assign('senderEmail', htmlentities(strtolower($authEmail), ENT_NOQUOTES, 'UTF-8'));
     $smarty->assign('note','');
-    $smarty->assign('subject','');
+    $smarty->assign('subject', sprintf(gettext('%s has dropped off files for you'), htmlentities($authFullName, ENT_QUOTES, 'UTF-8')));
     $smarty->assign('maxNoteLength', $theDropbox->maxnotelength());
     $smarty->assign('allowEmailRecipients', $theDropbox->allowEmailRecipients()?"true":"false");
     $smarty->assign('defaultEmailRecipients', $theDropbox->defaultEmailRecipients()?"true":"false");

@@ -11,32 +11,43 @@ if ( count($argv) != 6 ) {
     printf("
   usage:
   
-   %s <ZendTo preferences.php file> '<username>' '<email>' '<realname>' '<organization>'
+    %s <ZendTo preferences.php file> '<username>' '<email>' '<realname>' '<organization>'
+
+  For example:
+    %s /opt/zendto/config/preferences.php 'billg' 'billg@microsoft.com' 'Bill Gates' 'Microsoft Inc'
   
-   The ZendTo preferences.php file path should be canonical, not relative.
-   (It must start with a \"/\")
-   Alternatively, do
+  The ZendTo preferences.php file path should be canonical, not relative.
+  (It must start with a \"/\")
+  Alternatively, do
      export ZENDTOPREFS=<full file path of preferences.php>
      %s '<username>' '<email>' '<realname>' '<organization>'
 
-",$argv[0],$argv[0]);
+  For example:
+     export ZENDTOPREFS=/opt/zendto/config/preferences.php
+     %s 'billg' 'billg@microsoft.com' 'Bill Gates' 'Microsoft Inc'
+
+
+", $argv[0], $argv[0], $argv[0], $argv[0]);
   } else {
     printf("
   usage:
   
    %s '<username>' '<email>' '<realname>' '<organization>'
   
-   The ZendTo preferences.php file path is pointed to by the environment
-   variable ZENDTOPREFS, which is currently set to
-   %s
+  For example:
+   %s 'billg' 'billg@microsoft.com' 'Bill Gates' 'Microsoft Inc'
 
-",$argv[0],$prefs);
+  The ZendTo preferences.php file path is pointed to by the environment
+  variable ZENDTOPREFS, which is currently set to
+  %s
+
+",$argv[0], $argv[0], $prefs);
   }
   return 0;
 }
 
 if ( ! preg_match('/^\/.+/',$argv[1]) ) {
-  echo "ERROR:  You must provide a canonical path to the preference file.\n";
+  echo "ERROR: You must provide a canonical path to the preferences.php file.\n";
   return 1;
 }
 
@@ -50,18 +61,23 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS, TRUE) ) {
   $email    = $argv[3];
   $realname = $argv[4];
   $org      = $argv[5];
-  //$quota    = $argv[6];
+  
+  if (strpos($username, '<') !== FALSE) {
+    echo "\nERROR: The '<' and '>' are there to show the syntax.\n";
+    echo "ERROR: You are not supposed to actually enter them.\n";
+    return 1;
+  }
+
+  if (strpos($email, '@') === FALSE) {
+    echo "\nERROR: The email address must contain an '@'.\n";
+    return 1;
+  }
 
   $password = readPassword('Enter password for new user: ');
   $confirm  = readPassword('And again to confirm: ');
   if ($password !== $confirm) {
     echo "\nERROR: Entered passwords did not match.\n";
     return 1;
-  }
-
-  if (!strpos($email, '@')) {
-    echo "\nWARNING: You supplied an email address that did not contain an '@'.\n";
-    echo "WARNING: Note the new syntax where the password is not on the command-line.\n";
   }
 
   $result = $theDropbox->database->DBAddLocalUser($username, $password,
@@ -96,9 +112,6 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS, TRUE) ) {
     printf("Email:        $email\n");
     printf("Real name:    $realname\n");
     printf("Organization: $org\n");
-    //if (preg_match('/^[yYtT1]/', MYZENDTO)) {
-    //  printf("Quota:        $quota\n");
-    //}
     return 0;
   } else {
     printf("Failed: $result\n");

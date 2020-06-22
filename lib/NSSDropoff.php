@@ -1569,16 +1569,21 @@ class NSSDropoff {
         $files = $this->files();
         $realFileCount = $files['totalFiles'];
         // Work out the real email subject line.
-        if ($realFileCount == 1) {
-          $emailSubject = sprintf($smarty->getConfigVars(
-                                  'EmailSubjectTag') .
-                                  gettext('%s has dropped off a file for you'),
-                                  $senderName);
+        $subject = trim($this->_subject);
+        if (empty($subject)) {
+          if ($realFileCount == 1) {
+            $emailSubject = sprintf($smarty->getConfigVars(
+                                    'EmailSubjectTag') .
+                                    gettext('%s has dropped off a file for you'),
+                                    $senderName);
+          } else {
+            $emailSubject = sprintf($smarty->getConfigVars(
+                                    'EmailSubjectTag') .
+                                    gettext('%s has dropped off files for you'),
+                                    $senderName);
+          }
         } else {
-          $emailSubject = sprintf($smarty->getConfigVars(
-                                  'EmailSubjectTag') .
-                                  gettext('%s has dropped off files for you'),
-                                  $senderName);
+          $emailSubject = $smarty->getConfigVars('EmailSubjectTag') . $subject;
         }
         // Files in email count from 0, files from database count from 0.
         $tplFiles = array();
@@ -2463,14 +2468,28 @@ class NSSDropoff {
         // If we *are* being automated, leave them alone but pick up the
         // email subject line.
         if ($this->_dropbox->isAutomated()) {
-          if (@$_POST['subject'] != '')
-            $this->_subject = preg_replace('/[<>]/', '', $_POST['subject']);
+          if (!empty(@$_POST['subject'])) {
+            // Sanitise subject line against embedded newlines too
+            // $this->_subject = trim(preg_replace('/[<>\n\r]/', '', $_POST['subject']);
+            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, UTF-8));
+          }
         } else {
           // Logged-in user so just read their data
           $senderName = $this->_dropbox->authorizedUserData("displayName");
           $senderOrganization = paramPrepare(@$_POST['senderOrganization']);
           $senderOrganization = preg_replace('/[<>]/', '', $senderOrganization);
           $senderEmail = trim($this->_dropbox->authorizedUserData("mail"));
+          if (empty($this->_subject)  && !empty(@$_POST['subject'])) {
+            // Sanitise subject line against embedded newlines too
+            // $this->_subject = trim(preg_replace('/[<>\n\r]/', '', $_POST['subject']));
+            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, UTF-8));
+            // Check the length of the subject.
+            $subjectlength = mb_strlen($smarty->getConfigVars('EmailSubjectTag') . $subject);
+            $maxlen = $this->_dropbox->maxsubjectlength();
+            if ($subjectlength>$maxlen) {
+              return sprintf(gettext("Your subject line to the recipients is %1$d characters long. It must be less than %2$d."), $subjectlength, $maxlen).' '.$BACKBUTTON;
+            }
+          }
         }
         // Remember they are a member of our organisation,
         // needed when constructing page showing contents of drop-off.
@@ -3038,7 +3057,8 @@ class NSSDropoff {
                           $confirmDelivery,
                           timestampForTime(time()),
                           $note,
-                          $lifeseconds) ) {
+                          $lifeseconds,
+                          $this->_subject) ) {
 
         //  Add recipients:
         if ( ! $this->_dropbox->database->DBAddRecipients($recipients, $dropoffID) ) {
@@ -3196,27 +3216,28 @@ class NSSDropoff {
         }
 
         // Work out the real email subject line.
-        if ($reqSubject != '') {
-          $emailSubject = $reqSubject;
-        } else {
-          // If we're automatied, let them set the email Subject: line
-          if ($this->_dropbox->isAutomated()) {
-            $emailSubject = $smarty->getConfigVars('EmailSubjectTag') .
-                            ' ' . $this->_subject;
+        $emailSubject = $this->_subject; // Start with what they passed me.
+        if (!empty($reqSubject)) {
+          $emailSubject = $reqSubject; // Use the request subject if exists
+        }
+        // If we're automatied, override totally with what they sent us
+        if ($this->_dropbox->isAutomated() && !empty($this->_subject)) {
+          $emailSubject = $this->_subject;
+        }
+        // If it's still emapty, supply a default value
+        if (empty($emailSubject)) {
+          // Set the default subject if they didn't specify one
+          if ($realFileCount == 1) {
+            $emailSubject = sprintf(gettext('%s has dropped off a file for you'),
+                              $senderName);
           } else {
-            if ($realFileCount == 1) {
-              $emailSubject = sprintf($smarty->getConfigVars(
-                                'EmailSubjectTag') .
-                                gettext('%s has dropped off a file for you'),
-                                $senderName);
-            } else {
-              $emailSubject = sprintf($smarty->getConfigVars(
-                                'EmailSubjectTag') .
-                                gettext('%s has dropped off files for you'),
-                                $senderName);
-            }
+            $emailSubject = sprintf(gettext('%s has dropped off files for you'),
+                              $senderName);
           }
         }
+        // Now add the EmailSubjectTag on the front
+        // The tag always needs to include a trailing space
+        $emailSubject = $smarty->getConfigVars('EmailSubjectTag') . $emailSubject;
 
         // How long till expiry?
         $daysLeft    = $lifeseconds/(3600*24);

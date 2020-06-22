@@ -85,7 +85,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     // do a brutal job to break actual attacks.
     $smarty->assign('recipName_1', preg_replace('/[<>\']/', '', $srcname));
     $smarty->assign('recipEmail_1', strtolower($srcemail));
-    $smarty->assign('subject', htmlentities($subject, ENT_NOQUOTES, 'UTF-8'));
+    $smarty->assign('subject', htmlentities($subject, ENT_QUOTES, 'UTF-8'));
     $smarty->assign('note', htmlentities($note, ENT_NOQUOTES, 'UTF-8'));
     $smarty->assign('maxBytesForFileInt', $theDropbox->maxBytesForFile());
     $smarty->assign('maxBytesForDropoffInt', $theDropbox->maxBytesForDropoff());

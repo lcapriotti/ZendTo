@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
-"PO-Revision-Date: 2019-08-16 13:29+0200\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"PO-Revision-Date: 2020-06-10 14:04+0200\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Czech <dizzy.easy49@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "Please click again on the link you were sent to pick-up your files."
 msgstr "Klikněte prosím znovu na odkaz, který vám byl zaslán pro vyzvednutí vašich souborů."
@@ -44,7 +44,7 @@ msgid "Your session has expired. Please start again."
 msgstr "Platnost relace vypršela. Prosím, začněte znovu."
 
 msgid "Session Expired"
-msgstr "Platnost relace vypršela."
+msgstr "Platnost relace vypršela"
 
 msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
 msgstr "Adresa počítače se změnila. Klikněte znovu na odkaz, který jste odeslali k vyzvednutí vašich souborů."
@@ -58,6 +58,9 @@ msgstr "Tato funkce je k dispozici pouze pro uživatele, kteří se přihlásili
 msgid "Access Denied"
 msgstr "Přístup nepovolen"
 
+msgid "%s has dropped off files for you"
+msgstr "%s pro Vás uložil(a) zásilku"
+
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Čtení souboru protokolu se nezdařilo. Zkontrolujte, zda webový server může číst."
 
@@ -68,7 +71,7 @@ msgid "This is available to administrators only."
 msgstr "Tato oprávnění jsou k dispozici pouze správcům."
 
 msgid "Administrators only"
-msgstr "pouze pro správce"
+msgstr "Pouze pro správce"
 
 msgid "Please click again on the link you were sent to pickup your files."
 msgstr "Klikněte prosím znovu na odkaz, který vám byl zaslán pro vyzvednutí vašich souborů."
@@ -107,7 +110,7 @@ msgid "Your Request Code has expired. Please start again."
 msgstr "Platnost kódu požadavku vypršela. Prosím, začněte znovu."
 
 msgid "Request Code Expired"
-msgstr "Platnost Kódu požadavku vypršela."
+msgstr "Platnost Kódu požadavku vypršela"
 
 msgid "Request Error"
 msgstr "Chyba požadavku"
@@ -152,10 +155,10 @@ msgid "Could not open MySQL database on %s"
 msgstr "Nemohu otevřít databázi MySQL na %s"
 
 msgid "Failed to add login record"
-msgstr "Přidání záznamu přihlášení se nezdařilo."
+msgstr "Přidání záznamu přihlášení se nezdařilo"
 
 msgid "Failed to delete login records"
-msgstr "Odstranění přihlašovacích záznamů se nezdařilo."
+msgstr "Odstranění přihlašovacích záznamů se nezdařilo"
 
 msgid "Failed to BEGIN transaction block while updating regexps"
 msgstr "Nepodařilo se zahájit blok transakce při aktualizaci regexps"
@@ -173,16 +176,16 @@ msgid "Failed to add regexp"
 msgstr "Nepodařilo se přidat regexp"
 
 msgid "Aborting adding user %s as that user already exists"
-msgstr "Proběhlo přerušení přidávání uživatele %s, protože tento uživatel již existuje."
+msgstr "Proběhlo přerušení přidávání uživatele %s, protože tento uživatel již existuje"
 
 msgid "Failed to BEGIN transaction block while adding user %s"
 msgstr "Nepodařilo se zahájit blok transakce při přidávání uživatele %s"
 
 msgid "Failed to ROLLBACK after aborting addition of user %s"
-msgstr "Selhalo vrácení po přerušení přidávání uživatele %s."
+msgstr "Selhalo vrácení po přerušení přidávání uživatele %s"
 
 msgid "Failed to add user %s"
-msgstr "Přidání uživatele %s se nezdařilo."
+msgstr "Přidání uživatele %s se nezdařilo"
 
 msgid "Aborting deleting user %s as that user does not exist"
 msgstr "Zrušení odstranění uživatele %s, protože tento uživatel neexistuje"
@@ -289,9 +292,6 @@ msgstr "%s si vyzvedl(a) vaši zásilku!"
 msgid "%s has dropped off a file for you"
 msgstr "%s pro Vás uložil(a) zásilku"
 
-msgid "%s has dropped off files for you"
-msgstr "%s pro Vás uložil(a) zásilku"
-
 msgid "%d days"
 msgstr "%d dnů"
 
@@ -323,7 +323,7 @@ msgid "Admin: Install the PHP module/rpm \"mbstring\"."
 msgstr "Admin: Install the PHP module/rpm \"mbstring\"."
 
 msgid "Responding to a request for an encrypted drop-off, but failed to read the passphrase."
-msgstr ""
+msgstr "Nezdařilo se přečíst přístupové heslo."
 
 msgid "The recipient email address '%s' is invalid."
 msgstr "E-mailová adresa příjemce '%s' je neplatná."
@@ -334,7 +334,6 @@ msgstr "Musíte být přihlášeni jako uživatel %1$s za účelem uložení zá
 msgid "Return to the %s main menu to log in and then try again."
 msgstr "Vraťte se do hlavního menu %s pro přihlášení a zkuste to znovu."
 
-#, fuzzy
 msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
 msgstr "Musíte být přihlášeni jako uživatel %1$s za účelem uložení zásilky pro uživatele mimo síť %1$s."
 
@@ -405,7 +404,7 @@ msgid "A unique directory to contain your dropped-off files could not be created
 msgstr "Jedinečný adresář, který obsahuje vaše soubory nelze vytvořit."
 
 msgid "Encryption failed."
-msgstr "Šifrování selhalo"
+msgstr "Šifrování selhalo."
 
 msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
 msgstr "Vypadá to, že kvůli nedostatku volného místa na serveru zásilka nebyla uložena. Volné místo: %s."
@@ -423,7 +422,7 @@ msgid "Library"
 msgstr "Knihovna"
 
 msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
-msgstr "Nelze odeslat email příjemci %s. Vaše zásilka však byla uložena pod ID zásilky %s."
+msgstr "Nelze odeslat email příjemci %s. Vaše zásilka však byla uložena pod ID zásilky %s"
 
 msgid "Unable to add a drop-off record to the database."
 msgstr "Nelze přidat zásilku do databáze."
@@ -513,7 +512,7 @@ msgid "There are two distinct kinds of users that will be accessing the %1 syste
 msgstr "Existují dvě skupiny uživatelů."
 
 msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
-msgstr "Privilegovaní uživatelé mohou do systému ukládat zásilky pro libovolné příjemce, ať už vlastní kolegy, kteří jsou také privilegovaní nebo pro vnější uživatele. Vnější uživatelé smějí ukládat zásilky určené pouze pro privilegované uživatele, tedy pouze pro adresáty spojené s organizací. Co je to zásilka? "
+msgstr "Privilegovaní uživatelé mohou do systému ukládat zásilky pro libovolné příjemce, ať už vlastní kolegy, kteří jsou také privilegovaní nebo pro vnější uživatele. Vnější uživatelé smějí ukládat zásilky určené pouze pro privilegované uživatele, tedy pouze pro adresáty spojené s organizací. Co je to zásilka?"
 
 msgid "drop-off"
 msgstr "zásilka"
@@ -522,28 +521,28 @@ msgid "one or more files uploaded to %1 as a single item for delivery to a perso
 msgstr "jeden nebo více souborů nahraných do služby %1 jako jedna položka pro doručení jednomu nebo více příjemcům"
 
 msgid "There are several ways in which a user can drop-off multiple files at once:"
-msgstr "Existuje více způsobů, jak mohou uživatelé uložit více souborů do jediné zásilky: "
+msgstr "Existuje více způsobů, jak mohou uživatelé uložit více souborů do jediné zásilky:"
 
 msgid "Drag-and-drop multiple files at once onto the drop-off page"
-msgstr "Přetáhnout více souborů najednou do stránky pro nahrání."
+msgstr "Přetáhnout více souborů najednou do stránky pro nahrání"
 
 msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
 msgstr "Kliknutím na tlačítko\"Přidat soubory\" na stránce pro uložení zásilky a vyberte jeden nebo více souborů najednou pomocí kombinace Shift+klik  Ctrl+klik (Cmd+klik na Mac)"
 
 msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
-msgstr "Spojit či zkomprimovat více souborů do jediného balíčku připojeného k zásilce. "
+msgstr "Spojit či zkomprimovat více souborů do jediného balíčku připojeného k zásilce."
 
 msgid "There are many ways to archive and compress files:"
 msgstr "To lze provést více způsoby:"
 
 msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
-msgstr "v počítačích Apple mohou uživatelé vybrat soubory v aplikaci Finder a zvolit Compress (viz menu File)"
+msgstr "V počítačích Apple mohou uživatelé vybrat soubory v aplikaci Finder a zvolit Compress (viz menu File)"
 
 msgid "Windows users can create a \"compressed folder\" or use %1"
-msgstr "uživatelé Windows mohou vytvořit komprimovanou složku nebo využít komprimační aplikaci jako je 7-Zip"
+msgstr "Uživatelé Windows mohou vytvořit komprimovanou složku nebo využít komprimační aplikaci jako je 7-Zip"
 
 msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
-msgstr "uživatelé Linux/Unix systémů mohou použít \"PeaZip\" or \"File Roller\""
+msgstr "Uživatelé Linux/Unix systémů mohou použít \"PeaZip\" or \"File Roller\""
 
 msgid "Creating a Drop-off"
 msgstr "Vytvoření zásilky"
@@ -561,7 +560,7 @@ msgid "Making a Pick-up"
 msgstr "Vyzvednutí zásilky"
 
 msgid "There are two ways to pick-up files that have been dropped off:"
-msgstr "Existují dva způsoby, jak vyzvednout soubory uložené v zásilce: "
+msgstr "Existují dva způsoby, jak vyzvednout soubory uložené v zásilce:"
 
 msgid "All users can click on the link provided in the notification email they were sent."
 msgstr "Všichni uživatelé, kteří vytvořili nebo obdrželi nějakou zásilku mohou přistoupit k zásilce kliknutím na odkaz v notifikační emailové zprávě."
@@ -570,7 +569,7 @@ msgid "An inside user, once logged-in to the system, can display their \"Inbox\"
 msgstr "Privilegovaní uživatelé mohou po přihlášení k systému zobrazit svoji úložnu, obsahující seznam zásilek , které byly v systému pro ně zanechány. Přihlášení uživatelé tak mohou přistupovat ke svým zásilkám i bez použití notifikační zprávy."
 
 msgid "When viewing a drop-off, the user will see quite a few things:"
-msgstr "Při procházení zásilek, můžete zobrazit: "
+msgstr "Při procházení zásilek, můžete zobrazit:"
 
 msgid "The list of files that were uploaded"
 msgstr "Seznam uložených souborů"
@@ -588,13 +587,13 @@ msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs tha
 msgstr "Na vyzvednutí uložené zásilky mají uživatelé %1dní. Zásilky starší %1 dní jsou ze systému každou noc automaticky odstraněny."
 
 msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
-msgstr "Všechny nahrávané soubory jsou automaticky skenovány proti škodlivému kódu a virům. Přesto musí příjemci k obsahu zásilek přistupovat s opatrností! Vždy otevírejte pouze zásilky, které očekáváte, od odesílatelů které znáte! V případě pochybností kontaktujte před otevřením zásilky - tedy před stažením a otevřením souborů - autora zásilky! "
+msgstr "Všechny nahrávané soubory jsou automaticky skenovány proti škodlivému kódu a virům. Přesto musí příjemci k obsahu zásilek přistupovat s opatrností! Vždy otevírejte pouze zásilky, které očekáváte, od odesílatelů které znáte! V případě pochybností kontaktujte před otevřením zásilky - tedy před stažením a otevřením souborů - autora zásilky!"
 
 msgid "Resumable Downloading of Files"
 msgstr "Navázání na přerušené stahování souboru"
 
 msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
-msgstr "Většina prohlížečů podporuje navázání na přerušené stahování. "
+msgstr "Většina prohlížečů podporuje navázání na přerušené stahování."
 
 msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
 msgstr "Služba %1 podporuje na straně serveru navázání stahování dle standardu HTTP 1.1."
@@ -612,7 +611,7 @@ msgid "The %1 software itself has configurable limits on the amount of data that
 msgstr "Služba %1 má nastaveny limity na celkovou velikost zásilky, které nesouvisí s použitým prohlížečem. V žádné zásilce nesmí být překročena velikost 20.0 GB pro jediný soubor a zároveň 20.0 GB pro jednu celou zásilku."
 
 msgid "If you are having the following issues when dropping off or picking up a large file:"
-msgstr "V případě že narazíte při použití na tyto potíže: "
+msgstr "V případě že narazíte při použití na tyto potíže:"
 
 msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
 msgstr "Prohlížeč hlásí ztrátu připojení po stažení podstatné části velkého souboru"
@@ -621,7 +620,7 @@ msgid "An error page is displayed that indicates you dropped off no files"
 msgstr "Je zobrazena chybová stránka s chybovou zprávou Stránku nelze zobrazit"
 
 msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
-msgstr "Může to být tím, že používáte příliš pomalou internetovou linku, a soubor nestihnete stáhnout. Ze strany serveru dojde k přerušení stahování po přibližně 2 hodinách."
+msgstr "může to být tím, že používáte příliš pomalou internetovou linku, a soubor nestihnete stáhnout. Ze strany serveru dojde k přerušení stahování po přibližně 2 hodinách."
 
 msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
 msgstr "Na základě originálu Perl UD Dropbox software Dokea Scotta."
@@ -928,7 +927,7 @@ msgid "Last %1 lines of %2 log, most recent first"
 msgstr "Posledních %1 řádků %2 logu, nejaktuálnější jako první"
 
 msgid "You are using an old unsupported version of Internet Explorer."
-msgstr "Používáte zastaralou nepodporovanou verzi aplikace prohlížeče Internet Explorer"
+msgstr "Používáte zastaralou nepodporovanou verzi aplikace prohlížeče Internet Explorer."
 
 msgid "This site will not work correctly with this web browser."
 msgstr "Tento web nebude pracovat správně s vaším webovým prohlížečem."
@@ -991,7 +990,7 @@ msgid "<strong>%1 users should login first.</strong>"
 msgstr "<strong>Uživatelé %1 by se měli nejprve přihlásit.</strong>"
 
 msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
-msgstr "Přihlášením získáte plným přístup k funkcím služby. <br/>Při ukládání zásilek již <strong>nebude vyžadováno ověření e-mailu.</strong>"
+msgstr "Přihlášením získáte plným přístup k funkcím služby. <br/>Při ukládání zásilek již <strong>nebude vyžadováno ověření e-mailu.</strong>."
 
 msgid "Anyone may perform the following activities:"
 msgstr "Pokud nepatříte mezi interní uživatele, zvolte prosím jednu z následujících možností:"
@@ -1042,13 +1041,13 @@ msgid "Entries do not match"
 msgstr "Hesla se neshodují"
 
 msgid "Click to Add Files or Drag Them Here"
-msgstr "Klikněte zde pro Přidání souborů nebo je Přetáhněte do tohoto okna."
+msgstr "Klikněte zde pro Přidání souborů nebo je Přetáhněte do tohoto okna"
 
 msgid "If you leave this page, you will abandon this drop-off."
 msgstr "Pokud opustíte tuto stránku, bude nahrávání zásilky přerušeno."
 
 msgid "This number can include a decimal point, it does not have to be a whole number."
-msgstr ""
+msgstr "Toto číslo může obsahovat desetinnou čárku, nemusí to být celé číslo."
 
 msgid "It will take too long to calculate the checksum of your drop-off."
 msgstr "Doba trvání výpočtu pro vaši zásilku by byla příliš dlouhá."
@@ -1078,7 +1077,7 @@ msgid "It will now take too long to encrypt your drop-off, so encryption has bee
 msgstr "Doba šifrování vaší zásilky by byla příliš dlouhá, takže šifrování nebude použito. Jestliže si přejete šifrovat vaši zásilku, snižte velikost zásilky pod __MAXSIZE__ a vyberte \"Zašifrovat soubor(y)\" znovu."
 
 msgid "Please enter a valid email address."
-msgstr "Zadejte prosím platnou e-mailovou adresu"
+msgstr "Zadejte prosím platnou e-mailovou adresu."
 
 msgid "Remove selected recipient"
 msgstr "Odstranit vybraného příjemce"
@@ -1093,7 +1092,7 @@ msgid "File __NUMBER__ is larger than the maximum file size you can send in a dr
 msgstr "Soubor __NUMBER__ je větší než maximální možná velikost souboru v zásilce (__MAXFILESIZE__)."
 
 msgid "Drop-off expiry time must be a number of days, at most %1."
-msgstr ""
+msgstr "Doba vypršení platnosti musí být počet dní, maximálně %1."
 
 msgid "Scanning"
 msgstr "Skenování"
@@ -1114,10 +1113,10 @@ msgid "Uploaded: __PERCENT__%"
 msgstr "Nahráno: __PERCENT__%"
 
 msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
-msgstr ""
+msgstr "Litujeme, zkusil jsem %d krát poslat část jednoho z vašich souborů, ale přenos nikdy nebyl úspěšný."
 
 msgid "Sorry, I could not send your files. The server said %s."
-msgstr ""
+msgstr "Litujeme, nemohl jsem poslat vaše soubory. Server hlásí %s."
 
 msgid "PLEASE NOTE"
 msgstr "UPOZORNĚNÍ"
@@ -1126,7 +1125,7 @@ msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the sam
 msgstr "Soubory nahrávané na %1 jsou skenovány na přítomnost škodlivého kódu a virů."
 
 msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
-msgstr "Pokud nahráváte citlivé informace, doporučujeme Vám <strong>Zašifrovat soubor(y)</strong>."
+msgstr "Pokud nahráváte citlivé informace, doporučujeme Vám <strong>Zašifrovat soubor(y)</strong>!"
 
 msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Tato webová stránka vám umožní uložit jeden nebo více souborů pro každého uživatele %1 nebo externího uživatele. Příjemce obdrží automatický e-mail obsahující informace, které zadáte níže, a pokyny pro stažení souboru."
@@ -1137,8 +1136,35 @@ msgstr "Tato webová stránka vám umožní nahrát jeden nebo více souborů pr
 msgid "From"
 msgstr "Od"
 
+msgid "Subject"
+msgstr "Předmět"
+
 msgid "To"
 msgstr "Komu"
+
+msgid "Short note to the Recipients"
+msgstr "Poznámka pro příjemce"
+
+msgid "Encrypt every file"
+msgstr "Zašifrovat soubor(y)"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Vypočítat SHA-256 kontrolní součet pro každý soubor"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Zaslat e-mail jakmile si příjemce vyzvedne soubory"
+
+msgid "Send email message to recipients"
+msgstr "Odeslat e-mailovou zprávu příjemcům"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "která obsahuje ID Zásilky a Ověřovací kód"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "Příjemci musí souhlasit s podmínkami"
+
+msgid "days until drop-off expires"
+msgstr "dnů do vypršení platnosti zásilky"
 
 msgid "Add Recipients"
 msgstr "Přidat příjemce"
@@ -1194,30 +1220,6 @@ msgstr "OK"
 msgid "Cancel"
 msgstr "Zrušit"
 
-msgid "Short note to the Recipients"
-msgstr "Poznámka pro příjemce"
-
-msgid "Encrypt every file"
-msgstr "Zašifrovat soubor(y)"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Vypočítat SHA-256 kontrolní součet pro každý soubor"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Zaslat e-mail jakmile si příjemce vyzvedne soubory"
-
-msgid "Send email message to recipients"
-msgstr "Odeslat e-mailovou zprávu příjemcům"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "která obsahuje ID Zásilky a Ověřovací kód"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
-
 msgid "Add Files"
 msgstr "Přidat soubory"
 
@@ -1243,7 +1245,7 @@ msgid "No file was chosen for download."
 msgstr "Ke stažení nebyl vybrán žádný soubor."
 
 msgid "Please prove you are a person"
-msgstr "Omlouváme se, ale je nutné ověřit, že si zásilku vyzvedává adresát a nejedná se o automatizovaný útok."
+msgstr "Omlouváme se, ale je nutné ověřit, že si zásilku vyzvedává adresát a nejedná se o automatizovaný útok"
 
 msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
 msgstr "Abychom ověřili, že jste <em>autorizovaný příjemce</em>, vyplňte prosím výzvu Captcha a poté klikněte na \"Vyzvednout zásilku\":"
@@ -1327,7 +1329,7 @@ msgid "It is valid for %1."
 msgstr "Platnost %1."
 
 msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
-msgstr "Všechny soubory, které vám budou zaslány, budou zašifrovány právě zadaným heslem. Nezapomeňte zadané heslo, jinak nebudete mít přístup k těmto souborům."
+msgstr "Všechny soubory, které vám budou zaslány, budou zašifrovány právě zadaným heslem. Nezapomeňte zadané heslo, jinak nebudete mít přístup k těmto souborům!"
 
 msgid "If the recipient wants to send files to you before their request arrives, they should"
 msgstr "Pokud chce příjemce odeslat soubory předtím než dorazí požadavek, může"
@@ -1382,9 +1384,6 @@ msgstr "Tato webová stránka vám umožní odeslat požadavek osobám, po kter�
 
 msgid "Email(s)"
 msgstr "E-mail(y)"
-
-msgid "Subject"
-msgstr "Předmět"
 
 msgid "Send email"
 msgstr "Odeslat email"
@@ -1464,16 +1463,16 @@ msgid ""
 "      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
 "    </ol>\n"
 "    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
-msgstr ""
+msgstr "Pravidla a podmínky."
 
 msgid "I have read, understood and agree to the terms and conditions above."
-msgstr ""
+msgstr "Přečetl jsem si výše uvedené podmínky, rozumím jim a souhlasím s nimi."
 
 msgid "Your files have been encrypted and sent successfully."
 msgstr "Vaše soubory byly zašifrovány a úspěšně odeslány."
 
 msgid "They will expire in %1."
-msgstr ""
+msgstr "Platnost vyprší za %1."
 
 msgid "Your files have been sent successfully."
 msgstr "Vaše soubory byly úspěšně odeslány."
@@ -1484,7 +1483,6 @@ msgstr "Tato zásilka je zašifrována."
 msgid "Click on a filename to download that file."
 msgstr "Klikněte na název souboru pro stažení."
 
-#, fuzzy
 msgid "This drop-off will expire in %1."
 msgstr "Tato zásilka je zašifrována."
 
@@ -1576,7 +1574,7 @@ msgid "You have asked us to send you this message so that you can drop-off some 
 msgstr "Zpráva Vám byla zaslána na Váš požadavek o uložení souborů."
 
 msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
-msgstr "POKUD JSTE SI ZPRÁVU NEVYŽÁDAL A NEOČEKÁVÁTE JI, MŮŽETE JI IGNOROVAT."
+msgstr "POKUD JSTE SI ZPRÁVU NEVYŽÁDAL A NEOČEKÁVÁTE JI, MŮŽETE JI IGNOROVAT!"
 
 msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
 msgstr "Pokračujte v procesu kliknutím na následující odkaz (případně zkopírováním odkazu do prohlížeče):"
@@ -1591,7 +1589,7 @@ msgid "Please enter your Request Code before submitting."
 msgstr "Před odesláním zadejte prosím Kód požadavku."
 
 msgid "Please enter your name before submitting."
-msgstr "Před odesláním zadejte své jméno"
+msgstr "Před odesláním zadejte své jméno."
 
 msgid "Please enter your email address before submitting."
 msgstr "Před odesláním zadejte prosím svou e-mailovou adresu."

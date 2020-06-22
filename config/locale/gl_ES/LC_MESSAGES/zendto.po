@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2018-11-05 14:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: Galego <manty@manty.net>\n"
@@ -57,6 +57,9 @@ msgstr "Esta funcionalidade só está dispoñible para usuarios que se teñan id
 
 msgid "Access Denied"
 msgstr "Acceso Denegado"
+
+msgid "%s has dropped off files for you"
+msgstr "%s enviouche uns arquivos"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Erro ó ler o arquivo de rexistro. Comprobe que o servidor web pode lelo."
@@ -288,9 +291,6 @@ msgstr "%s recolleu o teu envío!"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s enviouche un arquivo"
-
-msgid "%s has dropped off files for you"
-msgstr "%s enviouche uns arquivos"
 
 msgid "%d days"
 msgstr "%d días"
@@ -1141,8 +1141,36 @@ msgstr "Esta páxina web permíteche enviar un ou máis arquivos a un usuario %1
 msgid "From"
 msgstr "De"
 
+msgid "Subject"
+msgstr "Asunto"
+
 msgid "To"
 msgstr "Para"
+
+msgid "Short note to the Recipients"
+msgstr "Nota curta ós destinatarios"
+
+msgid "Encrypt every file"
+msgstr "Cifrar cada arquivo"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Calcular o resumo SHA-256 de cada arquivo"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Envíame un correo ó meu enderezo cando cada destinatario recolla os arquivos"
+
+#, fuzzy
+msgid "Send email message to recipients"
+msgstr "Enviar mensaxe de correo ós destinatarios"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "que inclue un Contrasinal así coma un Código de envío"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Engadir destinatarios"
@@ -1197,31 +1225,6 @@ msgstr "OK"
 
 msgid "Cancel"
 msgstr "Cancelar"
-
-msgid "Short note to the Recipients"
-msgstr "Nota curta ós destinatarios"
-
-msgid "Encrypt every file"
-msgstr "Cifrar cada arquivo"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Calcular o resumo SHA-256 de cada arquivo"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Envíame un correo ó meu enderezo cando cada destinatario recolla os arquivos"
-
-#, fuzzy
-msgid "Send email message to recipients"
-msgstr "Enviar mensaxe de correo ós destinatarios"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "que inclue un Contrasinal así coma un Código de envío"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Engadir arquivos"
@@ -1391,9 +1394,6 @@ msgstr "Esta páxina web permiteche enviar unha petición a unha ou máis persoa
 
 msgid "Email(s)"
 msgstr "Correo(s)"
-
-msgid "Subject"
-msgstr "Asunto"
 
 #, fuzzy
 msgid "Send email"

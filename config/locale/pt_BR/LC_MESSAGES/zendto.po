@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2018-06-25 11:01-0300\n"
 "Last-Translator: Everton Bruno Bernardi <ebbernardi@gmail.com>\n"
 "Language-Team: PT Brazilian <contato@evertonbernardi.eti.br>\n"
@@ -56,6 +56,9 @@ msgstr "Essa funcionalidade só está disponível para usuários que se autentic
 
 msgid "Access Denied"
 msgstr "Acesso Negado"
+
+msgid "%s has dropped off files for you"
+msgstr "%s enviou arquivos para você"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Falha ao ler o arquivo de log. Confirme se o servidor web consegue lê-lo."
@@ -288,9 +291,6 @@ msgstr "%s baixou seu envio!"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s enviou um arquivo para você"
-
-msgid "%s has dropped off files for you"
-msgstr "%s enviou arquivos para você"
 
 msgid "%d days"
 msgstr "%d dias"
@@ -1142,8 +1142,36 @@ msgstr "Esta página permitirá que você envie um ou mais arquivos para um usu�
 msgid "From"
 msgstr "De"
 
+msgid "Subject"
+msgstr "Assunto"
+
 msgid "To"
 msgstr "Para"
+
+msgid "Short note to the Recipients"
+msgstr "Pequena observação para os Destinatários"
+
+msgid "Encrypt every file"
+msgstr "Criptografar cada arquivo"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Calcular o checksum SHA-256 de cada arquivo"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Enviar um email a mim quando cada destinatário baixar o(s) arquivo(s)."
+
+#, fuzzy
+msgid "Send email message to recipients"
+msgstr "Enviar mensagem de email para os destinatários"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "Incluir a Senha bem como o ID de Solicitação"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Adicionar Destinatários"
@@ -1198,31 +1226,6 @@ msgstr "OK"
 
 msgid "Cancel"
 msgstr "Cancelar"
-
-msgid "Short note to the Recipients"
-msgstr "Pequena observação para os Destinatários"
-
-msgid "Encrypt every file"
-msgstr "Criptografar cada arquivo"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Calcular o checksum SHA-256 de cada arquivo"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Enviar um email a mim quando cada destinatário baixar o(s) arquivo(s)."
-
-#, fuzzy
-msgid "Send email message to recipients"
-msgstr "Enviar mensagem de email para os destinatários"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "Incluir a Senha bem como o ID de Solicitação"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Adicionar Arquivos"
@@ -1392,9 +1395,6 @@ msgstr "Esta página permitirá que você envie uma solicitação para uma ou ma
 
 msgid "Email(s)"
 msgstr "Email(s)"
-
-msgid "Subject"
-msgstr "Assunto"
 
 #, fuzzy
 msgid "Send email"

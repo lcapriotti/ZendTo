@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2019-08-22 11:52+0200\n"
 "Last-Translator:  Toldi Miklos <toldim76@gmail.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -57,6 +57,9 @@ msgstr "Ez a szolgáltatás csak a bejelentkezett felhasználók számára érhe
 
 msgid "Access Denied"
 msgstr "Hozzáférés megtagadva"
+
+msgid "%s has dropped off files for you"
+msgstr "%s több fájlt töltött fel az Ön számára"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "A naplófájl olvasása nem sikerült. Ellenőrizze, hogy a webszerver képes-e olvasni."
@@ -288,9 +291,6 @@ msgstr "%s átvette az Ön küldeményét"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s feltöltött egy fájlt az Ön számára"
-
-msgid "%s has dropped off files for you"
-msgstr "%s több fájlt töltött fel az Ön számára"
 
 msgid "%d days"
 msgstr "%d nap"
@@ -1136,8 +1136,35 @@ msgstr "Ez a weboldal lehetővé teszi, hogy %1 felhasználóinak egy vagy több
 msgid "From"
 msgstr "Feladó"
 
+msgid "Subject"
+msgstr "Tárgy"
+
 msgid "To"
 msgstr "Címzett"
+
+msgid "Short note to the Recipients"
+msgstr "Rövid megjegyzés a címzetteknek"
+
+msgid "Encrypt every file"
+msgstr "Minden állomány titkosítása"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Az SHA-256 ellenőrző kód kiszámítása az egyes állományokhoz"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Küldjön egy e-mailt, ha mindegyik címzett letöltötte a küldött állományokat"
+
+msgid "Send email message to recipients"
+msgstr "Küldjön e-mail üzenetet a címzetteknek,"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "amely tartalmazza küldemény azonosítóját és a hozzá tartozó jelszót"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "A címzetteknek el kell fogadniuk a felhasználási feltételeket"
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Címzettek hozzáadása"
@@ -1192,30 +1219,6 @@ msgstr "Ok"
 
 msgid "Cancel"
 msgstr "Mégse"
-
-msgid "Short note to the Recipients"
-msgstr "Rövid megjegyzés a címzetteknek"
-
-msgid "Encrypt every file"
-msgstr "Minden állomány titkosítása"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Az SHA-256 ellenőrző kód kiszámítása az egyes állományokhoz"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Küldjön egy e-mailt, ha mindegyik címzett letöltötte a küldött állományokat"
-
-msgid "Send email message to recipients"
-msgstr "Küldjön e-mail üzenetet a címzetteknek,"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "amely tartalmazza küldemény azonosítóját és a hozzá tartozó jelszót"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr "A címzetteknek el kell fogadniuk a felhasználási feltételeket"
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Állományok hozzáadása"
@@ -1381,9 +1384,6 @@ msgstr "Ez a weboldal lehetővé teszi, hogy egy másik személynek kérést kü
 
 msgid "Email(s)"
 msgstr "Email címe(ek)"
-
-msgid "Subject"
-msgstr "Tárgy"
 
 msgid "Send email"
 msgstr "E-mail küldése"

@@ -10,7 +10,7 @@ parameters on the command-line.
 
 adduser         - Add a new user to the table
 deleteuser      - Remove a user from the table
-listusers       - List all the details of the users (except their passwords)
+listusers       - List the details of the users (except their passwords)
                   Run with "--help" to describe the output format
 setpassword     - Change the password for a user
 unlockuser      - Unlock a user who has had too many failed logins
@@ -21,6 +21,13 @@ makelanguages   - Rebuild and recompile the language translations.
 
 extractdropoff  - Given a claim ID, extract all the files from it to the
                   current directory. Will prompt for passphrase if needed.
+
+These are for automating ZendTo. See https://zend.to/automation for more
+information and examples:
+autodropoff     - Create a new drop-off from the command-line.
+autolist        - List metadata about all drop-offs.
+autopickup      - Download one or all of the files from a drop-off.
+autorequest     - Send a request for a drop-off.
 
 To save you having to put the full location of the ZendTo preferences.php
 file in every command, you can set the shell environment variable

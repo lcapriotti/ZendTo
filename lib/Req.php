@@ -161,7 +161,8 @@ class Req {
     }
     
     // Sanitise the data
-    $subject            = preg_replace('/[<>]/', '', $_POST['subject']);
+    // $subject            = preg_replace('/[<>]/', '', $_POST['subject']);
+    $subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, 'UTF-8'));
     $senderName         = preg_replace('/[<>]/', '', $senderName);
     $senderOrganization = preg_replace('/[<>]/', '', $senderOrganization);
     $recipName          = preg_replace('/[<>]/', '', $recipName);
@@ -196,8 +197,8 @@ class Req {
     $recipEmail = $emailParts[1]."@".$emailParts[2];
     
     // Check the length of the subject.
-    $subject = $smarty->getConfigVars('EmailSubjectTag') . $subject;
-    $subjectlength = strlen($subject);
+    //$subject = $smarty->getConfigVars('EmailSubjectTag') . $subject;
+    $subjectlength = mb_strlen($smarty->getConfigVars('EmailSubjectTag') . $subject);
     $maxlen = $this->_dropbox->maxsubjectlength();
     if ($subjectlength>$maxlen) {
       return sprintf(gettext("Your subject line to the recipients is %1$d characters long. It must be less than %2$d."), $subjectlength, $maxlen).' '.$BACKBUTTON;
@@ -262,7 +263,7 @@ class Req {
     $smarty->assign('toName',    $this->_recipName);
     $smarty->assign('toEmail',   $this->_recipEmail);
     $smarty->assign('note',      $this->_note);
-    $emailSubject = trim($this->_subject);
+    $emailSubject = $smarty->getConfigVars('EmailSubjectTag') . $this->_subject;
     $smarty->assign('subject', $emailSubject);
     // Tell the recipient if their drop-off will automatically be
     // encrypted. Passphrase only known to person who sent the request.

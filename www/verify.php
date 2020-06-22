@@ -249,6 +249,7 @@ function displayNewDropoffForm(
       # Generate unique ID required for progress bars status
       $smarty->assign('progress_id', uniqid(""));
       $smarty->assign('note','');
+      $smarty->assign('subject', sprintf(gettext('%s has dropped off files for you'), htmlentities($authFullName, ENT_QUOTES, 'UTF-8')));
       $smarty->assign('maxBytesForFileInt', $theDropbox->maxBytesForFile());
       $smarty->assign('maxBytesForDropoffInt', $theDropbox->maxBytesForDropoff());
       $smarty->assign('maxNoteLength', $theDropbox->maxnotelength());

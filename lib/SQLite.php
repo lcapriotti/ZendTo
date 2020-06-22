@@ -163,7 +163,8 @@ private function DBCreate () {
   confirmDelivery     boolean default FALSE,
   created             timestamp with time zone not null,
   note                text,
-  lifeseconds         integer default 0
+  lifeseconds         integer default 0,
+  subject             character varying(500) default null
 );",$errorMsg) ) {
         return FALSE;
       }
@@ -705,6 +706,10 @@ public function DBUpdateSchema() {
   @$this->database->exec(
     "ALTER TABLE dropoff ADD COLUMN lifeseconds int NOT NULL DEFAULT 0"
   );
+  @$this->database->exec(
+    "ALTER TABLE dropoff ADD COLUMN subject character varying(500) DEFAULT NULL"
+  );
+
 }
 
 // Does not trim expired ones as it's only used for stats
@@ -999,15 +1004,16 @@ public function DBTouchDropoff ( $claimID, $now ) {
 public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
                                $senderName, $senderOrganization, $senderEmail,
                                $remoteIP, $confirmDelivery,
-                               $now, $note, $lifeseconds ) {
+                               $now, $note, $lifeseconds, $subject ) {
   // Try to add the column anyway, to be on the safe side.
   @$this->database->exec('ALTER TABLE dropoff ADD COLUMN lifeseconds int not null DEFAULT 0');
+  @$this->database->exec('ALTER TABLE dropoff ADD COLUMN subject character varying(255) DEFAULT NULL');
   $query = sprintf("INSERT INTO dropoff
                     (claimID,claimPasscode,authorizedUser,senderName,
                      senderOrganization,senderEmail,senderIP,
-                     confirmDelivery,created,note,lifeseconds)
+                     confirmDelivery,created,note,lifeseconds,subject)
                     VALUES
-                    ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%d)",
+                    ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%d,'%s')",
              sqlite_escape_string($claimID),
              sqlite_escape_string($claimPasscode),
              sqlite_escape_string($authorizedUser),
@@ -1018,7 +1024,8 @@ public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
              ( $confirmDelivery ? 't' : 'f' ),
              sqlite_escape_string($now),
              sqlite_escape_string($note),
-             $lifeseconds
+             $lifeseconds,
+             sqlite_escape_string($subject)
            );
   if ( $this->database->queryExec($query) ) {
     return $this->database->lastInsertRowid();

@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `dropoff` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `note` text NOT NULL,
   `lifeseconds` int NOT NULL DEFAULT 0,
+  `subject` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`rowID`),
   KEY `claimID` (`claimID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Data about dropoffs of files' AUTO_INCREMENT=2 ;

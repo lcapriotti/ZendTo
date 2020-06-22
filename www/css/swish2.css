@@ -128,17 +128,146 @@ label {
 }
 
 
+
 /*
-   New implementation of the column of checkboxes
+ * All the grids and flexes needed for the New-Dropoff form.
+ */
+
+#newdropoff-boxes {
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: 48% 40px auto;
+	-ms-grid-columns: 48% 40px 1fr;
+}
+#newdropoff-boxes .labels {
+	display: block; /* IE */
+	font-weight: bold;
+	line-height: 26px;
+}
+#newdropoff-boxes .text {
+	align-self: stretch;
+	-ms-grid-row-align: stretch;
+	display: block; /* IE */
+	border-color: #2b3e89;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	padding: 2px 5px;
+	clear: both;
+}
+/* IE can't auto-place items in a grid, so everything has
+   to be manually placed. */
+#newdropoff-boxes #fromLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 1;
+	-ms-grid-row: 1;
+}
+#newdropoff-boxes #subjectLabel {
+	grid-column: 3;
+	-ms-grid-column: 3;
+	grid-row: 1;
+	-ms-grid-row: 1;
+}
+#newdropoff-boxes #fromHolder {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-height: 22px;
+	line-height: 24px;
+
+}
+#newdropoff-boxes #subject {
+	grid-column: 3;
+	-ms-grid-column: 3;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+
+}
+#newdropoff-boxes #emailLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 3;
+	-ms-grid-row: 3;
+}
+#newdropoff-boxes #emailHolder {
+	grid-column-start: 1;
+	-ms-grid-column: 1;
+	grid-column-end: 4;
+	-ms-grid-column-span: 4;
+	grid-row: 4;
+	-ms-grid-row: 4;
+	width: inherit;
+	min-height: 28px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+#newdropoff-boxes #emailHolder a#addRecipients {
+	display: block;
+	float:left;
+	margin-top:7px;
+	margin-left:10px;
+	width:20px;
+	height:16px;
+}
+#newdropoff-boxes #noteLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 5;
+	-ms-grid-row: 5;
+}
+#newdropoff-boxes #noteHolder {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 6;
+	-ms-grid-row: 6;
+	display: flex;
+	flex-direction: column;
+	margin-right: 2px;
+}
+#newdropoff-boxes #note {
+	width: 100%;
+	min-height: 90px;
+	flex: 1;
+}
+#newdropoff-boxes #noteLengthText {
+	text-align: right;
+	margin-right: -14px;
+	padding-right: 0px;
+}
+#newdropoff-boxes #fromHolder #fromName {
+}
+#newdropoff-boxes #fromHolder #fromEmail {
+}
+#newdropoff-boxes #fromHolder #fromOrg {
+	font-style: bold;
+}
+#newdropoff-boxes #fromHolder span {
+	margin-right: 5px;
+}
+
+/*
+   New implementation (grid) of the column of checkboxes
    as it has a number input at the bottom now too!
 */
 #newdropoff-checkboxes {
+	grid-column: 3;
+	-ms-grid-column: 3;
+	grid-row: 6;
+	-ms-grid-row: 6;
+	align-self: start;
 	display: grid;
 	display: -ms-grid;
 	grid-template-columns: 1fr auto;
 	-ms-grid-columns: 1fr auto;
-	/* background: gray;
-	border: blue; DEBUG */
 }
 
 #newdropoff-checkboxes input {
@@ -213,26 +342,6 @@ label {
 	background-color: pink;
 	border-color: red;
 }
-
-/*
-Old implementation when only checkboxes were needed.
-#newdropoff-checkboxes {
-	max-width: 49%;
-	display: inline-block;
-	float: right;
-	vertical-align: top;
-}
-
-#newdropoff-checkboxes input[type="checkbox"] {
-	margin: 3px 0px;
-}
-
-.ndcbLabel {
-	display: block;
-	padding-left: 15px;
-	text-indent: -17px;
-}
-*/
 
 .content a {
 	font-weight: bold;
@@ -552,7 +661,7 @@ a.UD_buttonchosen {
 
 input[type="submit"][disabled], input[type="button"][disabled], button[disabled], .greyButton{
 	float:left;
-	margin-bottom:10px; // JKF was 50px, don't know why
+	margin-bottom:10px;
 	border: 1px solid #636363;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -611,7 +720,8 @@ a.UD_textbutton_admin:not(.greyButton):hover, .UD_textbutton_admin:not(.greyButt
 	position: relative;
 }
 
-#emailHolder, #fromHolder, .infoBox {
+/* #emailHolder, #fromHolder, .infoBox { */
+.infoBox {
 	border-color: #2b3e89;
 	border-width: 1px;
 	border-style: solid;
@@ -623,29 +733,27 @@ a.UD_textbutton_admin:not(.greyButton):hover, .UD_textbutton_admin:not(.greyButt
 	clear:both;
 }
 
+/*
 #emailHolder {
 	min-height: 28px;
 }
-
 #fromHolder {
 	line-height: 24px;
 }
-
 #fromHolder #fromName {
 	padding-left: 5px;
 }
-
 #fromHolder #fromEmail {
 
 }
-
 #fromHolder #fromOrg {
 	font-style: bold;
 }
-
 #fromHolder span {
 	margin-right: 5px;
 }
+*/
+
 
 #recipNameLabel, #recipEmailLabel {
 	padding-left: 5px;
@@ -738,15 +846,6 @@ textarea {
 
 a img {
 	border:0;
-}
-
-#emailHolder a#addRecipients {
-	display: block;
-	float:left;
-	margin-top:7px;
-	margin-left:10px;
-	width:20px;
-	height:16px;
 }
 
 #addNewRecipient {
@@ -879,12 +978,6 @@ thead {
 	color: #cc0000;
 }
 
-/* Makes it too light with Roboto
-.UD_form {
-	font-weight: lighter;
-}
-*/
-
 .ui-widget {
 	font-family: 'Roboto', sans-serif !important;
 }
@@ -892,10 +985,8 @@ thead {
 #sendContainer {
 	padding: 15px;
 	background-color: #3fb8e5; /* rgba(8,146,208, 0.8); */
-	/* width: 350px; */
 	margin-left: 0px; /* 11px; */
 	font-size: 1em;
-	/* letter-spacing: -0.008em; */
 	color: #ffffff;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -970,28 +1061,24 @@ thead {
 
 .ac-row {
 	display: flex;
-        justify-content: stretch; /* horizontal */
-        /* align-items: stretch; */ /* vertical */
-        padding-right: 0;
+    justify-content: stretch; /* horizontal */
+    /* align-items: stretch; */ /* vertical */
+    padding-right: 0;
 }
 
 .ac-col1 {
-        flex: 99%;
-        white-space: nowrap;
-        padding-right: 1em !important;
+    flex: 99%;
+    white-space: nowrap;
+    padding-right: 1em !important;
 }
 
 .ac-col2 {
-        /* flex: 50px; */
-        /* max-width: 50px; */
-        align-self: center; /* vertical */
-        text-align: right;
+	align-self: center; /* vertical */
+	text-align: right;
 	/*padding: 3px 0 3px 0 !important;*/
-        padding-top: 0px;
-        padding-bottom: 0px;
-	/* background-color: white; */
+	padding-top: 0px;
+	padding-bottom: 0px;
 	color: red;
-
 }
 
 .x-col.deleteme {

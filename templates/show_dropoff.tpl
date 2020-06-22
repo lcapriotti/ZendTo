@@ -589,6 +589,11 @@ $(document).ready(function() {
 {capture assign="date_t"}{$createdDate|date_format:"%Y-%m-%d&nbsp;%H:%M"}{/capture}
 <div id="fromHolder">{t escape=no 1=$from_t 2=$senderHost 3=$date_t}%1 <span>from %2 on %3</span>{/t}</div>
 
+{if $showSubject}
+<div class="UILabel">{t}Subject{/t}:</div> <br class="clear" />
+<div id="subjectHolder">{$subject}</div>
+{/if}
+
 {if $showRecips}
 <div class="UILabel">{t}To{/t}:</div> <br class="clear" />
 <div id="emailHolder">

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2020-05-26 12:56+0200\n"
 "Last-Translator: Jimmi Crottaz <jimmi.crottaz@outlook.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -57,6 +57,9 @@ msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs qu
 
 msgid "Access Denied"
 msgstr "Accès Refusé"
+
+msgid "%s has dropped off files for you"
+msgstr "%s a déposé des fichiers pour vous"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Impossible de lire le fichier log. Vérifier si le serveur web dispose des permissions."
@@ -288,9 +291,6 @@ msgstr "%s a récupéré votre dépôt!"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s a déposé un fichier pour vous"
-
-msgid "%s has dropped off files for you"
-msgstr "%s a déposé des fichiers pour vous"
 
 msgid "%d days"
 msgstr "%d jours"
@@ -1136,8 +1136,35 @@ msgstr "Cette page Web vous permettra de déposer (télécharger) un ou plusieur
 msgid "From"
 msgstr "De"
 
+msgid "Subject"
+msgstr "Sujet"
+
 msgid "To"
 msgstr "Pour"
+
+msgid "Short note to the Recipients"
+msgstr "Informations pour le(s) destinataire(s)"
+
+msgid "Encrypt every file"
+msgstr "Chiffrer chaque fichier"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Calculer le checksum SHA-256 pour chaque fichier"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Envoyer un mail de notification lorsque chaque destinataire télécharge le(s) fichier(s)"
+
+msgid "Send email message to recipients"
+msgstr "Envoyer un mail aux destinataires"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "qui inclus le 'Code de la demande' et 'l'Identifiant de la demande"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "Les destinataires doivent accepter les termes et conditions"
+
+msgid "days until drop-off expires"
+msgstr "jours jusqu'à l'expiration du dépôt"
 
 msgid "Add Recipients"
 msgstr "Ajouter des destinataires"
@@ -1192,30 +1219,6 @@ msgstr "Ok"
 
 msgid "Cancel"
 msgstr "Annuler"
-
-msgid "Short note to the Recipients"
-msgstr "Informations pour le(s) destinataire(s)"
-
-msgid "Encrypt every file"
-msgstr "Chiffrer chaque fichier"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Calculer le checksum SHA-256 pour chaque fichier"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Envoyer un mail de notification lorsque chaque destinataire télécharge le(s) fichier(s)"
-
-msgid "Send email message to recipients"
-msgstr "Envoyer un mail aux destinataires"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "qui inclus le 'Code de la demande' et 'l'Identifiant de la demande"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr "Les destinataires doivent accepter les termes et conditions"
-
-msgid "days until drop-off expires"
-msgstr "jours jusqu'à l'expiration du dépôt"
 
 msgid "Add Files"
 msgstr "Ajouter des fichiers"
@@ -1381,9 +1384,6 @@ msgstr "Cette page vous permet d'envoyer une demande de dépôt de fichier. Le d
 
 msgid "Email(s)"
 msgstr "Email(s)"
-
-msgid "Subject"
-msgstr "Sujet"
 
 msgid "Send email"
 msgstr "Envoyer le mail"

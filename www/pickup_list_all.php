@@ -97,6 +97,27 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
             $recilist[] = array('name'  => $r[0], 'email' => $r[1]);
           }
           $outputDropoffs[$i]['recipients'] = $recilist;
+          // And now for all the pickups
+          $pickups = $theDropbox->database->DBPickupsForDropoff($dropoff->dropoffID());
+          $picklist = array();
+          foreach ($pickups as $p) {
+            if (is_array($p)) {
+              $who = $p['authorizedUser'];
+              if (empty($who))
+                $who = trim($p['emailAddr']);
+              $IP = $p['recipientIP'];
+              $hostname = gethostbyaddr($IP);
+              if ($hostname === $IP)
+                $hostname = '';
+              $when = $p['pickupTimestamp'];
+              $picklist[] = array('who'      => $who,
+                                  'IP'       => $IP,
+                                  'hostname' => $hostname,
+                                  'formattedDate' => $when,
+                                  'date'     => timeForTimestamp($when));
+            }
+          }
+          $outputDropoffs[$i]['pickups'] = $picklist;
           // Don't publish all the metadata for every file,
           // just the useful fields.
           $filelist = array();

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2018-01-05 16:39+0000\n"
 "Last-Translator: Jules Field <Jules@Zend.To>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -56,6 +56,9 @@ msgid "This feature is only available to users who have logged in."
 msgstr ""
 
 msgid "Access Denied"
+msgstr ""
+
+msgid "%s has dropped off files for you"
 msgstr ""
 
 msgid "Failed to read logfile. Check web server can read it."
@@ -287,9 +290,6 @@ msgid "%s has picked up your drop-off!"
 msgstr ""
 
 msgid "%s has dropped off a file for you"
-msgstr ""
-
-msgid "%s has dropped off files for you"
 msgstr ""
 
 msgid "%d days"
@@ -1134,7 +1134,34 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+msgid "Subject"
+msgstr ""
+
 msgid "To"
+msgstr ""
+
+msgid "Short note to the Recipients"
+msgstr ""
+
+msgid "Encrypt every file"
+msgstr ""
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr ""
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr ""
+
+msgid "Send email message to recipients"
+msgstr ""
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr ""
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
 msgstr ""
 
 msgid "Add Recipients"
@@ -1189,30 +1216,6 @@ msgid "OK"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
-
-msgid "Short note to the Recipients"
-msgstr ""
-
-msgid "Encrypt every file"
-msgstr ""
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr ""
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr ""
-
-msgid "Send email message to recipients"
-msgstr ""
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr ""
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
 msgstr ""
 
 msgid "Add Files"
@@ -1378,9 +1381,6 @@ msgid "This web page will allow you to send a request to one of more other peopl
 msgstr ""
 
 msgid "Email(s)"
-msgstr ""
-
-msgid "Subject"
 msgstr ""
 
 msgid "Send email"

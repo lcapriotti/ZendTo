@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2018-08-15 13:36+0200\n"
 "Last-Translator: marcel <Werken@bijdebaas.nl>\n"
 "Language-Team: team nietsnut\n"
@@ -54,6 +54,9 @@ msgstr "Deze functie is alleen beschikbaar voor gebruikers die zich hebben aange
 
 msgid "Access Denied"
 msgstr "Toegang geweigerd"
+
+msgid "%s has dropped off files for you"
+msgstr "%s heeft bestanden voor je gedropt"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Kan logfile niet lezen. Check of Web Server kan lezen."
@@ -285,9 +288,6 @@ msgstr "%s heeft uw aflevering opgehaald!"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s heeft een bestand voor je gedropt"
-
-msgid "%s has dropped off files for you"
-msgstr "%s heeft bestanden voor je gedropt"
 
 msgid "%d days"
 msgstr "%d dagen"
@@ -1138,8 +1138,36 @@ msgstr "Op deze webpagina kunt u een of meer bestanden voor een %1-gebruiker ach
 msgid "From"
 msgstr "Van"
 
+msgid "Subject"
+msgstr "Onderwerp"
+
 msgid "To"
 msgstr "Aan"
+
+msgid "Short note to the Recipients"
+msgstr "Korte opmerking/notitie voor de ontvangers"
+
+msgid "Encrypt every file"
+msgstr "Versleutel ieder bestand (max 300Mb)"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Bereken de SHA-256 checksum van ieder bestand"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Stuur een e-mail naar mij wanneer elke ontvanger het/de bestand(en) ophaalt"
+
+#, fuzzy
+msgid "Send email message to recipients"
+msgstr "Stuur een e-mailbericht naar ontvangers"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "die zowel een toegangscode als een claim-ID bevat"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Voeg ontvangers toe"
@@ -1194,31 +1222,6 @@ msgstr "OK"
 
 msgid "Cancel"
 msgstr "Annuleer\t"
-
-msgid "Short note to the Recipients"
-msgstr "Korte opmerking/notitie voor de ontvangers"
-
-msgid "Encrypt every file"
-msgstr "Versleutel ieder bestand (max 300Mb)"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Bereken de SHA-256 checksum van ieder bestand"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Stuur een e-mail naar mij wanneer elke ontvanger het/de bestand(en) ophaalt"
-
-#, fuzzy
-msgid "Send email message to recipients"
-msgstr "Stuur een e-mailbericht naar ontvangers"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "die zowel een toegangscode als een claim-ID bevat"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Bestanden toevoegen"
@@ -1388,9 +1391,6 @@ msgstr "Op deze webpagina kunt u een verzoek sturen naar een of meer andere mens
 
 msgid "Email(s)"
 msgstr "Email(s)"
-
-msgid "Subject"
-msgstr "Onderwerp"
 
 #, fuzzy
 msgid "Send email"

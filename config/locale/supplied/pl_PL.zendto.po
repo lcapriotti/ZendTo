@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2019-10-24 15:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -57,6 +57,9 @@ msgstr "Ta funkcja jest dostępna tylko dla zalogowanych użytkowników."
 
 msgid "Access Denied"
 msgstr "Odmowa dostępu"
+
+msgid "%s has dropped off files for you"
+msgstr "%s udostępnił pliki dla ciebie"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Nie odczytany plik dziennika. Sprawdź, czy serwer może odczytać."
@@ -289,9 +292,6 @@ msgstr "%s odebrał plik"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s udostępnił plik dla ciebie"
-
-msgid "%s has dropped off files for you"
-msgstr "%s udostępnił pliki dla ciebie"
 
 msgid "%d days"
 msgstr "%d dni"
@@ -1138,8 +1138,35 @@ msgstr "Ta strona internetowa pozwoli ci przesłać (załadować) jeden lub wię
 msgid "From"
 msgstr "Od"
 
+msgid "Subject"
+msgstr "Temat"
+
 msgid "To"
 msgstr "Do"
+
+msgid "Short note to the Recipients"
+msgstr "Krótka notatka do odbiorców"
+
+msgid "Encrypt every file"
+msgstr "Zaszyfruj każdy plik"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Oblicz sumę kontrolną SHA-256 dla każdego pliku"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Wyślij mi e-mail, gdy każdy odbiorca odbierze pliki"
+
+msgid "Send email message to recipients"
+msgstr "Wyślij wiadomość e-mail do odbiorców"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "który zawiera kod dostępu oraz identyfikator"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Dodaj odbiorców"
@@ -1194,30 +1221,6 @@ msgstr "OK"
 
 msgid "Cancel"
 msgstr "Anuluj"
-
-msgid "Short note to the Recipients"
-msgstr "Krótka notatka do odbiorców"
-
-msgid "Encrypt every file"
-msgstr "Zaszyfruj każdy plik"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Oblicz sumę kontrolną SHA-256 dla każdego pliku"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Wyślij mi e-mail, gdy każdy odbiorca odbierze pliki"
-
-msgid "Send email message to recipients"
-msgstr "Wyślij wiadomość e-mail do odbiorców"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "który zawiera kod dostępu oraz identyfikator"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Dodaj pliki"
@@ -1383,9 +1386,6 @@ msgstr "Ta strona internetowa pozwoli ci wysłać żądanie do jednej lub więce
 
 msgid "Email(s)"
 msgstr "Email(e)"
-
-msgid "Subject"
-msgstr "Temat"
 
 msgid "Send email"
 msgstr "Wyslij email"

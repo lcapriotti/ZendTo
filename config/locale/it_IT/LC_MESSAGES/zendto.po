@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2020-06-01 11:27+0200\n"
 "Last-Translator: Massimo Forni <massimo.forni@turboden.it>\n"
 "Language-Team: Italian <stefano.fiori@bac.sm>\n"
@@ -57,6 +57,9 @@ msgstr "Questa funzionalità è disponibile solamente per gli utenti che si sono
 
 msgid "Access Denied"
 msgstr "Accesso negato"
+
+msgid "%s has dropped off files for you"
+msgstr "%s ha messo in consegna dei files per te"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Impossibile leggere il file di registro. Controlla che il server web possa leggerlo."
@@ -288,9 +291,6 @@ msgstr "%s ha prelevato i file che avevi messo in consegna!"
 
 msgid "%s has dropped off a file for you"
 msgstr "%s ha messo in consegna un file per te"
-
-msgid "%s has dropped off files for you"
-msgstr "%s ha messo in consegna dei files per te"
 
 msgid "%d days"
 msgstr "%d giorni"
@@ -1136,8 +1136,35 @@ msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file
 msgid "From"
 msgstr "Da"
 
+msgid "Subject"
+msgstr "Oggetto"
+
 msgid "To"
 msgstr "A"
+
+msgid "Short note to the Recipients"
+msgstr "Breve nota ai destinatari"
+
+msgid "Encrypt every file"
+msgstr "Crittografa ogni file"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Calcola il SHA-256 checksum di ogni file"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Inviami un'e-mail quando ciascun destinatario preleva il / i file / files"
+
+msgid "Send email message to recipients"
+msgstr "Invia l’email ai destinatari"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "che include Passcode ed ID di Richiesta (Claim ID)"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "I destinatari devono accettare i termini e le condizioni"
+
+msgid "days until drop-off expires"
+msgstr "giorni alla scadenza del drop-off"
 
 msgid "Add Recipients"
 msgstr "Aggiungi destinatari"
@@ -1192,30 +1219,6 @@ msgstr "OK"
 
 msgid "Cancel"
 msgstr "Annulla"
-
-msgid "Short note to the Recipients"
-msgstr "Breve nota ai destinatari"
-
-msgid "Encrypt every file"
-msgstr "Crittografa ogni file"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Calcola il SHA-256 checksum di ogni file"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Inviami un'e-mail quando ciascun destinatario preleva il / i file / files"
-
-msgid "Send email message to recipients"
-msgstr "Invia l’email ai destinatari"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "che include Passcode ed ID di Richiesta (Claim ID)"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr "I destinatari devono accettare i termini e le condizioni"
-
-msgid "days until drop-off expires"
-msgstr "giorni alla scadenza del drop-off"
 
 msgid "Add Files"
 msgstr "Aggiungi Files"
@@ -1381,9 +1384,6 @@ msgstr "Questa pagina web ti consentirà di inviare una richiesta a una o più a
 
 msgid "Email(s)"
 msgstr "Email(s)"
-
-msgid "Subject"
-msgstr "Oggetto"
 
 msgid "Send email"
 msgstr "Invia email"

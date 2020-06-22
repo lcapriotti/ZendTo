@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 10:19+0100\n"
+"POT-Creation-Date: 2020-06-19 13:35+0100\n"
 "PO-Revision-Date: 2020-01-02 11:43+0100\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Русский язык <dizzy.easy49@gmail.com>\n"
@@ -56,6 +56,9 @@ msgstr "Эта функция доступна только для пользо�
 
 msgid "Access Denied"
 msgstr "Доступ запрещен"
+
+msgid "%s has dropped off files for you"
+msgstr "%s оставил для вас файлы"
 
 msgid "Failed to read logfile. Check web server can read it."
 msgstr "Считывание файлов не получилось. Проверьте, может ли веб-сервис считывать."
@@ -287,9 +290,6 @@ msgstr "%s получил(а) вашу Отправку!"
 
 msgid "%s has dropped off a file for you"
 msgstr "\"%s сохранил пересылку для вас"
-
-msgid "%s has dropped off files for you"
-msgstr "%s оставил для вас файлы"
 
 msgid "%d days"
 msgstr "%d дней"
@@ -1136,8 +1136,35 @@ msgstr "На этой веб-странице можно отправить од
 msgid "From"
 msgstr "От"
 
+msgid "Subject"
+msgstr "Тема"
+
 msgid "To"
 msgstr "Для"
+
+msgid "Short note to the Recipients"
+msgstr "Короткое сообщение"
+
+msgid "Encrypt every file"
+msgstr "Шифровка каждого файла"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Посчитайте SHA-256 checksum каждого файла"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Отправьте мне письмо, когда файлы будут приняты получателем"
+
+msgid "Send email message to recipients"
+msgstr "Отправить электоронное сообщение получателям"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "который включает Код доступа, а также Идентификатор"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr ""
+
+msgid "days until drop-off expires"
+msgstr ""
 
 msgid "Add Recipients"
 msgstr "Добавить получателей"
@@ -1192,30 +1219,6 @@ msgstr "ОК"
 
 msgid "Cancel"
 msgstr "Отменить"
-
-msgid "Short note to the Recipients"
-msgstr "Короткое сообщение"
-
-msgid "Encrypt every file"
-msgstr "Шифровка каждого файла"
-
-msgid "Calculate SHA-256 checksum of each file"
-msgstr "Посчитайте SHA-256 checksum каждого файла"
-
-msgid "Send me an email when each recipient picks up the files"
-msgstr "Отправьте мне письмо, когда файлы будут приняты получателем"
-
-msgid "Send email message to recipients"
-msgstr "Отправить электоронное сообщение получателям"
-
-msgid "which includes Passcode as well as Claim ID"
-msgstr "который включает Код доступа, а также Идентификатор"
-
-msgid "Recipients must agree to terms and conditions"
-msgstr ""
-
-msgid "days until drop-off expires"
-msgstr ""
 
 msgid "Add Files"
 msgstr "Добавить файлы"
@@ -1381,9 +1384,6 @@ msgstr "Эта веб-страница позволит вам отправит�
 
 msgid "Email(s)"
 msgstr "Письмо(а)"
-
-msgid "Subject"
-msgstr "Тема"
 
 msgid "Send email"
 msgstr "Отправить письмо"

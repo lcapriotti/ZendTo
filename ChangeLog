@@ -1,3 +1,12 @@
+Version 6.02-1 Beta
+- Users can now edit the Subject line of a new drop-off.
+- "adduser" now looks for "<" in the supplied username, to help out new
+  sysadmins who don't recognise use of <> as syntax markers.
+- Updated Polish translation. Thanks Dizzy!
+- "autolist" output now includes data about all pick-ups.
+  But if you just want to know if there were any at all, for a particular
+  drop-off, then check its 'numPickups' value.
+
 Version 6.01-2 Production
 - If a request for an encrypted drop-off was sent, but the resulting
   drop-off failed to read the passphrase from the database due to a DB

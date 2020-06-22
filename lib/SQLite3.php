@@ -202,7 +202,8 @@ private function DBCreate () {
   confirmDelivery     boolean default FALSE,
   created             timestamp with time zone not null,
   note                text,
-  lifeseconds         integer not null default 0
+  lifeseconds         integer not null default 0,
+  subject             character varying(500) default null
 );") ) {
         return FALSE;
       }
@@ -788,6 +789,30 @@ public function DBUpdateSchema() {
   if (!$this->DBLifesecondsExists()) {
     $this->DBAddLifeseconds();
   }
+  // Add the subject column to dropoff table if it doesn't already exist
+  if (!$this->DBSubjectExists()) {
+    $this->DBAddSubject();
+  }
+}
+
+// Does the table 'dropoff' contain a field called "subject"?
+private function DBSubjectExists() {
+  // This generates a PHP warning if the column doesn't exist,
+  // which we want to suppress as that's exactly what we're testing for.
+  $res = @$this->database->prepare('SELECT subject FROM dropoff');
+  if ($res === FALSE) {
+    return FALSE;
+  } else {
+    $res->close();
+    return TRUE;
+  }
+}
+
+private function DBAddSubject() {
+  $res = @$this->database->exec(
+         "ALTER TABLE dropoff ADD COLUMN subject character varying(500) DEFAULT NULL"
+         );
+  return $res;
 }
 
 // Does the table 'dropoff' contain a field called "lifeseconds"?
@@ -1141,13 +1166,13 @@ public function DBTouchDropoff ( $claimID, $now ) {
 public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
                                $senderName, $senderOrganization, $senderEmail,
                                $remoteIP, $confirmDelivery,
-                               $now, $note, $lifeseconds ) {
+                               $now, $note, $lifeseconds, $subject ) {
   $query = sprintf("INSERT INTO dropoff
                     (claimID,claimPasscode,authorizedUser,senderName,
                      senderOrganization,senderEmail,senderIP,
-                     confirmDelivery,created,note,lifeseconds)
+                     confirmDelivery,created,note,lifeseconds,subject)
                     VALUES
-                    ('%s','%s','%s','%s', '%s','%s','%s','%s','%s','%s',%d)",
+                    ('%s','%s','%s','%s', '%s','%s','%s','%s','%s','%s',%d,'%s')",
              $this->database->escapeString($claimID),
              $this->database->escapeString($claimPasscode),
              $this->database->escapeString($authorizedUser),
@@ -1158,7 +1183,8 @@ public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
              ( $confirmDelivery ? 't' : 'f' ),
              $this->database->escapeString($now),
              $this->database->escapeString($note),
-             $lifeseconds
+             $lifeseconds,
+             $this->database->escapeString($subject)
            );
   if ( $this->database->exec($query) ) {
     return $this->database->lastInsertRowID();

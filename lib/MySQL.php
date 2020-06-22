@@ -610,6 +610,26 @@ public function DBUpdateSchema() {
     // If it fails, just carry on quietly
     $this->DBAddLifeseconds();
   }
+  // If the dropoff table doesn't contain subject column, add it
+  if (!$this->DBSubjectExists()) {
+    // If it fails, just carry on quietly
+    $this->DBAddSubject();
+  }
+}
+
+// Does the table 'dropoff' contain a field called "subject"?
+private function DBSubjectExists() {
+  $res = $this->database->query(
+           "select if(count(*) = 1, 'yes','no') AS result from information_schema.columns where table_schema='".$this->dbname."' and table_name='dropoff' and column_name='subject'");
+  $line = $res->fetch_array();
+  // If it is not there, add it
+  return (strcasecmp($line[0], 'yes') == 0)?TRUE:FALSE;
+
+}
+
+private function DBAddSubject() {
+  $res = $this->database->query("ALTER TABLE dropoff ADD COLUMN subject varchar(500) DEFAULT NULL");
+  return ($res === FALSE) ? FALSE : TRUE;
 }
 
 // Does the table 'dropoff' contain a field called "lifeseconds"?
@@ -959,7 +979,7 @@ public function DBTouchDropoff ( $claimID, $now ) {
 public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
                                $senderName, $senderOrganization, $senderEmail,
                                $remoteIP, $confirmDelivery,
-                               $now, $note, $lifeseconds ) {
+                               $now, $note, $lifeseconds, $subject ) {
   // This shouldn't be needed. Hopefully post-RPM/DEB install script
   // will do this first.
   // if (!$this->DBLifesecondsExists())
@@ -968,9 +988,9 @@ public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
   $query = sprintf("INSERT INTO dropoff
                     (claimID,claimPasscode,authorizedUser,senderName,
                      senderOrganization,senderEmail,senderIP,
-                     confirmDelivery,created,note,lifeseconds)
+                     confirmDelivery,created,note,lifeseconds,subject)
                     VALUES
-                    ('%s','%s','%s','%s', '%s','%s','%s', %d,'%s','%s',%d)",
+                    ('%s','%s','%s','%s', '%s','%s','%s', %d,'%s','%s',%d,'%s')",
              $this->database->real_escape_string($claimID),
              $this->database->real_escape_string($claimPasscode),
              $this->database->real_escape_string($authorizedUser),
@@ -981,7 +1001,8 @@ public function DBAddDropoff ( $claimID, $claimPasscode, $authorizedUser,
              ( $confirmDelivery ? 1 : 0 ),
              $now,
              $this->database->real_escape_string($note),
-             $lifeseconds
+             $lifeseconds,
+             $this->database->real_escape_string($subject)
            );
   if ( !$this->database->query($query) ) {
     $this->dropbox->writeToLog(sprintf("Error: Failed to add drop-off %s. Error was %s", $claimID, $this->database->error));

@@ -1,5 +1,5 @@
-%define version 6.01
-%define release 2
+%define version 6.02
+%define release 1
 %define name    zendto
 
 %define is_fedora %(test -e /etc/fedora-release && echo 1 || echo 0)
@@ -136,7 +136,6 @@ chgrp "$WWWGROUP" /opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.{po,mo}* 2>/d
 # Clean the caches in case Smarty has been upgraded
 rm -f /var/zendto/cache/*php >/dev/null 2>&1
 rm -f /var/zendto/templates_c/*php >/dev/null 2>&1
-#rm -f /var/zendto/myzendto.templates_c/*php >/dev/null 2>&1
 
 # Remove obsolete caches in case they are still there
 rm -rf /opt/zendto/cache >/dev/null 2>&1
@@ -219,6 +218,10 @@ else
 fi
 # Apply schema fixes
 /usr/bin/php /opt/zendto/sbin/cleanup.php /opt/zendto/config/preferences.php --no-purge >/dev/null
+# Reset SELinux attributes for new /opt/zendto files
+# Shouldn't be needed
+# restorecon -FR /opt/zendto 2>/dev/null
+
 echo 'Please ensure your /opt/zendto/config/* files are up to date.'
 echo
 echo 'To help you, there is a simple tool for upgrading both the'
@@ -304,6 +307,7 @@ rm -rf /opt/zendto/myzendto.templates >/dev/null 2>&1
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/log.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/main_menu.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/new_dropoff.tpl
+%config(noreplace) %attr(644,root,root) /opt/zendto/templates/new_dropoff.js.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/no_download.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/pickupcheck.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/pickup_email.tpl
