@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2018-06-25 11:01-0300\n"
 "Last-Translator: Everton Bruno Bernardi <ebbernardi@gmail.com>\n"
 "Language-Team: PT Brazilian <contato@evertonbernardi.eti.br>\n"
@@ -828,15 +828,27 @@ msgstr "Próximo"
 msgid "Last"
 msgstr "Último"
 
-msgid "Recipient"
-msgstr "Destinatário"
+msgid "Recipients"
+msgstr "Destinatários"
+
+msgid "Subject"
+msgstr "Assunto"
 
 msgid "Created"
 msgstr "Criado em"
 
+msgid "Expires"
+msgstr "Expira"
+
 #, fuzzy
 msgid "Encrypted"
 msgstr "Encriptando"
+
+msgid "Export as CSV"
+msgstr "Exportar como CSV"
+
+msgid "Outbox"
+msgstr "Enviados"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr ""
@@ -856,11 +868,11 @@ msgstr "Sim"
 msgid "No"
 msgstr "Não"
 
-msgid "Outbox"
-msgstr "Enviados"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Clique num envio para visualizar informações e arquivos dentro dele."
+
+msgid "Show or hide:"
+msgstr "Mostrar ou ocultar:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Não há nenhum envio feito por você nesse momento."
@@ -1142,9 +1154,6 @@ msgstr "Esta página permitirá que você envie um ou mais arquivos para um usu�
 msgid "From"
 msgstr "De"
 
-msgid "Subject"
-msgstr "Assunto"
-
 msgid "To"
 msgstr "Para"
 
@@ -1284,17 +1293,8 @@ msgstr "O arquivo %1 foi baixado por %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Você não será notificado sobre quaisquer outros downloads de arquivos nesse envio feito para este destinatário."
 
-msgid "Recipients"
-msgstr "Destinatários"
-
-msgid "Expires"
-msgstr "Expira"
-
 msgid "Global Drop-off List"
 msgstr "Lista Global de Envios"
-
-msgid "Show or hide:"
-msgstr "Mostrar ou ocultar:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Não há envios disponíveis nesse momento."
@@ -1647,6 +1647,9 @@ msgstr "Quando você o receber em um minuto ou dois, clique no link dentro dele.
 
 msgid "Send confirmation"
 msgstr "Enviar Confirmação"
+
+#~ msgid "Recipient"
+#~ msgstr "Destinatário"
 
 #~ msgid "1 hour"
 #~ msgstr "1 hora"

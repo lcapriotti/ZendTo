@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2018-11-05 14:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: Galego <manty@manty.net>\n"
@@ -828,14 +828,26 @@ msgstr "Seguinte"
 msgid "Last"
 msgstr "Último"
 
-msgid "Recipient"
-msgstr "Destinatario"
+msgid "Recipients"
+msgstr "Destinatarios"
+
+msgid "Subject"
+msgstr "Asunto"
 
 msgid "Created"
 msgstr "Creado"
 
+msgid "Expires"
+msgstr "Caduca"
+
 msgid "Encrypted"
 msgstr "Cifrado"
+
+msgid "Export as CSV"
+msgstr "Exportar como CSV"
+
+msgid "Outbox"
+msgstr "Salida"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr ""
@@ -855,11 +867,11 @@ msgstr "Sí"
 msgid "No"
 msgstr "Non"
 
-msgid "Outbox"
-msgstr "Salida"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Preme nun envío para ver a información e os arquivos dese envío."
+
+msgid "Show or hide:"
+msgstr "Mostrar ou ocultar:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Neste intre non existen envíos creados por tí."
@@ -1141,9 +1153,6 @@ msgstr "Esta páxina web permíteche enviar un ou máis arquivos a un usuario %1
 msgid "From"
 msgstr "De"
 
-msgid "Subject"
-msgstr "Asunto"
-
 msgid "To"
 msgstr "Para"
 
@@ -1283,17 +1292,8 @@ msgstr "O arquivo %1 foi correctamente descargado por %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Non se notificarán máis descargas de arquivos deste envío por este destinatario."
 
-msgid "Recipients"
-msgstr "Destinatarios"
-
-msgid "Expires"
-msgstr "Caduca"
-
 msgid "Global Drop-off List"
 msgstr "Lista global de envíos"
-
-msgid "Show or hide:"
-msgstr "Mostrar ou ocultar:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Neste intre non existen envíos dispoñibles."
@@ -1646,6 +1646,9 @@ msgstr "Cando o recibas, nun minuto ou dous, preme na ligazón que contén."
 
 msgid "Send confirmation"
 msgstr "Enviar confirmación"
+
+#~ msgid "Recipient"
+#~ msgstr "Destinatario"
 
 #~ msgid "1 hour"
 #~ msgstr "1 hora"

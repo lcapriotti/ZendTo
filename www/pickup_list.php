@@ -2,7 +2,7 @@
 //
 // ZendTo
 // Copyright (C) 2006 Jeffrey Frey, frey at udel dot edu
-// Copyright (C) 2010 Julian Field, Jules at ZendTo dot com 
+// Copyright (C) 2020 Julian Field, Jules at ZendTo dot com 
 //
 // Based on the original PERL dropbox written by Doke Scott.
 // Developed by Julian Field.
@@ -52,7 +52,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     // fill-in and submit a pickup form when a dropoff on the page
     // is clicked.
     //
-    $iMax = count($allDropoffs);
+    $iMax = is_array($allDropoffs)?count($allDropoffs):0;
     $smarty->assign('countDropoffs', $iMax);
     $totalsize = 0;
     
@@ -63,16 +63,34 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
         $outputDropoffs[$i] = array();
         $outputDropoffs[$i]['claimID'] = $dropoff->claimID();
         $outputDropoffs[$i]['senderName'] = $dropoff->senderName();
-        $outputDropoffs[$i]['senderOrg']  = htmlspecialchars($dropoff->senderOrganization());
         $outputDropoffs[$i]['senderEmail'] = $dropoff->senderEmail();
-        $outputDropoffs[$i]['createdDate'] = timeForDate($dropoff->created());
+        $outputDropoffs[$i]['senderOrg']  = htmlspecialchars($dropoff->senderOrganization());
+        $outputDropoffs[$i]['subject'] = htmlentities($dropoff->subject(), ENT_QUOTES, 'UTF-8');
+
+        $created = timeForDate($dropoff->created());
+        $expires = $created + $dropoff->lifeseconds();
+        $outputDropoffs[$i]['createdDate'] = $created;
+        $outputDropoffs[$i]['expiresDate'] = $expires;
         $outputDropoffs[$i]['formattedBytes'] = $dropoff->formattedBytes();
         $outputDropoffs[$i]['isEncrypted'] = $dropoff->isEncrypted();
         $outputDropoffs[$i]['numPickups'] = $dropoff->numPickups();
+
         $b = $dropoff->bytes();
         $outputDropoffs[$i]['Bytes'] = $b;
         $totalsize += $b;
-        //$totalsize += $theDropbox->database()->DBBytesOfDropoff($dropoff->dropoffID());
+
+        // HTML output wants to include recipients
+        $recilist = array();
+        foreach ($dropoff->recipients() as $r) {
+          if (empty($r[0])) {
+            $ea = '<' . $r[1] . '>';
+          } else {
+            $ea = $r[0] . ' <' . $r[1] . '>';
+          }
+          $recilist[] = htmlentities($ea, ENT_NOQUOTES, 'UTF-8');
+        }
+        $outputDropoffs[$i]['recipients'] = implode('<br/>', $recilist);
+
         $i++;
       }
       $smarty->assignByRef('dropoffs', $outputDropoffs);

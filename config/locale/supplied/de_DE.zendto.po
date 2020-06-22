@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2018-09-18 18:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -826,14 +826,26 @@ msgstr "Weiter"
 msgid "Last"
 msgstr "Letzte(r)"
 
-msgid "Recipient"
+msgid "Recipients"
 msgstr "Empfänger"
+
+msgid "Subject"
+msgstr "Betreff"
 
 msgid "Created"
 msgstr "Erstellt"
 
+msgid "Expires"
+msgstr "Verfallen"
+
 msgid "Encrypted"
 msgstr "Verschlüsselt"
+
+msgid "Export as CSV"
+msgstr "Als CSV exportieren"
+
+msgid "Outbox"
+msgstr "Gesendet"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr ""
@@ -853,11 +865,11 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nein"
 
-msgid "Outbox"
-msgstr "Gesendet"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Klicken Sie auf einen Upload um Informationen und Dateien für den Upload zu sehen."
+
+msgid "Show or hide:"
+msgstr "Ein- oder Ausblenden:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Keine gesendeten Uploads verfügbar."
@@ -1138,9 +1150,6 @@ msgstr "Auf dieser Seite können Sie eine oder mehrere Dateien für einen %1 Ben
 msgid "From"
 msgstr "Von"
 
-msgid "Subject"
-msgstr "Betreff"
-
 msgid "To"
 msgstr "An"
 
@@ -1280,17 +1289,8 @@ msgstr "Die Datei %1 wurde von %2 heruntergeladen."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Sie werden nicht über weitere Downloads von Dateien aus diesem Upload durch diesen Empfänger informiert."
 
-msgid "Recipients"
-msgstr "Empfänger"
-
-msgid "Expires"
-msgstr "Verfallen"
-
 msgid "Global Drop-off List"
 msgstr "Globale Upload-Liste"
-
-msgid "Show or hide:"
-msgstr "Ein- oder Ausblenden:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Im Moment gibt es keine Uploads."
@@ -1643,6 +1643,9 @@ msgstr "Wenn Sie die Bestätigungsmail erhalten klicken Sie bitte auf den enthal
 
 msgid "Send confirmation"
 msgstr "Bestätigung senden"
+
+#~ msgid "Recipient"
+#~ msgstr "Empfänger"
 
 #~ msgid "1 hour"
 #~ msgstr "1 Stunde"

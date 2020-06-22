@@ -9,6 +9,7 @@
 {if strpos($thisTemplate, '_list') !== false}
     {* This one is quite slow, so only load where needed *}
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css"/>
 {/if}
 {if strpos($thisTemplate, 'new_dropoff') !== false}
     <link rel="stylesheet" href="css/jquery-ui.min.css">
@@ -95,12 +96,14 @@
     })});
     </script>
 {/if}
-        <script type="text/javascript" src="js/facebox/facebox.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="js/moment-2.26.0.min.js"></script>
-        <script type="text/javascript" src="js/datetime-moment.js"></script>
-        <link href="js/facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/facebox/facebox.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="js/moment-2.26.0.min.js"></script>
+<script type="text/javascript" src="js/datetime-moment.js"></script>
+<link href="js/facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript">
 var isLocal = "{$isLocalIP}";

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2019-10-24 15:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -826,14 +826,26 @@ msgstr "Następne"
 msgid "Last"
 msgstr "Ostatnie"
 
-msgid "Recipient"
-msgstr "Odbiorca"
+msgid "Recipients"
+msgstr "Odbiorcy"
+
+msgid "Subject"
+msgstr "Temat"
 
 msgid "Created"
 msgstr "Utworzone"
 
+msgid "Expires"
+msgstr "Wygasa"
+
 msgid "Encrypted"
 msgstr "Zakodowane"
+
+msgid "Export as CSV"
+msgstr "Eksportuj jako CSV"
+
+msgid "Outbox"
+msgstr "Outbox"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr "„%1” w kolumnie „%2” nie może <em> zagwarantować </em>, czy jakikolwiek plik został całkowicie pobrany."
@@ -853,11 +865,11 @@ msgstr "Tak"
 msgid "No"
 msgstr "Nie"
 
-msgid "Outbox"
-msgstr "Outbox"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Kliknij listę rozwijaną, aby wyświetlić informacje i pliki dla tej przesyłki."
+
+msgid "Show or hide:"
+msgstr "Pokaż lub ukryj:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "W tej chwili nie ma przesyłek przygotowanych przez Ciebie."
@@ -1138,9 +1150,6 @@ msgstr "Ta strona internetowa pozwoli ci przesłać (załadować) jeden lub wię
 msgid "From"
 msgstr "Od"
 
-msgid "Subject"
-msgstr "Temat"
-
 msgid "To"
 msgstr "Do"
 
@@ -1279,17 +1288,8 @@ msgstr "Plik %1 został pobrany przez %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Odbiorca nie będzie powiadamiany o odbiorach plików w tej przesyłce."
 
-msgid "Recipients"
-msgstr "Odbiorcy"
-
-msgid "Expires"
-msgstr "Wygasa"
-
 msgid "Global Drop-off List"
 msgstr "Globalna lista przesyłek"
-
-msgid "Show or hide:"
-msgstr "Pokaż lub ukryj:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Obecnie nie ma dostępnych przesyłek."
@@ -1635,6 +1635,9 @@ msgstr "Gdy otrzymasz go za minutę lub dwie, kliknij znajdujący się w nim lin
 
 msgid "Send confirmation"
 msgstr "Wyślij potwierdzenie"
+
+#~ msgid "Recipient"
+#~ msgstr "Odbiorca"
 
 #~ msgid "1 hour"
 #~ msgstr "1 godzina"

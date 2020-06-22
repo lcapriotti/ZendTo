@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2018-01-05 16:39+0000\n"
 "Last-Translator: Jules Field <Jules@Zend.To>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -822,13 +822,25 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-msgid "Recipient"
+msgid "Recipients"
+msgstr ""
+
+msgid "Subject"
 msgstr ""
 
 msgid "Created"
 msgstr ""
 
+msgid "Expires"
+msgstr ""
+
 msgid "Encrypted"
+msgstr ""
+
+msgid "Export as CSV"
+msgstr ""
+
+msgid "Outbox"
 msgstr ""
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
@@ -849,10 +861,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-msgid "Outbox"
+msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr ""
 
-msgid "Click on a drop-off to view the information and files for that drop-off."
+msgid "Show or hide:"
 msgstr ""
 
 msgid "There are no drop-offs made by you at this time."
@@ -1134,9 +1146,6 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-msgid "Subject"
-msgstr ""
-
 msgid "To"
 msgstr ""
 
@@ -1275,16 +1284,7 @@ msgstr ""
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr ""
 
-msgid "Recipients"
-msgstr ""
-
-msgid "Expires"
-msgstr ""
-
 msgid "Global Drop-off List"
-msgstr ""
-
-msgid "Show or hide:"
 msgstr ""
 
 msgid "There are no drop-offs available at this time."

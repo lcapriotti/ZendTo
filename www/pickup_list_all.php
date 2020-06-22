@@ -52,7 +52,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     // fill-in and submit a pickup form when a dropoff on the page
     // is clicked.
     //
-    $iMax = count($allDropoffs);
+    $iMax = is_array($allDropoffs)?count($allDropoffs):0;
     $totalsize = 0;
     $smarty->assign('countDropoffs', $iMax);
     
@@ -67,19 +67,23 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
         if ($theDropbox->isAutomated())
           $outputDropoffs[$i]['claimPasscode'] = $dropoff->claimPasscode();
         $outputDropoffs[$i]['senderName'] = $dropoff->senderName();
-        $outputDropoffs[$i]['senderOrg']  = htmlspecialchars($dropoff->senderOrganization());
         $outputDropoffs[$i]['senderEmail'] = $dropoff->senderEmail();
 
         // Display different dates and sizes if automated
         $created = timeForDate($dropoff->created());
         $expires = $created + $dropoff->lifeseconds();
         if ($theDropbox->isAutomated()) {
+          $outputDropoffs[$i]['senderOrg'] = $dropoff->senderOrganization();
+          $outputDropoffs[$i]['subject'] = $dropoff->subject();
           $outputDropoffs[$i]['created'] = $created;
           $outputDropoffs[$i]['formattedCreated'] = strftime('%F %T %Z', $created);
           $outputDropoffs[$i]['expires'] = $expires;
           $outputDropoffs[$i]['formattedExpires'] = strftime('%F %T %Z', $expires);
           $outputDropoffs[$i]['bytes'] = $b;
         } else {
+          // Escape HTML output
+          $outputDropoffs[$i]['senderOrg'] = htmlentities($dropoff->senderOrganization(), ENT_QUOTES, 'UTF-8');
+          $outputDropoffs[$i]['subject'] = htmlentities($dropoff->subject(), ENT_QUOTES, 'UTF-8');
           $outputDropoffs[$i]['createdDate'] = $created;
           $outputDropoffs[$i]['expiresDate'] = $expires;
           $outputDropoffs[$i]['Bytes'] = $b;

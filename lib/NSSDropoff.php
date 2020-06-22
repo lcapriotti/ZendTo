@@ -2264,6 +2264,21 @@ class NSSDropoff {
     $this->_senderEmail         = $qResult['senderEmail'];
     $this->_note                = @$qResult['note'];
     $this->_subject             = @$qResult['subject'];
+    // Subject can be null instead of '', but treat the same way
+    if (is_null($this->_subject) || empty($this->_subject)) {
+      // If the email subject is empty, it came from before subject line
+      // editing was introduced.
+      // So work out what the old default would have been.
+      $files = $this->files();
+      $realFileCount = $files['totalFiles'];
+      if ($realFileCount == 1) {
+        $this->_subject = sprintf(gettext('%s has dropped off a file for you'),
+                                  $this->_senderName);
+      } else {
+        $this->_subject = sprintf(gettext('%s has dropped off files for you'),
+                                  $this->_senderName);
+      }
+    }
 
     // Note this value won't be just the senderIP, it may have other metadata
     // attached on the end as a series of "|"-separated words.

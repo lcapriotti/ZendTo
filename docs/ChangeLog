@@ -1,3 +1,10 @@
+Version 6.02-2 Beta
+- "autolist" output now includes email Subject lines.
+- Added column visibility toggles to the "Inbox" and "Outbox" pages.
+- Added "Export as CSV" to Inbox, Outbox and Global list pages.
+- Now shows what the email subject line would have been if a drop-off was
+  created before this functionality was added.
+
 Version 6.02-1 Beta
 - Users can now edit the Subject line of a new drop-off.
 - "adduser" now looks for "<" in the supplied username, to help out new

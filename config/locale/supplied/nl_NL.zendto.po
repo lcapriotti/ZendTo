@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2018-08-15 13:36+0200\n"
 "Last-Translator: marcel <Werken@bijdebaas.nl>\n"
 "Language-Team: team nietsnut\n"
@@ -825,14 +825,26 @@ msgstr "Volgende"
 msgid "Last"
 msgstr "Laatste"
 
-msgid "Recipient"
-msgstr "Ontvanger"
+msgid "Recipients"
+msgstr "Ontvangers"
+
+msgid "Subject"
+msgstr "Onderwerp"
 
 msgid "Created"
 msgstr "Aangemaakt"
 
+msgid "Expires"
+msgstr "Verloopt"
+
 msgid "Encrypted"
 msgstr "Versleutelde"
+
+msgid "Export as CSV"
+msgstr "Exporteer als CSV"
+
+msgid "Outbox"
+msgstr "Outbox"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr ""
@@ -852,11 +864,11 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nee"
 
-msgid "Outbox"
-msgstr "Outbox"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Klik op een drop-off om de informatie en bestanden voor die drop-off te bekijken."
+
+msgid "Show or hide:"
+msgstr "Weergeven of verbergen:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Er zijn op dit moment geen drop-off´s beschikbaar voor u."
@@ -1138,9 +1150,6 @@ msgstr "Op deze webpagina kunt u een of meer bestanden voor een %1-gebruiker ach
 msgid "From"
 msgstr "Van"
 
-msgid "Subject"
-msgstr "Onderwerp"
-
 msgid "To"
 msgstr "Aan"
 
@@ -1280,17 +1289,8 @@ msgstr "Het bestand %1 is opgehaald (picked-up) door %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "U ontvangt geen melding over verdere pick-ups van bestanden in deze drop-off door deze ontvanger."
 
-msgid "Recipients"
-msgstr "Ontvangers"
-
-msgid "Expires"
-msgstr "Verloopt"
-
 msgid "Global Drop-off List"
 msgstr "Globale drop-off lijst"
-
-msgid "Show or hide:"
-msgstr "Weergeven of verbergen:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Er zijn op dit moment geen drop-offs beschikbaar voor u."
@@ -1643,6 +1643,9 @@ msgstr "Als u het over een aantal minuten hebt ontvangen, klik je op de link in 
 
 msgid "Send confirmation"
 msgstr "Verstuur bevestiging"
+
+#~ msgid "Recipient"
+#~ msgstr "Ontvanger"
 
 #~ msgid "1 hour"
 #~ msgstr "1 uur"

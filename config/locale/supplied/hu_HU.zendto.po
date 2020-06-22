@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2019-08-22 11:52+0200\n"
 "Last-Translator:  Toldi Miklos <toldim76@gmail.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -824,14 +824,26 @@ msgstr "Következő"
 msgid "Last"
 msgstr "Utolsó"
 
-msgid "Recipient"
-msgstr "Címzett"
+msgid "Recipients"
+msgstr "Címzettek"
+
+msgid "Subject"
+msgstr "Tárgy"
 
 msgid "Created"
 msgstr "Elkészítve"
 
+msgid "Expires"
+msgstr "Lejár"
+
 msgid "Encrypted"
 msgstr "Titkosítva"
+
+msgid "Export as CSV"
+msgstr "Exportálás CSV formátumban"
+
+msgid "Outbox"
+msgstr "Kimenő"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr "A \"%1\" a(z) \"%2\" oszlopban nem tudja <em> garantálni </em>, hogy bármely fájl letöltése sikeres volt."
@@ -851,11 +863,11 @@ msgstr "Igen"
 msgid "No"
 msgstr "Nem"
 
-msgid "Outbox"
-msgstr "Kimenő"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Kattintson a küldeményre, hogy megtekinthesse a hozzá tartozó információkat."
+
+msgid "Show or hide:"
+msgstr "Megjelenítés vagy elrejtés:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Jelenleg nincs Ön által készített küldemény."
@@ -1136,9 +1148,6 @@ msgstr "Ez a weboldal lehetővé teszi, hogy %1 felhasználóinak egy vagy több
 msgid "From"
 msgstr "Feladó"
 
-msgid "Subject"
-msgstr "Tárgy"
-
 msgid "To"
 msgstr "Címzett"
 
@@ -1277,17 +1286,8 @@ msgstr "A(z) %1 állományt letöltötte %2 címzett."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Ön nem fog értesítést kapni a küldemény többi részének letöltéséről."
 
-msgid "Recipients"
-msgstr "Címzettek"
-
-msgid "Expires"
-msgstr "Lejár"
-
 msgid "Global Drop-off List"
 msgstr "Globális küldemény lista"
-
-msgid "Show or hide:"
-msgstr "Megjelenítés vagy elrejtés:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Jelenleg nincsenek küldemények."
@@ -1633,6 +1633,9 @@ msgstr "Amikor megérkezik, kattintson rá az elküldött hivatkozásra."
 
 msgid "Send confirmation"
 msgstr "Megerősítés küldése"
+
+#~ msgid "Recipient"
+#~ msgstr "Címzett"
 
 #~ msgid "1 hour"
 #~ msgstr "1 óra"

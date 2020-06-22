@@ -145,8 +145,8 @@ label {
 	line-height: 26px;
 }
 #newdropoff-boxes .text {
-	align-self: stretch;
-	-ms-grid-row-align: stretch;
+	align-self: start;
+	-ms-grid-row-align: stretch; /* Yes they are supposed to be different */
 	display: block; /* IE */
 	border-color: #2b3e89;
 	border-width: 1px;
@@ -608,21 +608,21 @@ input[type="file"] {
 }
 
 .homeButtons a.UD_textbutton, a.UD_textbutton_admin {
-	width:150px;
+	width: 150px;
 }
 
-a.UD_textbutton, a.UD_textbutton_admin, .UD_textbutton_admin, input[type="submit"], input[type="button"], button {
-	float:left;
-	width:150px;
-	margin-bottom:10px;
-	margin-top:10px;
+a.UD_textbutton, a.UD_textbutton_admin, .UD_textbutton_admin, button.dt-button, a.dt-button, a.button.dt-button, input[type="submit"], input[type="button"], button {
+	float: left;
+	width: 150px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	border: 1px solid #1271a7;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	padding:5px 10px;
+	padding: 5px 10px;
 	text-decoration: none;
-	margin-right:10px;
+	margin-right: 10px;
 	color: white;
 	
 	background: #1f88c1; /* old browsers */
@@ -631,6 +631,14 @@ a.UD_textbutton, a.UD_textbutton_admin, .UD_textbutton_admin, input[type="submit
 	font-weight: bold;
 	background-clip: padding-box;
 	background-origin: padding-box;
+}
+
+button.dt-button, a.dt-button {
+	width: auto;
+	min-width: 150px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 /* A button with no styling at all */
@@ -647,9 +655,9 @@ a.UD_textbutton, a.UD_textbutton_admin, .UD_textbutton_admin, input[type="submit
 	font-weight: normal;
 }
 
-a.UD_textbutton:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+a.UD_textbutton:hover, button.dt-button:hover:not(.disabled), a:not(.disabled).dt-button:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
 	background: #62c0f0; /* old browsers */
-  cursor: pointer;
+	cursor: pointer;
 }
 
 a.UD_buttonchosen {
@@ -1102,8 +1110,8 @@ thead {
 .ac-col2.deleteme.ui-state-active:hover {
 	border-top: 1px solid red;
 	border-bottom: 1px solid red;
-        background-color: red;
-        color: white;
+	background-color: red;
+	color: white;
 }
 
 .request-link-text {
@@ -1132,4 +1140,12 @@ div.ui-menu-item-wrapper {
 	margin: 1em 5px 2em 2px;
 	padding: 5px;
 	width: calc(100% - 14px);
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.hidden {
+	display: none;
 }

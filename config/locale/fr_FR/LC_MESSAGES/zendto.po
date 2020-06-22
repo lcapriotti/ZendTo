@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2020-05-26 12:56+0200\n"
 "Last-Translator: Jimmi Crottaz <jimmi.crottaz@outlook.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -824,14 +824,26 @@ msgstr "Suivant"
 msgid "Last"
 msgstr "Dernier"
 
-msgid "Recipient"
-msgstr "Destinataire"
+msgid "Recipients"
+msgstr "Destinataires"
+
+msgid "Subject"
+msgstr "Sujet"
 
 msgid "Created"
 msgstr "Créé"
 
+msgid "Expires"
+msgstr "Expire"
+
 msgid "Encrypted"
 msgstr "Chiffrée"
+
+msgid "Export as CSV"
+msgstr "Exporter au format CSV"
+
+msgid "Outbox"
+msgstr "Envoyés"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr "Un \"%1\" dans la \"%2\" colonne ne peut pas <em>garantir</em> que n&quot;importe quell fichier a été téléchargé correctement."
@@ -851,11 +863,11 @@ msgstr "Oui"
 msgid "No"
 msgstr "Non"
 
-msgid "Outbox"
-msgstr "Envoyés"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Cliquez sur un dépôt pour voir ses informations et son contenu."
+
+msgid "Show or hide:"
+msgstr "Afficher ou masquer:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Il n'y a pas de dépôt fait pour vous pour le moment."
@@ -1136,9 +1148,6 @@ msgstr "Cette page Web vous permettra de déposer (télécharger) un ou plusieur
 msgid "From"
 msgstr "De"
 
-msgid "Subject"
-msgstr "Sujet"
-
 msgid "To"
 msgstr "Pour"
 
@@ -1277,17 +1286,8 @@ msgstr "Le fichier %1 a été téléchargé par %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Vous ne serez plus notifié des téléchargements de fichier(s) de ce dépôt pour ce destinataire."
 
-msgid "Recipients"
-msgstr "Destinataires"
-
-msgid "Expires"
-msgstr "Expire"
-
 msgid "Global Drop-off List"
 msgstr "Liste globale des dépôts"
-
-msgid "Show or hide:"
-msgstr "Afficher ou masquer:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Il n'y a aucun dépôt."
@@ -1643,6 +1643,9 @@ msgstr "Utilisez le lien s'y trouvant pour votre envoi."
 
 msgid "Send confirmation"
 msgstr "Envoyer la confirmation"
+
+#~ msgid "Recipient"
+#~ msgstr "Destinataire"
 
 #~ msgid "1 hour"
 #~ msgstr "1 heure"

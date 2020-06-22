@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2020-06-01 11:27+0200\n"
 "Last-Translator: Massimo Forni <massimo.forni@turboden.it>\n"
 "Language-Team: Italian <stefano.fiori@bac.sm>\n"
@@ -824,14 +824,26 @@ msgstr "Prossimo"
 msgid "Last"
 msgstr "Ultimo"
 
-msgid "Recipient"
-msgstr "Destinatario"
+msgid "Recipients"
+msgstr "Destinatari"
+
+msgid "Subject"
+msgstr "Oggetto"
 
 msgid "Created"
 msgstr "Creato"
 
+msgid "Expires"
+msgstr "Scade"
+
 msgid "Encrypted"
 msgstr "Crittografato"
+
+msgid "Export as CSV"
+msgstr "Esporta come CSV"
+
+msgid "Outbox"
+msgstr "In Uscita"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr "Un \"%1\" nella colonna \"%2\" non puo’ <em>garantire</em> che qualunque file sia stato scaricato con successo."
@@ -851,11 +863,11 @@ msgstr "Si"
 msgid "No"
 msgstr "No"
 
-msgid "Outbox"
-msgstr "In Uscita"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Cliccka sul file in consegna per vedere le informazioni relative alla consegna stessa."
+
+msgid "Show or hide:"
+msgstr "Mostra o nascondi:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "Non ci sono files da consegnare effettuati da te in questo momento."
@@ -1136,9 +1148,6 @@ msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file
 msgid "From"
 msgstr "Da"
 
-msgid "Subject"
-msgstr "Oggetto"
-
 msgid "To"
 msgstr "A"
 
@@ -1277,17 +1286,8 @@ msgstr "Il file %1 è stato scaricato da %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Questo destinatario non riceverà alcuna notifica su ulteriori scaricamenti di file in questa consegna di files."
 
-msgid "Recipients"
-msgstr "Destinatari"
-
-msgid "Expires"
-msgstr "Scade"
-
 msgid "Global Drop-off List"
 msgstr "Elenco  globale dei files in consegna"
-
-msgid "Show or hide:"
-msgstr "Mostra o nascondi:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "Non ci sono files da scaricare disponibili in questo momento."
@@ -1643,6 +1643,9 @@ msgstr "Dovrebbe arrivarti in un minuto o due, dopodichè cliccka sul collegamen
 
 msgid "Send confirmation"
 msgstr "Invia conferma"
+
+#~ msgid "Recipient"
+#~ msgstr "Destinatario"
 
 #~ msgid "1 hour"
 #~ msgstr "1 ora"

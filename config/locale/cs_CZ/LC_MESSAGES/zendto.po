@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 13:35+0100\n"
+"POT-Creation-Date: 2020-06-21 17:36+0100\n"
 "PO-Revision-Date: 2020-06-10 14:04+0200\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Czech <dizzy.easy49@gmail.com>\n"
@@ -824,14 +824,26 @@ msgstr "Další"
 msgid "Last"
 msgstr "Poslední"
 
-msgid "Recipient"
-msgstr "Příjemce"
+msgid "Recipients"
+msgstr "Příjemci"
+
+msgid "Subject"
+msgstr "Předmět"
 
 msgid "Created"
 msgstr "Vytvořeno"
 
+msgid "Expires"
+msgstr "Vypršet"
+
 msgid "Encrypted"
 msgstr "Šifrováno"
+
+msgid "Export as CSV"
+msgstr "Exportovat jako CSV"
+
+msgid "Outbox"
+msgstr "Odeslané"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
 msgstr "\"%1\" ve sloupci \"%2\" <em>nezaručuje</em>, že všechny soubory zásilky byly úspěšně a kompletně staženy."
@@ -851,11 +863,11 @@ msgstr "Ano"
 msgid "No"
 msgstr "Ne"
 
-msgid "Outbox"
-msgstr "Odeslané"
-
 msgid "Click on a drop-off to view the information and files for that drop-off."
 msgstr "Kliknutím na zásilku zobrazíte informace a soubory, které obsahuje."
+
+msgid "Show or hide:"
+msgstr "Zobrazit nebo skrýt:"
 
 msgid "There are no drop-offs made by you at this time."
 msgstr "V tuto chvíli nemáte žádné zásilky."
@@ -1136,9 +1148,6 @@ msgstr "Tato webová stránka vám umožní nahrát jeden nebo více souborů pr
 msgid "From"
 msgstr "Od"
 
-msgid "Subject"
-msgstr "Předmět"
-
 msgid "To"
 msgstr "Komu"
 
@@ -1277,17 +1286,8 @@ msgstr "Soubor %1 si vyzvedl(a) %2."
 msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
 msgstr "Nebudete upozorněni na žádné další vyzvednutí souborů v této zásilce příjemcem."
 
-msgid "Recipients"
-msgstr "Příjemci"
-
-msgid "Expires"
-msgstr "Vypršet"
-
 msgid "Global Drop-off List"
 msgstr "Seznam všech zásilek"
-
-msgid "Show or hide:"
-msgstr "Zobrazit nebo skrýt:"
 
 msgid "There are no drop-offs available at this time."
 msgstr "V současné době nejsou k dispozici žádné zásilky."
@@ -1632,6 +1632,9 @@ msgstr "Jakmile ji obdržíte, klikněte prosím na odkaz ve zprávě. Doručen�
 
 msgid "Send confirmation"
 msgstr "Odeslat ověření"
+
+#~ msgid "Recipient"
+#~ msgstr "Příjemce"
 
 #~ msgid "1 hour"
 #~ msgstr "1 hodina"

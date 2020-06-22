@@ -1,5 +1,7 @@
 {$thisTemplate=$smarty.template}{include file="header.tpl"}
 
+{* Outbox *}
+
 {assign var="tick" value='<i class="fas fa-fw fa-check"></i>'}
 {assign var="cross" value='<i class="fas fa-fw fa-times"></i>'}
 {capture assign="picked_up"}{t}Picked up{/t}{/capture}
@@ -7,10 +9,55 @@
 
 <script type="text/javascript">
 <!--
+
+// Replace HTML entities by their real equivalents for CSV
+function htmlUnescape(str){
+  return str
+        .replace(/\<br\/?\>/g, ' ')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+}
+
+// As above, but allow embedded newlines
+function htmlUnescapeAndBR(str){
+  return str
+        .replace(/\<br\/?\>/g, "; ")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+}
+
+// Given the cell we're converting and the HTML in it,
+// convert it to the CSV we're going to export.
+function cellToCSV(html, rowNum, colNum, node) {
+  // Massage the HTML into the CSV
+  switch(colNum) {
+    case 2:
+      return htmlUnescapeAndBR(html);
+    case 4:
+      // Export the real size, not the formatted string
+      return $(node).attr('data-order');
+    case 7:
+    case 8:
+      // Reduce the tick-boxes to yes/no
+      return html.replace(/^.*times.*$/, 'false')
+                 .replace(/^.*check.*$/, 'true');
+    default:
+      // Otherwise just clean up the HTML
+      return htmlUnescape(html);
+  }
+  return html;
+}
+
 $(document).ready(function() {
     // This enables date sorting with the same spec as the date_format below
     $.fn.dataTable.moment('YYYY-MM-DD HH:mm:ss');
-    $('#dropoff_list').DataTable( {
+    var table = $('#dropoff_list').DataTable( {
        "pagingType": "full_numbers",
        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "{t}All{/t}"] ],
        "language": {
@@ -37,21 +84,53 @@ $(document).ready(function() {
            }
          }
        },
-       "order":      [[ 3, "desc" ]],
+       "order":      [[ 5, "desc" ]],
        "columns":    [
          { "title": "{t}Claim ID{/t}", "className": "dt-body-left", "width": "5%" },
-         { "title": "{t}Recipient{/t}", "className": "dt-body-left" },
-         { "title": "{t}Size{/t}", "className": "dt-body-right", "width": "5%" },
-         { "title": "{t}Created{/t}", "className": "dt-body-center" },
+         { "title": "{t}Sender{/t}",   "className": "dt-body-left" , "visible": false },
+         { "title": "{t}Recipients{/t}", "className": "dt-body-left" },
+         { "title": "{t}Subject{/t}",  "className": "dt-body-left", "visible": false },
+         { "title": "{t}Size{/t}",     "className": "dt-body-right", "width": "5%" },
+         { "title": "{t}Created{/t}",  "className": "dt-body-center" },
+         { "title": "{t}Expires{/t}",  "className": "dt-body-center", "visible": false },
          { "title": "{t}Picked up{/t} <i id='pickedup-balloon' name='pickedup-balloon' class='fas fa-info-circle' style='vertical-align:middle'></i>","className": "dt-body-center", "width": "5%" },
          { "title": "{t}Encrypted{/t} <i id='encrypted-balloon' name='encrypted-balloon' class='fas fa-info-circle' style='vertical-align:middle'></i>","className": "dt-body-center", "width": "5%" },
-       ]
-    } );
+       ],
+       dom: '<"clearfix"B>lfrtip',
+       "buttons": [ {
+         extend: 'csvHtml5',
+         text:   '{t}Export as CSV{/t}',
+         filename: '{#ServiceTitle#} {t}Outbox{/t}',
+         charset: 'utf-8',
+         exportOptions: {
+           // Can't change columns as they are numbered
+           // according to what's visible, not the real
+           // column numbers. :-(
+           //columns: ':visible',
+           stripNewline: false,
+           stripHtml: true,
+           format: {
+            body: cellToCSV,
+           },
+           modifier: {
+             selected: null
+           }
+         }
+       } ]
+    });
     $('.dataTable').on('click', 'tbody td', function() {
       doPickup($(this).parent().children().first().text());
     });
     $(window).on('unload', function() {
       $('.dataTable').off('click', 'tbody td');
+    });
+    // The column visibility toggles
+    $('a.toggle-vis').on('click', function (e) {
+      e.preventDefault();
+      // Get the column API object
+      var column = table.column( $(this).attr('data-column') );
+      // Toggle the visibility
+      column.visible( ! column.visible() );
     });
     // All the balloon tooltips
     $('#pickedup-balloon').balloon({
@@ -95,14 +174,29 @@ $(document).ready(function() {
   {if $countDropoffs>0}
 <h1>{t}Outbox{/t}</h1>
 <p>{t}Click on a drop-off to view the information and files for that drop-off.{/t}</p>
+<p>{t}Show or hide:{/t}
+          <a class="toggle-vis" data-column="0">{t}Claim ID{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="1">{t}Sender{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="2">{t}Recipients{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="3">{t}Subject{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="4">{t}Size{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="5">{t}Created{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="6">{t}Expires{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="7">{t}Picked up{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="8">{t}Encrypted{/t}</a>
+</p>
+
 <table id="dropoff_list" class="display" width="100%">
-  <tbody>
+  <tbody class="nowrap">
     {foreach from=$dropoffs item=d}
   <tr>
     <td class="mono">{$d.claimID}</td>
-    <td>{foreach from=$d.recipients item=r}{if $r.name != ''}{$r.name}<br/>{/if}&lt;{$r.email}&gt;<br/>{/foreach}</td>
-    <td data-order="{$d.Bytes}"><span style="white-space: nowrap">{$d.formattedBytes}</span></td>
+    <td>{$d.senderName}{if $d.senderOrg != ''}, {$d.senderOrg}{/if}<br/>&lt;{$d.senderEmail}&gt;</td>
+    <td>{$d.recipients}</td>
+    <td>{$d.subject}</td>
+    <td data-order="{$d.Bytes}">{$d.formattedBytes}</td>
     <td>{$d.createdDate|date_format:"%Y-%m-%d %H:%M:%S"}</td>
+    <td>{$d.expiresDate|date_format:"%Y-%m-%d %H:%M:%S"}</td>
     <td data-order="{$d.numPickups}"><i class="fas fa-fw {($d.numPickups>0)?'fa-check':'fa-times'}"></i></td>
     <td data-order="{($d.isEncrypted)?'1':'0'}"><i class="fas fa-fw {($d.isEncrypted)?'fa-check':'fa-times'}"></i></td>
   </tr>
