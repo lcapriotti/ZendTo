@@ -10,6 +10,30 @@
 <script type="text/javascript">
 <!--
 
+var visToReal = []; // map visible column number to real one. -1 ==> empty.
+
+// Update the visToReal map
+function mapVisToReal(table) {
+  var real=0;
+  var visible=0;
+  var numColumns = table.init().columns.length;
+
+  // Build the map from visible to real
+  while (real < numColumns && visible < numColumns) {
+    // Skip the invisible columns
+    while (!table.column(real).visible() && real < numColumns)
+      real++;
+    visToReal[visible] = (real>=numColumns)?-1:real;
+    real++;
+    visible++
+  }
+  // Fill the remainder of the map with -1
+  while (visible < numColumns) {
+    visToReal[visible] = -1;
+    visible++;
+  }
+}
+
 // Replace HTML entities by their real equivalents for CSV
 function htmlUnescape(str){
   return str
@@ -21,10 +45,10 @@ function htmlUnescape(str){
         .replace(/&amp;/g, '&');
 }
 
-// As above, but allow embedded newlines
+// As above, but also handle linebreaks
 function htmlUnescapeAndBR(str){
   return str
-        .replace(/\<br\/?\>/g, "; ")
+        .replace(/\<br\/?\>/g, "; ") // Separator for emails
         .replace(/&quot;/g, '"')
         .replace(/&#39;/g, "'")
         .replace(/&lt;/g, '<')
@@ -36,14 +60,16 @@ function htmlUnescapeAndBR(str){
 // convert it to the CSV we're going to export.
 function cellToCSV(html, rowNum, colNum, node) {
   // Massage the HTML into the CSV
-  switch(colNum) {
-    case 2:
+  switch(visToReal[colNum]) {
+    case -1:          // This should never happen.
+      return html;
+    case 2:           // Recipients
       return htmlUnescapeAndBR(html);
-    case 4:
+    case 4:           // Size in bytes
       // Export the real size, not the formatted string
       return $(node).attr('data-order');
-    case 7:
-    case 8:
+    case 7:           // picked-up and encrypted
+    case 8:           // booleans
       // Reduce the tick-boxes to yes/no
       return html.replace(/^.*times.*$/, 'false')
                  .replace(/^.*check.*$/, 'true');
@@ -96,17 +122,17 @@ $(document).ready(function() {
          { "title": "{t}Picked up{/t} <i id='pickedup-balloon' name='pickedup-balloon' class='fas fa-info-circle' style='vertical-align:middle'></i>","className": "dt-body-center", "width": "5%" },
          { "title": "{t}Encrypted{/t} <i id='encrypted-balloon' name='encrypted-balloon' class='fas fa-info-circle' style='vertical-align:middle'></i>","className": "dt-body-center", "width": "5%" },
        ],
-       dom: '<"clearfix"B>lfrtip',
+       dom: '<"hidden"B>lfrtip', // was "clearfix"
        "buttons": [ {
          extend: 'csvHtml5',
          text:   '{t}Export as CSV{/t}',
          filename: '{#ServiceTitle#} {t}Outbox{/t}',
          charset: 'utf-8',
          exportOptions: {
-           // Can't change columns as they are numbered
+           // Beware: the columns are numbered
            // according to what's visible, not the real
            // column numbers. :-(
-           //columns: ':visible',
+           columns: ':visible',
            stripNewline: false,
            stripHtml: true,
            format: {
@@ -127,10 +153,34 @@ $(document).ready(function() {
     // The column visibility toggles
     $('a.toggle-vis').on('click', function (e) {
       e.preventDefault();
-      // Get the column API object
-      var column = table.column( $(this).attr('data-column') );
-      // Toggle the visibility
-      column.visible( ! column.visible() );
+      dataColumn = $(this).attr('data-column');
+      if (dataColumn < 0) {
+        // Show/hide ALL columns (show all unless all shown)
+        // Start with TRUE. 'and' it with each column. Gives 'all shown'
+        allShown = true;
+        table.columns().every( function() {
+          allShown = allShown && this.visible();
+        });
+        // If they were all shown, hide all. Else show all.
+        table.columns().every( function() {
+          this.visible( ! allShown );
+        });
+      } else {
+        // Show/hide 1 column
+        // Get the column API object
+        var column = table.column( dataColumn );
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+      }
+      // Recalculate the visible=>real map
+      mapVisToReal(table);
+    });
+    // Build the initial visible=>real map
+    mapVisToReal(table);
+    // The Export button
+    $('#exportCSVButton').on('click', function(e) {
+      e.preventDefault();
+      table.button(0).trigger();
     });
     // All the balloon tooltips
     $('#pickedup-balloon').balloon({
@@ -172,10 +222,15 @@ $(document).ready(function() {
 {if $isAuthorizedUser}
 
   {if $countDropoffs>0}
+<div style="float:right; display:flex">
+  <button id="exportCSVButton" class="UD_textbutton">{t}Export as CSV{/t}</button>
+</div>
+
 <h1>{t}Outbox{/t}</h1>
 <p>{t}Click on a drop-off to view the information and files for that drop-off.{/t}</p>
 <p>{t}Show or hide:{/t}
-          <a class="toggle-vis" data-column="0">{t}Claim ID{/t}</a>
+          <a class="toggle-vis" data-column="-1">{t}All{/t}</a>
+  &ndash; <a class="toggle-vis" data-column="0">{t}Claim ID{/t}</a>
   &ndash; <a class="toggle-vis" data-column="1">{t}Sender{/t}</a>
   &ndash; <a class="toggle-vis" data-column="2">{t}Recipients{/t}</a>
   &ndash; <a class="toggle-vis" data-column="3">{t}Subject{/t}</a>

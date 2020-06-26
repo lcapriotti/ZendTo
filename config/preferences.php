@@ -39,7 +39,7 @@ define('NSSDROPBOX_LIB_DIR', '/opt/zendto/lib/');
 define('NSSDROPBOX_DATA_DIR','/var/zendto/');
 
 // This defines the version number, please do not change
-define('ZTVERSION','6.02-2');
+define('ZTVERSION','6.02-4');
 
 // This is for gathering nightly stats, see docs about RRD and root's crontab
 define('RRD_DATA_DIR',NSSDROPBOX_DATA_DIR.'rrd/');
@@ -739,7 +739,7 @@ $NSSDROPBOX_PREFS = array(
   // And, until you change it, an example map for a Microsoft Azure directory:
   'samlAttributesMap' => array(
     'mail' => 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress',
-    'uid' => 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress',
+    'uid' => 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name',
     'displayName' => 'http://schemas.microsoft.com/identity/claims/displayname',
     'organization' => 'First National Bank'),
 

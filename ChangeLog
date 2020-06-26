@@ -1,3 +1,16 @@
+Version 6.02-4 Beta
+- Documented how to potentially improve Apache performance and reduce
+  memory use by using php-fpm instead of mod_php.
+  Follow the steps at zend.to/phpfpm.
+- Minor speed improvements to code run at the start of every page.
+
+Version 6.02-3 Beta
+- Logging of user authentication attempts now tells you if it was an
+  attempt to login as an admin user.
+- Moved the "Export as CSV" buttons to top right corner, tidier.
+- "Export as CSV" now only exports visible columns.
+- Show/hide visibility toggles now has an "All" columns toggle.
+
 Version 6.02-2 Beta
 - "autolist" output now includes email Subject lines.
 - Added column visibility toggles to the "Inbox" and "Outbox" pages.

@@ -43,8 +43,9 @@ $NSSDROPBOX_URL = serverRootURL($NSSDROPBOX_PREFS);
 
 // If it's in the preferences.php then use the value there always.
 if ( array_key_exists('serverRoot', $NSSDROPBOX_PREFS) &&
-     $NSSDROPBOX_PREFS['serverRoot'] !== '' &&
-     !preg_match('/zendto\.soton\.ac\.uk/', $NSSDROPBOX_PREFS['serverRoot']) ) {
+     !empty($NSSDROPBOX_PREFS['serverRoot']) &&
+     strpos($NSSDROPBOX_PREFS['serverRoot'], 'zendto.soton.ac.uk') === FALSE) {
+     //!preg_match('/zendto\.soton\.ac\.uk/', $NSSDROPBOX_PREFS['serverRoot']) ) {
   $NSSDROPBOX_URL = @$NSSDROPBOX_PREFS['serverRoot'];
 } else {
   // Not defined, so we'll have to work it out
@@ -59,11 +60,13 @@ if ( array_key_exists('serverRoot', $NSSDROPBOX_PREFS) &&
     }
     $NSSDROPBOX_URL = "http".($https ? "s" : "")."://".@$_SERVER['SERVER_NAME'].$port.@$_SERVER['REQUEST_URI'];
     // Delete anything after a ? (and the ? itself)
-    $NSSDROPBOX_URL = preg_replace('/\?.*$/', '', $NSSDROPBOX_URL);
+    // $NSSDROPBOX_URL = preg_replace('/\?.*$/', '', $NSSDROPBOX_URL);
+    $NSSDROPBOX_URL = substr($NSSDROPBOX_URL, 0, strpos($NSSDROPBOX_URL, '?'));
     // Should now end in blahblah.php or simply a directory /
-    if ( !preg_match('/\/$/',$NSSDROPBOX_URL) ) {
+    // if ( !preg_match('/\/$/',$NSSDROPBOX_URL) ) {
+    if ( substr($NSSDROPBOX_URL, -1) !== '/' ) {
       // Delete anything after the last / (but leave the /)
-      $NSSDROPBOX_URL = preg_replace('/\/[^\/]+$/','/',$NSSDROPBOX_URL);
+      $NSSDROPBOX_URL = preg_replace('/\/[^\/]+$/','/', $NSSDROPBOX_URL);
     }
   } else {
     // We are running from the cli, so a very poor guess.
@@ -71,7 +74,8 @@ if ( array_key_exists('serverRoot', $NSSDROPBOX_PREFS) &&
   }
 }
 // If it doesn't end with a / then we'll add one to be on the safe side!
-if (!preg_match('/\/$/', $NSSDROPBOX_URL)) {
+//if (!preg_match('/\/$/', $NSSDROPBOX_URL)) {
+if (substr($NSSDROPBOX_URL, -1) !== '/') {
   $NSSDROPBOX_URL .= '/';
 }
 
@@ -83,7 +87,8 @@ if (php_sapi_name() !== 'cli') {
 // If your serverRoot setting is https, ban cookies over http
 global $cookie_secure;
 $cookie_secure = false;
-if (preg_match('/^https/i', $NSSDROPBOX_URL) && php_sapi_name() !== 'cli') {
+// if (preg_match('/^https/i', $NSSDROPBOX_URL) && php_sapi_name() !== 'cli') {
+if (stripos($NSSDROPBOX_URL, 'https', 0) !== FALSE && php_sapi_name() !== 'cli') {
   ini_set('session.cookie_secure', 1);
   $cookie_secure = true;
 }
@@ -102,23 +107,8 @@ if (file_exists(NSSDROPBOX_DATA_DIR.'cache/temp')) {
 }
 putenv('TMPDIR=' . NSSDROPBOX_DATA_DIR . 'cache/temp');
 
-//
-// Load the word list, depending on which they want.
-// Default is numbers.
-//
+// Word list now loaded just before it is needed.
 $ShortWordsList = array();
-$wordlist = 'numbers';
-if (array_key_exists('wordlist', $NSSDROPBOX_PREFS) &&
-  $NSSDROPBOX_PREFS['wordlist'] !== '') {
-  $wordlist = $NSSDROPBOX_PREFS['wordlist'];
-}
-if ($wordlist == 'numbers') {
-  for ($n=0; $n<1000; $n++) {
-    $ShortWordsList[] = sprintf("%03d", $n);
-  }
-} else {
-  require_once(NSSDROPBOX_LIB_DIR."wordlist-".$wordlist.".php");
-}
 
 //
 // Setup i18n config for gettext()
@@ -2266,7 +2256,12 @@ public function deleteAddressbookEntry ( $name, $email ) {
           \SimpleSAML\Session::getSessionFromRequest()->cleanup();
           $uname = $this->setSamlUserData();
           if ($uname !== NULL) {
-            $this->writeToLog("Info: SAML authorization succeeded for ".$uname);
+            $isadmin = '';
+            if ( $this->_authAdmins )
+              $isadmin = in_array(strtolower($uname),
+                         array_map('strtolower', $this->_authAdmins))?'admin ':'';
+
+            $this->writeToLog("Info: SAML ".$isadmin."authorization succeeded for ".$uname);
             $this->_authorizedUser = $uname;
             $this->_authorizationFailed = FALSE;
             return TRUE;
@@ -2317,18 +2312,23 @@ public function deleteAddressbookEntry ( $name, $email ) {
         $result = FALSE;
       } else {
         // They are allowed to try to login
+        $isadmin = '';
+        if ( $this->_authAdmins )
+          $isadmin = in_array(strtolower($uname),
+                     array_map('strtolower', $this->_authAdmins))?'admin ':'';
+
         if ( $result = $this->_authenticator->authenticate($uname,$password,$this->_authorizedUserData) ) {
           // They have been authenticated, yay!
           $this->_authorizedUser = $uname;
           $this->_authorizationFailed = FALSE;
-          $this->writeToLog("Info: authorization succeeded for ".$uname);
+          $this->writeToLog("Info: ".$isadmin."authorization succeeded for ".$uname);
           // Reset their login log
           $this->database->DBDeleteLoginlog($uname);
           $result = TRUE;
         } else {
           // Password check failed. :(
           $this->_authorizationFailed = TRUE;
-          $this->writeToLog("Warning: authorization failed for ".$uname);
+          $this->writeToLog("Warning: ".$isadmin."authorization failed for ".$uname);
           // Add a new failure record
           $this->database->DBAddLoginlog($uname);
           $this->_authorizedUserData = NULL;
@@ -2647,11 +2647,29 @@ public function deleteAddressbookEntry ( $name, $email ) {
   public function ThreeRandomWords(
   )
   {
+    global $NSSDROPBOX_PREFS;
+    global $ShortWordsList;
+    // This is only ever called at most once per page.
+    // So just read them all in now. Doesn't matter if
+    // we throw them away.
+    $wordlist = 'numbers';
+    if (array_key_exists('wordlist', $NSSDROPBOX_PREFS) &&
+      $NSSDROPBOX_PREFS['wordlist'] !== '') {
+      $wordlist = $NSSDROPBOX_PREFS['wordlist'];
+    }
+    if ($wordlist == 'numbers') {
+      for ($n=0; $n<1000; $n++) {
+        $ShortWordsList[] = sprintf("%03d", $n);
+      }
+    } else {
+      require_once(NSSDROPBOX_LIB_DIR."wordlist-".$wordlist.".php");
+    }
+
     $avoid = array();
     $word1 = $this->OneRandomWord($avoid);
-    $avoid[$word1] = 1;
+    $avoid[] = $word1;
     $word2 = $this->OneRandomWord($avoid);
-    $avoid[$word2] = 1;
+    $avoid[] = $word2;
     $word3 = $this->OneRandomWord($avoid);
     return "$word1 $word2 $word3";
   }
@@ -2666,7 +2684,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
     $len = count($ShortWordsList);
     do {
       $word = $ShortWordsList[mt_rand(0, $len-1)];
-    } while (isset($avoid[$word]));
+    } while (in_array($avoid, $word));
 
     return $word;
   }
