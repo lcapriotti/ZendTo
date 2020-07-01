@@ -2,7 +2,7 @@
 //
 // ZendTo
 // Copyright (C) 2006 Jeffrey Frey, frey at udel dot edu
-// Copyright (C) 2010 Julian Field, Jules at ZendTo dot com 
+// Copyright (C) 2020 Julian Field, Jules at ZendTo dot com 
 //
 // Based on the original PERL dropbox written by Doke Scott.
 // Developed by Julian Field.

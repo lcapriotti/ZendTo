@@ -1,5 +1,5 @@
-%define version 6.02
-%define release 4
+%define version 6.03
+%define release 1
 %define name    zendto
 
 %define is_fedora %(test -e /etc/fedora-release && echo 1 || echo 0)

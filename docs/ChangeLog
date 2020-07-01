@@ -1,3 +1,20 @@
+Version 6.03-1 Production
+- New features since the last Production release:
+- Users can now edit the Subject line of a new drop-off.
+- "Export as CSV" button added to Inbox, Outbox and "Global List of
+  Drop-offs" pages. It exports the visible columns.
+- Those same pages now have toggles to show/hide each column, and one
+  for all columns.
+- Improved logging of failed attempts to login to admin accounts.
+- "adduser" checks for "<" and ">" in usernames typed by people taking
+  the syntax guidance too literally.
+- "autolist" improved to include pick-up information.
+- Bug fixed where incorrect expiry times were shown in reminder emails.
+
+Version 6.02-5 Beta
+- Bug fixed where totally wrong expiry times were shown in reminder
+  emails. Many thanks to Susoczki Attila for reporting this!
+
 Version 6.02-4 Beta
 - Documented how to potentially improve Apache performance and reduce
   memory use by using php-fpm instead of mod_php.

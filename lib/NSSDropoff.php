@@ -1617,7 +1617,7 @@ class NSSDropoff {
           // Not updating timestamp at all
           $secs_gone = time() - timeForDate($this->_created);
           // This is stored in the dropoff itself now.
-          $secs_remaining = timeForDate($this->_lifeseconds) - $secs_gone;
+          $secs_remaining = $this->_lifeseconds - $secs_gone;
           $timeLeft = secsToString($secs_remaining);
           // $secs_remaining = $this->_dropbox->retainDays()*86400 - $secs_gone;
           // if ($secs_remaining <= 86400) {
