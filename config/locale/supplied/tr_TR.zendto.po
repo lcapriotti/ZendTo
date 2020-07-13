@@ -1,0 +1,1631 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zendto-tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-05 12:09+0100\n"
+"PO-Revision-Date: 2020-07-01 09:04\n"
+"Last-Translator: Jules Field <Jules@Zend.To>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: zendto-tr\n"
+"X-Crowdin-Project-ID: 409238\n"
+"X-Crowdin-Language: tr\n"
+"X-Crowdin-File: zendto.po\n"
+"X-Crowdin-File-ID: 6\n"
+
+msgid "Please click again on the link you were sent to pick-up your files."
+msgstr "Lütfen dosyalarınızı almak için size gönderilen bağlantıya tekrar tıklayın."
+
+msgid "Authentication Failure"
+msgstr "Kimlik doğrulama hatası"
+
+msgid "Your session has expired. Please start again."
+msgstr "Oturumunuz sona erdi. Lütfen tekrar başlayın."
+
+msgid "Session Expired"
+msgstr "Oturum süresi doldu"
+
+msgid "Your computer address appears to have changed. Click again on the link you were sent to pick-up your files."
+msgstr "Bilgisayar adresiniz değişmiş gibi görünüyor. Dosyalarınızı almak için size gönderilen bağlantıya tekrar tıklayın."
+
+msgid "Session Error"
+msgstr "Oturum Hatası"
+
+msgid "This feature is only available to users who have logged in."
+msgstr "Bu özellik yalnızca giriş yapan kullanıcılar tarafından kullanılabilir."
+
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+msgid "%s has dropped off files for you"
+msgstr "%s indirmeniz sizin için dosyalar yükledi"
+
+msgid "Failed to read logfile. Check web server can read it."
+msgstr "Günlük dosyası okunamadı. Web sunucusunun kayıtları okuyabildiğini kontrol edin."
+
+msgid "File Permissions Error"
+msgstr "Dosya İzinleri Hatası"
+
+msgid "This is available to administrators only."
+msgstr "Bu yalnızca yöneticiler tarafından kullanılabilir."
+
+msgid "Administrators only"
+msgstr "Yalnızca yöneticiler"
+
+msgid "Please click again on the link you were sent to pickup your files."
+msgstr "Lütfen dosyalarınızı almak için size gönderilen bağlantıyı tekrar tıklayın."
+
+msgid "I do not think you are a real person."
+msgstr "Gerçek bir kişi olduğunu sanmıyorum."
+
+msgid "You tried to re-submit this form. Please start again."
+msgstr "Bu formu yeniden göndermeyi denediniz. Lütfen tekrar başlayın."
+
+msgid "Are you a real person?"
+msgstr "Doğru kişi misiniz?"
+
+msgid "Database failure writing authentication key."
+msgstr "Kimlik doğrulama anahtarı yazılırken veritabanı hatası."
+
+msgid "Database Error"
+msgstr "Veritabanı hatası"
+
+msgid "You failed the test to see if you are a person and not a computer. Please try again."
+msgstr "İnsan, bilgisayar ayrımı testinde başarısız oldunuz. Lütfen tekrar deneyin."
+
+msgid "Test failed"
+msgstr "Test başarısız"
+
+msgid "Your Request Code could not be found or has already been used."
+msgstr "İstek Kodunuz bulunamadı veya zaten kullanılmış durumda."
+
+msgid "You can still send files straight from the main menu, or ask for a new Request Code."
+msgstr "Doğrudan ana menüden dosya gönderebilir veya yeni bir İstek Kodu talep edebilirsiniz."
+
+msgid "Request Code Used"
+msgstr "İstek kodu kullanıldı"
+
+msgid "Your Request Code has expired. Please start again."
+msgstr "İstek Kodunuzun süresi doldu. Lütfen tekrar başlayın."
+
+msgid "Request Code Expired"
+msgstr "İstek Kodunun Süresi Doldu"
+
+msgid "Request Error"
+msgstr "İstek Hatası"
+
+msgid "Sending the request email failed."
+msgstr "İstek e-postası gönderilemedi."
+
+msgid "Email Error"
+msgstr "E-posta Hatası"
+
+msgid "Unable to re-send the drop-off %s."
+msgstr "%s yükleme işlemi yeniden gönderilemiyor."
+
+msgid "Unable to Re-send Drop-off"
+msgstr "Yükleme yeniden gönderilemiyor"
+
+msgid "Unlocked %s."
+msgstr "Kilit açıldı %s."
+
+msgid "Unknown user"
+msgstr "Bilinmeyen kullanıcı"
+
+msgid "Request Code Error"
+msgstr "İstek Kodu Hatası"
+
+msgid "Please check it was entered correctly, or ask for a new Request Code."
+msgstr "Lütfen doğru girildiğini kontrol edin veya yeni bir İstek Kodu isteyin."
+
+msgid "Either complete this form, or press your browser's Back button and re-enter your Request Code."
+msgstr "Lütfen formu doldurun ya da tarayıcınızın geri düğmesine basarak istek kodunu yeniden girin."
+
+msgid "You tried to re-submit this form. Please go back to the main menu and start again."
+msgstr "Bu formu yeniden göndermeyi denediniz. Lütfen ana menüye dönün ve tekrar başlayın."
+
+msgid "Verify Error"
+msgstr "Doğrulama Hatası"
+
+msgid "Sending the verification email failed."
+msgstr "Doğrulama e-postası gönderilemedi."
+
+msgid "Could not open MySQL database on %s"
+msgstr "%s üzerinde MySQL veritabanı açılamadı"
+
+msgid "Failed to add login record"
+msgstr "Giriş kaydı eklenemedi"
+
+msgid "Failed to delete login records"
+msgstr "Giriş kayıtları silinemedi"
+
+msgid "Failed to BEGIN transaction block while updating regexps"
+msgstr "Düzenli ifadeler güncellenirken BEGIN işlem bloğu başarısız oldu"
+
+msgid "Failed to ROLLBACK after aborting deletion of old regexps"
+msgstr "Eski düzenli ifadelerin silinmesi iptal edildikten sonra ROLLBACK işlemi başarısız oldu"
+
+msgid "Failed to delete old regexps"
+msgstr "Eski düzenli ifadeler silinemedi"
+
+msgid "Failed to ROLLBACK after aborting addition of regexp"
+msgstr "Düzenli ifade eklenmesini iptal ettikten sonra ROLLBACK işlemi başarısız oldu"
+
+msgid "Failed to add regexp"
+msgstr "Düzenli ifade eklenemedi"
+
+msgid "Aborting adding user %s as that user already exists"
+msgstr "Bu kullanıcı zaten var olduğu için %s kullanıcısını ekleme işlemi iptal ediliyor"
+
+msgid "Failed to BEGIN transaction block while adding user %s"
+msgstr "%s kullanıcısı eklenirken BEGIN işlem bloğu başarısız oldu"
+
+msgid "Failed to ROLLBACK after aborting addition of user %s"
+msgstr "%s kullanıcısının eklenmesi iptal edildiğinden ROLLBACK işlemi başarısız oldu"
+
+msgid "Failed to add user %s"
+msgstr "%s kullanıcısı eklenemedi"
+
+msgid "Aborting deleting user %s as that user does not exist"
+msgstr "Bu kullanıcı olmadığı için %s kullanıcısının silme işlemi iptal ediliyor"
+
+msgid "Aborting updating user %s as that user does not exist"
+msgstr "Bu kullanıcı olmadığı için %s kullanıcısının güncelleme işlemi iptal ediliyor"
+
+msgid "Failed to update password for user %s"
+msgstr "%s kullanıcısı için şifre güncellenemedi"
+
+msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Kullanıcı Denetimi: Kimlik doğrulama sunucularının hiçbirine bağlanılamıyor; kullanıcının kimliği doğrulanamadı."
+
+msgid "LDAP Error"
+msgstr "LDAP hatası"
+
+msgid "Sorry, you are not authorized to use this service."
+msgstr "Maalesef, bu hizmeti kullanma yetkiniz yok."
+
+msgid "Authorization Failed"
+msgstr "Yetkilendirme başarısız oldu"
+
+msgid "Check User: No AD servers configured."
+msgstr "Kullanıcı Denetimi: Yapılandırılmış AD sunucusu yok."
+
+msgid "Use the Back button in your browser to go back and fix this error before trying again."
+msgstr "Geri dönüp tekrar denemeden önce bu hatayı düzeltmek için tarayıcınızdaki Geri tuşunu kullanın."
+
+msgid "Please notify the system administrator."
+msgstr "Lütfen sistem yöneticisini bilgilendirin."
+
+msgid "%d bytes"
+msgstr "%d bytes"
+
+msgid "%.1f KB"
+msgstr "%.1f KB"
+
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+msgid "%.1f GB"
+msgstr "%.1f GB"
+
+msgid "%.1f TB"
+msgstr "%.1f TB"
+
+msgid "The preferences are not configured properly!"
+msgstr "Tercihler doğru yapılandırılmamış!"
+
+msgid "Invalid Configuration"
+msgstr "Geçersiz yapılandırma"
+
+msgid "Could not create ZendTo database handle"
+msgstr "ZendTo veritabanı tanıtıcısı oluşturulamadı"
+
+msgid "Please note"
+msgstr "Lütfen Dikkat"
+
+msgid "The ZendTo preferences.php has no authentication method selected."
+msgstr "ZendTo preferences.php dosyasının seçili bir kimlik doğrulama yöntemi yok."
+
+msgid "Authentication Error"
+msgstr "Doğrulama Hatası"
+
+msgid "The preferences are not configured properly (they're empty)!"
+msgstr "Tercihler doğru yapılandırılmamış (boş)!"
+
+msgid "Mail Error"
+msgstr "E-posta hatası"
+
+msgid "Could not write to log file %s, ensure that web server user can write to the log file as set in preferences.php"
+msgstr "%s günlük dosyasına yazılamadı, web sunucusu kullanıcısının günlük dosyasına, preferences.php dosyasında ayarlandığı gibi yazabildiğinden emin olun"
+
+msgid "Configuration Error"
+msgstr "Yapılandırma hatası"
+
+msgid "The username or password was incorrect."
+msgstr "Kullanıcı adı veya şifre yanlış."
+
+msgid "Could not read local domain list file %s"
+msgstr "%s yerel alan adı listesi dosyası okunamadı"
+
+msgid "You must provide a value for the following preference key: '%s'"
+msgstr "Aşağıdaki tercih anahtarı için bir değer sağlamalısınız: '%s'"
+
+msgid "Undefined Preference Key"
+msgstr "Tanımsız Tercih Anahtarı"
+
+msgid "Decrypting and downloading the file failed. You probably entered the passphrase incorrectly. Please try again."
+msgstr "Dosyanın şifresi çözülüp indirilemedi. Büyük olasılıkla parolayı yanlış girdiniz. Lütfen tekrar deneyin."
+
+msgid "Decryption failed"
+msgstr "Şifre çözme başarısız oldu"
+
+msgid "one of the recipients"
+msgstr "alıcılardan biri"
+
+msgid "Not calculated"
+msgstr "Hesaplanmadı"
+
+msgid "%s has picked up your drop-off!"
+msgstr "Yüklemeniz, %s tarafından indirildi!"
+
+msgid "%s has dropped off a file for you"
+msgstr "%s sizin indirmeniz için bir dosya yükledi"
+
+msgid "%d days"
+msgstr "%d gün"
+
+msgid "The Claim ID or Passcode was incorrect, or the drop-off has expired. Please re-check and note that drop-offs must be collected before they expire otherwise they are automatically deleted."
+msgstr "Talep Kimliği veya parola yanlış veya yükleme süresi doldu. Lütfen tekrar kontrol edin ve yüklemelerin süre sona ermeden önce indirilmesi gerektiğini, aksi takdirde otomatik olarak silineceğini unutmayın."
+
+msgid "Invalid Claim ID or Passcode"
+msgstr "Geçersiz Talep Kimliği veya Parola"
+
+msgid "Upload Error"
+msgstr "Yükleme hatası"
+
+msgid "There appears to be more than 1 drop-off with that claim ID."
+msgstr "Bu talep kimliğiyle 1'den fazla yükleme olduğu görülüyor."
+
+msgid "Invalid Claim ID"
+msgstr "Geçersiz talep kimliği"
+
+msgid "The directory containing this drop-off's files has gone missing."
+msgstr "Bu yükleme dosyalarını içeren dizin kayboldu."
+
+msgid "Drop-off Directory Not Found"
+msgstr "Yükleme klasörü bulunamadı"
+
+msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
+msgstr "Doğrulama bilgileriniz okunamadı. Muhtemelen yükleme oturumunuzun süresi dolmuş. Lütfen tekrar başlayın."
+
+msgid "Admin: Install the PHP module/rpm \"mbstring\"."
+msgstr "Yönetici: PHP modülünü/rpm \"mbstring\" i yükleyin."
+
+msgid "Responding to a request for an encrypted drop-off, but failed to read the passphrase."
+msgstr "Şifreli bir yükleme isteğine yanıt veriliyor, ancak parola cümlesi okunamadı."
+
+msgid "The recipient email address '%s' is invalid."
+msgstr "'%s' alıcı e-posta adresi geçersiz."
+
+msgid "You must be logged in as a %1$s user in order to drop-off a file for a non-%1$s user."
+msgstr "%1$s kullanıcısı olmayan bir kişiye dosya göndermek için %1$s kullanıcı olarak oturum açmalısınız."
+
+msgid "Return to the %s main menu to log in and then try again."
+msgstr "Giriş yapmak için %s ana menüsüne dönün ve tekrar deneyin."
+
+msgid "You can only send to other %1$s users. You cannot drop-off a file for a non-%1$s user."
+msgstr "Yalnızca diğer %1$s kullanıcılarına gönderebilirsiniz. %1$s olmayan bir kullanıcı için dosyayı yükleyemezsiniz."
+
+msgid "You must specify all recipients' email addresses in the form."
+msgstr "Formda tüm alıcıların e-posta adreslerini belirtmelisiniz."
+
+msgid "There was an error while uploading '%s'."
+msgstr "'%s' yüklenirken bir hata oluştu."
+
+msgid "The recipients file size exceeds the limit imposed by PHP on the server."
+msgstr "Alıcıların dosya boyutu, PHP'nin sunucuya yüklediği sınırı aşıyor."
+
+msgid "The recipients file size exceeds the size limit (the maximum is %s)."
+msgstr "Alıcıların dosyaları, boyut sınırını aşıyor (maksimum %s)."
+
+msgid "The recipients file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Alıcıların dosyası kısmen yüklenebildi. Yüklemeye çalışırken ağ bağlantınız zaman aşımına uğramış olabilir."
+
+msgid "No recipient file was actually uploaded."
+msgstr "Hiçbir alıcı dosyası yüklenmedi."
+
+msgid "The server was not configured with a temporary folder for uploads."
+msgstr "Sunucu, yüklemeler için geçici bir klasör ile yapılandırılmadı."
+
+msgid "The server's temporary folder is misconfigured."
+msgstr "Sunucunun geçici klasörü yanlış yapılandırılmış."
+
+msgid "Could not read the uploaded recipients file."
+msgstr "Yüklenen alıcılar dosyası okunamadı."
+
+msgid "You must choose at least one file to drop-off."
+msgstr "Yükleme için en az bir dosya seçmelisiniz."
+
+msgid "The file size exceeds the limit imposed by PHP on the server."
+msgstr "Dosya boyutu PHP'nin sunucuya yüklediği sınırı aşıyor."
+
+msgid "The file '%s' was too large. Each dropped-off file may be at most %s."
+msgstr "'%s' dosyası çok büyük. Her yüklenen dosya en fazla %s olabilir."
+
+msgid "The file was only partially uploaded. Your network connection may have timed out while attempting to upload."
+msgstr "Dosya kısmen yüklendi. Yüklemeye çalışırken ağ bağlantınız zaman aşımına uğramış olabilir."
+
+msgid "No file was actually dropped-off."
+msgstr "Hiçbir dosya yüklenmedi."
+
+msgid "The total size of the dropped-off files exceeds the maximum for a single drop-off. Altogether, a single drop-off can be at most %s."
+msgstr "Yüklenen dosyaların toplam boyutu, tek bir yüklemeye ait maksimum değeri aşıyor. Toplamda, tek bir yükleme değeri en fazla %s olabilir."
+
+msgid "One or more of the files you dropped-off was infected with a virus. The drop-off has been abandoned. Please clean your files and try again."
+msgstr "Yüklediğiniz dosyalardan bir veya daha fazlasına virüs bulaştı. Yükleme işlemi iptal edildi. Lütfen dosyalarınızı virüsten temizleyin ve tekrar deneyin."
+
+msgid "The attempt to virus-scan your drop-off failed."
+msgstr "Yükleme işleminizin, virüs taraması denemesi başarısız oldu."
+
+msgid "The drop-off was too large to encrypt, so it has been stored unencrypted. If this is not what you want, please immediately delete the drop-off from your Outbox."
+msgstr "Yükleme işlemi şifrelenemeyecek kadar büyüktü, bu yüzden şifrelenmemiş olarak saklandı. İstediğiniz bu değilse, lütfen Giden Kutunuzdaki yüklemeden ilgili dosyayı silin."
+
+msgid "Drop-off not encrypted"
+msgstr "Yükleme şifrelenmedi"
+
+msgid "You must specify your own email address in the form."
+msgstr "Formda kendi e-posta adresinizi belirtmelisiniz."
+
+msgid "The sender email address you entered was invalid."
+msgstr "Girilen, gönderici e-posta adresi geçersiz."
+
+msgid "A unique directory to contain your dropped-off files could not be created."
+msgstr "Yüklenen dosyalarınızı barındıran özel bir dizin oluşturulamadı."
+
+msgid "Encryption failed."
+msgstr "Şifreleme başarısız oldu."
+
+msgid "It looks like your drop-off failed due to lack of free space on the server. It only has %s left."
+msgstr "Sunucuda boş alan olmaması nedeniyle yükleme işleminiz başarısız oldu. Yalnızca %s kaldı."
+
+msgid "Trouble while attempting to drop '%s' into its drop-off directory."
+msgstr "'%s' öğesini yükleme dizinine eklemeye çalışırken sorun ile karşılaşıldı."
+
+msgid "Could not add recipients to the database."
+msgstr "Alıcılar veritabanına eklenemedi."
+
+msgid "Trouble while attempting to save the information for '%s'."
+msgstr "'%s' için bilgileri kaydetmeye çalışırken sorun ile karşılaşıldı."
+
+msgid "Library"
+msgstr "Kütüphane"
+
+msgid "Failed to send email to the recipient %s. But your drop-off has been stored with claimID %s"
+msgstr "%s alıcısına e-posta gönderilemedi. Ancak, yükleme işleminiz talep kimliği %s ile saklandı"
+
+msgid "Unable to add a drop-off record to the database."
+msgstr "Yükleme kaydı veritabanına eklenemedi."
+
+msgid "Unable to begin database transaction."
+msgstr "Veritabanı işlemi başlatılamadı."
+
+msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr "Kimlik doğrulama sunucularının hiçbirine bağlanılamıyor; kullanıcının kimliği doğrulanamadı."
+
+msgid "0 bytes"
+msgstr "0 byte"
+
+msgid "1 byte"
+msgstr "%1 byte"
+
+msgid "This form cannot be called like this, please return to the main menu."
+msgstr "Bu form bu şekilde çağrılamaz, lütfen ana menüye dönün."
+
+msgid "Internal Error"
+msgstr "Dahili hata"
+
+msgid "You must specify your name in the form."
+msgstr "Formda adınızı belirtmelisiniz."
+
+msgid "You must specify the recipient's email address in the form."
+msgstr "Formda alıcıların e-posta adreslerini belirtmelisiniz."
+
+msgid "Your email address you entered was invalid."
+msgstr "Girdiğiniz e-posta adresi geçersiz."
+
+msgid "The recipient's email address you entered was invalid."
+msgstr "Girdiğiniz alıcının e-posta adresi geçersiz."
+
+msgid "Database failure writing request information."
+msgstr "İstek bilgisini yazarken veritabanı hatası oluştu."
+
+msgid "Could not create the new database."
+msgstr "Yeni veritabanı oluşturulamadı."
+
+msgid "Could not create the tables in the new database."
+msgstr "Yeni veritabanında tablolar oluşturulamadı."
+
+msgid "Could not open the database."
+msgstr "Veritabanı açılamadı."
+
+msgid "Database Error creating %s table"
+msgstr "%s tablosu oluşturulurken veritabanı hatası"
+
+msgid "Failed to read anything from loginlog"
+msgstr "Giriş günlüğünden hiçbir şey okunamadı"
+
+msgid "%1$d days and %2$d hours"
+msgstr "%1$d gün(ler) ve %2$d saat(ler)"
+
+msgid "%d hours"
+msgstr "%d saat"
+
+msgid "%1$d hours and %2$d minutes"
+msgstr "%1$d saat ve %2$d dakika"
+
+msgid "%d minutes"
+msgstr "%d dakika"
+
+msgid "%1$d minutes and %2$d seconds"
+msgstr "%1$d dakika ve %2$d saniye"
+
+msgid "%d second"
+msgstr "%d saniye"
+
+msgid "%d seconds"
+msgstr "%d saniye"
+
+msgid "The email address you entered was invalid."
+msgstr "Girdiğiniz e-posta adresi geçersiz."
+
+msgid "You are trying to drop off some files"
+msgstr "Bazı dosyaları yüklemeye çalışıyorsunuz"
+
+msgid "About the %1 Service..."
+msgstr "%1 Hizmeti Hakkında..."
+
+msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
+msgstr "Büyük eklere sahip e-posta mesajları, e-posta sunucularında ve son kullanıcıların bilgisayarlarında soruna yol açabilir. Bu tür e-posta mesajlarının indirilmesi yavaş bir İnternet bağlantısında saatler sürebilir ve bu süre zarfında diğer mesajların gönderilmesini veya alınmasını engelleyebilir. Bazı durumlarda, indirme işlemi sürekli başarısız olur ve alıcının posta alma durumunu etkiler. Ayrıca, e-posta istemcileri gönderilen dosyanın boyutunu ciddi derecede arttırır. Örneğin, bir Outlook iletisini ekli olarak kaydetmek dosyanın boyutunu % 40'a kadar arttırır. 1 Mb'tan büyük dosyaları paylaşmak için, %1'i kullanarak bir dosyayı (veya dosyaları) İnternet'teki başka bir kullanıcı için güvenli ve verimli bir şekilde geçici olarak kullanılabilir hale getirmek için kullanın."
+
+msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
+msgstr "%1 sistemine erişecek iki farklı kullanıcı türü vardır: <em> içeride </em> hizmeti çalıştıran %2 ile ilişkili kullanıcılar ve <em> dışarıdaki </em> kullanıcıları."
+
+msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
+msgstr "Bir <em> içeriden </em> kullanıcının, ister <em> içeriden </em> isterse <em> dışarıdan </em>, herkese göndermek üzere yükleme yapmasına izin verilir. Bir <em> dış </em> kullanıcının yalnızca bir <em> iç </em> kullanıcıya yükleme yapma izni vardır. Bu şu soruyu gündeme getirir: yükleme nedir?"
+
+msgid "drop-off"
+msgstr "yükleme"
+
+msgid "one or more files uploaded to %1 as a single item for delivery to a person or people"
+msgstr "kişi veya kişilere teslim edilmesi istenen dosya ve dosyalar %1'e tek bir öğe olarak yüklendi"
+
+msgid "There are several ways in which a user can drop-off multiple files at once:"
+msgstr "Kullanıcının aynı anda birden fazla dosyayı yüklemesinin birkaç yolu vardır:"
+
+msgid "Drag-and-drop multiple files at once onto the drop-off page"
+msgstr "Birden çok dosyayı aynı anda yükleme sayfasına sürükleyip bırakın"
+
+msgid "Click on the \"Add Files\" button on the drop-off page, and select 1 or more files at once using combinations of click, Shift+click and Ctrl+click (Cmd+click on a Mac)"
+msgstr "Açılır sayfada \"Dosya Ekle\" düğmesini tıklayın ve aynı anda 1 veya daha fazla dosya seçmek için fare ile tıklayın veya Shift ve fare ile tıklayın veya Ctrl ve fare ile tıklayın (Mac'te Cmd + tıklama)"
+
+msgid "Archive and compress the files into a single package and attach the resulting archive file on the drop-off page."
+msgstr "Dosyaları sıkıştırarak tek bir dosya halin getirin ve ortaya çıkan dosyayı açılan sayfaya ekleyin."
+
+msgid "There are many ways to archive and compress files:"
+msgstr "Dosyaları arşivlemenin ve sıkıştırmanın birçok yolu vardır:"
+
+msgid "Mac users can select the files in the Finder and \"Compress\" (see the <em>File</em> menu)"
+msgstr "Mac kullanıcıları Finder'da ve \"Sıkıştır\" daki dosyaları seçebilir (bkz. <em> Dosya </em> menüsü)"
+
+msgid "Windows users can create a \"compressed folder\" or use %1"
+msgstr "Windows kullanıcıları bir \"sıkıştırılmış klasör\" oluşturabilir veya %1 kullanabilir"
+
+msgid "Linux/Unix users could try \"PeaZip\" or \"File Roller\""
+msgstr "Linux / Unix kullanıcıları \"PeaZip\" veya \"File Roller\" i deneyebilirler"
+
+msgid "Creating a Drop-off"
+msgstr "Bir yükleme oluştur"
+
+msgid "When a user creates a drop-off, they enter some identifying information about themself (name, organization, and email address); identifying information about the recipient(s) (name and email address); and choose what files should be uploaded to make the drop-off. If the files are successfully uploaded, an email is sent to the recipient(s) explaining that a drop-off has been made. This email also provides a link to access the drop-off. Other information (the Internet address and/or computer name from which the drop-off was created, for example) is retained, to help the recipient(s) check the identity of the sender."
+msgstr "Kullanıcı bir yükleme oluşturduğunda kendisiyle ilgili bazı tanımlayıcı bilgiler (ad, kuruluş ve e-posta adresi) girer; alıcı (lar) hakkında bilgi tanımlama (ad ve e-posta adresi); ve yüklemeyi oluşturmak için hangi dosyaların yükleneceğini seçer. Dosyalar başarıyla yüklendiyse, alıcılara indirme işleminin nasıl yapılacağını belirten bir e-posta gönderilir. Bu e-posta aynı zamanda indirmeye erişmek için bir bağlantı da sağlar. Alıcıların gönderenin kimliğini kontrol etmesine yardımcı olmak için diğer bilgiler (örneğin, yüklemenin oluşturulduğu İnternet adresi ve/veya bilgisayar adı) saklanır."
+
+msgid "Retrieval of a drop-off by a recipient can only be done with both the drop-off's Claim ID and Passcode."
+msgstr "Alıcı tarafından yüklemenin indirilmesi, yapılan yüklemenin Talep Kimliği hem de Parola ile mümkündür."
+
+msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
+msgstr "Dosyaları yüklerken, bunlardan birini veya her ikisini de alıcıya otomatik olarak göndermek için <em> değil </em> 'i seçebilirsiniz: daha sonra bu bilgileri kendinizin elden iletmeniz gerekir."
+
+msgid "Making a Pick-up"
+msgstr "Teslim Alma"
+
+msgid "There are two ways to pick-up files that have been dropped off:"
+msgstr "Yüklenen dosyaları almanın iki yolu vardır:"
+
+msgid "All users can click on the link provided in the notification email they were sent."
+msgstr "Tüm kullanıcılar, bildirim e-postasında sağlanan bağlantıyı tıklayabilir."
+
+msgid "An inside user, once logged-in to the system, can display their \"Inbox\" which is a list of all drop-offs waiting for them. Once logged-in, an inside user is able to access drop-offs, sent to or by them, without needing the email message."
+msgstr "Dahili kullanıcı, sisteme giriş yaptıktan sonra \"Gelen Kutusu\" nu görüntüleyebilir. Kullanıcılar, giriş yaptıktan sonra, e-posta mesajına ihtiyaç duymadan gönderdikleri veya kendilerine gelen yüklemeleri görebilirler."
+
+msgid "When viewing a drop-off, the user will see quite a few things:"
+msgstr "Yükleme görüntülenirken kullanıcı oldukça az şey görür:"
+
+msgid "The list of files that were uploaded"
+msgstr "Yüklenen dosyaların listesi"
+
+msgid "The sender and recipient information that the sender entered when the drop-off was created"
+msgstr "Yükleme oluşturulduğunda, gönderenin girdiği gönderici ve alıcı bilgileri"
+
+msgid "The computer name and/or address from which the drop-off was created"
+msgstr "Yüklemenin oluşturulduğu bilgisayar adı ve / veya adresi"
+
+msgid "Optionally a list of pick-ups that have been made"
+msgstr "İsteğe bağlı olarak yapılmış olan yükleme listesi"
+
+msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs that are older than %1 days are removed from the system."
+msgstr "Alıcının dosyaları alması için %1 gün var. Her gece, %1 günden daha eski yüklemeler sistemden kaldırılır."
+
+msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
+msgstr "Yüklenen dosyaların virüslere karşı tarandığını lütfen unutmayın, ancak alıcının dosyaları indirip açarken de dikkatli olması gerekir. Bildirim e-postasında belirtilen göndereni doğrulamak oldukça kolaydır. Ayrıca, gönderenin Internet etki alanına uygun olduğundan emin olmak için, yükleme oluşturulduğunda günlüğe kaydedilen bilgisayar adını / adresini de kontrol edebilirsiniz. Bununla birlikte, <em> IP </em> adresleri sahte olabilir, bu nedenle eski kimlik doğrulaması gerçekten en güvenilirdir."
+
+msgid "Resumable Downloading of Files"
+msgstr "Dosyaların indirilmesi devam ettirilebilir"
+
+msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
+msgstr "Çoğu web tarayıcısı <em> devam ettirilebilir indirmeleri </em> destekler. Şöyle bir senaryo düşünün: Kafede otururken, bir öğrencinin sizin için %1'e yüklediği 100 MByte 'lık PDF'yi indiriyorusunuz. Aniden, birkaç masa ötedeki biri, film fragmanı izlemeye başlar  ve kablosuz bağlantınızın hızı düşer -  95MB indirilmişti ve şimdi baştan başlamanız gerekiyor! Tarayıcınız <em> devam ettirilebilir indirmeleri </em> destekliyorsa; dosyanın kalan 5MB'ını indirerek dosyayı tamamlayacaktır."
+
+msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
+msgstr "%1, HTTP 1.1 standardı altında <em> sürdürülebilir indirme </em> teknolojisinin sunucu tarafı bileşenleri için destek sağlar."
+
+msgid "Size Limitations on Uploads"
+msgstr "Yüklemelerde Boyut Sınırlamaları"
+
+msgid "Being able to upload files larger than 2 GB depends on the browser being used."
+msgstr "2 GB'tan büyük dosyaları yükleyebilmek, kullanılan tarayıcıya bağlıdır."
+
+msgid "If at all possible, use a modern 64-bit browser on a 64-bit operating system. If you only have a 32-bit system (the most common cause is Windows 7), then use a modern version of Google Chrome or Firefox. Older versions of Microsoft Internet Explorer are particularly bad at this."
+msgstr "Mümkünse, 64 bit işletim sisteminde modern bir 64 bit tarayıcı kullanın. Yalnızca 32 bit sisteminiz varsa (en yaygın nedeni Windows 7'dir), Google Chrome'un veya Firefox'un modern bir sürümünü kullanın. Microsoft Internet Explorer'ın eski sürümleri bu konuda oldukça başarısızdır."
+
+msgid "The %1 software itself has configurable limits on the amount of data that can be uploaded in a single drop-off. Even for browsers that support uploads larger than 2 GB, drop-off may not exceed %2 per file, or %3 total for the entire drop-off."
+msgstr "%1 yazılımının, tek bir yüklemede aktarılabilecek veri miktarı üzerinde yapılandırılabilir sınırları vardır. 2 GB'tan büyük yüklemeleri destekleyen tarayıcılar için bile yükleme işlemi, dosya başına %2'yi veya tüm bırakma için toplam %3'ü geçemez."
+
+msgid "If you are having the following issues when dropping off or picking up a large file:"
+msgstr "Büyük bir dosyayı yüklerken veya indirirken aşağıdaki sorunları yaşıyorsanız:"
+
+msgid "Your browser reports a bad or broken connection after downloading a significant portion of the file"
+msgstr "Tarayıcınız dosyanın önemli bir bölümünü indirdikten sonra bozuk olduğunu veya hata oluştuğunu bildirdi"
+
+msgid "An error page is displayed that indicates you dropped off no files"
+msgstr "Hiçbir dosya yüklemediğinizi belirten bir hata sayfası görüntüleniyor"
+
+msgid "then you are most likely connected to the Internet via a connection too slow to move the amount of data in a timely fashion. Your computer normally has at most 2 hours to fully send or receive a drop-off."
+msgstr "büyük olasılıkla internet bağlantınız normalden daha yavaş. Bilgisayarınızın yükleme işlemini tamamen göndermek veya almak için normalde en fazla 2 saati vardır."
+
+msgid "Based upon the original Perl UD Dropbox software written by Doke Scott."
+msgstr "Doke Scott tarafından yazılan orijinal Perl UD Dropbox yazılımı temel alınmıştır."
+
+msgid "Version %1 has been developed by %2."
+msgstr "%1 sürümü %2 tarafından geliştirildi."
+
+msgid "Please enter the claim id and claim passcode that were sent to you."
+msgstr "Lütfen size gönderilen talep kimliğini ve talep parolasını girin."
+
+msgid "Please enter the claim id and claim passcode."
+msgstr "Lütfen talep kimliğini ve talep parolasını girin."
+
+msgid "If the sender gave you a passcode for the claim, please enter it."
+msgstr "Gönderen size bir parola verdiyse, lütfen girin."
+
+msgid "Claim ID"
+msgstr "Talep Kimliği"
+
+msgid "Claim Passcode"
+msgstr "Talep Parolası"
+
+msgid "Pick-up Files"
+msgstr "Dosyaları İndir"
+
+msgid "The drop-off with claim ID %1 was successfully removed."
+msgstr "%1 talep kimliğine sahip yükleme başarıyla kaldırıldı."
+
+msgid "Unable to remove the drop-off"
+msgstr "Yükleme kaldırılamadı"
+
+msgid "You may have already deleted it."
+msgstr "Önceden silmiş olabilirsiniz."
+
+msgid "This is an automated message sent to you by the %1 service."
+msgstr "Bu,%1 hizmeti tarafından size gönderilen otomatik bir mesajdır."
+
+msgid "This is a reminder about a drop-off sent to you, that no one has picked up."
+msgstr "Bu, size gönderilen ve kimsenin indirmediği bir yükleme hakkında hatırlatmadır."
+
+msgid "The drop-off will expire in %1 after which it will be automatically deleted."
+msgstr "Yükleme işleminin süresi %1 dolacaktır ve ardından otomatik olarak silinir."
+
+msgid "%1 &lt;%2&gt; has dropped off a file for you."
+msgstr "%1 &lt;%2&gt; sizin için bir dosya yükledi."
+
+msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
+msgstr "%1 &lt;%2&gt; sizin için %3 dosya yükledi."
+
+msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "<strong> GÖNDERİCİYE GÜVENİYORSANIZ</strong> ve kendisinden bir dosya almayı bekliyorsanız, aşağıdaki bağlantıya tıklayarak (veya kopyalayıp web tarayıcınıza yapıştırarak) yüklenenleri indirmeyi seçebilirsiniz:"
+
+msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
+msgstr "<strong> Bu yükleme işlemi şifrelenir. </strong> Herhangi bir dosyayı indirmek için doğru parolaya sahip olmanız gerekir."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
+msgstr "İndirmeniz gereken %1 yükleme var; sonrasında yukarıdaki bağlantının süresi dolacaktır."
+
+msgid "If you wish to contact the sender, just reply to this email."
+msgstr "Gönderenle iletişim kurmak istiyorsanız, bu e-postayı yanıtlamanız yeterlidir."
+
+msgid "The sender has left you a note:"
+msgstr "Gönderici size bir not bıraktı:"
+
+msgid "Full information about the drop-off:"
+msgstr "Yükleme hakkında tam bilgi:"
+
+msgid "Sent separately"
+msgstr "Ayrı olarak gönderildi"
+
+msgid "Date of Drop-off"
+msgstr "Yüklemenin tarihi"
+
+msgid "Sender"
+msgstr "Gönderici"
+
+msgid "Name"
+msgstr "İsim"
+
+msgid "Organization"
+msgstr "Kuruluş"
+
+msgid "Email Address"
+msgstr "E-posta adresi"
+
+msgid "IP Address"
+msgstr "IP adresi"
+
+msgid "File"
+msgstr "Dosya"
+
+msgid "Files"
+msgstr "Dosyalar"
+
+msgid "Description"
+msgstr "Tanımlama"
+
+msgid "Size"
+msgstr "Boyut"
+
+msgid "SHA-256 Checksum"
+msgstr "SHA-256 Sağlama Verisi"
+
+msgid "Content Type"
+msgstr "İçerik Tipi"
+
+msgid "a file"
+msgstr "bir dosya"
+
+msgid "%1 files"
+msgstr "%1 dosyalar"
+
+msgid "%1 <%2> has dropped off %3 for you."
+msgstr "%1 <%2> sizin için %3 'ü yükledi."
+
+msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Gönderene güveniyorsanız ve ondan bir dosya almayı bekliyorsanız, aşağıdaki bağlantıyı tıklayarak (veya kopyalayıp web tarayıcınıza yapıştırarak) dosyayı indirmeyi seçebilirsiniz:"
+
+msgid ""
+"** This drop-off is encrypted. **\n"
+"To download any files you must have the correct passphrase."
+msgstr ""
+"** Bu yükleme şifreli. **\n"
+"Herhangi bir dosyayı indirmek için doğru parolaya sahip olmalısınız."
+
+msgid "You have %1 to retrieve the drop-off; after that the link above will expire. If you wish to contact the sender, just reply to this email."
+msgstr "İndirmeniz gereken %1 yükleme var; sonrasında yukarıdaki bağlantının süresi dolacaktır. Eğer gönderici ile iletişim kurmak isterseniz, bu epostayı cevaplamanız yeterli olacaktır."
+
+msgid "Claim ID:          %1"
+msgstr "Talep Kimliği:          %1"
+
+msgid "Claim Passcode:    %1"
+msgstr "Talep Parolası:    %1"
+
+msgid "Date of Drop-Off:  %1"
+msgstr "Yükleme Tarihi:  %1"
+
+msgid "Name:            %1"
+msgstr "İsim:            %1"
+
+msgid "Organization:    %1"
+msgstr "Kuruluş:    %1"
+
+msgid "Email Address:   %1"
+msgstr "Eposta Adresi:   %1"
+
+msgid "IP Address:      %1  %2"
+msgstr "IP Adresi:      %1  %2"
+
+msgid "Name:             %1"
+msgstr "İsim:             %1"
+
+msgid "Description:      %1"
+msgstr "Tanımlama:      %1"
+
+msgid "Size:             %1"
+msgstr "Boyut:             %1"
+
+msgid "SHA-256 Checksum: %1"
+msgstr "SHA-256 Sağlama Verisi: %1"
+
+msgid "Content Type:     %1"
+msgstr "İçerik Tipi:     %1"
+
+msgid "Picked up"
+msgstr "İndirme"
+
+msgid "All"
+msgstr "Tüm"
+
+msgid "Search:"
+msgstr "Arama:"
+
+msgid "Show _MENU_ entries"
+msgstr "_MENU_ girişlerini göster"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_TOTAL_ girişten _START_ - _END_ arasındakiler gösteriliyor"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 girdiden 0 ile 0 arası gösteriliyor"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(toplam _MAX_ girişten filtrelendi)"
+
+msgid "No matching records found"
+msgstr "Eşleşen hiçbir kayıt bulunamadı"
+
+msgid "No data available in table"
+msgstr "Tabloda hiçbir veri yok"
+
+msgid "First"
+msgstr "İlk"
+
+msgid "Previous"
+msgstr "Önceki"
+
+msgid "Next"
+msgstr "Sonraki"
+
+msgid "Last"
+msgstr "Son"
+
+msgid "Recipients"
+msgstr "Alıcılar"
+
+msgid "Subject"
+msgstr "Konu"
+
+msgid "Created"
+msgstr "Oluşturuldu"
+
+msgid "Expires"
+msgstr "Bitiş süresi"
+
+msgid "Encrypted"
+msgstr "Şifrelendi"
+
+msgid "Export as CSV"
+msgstr "CSV olarak dışarı aktar"
+
+msgid "Outbox"
+msgstr "Giden Kutusu"
+
+msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
+msgstr "\"%2\" sütunundaki \"%1\", herhangi bir dosyanın başarıyla indirildiğini <em> garanti edemez </em>."
+
+msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
+msgstr "Ancak \"%1\", <em> başarıyla indirilmedi </em> anlamına gelir."
+
+msgid "%1 = Encrypted by %2"
+msgstr "%1 = %2 tarafından şifrelenmiş"
+
+msgid "%1 = Not encrypted by %2"
+msgstr "%1 = %2 tarafından şifrelenmedi"
+
+msgid "Yes"
+msgstr "Evet"
+
+msgid "No"
+msgstr "Hayır"
+
+msgid "Click on a drop-off to view the information and files for that drop-off."
+msgstr "Bir yüklemeye ilişkin bilgileri ve dosyaları görüntülemek için yüklemenin adına tıklayın."
+
+msgid "Show or hide:"
+msgstr "Göster ya da gizle:"
+
+msgid "There are no drop-offs made by you at this time."
+msgstr "Şu anda sizin tarafınızdan yapılmış bir yükleme yok."
+
+msgid "Copyright &copy; %1"
+msgstr "Telif hakkı &copy; %1"
+
+msgid "About %1"
+msgstr "%1 Hakkında"
+
+msgid "This service is powered by a copy of <a href=\"http://zend.to/\" target=\"_blank\">%1</a>"
+msgstr "Bu hizmet, <a href=\"http://zend.to/\" target=\"_blank\">%1 </a> 'nin bir kopyası tarafından desteklenmektedir"
+
+msgid "Version %1"
+msgstr "Sürüm: %1"
+
+msgid "You are currently logged in as <em>%1</em>"
+msgstr "Şu anda <em>%1 </em> olarak giriş yaptınız"
+
+msgid "Return to the %1 main menu"
+msgstr "%1 Ana menüye dön"
+
+msgid "Logout"
+msgstr "Çıkış yap"
+
+msgid "%1 Username"
+msgstr "%1 Kullanıcı Adı"
+
+msgid "Password"
+msgstr "Şifre"
+
+msgid "Login"
+msgstr "Giriş"
+
+msgid "Privacy Consent"
+msgstr "Gizlilik izni"
+
+msgid "This website uses a cookie & has to use your name & email address to function."
+msgstr "Bu web sitesi bir çerez kullanır ve çalışması için adınızı ve e-posta adresinizi kullanması gerekiyor."
+
+msgid "I agree"
+msgstr "Katılıyorum"
+
+msgid "I do not agree"
+msgstr "Katılmıyorum"
+
+msgid "Home"
+msgstr "Ev"
+
+msgid "Inbox"
+msgstr "Gelen kutusu"
+
+msgid "Please login above."
+msgstr "Lütfen yukarıdan giriş yapın."
+
+msgid "Authentication"
+msgstr "Kimlik Doğrulama"
+
+msgid "You have been logged out."
+msgstr "Çıkış yaptınız."
+
+msgid "For better security, you should also exit this browser, or at least close this browser window."
+msgstr "Daha iyi güvenlik için, bu tarayıcıdan çıkmalı veya en azından bu tarayıcı penceresini kapatmalısınız."
+
+msgid "You will be redirected to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Kısa bir süre sonra <a href=\"%1\"> ana menüye </a> yönlendirileceksiniz."
+
+msgid "Last %1 lines of %2 log, most recent first"
+msgstr "%2 günlüğünün son %1 satırı, yeniler önce gösterilir"
+
+msgid "You are using an old unsupported version of Internet Explorer."
+msgstr "Internet Explorer'ın desteklenmeyen eski bir sürümünü kullanıyorsunuz."
+
+msgid "This site will not work correctly with this web browser."
+msgstr "Bu site, kullanılan web tarayıcısı ile uyumlu görünmüyor."
+
+msgid "Please use a better web browser, such as Google Chrome or Firefox, or at least Internet Explorer 11."
+msgstr "Lütfen Google Chrome veya Firefox gibi daha iyi bir web tarayıcısı veya en azından Internet Explorer 11 kullanın."
+
+msgid "Drop-off"
+msgstr "Yükleme"
+
+msgid "Pick-up"
+msgstr "İndirme"
+
+msgid "Request a Drop-off"
+msgstr "Yükleme Talep Et"
+
+msgid "Show All Drop-offs"
+msgstr "Tüm yüklemeleri göster"
+
+msgid "Unlock Users"
+msgstr "Kullanıcıların Kilidini Aç"
+
+msgid "System Statistics"
+msgstr "Sistem İstatistikleri"
+
+msgid "System Log"
+msgstr "Sistem Günlüğü Kayıtları"
+
+msgid "You may perform the following activities:"
+msgstr "Aşağıdaki etkinlikleri gerçekleştirebilirsiniz:"
+
+msgid "Drop-off (<em>upload</em>) a file for someone else."
+msgstr "Başkasına dosya gönderin (<em> yükleyin </em>)."
+
+msgid "Ask another person to send you some files."
+msgstr "Bir başkasından size dosya göndermesini isteyin."
+
+msgid "Pick-up (<em>download</em>) a file dropped-off for you."
+msgstr "Size gönderilen dosyayı teslim alın (<em> indirin </em>)."
+
+msgid "View all drop-offs in the database"
+msgstr "Veritabanındaki tüm yüklemeleri görüntüleme"
+
+msgid "Unlock locked-out users"
+msgstr "Kilitli kullanıcıların kilidini aç"
+
+msgid "View daily statistics for the service"
+msgstr "Hizmetin günlük istatistiklerini görüntüleme"
+
+msgid "View log file"
+msgstr "Günlük dosyasını görüntüle"
+
+msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
+msgstr "%1 kullanıcısıysanız, e-posta adresinizi doğrulamadan yukarıdan giriş yapabilirsiniz, <br/> ve %1 olmayan kullanıcılar için dosya yükleyebilirsiniz."
+
+msgid "If you are a %1 user, you may login here:"
+msgstr "%1 kullanıcısıysanız, buradan giriş yapabilirsiniz:"
+
+msgid "<strong>%1 users should login first.</strong>"
+msgstr "<strong>%1 kullanıcı önce giriş yapmalıdır. </strong>"
+
+msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
+msgstr "%1 olmayan kullanıcılara dosya göndermek için <strong> e-posta adresinizi doğrulamak zorunda kalmayın </strong>, <br/>."
+
+msgid "Anyone may perform the following activities:"
+msgstr "Herkes aşağıdaki etkinlikleri gerçekleştirebilir:"
+
+msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
+msgstr "%1 kullanıcı için bir dosya gönderin (<em> yükleyin </em>) (<strong> e-posta doğrulaması gerekli </strong>)."
+
+msgid "Pick-up (<em>download</em>) a file dropped off for you."
+msgstr "Sizin için gönderilen dosyayı teslim alın (<em> indirin </em>)."
+
+msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
+msgstr "%1 kullanıcı: kullanıcı adınız ve şifrenizle giriş yapabilir ve herkese dosya gönderebilirsiniz içeriden veya dışarıdan %2"
+
+msgid "Non-%1 users: you cannot log in, but can still send files to %1 users if you know their email address. Start by clicking the \"%3\" button."
+msgstr "%1 olmayan kullanıcılar: giriş yapamazsınız, ancak e-posta adreslerini biliyorsanız %1 kullanıcısına dosya gönderebilirsiniz. \"%3\" düğmesine tıklayarak başlayın."
+
+msgid "%1 users who wish someone outside %2 to send them files, can make it a lot easier for them by logging in and clicking \"%3\". That saves the other person having to prove who they are."
+msgstr "%2 dışarıdan birinin dosya göndermesini isteyen %1 kullanıcılar, giriş yapıp \"%3\" ü tıklatarak bu işlemi daha kolay hale getirebilir. Bu durum, diğer kişinin kimliğini kanıtlamasını ortadan kaldırır."
+
+msgid "The request created will be valid for %1."
+msgstr "Oluşturulan istek %1 için geçerli olacak."
+
+msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
+msgstr "%1,%2'ye kadar olan büyük dosyalar da dahil olmak üzere dosyaları %3 firma içine ve firma dışına aktarmanızı kolaylaştıran bir hizmettir."
+
+msgid "How secure is %1?"
+msgstr "%1 ne kadar güvenli?"
+
+msgid "Files are automatically deleted from %1 %2 days after you upload them."
+msgstr "Dosyalar yüklendikten %2 gün sonra %1 'den otomatik olarak silinir."
+
+msgid "Scanning for viruses..."
+msgstr "Virüler için tarama yapılıyor..."
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "__CHARS__ too long"
+msgstr "__CHARS__ çok uzun"
+
+msgid "__CHARSLEFT__ / __MAXLENGTH__ left"
+msgstr "__CHARSLEFT__ / __MAXLENGTH__ kaldı"
+
+msgid "Too short!"
+msgstr "Çok kısa!"
+
+msgid "Entries do not match"
+msgstr "Girişler eşleşmiyor"
+
+msgid "Click to Add Files or Drag Them Here"
+msgstr "Dosya Eklemek veya Buraya Sürüklemek için Tıklayın"
+
+msgid "If you leave this page, you will abandon this drop-off."
+msgstr "Bu sayfadan ayrılırsanız, yükleme işlemini iptal etmiş olursunuz."
+
+msgid "This number can include a decimal point, it does not have to be a whole number."
+msgstr "Bu sayı ondalık basamak içerebilir, tam sayı olması gerekmez."
+
+msgid "It will take too long to calculate the checksum of your drop-off."
+msgstr "Yüklemenizin sağlama verisini hesaplamak çok uzun sürecektir."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be checksummed."
+msgstr "Yalnızca en fazla __MAXSIZE__ boyutuna kadar olan yüklemelerin sağlama verisi kontrol edilebilir."
+
+msgid "Every file will be encrypted. This has been enforced by %1, you do not need to do anything."
+msgstr "Her dosya şifrelenir. Bu %1 tarafından uygulanır, hiçbir şey yapmanıza gerek yok."
+
+msgid "It will take too long to encrypt your drop-off."
+msgstr "Yükleme işleminizi şifrelemek çok uzun sürecektir."
+
+msgid "Only drop-offs up to a maximum of __MAXSIZE__ can be encrypted."
+msgstr "Yalnızca maksimum __MAXSIZE__ boyutuna kadar olan yüklemeler şifrelenebilir."
+
+msgid "MB"
+msgstr "MB"
+
+msgid "KB"
+msgstr "KB"
+
+msgid "Remove file"
+msgstr "Dosyayı kaldır"
+
+msgid "It will now take too long to encrypt your drop-off, so encryption has been disabled. If you want to encrypt your drop-off, reduce your drop-off below __MAXSIZE__ and select \"Encrypt\" again."
+msgstr "Yükleme işleminizi şifrelemek çok uzun sürecek, bu nedenle şifreleme devre dışı bırakıldı. Yükleme işleminizi şifrelemek istiyorsanız __MAXSIZE__ altında olmasını sağlayın ve tekrar \"Şifrele\" yi seçin."
+
+msgid "Please enter a valid email address."
+msgstr "Lütfen geçerli bir eposta adresi girin."
+
+msgid "Remove selected recipient"
+msgstr "Seçilen alıcıyı kaldır"
+
+msgid "Please add at least one file first!"
+msgstr "Lütfen en az bir dosya ekleyin!"
+
+msgid "Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__)."
+msgstr "Dosyalarınız, bir yüklemede (__MAXTOTALSIZE__) gönderebileceğiniz maksimum toplam boyuttan daha büyük."
+
+msgid "File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__)."
+msgstr "__NUMBER__ dosyası, bir yüklemede gönderebileceğiniz maksimum dosya boyutundan daha büyük (__MAXFILESIZE__)."
+
+msgid "Drop-off expiry time must be a number of days, at most %1."
+msgstr "Yüklemenin sona erme süresi birkaç gündür, en fazla %1 olmalıdır."
+
+msgid "Scanning"
+msgstr "Taranıyor"
+
+msgid "Checksumming"
+msgstr "Sağlama verisi hesaplanıyor"
+
+msgid "Encrypting"
+msgstr "Şifreleniyor"
+
+msgid "Sorry, I failed to drop-off your files!"
+msgstr "Üzgünüm, dosyalarınızı yükleyemedim!"
+
+msgid "Note that you cannot drop-off directories, only files."
+msgstr "Sadece dosya yüklemesi yapabileceğinizi, dizinleri yükleyemeyeceğinizi unutmayın."
+
+msgid "Uploaded: __PERCENT__%"
+msgstr "Yüklendi: __PERCENT __%"
+
+msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
+msgstr "Maalesef, dosyalarınızdan birinin bir kısımını göndermek için %d kez denedim, ancak aktarım başarılı olmadı."
+
+msgid "Sorry, I could not send your files. The server said %s."
+msgstr "Üzgünüz, dosyalarınızı gönderemedim. Sunucu %s bildirdi."
+
+msgid "PLEASE NOTE"
+msgstr "LÜTFEN DİKKAT"
+
+msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the same degree of caution as you would with any other file you download."
+msgstr "%1 klasörüne yüklenen dosyalara virüs taraması yapılıyor. Ancak yine de indirdiğiniz herhangi bir dosyayı kullanırken dikkatli olun."
+
+msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
+msgstr "Kullanıcılar ayrıca, hassas bilgiler (örneğin kişisel özel bilgiler) içeren her dosyayı şifrelemeleri için <strong> şiddetle tavsiye edilir </strong>!"
+
+msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Bu web sayfası, bir veya daha fazla dosyayı insanlara (%1 kullanıcı veya diğerleri) göndermek için yüklemenize olanak tanır. Alıcı, aşağıya girdiğiniz bilgileri ve dosyanın indirme talimatlarını içeren otomatik bir e-posta alacaktır. IP adresiniz de kimlik doğrulaması amacıyla günlüğe kaydedilir ve alıcıya gönderilir."
+
+msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+msgstr "Bu web sayfası, %1 kullanıcısı için bir veya daha fazla dosyayı yüklemenize olanak tanır. Alıcı, aşağıya girdiğiniz bilgileri ve dosyanın indirme talimatlarını içeren otomatik bir e-posta alacaktır. IP adresiniz de kimlik doğrulama amacıyla günlüğe kaydedilir ve alıcıya gönderilir."
+
+msgid "From"
+msgstr "Kimden"
+
+msgid "To"
+msgstr "Kime"
+
+msgid "Short note to the Recipients"
+msgstr "Alıcılara kısa bir not"
+
+msgid "Encrypt every file"
+msgstr "Her dosyayı şifrele"
+
+msgid "Calculate SHA-256 checksum of each file"
+msgstr "Her dosyanın SHA-256 sağlama verisini hesapla"
+
+msgid "Send me an email when each recipient picks up the files"
+msgstr "Her alıcı dosyayı indirdiğinde bana eposta ile bildir"
+
+msgid "Send email message to recipients"
+msgstr "Alıcılara e-posta mesajı gönder"
+
+msgid "which includes Passcode as well as Claim ID"
+msgstr "parola ve Talep Kimliği'ni içeren"
+
+msgid "Recipients must agree to terms and conditions"
+msgstr "Alıcılar, şartlar ve koşulları kabul etmelidir"
+
+msgid "days until drop-off expires"
+msgstr "yükleme süresi dolana kadar gün"
+
+msgid "Add Recipients"
+msgstr "Alıcıları ekle"
+
+msgid "Add One"
+msgstr "Ekle"
+
+msgid "Add Many"
+msgstr "Çoklu Ekleme"
+
+msgid "Adds to your address book"
+msgstr "Adres defterine ekle"
+
+msgid "Email"
+msgstr "E-Posta"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Add & Close"
+msgstr "Ekle ve Kapat"
+
+msgid "Bulk add recipients"
+msgstr "Birden fazla ekle"
+
+msgid "One recipient per line, for example:"
+msgstr "Her satıra bir alıcı, örneğin:"
+
+msgid "Recipient's Name email@example.com"
+msgstr "Alıcının Adı email@example.com"
+
+msgid "Verify"
+msgstr "Doğrula"
+
+msgid "Encryption Passphrase"
+msgstr "Şifreleme parolası"
+
+msgid "This passphrase will not be sent to the recipients.<br/>You need to do this yourself."
+msgstr "Bu parola alıcılara gönderilmeyecek. <br/> Bunu kendiniz yapmanız gerekiyor."
+
+msgid "Passphrase"
+msgstr "Parola"
+
+msgid "And again"
+msgstr "Ve yeniden"
+
+msgid "Hide characters"
+msgstr "Karakterleri gizle"
+
+msgid "OK"
+msgstr "Tamam"
+
+msgid "Cancel"
+msgstr "İptal et"
+
+msgid "Add Files"
+msgstr "Dosya ekle"
+
+msgid "and/or select a file..."
+msgstr "ve/veya bir dosya seçin..."
+
+msgid "Filename"
+msgstr "Dosya adı"
+
+msgid "Uploading..."
+msgstr "Yükleniyor..."
+
+msgid "Drop-off Files"
+msgstr "Yükleme Dosyaları"
+
+msgid "Drop to<br/>Add Files"
+msgstr "<br/> Dosya Ekle'ye bırakın"
+
+msgid "(It will copy, not move)"
+msgstr "(Kopyalanacak, taşınmayacak)"
+
+msgid "No file was chosen for download."
+msgstr "İndirilecek dosya seçilmedi."
+
+msgid "Please prove you are a person"
+msgstr "Lütfen insan olduğunu kanıtla"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
+msgstr "<em> Gerçek </em> bir kişi (bilgisayar değil) olduğunuzu doğrulamak için, lütfen aşağıdaki kısa işlemi tamamlayın ve \"Dosyaları İndir\" i tıklayın:"
+
+msgid "The drop-off you made (claim ID: %1) has been picked-up."
+msgstr "Yaptığınız yükleme (talep kimliği: %1) indirildi."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up."
+msgstr "\"<span class =\" mono \">%1 </span>\" dosyası indirildi."
+
+msgid "%1 made the pick-up from %2."
+msgstr "%1,%2 öğesinden indirdi."
+
+msgid "The file \"<span class=\"mono\">%1</span>\" was picked up by %2."
+msgstr "\"<span class =\" mono \">%1 </span>\" dosyası %2 tarafından indirildi."
+
+msgid "Note: You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Not: Bu alıcının yükleme listesindeki dosya indirme işlemleri hakkında başka bildirim almayacaksınız."
+
+msgid "Note"
+msgstr "Not"
+
+msgid "The file %1 was picked up."
+msgstr "%1 dosyası indirildi."
+
+msgid "The file %1 was picked up by %2."
+msgstr "%1 dosyası %2 tarafından indirildi."
+
+msgid "You will not be notified about any further pick-ups of files in this drop-off by this recipient."
+msgstr "Yüklemedeki dosyaların indirilmesi hakkında bu alıcıya ait başka bilgilendirme almayacaksınız."
+
+msgid "Global Drop-off List"
+msgstr "Genel Yükleme Listesi"
+
+msgid "There are no drop-offs available at this time."
+msgstr "Şu an için herhangi bir yükleme yok."
+
+msgid "There are no drop-offs available for you at this time."
+msgstr "Şu anda sizin için herhangi bir yükleme yok."
+
+msgid "This is a request from %1 of %2."
+msgstr "Bu,%2'nin %1'inden gelen bir istek."
+
+msgid "This is a request from %1."
+msgstr "Bu %1'den yapılan bir istek."
+
+msgid "Please click on the link below and drop off the file or files I have requested."
+msgstr "Lütfen aşağıdaki bağlantıyı tıklayın ve sizden talep ettiğim dosyayı veya dosyaları yükleyin."
+
+msgid "The link is only valid for %1 from the time of this email."
+msgstr "Bağlantı, bu e-posta tarihinden itibaren yalnızca %1 için geçerlidir."
+
+msgid "All files you upload will be automatically encrypted."
+msgstr "Yüklediğiniz tüm dosyalar otomatik olarak şifrelenir."
+
+msgid "More information is in the note below."
+msgstr "Daha fazla bilgi aşağıdaki notta bulunmaktadır."
+
+msgid "If you wish to contact %1, just reply to this email."
+msgstr "%1 ile iletişim kurmak istiyorsanız, bu e-postayı yanıtlamanız yeterlidir."
+
+msgid "Click to copy link to clipboard"
+msgstr "Bağlantıyı panoya kopyalamak için tıklayın"
+
+msgid "Copied"
+msgstr "Kopyalandı"
+
+msgid "The request for a Drop-off has been sent to %1 at %2."
+msgstr "Yükleme talebi,%2 adresinden %1'e gönderildi."
+
+msgid "It is valid for %1."
+msgstr "%1 için geçerlidir."
+
+msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
+msgstr "Size gönderdikleri dosyalar az önce girdiğiniz parola ile şifrelenecektir. Kaybetmeyin, yoksa dosyalara erişemezsiniz!"
+
+msgid "If the recipient wants to send files to you before their request arrives, they should"
+msgstr "Alıcı, istek gelmeden önce size dosya göndermek istiyorsa,"
+
+msgid "Go to %1"
+msgstr "%1 adresine git"
+
+msgid "Select \"Drop-off Files\""
+msgstr "\"Yükleme Dosyalar\" ını seçin"
+
+msgid "Enter the request code \"%1\""
+msgstr "\"%1\" istek kodunu girin"
+
+msgid "Click on the \"Next\" button"
+msgstr "\"Devam\" tuşuna basın"
+
+msgid "You may close this window."
+msgstr "Pencereyi kapatabilirsiniz."
+
+msgid "The request for a Drop-off for %1 at %2 has been created."
+msgstr "%2 de %1 için bir yükleme isteği oluşturuldu."
+
+msgid "The link to give them is %1"
+msgstr "%1 linkini karşı taraf ile paylaşabilirsiniz"
+
+msgid "Send the Request"
+msgstr "İstek gönder"
+
+msgid "Show the Link"
+msgstr "Bağlantyı Göster"
+
+msgid "Please enter the recipient's name first!"
+msgstr "Lütfen önce alıcının adını girin!"
+
+msgid "Please enter the recipient's email address first!"
+msgstr "Lütfen önce alıcının e-posta adresini girin!"
+
+msgid "Please enter the email subject first!"
+msgstr "Lütfen önce e-posta konusunu girin!"
+
+msgid "Your note is too long!"
+msgstr "Bilgi notu beklenenden uzun!"
+
+msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
+msgstr "İsteğe bağlı: bunu seçer ve bir parola ayarlarsanız, yükleme şifrelenir. Dosyaları alacak kişi parolayı asla bilemez."
+
+msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
+msgstr "Bu normal olarak seçilidir. Seçimi kaldırırsanız, bağlantı ve talimatlar e-postayla gönderilmez. Bunun yerine, sadece ihtiyaç duydukları bağlantı gösterilir, isterseniz başka şekilde de gönderebilirsiniz."
+
+msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgstr "Bu web sayfası, size dosya veya belge göndermek isteyen kişilere  istek göndermenize olanak tanır. Alıcı, aşağıya girdiğiniz bilgileri ve dosya (ları) yükleme talimatlarını içeren otomatik bir e-posta alacaktır."
+
+msgid "Email(s)"
+msgstr "Eposta(lar)"
+
+msgid "Send email"
+msgstr "Eposta gönder"
+
+msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
+msgstr "Bu alıcıya gönderilecektir. Ayrıca, size gönderilen yükleme sonuçları da içeriğe eklenecektir."
+
+msgid "Do not lose or forget this passphrase!"
+msgstr "Bu parolayı kaybetmeyin veya unutmayın!"
+
+msgid "The drop-off was successfully re-sent to its recipients."
+msgstr "Yükleme işlemi, alıcılara başarıyla yeniden gönderildi."
+
+msgid "Unable to re-send the drop-off."
+msgstr "Yükleme işlemi yeniden gönderilemiyor."
+
+msgid "All files are transferred across the network securely encrypted"
+msgstr "Tüm dosyalar ağ üzerinden güvenli bir şekilde şifrelenir"
+
+msgid "If you are sending personal or confidential data, tick \"Encrypt every file\" when creating a new drop-off. Then the passphrase you enter must be used when downloading the drop-off. The passphrase is not stored on %1, and cannot be recovered if lost. No one can access the files without it"
+msgstr "Kişisel veya gizli veriler gönderiyorsanız, yeni bir yükleme oluştururken \"Her dosyayı şifrele\" seçeneğini işaretleyin. Ardından, yüklemeyi indirirken girdiğiniz parola kullanılmalıdır. Parola %1 üzerinde depolanmaz ve kaybedilirse kurtarılamaz. Hiç kimse dosyalara onsuz erişemez"
+
+msgid "All files uploaded and temporarily stored on %1 are held on equipment owned and operated at %2's own Data Centre"
+msgstr "%1'e yüklenen ve geçici olarak depolanan tüm dosyalar %2'nin kendi Veri Merkezinde bulunan ve işletilen cihazda tutulur"
+
+msgid "All data is subject to the Data Protection regulations and laws of %1 and the country"
+msgstr "Tüm veriler %1 ve ülkenin Veri Koruma düzenlemelerine ve yasalarına tabidir"
+
+msgid "%1 is in no way a \"cloud\" service. Everything is stored (even temporarily) on equipment directly owned by %2, and managed by its own IT staff"
+msgstr "%1 hiçbir şekilde bir \"bulut\" hizmeti değildir. Her şey doğrudan %2'nin sahip olduğu sistemde saklanır (geçici olsa bile) ve kendi BT personeli tarafından yönetilir"
+
+msgid "All access to data is very tightly and strictly controlled by %2. All accesses to data on %1 are logged and can be easily checked if you are ever concerned that a 3rd party might have gained access to your data"
+msgstr "Verilere tüm erişim %2 tarafından çok sıkı ve gizli bir şekilde kontrol edilmektedir. %1 üzerindeki verilere yapılan tüm erişim günlüğe kaydedilir ve 3. bir tarafın verilerinize erişmiş olabileceğinden endişe duyuyorsanız kolayca kontrol edilebilir"
+
+msgid "Furthermore, uploaded data is only held on %1 for a maximum of %2 days, after which time it is automatically deleted. There is no \"undelete\" facility available at all. No backups are taken of the uploaded data (it's only a transitory stopping point), so no uploaded data ever moves off %1 itself onto other equipment or media such as backup tapes. After an uploaded file has been deleted, there is no way of recovering the file"
+msgstr "Ayrıca, yüklenen veriler en fazla %2 gün boyunca %1'de tutulur ve daha sonra otomatik olarak silinir. \"Silme işlemini geri alma\" imkanı yoktur. Yüklenen verilerin hiçbir yedeği alınmaz (burası sadece bir takas alanıdır), bu nedenle yüklenen hiçbir veri %1'den kartuşa veya başka bir diske taşınmaz. Yüklenen bir dosya silindikten sonra dosyayı kurtarmanın bir yolu da yoktur"
+
+msgid "Do you really want to delete this dropoff?"
+msgstr "Bu yüklemeyi silmeyi gerçekten istiyor musun?"
+
+msgid "Warning: Zip files of this size will probably not open on a Mac by double-clicking them. You will have to use another app, or else the 'unzip' or 'ditto' commands in a Terminal window."
+msgstr "Uyarı: Bu boyuttaki zip dosyaları büyük olasılıkla Mac'te çift tıklanarak açılmaz. Terminal penceresinde başka bir uygulama veya 'unzip' veya 'ditto' komutlarını kullanmanız gerekecektir."
+
+msgid "Include Passcode?"
+msgstr "Parola Eklensin mi?"
+
+msgid "Should the Passcode be included in the emails as well as the Claim ID?"
+msgstr "Parola, E-postalara ve Talep Kimliğine dahil edilsin mi?"
+
+msgid "Click '%1' if you are not sure."
+msgstr "Emin değilseniz '%1'i tıklayın."
+
+msgid "Decryption Passphrase"
+msgstr "Şifre Çözme Parolası"
+
+msgid "You can ask the sender<br/>for the decryption passphrase."
+msgstr "Göndericiden<br/> şifre çözme parolasını isteyebilirsiniz."
+
+msgid "Delete Dropoff"
+msgstr "Yüklemeyi sil"
+
+msgid "Resend Dropoff"
+msgstr "Yüklemeyi tekrar gönder"
+
+msgid "Drop-Off Summary"
+msgstr "Yükleme özeti"
+
+msgid ""
+"This is a terms and conditions waiver that recipients must agree to.\n"
+"    <br/>To switch it on/off, see the settings <tt>showRecipientsWaiverCheckbox</tt> and <tt>defaultRecipientsWaiver</tt> in <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>It can be long and may contain HTML tags.\n"
+"    <br/>To change this text:\n"
+"    <ol>\n"
+"      <li>look for this text in the <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt> text files</li>\n"
+"      <li>put your own text in <tt>msgstr&nbsp;\"...\"</tt> line(s) immediately following it</li>\n"
+"      <li>run <tt>/opt/zendto/bin/makelanguages</tt> as root</li>\n"
+"      <li>restart Apache (to ensure it really picks up the new text).</li>\n"
+"    </ol>\n"
+"    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
+msgstr ""
+"Bu, alıcıların kabul etmesi gereken bir şart ve koşul feragatidir.\n"
+"    <br/> Açmak / kapatmak için <tt> /opt/zendto/config/preferences.php </tt> 'deki <tt> showRecipientsWaiverCheckbox </tt> ve <tt> defaultRecipientsWaiver </tt> ayarlarına bakın.\n"
+"    <br/> Uzun olabilir ve HTML etiketleri içerebilir.\n"
+"    <br/> Bu metni değiştirmek için:\n"
+"    <ol>\n"
+"      <li> bu metni <tt> /opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po </tt> metin dosyalarında </li> arayın\n"
+"      <li> kendi metninizi <tt> msgstr&nbsp; \"...\" </tt> hemen ardından gelen satırlara ekleyin </li>\n"
+"      <li> <tt> / opt / zendto / bin / makelanguages ​​</tt> 'ı root olarak çalıştırın </li>\n"
+"      <li> Apache'yi yeniden başlatın (yeni metni gerçekten aldığından emin olmak için). </li>\n"
+"    </ol>\n"
+"    <p> ZendTo arayüzündeki herhangi bir şeyin metnini tam olarak bu şekilde değiştirirsiniz. Daha fazla bilgi için <a href=\"https://zend.to/translators.php\"> belgelerdeki çeviriler sayfasını </a> okuyun. </p>"
+
+msgid "I have read, understood and agree to the terms and conditions above."
+msgstr "Yukarıdaki şartlar ve koşulları okudum, anladım ve kabul ediyorum."
+
+msgid "Your files have been encrypted and sent successfully."
+msgstr "Dosyalarınız şifrelendi ve başarıyla gönderildi."
+
+msgid "They will expire in %1."
+msgstr "%1 içinde sona erecekler."
+
+msgid "Your files have been sent successfully."
+msgstr "Dosyalarınız başarıyla gönderildi."
+
+msgid "This drop-off is encrypted."
+msgstr "Yükleme şifrelendi."
+
+msgid "Click on a filename to download that file."
+msgstr "Dosyayı indirmek için dosya adına tıklayın."
+
+msgid "This drop-off will expire in %1."
+msgstr "Bu yüklemenin süresi %1 içinde dolacak."
+
+msgid "%1 file"
+msgstr "%1 dosya"
+
+msgid "Download All Files"
+msgstr "Tüm dosyaları indir"
+
+msgid "Download All Files<br/>as an Unencrypted Zip"
+msgstr "Tüm Dosyaları <br/> Şifrelenmemiş Zip olarak indirin"
+
+msgid "Download All Files<br/>as a Zip"
+msgstr "Tüm dosyaları<br/> Zip olarak indir"
+
+msgid "No files in the dropoff... something is amiss!"
+msgstr "Bırakılan dosya yok... bir şeyler eksik!"
+
+msgid "%1 <span>from %2 on %3</span>"
+msgstr "%1 <span>%3 üzerinden %2 </span>"
+
+msgid "Comments"
+msgstr "Yorumlar"
+
+msgid "To send the files to someone else, send them this link %1, or else the Claim ID & Passcode:"
+msgstr "Dosyaları başka birine göndermek için bu bağlantıyı %1 veya başka bir Talep Kimliği ve Şifre kodu gönderin:"
+
+msgid "Picked-up on date..."
+msgstr "İndirme tarihi..."
+
+msgid "...from remote address..."
+msgstr "... uzak adresten..."
+
+msgid "...by recipient."
+msgstr "... alıcı tarafından."
+
+msgid "%1 pickups"
+msgstr "%1 indirmeler"
+
+msgid "1 pickup"
+msgstr "1 indirme"
+
+msgid "None of the files has been picked-up yet."
+msgstr "Henüz hiçbir dosya indirilmedi."
+
+msgid "View stats for the"
+msgstr "İçin istatistikleri görüntüle"
+
+msgid "past week"
+msgstr "geçen hafta"
+
+msgid "past month"
+msgstr "geçen ay"
+
+msgid "past 90 days"
+msgstr "geçen 90 gün"
+
+msgid "past year"
+msgstr "geçen yıl"
+
+msgid "past 10 years"
+msgstr "geçen 10 yıl"
+
+msgid "Number of drop-offs made (checked daily)"
+msgstr "Yapılan yükleme sayısı (günlük kontrol edilir)"
+
+msgid "Total amount of data dropped off (checked daily)"
+msgstr "Yüklenen toplam veri miktarı (günlük kontrol edilir)"
+
+msgid "Total files dropped off (checked daily)"
+msgstr "Toplam dosya sayısı düştü (günlük kontrol edilir)"
+
+msgid "File count per drop-off (checked daily)"
+msgstr "Yükleme başına dosya sayısı (günlük kontrol edilir)"
+
+msgid "Unlock"
+msgstr "Kilidi Aç"
+
+msgid "Select all"
+msgstr "Tümünü seç"
+
+msgid "Unlock selected users"
+msgstr "Seçili kullanıcıların kilidini aç"
+
+msgid "There are no locked users."
+msgstr "Engellenmiş kullanıcı yok."
+
+msgid "You have asked us to send you this message so that you can drop-off some files for someone."
+msgstr "Birisine dosya gönderebilmek için bu mesajı iletmemizi istediniz."
+
+msgid "IGNORE THIS MESSAGE IF YOU WERE NOT IMMEDIATELY EXPECTING IT!"
+msgstr "EĞER ACİL BEKLENTİNİZ YOK İSE BU MESAJI GÖRMEZDEN GELEBİLİRSİNİZ!"
+
+msgid "Otherwise, continue the process by clicking the following link (or copying and pasting it into your web browser):"
+msgstr "Aksi takdirde, aşağıdaki bağlantıyı tıklayarak (veya kopyalayıp web tarayıcınıza yapıştırarak) işleme devam edin:"
+
+msgid "Now wait for the email message from the %1 service to arrive and click on the link in it."
+msgstr "Şimdi %1 hizmetinden gönderilen e-posta mesajının gelmesini bekleyin ve içindeki bağlantıya tıklayın."
+
+msgid "You will be directed to the <a href=\"%1\">main menu</a> in a moment."
+msgstr "Birazdan <a href=\"%1\"> ana menüye </a> yönlendirileceksiniz."
+
+msgid "Please enter your Request Code before submitting."
+msgstr "Lütfen göndermeden önce İstek Kodunuzu girin."
+
+msgid "Please enter your name before submitting."
+msgstr "Lütfen göndermeden önce adınızı girin."
+
+msgid "Please enter your email address before submitting."
+msgstr "Lütfen göndermeden önce e-posta adresinizi girin."
+
+msgid "Your Request Code"
+msgstr "İstek Kodunuz"
+
+msgid "Request Code"
+msgstr "İstek Kodu"
+
+msgid "Information about the Sender"
+msgstr "Kaynak hakkında bilgi"
+
+msgid "You did not complete the form, or you failed the \"Am I A Real Person?\" test."
+msgstr "Formu doldurmadınız veya \"Ben Gerçek Bir İnsan Mıyım?\" testini geçemediniz."
+
+msgid "Have you been given a \"<strong>Request Code</strong>\"?"
+msgstr "Size \"<strong> İstek Kodu </strong>\" verildi mi?"
+
+msgid "Your name"
+msgstr "Adınız"
+
+msgid "(required)"
+msgstr "(gereklidir)"
+
+msgid "Your organization"
+msgstr "Kuruluşunuzun adı"
+
+msgid "Your email address"
+msgstr "E-posta adresiniz"
+
+msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below:"
+msgstr "<em> Gerçek </em> kişi (bilgisayar değil) olduğunuzu doğrulamak için lütfen aşağıdaki kısa işlemi tamamlayın:"
+
+msgid "I now need to send you a confirmation email."
+msgstr "Şimdi size bir onay e-postası göndermem gerekiyor."
+
+msgid "When you get it in a minute or two, click on the link in it."
+msgstr "Bir veya iki dakika içinde gelen epostanın içindeki bağlantıya tıklayın."
+
+msgid "Send confirmation"
+msgstr "Onay gönder"
+
+#~ msgid "Recipient"
+#~ msgstr "Alıcı"

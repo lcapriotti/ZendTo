@@ -5,7 +5,7 @@
     a { color: #67709c; font-weight: bold; text-decoration: none; }
     #email-footer, #email-header { background-color: #cbcccd; }
     {fetch file="../www/css/local.css"}
-    th, tr, td { padding: 0px; border: none; }
+    th, tr, td { padding: 0px; border: none; color: black; }
     img { border: none; }
   </style>
 </head>

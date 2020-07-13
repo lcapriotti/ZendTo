@@ -39,7 +39,7 @@ define('NSSDROPBOX_LIB_DIR', '/opt/zendto/lib/');
 define('NSSDROPBOX_DATA_DIR','/var/zendto/');
 
 // This defines the version number, please do not change
-define('ZTVERSION','6.03-1');
+define('ZTVERSION','6.03-4');
 
 // This is for gathering nightly stats, see docs about RRD and root's crontab
 define('RRD_DATA_DIR',NSSDROPBOX_DATA_DIR.'rrd/');
@@ -203,7 +203,7 @@ $NSSDROPBOX_PREFS = array(
   // and in what order does the list appear?
   // If you set this to array(), then the language picker does not
   // appear at all.
-  'languageList' => array('cs_CZ Čeština', 'de_DE Deutsch', 'en_GB English (UK)', 'en_US English (US)', 'es_ES Espa&ntilde;ol', 'fr_FR Fran&ccedil;ais', 'gl_ES Galego', 'it_IT Italiano', 'hu_HU Magyar', 'nl_NL Nederlands', 'pl_PL Polski', 'pt_BR Portugu&ecirc;s (BR)', 'ru_RU &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;'),
+  'languageList' => array('cs_CZ Čeština', 'de_DE Deutsch', 'en_GB English (UK)', 'en_US English (US)', 'es_ES Espa&ntilde;ol', 'fr_FR Fran&ccedil;ais', 'gl_ES Galego', 'it_IT Italiano', 'hu_HU Magyar', 'nl_NL Nederlands', 'pl_PL Polski', 'pt_BR Portugu&ecirc;s (BR)', 'ru_RU &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;', 'tr_TR Türkçe'),
 
   // If you are in the EU, you really should show a consent box to
   // ensure the user understands that the site is (1) storing a cookie

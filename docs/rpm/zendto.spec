@@ -1,5 +1,5 @@
 %define version 6.03
-%define release 1
+%define release 4
 %define name    zendto
 
 %define is_fedora %(test -e /etc/fedora-release && echo 1 || echo 0)
@@ -287,6 +287,7 @@ rm -rf /opt/zendto/myzendto.templates >/dev/null 2>&1
 %config(noreplace) %attr(644,root,root) /opt/zendto/config/locale/pl_PL/LC_MESSAGES/zendto.po
 %config(noreplace) %attr(644,root,root) /opt/zendto/config/locale/ru_RU/LC_MESSAGES/zendto.po
 %config(noreplace) %attr(644,root,root) /opt/zendto/config/locale/hu_HU/LC_MESSAGES/zendto.po
+%config(noreplace) %attr(644,root,root) /opt/zendto/config/locale/tr_TR/LC_MESSAGES/zendto.po
 
 %attr(755,root,root) %dir /opt/zendto/templates
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/about.tpl
@@ -307,7 +308,7 @@ rm -rf /opt/zendto/myzendto.templates >/dev/null 2>&1
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/log.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/main_menu.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/new_dropoff.tpl
-%config(noreplace) %attr(644,root,root) /opt/zendto/templates/new_dropoff.js.tpl
+%config %attr(644,root,root) /opt/zendto/templates/new_dropoff.js.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/no_download.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/pickupcheck.tpl
 %config(noreplace) %attr(644,root,root) /opt/zendto/templates/pickup_email.tpl

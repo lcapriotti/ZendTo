@@ -220,7 +220,7 @@ $(document).ready(function(){
   if (! {$showEmailRecipientsCheckbox})
     $('.newdropoff-informSpan').css('display', 'none');
   if (! {$showPasscodeCheckbox})
-    $('.newdropoff-passcodeSpan').css('display', 'none');
+    $('.newdropoff-informPasscodeSpan').css('display', 'none');
   if (! {$showWaiverCheckbox})
     $('.newdropoff-waiverSpan').css('display', 'none');
   if (! {$defaultNumberOfDaysToRetain|default:'0'}>0) {
@@ -1221,7 +1221,8 @@ function submitform() {
                   uploadChunks( start );
                 } else {
                   hideUpload();
-                  alert(sprintf("{t escape=no}Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded.{/t}", maxRetries));
+                  // alert(sprintf("{t escape=no}Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded.{/t}", maxRetries));
+                  alert("{t escape=no}Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded.{/t}".replace('%d', maxRetries));
                   retries = 0;
                   enableFormAgain();
                 }
@@ -1229,7 +1230,8 @@ function submitform() {
               }
               // Not told to retry
               hideUpload();
-              alert(sprintf("{t escape=no}Sorry, I could not send your files. The server said %s.{/t}", data));
+              // alert(sprintf("{t escape=no}Sorry, I could not send your files. The server said %s.{/t}", data));
+              alert("{t escape=no}Sorry, I could not send your files. The server said %s.{/t}".replace('%s', data));
               retries = 0;
               enableFormAgain();
               return;

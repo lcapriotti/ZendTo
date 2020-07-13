@@ -1,3 +1,27 @@
+Version 6.03-4 Production
+- HTML emails now display correctly on systems running in Dark mode.
+- 'showEmailPasscodeCheckbox' now has the expected result in the New
+  Drop-off form.
+- Fixed bug where failed upload of 1 file chunk would cause whole drop-
+  off upload to fail without reporting error correctly.
+- Fixed 2 Javascript bugs in error handling for "new drop-off" upload code.
+- Improved logging of chunk upload errors.
+- Logging of new drop-offs and downloaded files now includes the user's
+  language/locale code, so you can see your users' most common languages.
+- Tiny formatting change in drop-off summary page to improve readibility.
+
+Version 6.03-3 Production
+- Bug fixed where you if you hid the ClaimID column in the Inbox/Outbox list,
+  it wouldn't correctly show the drop-off that was clicked on.
+
+Version 6.03-2 Production
+- New Turkish translation. Many thanks to Hüseyin GÜÇ and Bilgehan
+  POYRAZ for this!
+- Added check to ensure PHP curl module is installed, which you might
+  not have installed depending on your upgrade path.
+- Speeded up HTML template engine.
+- Installer for CentOS/RedHat 8 checks all language packs are installed.
+
 Version 6.03-1 Production
 - New features since the last Production release:
 - Users can now edit the Subject line of a new drop-off.

@@ -42,25 +42,39 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     print("Error: upload_tmp_dir is not set in php.ini. Contact your systems administrator");
     exit;
   }
- 
+  // Add trailing / if not already there 
   if (substr($dirName, -1) !== DIRECTORY_SEPARATOR)
     $dirName .= DIRECTORY_SEPARATOR;
+
+  $name = @$_POST['chunkName'];
+  $nameLen = strlen(@$_POST['chunkName']);
   // Sanitise the chunkName
-  $lastElement = preg_replace('/[^0-9a-zA-Z]/', '', @$_POST['chunkName']);
-  $lastElement = substr($lastElement, 0, 100);
+  $lastElement = preg_replace('/[^0-9a-zA-Z]/', '', $name);
+  $lastElement = substr($lastElement, 0, 65); // chunkName should be max 32 long
+  if ($nameLen == 0) {
+    $theDropbox->writeToLog("Error: chunk name missing");
+    print("Error: chunk name missing");
+    exit;
+  }
+  if ($nameLen > 65) {
+    $theDropbox->writeToLog("Error: chunk name '".$name."' is too long");
+    print("Error: chunk name too long");
+    exit;
+  }
   // Does this look valid?
-  if (empty($lastElement)) {
-    $theDropbox->writeToLog("Error: chunk name missing or too long");
-    print("Error: chunk name missing or too long");
+  if ($lastElement !== $name) {
+    $theDropbox->writeToLog("Error: chunk name '".$name."' contains invalid characters I did not generate");
+    print("Error: chunk name contains bad characters");
     exit;
   }
   $dirName .= $lastElement;
 
   // Read which uploaded file this is part of.
   // Only contains digits.
-  $fileNum = preg_replace('/[^0-9]/', '', @$_POST['chunkOf']);
+  $number = @$_POST['chunkOf'];
+  $fileNum = preg_replace('/[^0-9]/', '', $number);
   if ($fileNum <= 0) {
-    $theDropbox->writeToLog("Error: Missing/bad chunk number");
+    $theDropbox->writeToLog("Error: Missing/bad chunk number '".$number."'");
     print("Error: Missing/bad chunk number");
     exit;
   }
@@ -105,7 +119,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
         break;
     }
     $theDropbox->writeToLog('Upload error: ' .
-      $theDropbox->_authorizedUser() . ' ' .
+      $theDropbox->authorizedUser() . ' ' .
       $error);
     // Trigger a retry if it is not a configuration error
     if ($retry)

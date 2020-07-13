@@ -1291,6 +1291,7 @@ class NSSDropoff {
   {
     global $smarty;
     global $NSSDROPBOX_PREFS;
+    global $currentLocale;
 
     //  First, make sure we've been properly authenticated:
     if ( !$this->_okayForDownloads )
@@ -1508,17 +1509,19 @@ class NSSDropoff {
       $this->_dropbox->writeToLog("Info: no need to send confirmation email to ".$this->_senderEmail." for claim ".$this->_claimID);
     }
     if ($fileID === 'all') {
-      $this->_dropbox->writeToLog(sprintf("Info: pickup of claimID %s as zip by %s%scompleted.",
+      $this->_dropbox->writeToLog(sprintf("Info: pickup of claimID %s as zip by %s%scompleted in language %s",
             $this->_claimID,
             $whoWasItUID ? $whoWasItUID : $whoWasIt,
-            $this->showRecipWaiver() ? ' (waiver accepted) ' : ' '
+            $this->showRecipWaiver() ? ' (waiver accepted) ' : ' ',
+            $currentLocale
       ));
     } else {
-      $this->_dropbox->writeToLog(sprintf("Info: pickup of claimID %s file %s by %s%scompleted.",
+      $this->_dropbox->writeToLog(sprintf("Info: pickup of claimID %s file %s by %s%scompleted in language %s",
             $this->_claimID,
             $fileList[0]['basename'],
             $whoWasItUID ? $whoWasItUID : $whoWasIt,
-            $this->showRecipWaiver() ? ' (waiver accepted) ' : ' '
+            $this->showRecipWaiver() ? ' (waiver accepted) ' : ' ',
+            $currentLocale
       ));
     }
     
@@ -2372,6 +2375,7 @@ class NSSDropoff {
     global $smarty;
     global $BACKBUTTON;
     global $SYSADMIN;
+    global $currentLocale;
     
     // Start off with the data from the form posting, overwriting it with
     // stored data as necessary.
@@ -3365,11 +3369,12 @@ class NSSDropoff {
         }
         
         //  Log our success:
-        $this->_dropbox->writeToLog(sprintf("Info: new %s dropoff $claimID of %s%s created for %s user $senderName <$senderEmail>",
+        $this->_dropbox->writeToLog(sprintf("Info: new %s dropoff $claimID of %s%s created for %s user $senderName <$senderEmail> in language %s",
                ( $encryptFiles ? "encrypted" : "unencrypted" ),
                ( $realFileCount == 1 ? "1 file" : "$realFileCount files" ),
                ( strlen($waiverFlag) > 0 ? " with waiver" : "" ),
-               ( $showIDPasscode ? "internal" : "external" )));
+               ( $showIDPasscode ? "internal" : "external" ),
+               $currentLocale ));
       } else {
         // Wipe the IV from memory first
         if (is_string($encryptIVHex)) sodium_memzero($encryptIVHex);

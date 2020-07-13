@@ -53,7 +53,7 @@ $pageErrorList = array();
 $smarty->assignByRef('errors', $pageErrorList);
 
 // Change comment on these when you're done developing to improve performance
-// $smarty->force_compile = true;
-// $smarty->caching = true; 
+$smarty->force_compile = true;
+$smarty->caching = true; 
 
 ?>

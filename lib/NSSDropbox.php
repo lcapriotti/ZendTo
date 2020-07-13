@@ -2012,6 +2012,11 @@ public function deleteAddressbookEntry ( $name, $email ) {
                'it will upgrade your system to the PHP setup required.',
                'Installation Error');
 
+    if ( !function_exists('curl_init') )
+      NSSError('You need the curl support in PHP. Please install the package ' .
+               'that provides the PHP curl module, using "yum" or "apt".',
+               'Installation Error');
+
     if ( $this->_authorizationFailed ) {
       NSSError(gettext("The username or password was incorrect."),
                gettext("Authentication Error"));

@@ -494,7 +494,7 @@ $(document).ready(function() {
   <tr valign="top">
     <td></td>
     <td colspan="4" style="padding: 12px">
-      <span style="font-size: 1.1em">{t}Click on a filename to download that file.{/t} {t 1=$expiresin}This drop-off will expire in %1.{/t}</span>
+      <span style="font-size: 1.1em">{t}Click on a filename to download that file.{/t}<br/>{t 1=$expiresin}This drop-off will expire in %1.{/t}</span>
     </td>
   </tr>
   {/if}

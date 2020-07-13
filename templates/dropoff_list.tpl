@@ -145,7 +145,7 @@ $(document).ready(function() {
        } ]
     });
     $('.dataTable').on('click', 'tbody td', function() {
-      doPickup($(this).parent().children().first().text());
+      doPickup(table.row( this ).data()[0]);
     });
     $(window).on('unload', function() {
       $('.dataTable').off('click', 'tbody td');
