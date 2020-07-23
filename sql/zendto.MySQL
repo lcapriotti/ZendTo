@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `reqtable` (
   `Subject` text NOT NULL,
   `Expiry` bigint(20) NOT NULL,
   `Passphrase` varchar(1024) NOT NULL DEFAULT '',
+  `Start` bigint(20) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Auth`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Request Data';
 

@@ -34,7 +34,7 @@ if ( ! preg_match('/^\/.+/',$argv[1]) ) {
 }
 
 include $argv[1];
-include_once(NSSDROPBOX_LIB_DIR."Smartyconf.php");
+include NSSDROPBOX_LIB_DIR."Smartyconf.php";
 include_once(NSSDROPBOX_LIB_DIR."NSSDropoff.php");
 
 // Switch --no-purge used in rpm+deb postinstall scripts so we don't
@@ -98,6 +98,8 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
       while ( $i < $iMax ) {
         // Have there been any pickups of this dropoff?
         if ( $oldDropoffs[$i]->numPickups() < 1 ) {
+          // Get a new $smarty object for each email
+          include NSSDROPBOX_LIB_DIR."Smartyconf.php";
           printf("- Reminding about [%s] %s <%s>\n",
             $oldDropoffs[$i]->claimID(),
             $oldDropoffs[$i]->senderName(),

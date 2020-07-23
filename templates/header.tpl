@@ -89,7 +89,7 @@
       "content": {
         "message": "{t}This website uses a cookie & has to use your name & email address to function.{/t}",
         "allow": "{t}I agree{/t}",
-        "dismiss": "{t}I do not agree{/t}",
+        "deny": "{t}I do not agree{/t}",
         "link": "{t 1=#ServiceTitle#}About %1{/t}",
         "href": "{#PrivacyInfoWebPage#}"
       }

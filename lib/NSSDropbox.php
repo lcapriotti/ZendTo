@@ -2301,7 +2301,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
 
     if ( $this->_authenticator && isset($_POST['uname']) && preg_match($usernameRegex,$_POST['uname']) && isset($_POST['password']) && $_POST['password'] ) {
       $password = $_POST['password']; // JKF Don't unquote the password as it might break passwords with backslashes in them. stripslashes($_POST['password']);
-      $uname    = paramPrepare(strtolower($_POST['uname']));
+      $uname    = strtolower($_POST['uname']);
 
       // Check to ensure they aren't already locked out
       if ( $this->database->DBLoginlogLength($uname,
@@ -2346,10 +2346,9 @@ public function deleteAddressbookEntry ( $name, $email ) {
       // Login attempt failed, check for bad usernames and report them.
       // But only if there is a username and a password, or else this will
       // false alarm on any page that displays the login box.
-      if ( isset($_POST['uname']) && $_POST['uname'] != "" && 
+      if ( isset($_POST['uname']) && !empty($_POST['uname']) && 
            ! preg_match($usernameRegex,$_POST['uname']) ) {
-        $this->writeToLog("Warning: illegal username \"".paramPrepare($_POST['uname']).
-                          "\" attempted to login");
+        $this->writeToLog('Warning: illegal username "'.$_POST['uname'].'" attempted to login');
         $this->_authorizationFailed = TRUE;
         $this->_authorizedUserData = NULL;
         $this->_authorizedUser = '';
@@ -2412,6 +2411,13 @@ public function deleteAddressbookEntry ( $name, $email ) {
         }
       }
       // Set their isAdmin and isStats flags correctly
+      if ( $this->_authStats ) {
+        $isstatsuser = in_array(
+                  strtolower(@$this->_authorizedUserData['uid']),
+                  array_map('strtolower', $this->_authStats));
+        // Stats users are not location-restricted.
+        $this->_authorizedUserData['grantStatsPriv'] = $isstatsuser;
+      }
       if ( $this->_authAdmins ) {
         $isadminuser = in_array(
                   strtolower(@$this->_authorizedUserData['uid']),
@@ -2424,13 +2430,6 @@ public function deleteAddressbookEntry ( $name, $email ) {
         // Grant Admin and Stats to admins
         $this->_authorizedUserData['grantAdminPriv'] = $isadminuser;
         $this->_authorizedUserData['grantStatsPriv'] = $isadminuser;
-      }
-      if ( $this->_authStats ) {
-        $isstatsuser = in_array(
-                  strtolower(@$this->_authorizedUserData['uid']),
-                  array_map('strtolower', $this->_authStats));
-        // Stats users are not location-restricted.
-        $this->_authorizedUserData['grantStatsPriv'] = $isstatsuser;
       }
 
       // Return value is their username within ZendTo, so needs to be
@@ -2689,7 +2688,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
     $len = count($ShortWordsList);
     do {
       $word = $ShortWordsList[mt_rand(0, $len-1)];
-    } while (in_array($avoid, $word));
+    } while (in_array($word, $avoid));
 
     return $word;
   }
@@ -2703,23 +2702,30 @@ public function deleteAddressbookEntry ( $name, $email ) {
     $note,
     $subject,
     $passphrase = '',
-    $expiryDateTime = 0
+    $expiryDateTime = 0,
+    $startDateTime = 0
   )
   {
     $words = $this->ThreeRandomWords();
     $hash = preg_replace('/[^a-zA-Z0-9]/', '', $words);
-    // Allow the requester to set the exact expiry time.
-    // Only currently possible via autorequest.
-    // Thanks for Luigi Capriotti for this suggestion!
+
+    // Sanitise the time/date stamps again
     if ($expiryDateTime > 0) {
       $expiry = $expiryDateTime;
     } else {
-      // This value will always get used by the web interface
       $expiry  = time() + $this->_requestTTL;
     }
+    if ($startDateTime > 0) {
+      $start = $startDateTime;
+    } else {
+      $start =  time();
+    }
+    if ($expiryDateTime <= $startDateTime)
+      $expiry = time() + $this->_requestTTL;
+
     if ( $this->database->DBWriteReqData($this, $hash, $srcname, $srcemail,
                                          $srcorg, $destname, $destemail,
-                                         $note, $subject, $expiry,
+                                         $note, $subject, $expiry, $start,
                                          $passphrase) != '' ) {
       return $words;
     } else {
@@ -2737,6 +2743,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
     &$note,
     &$subject,
     &$expiry,
+    &$start,
     &$passphrase
   )
   {
@@ -2751,6 +2758,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
     $note   = '';
     $subject= '';
     $expiry = '';
+    $start = '';
     $passphrase = '';
 
     $recordlist = $this->database->DBReadReqData($authkey);
@@ -2759,18 +2767,19 @@ public function deleteAddressbookEntry ( $name, $email ) {
       // Over-quoting! These are quoted before use later.
       // $srcname = htmlentities($recordlist[0]['SrcName'], ENT_QUOTES, 'UTF-8');
       // $destname = htmlentities($recordlist[0]['DestName'], ENT_QUOTES, 'UTF-8');
-      $srcname = $recordlist[0]['SrcName'];
+      $srcname  = $recordlist[0]['SrcName'];
       $destname = $recordlist[0]['DestName'];
       // Trim accidental whitespace, it's hard to detect and will cause failure
-      $srcemail = trim($recordlist[0]['SrcEmail']); // This is already checked carefully
+      $srcemail  = trim($recordlist[0]['SrcEmail']); // This is already checked carefully
       $destemail = trim($recordlist[0]['DestEmail']); // This is already checked carefully
-      $srcorg = trim($recordlist[0]['SrcOrg']);
+      $srcorg    = trim($recordlist[0]['SrcOrg']);
       // Over-quoting! These are quoted before use later.
       // $note = htmlentities($recordlist[0]['Note'], ENT_QUOTES, 'UTF-8');
       // $subject = htmlentities($recordlist[0]['Subject'], ENT_QUOTES, 'UTF-8');
-      $note = $recordlist[0]['Note'];
-      $subject = $recordlist[0]['Subject'];
-      $expiry= $recordlist[0]['Expiry'];
+      $note       = $recordlist[0]['Note'];
+      $subject    = $recordlist[0]['Subject'];
+      $expiry     = $recordlist[0]['Expiry'];
+      $start      = $recordlist[0]['Start'];
       $passphrase = @$recordlist[0]['Passphrase'];
       // Be doubly-careful with possibly missing (hence NULL) strings
       if (!isset($passphrase)) {
@@ -2813,8 +2822,6 @@ public function deleteAddressbookEntry ( $name, $email ) {
                                             $org, $expiry);
   }
 
-  //
-  // JKF
   //
   // ReadAuthData(authkey, name, email, org, expiry)
   //

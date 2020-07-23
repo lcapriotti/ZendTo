@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 {if $sentEmails}
 
-<p>{t 1=$toName 2=$toEmail}The request for a Drop-off has been sent to %1 at %2.{/t} {t 1=$requestTTL}It is valid for %1.{/t}</p>
+<p>{t 1=$toName 2=$toEmail}The request for a Drop-off has been sent to %1 at %2.{/t}<br/>{t 1=$startTime 2=$expiryTime}It is valid from %1 to %2.{/t}</p>
 {if $encrypted}
 <p>{t}The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!{/t}</p>
 {/if}
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 {else} {* Not sent any emails *}
 
-<p>{t 1=$toName 2=$toEmail}The request for a Drop-off for %1 at %2 has been created.{/t} {t 1=$requestTTL}It is valid for %1.{/t}</p>
+<p>{t 1=$toName 2=$toEmail}The request for a Drop-off for %1 at %2 has been created.{/t}<br/>{t 1=$startTime 2=$expiryTime}It is valid from %1 to %2.{/t}</p>
 {if $encrypted}
 <p>{t}The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!{/t}</p>
 {/if}

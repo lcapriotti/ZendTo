@@ -132,19 +132,19 @@ class Verify {
       // from the authentication system.
       $senderName = $this->_dropbox->authorizedUserData("displayName");
       if ( ! $senderName ) {
-        $senderName = paramPrepare($_POST['senderName']);
+        $senderName = $_POST['senderName'];
       }
       $senderEmail = strtolower($this->_dropbox->authorizedUserData("mail"));
       if ( ! $senderEmail ) {
-        $senderEmail = paramPrepare($_POST['senderEmail']);
+        $senderEmail = $_POST['senderEmail'];
       }
     } else {
       // They are not an authenticated user so get their name and email
       // from the form.
-      $senderName = paramPrepare($_POST['senderName']);
-      $senderEmail = paramPrepare(strtolower($_POST['senderEmail']));
+      $senderName = $_POST['senderName'];
+      $senderEmail = strtolower($_POST['senderEmail']);
     }
-    $senderOrganization = paramPrepare($_POST['senderOrganization']);
+    $senderOrganization = $_POST['senderOrganization'];
     
     // Sanitise the data
     // Can't hit it with a cricket bat any more, need to be more subtle
@@ -185,19 +185,19 @@ class Verify {
       // from the authentication system.
       $senderName = $this->_dropbox->authorizedUserData("displayName");
       if ( ! $senderName ) {
-        $senderName = paramPrepare($_POST['senderName']);
+        $senderName = $_POST['senderName'];
       }
       $senderEmail = strtolower($this->_dropbox->authorizedUserData("mail"));
       if ( ! $senderEmail ) {
-        $senderEmail = paramPrepare($_POST['senderEmail']);
+        $senderEmail = $_POST['senderEmail'];
       }
     } else {
       // They are not an authenticated user so get their name and email
       // from the form.
-      $senderName = paramPrepare($_POST['senderName']);
-      $senderEmail = paramPrepare(strtolower($_POST['senderEmail']));
+      $senderName = $_POST['senderName'];
+      $senderEmail = strtolower($_POST['senderEmail']);
     }
-    $senderOrganization = paramPrepare($_POST['senderOrganization']);
+    $senderOrganization = $_POST['senderOrganization'];
     
     // Sanitise the data
     // Still needs doing to save us from nasty crap in email!

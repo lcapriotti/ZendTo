@@ -363,7 +363,7 @@ public function DBListClaims ( $claimID, &$extant ) {
   return $extant;
 }
 
-public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $passphrase = '') {
+public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $start, $passphrase = '') {
     if ( ! $this->DBStartTran() ) {
       $dropbox->writeToLog("Error: failed to BEGIN transaction block while adding req for $srcemail");
       return '';
@@ -374,23 +374,9 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
       // Failed to add the new column, so try to continue anyway
       $dropbox->writeToLog("Error: failed to add new column Passphrase varchar(1024) NOT NULL DEFAULT '' to database table reqtable. Please add it by hand");
       $query = sprintf("INSERT INTO reqtable
-                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry)
+                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Start)
                         VALUES
-                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d)",
-                       $this->database->real_escape_string($hash),
-                       $this->database->real_escape_string($srcname),
-                       $this->database->real_escape_string($srcemail),
-                       $this->database->real_escape_string($srcorg),
-                       $this->database->real_escape_string($destname),
-                       $this->database->real_escape_string($destemail),
-                       $this->database->real_escape_string($note),
-                       $this->database->real_escape_string($subject),
-                       $expiry);
-    } else {
-      $query = sprintf("INSERT INTO reqtable
-                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Passphrase)
-                        VALUES
-                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d,'%s')",
+                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d,%d)",
                        $this->database->real_escape_string($hash),
                        $this->database->real_escape_string($srcname),
                        $this->database->real_escape_string($srcemail),
@@ -400,6 +386,22 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
                        $this->database->real_escape_string($note),
                        $this->database->real_escape_string($subject),
                        $expiry,
+                       $start);
+    } else {
+      $query = sprintf("INSERT INTO reqtable
+                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Start,Passphrase)
+                        VALUES
+                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d,%d,'%s')",
+                       $this->database->real_escape_string($hash),
+                       $this->database->real_escape_string($srcname),
+                       $this->database->real_escape_string($srcemail),
+                       $this->database->real_escape_string($srcorg),
+                       $this->database->real_escape_string($destname),
+                       $this->database->real_escape_string($destemail),
+                       $this->database->real_escape_string($note),
+                       $this->database->real_escape_string($subject),
+                       $expiry,
+                       $start,
                        $this->database->real_escape_string($passphrase));
     }
     sodium_memzero($passphrase);
@@ -652,13 +654,18 @@ private function DBReqPassphraseExists() {
   $res = $this->database->query(
            "select if(count(*) = 1, 'yes','no') AS result from information_schema.columns where table_schema='".$this->dbname."' and table_name='reqtable' and column_name='Passphrase'");
   $line = $res->fetch_array();
-  // If it is not there, add it
-  return (strcasecmp($line[0], 'yes') == 0)?TRUE:FALSE;
+  $res2 = $this->database->query(
+           "select if(count(*) = 1, 'yes','no') AS result from information_schema.columns where table_schema='".$this->dbname."' and table_name='reqtable' and column_name='Start'");
+  $line2 = $res2->fetch_array();
+  // At least 1 of them is missing
+  return (strcasecmp($line[0], 'yes') === 0 && strcasecmp($line2[0], 'yes') === 0)?TRUE:FALSE;
 }
 
 private function DBReqAddPassphrase() {
   $res = $this->database->query("ALTER TABLE reqtable ADD COLUMN Passphrase varchar(1024) NOT NULL DEFAULT ''");
-  return ($res === FALSE) ? FALSE : TRUE;
+  $res2 = $this->database->query("ALTER TABLE reqtable ADD COLUMN Start bigint(20) NOT NULL DEFAULT 0");
+    // Only care about result from newest schema change
+    return ($res2 === FALSE) ? FALSE : TRUE;
 }
 
 // Does not trim expired ones as it's only used for stats
@@ -745,11 +752,10 @@ public function DBAddFile2( $d, $dropoffID, $tmpname, $filename,
   $query = sprintf("INSERT INTO file (dID,tmpname,basename,lengthInBytes,mimeType,description) VALUES (%d,'%s','%s',%.0f,'%s','%s')",
              $dropoffID,
              $this->database->real_escape_string(basename($tmpname)),
-             $this->database->real_escape_string(paramPrepare($filename)),
+             $this->database->real_escape_string($filename),
              $contentLen,
              $this->database->real_escape_string($mimeType),
-             // 20120518 Not sure if this paramPrepare should be here
-             $this->database->real_escape_string(paramPrepare($description))
+             $this->database->real_escape_string($description)
           );
   if ( ! $this->database->query($query) ) {
     //  Exit gracefully -- dump database changes and remove the dropoff

@@ -1,3 +1,36 @@
+Version 6.04-1 Beta
+- Overhauled the "request a drop-off" page.
+- Added new feature to requests: you can now set a start and end date+time.
+  Outside those times, the request won't work.
+- Fixed bug where admins logging in via SAML would not see statistics
+  button in main menu. Alternative workaround is to list 'authAdmins'
+  users in 'authStats' as well.
+- Changed 'Content-Security-Policy' header definition in Apache config.
+  Exact change is to replace "img-src *" with "img-src data: *", then
+  restart Apache. Otherwise the date/time picker in the "Request a
+  Drop-off" form will not display correctly.
+- Subject in new drop-off form can now only be edited if you are logged in.
+- Fixed bug in unlock-user to get all the reporting correct, and fix and
+  improve logging. Thanks Marlon!
+- Improved "upgrade" command so it warns you if you have *.rpmnew or
+  *.dpkg-dist files in your templates dir that you need to move into place
+  by hand, as you had modified the previous versions.
+- Improved "upgrade" command so it checks you have a 'Content-Security-
+  Policy' header definition in your Apache config for the https ZendTo site.
+  And if so, adds "data:" to the list of valid sources of images.
+  Otherwise the date+time pickers in the "request a drop-off" page will
+  look messed up. If it doesn't find the header definition at all, it
+  suggests the change you need to make.
+
+Version 6.03-5 Production
+- Fixed bug where the wrong reminder emails were being sent to users.
+- Fixed formatting error in plain-text emails about a new drop-off.
+- Fixed bug where changing language immediately before/after doing SAML
+  login could produce blank page.
+- Fixed bug where "Decline" button in GDPR cookie-consent bar was not
+  being translated.
+- Updated Turkish and Brazilian Portuguese translations.
+
 Version 6.03-4 Production
 - HTML emails now display correctly on systems running in Dark mode.
 - 'showEmailPasscodeCheckbox' now has the expected result in the New

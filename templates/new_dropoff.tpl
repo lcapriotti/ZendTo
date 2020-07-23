@@ -17,9 +17,9 @@
   </div>
 
 {if $isAuthorizedUser}
-  <p>{t 1=#OrganizationShortName#}This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes.{/t}</p>
+  <p>{t 1=#OrganizationShortName#}Use this form to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes.{/t}</p>
 {else}
-  <p>{t 1=#OrganizationShortName#}This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes.{/t}</p>
+  <p>{t 1=#OrganizationShortName#}Use this form to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes.{/t}</p>
 {/if}
 
 <form name="dropoff" id="dropoff" method="post" enctype="multipart/form-data">
@@ -36,13 +36,13 @@
   <span id="fromLabel" class="labels">{t}From{/t}:</span>
   <span id="subjectLabel" class="labels">{t}Subject{/t}:</span>
   <span id="fromHolder" class="text"><span id="fromName">{$senderName}</span> <span id="fromEmail">&lt;{$senderEmail}&gt;</span> <span id="fromOrg">{$senderOrg}</span></span>
-  <input type="text" id="subject" name="subject" class="text" value="{$subject}"/>
+  <input type="text" id="subject" name="subject" class="text" value="{$subject}" {if !$isAuthorizedUser}readonly {/if}/>
   <!-- Then the recipients -->
   <span id="emailLabel" class="labels">{t}To{/t}:</span>
   <span id="emailHolder" class="text"> <a id="addRecipients" href="#"><img src="images/swish/plus-circle-frame.png" alt="Add recipients" /></a> </span>
   <!-- Then the note on the left side -->
   <span id="noteLabel" class="labels">{t}Short note to the Recipients{/t}:</span>
-  <span id="noteHolder"><textarea name="note" id="note" wrap="soft">{$note}</textarea><!-- <br class="clear" /> -->
+  <span id="noteHolder"><textarea name="note" id="note" wrap="soft">{$note}</textarea>
     <span id="noteLengthText"></span>
   </span>
 

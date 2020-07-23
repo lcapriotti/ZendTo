@@ -1,5 +1,5 @@
-%define version 6.03
-%define release 4
+%define version 6.04
+%define release 1
 %define name    zendto
 
 %define is_fedora %(test -e /etc/fedora-release && echo 1 || echo 0)
@@ -360,6 +360,7 @@ rm -rf /opt/zendto/myzendto.templates >/dev/null 2>&1
 %attr(755,root,root) /opt/zendto/bin/autolist
 %attr(755,root,root) /opt/zendto/bin/autopickup
 %attr(755,root,root) /opt/zendto/bin/autorequest
+%attr(755,root,root) /opt/zendto/bin/check_apache_conf
 %attr(755,root,root) /opt/zendto/bin/deleteuser
 %attr(755,root,root) /opt/zendto/bin/extractdropoff
 %attr(755,root,root) /opt/zendto/bin/listusers

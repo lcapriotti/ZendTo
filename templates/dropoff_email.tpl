@@ -6,7 +6,7 @@
 ****
 ****
 
-{/if}{capture assign=files_t}{if $fileCount eq 1}{t escape=no}a file{/t}{else}{t escape=no 1=$fileCount}%1 files{/t}{/if}{/capture}{t escape=no 1=$senderName 2=$senderEmail 3=$files_t}%1 <%2> has dropped off %3 for you.{/t}
+{/if}{capture assign=files_t}{if $fileCount eq 1}{t escape=no}a file{/t}{else}{t escape=no 1=$fileCount}%1 files{/t}{/if}{/capture}{t escape=no 1=$senderName 2=$senderEmail 3=$files_t}%1 {literal}<%2>{/literal} has dropped off %3 for you.{/t}
 
 {t escape=no}IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):{/t}
 

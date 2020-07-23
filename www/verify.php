@@ -151,7 +151,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
       $smarty->assign('verifyFailed', TRUE);
     } else {
       // They are an authorised user so don't need a Captcha
-      displayNewDropoffForm(paramPrepare($_POST['senderOrganization']));
+      displayNewDropoffForm($_POST['senderOrganization']);
       exit;
     }
   }
@@ -167,9 +167,9 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
   // already-filled-in (sender name and email).
   //
 
-  $smarty->assign('senderName', ($theDropbox->authorizedUser() ? htmlentities($theDropbox->authorizedUserData("displayName"), ENT_COMPAT, 'UTF-8') : (isset($_POST['senderName'])?htmlentities(paramPrepare($_POST['senderName'], ENT_COMPAT, 'UTF-8')):NULL)));
-  $smarty->assign('senderOrg', ($theDropbox->authorizedUser() ? htmlentities($theDropbox->authorizedUserData("organization"), ENT_COMPAT, 'UTF-8') : (isset($_POST['senderOrganization'])?htmlentities(paramPrepare($_POST['senderOrganization']), ENT_COMPAT, 'UTF-8'):NULL)));
-  $smarty->assign('senderEmail', ($theDropbox->authorizedUser() ? strtolower($theDropbox->authorizedUserData("mail")) : (isset($_POST['senderEmail'])?htmlentities(paramPrepare($_POST['senderEmail']), ENT_COMPAT, 'UTF-8'):NULL)));
+  $smarty->assign('senderName', ($theDropbox->authorizedUser() ? htmlentities($theDropbox->authorizedUserData("displayName"), ENT_COMPAT, 'UTF-8') : (isset($_POST['senderName'])?htmlentities($_POST['senderName'], ENT_COMPAT, 'UTF-8'):NULL)));
+  $smarty->assign('senderOrg', ($theDropbox->authorizedUser() ? htmlentities($theDropbox->authorizedUserData("organization"), ENT_COMPAT, 'UTF-8') : (isset($_POST['senderOrganization'])?htmlentities($_POST['senderOrganization'], ENT_COMPAT, 'UTF-8'):NULL)));
+  $smarty->assign('senderEmail', ($theDropbox->authorizedUser() ? strtolower($theDropbox->authorizedUserData("mail")) : (isset($_POST['senderEmail'])?htmlentities($_POST['senderEmail'], ENT_COMPAT, 'UTF-8'):NULL)));
   $smarty->assign('allowUploads', TRUE);
 
   if ( ! $theDropbox->authorizedUser() ) {

@@ -127,6 +127,239 @@ label {
 	font-weight: bold;
 }
 
+/*
+ * All the grids and flexes needed for the Request form.
+ */
+
+#request-boxes {
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: max-content 1fr max-content 1fr;
+	-ms-grid-columns: max-content 1fr max-content 1fr;
+	grid-template-rows: repeat(6, auto) 3px auto;
+	-ms-grid-template-rows: (1fr)[6] 0px auto;
+	align-items: center;
+	-ms-grid-column-align: end;
+}
+#request-boxes .labels {
+	display: block; /* IE */
+	font-weight: bold;
+	line-height: 26px;
+	margin-right: 5px;
+	justify-self: end;
+	-ms-grid-row-align: center;
+	-ms-grid-column-align: end;
+}
+#request-boxes .text {
+	align-self: start;
+	-ms-grid-row-align: stretch; /* Yes they are supposed to be different */
+	display: block; /* IE */
+	border-color: #2b3e89;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	padding: 2px 5px;
+	clear: both;
+	margin: 5px 0px;
+}
+/* IE can't auto-place items in a grid, so everything has
+   to be manually placed. */
+#request-boxes #fromLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 1;
+	-ms-grid-row: 1;
+}
+#request-boxes #orgLabel {
+	grid-column: 3;
+	-ms-grid-column: 3;
+	grid-row: 1;
+	-ms-grid-row: 1;
+	margin-left: 10px;
+}
+#request-boxes #fromHolder {
+	grid-column: 2;
+	-ms-grid-column: 2;
+	grid-row: 1;
+	-ms-grid-row: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-height: 22px;
+	line-height: 24px;
+
+}
+#request-boxes #senderOrg {
+	grid-column: 4;
+	-ms-grid-column: 4;
+	grid-row: 1;
+	-ms-grid-row: 1;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+
+}
+#request-boxes #recipNameLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	padding-left: inherit;
+}
+#request-boxes #recipEmailLabel {
+	grid-column: 3;
+	-ms-grid-column: 3;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	padding-left: inherit;
+	margin-left: 10px;
+}
+#request-boxes #recipName {
+	grid-column: 2;
+	-ms-grid-column: 2;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-height: 22px;
+	line-height: 24px;
+	font-size: 1em;
+}
+#request-boxes #recipEmail {
+	grid-column: 4;
+	-ms-grid-column: 4;
+	grid-row: 2;
+	-ms-grid-row: 2;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+}
+#request-boxes #subjectLabel {
+	grid-column: 1;
+	-ms-grid-column: 1;
+	grid-row: 3;
+	-ms-grid-row: 3;
+}
+#request-boxes #subject {
+	grid-column-start: 2;
+	grid-column-end: 5;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 3;
+	grid-row: 3;
+	-ms-grid-row: 3;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+}
+#request-boxes #timelimit {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 4;
+	grid-row: 4;
+	-ms-grid-row: 4;
+	display: block;
+	min-height: 22px;
+	line-height: 24px;
+}
+#request-boxes #startLabel {
+	display: inline;
+}
+#request-boxes #expiryLabel {
+	display: inline;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#request-boxes #start {
+	display: inline;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+}
+#request-boxes #expiry {
+	display: inline;
+	padding-left: 6px;
+	font-size: inherit;
+	min-height: 22px;
+	line-height: 24px;
+}
+#request-boxes #noteLabel {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 4;
+	grid-row: 5;
+	-ms-grid-row: 5;
+	justify-self: start;
+	-ms-grid-column-align: start;
+}
+#request-boxes #noteHolder {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	grid-row-start: 6;
+	grid-row-end: 9;
+	-ms-grid-row: 6;
+	-ms-grid-row-span: 3;
+	display: flex;
+	flex-direction: column;
+	margin-right: 2px;
+}
+#request-boxes #note {
+	width: 100%;
+	min-height: 90px;
+	flex: 1;
+}
+#request-boxes #noteLengthText {
+	text-align: right;
+	margin-right: -14px;
+	padding-right: 0px;
+}
+#request-boxes .request-checkbox {
+	justify-self: end;
+	-ms-grid-column-align: end;
+	align-self: center;
+	-ms-grid-row-align: center;
+	margin-right: 1ch;
+	grid-column: 3;
+	-ms-grid-column: 3;
+	display: block; /* IE */
+}
+#request-boxes .request-checklabel {
+	justify-self: start;
+	-ms-grid-column-align: start;
+	align-self: center;
+	-ms-grid-row-align: center;
+	grid-column: 4;
+	-ms-grid-column: 4;
+	display: block; /* IE */
+}
+#request-boxes .request-encryptSpan {
+	grid-row: 6;
+	-ms-grid-row: 6;
+	align-self: end;
+	-ms-grid-row-align: end;
+}
+#request-boxes .request-space {
+	grid-row: 7;
+	-ms-grid-row: 7;
+	-ms-grid-row-align: stretch;
+	max-height: 5px;
+}
+#request-boxes .request-sendEmailSpan {
+	grid-row: 8;
+	-ms-grid-row: 8;
+	align-self: start;
+	-ms-grid-row-align: start;
+}
+
+
 
 
 /*

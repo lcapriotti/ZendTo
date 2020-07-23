@@ -91,11 +91,12 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
     if [ "x$Latest" != "x" -a "x$Previous" != "x" ]; then
       if [ "$Latest" = "$Previous" ]; then
         # There is only 1 version-numbered dir. Assume that's the new one
-	$DRYRUN && shout "Only 1 version-numbered directory"
+        $DRYRUN && shout "Only 1 version-numbered directory"
         OldZTConf="$NewConfigDir/zendto.conf"
         OldConfigDir="$NewConfigDir"
         NewZendToDir="$Latest"
         NewBin="$NewZendToDir/bin"
+        NewTemplatesDir="$NewZendToDir/templates"
         NewConfigDir="$NewZendToDir/config"
         Prefs="$Latest/config/preferences.php"
         TemplatePrefs="$Prefs"
@@ -104,11 +105,12 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
         TemplateZTConf="$ZTConf"
       else
         # The Latest and Previous versions are different
-	$DRYRUN && shout "Found 2 different version numbers"
+        $DRYRUN && shout "Found 2 different version numbers"
         NewZendToDir="$Latest"
         NewBin="$NewZendToDir/bin"
+        NewTemplatesDir="$NewZendToDir/templates"
         NewConfigDir="$NewZendToDir/config"
-	OldConfigDir="$Previous/config"
+        OldConfigDir="$Previous/config"
         Prefs="$Latest/config/preferences.php"
         TemplatePrefs="$Prefs"
         OldPrefs="$Previous/config/preferences.php"
@@ -126,6 +128,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
       $DRYRUN && shout "No version numbered dirs found, assuming symlink is a fluke"
       # NewZendToDir and NewConfigDir already set
       NewBin="$NewZendToDir/bin"
+      NewTemplatesDir="$NewZendToDir/templates"
       OldConfigDir="$NewConfigDir"
       Prefs="$ZENDTOPREFS"
       TemplatePrefs=''
@@ -138,6 +141,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
     # No symlinks found
     $DRYRUN && shout "$NewZendToDir is not a symlink"
     NewBin="$NewZendToDir/bin"
+    NewTemplatesDir="$NewZendToDir/templates"
     OldConfigDir="$NewConfigDir"
     Prefs="$ZENDTOPREFS"
     TemplatePrefs=''
@@ -149,6 +153,8 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
 else
   $DRYRUN && shout "Could not find old config $ZENDTOPREFS at all"
   NewZendToDir=/opt/zendto
+  NewBin="$NewZendToDir/bin"
+  NewTemplatesDir="$NewZendToDir/templates"
   NewConfigDir="$NewZendToDir/config"
   OldConfigDir="$NewConfigDir"
   Prefs="$NewConfigDir/preferences.php"
@@ -163,6 +169,7 @@ if $DRYRUN; then
   shout "Files are:"
   shout "NewZendToDir = $NewZendToDir"
   shout "NewBin = $NewBin"
+  shout "NewTemplatesDir = $NewTemplatesDir"
   shout "OldConfigDir = $OldConfigDir"
   shout "NewConfigDir = $NewConfigDir"
   shout "OldPrefs = $OldPrefs"
@@ -377,15 +384,35 @@ else
   echo
 fi
 
-
 # Put all the SELinux attributes back, if it's being used
 if sestatus >/dev/null 2>&1; then
   restorecon -F -R /opt/zendto >/dev/null 2>&1
 fi
 
+# Check the apache site config for the https site, must have img-src right
+echo
+"$NewBin"/check_apache_conf
+echo
+
+# Tell them if they have *.rpmnew files in zendto/templates, as they
+# will need to move these into place (incorporating any customisations
+# they want to keep) before anything will work correctly.
+if compgen -G "$NewTemplatesDir/*.dpkg-dist" >/dev/null ||
+   compgen -G "$NewTemplatesDir/*.rpmnew"    >/dev/null; then
+  echo
+  shout '*** WARNING ***'
+  shout ''
+  shout "In your $NewTemplatesDir directory, you have new versions"
+  shout "of the user interface template (.tpl) files which you need"
+  shout "to move into place manually before everything will work properly."
+  shout "These end in either '.dpkg-dist' or '.rpmnew'."
+  echo
+  pause
+fi
+
 if [ -d "$OLDSTORE" ]; then
   echo
-  shout "Please look in $OLDSTORE to find the old versions of"
+  shout "You can look in $OLDSTORE to find the old versions of"
   shout "the preferences.php and/or zendto.conf files."
   echo
 fi

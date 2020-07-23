@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 12:09+0100\n"
+"POT-Creation-Date: 2020-07-22 17:17+0100\n"
 "PO-Revision-Date: 2020-06-01 11:27+0200\n"
 "Last-Translator: Massimo Forni <massimo.forni@turboden.it>\n"
 "Language-Team: Italian <stefano.fiori@bac.sm>\n"
@@ -106,11 +106,22 @@ msgstr "Si può sempre inviare files dal menù principale o fare richesta per un
 msgid "Request Code Used"
 msgstr "Codice di richiesta (Request Code) già utilizzato"
 
-msgid "Your Request Code has expired. Please start again."
-msgstr "Il tuo codice di richiesta (Request Code) è scaduto. Per favore ricomincia da capo."
+msgid "Please ask for a new Request."
+msgstr ""
 
-msgid "Request Code Expired"
+#, fuzzy
+msgid "Your Request Code has expired."
 msgstr "Il tuo codice di richiesta (Request Code) è scaduto"
+
+msgid "Please wait for %1$s, until %2$s."
+msgstr ""
+
+#, fuzzy
+msgid "Your Request Code cannot be used yet."
+msgstr "Il tuo codice di richiesta (Request Code) non è stato trovato oppure è già stato utilizzato."
+
+msgid "The end time you set has already passed."
+msgstr ""
 
 msgid "Request Error"
 msgstr "Errore di sessione"
@@ -129,6 +140,9 @@ msgstr "Impossibile rispedire i files da scaricare"
 
 msgid "Unlocked %s."
 msgstr "Sbloccato %s."
+
+msgid "Security"
+msgstr ""
 
 msgid "Unknown user"
 msgstr "Utente sconosciuto"
@@ -315,6 +329,12 @@ msgstr "La directory contenente i file di questa consegna è scomparsa."
 
 msgid "Drop-off Directory Not Found"
 msgstr "Directory per la consegna dei files non trovata"
+
+msgid "You cannot create a drop-off from your request yet. Please wait until %s before uploading your files."
+msgstr ""
+
+msgid "The request you used to create this drop-off has expired. You will need to contact the other person again to get a new 'request for files'."
+msgstr ""
 
 msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
 msgstr "Impossibile leggere le informazioni di verifica. La tua sessione di consegna files è probabilmente scaduta. Per favore ricomincia."
@@ -733,9 +753,6 @@ msgstr "un file"
 msgid "%1 files"
 msgstr "%1 files"
 
-msgid "%1 <%2> has dropped off %3 for you."
-msgstr "%1 <%2> messo in consegna %3 per te."
-
 msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
 msgstr "SE CONOSCI IL MITTENTE e aspetti di ricevere un file da lui, puoi scegliere di recuperare la consegna del file facendo clic sul seguente link (o copiandolo e incollandolo nel tuo browser web):"
 
@@ -1139,10 +1156,12 @@ msgstr "I file caricati su %1 vengono sottoposti a scansione antivirus. Ma eserc
 msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
 msgstr "Gli utenti sono anche <strong> fortemente incoraggiati </ strong> a crittografare tutti i file se contengono informazioni sensibili (ad esempio informazioni private)"
 
-msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+#, fuzzy
+msgid "Use this form to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file per chiunque (sia un %1 utente o altri). Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per scaricare il file. Anche il tuo indirizzo IP verrà registrato e inviato al destinatario per scopi di conferma dell'identità."
 
-msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+#, fuzzy
+msgid "Use this form to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Questa pagina web ti permetterà di scaricare (caricare) uno o più file per un utente %1. Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per scaricare il file. Anche il tuo indirizzo IP verrà registrato e inviato al destinatario per scopi di conferma dell'identità."
 
 msgid "From"
@@ -1304,8 +1323,12 @@ msgstr "Questa è una richiesta da %1."
 msgid "Please click on the link below and drop off the file or files I have requested."
 msgstr "Clicca sul link qui sotto e rilascia il file oi file che ho richiesto."
 
-msgid "The link is only valid for %1 from the time of this email."
+#, fuzzy
+msgid "The link is only valid from %1 to %2."
 msgstr "Il link è valido solo per %1 dal momento dell'email."
+
+msgid "After that time it will automatically expire."
+msgstr ""
 
 msgid "All files you upload will be automatically encrypted."
 msgstr "Tutti i file che andrai a caricare verranno automaticamente crittografati."
@@ -1325,7 +1348,8 @@ msgstr "Copiato"
 msgid "The request for a Drop-off has been sent to %1 at %2."
 msgstr "La richiesta di una consegna di files è stata inviata a %1 a %2."
 
-msgid "It is valid for %1."
+#, fuzzy
+msgid "It is valid from %1 to %2."
 msgstr "È valido per %1."
 
 msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
@@ -1373,23 +1397,53 @@ msgstr "Per favore inserisci prima l’oggetto!"
 msgid "Your note is too long!"
 msgstr "La tua nota è troppo lunga!"
 
+#, fuzzy
+msgid "Your request must expire after it starts!"
+msgstr "Il tuo codice di richiesta (Request Code) è scaduto. Per favore ricomincia da capo."
+
 msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
 msgstr "Opzionale: se selezioni questo ed imposti una password, il drop-off verra’ crittografato. Il mittente che inviera’ i file non conoscera’ mail la password."
 
 msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
 msgstr "Questo normalmente e’ selezionato. Se lo deselezioni, il link e le istruzioni non verranno inviati via email. Invece dovrai inviare con altri mezzi il link mostrato."
 
-msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgid "Multiple email addresses should be separated with a comma \",\" or semicolon \";\". Each recipient will be sent a different link."
+msgstr ""
+
+#, fuzzy
+msgid "Use this form to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
 msgstr "Questa pagina web ti consentirà di inviare una richiesta a una o più altre persone che richiedono di inviare (caricare) uno o più file per te. Il destinatario riceverà un'email automatica contenente le informazioni inserite di seguito e le istruzioni per il caricamento dei file."
+
+#, fuzzy
+msgid "Unless you change the dates or times below, the request created will be valid for %1."
+msgstr "La richiesta creata sarà valida per %1."
 
 msgid "Email(s)"
 msgstr "Email(s)"
 
-msgid "Send email"
-msgstr "Invia email"
+#, fuzzy
+msgid "Name: adds to your address book"
+msgstr "Aggiunge alla tua rubrica indirizzi"
+
+#, fuzzy
+msgid "One or more email addresses"
+msgstr "Il tuo indirizzo di posta elettronica"
+
+msgid "Subject line of the email"
+msgstr ""
+
+#, fuzzy
+msgid "Drop-off must occur between"
+msgstr "Files da scaricare non crittografati"
+
+msgid "and"
+msgstr ""
 
 msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
 msgstr "Questo sarà inviato al destinatario. Sarà anche incluso nel consegna del file che ti è stato inviato."
+
+msgid "Send email"
+msgstr "Invia email"
 
 msgid "Do not lose or forget this passphrase!"
 msgstr "Non perdere o dimenticare questa password!"
@@ -1643,6 +1697,9 @@ msgstr "Dovrebbe arrivarti in un minuto o due, dopodichè cliccka sul collegamen
 
 msgid "Send confirmation"
 msgstr "Invia conferma"
+
+#~ msgid "%1 <%2> has dropped off %3 for you."
+#~ msgstr "%1 <%2> messo in consegna %3 per te."
 
 #~ msgid "Recipient"
 #~ msgstr "Destinatario"

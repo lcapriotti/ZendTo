@@ -2379,10 +2379,10 @@ class NSSDropoff {
     
     // Start off with the data from the form posting, overwriting it with
     // stored data as necessary.
-    $senderName = paramPrepare(@$_POST['senderName']);
+    $senderName = @$_POST['senderName'];
     $senderName = preg_replace('/[<>]/', '', $senderName);
-    $senderEmail = paramPrepare(strtolower(@$_POST['senderEmail']));
-    $senderOrganization = paramPrepare($_POST['senderOrganization']);
+    $senderEmail = strtolower(@$_POST['senderEmail']);
+    $senderOrganization = $_POST['senderOrganization'];
     $senderOrganization = preg_replace('/[<>]/', '', $senderOrganization);
     $note = $_POST['note'];
     $chunkName = preg_replace('/[^0-9a-zA-Z]/', '', $_POST['chunkName']);
@@ -2393,6 +2393,7 @@ class NSSDropoff {
     $chunkPath .= $chunkName;
 
     $expiry = 0;
+    $start  = 0;
     // Grab this early as if the req supplied a passphrase then we
     // want to over-ride any passphrase read from the form, and
     // enforce encryption.
@@ -2418,11 +2419,15 @@ class NSSDropoff {
                                        $recipName, $recipEmail,
                                        $senderOrganization,
                                        $senderName, $senderEmail,
-                                       $dummy, $reqSubject, $expiry,
+                                       $dummy, $reqSubject,
+                                       $expiry, $start,
                                        $reqpassphrase)) {
+        if (time() < $start) {
+          return sprintf(gettext("You cannot create a drop-off from your request yet. Please wait until %s before uploading your files."), timestampForTime($start));
+        }
         if ($expiry < time()) {
           $this->_dropbox->DeleteReqData($req);
-          return gettext("Failed to read your verification information. Your drop-off session has probably expired. Please start again.");
+          return gettext("The request you used to create this drop-off has expired. You will need to contact the other person again to get a new 'request for files'.");
         }
         // It was a valid req key, so leave $req alone (and true).
         $reqSubject = trim($reqSubject);
@@ -2495,7 +2500,7 @@ class NSSDropoff {
         } else {
           // Logged-in user so just read their data
           $senderName = $this->_dropbox->authorizedUserData("displayName");
-          $senderOrganization = paramPrepare(@$_POST['senderOrganization']);
+          $senderOrganization = @$_POST['senderOrganization'];
           $senderOrganization = preg_replace('/[<>]/', '', $senderOrganization);
           $senderEmail = trim($this->_dropbox->authorizedUserData("mail"));
           if (empty($this->_subject)  && !empty(@$_POST['subject'])) {
@@ -2582,9 +2587,9 @@ class NSSDropoff {
      if ( preg_match('/^recipient_(\d+)/', $arraykey, $matches) ) {
       $recipIndex = $matches[1];
       //while ( array_key_exists('recipient_'.$recipIndex,$_POST) ) {
-      $recipName = paramPrepare($_POST['recipName_'.$recipIndex]);
+      $recipName = $_POST['recipName_'.$recipIndex];
       $recipName = mb_strimwidth($recipName, 0, 100, '...');
-      $recipEmail = paramPrepare($_POST['recipEmail_'.$recipIndex]);
+      $recipEmail = $_POST['recipEmail_'.$recipIndex];
       if ( $recipName || $recipEmail ) {
         //  Take the email to purely lowercase for simplicity:
         $recipEmail = strtolower($recipEmail);
@@ -2952,7 +2957,7 @@ class NSSDropoff {
         // by removing all "../" elements and things like it
         $libraryfile = preg_replace('/\.\.[:\/\\\]/', '', $_POST[$selectkey]);
         $libraryfile = preg_replace('/\</', '', $libraryfile); // Protect further
-        $libraryfile = paramPrepare($libraryfile);
+        $libraryfile = $libraryfile;
         $fileDetails[$i]['libraryfile'] = $libraryfile;
         // Generate a random filename (collisions are very unlikely)
         $tmpname = mt_rand(10000000, 99999999);
@@ -2969,7 +2974,7 @@ class NSSDropoff {
         $fileDetails[$i]['libraryfile'] = $libraryfile;
 
         // We use this a few times
-        $librarydesc = paramPrepare(trim($_POST["desc_".$i]));
+        $librarydesc = trim($_POST["desc_".$i]);
         $librarydesc = mb_strimwidth($librarydesc, 0, 100, '...');
         $fileDetails[$i]['librarydesc'] = $librarydesc;
 
@@ -3149,10 +3154,10 @@ class NSSDropoff {
 
             //  Add to database:
             if ( ! $this->_dropbox->database->DBAddFile1($dropoffID, $tmpname,
-                             paramPrepare($_FILES[$key]['name']),
+                             $_FILES[$key]['name'],
                              $bytes,
                              $uploadedMIME,
-                             paramPrepare($_POST["desc_".$i]),
+                             $_POST["desc_".$i],
                              $checksum) ) {
               //  Exit gracefully -- dump database changes and remove the dropoff
               //  directory:
@@ -3169,13 +3174,13 @@ class NSSDropoff {
             
             //  That's right, one more file!
             $tplFiles[$realFileCount] = array();
-            $tplFiles[$realFileCount]['name'] = paramPrepare($_FILES[$key]['name']);
+            $tplFiles[$realFileCount]['name'] = $_FILES[$key]['name'];
             // If it's automated, all the mimeTypes will be 'application/octet-stream' which just confuses users.
             $tplFiles[$realFileCount]['type'] = ($this->_dropbox->isAutomated())?'':$uploadedMIME;
             $tplFiles[$realFileCount]['size'] = NSSFormattedMemSize($bytes);
             // Force the file description to max 100 chars
             $tplFiles[$realFileCount]['description'] =
-              mb_strimwidth(paramPrepare($_POST["desc_".$i]), 0, 100, '...');
+              mb_strimwidth($_POST["desc_".$i], 0, 100, '...');
             // Used to put "Not calculated", now just leave the line out.
             $tplFiles[$realFileCount]['checksum'] = $checksum;
             //if ($checksum != '')

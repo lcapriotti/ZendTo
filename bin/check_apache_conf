@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+# JKF 2020-07-22
+# Find the right apache site config file for their https ZendTo site.
+# Check it has a Content-Security-Policy header definition.
+# Check it has an img-src setting.
+# Check that contains "data:" as well as "*".
+# If not, fix it automatically.
+#
+# This is needed for the date/time pickers in the request page to
+# work properly. Otherwise you see no buttons in the pickers.
+
+# This is a list of all the possible places the Installer might have put
+# the https site config, depending on exactly what version of what OS
+# we are running on.
+CONFS="/etc/apache2/sites-available/001-zendto-ssl /etc/apache2/sites-available/001-zendto-ssl.conf /etc/httpd/conf.d/zendto-ssl.conf /usr/local/etc/apache24/Includes/zendto-ssl.conf /etc/apache2/vhosts.d/zendto-ssl.conf"
+
+# Find the first one of the list above that exists
+for F in $CONFS
+do
+  if [ -e "$F" ]; then
+    CONFIG=$F
+    break;
+  fi
+done
+
+# If we didn't find it, see if they put it on the command-line
+if [ "x$CONFIG" = "x" ]; then
+  CONFIG="$1"
+fi
+# Nope.
+if [ "x$CONFIG" = "x" ]; then
+  echo "Failed to find your Apache config for the https ZendTo site."
+  echo "Security check skipped."
+  echo "You can give the location of the file on the command-line to help me."
+  exit 1
+fi
+
+echo "Checking your Apache config $CONFIG"
+
+if grep -q '^[ 	]*Header.*Content-Security-Policy' "$CONFIG"; then
+  echo "I have found a Content-Security-Policy header definition."
+  HEADER="$( grep '^[ 	]*Header.*Content-Security-Policy' "$CONFIG" | head -1 )"
+  # Now find the "img-src" setting in the header
+  if echo "$HEADER" | grep -q 'img-src '; then
+    IMGSRC="$( echo "$HEADER" | perl -pe 's/^.*(img-src.*?;).*$/$1/' )"
+    if echo "$IMGSRC" | grep -q ' data:'; then
+      echo "Good, you already have data: in the list of valid sources of images."
+      echo "So I do not need to do anything."
+    else
+      echo "I need to add 'data:' to the list of 'img-src' values so it reads"
+      echo "     img-src data: *;"
+      echo "Otherwise the date and time pickers will not work."
+      echo
+      echo "I will do it for you now"
+      perl -pi.bak -e 's/^(\s*Header.*Content-Security-Policy\s+.*?img-src)[^;]*/$1 data: */' "$CONFIG"
+      echo "Apache configuration $CONFIG updated."
+      echo "The old file is in $CONFIG.bak if you have any problems."
+      echo
+      echo "Restart Apache, or just reboot, for the change to take effect."
+    fi
+  else
+    echo "Did not find an img-src definition in your Content-Security-Policy header"
+    echo "You should add one that says"
+    echo "    img-src data: *;"
+    echo "and then restart Apache."
+  fi
+else
+  echo "I did not find a definition for the Content-Security-Policy header."
+  echo "I strongly advise you add one to improve the security of your ZendTo service."
+  echo 'You need to add this setting (as 1 very long line) to anywhere'
+  echo "in the middle of the file $CONFIG"
+  echo
+  cat <<EOH
+  Header set Content-Security-Policy "default-src 'none'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net; connect-src 'self' 'unsafe-inline'; img-src data: *; font-src 'self' 'unsafe-inline'  https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com"
+EOH
+  echo
+  echo "and restart Apache (or reboot)."
+fi
+

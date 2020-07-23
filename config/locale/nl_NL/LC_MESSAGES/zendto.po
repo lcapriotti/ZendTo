@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 12:09+0100\n"
+"POT-Creation-Date: 2020-07-22 17:17+0100\n"
 "PO-Revision-Date: 2018-08-15 13:36+0200\n"
 "Last-Translator: marcel <Werken@bijdebaas.nl>\n"
 "Language-Team: team nietsnut\n"
@@ -103,11 +103,22 @@ msgstr "U kunt nog steeds rechtstreeks vanuit het hoofdmenu bestanden verzenden 
 msgid "Request Code Used"
 msgstr "Aanvraagcode gebruikt"
 
-msgid "Your Request Code has expired. Please start again."
-msgstr "Uw aanvraagcode is verlopen. Begin opnieuw."
+msgid "Please ask for a new Request."
+msgstr ""
 
-msgid "Request Code Expired"
+#, fuzzy
+msgid "Your Request Code has expired."
 msgstr "Aanvraagcode is verlopen"
+
+msgid "Please wait for %1$s, until %2$s."
+msgstr ""
+
+#, fuzzy
+msgid "Your Request Code cannot be used yet."
+msgstr "Uw aanvraagcode kan niet worden gevonden of is al gebruikt."
+
+msgid "The end time you set has already passed."
+msgstr ""
 
 msgid "Request Error"
 msgstr "Verzoek Fout"
@@ -126,6 +137,9 @@ msgstr "Het is niet mogelijk de drop-off opnieuw te verzenden"
 
 msgid "Unlocked %s."
 msgstr "Ontgrendeld %s."
+
+msgid "Security"
+msgstr ""
 
 msgid "Unknown user"
 msgstr "Onbekende gebruiker"
@@ -312,6 +326,12 @@ msgstr "De map met de bestanden van deze drop-off is verdwenen."
 
 msgid "Drop-off Directory Not Found"
 msgstr "Drop-off Directory niet gevonden"
+
+msgid "You cannot create a drop-off from your request yet. Please wait until %s before uploading your files."
+msgstr ""
+
+msgid "The request you used to create this drop-off has expired. You will need to contact the other person again to get a new 'request for files'."
+msgstr ""
 
 msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
 msgstr "Uw verificatiegegevens kunnen niet worden gelezen. Je drop-off-sessie is waarschijnlijk verlopen. Begin opnieuw."
@@ -732,9 +752,6 @@ msgstr "een bestand"
 msgid "%1 files"
 msgstr "%1 bestanden"
 
-msgid "%1 <%2> has dropped off %3 for you."
-msgstr "%1 <%2> heeft %3 voor u gedropt."
-
 msgid "IF YOU TRUST THE SENDER, and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
 msgstr "<strong>ALS JE DE AFZENDER VERTROUWT</strong> en verwacht een bestand van hen te ontvangen, kun je ervoor kiezen om de drop-off op te halen door op de volgende link te klikken (of door deze in je webbrowser te kopiëren en plakken):"
 
@@ -1141,10 +1158,12 @@ msgstr "Bestanden die zijn geüpload naar %1, worden gescand op virussen. Maar o
 msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
 msgstr "Gebruikers worden ook <strong>sterk aangemoedigd</strong> om elk bestand te versleutelen als ze gevoelige informatie bevatten (bijvoorbeeld persoonlijke private informatie)!"
 
-msgid "This web page will allow you to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+#, fuzzy
+msgid "Use this form to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Op deze webpagina kunt u een of meer bestanden voor iedereen (een %1-gebruiker of anderen) achterlaten (drop-off/uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het downloaden van het bestand. Uw IP-adres wordt ook geregistreerd en verzonden naar de ontvanger ter bevestiging van de identiteit."
 
-msgid "This web page will allow you to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
+#, fuzzy
+msgid "Use this form to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Op deze webpagina kunt u een of meer bestanden voor een %1-gebruiker achterlaten (drop-off/uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het downloaden van het bestand. Uw IP-adres wordt ook geregistreerd en verzonden naar de ontvanger ter bevestiging van de identiteit."
 
 msgid "From"
@@ -1307,8 +1326,12 @@ msgstr "Dit is een verzoek van %1."
 msgid "Please click on the link below and drop off the file or files I have requested."
 msgstr "Klik op de onderstaande link en drop-off het bestand of de bestanden die ik heb aangevraagd."
 
-msgid "The link is only valid for %1 from the time of this email."
+#, fuzzy
+msgid "The link is only valid from %1 to %2."
 msgstr "De link is alleen geldig voor %1 vanaf het moment van deze e-mail."
+
+msgid "After that time it will automatically expire."
+msgstr ""
 
 #, fuzzy
 msgid "All files you upload will be automatically encrypted."
@@ -1330,7 +1353,8 @@ msgstr ""
 msgid "The request for a Drop-off has been sent to %1 at %2."
 msgstr "De aanvraag voor een Drop-off is verzonden naar %1 op %2."
 
-msgid "It is valid for %1."
+#, fuzzy
+msgid "It is valid from %1 to %2."
 msgstr "Het is geldig voor %1"
 
 msgid "The files they send you will be encrypted with the passphrase you just entered. Do not lose it or you will not be able to access the files!"
@@ -1380,24 +1404,54 @@ msgstr "Voer eerst de naam van de ontvanger in!"
 msgid "Your note is too long!"
 msgstr "Je notitie is te lang!"
 
+#, fuzzy
+msgid "Your request must expire after it starts!"
+msgstr "Uw aanvraagcode is verlopen. Begin opnieuw."
+
 msgid "Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase."
 msgstr ""
 
 msgid "This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means."
 msgstr ""
 
-msgid "This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
+msgid "Multiple email addresses should be separated with a comma \",\" or semicolon \";\". Each recipient will be sent a different link."
+msgstr ""
+
+#, fuzzy
+msgid "Use this form to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
 msgstr "Op deze webpagina kunt u een verzoek sturen naar een of meer andere mensen en die verzoeken om een of meer bestanden aan u te verzenden (uploaden). De ontvanger ontvangt een automatisch e-mailbericht met de onderstaande informatie en instructies voor het uploaden van het bestand(en)."
+
+#, fuzzy
+msgid "Unless you change the dates or times below, the request created will be valid for %1."
+msgstr "Het gemaakte verzoek is geldig voor %1."
 
 msgid "Email(s)"
 msgstr "Email(s)"
 
 #, fuzzy
-msgid "Send email"
-msgstr "Afzender"
+msgid "Name: adds to your address book"
+msgstr "Voegt toe aan je adreslijst"
+
+#, fuzzy
+msgid "One or more email addresses"
+msgstr "Jouw email adres"
+
+msgid "Subject line of the email"
+msgstr ""
+
+#, fuzzy
+msgid "Drop-off must occur between"
+msgstr "Drop-off niet versleuteld"
+
+msgid "and"
+msgstr ""
 
 msgid "This will be sent to the recipient. It will also be included in the resulting drop-off sent to you."
 msgstr "Dit wordt naar de ontvanger verzonden. Het zal ook worden opgenomen in de resulterende drop-off die naar u wordt verzonden."
+
+#, fuzzy
+msgid "Send email"
+msgstr "Afzender"
 
 msgid "Do not lose or forget this passphrase!"
 msgstr ""
@@ -1643,6 +1697,9 @@ msgstr "Als u het over een aantal minuten hebt ontvangen, klik je op de link in 
 
 msgid "Send confirmation"
 msgstr "Verstuur bevestiging"
+
+#~ msgid "%1 <%2> has dropped off %3 for you."
+#~ msgstr "%1 <%2> heeft %3 voor u gedropt."
 
 #~ msgid "Recipient"
 #~ msgstr "Ontvanger"

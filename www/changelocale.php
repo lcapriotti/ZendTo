@@ -1,8 +1,7 @@
 <?PHP
 //
 // ZendTo
-// Copyright (C) 2006 Jeffrey Frey, frey at udel dot edu
-// Copyright (C) 2010 Julian Field, Jules at ZendTo dot com
+// Copyright (C) 2020 Julian Field, Jules at ZendTo dot com
 //
 // Based on the original PERL dropbox written by Doke Scott.
 // Developed by Julian Field.
@@ -114,9 +113,7 @@ textdomain('zendto');
 // got there, so we can pretend as if we're just redrawing the same page
 // they were looking at, but in a new language.
 //
-
 $gotHere  = @$_POST['gothere']; // The script filename that generated their view
-//$goingTo  = @$_POST['goingto']; // The script that was the target of their form
 $template = @$_POST['template']; // The template file that drew their view
 $getData  = @$_POST['getdata'];
 $postData = @$_POST['postdata'];
@@ -129,7 +126,6 @@ $postData = html_entity_decode( $postData, ENT_QUOTES | ENT_XML1, 'UTF-8');
 // domain. So just pull out the leaf filename first and sanitise that.
 $gotHere = preg_replace('/^.*\//', '', $gotHere);
 $gotHere  = preg_replace('/[^a-zA-Z0-9_.-]+/', '', $gotHere);
-//$goingTo  = preg_replace('/[^a-zA-Z0-9_.-]+/', '', $goingTo);
 $template = preg_replace('/[^a-zA-Z0-9_.-]+/', '', $template);
 
 // getData and postData are JSON.
@@ -140,6 +136,11 @@ if (!is_array($getData))
   $getData = array();
 if (!is_array($postData))
   $postData = array();
+
+// SAML login immediately after/before changing language can
+// break this so gotHere is null. Main menu by default.
+if (empty($gotHere))
+  $gotHere = 'index.php';
 
 // And a bit of tidying up for special cases
 if (strpos($template, 'show_dropoff') !== false) {

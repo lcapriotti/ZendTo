@@ -43,17 +43,20 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
       for ($i=0; $i<=$_POST['unlockMax']; $i++) {
         $user = strtolower($_POST['unlocktick_'.$i]);
         $user = preg_replace('/[<>]/', '', $user);
-        if ($user && preg_match($theDropbox->usernameRegexp(), $user)) {
+        if (empty($user))
+          continue;
+        if (preg_match($theDropbox->usernameRegexp(), $user)===1) {
           // Unlock the user
-          $theDropbox->database->DBDeleteLoginlog(htmlentities(paramPrepare($user)));
-          $output[] = $user;
+          $theDropbox->database->DBDeleteLoginlog($user);
+          $theDropbox->writeToLog('Unlocked user '.$user);
+          $output[] = htmlentities($user, ENT_NOQUOTES, 'UTF-8');
         } else {
           // Didn't match as a username
-          $theDropbox->writeToLog('Failed to unlock user $user as did not match usernameRegexp from preferences.php');
+          $theDropbox->writeToLog("Failed to unlock user $user as did not match usernameRegexp from preferences.php");
         }
       }
       if ($output) {
-        NSSError(sprintf(gettext("Unlocked %s."), implode(', ',$output)));
+        NSSError(sprintf(gettext("Unlocked %s."), implode(', ',$output)), gettext("Security"));
       }
     }
 

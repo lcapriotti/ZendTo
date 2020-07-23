@@ -1,7 +1,10 @@
 {$thisTemplate=$smarty.template}{include file="header.tpl"}
 <link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
 <script type="text/javascript" src="js/jquery-ui-1.12.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.balloon.min.js"></script>
+<script type="text/javascript" src="js/php-date-formatter.min.js"></script>
+<script type="text/javascript" src="js/jquery.datetimepicker.full.min.js"></script>
 <script type="text/javascript" src="js/addressbook.js"></script>
 <script type="text/javascript">
 <!--
@@ -115,6 +118,17 @@ function validateForm()
       return false;
     }
   }
+  // Validate date/times and return them as seconds since epoch
+  var startdt, expirydt;
+  startdt = $('#start').datetimepicker('getValue').getTime();
+  $('#startTime').val(Math.floor(startdt / 1000));
+  expirydt = $('#expiry').datetimepicker('getValue').getTime();
+  $('#expiryTime').val(Math.ceil(expirydt / 1000));
+  if (expirydt <= startdt) {
+    alert("{t}Your request must expire after it starts!{/t}");
+    return false;
+  }
+  // Everything was okay.
   return true;
 }
 
@@ -230,18 +244,77 @@ $(document).ready(function() {
       position: "top right",
       html: true,
       css: { fontSize: '100%', 'max-width': '40vw' },
-      contents: '{t escape=no}Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase.{/t}',
+      contents: "{t escape=no}Optional: if you select this and set a passphrase, the drop-off will be encrypted. The person sending the files will never know the passphrase.{/t}",
       showAnimation: function (d, c) { this.fadeIn(d, c); }
   });
   $('#sendEmail-balloon').balloon({
       position: "top right",
       html: true,
       css: { fontSize: '100%', 'max-width': '40vw' },
-      contents: '{t escape=no}This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means.{/t}',
+      contents: "{t escape=no}This is normally selected. If you deselect it, the link and instructions will not be sent by email. Instead you will just be shown the link they need, so you can send it by other means.{/t}",
+      showAnimation: function (d, c) { this.fadeIn(d, c); }
+  });
+  $('#recipEmail').balloon({
+      position: "top center",
+      html: true,
+      css: { fontSize: '100%', 'max-width': '40vw' },
+      contents: "{t escape=no}Multiple email addresses should be separated with a comma \",\" or semicolon \";\". Each recipient will be sent a different link.{/t}",
       showAnimation: function (d, c) { this.fadeIn(d, c); }
   });
 
-});
+  // Datetimepicker setup
+  var dtlocale = '{$currentLocale}';
+  switch(dtlocale) {
+    case 'en_GB':
+    case 'pt_BR':
+    case 'sr_YU':
+    case 'zh_TW':
+      // These 4 are special cases, just swap _ to -
+      dtlocale = dtlocale.replace('_', '-');
+      break;
+    default:
+      // Rest just want the chars before the _
+      var under = dtlocale.indexOf('_');
+      dtlocale = dtlocale.substring(0, under!=-1 ? under : dtlocale.length);
+  }
+  $.datetimepicker.setLocale(dtlocale);
+  // Now!
+  var now = new Date();
+  var plus1week = new Date();
+  plus1week.setTime(now.getTime() + {$requestTTLms});
+  jQuery('#start').datetimepicker({
+    format: 'Y-m-d H:i',
+    minDate: 0, // Disallow dates in the past
+    maxDate: '+1971/01/01', // 1 year in the future
+    value: now, // What's shown in the text field at start
+    startDate: now, // What's initially highlighted in picker
+    defaultDate: now, // and defaultDate ??
+    defaultTime: now, // Defaults to now ??
+    step: 30, // Time picker in 30 minute steps
+    mask: true, // Auto generate input mask
+    todayButton: true, // Show Today button
+    yearStart: now.getFullYear(), // fast year selector starts here
+    yearEnd: now.getFullYear()+1, // fast year selector ends here
+    roundTime: 'floor', // round times down
+  });
+  var plus1week = new Date();
+  plus1week.setTime(now.getTime() + {$requestTTLms});
+  jQuery('#expiry').datetimepicker({
+    format: 'Y-m-d H:i',
+    minDate: 0, // Disallow dates in the past
+    maxDate: '+1971/02/01', // 1 year + 1 month in the future
+    value: plus1week, // What's shown in the text field at start
+    startDate: plus1week, // What's initially highlighted in picker
+    defaultDate: plus1week, // and defaultDate ??
+    defaultTime: plus1week, // Defaults to now ??
+    step: 30, // Time picker in 30 minute steps
+    mask: true, // Auto generate input mask
+    todayButton: true, // Show Today button
+    yearStart: now.getFullYear(), // fast year selector starts here
+    yearEnd: now.getFullYear()+1, // fast year selector ends here
+  });
+
+}); // end of document.ready()
 
 //
 // Encryption dialog support
@@ -295,51 +368,58 @@ function keyEncryptPassword(e) {
 <h1>{t}Request a Drop-off{/t}</h1>
 
 <p>
-{t}This web page will allow you to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s).{/t}
+{t}Use this form to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s).{/t}
 </p>
 <p>
-{t 1=$requestTTL}The request created will be valid for %1.{/t}
+{t 1=$requestTTL}Unless you change the dates or times below, the request created will be valid for %1.{/t}
 </p>
 
-<div class="UILabel">{t}From{/t}:</div> <br class="clear" />
-<div id="fromHolder"><span id="fromName">{$senderName}</span> <span id="fromEmail">&lt;{$senderEmail}&gt;</span> <span id="fromOrg"><label for="senderOrg">{t}Organization{/t}:</label> <input type="text" id="senderOrg" name="senderOrg" class="toosmall" size="30" {if !$senderOrgEditable}readonly="true"{/if} value="{$senderOrg}"/></span></div>
+<div id="request-boxes">
+  <!-- First boxes about the sender and org -->
+  <span id="fromLabel" class="labels">{t}From{/t}:</span>
+  <span id="orgLabel" class="labels">{t}Organization{/t}:</span>
+  <span id="fromHolder" class="text"><span id="fromName">{$senderName}</span> <span id="fromEmail">&lt;{$senderEmail}&gt;</span></span>
+  <input type="text" id="senderOrg" name="senderOrg" class="text" {if !$senderOrgEditable}readonly="true"{/if} value="{$senderOrg}"/>
 
-<br class="clear" />
-<div class="UILabel">{t}To{/t}:</div> <br class="clear" />
-<div id="emailHolder" class="ui-widget"> <label id="recipNameLabel" name="recipNameLabel" for="recipName">{t}Name{/t}:</label> <input type="text" id="recipName" name="recipName" class="toosmall" size="33" placeholder="{t}Adds to your address book{/t}" autocomplete="off" value=""/> <label id="recipEmailLabel" name="recipEmailLabel" for="recipEmail">{t}Email(s){/t}:</label> <input type="text" id="recipEmail" name="recipEmail" class="toosmall" size="33" autocomplete="off" value=""/></div>
+  <!-- Then the recipients -->
+  <span id="recipNameLabel" class="labels">{t}To{/t}:</span>
+  <span id="recipEmailLabel" class="labels">{t}Email(s){/t}:</span>
+  <input type="text" id="recipName" name="recipName" class="text" placeholder="{t}Name: adds to your address book{/t}" autocomplete="off" value=""/>
+  <input type="text" id="recipEmail" name="recipEmail" class="text" placeholder="{t}One or more email addresses{/t}" autocomplete="off" value=""/>
 
-<div class="UILabel"><label for="subject">{t}Subject{/t}:</label></div> <br class="clear" />
-<input type="text" id="subject" name="subject" class="toosmall" size="60" value=""/>
+  <!-- Then the subject -->
+  <span id="subjectLabel" class="labels">{t}Subject{/t}:</span>
+  <input type="text" id="subject" name="subject" class="text" placeholder="{t}Subject line of the email{/t}" autocomplete="off" value=""/>
 
-<br class="clear" />
-<div class="UILabel"><input type="checkbox" name="encryptFiles" id="encryptFiles" {if $defaultEncryptRequests}checked="checked" {/if}/> <label name="encryptFilesLabel" id="encryptFilesLabel" for="encryptFiles">{t}Encrypt every file{/t}</label> <i id='encrypt-balloon' name='encrypt-balloon' class='fas fa-info-circle' style='vertical-align:right'></i></div>
-<br class="clear" />
-<div class="UILabel"><input type="checkbox" name="sendEmail" id="sendEmail" checked="checked" /> <label name="sendEmailLabel" id="sendEmailLabel" for="sendEmail">{t}Send email{/t}</label> <i id='sendEmail-balloon' name='sendEmail-balloon' class='fas fa-info-circle' style='vertical-align:right'></i></div>
+  <!-- Then the date/time limits -->
+  <span id="timelimit">
+    <span id="startLabel" class="labels">{t}Drop-off must occur between{/t}:</span>
+    <input type="text" id="start" name="start" class="text" size="15" autocomplete="off"/>
+    <span id="expiryLabel" class="labels">{t}and{/t}</span>
+    <input type="text" id="expiry" name="expiry" class="text" size="15" autocomplete="off" />
+  </span>
 
-<br class="clear" /><br class="clear" />
+  <!-- Then the note -->
+  <span id="noteLabel" class="labels">{t}Note{/t}: {t}This will be sent to the recipient. It will also be included in the resulting drop-off sent to you.{/t}</span>
+  <span id="noteHolder"><textarea name="note" id="note" wrap="soft"></textarea>
+    <span id="noteLengthText">&nbsp;</span>
+  </span>
 
-<label for="note">{t}Note{/t}:</label> {t}This will be sent to the recipient. It will also be included in the resulting drop-off sent to you.{/t}<br/>
-<table>
-<tr><td><textarea name="note" id="note" wrap="soft" style="width:450px; height:70px"></textarea></td></tr>
-<tr><td><span id="noteLengthText" style="float:right"></span></td></tr>
-</table>
+  <!-- And all the checkboxes on the right side -->
+  <input type="checkbox" name="encryptFiles" id="encryptFiles" {if $defaultEncryptRequests}checked="checked" {/if} class="request-encryptSpan request-checkbox" />
+  <label name="encryptFilesLabel" id="encryptFilesLabel" for="encryptFiles" class="ndcbLabel request-encryptSpan request-checklabel">{t}Encrypt every file{/t} <i id='encrypt-balloon' name='encrypt-balloon' class='fas fa-info-circle' style='vertical-align:right'></i></label>
+  <label class="ndcbLabel request-space request-checklabel">&nbsp;</label>
+  <input type="checkbox" name="sendEmail" id="sendEmail" class="request-sendEmailSpan request-checkbox" checked="checked" />
+  <label name="sendEmailLabel" id="sendEmailLabel" for="sendEmail" class="ndcbLabel request-sendEmailSpan request-checklabel">{t}Send email{/t} <i id='sendEmail-balloon' name='sendEmail-balloon' class='fas fa-info-circle' style='vertical-align:right'></i></label>
 
+</div> <!-- end of request-boxes -->
 
-<table border="0"><tr valign="top">
-  <td>
+<div class="center"><button id="sendRequestButton" type="submit" style="width:inherit">{t}Send the Request{/t}</button></div>
 
-      <input type="hidden" name="Action" value="send"/>
-      <input type="hidden" id="encryptPassword" name="encryptPassword" value=""/>
-      <table border="0" cellpadding="4">
-
-        <tr class="footer">
-          <td width="100%" align="center">
-            <button id="sendRequestButton" type="submit" style="width:inherit">{t}Send the Request{/t}</button>
-          </td>
-        </tr>
-      </table>
-  </td>
-</tr></table>
+<input type="hidden" name="Action" value="send"/>
+<input type="hidden" id="encryptPassword" name="encryptPassword" value=""/>
+<input type="hidden" id="startTime" name="startTime" value="0"/>
+<input type="hidden" id="expiryTime" name="expiryTime" value="0"/>
 
 <!-- Hidden dialogs -->
 <span style="display:none">
@@ -375,8 +455,5 @@ function keyEncryptPassword(e) {
 </span> <!-- End of hidden dialogs -->
 
 </form>
-
-
-<span style="display:none">
 
 {include file="footer.tpl"}

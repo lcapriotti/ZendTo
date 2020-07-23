@@ -241,7 +241,8 @@ public function DBCreateReq() {
   Note        text not null,
   Subject     text not null,
   Expiry      bigint not null,
-  Passphrase  text not null DEFAULT ''
+  Passphrase  text not null DEFAULT '',
+  Start       bigint not null DEFAULT 0
 );",$errorMsg) ) {
         return FALSE;
       }
@@ -566,7 +567,7 @@ public function DBListClaims ( $claimID, &$extant ) {
   $extant = $this->database->arrayQuery("SELECT * FROM dropoff WHERE claimID = '".sqlite_escape_string($claimID)."'");
 }
 
-public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $passphrase = '') {
+public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $start, $passphrase = '') {
     if ( ! $this->DBStartTran() ) {
       $dropbox->writeToLog("Error: failed to BEGIN transaction adding request for $srcemail");
       return '';
@@ -577,11 +578,12 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
     // code any more anyway, so I don't care too much.
     // Suppress any PHP warning from it.
     @$this->database->exec('ALTER TABLE reqtable ADD COLUMN Passphrase text not null');
+    @$this->database->exec('ALTER TABLE reqtable ADD COLUMN Start bigint not null DEFAULT 0');
     if (!isset($passphrase)) $passphrase = '';
     $query = sprintf("INSERT INTO reqtable
-                      (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Passphrase)
+                      (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Start,Passphrase)
                       VALUES
-                      ('%s','%s','%s','%s','%s','%s','%s','%s',%d,'%s')",
+                      ('%s','%s','%s','%s','%s','%s','%s','%s',%d,%d,'%s')",
                       $hash,
                       sqlite_escape_string($srcname),
                       sqlite_escape_string($srcemail),
@@ -591,6 +593,7 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
                       sqlite_escape_string($note),
                       sqlite_escape_string($subject),
                       $expiry,
+                      $start,
                       sqlite_escape_string($passphrase));
     sodium_memzero($passphrase);
     if ( ! $this->database->queryExec($query) ) {

@@ -44,6 +44,8 @@ class Req {
   private $_recipEmail;
   private $_note;
   private $_subject;
+  private $_startTime;
+  private $_expiryTime;
   private $_encrypted;
   private $_formInitError = NULL;
   
@@ -106,6 +108,8 @@ class Req {
   public function created() { return $this->_created; }
   public function recipients() { return $this->_recipients; }
   public function encrypted() { return $this->_encrypted; }
+  public function startTime() { return $this->_startTime; }
+  public function expiryTime() { return $this->_expiryTime; }
   public function formInitError() { return $this->_formInitError; }
   
 
@@ -135,16 +139,16 @@ class Req {
     // from the authentication system.
     $senderName = $this->_dropbox->authorizedUserData("displayName");
     if ( ! $senderName || $this->_dropbox->isAutomated() ) {
-      $senderName = paramPrepare($_POST['senderName']);
+      $senderName = $_POST['senderName'];
     }
     $senderEmail = strtolower($this->_dropbox->authorizedUserData("mail"));
     if ( ! $senderEmail || $this->_dropbox->isAutomated() ) {
-      $senderEmail = paramPrepare($_POST['senderEmail']);
+      $senderEmail = $_POST['senderEmail'];
     }
     // Only use the value from the request form if they were allowed to
     // edit it. Otherwise use what it would have been forced to in req.php.
     if ( $this->_dropbox->requestOrgEditable() ) {
-      $senderOrganization = paramPrepare(@$_POST['senderOrg']);
+      $senderOrganization = @$_POST['senderOrg'];
     } else {
       $senderOrganization = $this->_dropbox->authorizedUserData("organization");
     }
@@ -166,13 +170,19 @@ class Req {
     $senderName         = preg_replace('/[<>]/', '', $senderName);
     $senderOrganization = preg_replace('/[<>]/', '', $senderOrganization);
     $recipName          = preg_replace('/[<>]/', '', $recipName);
-    // Thanks to Luigi Capriotti for this suggestion!
-    $expiryString = @$_POST['expiryDateTime'];
-    $expiryDateTime = 0;
-    if ($expiryString) {
-      if (DateTime::createFromFormat('Y-m-d H:i:s', $expiryString) !== FALSE ) {
-        $expiryDateTime = timeForTimestamp($expiryString);
-      }
+    // // Thanks to Luigi Capriotti for this suggestion!
+    // $expiryString = @$_POST['expiryDateTime'];
+    // $expiryDateTime = 0;
+    // if ($expiryString) {
+    //   if (DateTime::createFromFormat('Y-m-d H:i:s', $expiryString) !== FALSE ) {
+    //     $expiryDateTime = timeForTimestamp($expiryString);
+    //   }
+    // }
+
+    $startTime  = preg_replace('/[^0-9]/', '', @$_POST['startTime']);
+    $expiryTime = preg_replace('/[^0-9]/', '', @$_POST['expiryTime']);
+    if ($expiryTime<time() || $expiryTime<=$startTime) {
+      return gettext("The end time you set has already passed.").' '.$BACKBUTTON;
     }
 
     if ( ! $senderName ) {
@@ -228,7 +238,7 @@ class Req {
     }
 
     //  Insert into database:
-    $words = $this->_dropbox->WriteReqData($senderName, $senderEmail, $senderOrganization, $recipName, $recipEmail, $note, $reSubject, $obfusPassphrase, $expiryDateTime);
+    $words = $this->_dropbox->WriteReqData($senderName, $senderEmail, $senderOrganization, $recipName, $recipEmail, $note, $reSubject, $obfusPassphrase, $expiryTime, $startTime);
 
     // Wipe sensitive data
     if (isset($passphrase))      sodium_memzero($passphrase);
@@ -246,6 +256,8 @@ class Req {
       $this->_recipEmail  = $recipEmail;
       $this->_note        = $note;
       $this->_subject     = $subject;
+      $this->_startTime   = $startTime;
+      $this->_expiryTime  = $expiryTime;
       // ->_encrypted is set a few lines above
     }
     return "";
@@ -257,14 +269,16 @@ class Req {
     global $NSSDROPBOX_URL;
 
     //  Construct the email notification and deliver:
-    $smarty->assign('fromName',  $this->_senderName);
-    $smarty->assign('fromEmail', $this->_senderEmail);
-    $smarty->assign('fromOrg',   $this->_senderOrg);
-    $smarty->assign('toName',    $this->_recipName);
-    $smarty->assign('toEmail',   $this->_recipEmail);
-    $smarty->assign('note',      $this->_note);
+    $smarty->assign('fromName',   $this->_senderName);
+    $smarty->assign('fromEmail',  $this->_senderEmail);
+    $smarty->assign('fromOrg',    $this->_senderOrg);
+    $smarty->assign('toName',     $this->_recipName);
+    $smarty->assign('toEmail',    $this->_recipEmail);
+    $smarty->assign('note',       $this->_note);
     $emailSubject = $smarty->getConfigVars('EmailSubjectTag') . $this->_subject;
-    $smarty->assign('subject', $emailSubject);
+    $smarty->assign('subject',    $emailSubject);
+    $smarty->assign('startTime',  timestampForTime($this->_startTime));
+    $smarty->assign('expiryTime', timestampForTime($this->_expiryTime));
     // Tell the recipient if their drop-off will automatically be
     // encrypted. Passphrase only known to person who sent the request.
     $smarty->assign('encrypted', $this->_encrypted);

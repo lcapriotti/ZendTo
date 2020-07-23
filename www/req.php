@@ -50,6 +50,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
   $note = '';
   $subject = '';
   $expiry = 0;
+  $start = time();
   $passphrase = '';
 
   if (isset($_GET['req'])) {
@@ -58,23 +59,27 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     $authkey = preg_replace('/[^a-zA-Z0-9]/', '', $_GET['req']);
     $authkey = strtolower(substr($authkey, 0, 12)); // Get 1st 3 words
 
-    if ( ! $theDropbox->ReadReqData($authkey, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $passphrase) ) {
+    // Present the new_dropoff form
+    $theDropbox->SetupPage();
+
+    if ( ! $theDropbox->ReadReqData($authkey, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $start, $passphrase) ) {
       // Error!
-      $theDropbox->SetupPage();
       NSSError(gettext("Your Request Code could not be found or has already been used.").' '.gettext("You can still send files straight from the main menu, or ask for a new Request Code."), gettext("Request Code Used"));
       $smarty->display('error.tpl');
       exit;
     }
 
     if ($expiry < time()) {
-        $theDropbox->SetupPage();
-        NSSError(gettext("Your Request Code has expired. Please start again."), gettext("Request Code Expired"));
-        $smarty->display('error.tpl');
-        exit;
+      NSSError(gettext("Please ask for a new Request."), gettext("Your Request Code has expired."));
+      $smarty->display('error.tpl');
+      exit;
     }
 
-    // Present the new_dropoff form
-    $theDropbox->SetupPage();
+    if ($start > time()) {
+      NSSError(sprintf(gettext('Please wait for %1$s, until %2$s.'), secsToString($start-time()), timestampForTime($start)), gettext("Your Request Code cannot be used yet."));
+      $smarty->display('error.tpl');
+      exit;
+    }
 
     // Escape these here, not in the template
     // $smarty->assign('senderName', $destname);
@@ -176,11 +181,41 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
         $urlroot = $NSSDROPBOX_URL.'req.php?req=';
     }
 
+    // Set up the output page
+    $theDropbox->SetupPage();
+
+    // Get the start and expiry dates from the form, and sanitise them
+    $start = @$_POST['startTime'];
+    $expiry = @$_POST['expiryTime'];
+    // Default start time is now.
+    if (empty($start) || $start<=0) {
+      // Were neither start nor end set?
+      if (empty($expiry) || $expiry<=0)
+        // Neither set, so default to old behaviour (now+requestTTL)
+        $expiry = time() + $theDropbox->requestTTL();
+      $start = time();
+    }
+    // Default end time is start + 1 week (i.e. requestTTL from prefs.php)
+    if (empty($expiry) || $expiry==0 || $expiry<=$start)
+      $expiry = $start + $theDropbox->requestTTL();
+    // Has the expiry time already passed? If so, error
+    if ($expiry <= time()) {
+      if ($theDropbox->isAutomated()) {
+        header("X-ZendTo-Response: " .
+               json_encode(array("status" => "error", "error" => "end time has already passed")));
+      } else {
+        NSSError(gettext("The end time you set has already passed."), gettext("Request Error"));
+        $smarty->display('error.tpl');
+      }
+      exit;
+
+    }
+
     // Read the contents of the form, and send the email of it all
     // Loop through all the email addresses we were given, creating a new
     // Req object for each one. Then piece together the bits of the output
     // we need to make the resulting web page look pretty.
-    $emailAddrs = preg_split('/[;, ]+/', paramPrepare(strtolower($_POST['recipEmail'])), NULL, PREG_SPLIT_NO_EMPTY);
+    $emailAddrs = preg_split('/[;, ]+/', strtolower($_POST['recipEmail']), NULL, PREG_SPLIT_NO_EMPTY);
     // Get the recipient name if specified, else default to '' (not null!)
     $toName = isset($_POST['recipName'])?$_POST['recipName']:'';
     $toName = preg_replace('/[<>]/', '', $toName);
@@ -188,9 +223,6 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
     $wordList = array();
     $urlList  = array();
     $emailList = array(); // This is the output list, separate for safety
-
-    // Set up the output page
-    $theDropbox->SetupPage();
 
     // Need to know if any of them are encrypted (implies all)
     $anyEncrypted = FALSE;
@@ -249,8 +281,12 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
 
       header("X-ZendTo-Response: " .
              json_encode(array("status" => "OK",
-                   "lifetimestring" => secsToString($theDropbox->requestTTL()),
-                   "lifetimesecs" => $theDropbox->requestTTL(),
+                   "starts" => $start,
+                   "expires" => $expiry,
+                   "startsstring" => timestampForTime($start),
+                   "expiresstring" => timestampForTime($expiry),
+                   // "lifetimestring" => secsToString($theDropbox->requestTTL()),
+                   // "lifetimesecs" => $theDropbox->requestTTL(),
                    "name" => $toName,
                    "requests" => $requests,
                    "sentemails" => $sendEmails,
@@ -275,6 +311,8 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
       $smarty->assign('reqURL', implode(', ', $urlList));
       $smarty->assign('encrypted', $anyEncrypted);
       $smarty->assign('sentEmails', $sendEmails);
+      $smarty->assign('startTime', timestampForTime($start));
+      $smarty->assign('expiryTime', timestampForTime($expiry));
       $smarty->display('request_sent.tpl');
     }
     exit;
@@ -296,6 +334,7 @@ if ( $theDropbox = new NSSDropbox($NSSDROPBOX_PREFS) ) {
   $smarty->assign('minPassphraseLength', $theDropbox->minPassphraseLength());
   $smarty->assign('addressbook', $theDropbox->getAddressBook());
   $smarty->assign('defaultEncryptRequests', $theDropbox->defaultEncryptRequests());
+  $smarty->assign('requestTTLms', $theDropbox->requestTTL() * 1000); // millisecs
 
   $smarty->display('request.tpl');
 }

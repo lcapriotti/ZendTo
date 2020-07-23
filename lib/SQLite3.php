@@ -280,7 +280,8 @@ public function DBCreateReq() {
   Note        text not null,
   Subject     text not null,
   Expiry      bigint not null,
-  Passphrase  text not null DEFAULT ''
+  Passphrase  text not null DEFAULT '',
+  Start       bigint not null DEFAULT 0
 );") ) {
         return FALSE;
       }
@@ -413,7 +414,7 @@ public function DBAddLoginlog($user) {
 }
 
 public function DBDeleteLoginlog($user) {
-  if ($user == "") {
+  if (empty($user)) {
     $query = "DELETE FROM loginlog";
   } else {
     $query = sprintf("DELETE FROM loginlog WHERE username = '%s'",
@@ -639,7 +640,7 @@ public function DBListClaims ( $claimID, &$extant ) {
   $extant = $this->arrayQuery("SELECT * FROM dropoff WHERE claimID = '".$this->database->escapeString($claimID)."'",SQLITE3_NUM);
 }
 
-public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $passphrase = '') {
+public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $destname, $destemail, $note, $subject, $expiry, $start, $passphrase = '') {
     if ( ! $this->DBStartTran() ) {
       $dropbox->writeToLog("Error: failed to BEGIN transaction adding request for $srcemail");
       return '';
@@ -647,8 +648,9 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
     if (!isset($passphrase)) $passphrase = '';
 
     // If the new column is missing and we can't add it, try to continue anyway
-    if (!$this->DBReqPassphraseExists() && !$this->DBReqAddPassphrase()) {
-      $dropbox->writeToLog("Error: failed to add new column Passphrase text NOT NULL DEFAULT '' to database table reqtable. Please add it by hand");
+    if ((!$this->DBReqPassphraseExists() || !$this->DBReqStartExists()) &&
+        (!$this->DBReqAddPassphrase()    && !$this->DBReqAddStart())) {
+      $dropbox->writeToLog("Error: failed to add new columns Passphrase text NOT NULL DEFAULT '' and Start bigint NOT NULL DEFAULT 0 to database table reqtable. Please add them by hand");
       $query = sprintf("INSERT INTO reqtable
                         (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry)
                         VALUES
@@ -664,9 +666,9 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
                         $expiry);
     } else {
       $query = sprintf("INSERT INTO reqtable
-                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Passphrase)
+                        (Auth,SrcName,SrcEmail,SrcOrg,DestName,DestEmail,Note,Subject,Expiry,Start,Passphrase)
                         VALUES
-                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d,'%s')",
+                        ('%s','%s','%s','%s','%s','%s','%s','%s',%d,%d,'%s')",
                         $hash,
                         $this->database->escapeString($srcname),
                         $this->database->escapeString($srcemail),
@@ -676,6 +678,7 @@ public function DBWriteReqData( $dropbox, $hash, $srcname, $srcemail, $srcorg, $
                         $this->database->escapeString($note),
                         $this->database->escapeString($subject),
                         $expiry,
+                        $start,
                         $this->database->escapeString($passphrase));
     }
 
@@ -851,6 +854,26 @@ private function DBReqPassphraseExists() {
 private function DBReqAddPassphrase() {
   $res = @$this->database->exec(
          "ALTER TABLE reqtable ADD COLUMN Passphrase text NOT NULL DEFAULT ''"
+         );
+  return $res;
+}
+
+// Does the table 'reqtable' contain a field called "Start"?
+private function DBReqStartExists() {
+  // This generates a PHP warning if the column doesn't exist,
+  // which we want to suppress as that's exactly what we're testing for.
+  $res = @$this->database->prepare('SELECT Start FROM reqtable');
+  if ($res === FALSE) {
+    return FALSE;
+  } else {
+    $res->close();
+    return TRUE;
+  }
+}
+
+private function DBReqAddStart() {
+  $res = @$this->database->exec(
+         "ALTER TABLE reqtable ADD COLUMN Start bigint NOT NULL DEFAULT 0"
          );
   return $res;
 }
