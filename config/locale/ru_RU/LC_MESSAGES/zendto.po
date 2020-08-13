@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2020-01-02 11:43+0100\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Русский язык <dizzy.easy49@gmail.com>\n"
@@ -212,8 +212,18 @@ msgstr "Не удалось обновить пароль для пользов�
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Проверка пользователя: не удалось подключиться ни к одному из серверов проверки подлинности; не удалось выполнить проверку подлинности пользователя."
 
-msgid "LDAP Error"
-msgstr "LDAP ошибка"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Ошибка аутентификации"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "К сожалению, у вас нет полномочий на использование этого сервиса."
@@ -452,6 +462,9 @@ msgstr "Не удается запустить транзакцию базы д�
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Не удалось подключиться ни к одному из серверов проверки подлинности; не удалось выполнить проверку подлинности пользователя."
+
+msgid "LDAP Error"
+msgstr "LDAP ошибка"
 
 msgid "0 bytes"
 msgstr "0 байт"

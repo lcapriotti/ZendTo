@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2020-06-10 14:04+0200\n"
 "Last-Translator: Dizzy Easy <dizzy.easy49@gmail.com>\n"
 "Language-Team: Czech <dizzy.easy49@gmail.com>\n"
@@ -213,8 +213,18 @@ msgstr "Nepodařilo se aktualizovat heslo uživatele %s"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Zkontrolovat uživatele: Nelze se připojit k žádnému ověřovacímu serveru; nelze ověřit uživatele."
 
-msgid "LDAP Error"
-msgstr "Chyba protokolu LDAP"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Chyba ověřování"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Litujeme, nejste oprávněni používat tuto službu."
@@ -452,6 +462,9 @@ msgstr "Nelze spustit databázovou transakci."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Nelze se připojit k žádnému ověřovacímu serveru, nelze ověřit uživatele."
+
+msgid "LDAP Error"
+msgstr "Chyba protokolu LDAP"
 
 msgid "0 bytes"
 msgstr "0 bytes"

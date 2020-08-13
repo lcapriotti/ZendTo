@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2019-10-24 15:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -213,8 +213,18 @@ msgstr "Nie udało się zaktualizować hasła dla użytkownika %s"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Nie udało się połączyć z serwerami poświadczającymi, nie można poświadczyć użytkownika."
 
-msgid "LDAP Error"
-msgstr "Błąd LDAP"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Błąd poświadczenia"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Nie masz uprawnień do tej usługi."
@@ -454,6 +464,9 @@ msgstr "Nie można rozpocząć transakcji bazy danych."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Nie można połączyć się z żadnym serwerem uwierzytelniającym; nie można uwierzytelnić użytkownika."
+
+msgid "LDAP Error"
+msgstr "Błąd LDAP"
 
 msgid "0 bytes"
 msgstr "0 bytes"

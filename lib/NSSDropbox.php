@@ -1792,6 +1792,7 @@ public function deleteAddressbookEntry ( $name, $email ) {
       }
       if (!$mail->send()) {
         NSSError($mail->ErrorInfo, gettext("Mail Error"));
+        $this->writeToLog('Error: Mail send failed with ' . $mail->ErrorInfo);
         return FALSE;
       }
       return TRUE;
@@ -2216,9 +2217,14 @@ public function deleteAddressbookEntry ( $name, $email ) {
         $this->_authenticator->setAuthName($cookiePieces[3]);
 
         //  Verify the username as valid:
-        if ( $this->_authenticator->validUsername($cookiePieces[1],$this->_authorizedUserData) ) {
+        $authError = '';
+        if ( $this->_authenticator->validUsername($cookiePieces[1],
+                                                  $this->_authorizedUserData,
+                                                  $authError) ) {
           $this->_authorizedUser = $cookiePieces[1];
           return TRUE;
+        } elseif (!empty($authError)) {
+          $this->writeToLog($authError);
         }
       }
     }
@@ -2322,7 +2328,11 @@ public function deleteAddressbookEntry ( $name, $email ) {
           $isadmin = in_array(strtolower($uname),
                      array_map('strtolower', $this->_authAdmins))?'admin ':'';
 
-        if ( $result = $this->_authenticator->authenticate($uname,$password,$this->_authorizedUserData) ) {
+        $authError = '';
+        if ( $result = $this->_authenticator->authenticate($uname,
+                                                           $password,
+                                                           $this->_authorizedUserData,
+                                                           $authError) ) {
           // They have been authenticated, yay!
           $this->_authorizedUser = $uname;
           $this->_authorizationFailed = FALSE;
@@ -2334,11 +2344,16 @@ public function deleteAddressbookEntry ( $name, $email ) {
           // Password check failed. :(
           $this->_authorizationFailed = TRUE;
           $this->writeToLog("Warning: ".$isadmin."authorization failed for ".$uname);
-          // Add a new failure record
-          $this->database->DBAddLoginlog($uname);
           $this->_authorizedUserData = NULL;
           $this->_authorizedUser = '';
           $result = FALSE;
+          if (!empty($authError)) {
+            # Auth subsystem failures don't count against users' login attempts
+            $this->writeToLog($authError);
+          } else {
+            // Add a new failure record
+            $this->database->DBAddLoginlog($uname);
+          }
         }
       }
 

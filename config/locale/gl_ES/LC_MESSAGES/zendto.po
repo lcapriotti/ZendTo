@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2018-11-05 14:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: Galego <manty@manty.net>\n"
@@ -213,8 +213,18 @@ msgstr "Erro ó actualizar o contrasinal para o usuario %s"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Comprobar Usuario: Non foi posible conectar con ningún dos servidores de autenticación; non se puido autenticar ó usuario."
 
-msgid "LDAP Error"
-msgstr "Erro LDAP"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Erro de Autenticación"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "O sinto, non estás autorizado a utilizar este servizo."
@@ -453,6 +463,9 @@ msgstr "Non se puido iniciar a transacción de base de datos."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Non se puido conectar con ningún dos servidores de autenticación; no foi posible autenticar ó usuario."
+
+msgid "LDAP Error"
+msgstr "Erro LDAP"
 
 msgid "0 bytes"
 msgstr "0 bytes"

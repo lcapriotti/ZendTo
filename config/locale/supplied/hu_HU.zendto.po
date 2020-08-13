@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2019-08-22 11:52+0200\n"
 "Last-Translator:  Toldi Miklos <toldim76@gmail.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -213,8 +213,18 @@ msgstr "Nem sikerül a(z) %s felhasználó jelszavának cseréje"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Felhasználó beléptetése: nem lehet csatlakozni semelyik hitelesítő szerverhez, így nem sikerült hitelesíteni a felhasználót."
 
-msgid "LDAP Error"
-msgstr "LDAP hiba"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Azonosítási hiba"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Sajnálom, Ön hitelesítés nélkül nem használhatja ezt a szolgáltatást."
@@ -452,6 +462,9 @@ msgstr "Nem lehetséges az adatbázis-tranzakció megkezdése."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Nem sikerült kapcsolódni egyetlen hitelesítő szerverhez sem, így a felhasználó hitelesítése sikertelen."
+
+msgid "LDAP Error"
+msgstr "LDAP hiba"
 
 msgid "0 bytes"
 msgstr "0 bájt"

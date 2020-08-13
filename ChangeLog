@@ -1,3 +1,12 @@
+Version 6.04-2 Beta
+- Fixed bug in LDAP authenticator where setting a value to '' gave a
+  different result from leaving it unset.
+- Log web browser info when creating a drop-off. To get an additional
+  summary, you will need to set your php.ini 'browscap' setting to
+  '/opt/zendto/lib/browscap.ini'.
+- Added more logging of authentication failures to help logwatch users.
+- Fixed string formatting bugs in AD authentication logging.
+
 Version 6.04-1 Beta
 - Overhauled the "request a drop-off" page.
 - Added new feature to requests: you can now set a start and end date+time.

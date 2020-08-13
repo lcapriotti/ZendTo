@@ -2495,7 +2495,7 @@ class NSSDropoff {
           if (!empty(@$_POST['subject'])) {
             // Sanitise subject line against embedded newlines too
             // $this->_subject = trim(preg_replace('/[<>\n\r]/', '', $_POST['subject']);
-            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, UTF-8));
+            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, 'UTF-8'));
           }
         } else {
           // Logged-in user so just read their data
@@ -2506,7 +2506,7 @@ class NSSDropoff {
           if (empty($this->_subject)  && !empty(@$_POST['subject'])) {
             // Sanitise subject line against embedded newlines too
             // $this->_subject = trim(preg_replace('/[<>\n\r]/', '', $_POST['subject']));
-            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, UTF-8));
+            $this->_subject = trim(html_entity_decode($_POST['subject'], ENT_QUOTES, 'UTF-8'));
             // Check the length of the subject.
             $subjectlength = mb_strlen($smarty->getConfigVars('EmailSubjectTag') . $subject);
             $maxlen = $this->_dropbox->maxsubjectlength();
@@ -3373,13 +3373,33 @@ class NSSDropoff {
           }
         }
         
+        // Attempt to work out basically what browser they are using.
+        // Put the summary in () first, then the USER_AGENT
+        $browser = '';
+        // Can we use get_browser()
+        $b = ini_get('browscap');
+        if (!empty($b) && file_exists($b)) {
+          // This gets an array of current browser properties
+          $b = get_browser(NULL, true);
+          if (!empty($b)) {
+            // The comment is actually a good summary
+            $browser .= '('.$b['comment'];
+            // Might not always know the platform
+            if (isset($b['platform']))
+              $browser .= ' on '.$b['platform'];
+            $browser .= ') ';
+          }
+        }
+        $browser .= $_SERVER['HTTP_USER_AGENT'];
+
         //  Log our success:
-        $this->_dropbox->writeToLog(sprintf("Info: new %s dropoff $claimID of %s%s created for %s user $senderName <$senderEmail> in language %s",
+        $this->_dropbox->writeToLog(sprintf("Info: new %s dropoff $claimID of %s%s created for %s user $senderName <$senderEmail> in language %s using browser '%s'",
                ( $encryptFiles ? "encrypted" : "unencrypted" ),
                ( $realFileCount == 1 ? "1 file" : "$realFileCount files" ),
                ( strlen($waiverFlag) > 0 ? " with waiver" : "" ),
                ( $showIDPasscode ? "internal" : "external" ),
-               $currentLocale ));
+               $currentLocale,
+               $browser ));
       } else {
         // Wipe the IV from memory first
         if (is_string($encryptIVHex)) sodium_memzero($encryptIVHex);

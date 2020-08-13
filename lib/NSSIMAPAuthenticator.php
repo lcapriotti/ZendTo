@@ -83,9 +83,10 @@ class NSSIMAPAuthenticator extends NSSAuthenticator {
   }
 
 
-  public function validUsername ( $uname, &$response )
+  public function validUsername ( $uname, &$response, &$errormsg )
   {
     $result = FALSE;
+    $errormsg = '';
 
     if ( ! $this->_imapDomain ) {
       // There is no imapDomain so use the full supplied address as the uname
@@ -99,7 +100,7 @@ class NSSIMAPAuthenticator extends NSSAuthenticator {
       $result = TRUE;
       //  Chain to the super class for any further properties to be added
       //  to the $response array:
-      parent::validUsername($uname,$response);
+      parent::validUsername($uname, $response, $errormsg);
     } else {
       // imapDomain is set, so strip out the username
       if ( preg_match($this->_prefs['usernameRegexp'], strtolower($uname),$pieces) )
@@ -114,16 +115,17 @@ class NSSIMAPAuthenticator extends NSSAuthenticator {
         $result = TRUE;
         //  Chain to the super class for any further properties to be added
         //  to the $response array:
-        parent::validUsername($uname,$response);
+        parent::validUsername($uname, $response, $errormsg);
       }
     }
 
     return $result;
   }
 
-  public function authenticate( &$uname, $password, &$response )
+  public function authenticate( &$uname, $password, &$response, &$errormsg )
   {
     $result = FALSE;
+    $errormsg = '';
 
     // JKF Added read-only flag to avoid marking messages as read.
     // Using IMAP auth with Office365 ? If so, add this to the end of the
@@ -151,7 +153,7 @@ class NSSIMAPAuthenticator extends NSSAuthenticator {
 
         //  Chain to the super class for any further properties to be added
         //  to the $response array:
-        parent::authenticate($uname,$password,$response);
+        parent::authenticate($uname, $password, $response, $errormsg);
       }
     }
     @imap_close($mbox);

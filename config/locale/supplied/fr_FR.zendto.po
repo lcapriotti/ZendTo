@@ -23,15 +23,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
-"PO-Revision-Date: 2020-05-26 12:56+0200\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
+"PO-Revision-Date: 2020-07-24 11:26+0200\n"
 "Last-Translator: Jimmi Crottaz <jimmi.crottaz@outlook.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Please click again on the link you were sent to pick-up your files."
@@ -107,19 +107,19 @@ msgid "Request Code Used"
 msgstr "Code de Demande utilisé"
 
 msgid "Please ask for a new Request."
-msgstr ""
+msgstr "Veuillez envoyer  une nouvelle demande."
 
 msgid "Your Request Code has expired."
-msgstr "Code de Demande expiré"
+msgstr "Code de Demande expire."
 
 msgid "Please wait for %1$s, until %2$s."
-msgstr ""
+msgstr "Veuillez attendre %1$s, jusqu’à %2$s."
 
 msgid "Your Request Code cannot be used yet."
-msgstr ""
+msgstr "Votre code de demande ne peut pas encore être utilisé."
 
 msgid "The end time you set has already passed."
-msgstr ""
+msgstr "L’heure de fin que vous avez fixée est déjà passée."
 
 msgid "Request Error"
 msgstr "Erreur de demande"
@@ -140,7 +140,7 @@ msgid "Unlocked %s."
 msgstr "Débloquer %s."
 
 msgid "Security"
-msgstr ""
+msgstr "Sécurité"
 
 msgid "Unknown user"
 msgstr "Utilisateur inconnu"
@@ -211,8 +211,18 @@ msgstr "Impossible de mettre à jour le mot de passe pour l'utilisateur %s"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Vérifier l'utilisateur: connexion impossible sur tous les serveurs d'authentification; impossible d'authentifier l'utilisateur."
 
-msgid "LDAP Error"
-msgstr "Erreur LDAP"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Echec de l'identification"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Désolé, vous n'êtes pas autorisé à utiliser ce service."
@@ -221,7 +231,7 @@ msgid "Authorization Failed"
 msgstr "Autorisation impossible"
 
 msgid "Check User: No AD servers configured."
-msgstr "Verifier l'utilisateur: Aucun serveur AD n'est configuré"
+msgstr "Verifier l'utilisateur: Aucun serveur AD n'est configure."
 
 msgid "Use the Back button in your browser to go back and fix this error before trying again."
 msgstr "Revenez en arrière pour résoudre ce problème avant de recommencer."
@@ -329,10 +339,10 @@ msgid "Drop-off Directory Not Found"
 msgstr "Répertoire de dépôt introuvable"
 
 msgid "You cannot create a drop-off from your request yet. Please wait until %s before uploading your files."
-msgstr ""
+msgstr "Vous ne pouvez pas encore créer de dépôt à partir de votre demande. Veuillez attendre jusqu'à %s avant de téléverser vos fichiers."
 
 msgid "The request you used to create this drop-off has expired. You will need to contact the other person again to get a new 'request for files'."
-msgstr ""
+msgstr "La demande que vous avez utilisée pour créer ce dépôt a expiré. Vous devrez contacter l’autre personne à nouveau pour obtenir une nouvelle « demande de fichiers »."
 
 msgid "Failed to read your verification information. Your drop-off session has probably expired. Please start again."
 msgstr "Impossible de lire les informations de vérification. Votre session de dépôt à probablement expirée. Veuillez recommencer."
@@ -341,7 +351,7 @@ msgid "Admin: Install the PHP module/rpm \"mbstring\"."
 msgstr "Admin: Installer le module PHP \"mbstring\"."
 
 msgid "Responding to a request for an encrypted drop-off, but failed to read the passphrase."
-msgstr ""
+msgstr "Réponse à une demande de dépôt crypté, mais echec de lecture du mot de passe."
 
 msgid "The recipient email address '%s' is invalid."
 msgstr "L'adresse mail du destinataire '%s' est invalide."
@@ -451,6 +461,9 @@ msgstr "Impossible de démarrer la transaction de base de donnée."
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Impossible de se connecter à un serveur d'authentification; impossible d'authentifier l'utilisateur."
 
+msgid "LDAP Error"
+msgstr "Erreur LDAP"
+
 msgid "0 bytes"
 msgstr "0 octet"
 
@@ -524,7 +537,7 @@ msgid "About the %1 Service..."
 msgstr "A propos du service %1..."
 
 msgid "Email messages with large attachments can wreak havoc on email servers and end-users' computers. Downloading such email messages can take hours on a slow Internet connection and block any sending or receiving of messages during that time. In some cases, the download will fail repeatedly, breaking the recipient's ability to receive mail at all. Also, internet email clients add considerably to the size of the file being sent. For example, saving an Outlook message with an attachment adds up to 40% to the size of the file. To share files larger than 1MB, use %1 to temporarily make a file (or files) available to another user across the Internet, in a secure and efficient manner."
-msgstr "Les messages électroniques contenant de grandes pièces jointes peuvent faire des ravages sur les serveurs de messagerie et les ordinateurs des utilisateurs. Le téléchargement de tels e-mails peut prendre des heures sur une connexion Internet lente et bloquer tout envoi ou réception de messages pendant cette période. Dans certains cas, le téléchargement échoue à plusieurs reprises, ce qui empêche le destinataire de recevoir du courrier. En outre, les clients de messagerie Internet augmentent considérablement la taille du fichier envoyé. Par exemple, l'enregistrement d'un message Outlook avec une pièce jointe ajoute jusqu'à 40% de la taille du fichier. Pour partager des fichiers de taille supérieure à 5 Mo, utilisez %1 mettre un ou des fichiers temporairement à la disposition d'un autre utilisateur à travers l'Internet, d'une manière sûre et efficace."
+msgstr "Les messages électroniques contenant de grandes pièces jointes peuvent faire des ravages sur les serveurs de messagerie et les ordinateurs des utilisateurs. Le téléchargement de tels courriels peut prendre des heures sur une connexion Internet lente et bloquer tout envoi ou réception de messages pendant cette période. Dans certains cas, le téléchargement échoue à plusieurs reprises, ce qui empêche le destinataire de recevoir du courrier. En outre, les clients de messagerie Internet augmentent considérablement la taille du fichier envoyé. Par exemple, l'enregistrement d'un message Outlook avec une pièce jointe ajoute jusqu'à 40% de la taille du fichier. Pour partager des fichiers de taille supérieure à 5 Mo, utilisez %1 mettre un ou des fichiers temporairement à la disposition d'un autre utilisateur à travers l'Internet, d'une manière sûre et efficace."
 
 msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
 msgstr "Il y a deux types distinct d&quot;utilisateurs pouvant utiliser le service  %1: les utilisateurs <em>internes</em>, qui sont associés à %2, et les utilisateurs <em>externes</em>, qui sont donc tous les autres."
@@ -921,7 +934,7 @@ msgid "Privacy Consent"
 msgstr "Consentement à la vie privée"
 
 msgid "This website uses a cookie & has to use your name & email address to function."
-msgstr "Ce site utilise un cookie et doit utiliser votre nom et adresse e-mail pour fonctionner."
+msgstr "Ce site utilise un cookie et doit utiliser votre nom et votre adresse courriel pour fonctionner."
 
 msgid "I agree"
 msgstr "Je suis d'accord"
@@ -1074,7 +1087,7 @@ msgid "If you leave this page, you will abandon this drop-off."
 msgstr "Si vous quittez cette page, vous abandonnerez votre dépôt."
 
 msgid "This number can include a decimal point, it does not have to be a whole number."
-msgstr ""
+msgstr "Ce nombre peut contenir une virgule, il peut ne pas être entier."
 
 msgid "It will take too long to calculate the checksum of your drop-off."
 msgstr "Calculer le checksum de votre dépôt va prendre trop de temps."
@@ -1119,7 +1132,7 @@ msgid "File __NUMBER__ is larger than the maximum file size you can send in a dr
 msgstr "Fichier __NUMBER__ que la taille maximum que vous pouvez envoyer en un dépôt (__MAXFILESIZE__)."
 
 msgid "Drop-off expiry time must be a number of days, at most %1."
-msgstr ""
+msgstr "La date d'expiration des depots doit être un nombre de jours, au plus %1."
 
 msgid "Scanning"
 msgstr "Analyse"
@@ -1140,10 +1153,10 @@ msgid "Uploaded: __PERCENT__%"
 msgstr "Envoyé: __PERCENT__%"
 
 msgid "Sorry, I tried %d times to send a section of one of your files, but the transfer never succeeded."
-msgstr ""
+msgstr "Désolé, J'ai essayé %d fois d'envoyer une partie d'un de vos fichiers, mais le transfer n'a pas réussi."
 
 msgid "Sorry, I could not send your files. The server said %s."
-msgstr ""
+msgstr "Désolé, je n'ai pas pu envoyé vos fichiers. Le serveur a répondu %s."
 
 msgid "PLEASE NOTE"
 msgstr "VEUILLEZ NOTER"
@@ -1154,13 +1167,11 @@ msgstr "Les fichiers téléchargés sur %1 sont analysés par un antivirus. Malg
 msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
 msgstr "Les utilisateurs sont également fortement <strong>encouragés </strong> à chiffrer tous les fichiers contenant des informations sensibles (par exemple, des informations personnelles ou privées) à l&quot;aide d&quot;un outil tel que \"%2\" avant de les envoyer via %1!"
 
-#, fuzzy
 msgid "Use this form to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
-msgstr "Cette page Web vous permettra de déposer (télécharger) un ou plusieurs fichiers pour une personne (soit un utilisateur du %1 ou autres). Le destinataire recevra un e-mail automatisé contenant les informations que vous entrez ci-dessous et des instructions pour télécharger le fichier. Votre adresse IP sera également enregistrée et envoyée au destinataire à des fins de confirmation d'identité."
+msgstr "Utilisez ce formulaire pour déposer (téléverser) un ou plusieurs fichiers pour n’importe qui (soit un utilisateur %1 ou d’autres). Le destinataire recevra un  courriel automatique contenant les informations que vous entrez ci-dessous et les instructions pour télécharger le fichier. Votre adresse IP sera également enregistrée et envoyée au destinataire à des fins de confirmation d’identité."
 
-#, fuzzy
 msgid "Use this form to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
-msgstr "Cette page Web vous permettra de déposer (télécharger) un ou plusieurs fichiers pour un utilisateur du %1. Le destinataire recevra un e-mail automatisé contenant les informations que vous entrez ci-dessous et des instructions pour télécharger le fichier. Votre adresse IP sera également enregistrée et envoyée au destinataire à des fins de confirmation d'identité."
+msgstr "Utilisez ce formulaire pour déposer (téléverser) un ou plusieurs fichiers pour un utilisateur %1. Le destinataire recevra un courriel automatique contenant les informations que vous entrez ci-dessous et les instructions pour télécharger le fichier. Votre adresse IP sera également enregistrée et envoyée au destinataire à des fins de confirmation d’identité."
 
 msgid "From"
 msgstr "De"
@@ -1325,7 +1336,7 @@ msgid "The link is only valid from %1 to %2."
 msgstr "Le lien n'est valable que de %1 à %2."
 
 msgid "After that time it will automatically expire."
-msgstr ""
+msgstr "Après ce délai, il expirera automatiquement."
 
 msgid "All files you upload will be automatically encrypted."
 msgstr "Tous les fichiers téléchargés seront automatiquement chiffrés."
@@ -1403,14 +1414,13 @@ msgid "This is normally selected. If you deselect it, the link and instructions 
 msgstr "Ceci est normalement coché. Si vous le décochez, le lien et les instructions ne seront pas envoyés par courriel.  A la place, vous verrez seulement le lien dont ils ont besoin, et vous pourrez l'envoyer par d'autres moyens."
 
 msgid "Multiple email addresses should be separated with a comma \",\" or semicolon \";\". Each recipient will be sent a different link."
-msgstr ""
+msgstr "Les adresses  courriel multiples doivent être séparées par une virgule \",\" ou un point-virgule « ; ». Chaque destinataire recevra un lien différent."
 
 msgid "Use this form to send a request to one of more other people requesting that they send (upload) one or more files for you.  The recipient will receive an automated email containing the information you enter below and instructions for uploading the file(s)."
 msgstr "Utilisez ce formulaire pour envoyer une demande de dépôt de fichier. Le destinataire recevra un mail contenant les informations que vous entrez ci-dessous et des instructions pour vous envoyer le(s) fichier(s)."
 
-#, fuzzy
 msgid "Unless you change the dates or times below, the request created will be valid for %1."
-msgstr "La demande créée sera valide pour %1."
+msgstr "Si vous modifiez pas les dates ou les heures ci-dessous, la demande créée sera valide pour %1."
 
 msgid "Email(s)"
 msgstr "Email(s)"
@@ -1422,7 +1432,7 @@ msgid "One or more email addresses"
 msgstr "Une ou plusieurs adresses mail"
 
 msgid "Subject line of the email"
-msgstr ""
+msgstr "Champ objet du courriel"
 
 msgid "Drop-off must occur between"
 msgstr "Dépôt doit avoir lieu entre"

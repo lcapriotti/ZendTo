@@ -95,6 +95,12 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
         case 'authLDAPOrganization':
           if (isset($prefs[$pkey])) $this->$akey = trim($prefs[$pkey]);
           break;
+        case 'authLDAPFullName':
+        case 'authLDAPUsernameAttr':
+        case 'authLDAPEmailAttr':
+          if (isset($prefs[$pkey]) && !empty($prefs[$pkey]))
+            $this->$akey = trim($prefs[$pkey]);
+          break;
         default:
           if (isset($prefs[$pkey])) $this->$akey = $prefs[$pkey];
       }
@@ -155,13 +161,15 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
   */
   public function validUsername(
     $uname,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
     global $smarty;
 
     $result = FALSE;
-    
+    $errormsg = '';
+
     //  Bind to one of our LDAP servers:
     foreach ( $this->_ldapServers as $ldapServer ) {
       $ldapPort = 389; // Default LDAP port
@@ -258,6 +266,8 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
       }
     } else {
       NSSError('Unable to connect to any of the authentication servers; could not authenticate user.','LDAP Error');
+      if (empty($errormsg)) $errormsg = 'Error:';
+      $errormsg .= ' Unable to connect to any of the authentication servers; could not authenticate user.';
     }
     if ( $ldapConn ) {
       ldap_close($ldapConn);
@@ -280,12 +290,14 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
   public function authenticate(
     &$uname,
     $password,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
     global $smarty;
 
     $result = FALSE;
+    $errormsg = '';
     
     //  Bind to one of our LDAP servers:
     foreach ( $this->_ldapServers as $ldapServer ) {
@@ -383,6 +395,8 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
       }
     } else {
       NSSError(gettext('Unable to connect to any of the authentication servers; could not authenticate user.'), gettext('LDAP Error'));
+      if (empty($errormsg)) $errormsg = 'Error:';
+      $errormsg .= ' Unable to connect to any of the authentication servers; could not authenticate user.';
     }
     if ( $ldapConn ) {
       ldap_close($ldapConn);

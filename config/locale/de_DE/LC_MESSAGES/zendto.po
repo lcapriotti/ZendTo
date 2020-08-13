@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2018-09-18 18:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -214,8 +214,18 @@ msgstr "Ändern des Kennworts für Benutzer %s fehlgeschlagen"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Anmeldefehler: Anmeldeserver nicht erreichbar. Kein Login möglich. Benutzer konnte nicht authentifiziert werden."
 
-msgid "LDAP Error"
-msgstr "LDAP-Fehler"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Authentifizierungsfehler"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Entschuldigung, sie sind nicht berechtigt diesen Dienst zu nutzen."
@@ -454,6 +464,9 @@ msgstr "Die Datenbanktransaktion konnte nicht gestartet werden."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Anmeldeserver nicht erreichbar. Kein Login möglich. Benutzer konnte nicht authentifiziert werden."
+
+msgid "LDAP Error"
+msgstr "LDAP-Fehler"
 
 msgid "0 bytes"
 msgstr "0 byte"

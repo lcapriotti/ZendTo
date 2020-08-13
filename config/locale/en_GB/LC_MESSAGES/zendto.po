@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2018-01-01 13:21+0000\n"
 "Last-Translator: Jules Field <Jules@Zend.To>\n"
 "Language-Team: GB English <Jules@Zend.To>\n"
@@ -211,7 +211,16 @@ msgstr ""
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr ""
 
-msgid "LDAP Error"
+msgid "Active Directory Error"
+msgstr ""
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
 msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
@@ -449,6 +458,9 @@ msgid "Unable to begin database transaction."
 msgstr ""
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
+msgstr ""
+
+msgid "LDAP Error"
 msgstr ""
 
 msgid "0 bytes"

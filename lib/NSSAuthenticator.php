@@ -123,7 +123,8 @@ abstract class NSSAuthenticator {
   */
   public function validUsername(
     $uname,
-    &$response
+    &$response,
+    &$errormessage
   )
   {
     if ( $response && $this->isAdmin($uname) ) {
@@ -164,7 +165,8 @@ abstract class NSSAuthenticator {
   public function authenticate(
     &$uname,
     $password,
-    &$response
+    &$response,
+    &$errormessage
   )
   {
     if ( $response && $this->isAdmin($uname) ) {

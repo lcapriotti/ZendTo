@@ -187,11 +187,13 @@ class NSSADAuthenticator extends NSSAuthenticator {
   */
   public function validUsername(
     $uname,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
     global $SYSADMIN;
     $result = FALSE;
+    $errormsg = '';
 
     // Yes I know this is horrific. It'll do though, it works.
 
@@ -205,7 +207,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix1;
       $this->_ldapOrg      = $this->_ldapOrg1;
       $this->_ldapAttribute = $this->_ldapAttribute1;
-      $result = $this->Tryvalid($uname, $response);
+      $result = $this->Tryvalid($uname, $response, $errormsg);
       if ($result !== -70 && $result !== -69) {
         return TRUE;
       }
@@ -227,7 +229,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix2;
       $this->_ldapOrg      = $this->_ldapOrg2;
       $this->_ldapAttribute = $this->_ldapAttribute2;
-      $result = $this->Tryvalid($uname, $response);
+      $result = $this->Tryvalid($uname, $response, $errormsg);
       if ($result !== -70 && $result !== -69) {
         return TRUE;
       }
@@ -249,9 +251,11 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix3;
       $this->_ldapOrg      = $this->_ldapOrg3;
       $this->_ldapAttribute = $this->_ldapAttribute3;
-      $result = $this->Tryvalid($uname, $response);
+      $result = $this->Tryvalid($uname, $response, $errormsg);
       if ($result === -70) {
-        NSSError(gettext('Check User: Unable to connect to any of the authentication servers; could not authenticate user.').' '.$SYSADMIN, gettext('LDAP Error'));
+        NSSError(gettext('Check User: Unable to connect to any of the authentication servers; could not authenticate user.').' '.$SYSADMIN, gettext('Active Directory Error'));
+        if (empty($errormsg)) $errormsg = 'Error:';
+        $errormsg .= ' Active Directory: Unable to connect to any of the authentication servers; could not authenticate user.';
         return FALSE;
       } else if ($result === -69) {
         // NSSError('Check User: Incorrect username or password.','LDAP Error');
@@ -263,7 +267,8 @@ class NSSADAuthenticator extends NSSAuthenticator {
 
   public function Tryvalid(
     $uname,
-    &$response
+    &$response,
+    &$error
   )
   {
     global $smarty;
@@ -301,11 +306,10 @@ class NSSADAuthenticator extends NSSAuthenticator {
         if ($this->_ldapUseTLS) {
           if (!ldap_start_tls($ldapConn)) {
             $ldaperror = ldap_error($ldapConn);
-            //if (! preg_match('/can[not\']* *contact *ldap *server/i',
-            //                 $ldaperror)) {
-            NSSError(sprintf(gettext("Connected to %1$s but could not start_tls, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+            NSSError(sprintf(gettext('Connected to %1$s but could not start_tls, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+            if (empty($error)) $error = 'Error:';
+            $error .= sprintf(' Connected to %s but could not start_tls, it said %s', ldapServer, $ldaperror);
             $ldapBind = false;
-            //}
           } else {
             // start_tls worked, so continue with the bind attempt
             if ( $ldapBind = @ldap_bind($ldapConn,$this->_ldapBindUser,$this->_ldapBindPass) ) {
@@ -316,7 +320,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
               $ldaperror = ldap_error($ldapConn);
               if (! preg_match('/can[not\']* *contact *ldap *server/i',
                                $ldaperror)) {
-                NSSError(sprintf(gettext("Connected to %1$s but could not bind with TLS, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+                NSSError(sprintf(gettext('Connected to %1$s but could not bind with TLS, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+                if (empty($error)) $error = 'Error:';
+                $error .= sprintf(' Connected to %s but could not bind with TLS, it said %s', $ldapServer, $ldaperror);
               }
             }
           }
@@ -331,7 +337,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
             $ldaperror = ldap_error($ldapConn);
             if (! preg_match('/can[not\']* *contact *ldap *server/i',
                              $ldaperror)) {
-              NSSError(sprintf(gettext("Connected to %1$s but could not bind without TLS, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+              NSSError(sprintf(gettext('Connected to %1$s but could not bind without TLS, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+              if (empty($error)) $error = 'Error:';
+              $error .= sprintf(' Connected to %s but could not bind without TLS, it said %s', $ldapServer, $ldaperror);
             }
           }
         }
@@ -401,6 +409,8 @@ class NSSADAuthenticator extends NSSAuthenticator {
             }
             if (!$authorisationPassed) {
               NSSError(gettext("Sorry, you are not authorized to use this service."), gettext('Authorization Failed'));
+              if (empty($error)) $error = 'Warning:';
+              $error .= ' User not authorized to use this service in AD.';
               // We found the user okay, but he wasn't a group member
               $result = -69;
               if ($ldapConn) {
@@ -410,7 +420,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
             }
             //  Chain to the super class for any further properties to be added
             //  to the $response array:
-            parent::validUsername($uname,$response);
+            parent::validUsername($uname, $response, $error);
             if ($ldapConn) {
               ldap_close($ldapConn);
             }
@@ -451,11 +461,13 @@ class NSSADAuthenticator extends NSSAuthenticator {
   public function authenticate(
     &$uname,
     $password,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
     global $SYSADMIN;
     $result = 'NOTTRIED';
+    $errormsg = '';
     
     // Only use this forest if it really has some servers set.
     if (!empty($this->_ldapServers1) &&
@@ -470,7 +482,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix1;
       $this->_ldapOrg      = $this->_ldapOrg1;
       $this->_ldapAttribute = $this->_ldapAttribute1;
-      $result = $this->Tryauthenticate($uname, $password, $response);
+      $result = $this->Tryauthenticate($uname, $password, $response, $errormsg);
       if ($result !== -70 && $result !== -69) {
         return TRUE;
       }
@@ -489,7 +501,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix2;
       $this->_ldapOrg      = $this->_ldapOrg2;
       $this->_ldapAttribute = $this->_ldapAttribute2;
-      $result = $this->Tryauthenticate($uname, $password, $response);
+      $result = $this->Tryauthenticate($uname, $password, $response, $errormsg);
       if ($result !== -70 && $result !== -69) {
         return TRUE;
       }
@@ -508,7 +520,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
       $this->_ldapAccountSuffix = $this->_ldapAccountSuffix3;
       $this->_ldapOrg      = $this->_ldapOrg3;
       $this->_ldapAttribute = $this->_ldapAttribute3;
-      $result = $this->Tryauthenticate($uname, $password, $response);
+      $result = $this->Tryauthenticate($uname, $password, $response, $errormsg);
       if ($result !== -70 && $result !== -69) {
         return TRUE;
       }
@@ -516,7 +528,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
 
     // If we haven't got any result at all, we never tried anything!
     if ($result === 'NOTTRIED') {
-      NSSError(gettext('Check User: No AD servers configured.').' '.$SYSADMIN, gettext('LDAP Error'));
+      NSSError(gettext('Check User: No AD servers configured.').' '.$SYSADMIN, gettext('Active Directory Error'));
+      if (empty($errormsg)) $errormsg = 'Error:';
+      $errormsg .= ' Active Directory: No AD servers configured.';
     }
 
     // BTW -70 ==> couldn't contact LDAP server, -69 ==> other failure
@@ -526,7 +540,8 @@ class NSSADAuthenticator extends NSSAuthenticator {
   public function Tryauthenticate(
     $uname,
     $password,
-    &$response
+    &$response,
+    &$error
   )
   {
     global $smarty;
@@ -584,7 +599,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
             $ldaperror = ldap_error($ldapConn);
             //if (! preg_match('/can[not\']* *contact *ldap *server/i',
             //                 $ldaperror)) {
-            NSSError(sprintf(gettext("Connected to %1$s but could not start_tls, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+            NSSError(sprintf(gettext('Connected to %1$s but could not start_tls, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+            if (empty($error)) $error = 'Error:';
+            $error .= sprintf(' Connected to %s but could not start_tls, it said %s', $ldapServer, $ldaperror);
             $ldapBind = false;
             //}
           } else {
@@ -597,7 +614,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
               $ldaperror = ldap_error($ldapConn);
               if (! preg_match('/can[not\']* *contact *ldap *server/i',
                                $ldaperror)) {
-                NSSError(sprintf(gettext("Connected to %1$s but could not bind with TLS, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+                NSSError(sprintf(gettext('Connected to %1$s but could not bind with TLS, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+              if (empty($error)) $error = 'Error:';
+              $error .= sprintf(' Connected to %s but could not bind with TLS, it said %s', $ldapServer, $ldaperror);
               }
             }
           }
@@ -612,7 +631,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
             $ldaperror = ldap_error($ldapConn);
             if (! preg_match('/can[not\']* *contact *ldap *server/i',
                              $ldaperror)) {
-              NSSError(sprintf(gettext("Connected to %1$s but could not bind without TLS, it said %2$s"), $ldapServer, $ldaperror), "LDAP Error");
+              NSSError(sprintf(gettext('Connected to %1$s but could not bind without TLS, it said %2$s'), $ldapServer, $ldaperror), "Active Directory Error");
+              if (empty($error)) $error = 'Error: ';
+              $error .= sprintf(' Connected to %s but could not bind without TLS, it said %s', $ldapServer, $ldaperror);
             }
           }
         }
@@ -677,7 +698,7 @@ class NSSADAuthenticator extends NSSAuthenticator {
 
               // Chain to the super class for any further properties to be added
               // to the $response array:
-              parent::authenticate($uname,$password,$response);
+              parent::authenticate($uname, $password, $response, $error);
               if ( $ldapConn ) {
                 ldap_close($ldapConn);
               }
@@ -699,7 +720,9 @@ class NSSADAuthenticator extends NSSAuthenticator {
       }
       return -69;
     } else {
-      NSSError(gettext('Check User: Unable to connect to any of the authentication servers; could not authenticate user.').' '.$SYSADMIN, $this->_ldapOrg.' '.gettext('LDAP Error'));
+      NSSError(gettext('Check User: Unable to connect to any of the authentication servers; could not authenticate user.').' '.$SYSADMIN, $this->_ldapOrg.' '.gettext('Active Directory Error'));
+      if (empty($error)) $error = 'Error:';
+      $error .= ' Active Directory: Unable to connect to any of the authentication servers; could not authenticate user in ' . $this->_ldapOrg . '.';
       if ( $ldapConn ) {
         ldap_close($ldapConn);
       }

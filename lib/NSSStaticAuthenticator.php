@@ -85,15 +85,18 @@ class NSSStaticAuthenticator extends NSSAuthenticator {
 
   public function validUsername(
     $uname,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
+    $errormsg = '';
+
     if ( $uname == NSS_STATIC_UID ) {
       $response = array( 'uid' => NSS_STATIC_UID , 'mail' => NSS_STATIC_UID.'@nowhere.org' , 'cn' => 'Test User' , 'displayName' => 'Test User' );
       
       //  Chain to the super class for any further properties to be added
       //  to the $response array:
-      parent::validUsername($uname,$response);
+      parent::validUsername($uname, $response, $errormsg);
       
       return TRUE;
     }
@@ -105,15 +108,18 @@ class NSSStaticAuthenticator extends NSSAuthenticator {
   public function authenticate(
     &$uname,
     $password,
-    &$response
+    &$response,
+    &$errormsg
   )
   {
+    $errormsg = '';
+
     if ( ($uname == NSS_STATIC_UID) && ($password == 'changeme') ) {
       $response = array( 'uid' => NSS_STATIC_UID , 'mail' => NSS_STATIC_UID.'@nowhere.org' , 'cn' => 'Test User' , 'displayName' => 'Test User' );
       
       //  Chain to the super class for any further properties to be added
       //  to the $response array:
-      parent::authenticate($uname,$password,$response);
+      parent::authenticate($uname, $password, $response, $errormsg);
       
       return TRUE;
     }

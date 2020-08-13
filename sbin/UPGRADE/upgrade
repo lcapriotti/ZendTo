@@ -96,6 +96,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
         OldConfigDir="$NewConfigDir"
         NewZendToDir="$Latest"
         NewBin="$NewZendToDir/bin"
+        NewSBin="$NewZendToDir/sbin"
         NewTemplatesDir="$NewZendToDir/templates"
         NewConfigDir="$NewZendToDir/config"
         Prefs="$Latest/config/preferences.php"
@@ -108,6 +109,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
         $DRYRUN && shout "Found 2 different version numbers"
         NewZendToDir="$Latest"
         NewBin="$NewZendToDir/bin"
+        NewSBin="$NewZendToDir/sbin"
         NewTemplatesDir="$NewZendToDir/templates"
         NewConfigDir="$NewZendToDir/config"
         OldConfigDir="$Previous/config"
@@ -128,6 +130,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
       $DRYRUN && shout "No version numbered dirs found, assuming symlink is a fluke"
       # NewZendToDir and NewConfigDir already set
       NewBin="$NewZendToDir/bin"
+      NewSBin="$NewZendToDir/sbin"
       NewTemplatesDir="$NewZendToDir/templates"
       OldConfigDir="$NewConfigDir"
       Prefs="$ZENDTOPREFS"
@@ -141,6 +144,7 @@ if [ -n "$ZENDTOPREFS" -a -f "$ZENDTOPREFS" ]; then
     # No symlinks found
     $DRYRUN && shout "$NewZendToDir is not a symlink"
     NewBin="$NewZendToDir/bin"
+    NewSBin="$NewZendToDir/sbin"
     NewTemplatesDir="$NewZendToDir/templates"
     OldConfigDir="$NewConfigDir"
     Prefs="$ZENDTOPREFS"
@@ -154,6 +158,7 @@ else
   $DRYRUN && shout "Could not find old config $ZENDTOPREFS at all"
   NewZendToDir=/opt/zendto
   NewBin="$NewZendToDir/bin"
+  NewSBin="$NewZendToDir/sbin"
   NewTemplatesDir="$NewZendToDir/templates"
   NewConfigDir="$NewZendToDir/config"
   OldConfigDir="$NewConfigDir"
@@ -169,6 +174,7 @@ if $DRYRUN; then
   shout "Files are:"
   shout "NewZendToDir = $NewZendToDir"
   shout "NewBin = $NewBin"
+  shout "NewSBin = $NewSBin"
   shout "NewTemplatesDir = $NewTemplatesDir"
   shout "OldConfigDir = $OldConfigDir"
   shout "NewConfigDir = $NewConfigDir"
@@ -391,7 +397,7 @@ fi
 
 # Check the apache site config for the https site, must have img-src right
 echo
-"$NewBin"/check_apache_conf
+"$NewSBin"/check_apache_conf
 echo
 
 # Tell them if they have *.rpmnew files in zendto/templates, as they

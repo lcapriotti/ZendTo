@@ -81,9 +81,10 @@ class NSSLocalAuthenticator extends NSSAuthenticator {
 
   // Is this a valid username, and if so what are all its properties.
   // Need to calculate uid, mail, cn, displayName and organization.
-  public function validUsername ( $uname, &$response )
+  public function validUsername ( $uname, &$response, &$errormsg )
   {
     $result = FALSE;
+    $errormsg = '';
 
     if ( preg_match($this->_prefs['usernameRegexp'], strtolower($uname),$pieces) )
     {
@@ -104,7 +105,7 @@ class NSSLocalAuthenticator extends NSSAuthenticator {
 
       //  Chain to the super class for any further properties to be added
       //  to the $response array:
-      parent::validUsername($uname,$response);
+      parent::validUsername($uname, $response, $errormsg);
     }
     return $result;
   }
@@ -112,9 +113,10 @@ class NSSLocalAuthenticator extends NSSAuthenticator {
   // Try to authenticate this username and password.
   // Fill in the response if it's valid, with the uid, mail, cn, displayName
   // and organization. They will be columns in the database table.
-  public function authenticate( &$uname, $password, &$response )
+  public function authenticate( &$uname, $password, &$response, &$errormsg )
   {
     $result = FALSE;
+    $errormsg = '';
 
     if ( preg_match($this->_prefs['usernameRegexp'], strtolower($uname),$pieces) )
     {
@@ -149,7 +151,7 @@ class NSSLocalAuthenticator extends NSSAuthenticator {
 
       //  Chain to the super class for any further properties to be added
       //  to the $response array:
-      parent::authenticate($uname,$password,$response);
+      parent::authenticate($uname, $password, $response, $errormsg);
     }
     return $result;
   }

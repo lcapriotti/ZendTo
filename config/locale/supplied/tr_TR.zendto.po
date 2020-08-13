@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zendto-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
-"PO-Revision-Date: 2020-07-13 07:06\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
+"PO-Revision-Date: 2020-07-24 08:17\n"
 "Last-Translator: Jules Field <Jules@Zend.To>\n"
 "Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
@@ -196,8 +196,18 @@ msgstr "%s kullanıcısı için şifre güncellenemedi"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Kullanıcı Denetimi: Kimlik doğrulama sunucularının hiçbirine bağlanılamıyor; kullanıcının kimliği doğrulanamadı."
 
-msgid "LDAP Error"
-msgstr "LDAP hatası"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Doğrulama Hatası"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Maalesef, bu hizmeti kullanma yetkiniz yok."
@@ -435,6 +445,9 @@ msgstr "Veritabanı işlemi başlatılamadı."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Kimlik doğrulama sunucularının hiçbirine bağlanılamıyor; kullanıcının kimliği doğrulanamadı."
+
+msgid "LDAP Error"
+msgstr "LDAP hatası"
 
 msgid "0 bytes"
 msgstr "0 byte"
@@ -840,7 +853,7 @@ msgid "Encrypted"
 msgstr "Şifrelendi"
 
 msgid "Export as CSV"
-msgstr "CSV olarak dışarı aktar"
+msgstr ""
 
 msgid "Outbox"
 msgstr "Giden Kutusu"
@@ -948,13 +961,13 @@ msgid "Please use a better web browser, such as Google Chrome or Firefox, or at 
 msgstr "Lütfen Google Chrome veya Firefox gibi daha iyi bir web tarayıcısı veya en azından Internet Explorer 11 kullanın."
 
 msgid "Drop-off"
-msgstr "Yükleme"
+msgstr "Yükleme "
 
 msgid "Pick-up"
 msgstr "İndirme"
 
 msgid "Request a Drop-off"
-msgstr "Yükleme Talep Et"
+msgstr "Yükleme Talep Et "
 
 msgid "Show All Drop-offs"
 msgstr "Tüm yüklemeleri göster"
@@ -1023,10 +1036,10 @@ msgid "%1 users who wish someone outside %2 to send them files, can make it a lo
 msgstr "%2 dışından birisinin dosya göndermesini isteyen %1 kullanıcıları, giriş yapıp \"%3\" tuşuna tıklayarak bu işlemi hızlandırabilirler. Bu durum, diğer kişinin kimliğini kanıtlamasını ortadan kaldırır."
 
 msgid "The request created will be valid for %1."
-msgstr "Oluşturulan istek %1 için geçerli olacak."
+msgstr "Oluşturulan istek %1 için geçerli olacaktır."
 
 msgid "%1 is a service to make it easy for you to move files, including large files up to %2, in and out of %3."
-msgstr "%1,%2'ye kadar olan büyük dosyalar da dahil olmak üzere dosyaları %3 içinde veya diğer kurumlar ile paylaşmanızı kolaylaştıran bir hizmettir."
+msgstr "%1, %2 'a kadar olan büyük dosyalar da dahil olmak üzere dosyaları %3 içinde veya diğer kurumlar ile paylaşmanızı kolaylaştıran bir hizmettir."
 
 msgid "How secure is %1?"
 msgstr "%1 ne kadar güvenli?"
@@ -1256,7 +1269,7 @@ msgid "No file was chosen for download."
 msgstr "İndirilecek dosya seçilmedi."
 
 msgid "Please prove you are a person"
-msgstr "Lütfen insan olduğunu kanıtla"
+msgstr "Lütfen robot olmadığını ispatla"
 
 msgid "To confirm that you are a <em>real</em> person (and not a computer), please complete the quick challenge below then click \"Pick-up Files\":"
 msgstr "<em> Gerçek </em> bir kişi (bilgisayar değil) olduğunuzu doğrulamak için, lütfen aşağıdaki kısa işlemi tamamlayın ve \"Dosyaları İndir\" i tıklayın:"
@@ -1399,7 +1412,7 @@ msgstr "Bu web sayfası, size dosya veya belge göndermek isteyen kişilere  ist
 
 #, fuzzy
 msgid "Unless you change the dates or times below, the request created will be valid for %1."
-msgstr "Oluşturulan istek %1 için geçerli olacak."
+msgstr "Oluşturulan istek %1 için geçerli olacaktır."
 
 msgid "Email(s)"
 msgstr "Eposta(lar)"

@@ -121,20 +121,20 @@ class NSSMultiAuthenticator extends NSSAuthenticator {
 
   // Is this a valid username, and if so what are all its properties.
   // Need to calculate uid, mail, cn, displayName and organization.
-  public function validUsername ( $uname, &$response )
+  public function validUsername ( $uname, &$response, &$errormsg )
   {
     # If they have authenticated, we know how they did it,
     # so only use that one to ensure we get the right email domain.
     $subname = $this->getAuthName();
     if ( isset($subname) ) {
-      return $this->_subauths[$subname]->validUsername($uname, $response);
+      return $this->_subauths[$subname]->validUsername($uname, $response, $errormsg);
     }
 
     # They haven't successfully authenticated against anything,
     # so all we can do is try them in order...
     # If it is valid for any sub=authenticator, use that result
     foreach ($this->_subauths as $subname => $subobject) {
-      if ( $subobject->validUsername($uname, $response) ) {
+      if ( $subobject->validUsername($uname, $response, $errormsg) ) {
         return TRUE;
       }
     }
@@ -147,11 +147,11 @@ class NSSMultiAuthenticator extends NSSAuthenticator {
   // Try to authenticate this username and password.
   // Fill in the response if it's valid, with the uid, mail, cn, displayName
   // and organization. They will be columns in the database table.
-  public function authenticate( &$uname, $password, &$response )
+  public function authenticate( &$uname, $password, &$response, $errormsg )
   {
     # If authentication succeeds for any sub=authenticator, use that result
     foreach ($this->_subauths as $subname => $subobject) {
-      if ( $subobject->authenticate($uname, $password, $response) ) {
+      if ( $subobject->authenticate($uname, $password, $response, $errormsg) ) {
         $this->setAuthName($subname);
         return TRUE;
       }

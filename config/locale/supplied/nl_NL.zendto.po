@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 17:17+0100\n"
+"POT-Creation-Date: 2020-08-11 17:08+0100\n"
 "PO-Revision-Date: 2018-08-15 13:36+0200\n"
 "Last-Translator: marcel <Werken@bijdebaas.nl>\n"
 "Language-Team: team nietsnut\n"
@@ -210,8 +210,18 @@ msgstr "Het is niet gelukt om het wachtwoord voor de gebruiker %s bij te werken"
 msgid "Check User: Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Gebruiker controleren: kan geen verbinding maken met een van de authenticatieservers; kon de gebruiker niet authenticeren."
 
-msgid "LDAP Error"
-msgstr "LDAP fout"
+#, fuzzy
+msgid "Active Directory Error"
+msgstr "Authenticatiefout"
+
+msgid "Connected to %1$s but could not start_tls, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind with TLS, it said %2$s"
+msgstr ""
+
+msgid "Connected to %1$s but could not bind without TLS, it said %2$s"
+msgstr ""
 
 msgid "Sorry, you are not authorized to use this service."
 msgstr "Excuses, je mag deze service niet gebruiken."
@@ -450,6 +460,9 @@ msgstr "Kan databasetransactie niet starten."
 
 msgid "Unable to connect to any of the authentication servers; could not authenticate user."
 msgstr "Kon geen verbinding maken met een van de authenticatieservers; kon de gebruiker niet authenticeren."
+
+msgid "LDAP Error"
+msgstr "LDAP fout"
 
 msgid "0 bytes"
 msgstr "0 bytes"
