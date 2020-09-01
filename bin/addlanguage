@@ -43,14 +43,14 @@ if [ "$OS" = "unknown" ]; then
   if [ -f $OSRELEASE -a -x /usr/bin/lsb_release ]; then
     # Should give me the string "ubuntu" or "debian"
     OS="$( lsb_release --id | sed -e 's/^.*:\s*//' | tr '[:upper:]' '[:lower:]' )"
-    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\)\..*$/\1/' )"
+    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\).*$/\1/' )"
   fi
 fi
 if [ "$OS" = "unknown" ]; then
   if [ -x /usr/bin/lsb_release ]; then
     # Should give me the string "suse" or similar
     OS="$( lsb_release --id | sed -e 's/^.*:\s*//' | tr '[:upper:]' '[:lower:]' )"
-    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\)\..*$/\1/' )"
+    OSVER="$( lsb_release --release | sed -e 's/^.*:\s*\([0-9]*\).*$/\1/' )"
     # But we need to tell between suse (i.e. sles) and opensuse
     if [ "x$OS" = "xsuse" ]; then
       OS='sles'

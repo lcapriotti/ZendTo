@@ -22,7 +22,7 @@
   <p>{t 1=#OrganizationShortName#}Use this form to drop-off (upload) one or more files for a %1 user. The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes.{/t}</p>
 {/if}
 
-<form name="dropoff" id="dropoff" method="post" enctype="multipart/form-data">
+<form name="dropoff" id="dropoff" method="post" enctype="multipart/form-data" autocomplete="off">
 
 <input type="hidden" name="Action" value="dropoff"/>
 <input type="hidden" id="auth" name="auth" value="{$authKey}"/>
@@ -136,7 +136,7 @@ End of Old checkboxes and old pre-grid design *}
     <td class="ui-widget" style="padding-bottom:5px">
       <label for="encryptPassword1" class="UILabel">{t}Passphrase{/t}:</label></td>
     <td class="ui-widget" style="float:left;padding-bottom:5px">
-            <input type="password" id="encryptPassword1" name="encryptPassword1" size="30" autocomplete="off" value=""/></td>
+            <input type="password" id="encryptPassword1" name="encryptPassword1" size="30" autocomplete="new-password" value=""/></td>
   </tr><tr>
     <td class="ui-widget" style="padding-bottom:5px">
       <label for="encryptPassword2" class="UILabel">{t}And again{/t}:</label></td>

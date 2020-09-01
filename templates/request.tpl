@@ -10,7 +10,7 @@
 <!--
 // These 2 have to be declared here so Smarty can substitute values
 var addressbook = {$addressbook};
-var deleteText = '{t}Delete{/t}';
+var deleteText = "{t}Delete{/t}";
 
 // 2 allowable formats for email addresses. Not used for
 // checking, just for UI optimisation.
@@ -28,10 +28,10 @@ function updateNoteLength() {
         noteLength = $('#note').val().length;
         var left = maxNoteLength - noteLength;
         if (left < 0) {
-          $('#noteLengthText').text('{t}__CHARS__ too long{/t}'.replace('__CHARS__', (0-left)));
+          $('#noteLengthText').text("{t}__CHARS__ too long{/t}".replace('__CHARS__', (0-left)));
           $('#noteLengthText').addClass("notetoolong");
         } else {
-          $('#noteLengthText').text('{t}__CHARSLEFT__ / __MAXLENGTH__ left{/t}'.replace('__CHARSLEFT__', left).replace('__MAXLENGTH__', maxNoteLength));
+          $('#noteLengthText').text("{t}__CHARSLEFT__ / __MAXLENGTH__ left{/t}".replace('__CHARSLEFT__', left).replace('__MAXLENGTH__', maxNoteLength));
           $('#noteLengthText').removeClass("notetoolong");
         }
 }
@@ -39,9 +39,9 @@ function updateNoteLength() {
 // Handler for ticking / unticking "Send email" checkbox
 function sendEmail() {
   if (this.checked) {
-    $('#sendRequestButton').text('{t}Send the Request{/t}');
+    $('#sendRequestButton').text("{t}Send the Request{/t}");
   } else {
-    $('#sendRequestButton').text('{t}Show the Link{/t}');
+    $('#sendRequestButton').text("{t}Show the Link{/t}");
   }
 }
 
@@ -363,7 +363,8 @@ function keyEncryptPassword(e) {
     <!-- Left-hand side with all the drop-off information -->
     <form name="req" id="req" method="post"
      action="{$zendToURL}{call name=hidePHPExt t='req.php'}" enctype="multipart/form-data"
-     onsubmit="return validateForm();">
+     onsubmit="return validateForm();"
+     autocomplete="off">
 
 <h1>{t}Request a Drop-off{/t}</h1>
 
@@ -394,9 +395,9 @@ function keyEncryptPassword(e) {
   <!-- Then the date/time limits -->
   <span id="timelimit">
     <span id="startLabel" class="labels">{t}Drop-off must occur between{/t}:</span>
-    <input type="text" id="start" name="start" class="text" size="15" autocomplete="off"/>
+    <input type="text" id="start" name="start" class="text" size="17" autocomplete="off"/>
     <span id="expiryLabel" class="labels">{t}and{/t}</span>
-    <input type="text" id="expiry" name="expiry" class="text" size="15" autocomplete="off" />
+    <input type="text" id="expiry" name="expiry" class="text" size="17" autocomplete="off" />
   </span>
 
   <!-- Then the note -->
@@ -432,7 +433,7 @@ function keyEncryptPassword(e) {
     <td class="ui-widget" style="padding-bottom:5px">
       <label for="encryptPassword1" class="UILabel">{t}Passphrase{/t}:</label></td>
     <td class="ui-widget" style="float:left;padding-bottom:5px">
-            <input type="password" id="encryptPassword1" name="encryptPassword1" size="30" autocomplete="off" value=""/></td>
+            <input type="password" id="encryptPassword1" name="encryptPassword1" size="30" autocomplete="new-password" value=""/></td>
   </tr><tr>
     <td class="ui-widget" style="padding-bottom:5px">
       <label for="encryptPassword2" class="UILabel">{t}And again{/t}:</label></td>

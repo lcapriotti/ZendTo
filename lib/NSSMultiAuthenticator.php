@@ -147,7 +147,7 @@ class NSSMultiAuthenticator extends NSSAuthenticator {
   // Try to authenticate this username and password.
   // Fill in the response if it's valid, with the uid, mail, cn, displayName
   // and organization. They will be columns in the database table.
-  public function authenticate( &$uname, $password, &$response, $errormsg )
+  public function authenticate( &$uname, $password, &$response, &$errormsg )
   {
     # If authentication succeeds for any sub=authenticator, use that result
     foreach ($this->_subauths as $subname => $subobject) {

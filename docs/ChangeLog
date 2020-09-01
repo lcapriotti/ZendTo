@@ -1,3 +1,15 @@
+Version 6.05-4 Production
+- Fixed bugs stopping LDAP (but not AD) authentication from working.
+
+Version 6.05-2 Production
+- Fixed quoting bug in new drop-off form shown by French translation.
+
+Version 6.05-1 Production
+- Improve attempt to stop browsers auto-filling encryption passphrase
+  when creating a new encrypted drop-off, and when creating a request
+  for an encrypted drop-off.
+- Fixed bug in makelanguages (and the Installer) on Debian 10.
+
 Version 6.04-2 Beta
 - Fixed bug in LDAP authenticator where setting a value to '' gave a
   different result from leaving it unset.

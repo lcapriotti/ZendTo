@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendTo 5.00\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-11 17:08+0100\n"
+"POT-Creation-Date: 2020-08-31 17:58+0100\n"
 "PO-Revision-Date: 2020-07-24 11:26+0200\n"
 "Last-Translator: Jimmi Crottaz <jimmi.crottaz@outlook.com>\n"
 "Language-Team: US English <Jules@Zend.To>\n"
@@ -540,10 +540,10 @@ msgid "Email messages with large attachments can wreak havoc on email servers an
 msgstr "Les messages électroniques contenant de grandes pièces jointes peuvent faire des ravages sur les serveurs de messagerie et les ordinateurs des utilisateurs. Le téléchargement de tels courriels peut prendre des heures sur une connexion Internet lente et bloquer tout envoi ou réception de messages pendant cette période. Dans certains cas, le téléchargement échoue à plusieurs reprises, ce qui empêche le destinataire de recevoir du courrier. En outre, les clients de messagerie Internet augmentent considérablement la taille du fichier envoyé. Par exemple, l'enregistrement d'un message Outlook avec une pièce jointe ajoute jusqu'à 40% de la taille du fichier. Pour partager des fichiers de taille supérieure à 5 Mo, utilisez %1 mettre un ou des fichiers temporairement à la disposition d'un autre utilisateur à travers l'Internet, d'une manière sûre et efficace."
 
 msgid "There are two distinct kinds of users that will be accessing the %1 system: <em>inside</em> users, who are associated with %2 running the service, and <em>outside</em> users, which encompasses the rest of the Internet."
-msgstr "Il y a deux types distinct d&quot;utilisateurs pouvant utiliser le service  %1: les utilisateurs <em>internes</em>, qui sont associés à %2, et les utilisateurs <em>externes</em>, qui sont donc tous les autres."
+msgstr "Il y a deux types distinct d&apos;utilisateurs pouvant utiliser le service  %1: les utilisateurs <em>internes</em>, qui sont associés à %2, et les utilisateurs <em>externes</em>, qui sont donc tous les autres."
 
 msgid "An <em>inside</em> user is allowed to send a drop-off to anyone, whether they are an <em>inside</em> or <em>outside</em> user. An <em>outside</em> user is only allowed to send a drop-off to an <em>inside</em> user. That prompts the question: what is a drop-off?"
-msgstr "Un utilisateur <em>interne</em> est autorisé à effectuer un dépôt pour n&quot;importe qui, qu&quot;il s&quot;agisse d&quot;un utilisateur <em>interne</em> ou <em>externe</em>. Un utilisateur <em>externe</em> est seulement autorisé à effectuer un dépôt pour un utilisateur <em>interne</em>. Ceci nous conduit à la question: qu&quot;est-ce qu&quot;un dépôt?"
+msgstr "Un utilisateur <em>interne</em> est autorisé à effectuer un dépôt pour n&apos;importe qui, qu&apos;il s&apos;agisse d&apos;un utilisateur <em>interne</em> ou <em>externe</em>. Un utilisateur <em>externe</em> est seulement autorisé à effectuer un dépôt pour un utilisateur <em>interne</em>. Ceci nous conduit à la question: qu&apos;est-ce qu&apos;un dépôt?"
 
 msgid "drop-off"
 msgstr "dépôt"
@@ -585,7 +585,7 @@ msgid "Retrieval of a drop-off by a recipient can only be done with both the dro
 msgstr "La récupération d'un dépôt par un destinataire ne peut être effectuée qu'avec 'l'Identifiant de la demande' et le 'Code de la demande' du dépôt."
 
 msgid "When dropping off files, you can choose <em>not</em> to send either or both of these to the recipient automatically: you would then need to send that information by hand yourself."
-msgstr "Lorsque vous déposez des fichiers, vous pouvez choisir <em>de ne pas</em> envoyer automatiquement l&quot;une ou l&quot;autre de ces informations, ou les deux, au destinataire: vous devrez alors envoyer vous-même &quot;l&quot;Identifiant de la demande&quot; et le &quot;Code de la demande&quot; par un autre moyen."
+msgstr "Lorsque vous déposez des fichiers, vous pouvez choisir <em>de ne pas</em> envoyer automatiquement l&apos;une ou l&apos;autre de ces informations, ou les deux, au destinataire: vous devrez alors envoyer vous-même &apos;l&apos;Identifiant de la demande&apos; et le &apos;Code de la demande&apos; par un autre moyen."
 
 msgid "Making a Pick-up"
 msgstr "Récupérer"
@@ -618,13 +618,13 @@ msgid "The recipient has %1 days to pick-up the files. Each night, drop-offs tha
 msgstr "Le destinataire a %1 jours pour récupérer les fichiers déposés. Chaque nuit, les dépôts qui ont plus de %1 jours sont supprimés du système."
 
 msgid "Please note that the uploaded files are scanned for viruses, but the recipient should still exercise as much caution in downloading and opening them as is appropriate.  This can be as easy as verifying with the sender mentioned in the notification email that he or she indeed made the drop-off.  One can also check the computer name/address that was logged when the drop-off was created, to be sure that it is appropriate to the sender's Internet domain. However IP addresses <em>can</em> be faked, so the former identity verification is really the most reliable."
-msgstr "Veuillez noter que bien que les fichiers envoyés soient analysés par un antivirus, le destinataire doit tout de même prendre des précautions lors de l&quot;ouverture des fichiers. Cela peut-être aussi simple que de vérifier avec l&quot;expéditeur mentionné dans la notification, qu&quot;il ou elle a bien effectué(e) le dépôt. Vous pouvez aussi vérifier le nom/l&quot;adresse de l&quot;ordinateur qui était connecté quand le dépôt a été créé, pour s&quot;assurer qu&quot;il appartient au domaine Internet de l&quot;expéditeur. Cependant, les adresses IP<em>peuvent</em> être faussées, la vérification d&quot;identité est beaucoup plus fiable."
+msgstr "Veuillez noter que bien que les fichiers envoyés soient analysés par un antivirus, le destinataire doit tout de même prendre des précautions lors de l&apos;ouverture des fichiers. Cela peut-être aussi simple que de vérifier avec l&apos;expéditeur mentionné dans la notification, qu&apos;il ou elle a bien effectué(e) le dépôt. Vous pouvez aussi vérifier le nom/l&apos;adresse de l&apos;ordinateur qui était connecté quand le dépôt a été créé, pour s&apos;assurer qu&apos;il appartient au domaine Internet de l&apos;expéditeur. Cependant, les adresses IP<em>peuvent</em> être faussées, la vérification d&apos;identité est beaucoup plus fiable."
 
 msgid "Resumable Downloading of Files"
 msgstr "Reprise des téléchargements de fichiers"
 
 msgid "Most web browsers support <em>resumable downloads</em>.  Imagine this scenario:  you're sitting at your local coffee shop, downloading a 100 MByte PDF that a student uploaded to %1 for you. Suddenly, someone a few tables away starts watching the latest movie trailer (well, attempting to, anyway) and your wireless connection drops — you were 95MB into the download and now you have to start over! Not so, if your browser supports <em>resumable downloads</em>; in which case, the browser requests only the remaining 5MB of the file."
-msgstr "La plupart des navigateurs supportent la <em>reprise des téléchargements</em>. Imaginez ce scenario: vous téléchargez un dépôt de 100 Mo que quelqu&quot;un vous a envoyé et soudainement la connexion réseau est interrompue -- Vous étiez à 95% du téléchargement et maintenant vous devez tout recommencer! Cela ne sera pas le cas si vous navigateur supporte la <em>reprise des téléchargements</em>; dans ce cas, votre navigateur ne téléchargera que les 5% restant du fichier."
+msgstr "La plupart des navigateurs supportent la <em>reprise des téléchargements</em>. Imaginez ce scenario: vous téléchargez un dépôt de 100 Mo que quelqu&apos;un vous a envoyé et soudainement la connexion réseau est interrompue -- Vous étiez à 95% du téléchargement et maintenant vous devez tout recommencer! Cela ne sera pas le cas si vous navigateur supporte la <em>reprise des téléchargements</em>; dans ce cas, votre navigateur ne téléchargera que les 5% restant du fichier."
 
 msgid "%1 features support for the server-side components of <em>resumable download</em> technology under the HTTP 1.1 standard."
 msgstr "%1 supporte la </em>reprise des téléchargements</em>, technologie issue du standard HTTP 1.1 ."
@@ -702,10 +702,10 @@ msgid "%1 &lt;%2&gt; has dropped off %3 files for you."
 msgstr "%1 &lt;%2&gt; a déposé %3 fichiers pour vous."
 
 msgid "<strong>IF YOU TRUST THE SENDER</strong> and are expecting to receive a file from them, you may choose to retrieve the drop-off by clicking the following link (or copying and pasting it into your web browser):"
-msgstr "<strong>SI VOUS AVEZ CONFIANCE EN L&quot;EXPEDITEUR</strong> et attendez de recevoir un fichier de sa part, vous pouvez choisir de récupérer le dépôt en cliquant sur le lien suivant (ou en le copiant dans votre navigateur):"
+msgstr "<strong>SI VOUS AVEZ CONFIANCE EN L&apos;EXPEDITEUR</strong> et attendez de recevoir un fichier de sa part, vous pouvez choisir de récupérer le dépôt en cliquant sur le lien suivant (ou en le copiant dans votre navigateur):"
 
 msgid "<strong>This drop-off is encrypted.</strong> To download any files you must have the correct passphrase."
-msgstr "<strong>Ce dépôt est chiffré.</strong> Pour télécharger des fichiers, vous devez disposer du mot de passe correct, que vous ne pouvez obtenir qu'auprès de l&quot;expéditeur."
+msgstr "<strong>Ce dépôt est chiffré.</strong> Pour télécharger des fichiers, vous devez disposer du mot de passe correct, que vous ne pouvez obtenir qu'auprès de l&apos;expéditeur."
 
 msgid "You have %1 to retrieve the drop-off; after that the link above will expire."
 msgstr "Vous avez %1 pour récupérer le dépôt; après quoi le lien ci dessus expirera."
@@ -874,10 +874,10 @@ msgid "Outbox"
 msgstr "Envoyés"
 
 msgid "A \"%1\" in the \"%2\" column cannot <em>guarantee</em> that any file has been completely downloaded successfully."
-msgstr "Un \"%1\" dans la \"%2\" colonne ne peut pas <em>garantir</em> que n&quot;importe quell fichier a été téléchargé correctement."
+msgstr "Un \"%1\" dans la \"%2\" colonne ne peut pas <em>garantir</em> que n&apos;importe quell fichier a été téléchargé correctement."
 
 msgid "But a \"%1\" does mean it has <em>not</em> been downloaded successfully."
-msgstr "Mais un \"%1\" veut dire qu&quot;il <em>n&quot;a pas</em> été téléchargé correctement."
+msgstr "Mais un \"%1\" veut dire qu&apos;il <em>n&apos;a pas</em> été téléchargé correctement."
 
 msgid "%1 = Encrypted by %2"
 msgstr "%1 = Chiffré par %2"
@@ -1006,7 +1006,7 @@ msgid "Ask another person to send you some files."
 msgstr "Demander à une personne de vous envoyer des fichiers."
 
 msgid "Pick-up (<em>download</em>) a file dropped-off for you."
-msgstr "Récupérer un fichier déposé.<br/><strong>(&quot;Identifiant de la demande&quot; et &quot;Code de la demande&quot; requis)</strong>."
+msgstr "Récupérer un fichier déposé.<br/><strong>(&apos;Identifiant de la demande&apos; et &apos;Code de la demande&apos; requis)</strong>."
 
 msgid "View all drop-offs in the database"
 msgstr "Voir tous les dépôts dans la base de donnée"
@@ -1021,13 +1021,13 @@ msgid "View log file"
 msgstr "Voir fichier journal"
 
 msgid "If you are a %1 user, you should login above to avoid having to verify your email address,<br/>and be able to drop-off files to non-%1 users."
-msgstr "Si vous êtes un utilisateurs %1, vous devriez vous connecter afin d&quot;éviter la vérification d&quot;adresse mail <br/> et envoyer des fichiers à des utilisateurs externes à %1."
+msgstr "Si vous êtes un utilisateurs %1, vous devriez vous connecter afin d&apos;éviter la vérification d&apos;adresse mail <br/> et envoyer des fichiers à des utilisateurs externes à %1."
 
 msgid "If you are a %1 user, you may login here:"
 msgstr "Si vous êtes un utilisateur de %1, vous pouvez vous connecter ici:"
 
 msgid "<strong>%1 users should login first.</strong>"
-msgstr "<strong>Les utilisateurs de %1 doivent d&quot;abord se connecter.</strong>"
+msgstr "<strong>Les utilisateurs de %1 doivent d&apos;abord se connecter.</strong>"
 
 msgid "<strong>Avoid having to verify your email address</strong>,<br/>and drop-off files to non-%1 users."
 msgstr "Transférez des fichiers à des utilisateurs internes et externes."
@@ -1036,10 +1036,10 @@ msgid "Anyone may perform the following activities:"
 msgstr "Si vous êtes un utilisateur extérieur, vous pouvez faire les choses suivantes:"
 
 msgid "Drop-off (<em>upload</em>) a file for a %1 user (<strong>email verification required</strong>)."
-msgstr "Déposer un fichier pour un utilisateur du %1.<br/><strong>(Vérification d&quot;adresse mail nécessaire, ou utilisation d&quot;un code de demande)</strong>."
+msgstr "Déposer un fichier pour un utilisateur du %1.<br/><strong>(Vérification d&apos;adresse mail nécessaire, ou utilisation d&apos;un code de demande)</strong>."
 
 msgid "Pick-up (<em>download</em>) a file dropped off for you."
-msgstr "Récupérer un fichier déposé.<br/><strong>(&quot;Identifiant de la demande&quot; et &quot;Code de la demande&quot; requis)</strong>."
+msgstr "Récupérer un fichier déposé.<br/><strong>(&apos;Identifiant de la demande&apos; et &apos;Code de la demande&apos; requis)</strong>."
 
 msgid "%1 users: you may login with your username and password and send files to anyone, in or out of %2"
 msgstr "Utilisateurs %1: vous pouvez vous connecter avec votre nom d'utilisateur et votre mot de passe pour envoyer des fichiers à n'importe qui, interne ou externe au %2"
@@ -1165,7 +1165,7 @@ msgid "Files uploaded to %1 are scanned for viruses.  But still exercise the sam
 msgstr "Les fichiers téléchargés sur %1 sont analysés par un antivirus. Malgré tout, veuillez être aussi prudent que pour tout autre fichier que vous téléchargez."
 
 msgid "Users are also <strong>strongly encouraged</strong> to encrypt every file if any contain sensitive information (e.g. personal private information)!"
-msgstr "Les utilisateurs sont également fortement <strong>encouragés </strong> à chiffrer tous les fichiers contenant des informations sensibles (par exemple, des informations personnelles ou privées) à l&quot;aide d&quot;un outil tel que \"%2\" avant de les envoyer via %1!"
+msgstr "Les utilisateurs sont également fortement <strong>encouragés </strong> à chiffrer tous les fichiers contenant des informations sensibles (par exemple, des informations personnelles ou privées) à l&apos;aide d&apos;un outil tel que \"%2\" avant de les envoyer via %1!"
 
 msgid "Use this form to drop-off (upload) one or more files for anyone (either a %1 user or others). The recipient will receive an automated email containing the information you enter below and instructions for downloading the file. Your IP address will also be logged and sent to the recipient for identity confirmation purposes."
 msgstr "Utilisez ce formulaire pour déposer (téléverser) un ou plusieurs fichiers pour n’importe qui (soit un utilisateur %1 ou d’autres). Le destinataire recevra un  courriel automatique contenant les informations que vous entrez ci-dessous et les instructions pour télécharger le fichier. Votre adresse IP sera également enregistrée et envoyée au destinataire à des fins de confirmation d’identité."
@@ -1495,7 +1495,7 @@ msgid "Decryption Passphrase"
 msgstr "Mot de passe de déchiffrement"
 
 msgid "You can ask the sender<br/>for the decryption passphrase."
-msgstr "Vous pouvez demander à l&quot;expéditeur<br/>la phrase secrète de déchiffrement."
+msgstr "Vous pouvez demander à l&apos;expéditeur<br/>la phrase secrète de déchiffrement."
 
 msgid "Delete Dropoff"
 msgstr "Supprimer le dépôt"
@@ -1520,16 +1520,16 @@ msgid ""
 "    <p>This is exactly how you change the text for anything in the ZendTo interface. For more info, read <a href=\"https://zend.to/translators.php\">the translations page in the documentation</a>.</p>"
 msgstr ""
 "La renunciation aux termes et conditions que les destinataires doivent accepter.\n"
-"    <br/>Pour l&quot;activer ou la déactiver, voir les réglages <tt>showRecipientsWaiverCheckbox</tt> et <tt>defaultRecipientsWaiver</tt> dans <tt>/opt/zendto/config/preferences.php</tt>.\n"
+"    <br/>Pour l&apos;activer ou la déactiver, voir les réglages <tt>showRecipientsWaiverCheckbox</tt> et <tt>defaultRecipientsWaiver</tt> dans <tt>/opt/zendto/config/preferences.php</tt>.\n"
 "    <br/>elle peut être longue et contenir des balises HTML.\n"
 "    <br/>Pour modifier ce texte :\n"
 "    <ol>\n"
 "      <li>Cherchez ce texte dans les fichiers textes <tt>/opt/zendto/config/locale/*_*/LC_MESSAGES/zendto.po</tt></li>\n"
 "      <li>Tapez votre proper texte dans les ligne(s) <tt>msgstr&nbsp;\"...\"</tt> qui  le suivent</li>\n"
 "      <li>exécutez <tt>/opt/zendto/bin/makelanguages</tt> en root</li>\n"
-"      <li>redémarrez Apache (pour vous assurer qu&quot;il prend en compte le nouveau texte).</li>\n"
+"      <li>redémarrez Apache (pour vous assurer qu&apos;il prend en compte le nouveau texte).</li>\n"
 "    </ol>\n"
-"    <p>C&quot;est exactement la façon de modifier le texte de n&quot;importe quel chaine de langue dans l&quot;interface de ZendTo interface. Pour plus d&quot;informations, voir <a href=\"https://zend.to/translators.php\">la page des traduction dans la documentation</a>.</p>"
+"    <p>C&apos;est exactement la façon de modifier le texte de n&apos;importe quel chaine de langue dans l&apos;interface de ZendTo interface. Pour plus d&apos;informations, voir <a href=\"https://zend.to/translators.php\">la page des traduction dans la documentation</a>.</p>"
 
 msgid "I have read, understood and agree to the terms and conditions above."
 msgstr "J'ai lu, compris et accepté les termes et conditions ci-dessus."

@@ -355,8 +355,8 @@ $(document).ready(function() {
   {/if}
   // The "copy to clipboard" button for the link, if it exists
   if ($('#linkbox').length) {
-    const copytext = '{t}Click to copy link to clipboard{/t}';
-    const copiedtext = '{t}Copied{/t}';
+    const copytext = "{t}Click to copy link to clipboard{/t}";
+    const copiedtext = "{t}Copied{/t}";
     var linktext = $('#linkbox').val();
     linktext = linktext.match(/^(\S+)/)[0]; // Up to 1st whitespace
     $('#copylinkButton').on('click', function() {
@@ -568,7 +568,7 @@ $(document).ready(function() {
       </form>
 
       {* This is the form for the download links, when it is encrypted *}
-      <form name="decryptDropoff" method="post" action="{$downloadURL}{*{if $auth ne ""}&auth={$auth}{/if}*}">
+      <form name="decryptDropoff" method="post" action="{$downloadURL}{*{if $auth ne ""}&auth={$auth}{/if}*}" autocomplete="off">
 {if $isEncrypted}
         <input type="hidden" id="auth" name="auth" value="{$auth}"/>
         <input type="hidden" id="fid" name="fid" value=""/>

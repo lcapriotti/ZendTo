@@ -47,7 +47,7 @@ var isAdvancedUpload = function() {
 
 // These must be here so Smarty can substitute values
 var addressbook = {$addressbook};
-var deleteText = '{t}Delete{/t}';
+var deleteText = "{t}Delete{/t}";
 
 var ignore_unload = true;
 
@@ -57,10 +57,10 @@ function updateNoteLength() {
   noteLength = $('#note').val().length;
   var left = maxNoteLength - noteLength;
   if (left < 0) {
-    $('#noteLengthText').text('{t}__CHARS__ too long{/t}'.replace('__CHARS__', (0-left)));
+    $('#noteLengthText').text("{t}__CHARS__ too long{/t}".replace('__CHARS__', (0-left)));
     $('#noteLengthText').css({ "color":"red", "font-weight":"bold" });
   } else {
-    $('#noteLengthText').text('{t}__CHARSLEFT__ / __MAXLENGTH__ left{/t}'.replace('__CHARSLEFT__', left).replace('__MAXLENGTH__', maxNoteLength));
+    $('#noteLengthText').text("{t}__CHARSLEFT__ / __MAXLENGTH__ left{/t}".replace('__CHARSLEFT__', left).replace('__MAXLENGTH__', maxNoteLength));
     $('#noteLengthText').css({ "color":"black", "font-weight":"normal" });
   }
 }
@@ -145,7 +145,7 @@ function dragDrop(e) {
 
 // Setup all the Drag-n-Drop stuff. We need it again if upload failed.
 function setupDragDrop() {
-  $('#AddFilesButton').text('{t}Click to Add Files or Drag Them Here{/t}');
+  $('#AddFilesButton').text("{t}Click to Add Files or Drag Them Here{/t}");
   $(window).on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -231,7 +231,7 @@ $(document).ready(function(){
     position: "top center",
     html: false,
     css: { fontSize: '100%', 'max-width': '30vw' },
-    contents: '{t}This number can include a decimal point, it does not have to be a whole number.{/t}',
+    contents: "{t}This number can include a decimal point, it does not have to be a whole number.{/t}",
     showAnimation: function (d, c) { this.fadeIn(d, c); }
     });
   }
@@ -305,7 +305,7 @@ $(document).ready(function(){
       position: "top left",
       html: false,
       css: { fontSize: '100%', 'max-width': '40vw' },
-      contents: '{t 1=#OrganizationShortType#}Every file will be encrypted. This has been enforced by %1, you do not need to do anything.{/t}',
+      contents: "{t 1=#OrganizationShortType#}Every file will be encrypted. This has been enforced by %1, you do not need to do anything.{/t}",
       showAnimation: function (d, c) { this.fadeIn(d, c); }
     });
   {/if}
@@ -579,7 +579,7 @@ function toFixed(value, precision) {
 function formatFileSize(size){
   if (size<0) {
     // It's a library file so doesn't consume any space at all
-    return '{t}Library{/t}';
+    return "{t}Library{/t}";
   }
   if (size>=1048576) {
     return toFixed(size / 1048576, 1) + " {t}MB{/t}";
@@ -765,7 +765,7 @@ function adjustTable(row, n) {
               .off('click');
         $(rem).on('click', function() { removeFile(newrow); });
         // And the img inside that
-        $(rem).children('img').first().attr('title', '{t}Remove file{/t} '+newrow);
+        $(rem).children('img').first().attr('title', "{t}Remove file{/t} "+newrow);
       }
     });
   });
@@ -888,7 +888,7 @@ function addRecipient(currentName, currentEmail){
     
     var emailTemplate = $("<div>", { 'class':'emailButton', 'html': format });
     
-    emailTemplate.append($("<a>", { 'class': 'remove', 'style': 'float:right; top:-3px; position:relative' }).append($('<img>', { src: 'images/swish/minus-circle.png', alt: '{t}Remove selected recipient{/t}' })));
+    emailTemplate.append($("<a>", { 'class': 'remove', 'style': 'float:right; top:-3px; position:relative' }).append($('<img>', { src: 'images/swish/minus-circle.png', alt: "{t}Remove selected recipient{/t}" })));
     
     emailTemplate.append($("<input>", { 'type': 'hidden', 'name': 'recipName_' + recipient_id, 'value': currentName }));
     emailTemplate.append($("<input>", { 'type': 'hidden', 'name': 'recipEmail_' + recipient_id, 'value': currentEmail }));
@@ -960,19 +960,19 @@ function validateForm()
     return false;
   }
   if(updateTotalSize() > maxTotalSize){
-    alert('{t}Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__).{/t}'.replace('__MAXTOTALSIZE__', formatMaxSize(maxTotalSize)));
+    alert("{t}Your files are larger than the maximum total size you can send in one drop-off (__MAXTOTALSIZE__).{/t}".replace('__MAXTOTALSIZE__', formatMaxSize(maxTotalSize)));
     return false;
   }
   for (var i=1; i<=num_files; i++) {
     if (!fileInLibrary[i] && file_objects[i].size > maxFileSize) {
-      alert('{t}File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__).{/t}'.replace('__NUMBER__',i).replace('__MAXFILESIZE__', formatFileSize(maxFileSize)));
+      alert("{t}File __NUMBER__ is larger than the maximum file size you can send in a drop-off (__MAXFILESIZE__).{/t}".replace('__NUMBER__',i).replace('__MAXFILESIZE__', formatFileSize(maxFileSize)));
       return false;
     }
   }
   var days = Number($('#lifedays').val());
   if ( isNaN(days) || days<0.1 || days>{$keepForDays|default:'1'} ) {
     $('#lifedays').addClass('error-highlight');
-    alert('{t 1=$keepForDays}Drop-off expiry time must be a number of days, at most %1.{/t}');
+    alert("{t 1=$keepForDays}Drop-off expiry time must be a number of days, at most %1.{/t}");
     return false;
   } else {
     $('#lifedays').removeClass('error-highlight');

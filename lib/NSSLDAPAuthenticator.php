@@ -261,7 +261,7 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
 
           //  Chain to the super class for any further properties to be added
           //  to the $response array:
-          parent::validUsername($uname,$response);
+          parent::validUsername($uname,$response,$errormsg);
         }
       }
     } else {
@@ -389,7 +389,7 @@ class NSSLDAPAuthenticator extends NSSAuthenticator {
             }
             //  Chain to the super class for any further properties to be added
             //  to the $response array:
-            parent::authenticate($uname,$password,$response);
+            parent::authenticate($uname,$password,$response,$errormsg);
           }
         }
       }
